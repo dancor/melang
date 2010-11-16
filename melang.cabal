@@ -3,13 +3,10 @@ version:         0.1
 license:         BSD3
 license-file:    LICENSE
 author:          dan corson <danl@alum.mit.edu>
-synopsis:        <syn>
+synopsis:        lang study
 build-type:      Simple
-build-depends:   base
+build-depends:   base >= 4, containers, filepath
 
-executable:      melang
-main-is:         Main.hs
-hs-source-dirs:  src
-
-exposed-modules: melang
+executable:      wlk
+main-is:         WLk.hs
 hs-source-dirs:  src
