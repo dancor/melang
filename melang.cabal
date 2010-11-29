@@ -5,8 +5,12 @@ license-file:    LICENSE
 author:          dan corson <danl@alum.mit.edu>
 synopsis:        lang study
 build-type:      Simple
-build-depends:   base >= 4, containers, filepath
+build-depends:   base >= 4, containers, filepath, haskeline, mtl
 
 executable:      wlk
 main-is:         WLk.hs
+hs-source-dirs:  src
+
+executable:      text_ch_freq
+main-is:         TextChFreq.hs
 hs-source-dirs:  src
