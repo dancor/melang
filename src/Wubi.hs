@@ -6,32 +6,33 @@ data WubiKey = WK Stroke Int
   deriving (Eq, Ord)
 type Wubi = [WubiKey]
 
-qToWK :: Char -> WubiKey
-qToWK 't' = WK P 1
-qToWK 'r' = WK P 2
-qToWK 'e' = WK P 3
-qToWK 'w' = WK P 4
-qToWK 'q' = WK P 5
-qToWK 'y' = WK N 1
-qToWK 'u' = WK N 2
-qToWK 'i' = WK N 3
-qToWK 'o' = WK N 4
-qToWK 'p' = WK N 5
-qToWK 'g' = WK H 1
-qToWK 'f' = WK H 2
-qToWK 'd' = WK H 3
-qToWK 's' = WK H 4
-qToWK 'a' = WK H 5
-qToWK 'h' = WK S 1
-qToWK 'j' = WK S 2
-qToWK 'k' = WK S 3
-qToWK 'l' = WK S 4
-qToWK 'm' = WK S 5
-qToWK 'n' = WK G 1
-qToWK 'b' = WK G 2
-qToWK 'v' = WK G 3
-qToWK 'c' = WK G 4
-qToWK 'x' = WK G 5
+qToWK :: Char -> Maybe WubiKey
+qToWK 't' = Just $ WK P 1
+qToWK 'r' = Just $ WK P 2
+qToWK 'e' = Just $ WK P 3
+qToWK 'w' = Just $ WK P 4
+qToWK 'q' = Just $ WK P 5
+qToWK 'y' = Just $ WK N 1
+qToWK 'u' = Just $ WK N 2
+qToWK 'i' = Just $ WK N 3
+qToWK 'o' = Just $ WK N 4
+qToWK 'p' = Just $ WK N 5
+qToWK 'g' = Just $ WK H 1
+qToWK 'f' = Just $ WK H 2
+qToWK 'd' = Just $ WK H 3
+qToWK 's' = Just $ WK H 4
+qToWK 'a' = Just $ WK H 5
+qToWK 'h' = Just $ WK S 1
+qToWK 'j' = Just $ WK S 2
+qToWK 'k' = Just $ WK S 3
+qToWK 'l' = Just $ WK S 4
+qToWK 'm' = Just $ WK S 5
+qToWK 'n' = Just $ WK G 1
+qToWK 'b' = Just $ WK G 2
+qToWK 'v' = Just $ WK G 3
+qToWK 'c' = Just $ WK G 4
+qToWK 'x' = Just $ WK G 5
+qToWK _ = Nothing
 
 showWK (WK s n) = show s ++ show n
 

@@ -28,6 +28,8 @@ main = runInputT defaultSettings $ do
     let
       r = fromMaybe [] (M.lookup l w2c) ++
         concat (maybeToList $ M.lookup l c2w)
+      showRes x = case sequence $ map qToWK x of
+        Just y -> concatMap showWK y
+        _ -> x
     io . putStrLn $ if l == "" then "" else
-      unlines . sortBy (comparing length `mappend` compare) $
-        map (concatMap (showWK . qToWK)) r
+      unlines . sortBy (comparing length `mappend` compare) $ map showRes r
