@@ -19,14 +19,14 @@ io = liftIO
 main = runInputT defaultSettings $ do
   home <- io $ getEnv "HOME"
   wubiToCh <- io $ map (listToPair . take 2 . words) . lines <$> 
-    readFile (home </> "l" </> "l" </> "z" </> "wubi1.txt")
+    readFile (home </> "l" </> "l" </> "z" </> "wubi.txt")
   let
-    w2c = M.fromList wubiToCh
-    c2w = M.fromListWith (++) $ map (second (:[]) . swap) wubiToCh
+    w2c = M.fromListWith (++) $ map (second (:[])) wubiToCh
+    c2w = M.fromListWith (++) $ map (swap . first (:[])) wubiToCh
   forever $ do
     l <- fromMaybe "" <$> getInputLine "> "
     let
-      r = maybeToList (M.lookup l w2c) ++
+      r = fromMaybe [] (M.lookup l w2c) ++
         concat (maybeToList $ M.lookup l c2w)
     io . putStrLn $ if l == "" then "" else
       unlines . sortBy (comparing length `mappend` compare) $
