@@ -34,10 +34,10 @@ main = do
         generalCategory (head z) == OtherLetter) $ M.keys zToWubiPoss
     z1Wubis = filter (not . null . snd) $
       map (\ z -> 
-        (z, filter ((== 4) . length) . fromJust $ M.lookup z zToWubiPoss)) 
+        (z, filter ((>= 3) . length) . fromJust $ M.lookup z zToWubiPoss)) 
       z1sUnass
     wToZ' = foldr (\ (z, w:_) m -> M.insert (wubiLol w) z m) wToZ z1Wubis
-    wubiLol x = take 3 x ++ "z" ++ drop 3 x
+    wubiLol x = init x ++ "z" ++ [last x]
   {-
   print $ length z1Wubis
   putStr . unlines . map (\ (x, y) -> x ++ " " ++ show y) $ take 20 z1Wubis
