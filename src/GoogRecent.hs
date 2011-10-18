@@ -1,11 +1,7 @@
-{-# LANGUAGE FlexibleInstances #-}
-{-# LANGUAGE MultiParamTypeClasses #-}
 #include <h>
 import Data.Char.Properties.GeneralCategory
 import qualified Data.Text as DT
 import qualified Data.Text.Encoding as DTE
-import qualified Text.Parsec.Prim as TPP
-import qualified Text.Parsec.ByteString as P
 
 data GLine = GLine {
   lWd :: DT.Text,
@@ -13,31 +9,31 @@ data GLine = GLine {
   lOccurs :: Int
   } deriving Show
 
-(<<) :: (Monad m) => m a -> m b -> m a
-a << b = do
-  r <- a
-  b >> return r
+bsReadPosInt :: BS.ByteString -> Int
+bsReadPosInt = 
+  foldl1 ((+) . (10 *)) . map ((subtract $ ord '0') . fromIntegral) . 
+  BS.unpack
 
-lineParser :: P.Parser GLine
-lineParser = liftM3 GLine oneField tabR tabR << tabR << tabR << char '\n'
+parseLine :: Int -> BS.ByteString -> GLine
+parseLine n s = GLine (DTE.decodeUtf8 a) (bsReadPosInt b) (bsReadPosInt c) 
   where
-  --oneField = DTE.decodeUtf8 <$> many1 (noneOf "\t")
-  oneField = DT.pack <$> many1 (noneOf "\t")
-  tabR = char '\t' >> read <$> (many1 digit)
+  (a, s2) = lol s
+  (b, s3) = lol s2
+  (c, _) = BS.breakByte 9 s3
+  lol = second (tailOrDie eMsg) . BS.breakByte 9
+  tailOrDie e a = if BS.null a then error e else BS.tail a
+  eMsg = "parse error line " ++ show n
 
 main :: IO ()
 main = do
-  ls <- either (error . show) id <$> P.parseFromFile 
-    (many1 lineParser << eof) "/mnt/unenc/l/l/z/n-grams/1/20090715.csv"
+  ls <- zipWith parseLine [1..] . BSC.lines <$> 
+    BS.readFile "/mnt/unenc/l/l/z/n-grams/1/20090715.csv"
   let
     topOccurWds = sortBy (flip $ comparing snd `mappend` comparing fst) . 
       M.toList . M.fromListWith (+) . map (\ g -> (lWd g, lOccurs g)) . 
       filter ((\ c -> not (isAscii c) && 
         ClLetter == gcMajorClass (getGeneralCategory c)) . DT.head . lWd) $ 
-      filter ((>= 1970) . lYr) ls
-  {-
-  putStr . unlines $ map (\ (c, n) -> DT.unpack c ++ "\t" ++ show n)
-    topOccurWds
-  -}
-  BS.putStr . DTE.encodeUtf8 . DT.unlines $ 
-    map (\ (c, n) -> c `DT.append` DT.pack ('\t' : show n)) topOccurWds
+      filter ((>= 1900) . lYr) ls
+  BS.writeFile "/home/danl/p/l/melang/out/gbRec/freq" . BSC.unlines $ map 
+    (\ (c, n) -> DTE.encodeUtf8 c `BS.append` BSC.pack ('\t' : show n)) 
+    topOccurWds 
