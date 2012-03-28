@@ -1,7 +1,7 @@
 module Wubi where
 
 data Stroke = P | N | H | S | G
-  deriving (Enum, Eq, Ord, Show)
+  deriving (Eq, Ord, Show)
 data WubiKey = WK Stroke Int
   deriving (Eq, Ord)
 type Wubi = [WubiKey]
@@ -35,4 +35,3 @@ qToWK 'x' = Just $ WK G 5
 qToWK _ = Nothing
 
 showWK (WK s n) = show s ++ show n
-

@@ -5,7 +5,7 @@ license-file:    LICENSE
 author:          dan corson <danl@alum.mit.edu>
 synopsis:        lang study
 build-type:      Simple
-build-depends:   base >= 4, containers, filepath, haskeline, mtl, utf8-string
+build-depends:   base >= 4, containers, filepath, haskeline, mtl
 
 executable:      wlk
 main-is:         WLk.hs

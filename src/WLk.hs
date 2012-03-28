@@ -7,7 +7,7 @@ import Control.Arrow
 import Control.Monad
 import Control.Monad.Trans
 import System.Console.Haskeline
-import System.Environment.UTF8
+import System.Environment
 import System.FilePath
 import qualified Data.Map as M
 
