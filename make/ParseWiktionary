@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p bin obj
+ghc -cpp -isrc --make src/ParseWiktionary.hs -o bin/ParseWiktionary -odir obj -hidir obj -O2 "$@"
