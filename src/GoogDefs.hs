@@ -1,4 +1,3 @@
-#include <h>
 import Data.Char.Properties.GeneralCategory
 import qualified Data.Text as DT
 import qualified Data.Text.Encoding as DTE

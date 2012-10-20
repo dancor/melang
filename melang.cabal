@@ -1,16 +1,41 @@
-name:            melang
-version:         0.1
-license:         BSD3
-license-file:    LICENSE
-author:          dan corson <danl@alum.mit.edu>
-synopsis:        lang study
-build-type:      Simple
-build-depends:   base >= 4, containers, filepath, haskeline, mtl
+name:          melang
+version:       0.1
+license:       BSD3
+license-file:  LICENSE
+author:        dan corson <danl@alum.mit.edu>
+synopsis:      lang study
+build-type:    Simple
+cabal-version: >= 1.2
 
-executable:      wlk
-main-is:         WLk.hs
-hs-source-dirs:  src
+flag wlk
+    default: False
 
-executable:      text_ch_freq
-main-is:         TextChFreq.hs
-hs-source-dirs:  src
+flag text_ch_freq
+    default: False
+
+flag goog_recent
+    default: False
+
+executable wlk
+    if flag(wlk)
+        buildable: True
+    main-is:         WLk.hs
+    hs-source-dirs:  src
+    build-depends: base >= 4, containers, filepath, haskeline, mtl
+
+executable text_ch_freq
+    if flag(text_ch_freq)
+        buildable: True
+    main-is:         TextChFreq.hs
+    hs-source-dirs:  src
+    build-depends: base >= 4, containers, filepath, haskeline, mtl
+
+executable goog_recent
+    if flag(goog_recent)
+        buildable: True
+    main-is:         GoogRecent.hs
+    hs-source-dirs:  src
+    build-depends:   base >= 4
+                   , containers
+                   , text
+                   , unicode-properties
