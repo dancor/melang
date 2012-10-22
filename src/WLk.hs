@@ -30,7 +30,7 @@ wLk w2c c2w l =
 main :: IO ()
 main = runInputT defaultSettings $ do
   home <- io $ getEnv "HOME"
-  wubiToCh <- io $ map (listToPair . take 2 . words) . lines <$> 
+  wubiToCh <- io $ map (listToPair . take 2 . words) . lines <$>
     readFile (home </> "l" </> "l" </> "z" </> "wubi.txt")
   let
     w2c = M.fromListWith (++) $ map (second (:[])) wubiToCh

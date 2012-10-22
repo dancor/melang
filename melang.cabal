@@ -21,14 +21,21 @@ executable wlk
         buildable: True
     main-is:         WLk.hs
     hs-source-dirs:  src
-    build-depends: base >= 4, containers, filepath, haskeline, mtl
+    build-depends:   base >= 4
+                   , containers
+                   , filepath
+                   , haskeline
 
 executable text_ch_freq
     if flag(text_ch_freq)
         buildable: True
     main-is:         TextChFreq.hs
     hs-source-dirs:  src
-    build-depends: base >= 4, containers, filepath, haskeline, mtl
+    build-depends:   base >= 4
+                   , containers
+                   , filepath
+                   , haskeline
+                   , mtl
 
 executable goog_recent
     if flag(goog_recent)
@@ -36,6 +43,29 @@ executable goog_recent
     main-is:         GoogRecent.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
-                   , containers
+                   , bytestring
+
+executable utf8_check
+    main-is:         Utf8Check.hs
+    hs-source-dirs:  src
+    build-depends:   base >= 4
+                   , bytestring
+
+executable goog_results_to_ppm
+    main-is:         GoogResultsToPpm.hs
+    hs-source-dirs:  src
+    build-depends:   base >= 4
+                   , bytestring
+
+executable goog_clean
+    main-is:         GoogClean.hs
+    hs-source-dirs:  src
+    build-depends:   base >= 4
+                   , bytestring
                    , text
-                   , unicode-properties
+
+executable goog_merge
+    main-is:         GoogMerge.hs
+    hs-source-dirs:  src
+    build-depends:   base >= 4
+                   , bytestring

@@ -1,3 +1,5 @@
+module Main where
+
 #include <h>
 
 import Text.HTML.TagSoup

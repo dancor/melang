@@ -1,7 +1,7 @@
 #include <h>
 
 procLine :: String -> [Int]
-procLine l = 
+procLine l =
     map (read . (:[])) $ filter isDigit pinyin
   where
     pinyin = words l !! 1
@@ -13,9 +13,9 @@ main = do
     let tonesSeen = concatMap procLine ls
         numTones = length tonesSeen
     putStrLn .
-        intercalate "\t" . 
+        intercalate "\t" .
         map (\ (k, v) -> show k ++ ": " ++ show v ++ "%") .
-        M.toList . 
-        --M.map (\ x -> showFFloat (Just 3) x "") . 
+        M.toList .
+        --M.map (\ x -> showFFloat (Just 3) x "") .
         M.map (\ x -> x * 100 `div` numTones) .
         M.fromListWith (+) $ zip tonesSeen (repeat 1)
