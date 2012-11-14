@@ -130,7 +130,7 @@ main = do
         zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest]) [1..] .
         map (myShow (sum $ map (snd . snd) topFlatSyllables)) $
         take 10 topFlatSyllables
-    putStrLn "\nTone Occurences:"
+    putStrLn "\nTone Occurrences:"
     DTIO.putStr . DT.unlines . 
         zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest]) [1..] .
         map (myShow (sum $ map (snd . snd) topTones)) $
