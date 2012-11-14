@@ -1,3 +1,0 @@
-#!/bin/sh
-mkdir -p bin obj
-ghc -cpp -isrc --make src/GoogRecent.hs -o bin/GoogRecent -odir obj -hidir obj -O2 "$@"

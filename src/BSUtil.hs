@@ -26,3 +26,10 @@ bsInteractLErr ::
 bsInteractLErr f = do
     ls <- f . map bslToBs . BSLC.lines <$> BSL.getContents
     mapM_ (either (BSC.hPutStrLn stderr) BSC.putStrLn) ls
+
+bsInteractLErrIO ::
+    ([BS.ByteString] -> IO [Either BS.ByteString BS.ByteString]) ->
+    IO ()
+bsInteractLErrIO f = do
+    ls <- f =<< map bslToBs . BSLC.lines <$> BSL.getContents
+    mapM_ (either (BSC.hPutStrLn stderr) BSC.putStrLn) ls

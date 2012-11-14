@@ -10,15 +10,9 @@ cabal-version: >= 1.2
 flag wlk
     default: False
 
-flag text_ch_freq
-    default: False
-
-flag goog_recent
-    default: False
-
 executable wlk
-    if flag(wlk)
-        buildable: True
+    if !flag(wlk)
+        buildable: False
     main-is:         WLk.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
@@ -26,9 +20,12 @@ executable wlk
                    , filepath
                    , haskeline
 
+flag text_ch_freq
+    default: False
+
 executable text_ch_freq
-    if flag(text_ch_freq)
-        buildable: True
+    if !flag(text_ch_freq)
+        buildable: False
     main-is:         TextChFreq.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
@@ -37,35 +34,82 @@ executable text_ch_freq
                    , haskeline
                    , mtl
 
+flag goog_recent
+    default: False
+
 executable goog_recent
-    if flag(goog_recent)
-        buildable: True
+    if !flag(goog_recent)
+        buildable: False
     main-is:         GoogRecent.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
 
+flag utf8_check
+    default: False
+
 executable utf8_check
+    if !flag(utf8_check)
+        buildable: False
     main-is:         Utf8Check.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
 
+flag goog_results_to_ppm
+    default: False
+
 executable goog_results_to_ppm
+    if !flag(goog_results_to_ppm)
+        buildable: False
     main-is:         GoogResultsToPpm.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
 
+flag goog_clean
+    default: False
+
 executable goog_clean
+    if !flag(goog_clean)
+        buildable: False
     main-is:         GoogClean.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
                    , text
 
+flag goog_merge
+    default: False
+
 executable goog_merge
+    if !flag(goog_merge)
+        buildable: False
     main-is:         GoogMerge.hs
+    hs-source-dirs:  src
+    build-depends:   base >= 4
+                   , bytestring
+
+flag wikt_to_defs
+    default: False
+
+executable wikt_to_defs
+    if !flag(wikt_to_defs)
+        buildable: False
+    main-is:         WiktToDefs.hs
+    hs-source-dirs:  src
+    build-depends:   base >= 4
+                   , bytestring
+                   , tagsoup
+                   , text
+
+flag goog_defs
+    default: False
+
+executable goog_defs
+    if !flag(goog_defs)
+        buildable: False
+    main-is:         GoogDefs.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring

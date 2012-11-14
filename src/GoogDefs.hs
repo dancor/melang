@@ -1,44 +1,61 @@
-import Data.Char.Properties.GeneralCategory
+{-# LANGUAGE OverloadedStrings #-}
+
+import Control.Arrow
+import Control.Applicative
+import qualified Data.ByteString as BS
+import qualified Data.ByteString.Char8 as BSC
+import Data.Char
+import qualified Data.Map as M
+import Data.Maybe
 import qualified Data.Text as DT
 import qualified Data.Text.Encoding as DTE
+import qualified Data.Text.IO as DTIO
+import System.FilePath
 
-wikiByLangDir = "/mnt/unenc/wiktionary/by_lang"
+import BSUtil
 
-outFile = "/home/danl/p/l/melang/out/gbRec/defs"
+-- Need to regenerate this (where is the code for that?)
+--wiktByLangDir = "/home/danl/p/l/melang/data/wikt/???"
 
-data FreqLine = FreqLine {
-  fWd :: DT.Text,
-  fOccurs :: Int
-  } deriving Show
+freqFile = "/home/danl/p/l/melang/data/ngrams/20120701/cmn/out/1980"
 
-data DictLine = DictLine {
-  dWd :: DT.Text,
-  dType :: DT.Text,
-  dDef :: DT.Text
-  } deriving Show
+cedictFile = "/home/danl/l/l/z/cedict/dict"
 
-data CedictLine = CedictLine {
-  cTrad :: DT.Text,
-  cSimp :: DT.Text,
-  cDef :: DT.Text
-  } deriving Show
+outFile = "/home/danl/p/l/melang/data/cmn/gbRec/defs.20120701"
 
-bsReadPosInt :: BS.ByteString -> Int
-bsReadPosInt =
-  foldl1 ((+) . (10 *)) . map ((subtract $ ord '0') . fromIntegral) .
-  BS.unpack
+--type MyStr = BS.ByteString
+type MyStr = DT.Text
 
-tailOrDie e a = if BS.null a then error e else BS.tail a
+data FreqLine = FreqLine
+    { fFreqRank       :: Int
+    , fFreqPerMillion :: MyStr
+    , fWd             :: MyStr
+    , fPartOfSpeech   :: MyStr
+    } deriving Show
+
+{-
+data DictLine = DictLine
+    { dWd   :: MyStr
+    , dType :: MyStr
+    , dDef  :: MyStr
+    } deriving Show
+-}
+
+data CedictLine = CedictLine
+    { cTrad :: MyStr
+    , cSimp :: MyStr
+    , cDef  :: MyStr
+    } deriving Show
 
 parseFreqLine :: Int -> BS.ByteString -> FreqLine
-parseFreqLine n s =
-  FreqLine (DTE.decodeUtf8 a) (bsReadPosInt b)
+parseFreqLine n str =
+    --FreqLine n a b c
+    FreqLine n (DTE.decodeUtf8 a) (DTE.decodeUtf8 b) (DTE.decodeUtf8 c)
   where
-  (a, s2) = lol s
-  (b, _) = BS.breakByte 9 s2
-  lol = second (tailOrDie eMsg) . BS.breakByte 9
-  eMsg = "parse error line " ++ show n
+    (a, bAndC) = breakTab str
+    (b, c) = second BS.tail $ BS.breakByte (fromIntegral $ ord '_') bAndC
 
+{-
 parseDictLine :: Int -> BS.ByteString -> DictLine
 parseDictLine n s =
   DictLine (DTE.decodeUtf8 wd) (DTE.decodeUtf8 typ) (DTE.decodeUtf8 $ dMod def)
@@ -49,17 +66,16 @@ parseDictLine n s =
   lol = second (tailOrDie eMsg) . BS.breakByte 9
   eMsg = "parse error line " ++ show n
   dMod d = if BSC.pack "# " `BS.isPrefixOf` d then BS.drop 2 d else d
-
-byteSp = fromIntegral $ ord ' '
+-}
 
 parseCedictLine :: Int -> BS.ByteString -> CedictLine
-parseCedictLine n s =
+parseCedictLine n str =
+  --CedictLine trad simp def
   CedictLine (DTE.decodeUtf8 trad) (DTE.decodeUtf8 simp) (DTE.decodeUtf8 def)
   where
-  (trad, s2) = lol s
-  (simp, def) = lol s2
-  lol = second (tailOrDie eMsg) . BS.breakByte byteSp
-  eMsg = "parse error line " ++ show n
+  (trad, simpAndDef) = doSplit str
+  (simp, def) = doSplit simpAndDef
+  doSplit = second BS.tail . BS.breakByte (fromIntegral $ ord ' ')
 
 sndSeq (a, b) = (,) a <$> b
 
@@ -85,35 +101,74 @@ defCleanUp x =
     then DT.drop 3 . DT.dropWhile (/= '}') $ DT.drop 2 x
     else x
 
+{-
+defToPinyin :: DT.Text -> DT.Text
+defToPinyin def = if DT.null def || DT.head def /= '[' then "" else
+    DT.takeWhile (/= ']') $ DT.drop 1 def
+
+defToPinyinMap :: DT.Text -> M.Map DT.Text Int
+defToPinyinMap =
+    M.fromListWith (+) . map (\ x -> (x, 1)) . DT.words .
+    DT.toLower . defToPinyin
+-}
+
 main :: IO ()
 main = do
-  freqLs <- zipWith parseFreqLine [1..] . BSC.lines <$>
-    BS.readFile "/home/danl/p/l/melang/out/gbRec/freq"
-  dict0Ls <- zipWith parseCedictLine [1..] .
-    filter ((/= '#') . BSC.head) . BSC.lines <$>
-    BS.readFile "/home/danl/l/l/z/cedict/dict"
+    freqLs <- zipWith parseFreqLine [1..] . BSC.lines <$>
+        BS.readFile freqFile
+    cedictLs <- zipWith parseCedictLine [1..] .
+        filter ((/= '#') . BSC.head) . BSC.lines <$>
+        BS.readFile cedictFile
+    let wdToDefMap = M.map (map defCleanUp) .
+            M.fromListWith (++) $
+            map (\ x -> (cSimp x, [cDef x])) cedictLs
+        freqAndDef = catMaybes $
+            map (\ x -> (,) x <$> M.lookup (fWd x) wdToDefMap) freqLs
+        makePretty (FreqLine rank perM wd pos, defs) =
+            DT.intercalate "\t" [ DT.pack $ show rank, perM, wd, pos
+                                , DT.intercalate "; " defs
+                                ]
+    DTIO.writeFile outFile . DT.unlines $ map makePretty freqAndDef
+    {-
+    -- Tone Incidences.
+    let m1 = M.map (\ x -> (x, 0)) .
+            M.unionsWith (+) . concatMap (map defToPinyinMap . snd) $
+            take 1000 freqAndDef
+        m2 = M.map (\ x -> (0, x)) .
+            M.unionsWith (+) . concatMap (map defToPinyinMap . snd) $
+            take 10000 freqAndDef
+    putStr . unlines . map show . M.toList $
+        M.unionWith (\ (a1, b1) (a2, b2) -> (a1 + a2, b1 + b2)) m1 m2
+    -}
+{-
+  {-
   dict1Ls <-
     filter (not . (DT.pack "{{defn" `DT.isPrefixOf`) . dDef) .
     zipWith parseDictLine [1..] . BSC.lines <$>
-    BS.readFile (wikiByLangDir </> "Mandarin")
+    BS.readFile (wiktByLangDir </> "Mandarin")
   dict2Ls <- zipWith parseDictLine [1..] . BSC.lines <$>
-    BS.readFile (wikiByLangDir </> "Translingual")
-  let
+    BS.readFile (wiktByLangDir </> "Translingual")
+  -}
+    {-
     freqSet = S.fromList $ map fWd freqLs
-    tradWds = S.fromList .
-      map cTrad $ filter (\ l -> cTrad l /= cSimp l) dict0Ls
+    tradWdsSet = S.fromList .
+      map cTrad $ filter (\ l -> cTrad l /= cSimp l) cedictLs
+    -}
 
+    {-
     --joinManAndTrans = M.differenceWith ((Just .) . (++))
     joinManAndTrans = M.unionWith (++)
     --joinManAndTrans = M.union
 
     joinWiktAndCe = M.unionWith (++)
+    -}
 
     --dTypeDef d = dType d `DT.append` DT.pack ": " `DT.append` (dDef d)
     dTypeDef d = defCleanUp $ dDef d
 
     --dTypeDef d = (dType d, dDef d)
     defs =
+      {-
       (
       M.fromListWith (++) (map (\ d -> (dWd d, [dTypeDef d])) $ dict1Ls)
       `joinManAndTrans`
@@ -121,7 +176,8 @@ main = do
         reverse dict2Ls)
       )
       `joinWiktAndCe`
-      M.fromListWith (++) (map (\ d -> (cSimp d, [cDef d])) $ reverse dict0Ls)
+      -}
+      M.fromListWith (++) (map (\ d -> (cSimp d, [cDef d])) $ reverse cedictLs)
     res1 = (catMaybes . map (\ x -> sndSeq (x, flip M.lookup defs x)) .
       filter (`S.notMember` tradWds) . map fWd) freqLs
     res2 = M.toList (M.filterWithKey
@@ -136,3 +192,4 @@ main = do
     (\ (w, d) -> DTE.encodeUtf8 w `BS.append` BSC.cons '\t'
       (DTE.encodeUtf8 $ DT.intercalate (DT.pack "; ") $ nub d))
     res
+-}

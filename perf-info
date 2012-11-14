@@ -1,5 +1,0 @@
-googRecent:
-7M lines tab delimited data
-String + parsec: 2:55
-Data.Text + same parsec: 1:21
-Data.Text + bytestring parsec: 1:05

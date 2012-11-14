@@ -1,3 +1,0 @@
-#!/bin/sh
-mkdir -p bin obj
-ghc -cpp -isrc --make src/GoogMem.hs -o bin/GoogMem -odir obj -hidir obj -O2 "$@"

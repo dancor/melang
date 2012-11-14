@@ -1,74 +1,91 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Main where
 
-#include <h>
-
+import Control.Applicative
+import Control.Arrow
+import qualified Data.ByteString as BS
+import qualified Data.ByteString.Char8 as BSC
+import Data.Char
+import Data.List
+import Data.Maybe
+import qualified Data.Text as DT
+import qualified Data.Text.Encoding as DTE
+import System.Environment
 import Text.HTML.TagSoup
-import qualified Data.Text.Lazy.Encoding as DTLE
 
-type Strn = BSL.ByteString
-type StrS = BS.ByteString
+import BSUtil
 
-titleLinePrefix :: Strn
+type Str = BS.ByteString
+
+titleLinePrefix :: Str
 titleLinePrefix = "    <title>"
 
-targetLanguageTag :: Strn
-targetLanguageTag = "==Mandarin=="
+goodPartsOfSpeech :: [Str]
+goodPartsOfSpeech = map (BSC.pack . filter isLetter)
+    [ "Adjective"
+    , "Adverb"
+    -- , "Article"
+    , "Conjunction"
+    -- , "Idiom"
+    -- , "Interjection"
+    -- , "Measure word" -- this actually gives the MW for a noun def
+    , "Noun"
+    -- , "Particle"
+    -- , "Phrase"
+    -- , "Place word"
+    , "Preposition"
+    -- , "Prefix"
+    , "Postposition"
+    , "Pronoun"
+    -- , "Proverb"
+    -- , "Suffix"
+    , "Verb"
+    ]
 
-goodPartsOfSpeech :: [String]
-goodPartsOfSpeech = map (filter isLetter) [
-  "Adjective",
-  "Adverb",
-  -- "Article",
-  "Conjunction",
-  -- "Idiom",
-  -- "Interjection",
-  -- "Measure word", -- this actually gives the MW for a noun def
-  "Noun",
-  -- "Particle",
-  -- "Phrase",
-  -- "Place word",
-  "Preposition",
-  -- "Prefix",
-  -- "Postposition",
-  "Pronoun",
-  -- "Proverb",
-  -- "Suffix",
-  "Verb"]
+dropUntil :: (a -> Bool) -> [a] -> [a]
+dropUntil f = dropWhile (not . f)
 
-findLangHeading =
-  drop 1 .
-  dropWhile (not . (\ l -> BSLC.isPrefixOf targetLanguageTag l ||
-    BSLC.isPrefixOf ("      <text xml:space=\"preserve\">" `BSLC.append`
-      targetLanguageTag) l))
+findLangHeading :: Str -> [Str] -> [Str]
+findLangHeading targetLanguageTag = drop 1 . dropUntil (\ l ->
+    BSC.isPrefixOf targetLanguageTag l ||
+    BSC.isPrefixOf ("      <text xml:space=\"preserve\">" `BSC.append`
+        targetLanguageTag) l
+    )
 
-processPage ls =
-  if null content || all isAlpha (BSLC.unpack title)
-    then Nothing
-    else Just (title, content)
+processPage :: Str -> [Str] -> Maybe (Str, [Str])
+processPage targetLanguageTag ls =
+    if null content || all isAlpha (BSC.unpack title)
+        then Nothing
+        else Just (title, content)
   where
-  title = BSLC.takeWhile (/= '<') . BSLC.drop (BSLC.length titleLinePrefix) $
-    head ls
-  content =
-    takeWhile (not . (BSLC.isPrefixOf "----")) .
-    findLangHeading $
-    ls
+    title = BSC.takeWhile (/= '<') . BSC.drop (BSC.length titleLinePrefix) $
+        head ls
+    content =
+        takeWhile (not . (BSC.isPrefixOf "----")) $
+        findLangHeading targetLanguageTag ls
 
---showPage :: (StrS, [StrS]) -> (DT.Text, DT.Text)
---showPage :: (StrS, [StrS]) -> DT.Text
-showPage :: (StrS, [(StrS, [StrS])]) -> DT.Text
+showPage :: (Str, [(Str, [Str])]) -> Str
 showPage (title, parts) =
-  --(DTLE.decodeUtf8 title, DTLE.decodeUtf8 (BSLC.unlines content))
-  DTE.decodeUtf8 (BSC.unlines ("%$#@!":title:content))
+    BSC.unlines ("%$#@!":title:content)
   where
-  content = concatMap (\ (heading, xs) -> (heading `BSC.append` ":"): xs) parts
+    content =
+        concatMap (\ (heading, xs) -> (heading `BSC.append` ":"): xs) parts
 
-takeBetween :: BS.ByteString -> BS.ByteString -> BS.ByteString ->
-  BS.ByteString
+showPageSimple :: (Str, [Str]) -> Str
+showPageSimple (title, content) =
+    BSC.unlines ("%$#@!":title:content)
+
+takeBetween :: BS.ByteString
+            -> BS.ByteString
+            -> BS.ByteString
+            -> BS.ByteString
 takeBetween leftPart rightPart =
-  fst . BS.breakSubstring rightPart . BS.drop (BS.length leftPart) .
-  snd . BS.breakSubstring leftPart
+    fst . BS.breakSubstring rightPart . BS.drop (BS.length leftPart) .
+    snd . BS.breakSubstring leftPart
 
-pageGetGood :: (StrS, [StrS]) -> Dict
+{-
+pageGetGood :: (Str, [Str]) -> Dict
 pageGetGood (title, content) =
   if null goodParts
     then []
@@ -103,7 +120,9 @@ pageGetGood (title, content) =
           else Just $ DTE.decodeUtf8 l
 -}
   goodParts = catMaybes $ map procPart contentParts
+-}
 
+{-
 loadFreqInfo :: IO [(DT.Text, Int)]
 loadFreqInfo = do
   let
@@ -111,6 +130,7 @@ loadFreqInfo = do
     f [w, n] = (w, read $ DT.unpack n)
   map (f . DT.words) . DT.lines <$>
     DTI.readFile "/home/danl/p/l/melang/out/gbRec/freq"
+-}
 
 type Dict = [(DictWord, [(POS, RestOfEntry)])]
 type DictWord = DT.Text
@@ -119,26 +139,39 @@ type RestOfEntry = [DT.Text]
 
 choosePartOfSpeech :: DT.Text -> Dict -> [(DictWord, RestOfEntry)]
 choosePartOfSpeech partOfSpeech =
-  map (second (snd . head)) .
-  filter (not . null . snd) .
-  map (\ (title, parts) ->
-    (title, filter ((== partOfSpeech) . fst) parts))
+    map (second (snd . head)) .
+    filter (not . null . snd) .
+    map (\ (title, parts) ->
+        (title, filter ((== partOfSpeech) . fst) parts))
 
+{-
 loadDict :: IO Dict
 loadDict = do
-  concatMap pageGetGood <$> decodeFile "wiktionaryMandarin.bin"
+    concatMap pageGetGood <$> decodeFile "wiktionaryMandarin.bin"
+-}
 
 csvLine :: [DT.Text] -> DT.Text
 csvLine = DT.intercalate "," .
-  map (\ a -> "\"" `DT.append` DT.replace "\"" "\"\"" a `DT.append` "\"")
+    map (\ a -> "\"" `DT.append` DT.replace "\"" "\"\"" a `DT.append` "\"")
 
+procLines :: Str -> [Str] -> [Str]
+procLines targetLanguageTag =
+    map showPageSimple .
+    catMaybes . map (processPage targetLanguageTag) .
+    partitions (BSC.isPrefixOf titleLinePrefix)
+
+main :: IO ()
 main = do
-  {-
-  ls <- BSLC.lines <$> BSL.readFile (
-    "/home/danl/Downloads/enwiktionary-20120812-pages-articles.xml")
+    [lang] <- getArgs
+    let targetLanguageTag = BSC.pack . ("==" ++) . (++ "==") $
+            case lang of
+                "cmn" -> "Mandarin"
+                "spa" -> "Spanish"
+                a -> a
+    bsInteractLErr $ map Right . procLines targetLanguageTag
+{-
+{-
   let
-    pages = catMaybes . map processPage $
-      partitions (BSLC.isPrefixOf titleLinePrefix) ls
   --encodeFile "wiktionaryMandarin.bin" $ map showPage pages
   encodeFile "wiktionaryMandarin.bin" pages
   -}
@@ -178,3 +211,4 @@ main = do
   --print $ length $ choosePartOfSpeech "Noun" dict
 
   --DTI.putStr . DT.unlines . map showPage $ goodPages
+-}
