@@ -5,8 +5,10 @@ import Control.Applicative
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Char8 as BSC
 import Data.Char
+import Data.List
 import qualified Data.Map as M
 import Data.Maybe
+import Data.Ord
 import qualified Data.Text as DT
 import qualified Data.Text.Encoding as DTE
 import qualified Data.Text.IO as DTIO
@@ -101,17 +103,6 @@ defCleanUp x =
     then DT.drop 3 . DT.dropWhile (/= '}') $ DT.drop 2 x
     else x
 
-{-
-defToPinyin :: DT.Text -> DT.Text
-defToPinyin def = if DT.null def || DT.head def /= '[' then "" else
-    DT.takeWhile (/= ']') $ DT.drop 1 def
-
-defToPinyinMap :: DT.Text -> M.Map DT.Text Int
-defToPinyinMap =
-    M.fromListWith (+) . map (\ x -> (x, 1)) . DT.words .
-    DT.toLower . defToPinyin
--}
-
 main :: IO ()
 main = do
     freqLs <- zipWith parseFreqLine [1..] . BSC.lines <$>
@@ -129,17 +120,7 @@ main = do
                                 , DT.intercalate "; " defs
                                 ]
     DTIO.writeFile outFile . DT.unlines $ map makePretty freqAndDef
-    {-
-    -- Tone Incidences.
-    let m1 = M.map (\ x -> (x, 0)) .
-            M.unionsWith (+) . concatMap (map defToPinyinMap . snd) $
-            take 1000 freqAndDef
-        m2 = M.map (\ x -> (0, x)) .
-            M.unionsWith (+) . concatMap (map defToPinyinMap . snd) $
-            take 10000 freqAndDef
-    putStr . unlines . map show . M.toList $
-        M.unionWith (\ (a1, b1) (a2, b2) -> (a1 + a2, b1 + b2)) m1 m2
-    -}
+
 {-
   {-
   dict1Ls <-

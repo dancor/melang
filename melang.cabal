@@ -113,3 +113,14 @@ executable goog_defs
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
+
+flag pinyin_syllable_freq
+    default: False
+
+executable pinyin_syllable_freq
+    if !flag(pinyin_syllable_freq)
+        buildable: False
+    main-is:         PinyinSyllableFreq.hs
+    hs-source-dirs:  src
+    build-depends:   base >= 4
+                   , bytestring
