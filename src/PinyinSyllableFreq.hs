@@ -65,7 +65,7 @@ main = do
     let wdToDefsMap = M.map (map defCleanUp) .
             M.fromListWith (++) $
             map (\ x -> (cSimp x, [cDef x])) cedictLs
-        freqAndDefsList = take 50000 . catMaybes $
+        freqAndDefsList = drop 100 . take 50000 . catMaybes $
             map (\ x -> (,) x <$> M.lookup (fWd x) wdToDefsMap) freqLs
         _makePretty (FreqLine rank perM wd pos, defs) =
             DT.intercalate "\t" [ DT.pack $ show rank, DT.pack $ show perM
@@ -98,6 +98,8 @@ main = do
                 5 -> Just "he2"
                 -- Doesn't change the results.
                 -- 11 -> Just "zhong1"
+                103 -> Just "yu3"
+                131 -> Just "jian1"
                 _ -> Nothing
     let flatSyllableToFreqDefCountMap = 
             M.mapKeysWith earlyFreqDefSumCount (DT.takeWhile (not . isDigit))
@@ -120,7 +122,7 @@ main = do
                 , syllable, ":\tWord #", DT.pack . show $ fRank freq, ": "
                 , DT.intercalate "; " defs
                 ]
-    putStrLn "Of the 50k most common Mandarin words in Google Books since 1980 and defined in CEDICT, weighted by word frequency:\n"
+    putStrLn "Of the 50k most common Mandarin words (ignoring the top 100) in Google Books since 1980 and defined in CEDICT, weighted by word frequency:\n"
     putStrLn "Top 10 Syllables:"
     DTIO.putStr . DT.unlines . 
         zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest]) [1..] .
