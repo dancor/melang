@@ -95,6 +95,7 @@ main = do
             onlyKeepOneDef = case fRank freq of
                 1 -> Just "de5"
                 4 -> Just "le5"
+                5 -> Just "he2"
                 -- Doesn't change the results.
                 -- 11 -> Just "zhong1"
                 _ -> Nothing
