@@ -17,21 +17,6 @@ import BSUtil
 import LangCmn
 import SigFig
 
-parseFreqLine :: Int -> BS.ByteString -> FreqLine
-parseFreqLine n str =
-    FreqLine n (DTE.decodeUtf8 a) (DTE.decodeUtf8 b) (DTE.decodeUtf8 c)
-  where
-    (a, bAndC) = breakTab str
-    (b, c) = second BS.tail $ BS.breakByte (fromIntegral $ ord '_') bAndC
-
-parseCedictLine :: Int -> BS.ByteString -> CedictLine
-parseCedictLine _n str =
-    CedictLine (DTE.decodeUtf8 trad) (DTE.decodeUtf8 simp) (DTE.decodeUtf8 def)
-  where
-    (trad, simpAndDef) = doSplit str
-    (simp, def) = doSplit simpAndDef
-    doSplit = second BS.tail . BS.breakByte (fromIntegral $ ord ' ')
-
 killBrackets :: DT.Text -> DT.Text
 killBrackets x =
     if DT.null r
@@ -63,8 +48,12 @@ defGetSyllableMap =
     M.fromListWith (+) . map (\ x -> (x, 1)) . DT.words .
     DT.toLower . defGetPinyin
 
-defsGetSyllableMap :: [DT.Text] -> M.Map DT.Text Int
-defsGetSyllableMap = M.unionsWith (+) . map defGetSyllableMap
+-- Assume each definition is equally likely.  We don't have the needed
+-- information to weight them by actual incidence.
+defsGetSyllableMap :: [DT.Text] -> M.Map DT.Text Float
+defsGetSyllableMap defs =
+    M.map ((/ fromIntegral (length defs)) . fromIntegral) .
+    M.unionsWith (+) $ map defGetSyllableMap defs
 
 main :: IO ()
 main = do
@@ -79,8 +68,8 @@ main = do
         freqAndDefsList = take 50000 . catMaybes $
             map (\ x -> (,) x <$> M.lookup (fWd x) wdToDefsMap) freqLs
         _makePretty (FreqLine rank perM wd pos, defs) =
-            DT.intercalate "\t" [ DT.pack $ show rank, perM, wd, pos
-                                , DT.intercalate "; " defs
+            DT.intercalate "\t" [ DT.pack $ show rank, DT.pack $ show perM
+                                , wd, pos, DT.intercalate "; " defs
                                 ]
     let syllableToFreqDefCountMap = 
             M.unionsWith earlyFreqDefSumCount $
@@ -94,9 +83,19 @@ main = do
             )
         freqDefsGetSyllableMap
             :: (FreqLine, [DT.Text])
-            -> M.Map DT.Text ((FreqLine, [DT.Text]), Int)
+            -> M.Map DT.Text ((FreqLine, [DT.Text]), Float)
         freqDefsGetSyllableMap (freq, defs) = 
-            M.map ((,) (freq, defs)) $ defsGetSyllableMap defs
+            M.map (\ num -> ((freq, defs'), num * fNumPerMillion freq)) $
+            defsGetSyllableMap defs'
+          where
+            defs' = case onlyKeepOneDef of
+                Nothing -> defs
+                Just pinyin ->
+                    filter (DT.concat ["[", pinyin, "]"] `DT.isPrefixOf`) defs
+            onlyKeepOneDef = case fRank freq of
+                1 -> Just "de5"
+                4 -> Just "le5"
+                _ -> Nothing
     let flatSyllableToFreqDefCountMap = 
             M.mapKeysWith earlyFreqDefSumCount (DT.takeWhile (not . isDigit))
             syllableToFreqDefCountMap
@@ -114,12 +113,11 @@ main = do
             M.toList toneToFreqDefCountMap
     let myShow total (syllable, ((freq, defs), count)) = 
             DT.concat $
-                [ DT.pack . sigFig 2 $
-                  100 * fromIntegral count / fromIntegral total, "% "
+                [ DT.pack . sigFig 2 $ 100 * count / total, "% "
                 , syllable, ":\tWord #", DT.pack . show $ fRank freq, ": "
                 , DT.intercalate "; " defs
                 ]
-    putStrLn "Of the 50k most common Mandarin words in Google Books since 1980 and defined in CEDICT:\n"
+    putStrLn "Of the 50k most common Mandarin words in Google Books since 1980 and defined in CEDICT, weighted by word frequency:\n"
     putStrLn "Top 10 Syllables:"
     DTIO.putStr . DT.unlines . 
         zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest]) [1..] .
