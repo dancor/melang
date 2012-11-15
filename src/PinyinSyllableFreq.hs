@@ -119,7 +119,7 @@ main = do
                 , syllable, ":\tWord #", DT.pack . show $ fRank freq, ": "
                 , DT.intercalate "; " defs
                 ]
-    putStrLn "Of the 50k most common Mandarin words in Google Books and defined in CEDICT:\n"
+    putStrLn "Of the 50k most common Mandarin words in Google Books since 1980 and defined in CEDICT:\n"
     putStrLn "Top 10 Syllables:"
     DTIO.putStr . DT.unlines . 
         zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest]) [1..] .
