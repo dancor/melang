@@ -95,6 +95,8 @@ main = do
             onlyKeepOneDef = case fRank freq of
                 1 -> Just "de5"
                 4 -> Just "le5"
+                -- Doesn't change the results.
+                -- 11 -> Just "zhong1"
                 _ -> Nothing
     let flatSyllableToFreqDefCountMap = 
             M.mapKeysWith earlyFreqDefSumCount (DT.takeWhile (not . isDigit))
