@@ -65,7 +65,7 @@ main = do
     let wdToDefsMap = M.map (map defCleanUp) .
             M.fromListWith (++) $
             map (\ x -> (cSimp x, [cDef x])) cedictLs
-        freqAndDefsList = drop 100 . take 50000 . catMaybes $
+        freqAndDefsList = drop 100 . take 20000 . catMaybes $
             map (\ x -> (,) x <$> M.lookup (fWd x) wdToDefsMap) freqLs
         _makePretty (FreqLine rank perM wd pos, defs) =
             DT.intercalate "\t" [ DT.pack $ show rank, DT.pack $ show perM

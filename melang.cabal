@@ -124,3 +124,14 @@ executable pinyin_syllable_freq
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
+
+flag book_hard_words
+    default: False
+
+executable book_hard_words
+    if !flag(book_hard_words)
+        buildable: False
+    main-is:         book_hard_words.hs
+    hs-source-dirs:  src
+    build-depends:   base >= 4
+                   , bytestring
