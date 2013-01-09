@@ -1,7 +1,8 @@
 module NGrams where
 
+import Control.Applicative
 import qualified Data.ByteString as BS
-import qualified Data.ByteString.Char as BSC
+import qualified Data.ByteString.Char8 as BSC
 
 data NGram = NGram
     { ngFreq :: Double
@@ -10,7 +11,7 @@ data NGram = NGram
     }
 
 readNGrams :: FilePath -> IO [NGram]
-readNGrams f = map readNGramLine . BS.lines <$> BS.readFile f
+readNGrams f = map readNGramLine . BSC.lines <$> BS.readFile f
 
 readNGramLine :: BS.ByteString -> NGram
 readNGramLine l = NGram (read $ BSC.unpack freqS) word partOfSpeech

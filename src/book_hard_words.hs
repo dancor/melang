@@ -1,6 +1,11 @@
+import Control.Applicative
+import Data.Char
+import Data.List
 import qualified Data.ByteString as BS
-import qualified Data.ByteString.Char as BSC
+import qualified Data.ByteString.Char8 as BSC
 import qualified Data.Map as M
+
+import NGrams
 
 getWords :: BS.ByteString -> [BS.ByteString]
 getWords =
