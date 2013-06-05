@@ -135,3 +135,15 @@ executable book_hard_words
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
+
+flag zz
+    default: False
+
+executable zz
+    if !flag(zz)
+        buildable: False
+    main-is:         MainZSentToWds.hs
+    hs-source-dirs:  src
+    build-depends:
+        base
+      , deepseq
