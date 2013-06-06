@@ -71,11 +71,11 @@ main = do
             DT.intercalate "\t" [ DT.pack $ show rank, DT.pack $ show perM
                                 , wd, pos, DT.intercalate "; " defs
                                 ]
-    let syllableToFreqDefCountMap = 
+    let syllableToFreqDefCountMap =
             M.unionsWith earlyFreqDefSumCount $
             map freqDefsGetSyllableMap freqAndDefsList
         earlyFreqDefSumCount (freqDef1, n1) (freqDef2, n2) =
-            ( if fRank (fst freqDef1) <= 
+            ( if fRank (fst freqDef1) <=
                  fRank (fst freqDef2)
                   then freqDef1
                   else freqDef2
@@ -84,7 +84,7 @@ main = do
         freqDefsGetSyllableMap
             :: (FreqLine, [DT.Text])
             -> M.Map DT.Text ((FreqLine, [DT.Text]), Float)
-        freqDefsGetSyllableMap (freq, defs) = 
+        freqDefsGetSyllableMap (freq, defs) =
             M.map (\ num -> ((freq, defs'), num * fNumPerMillion freq)) $
             defsGetSyllableMap defs'
           where
@@ -101,10 +101,10 @@ main = do
                 103 -> Just "yu3"
                 131 -> Just "jian1"
                 _ -> Nothing
-    let flatSyllableToFreqDefCountMap = 
+    let flatSyllableToFreqDefCountMap =
             M.mapKeysWith earlyFreqDefSumCount (DT.takeWhile (not . isDigit))
             syllableToFreqDefCountMap
-        toneToFreqDefCountMap = 
+        toneToFreqDefCountMap =
             M.mapKeysWith earlyFreqDefSumCount (DT.dropWhile (not . isDigit))
             syllableToFreqDefCountMap
     let topSyllables =
@@ -113,10 +113,10 @@ main = do
         topFlatSyllables =
             reverse . sortBy (comparing (snd . snd)) $
             M.toList flatSyllableToFreqDefCountMap
-        topTones = 
+        topTones =
             reverse . sortBy (comparing (snd . snd)) $
             M.toList toneToFreqDefCountMap
-    let myShow total (syllable, ((freq, defs), count)) = 
+    let myShow total (syllable, ((freq, defs), count)) =
             DT.concat $
                 [ DT.pack . sigFig 2 $ 100 * count / total, "% "
                 , syllable, ":\tWord #", DT.pack . show $ fRank freq, ": "
@@ -124,17 +124,17 @@ main = do
                 ]
     putStrLn "Of the 50k most common Mandarin words (ignoring the top 100) in Google Books since 1980 and defined in CEDICT, weighted by word frequency:\n"
     putStrLn "Top 10 Syllables:"
-    DTIO.putStr . DT.unlines . 
+    DTIO.putStr . DT.unlines .
         zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest]) [1..] .
         map (myShow (sum $ map (snd . snd) topSyllables)) $
         take 10 topSyllables
     putStrLn "\nTop 10 Syllables Ignoring Tone:"
-    DTIO.putStr . DT.unlines . 
+    DTIO.putStr . DT.unlines .
         zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest]) [1..] .
         map (myShow (sum $ map (snd . snd) topFlatSyllables)) $
         take 10 topFlatSyllables
     putStrLn "\nTone Occurrences:"
-    DTIO.putStr . DT.unlines . 
+    DTIO.putStr . DT.unlines .
         zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest]) [1..] .
         map (myShow (sum $ map (snd . snd) topTones)) $
         topTones
