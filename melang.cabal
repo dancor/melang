@@ -6,6 +6,7 @@ author:        dan corson <danl@alum.mit.edu>
 synopsis:      lang study
 build-type:    Simple
 cabal-version: >= 1.2
+ghc-options:   -Wall
 
 flag wlk
     default: False
@@ -20,11 +21,11 @@ executable wlk
                    , filepath
                    , haskeline
 
-flag text_ch_freq
+flag text-ch-freq
     default: False
 
-executable text_ch_freq
-    if !flag(text_ch_freq)
+executable text-ch-freq
+    if !flag(text-ch-freq)
         buildable: False
     main-is:         TextChFreq.hs
     hs-source-dirs:  src
@@ -34,44 +35,44 @@ executable text_ch_freq
                    , haskeline
                    , mtl
 
-flag goog_recent
+flag goog-recent
     default: False
 
-executable goog_recent
-    if !flag(goog_recent)
+executable goog-recent
+    if !flag(goog-recent)
         buildable: False
     main-is:         GoogRecent.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
 
-flag utf8_check
+flag utf8-check
     default: False
 
-executable utf8_check
-    if !flag(utf8_check)
+executable utf8-check
+    if !flag(utf8-check)
         buildable: False
     main-is:         Utf8Check.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
 
-flag goog_results_to_ppm
+flag goog-results-to-ppm
     default: False
 
-executable goog_results_to_ppm
-    if !flag(goog_results_to_ppm)
+executable goog-results-to-ppm
+    if !flag(goog-results-to-ppm)
         buildable: False
     main-is:         GoogResultsToPpm.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
 
-flag goog_clean
+flag goog-clean
     default: False
 
-executable goog_clean
-    if !flag(goog_clean)
+executable goog-clean
+    if !flag(goog-clean)
         buildable: False
     main-is:         GoogClean.hs
     hs-source-dirs:  src
@@ -79,22 +80,22 @@ executable goog_clean
                    , bytestring
                    , text
 
-flag goog_merge
+flag goog-merge
     default: False
 
-executable goog_merge
-    if !flag(goog_merge)
+executable goog-merge
+    if !flag(goog-merge)
         buildable: False
     main-is:         GoogMerge.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
 
-flag wikt_to_defs
+flag wikt-to-defs
     default: False
 
-executable wikt_to_defs
-    if !flag(wikt_to_defs)
+executable wikt-to-defs
+    if !flag(wikt-to-defs)
         buildable: False
     main-is:         WiktToDefs.hs
     hs-source-dirs:  src
@@ -103,35 +104,35 @@ executable wikt_to_defs
                    , tagsoup
                    , text
 
-flag goog_defs
+flag goog-defs
     default: False
 
-executable goog_defs
-    if !flag(goog_defs)
+executable goog-defs
+    if !flag(goog-defs)
         buildable: False
     main-is:         GoogDefs.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
 
-flag pinyin_syllable_freq
+flag pinyin-syllable-freq
     default: False
 
-executable pinyin_syllable_freq
-    if !flag(pinyin_syllable_freq)
+executable pinyin-syllable-freq
+    if !flag(pinyin-syllable-freq)
         buildable: False
     main-is:         PinyinSyllableFreq.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
 
-flag book_hard_words
+flag book-hard-words
     default: False
 
-executable book_hard_words
-    if !flag(book_hard_words)
+executable book-hard-words
+    if !flag(book-hard-words)
         buildable: False
-    main-is:         book_hard_words.hs
+    main-is:         book-hard-words.hs
     hs-source-dirs:  src
     build-depends:   base >= 4
                    , bytestring
