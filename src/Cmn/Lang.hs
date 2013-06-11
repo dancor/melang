@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module LangCmn where
+module Cmn.Lang where
 
 import Control.Applicative
 import Control.Arrow
@@ -17,22 +17,7 @@ import qualified Data.Text.IO as DTI
 import qualified Data.Text.Encoding as DTE
 
 import BSUtil
-
--- Frequencies from books in Google Books published since 1980.
--- Line format:
---   freqPerMillionWords<tab>
---   simplifiedChineseWord_PartOfSpeechAbbr
-freqFile :: String
-freqFile = "/home/danl/p/l/melang/data/ngrams/20120701/cmn/out/1980"
-
--- CEDICT.
--- Line format:
---   traditionalChineseWord<space>
---   simplifiedChinsesWord<space>
---   [pinyinWithSpaces]<space>
---   /def1/def2/etc/
-cedictFile :: String
-cedictFile = "/home/danl/l/l/z/cedict/dict"
+import Cmn.Cedict
 
 -- "Word Info": Google Books words with CEDICT entries.
 -- Line format:
@@ -43,34 +28,6 @@ cedictFile = "/home/danl/l/l/z/cedict/dict"
 --   [pinyin1WithSpaces] /def1a/def1b/etc/; [pinyin2WithSpaces] /etc/
 wdInfoFile :: String
 wdInfoFile = "/home/danl/p/l/melang/data/cmn/gbRec/defs.20120701"
-
-data FreqLine = FreqLine
-    { fRank          :: !Int
-    , fNumPerMillion :: !Float
-    , fWd            :: !DT.Text
-    , fPartOfSpeech  :: !DT.Text
-    } deriving Show
-
-data CedictLine = CedictLine
-    { cTrad :: !DT.Text
-    , cSimp :: !DT.Text
-    , cDef  :: !DT.Text
-    } deriving Show
-
-parseFreqLine :: Int -> BS.ByteString -> FreqLine
-parseFreqLine n str =
-    FreqLine n (read $ BSC.unpack a) (DTE.decodeUtf8 b) (DTE.decodeUtf8 c)
-  where
-    (a, bAndC) = breakTab str
-    (b, c) = second BS.tail $ BS.breakByte (fromIntegral $ ord '_') bAndC
-
-parseCedictLine :: Int -> BS.ByteString -> CedictLine
-parseCedictLine _n str =
-    CedictLine (DTE.decodeUtf8 trad) (DTE.decodeUtf8 simp) (DTE.decodeUtf8 def)
-  where
-    (trad, simpAndDef) = doSplit str
-    (simp, def) = doSplit simpAndDef
-    doSplit = second BS.tail . BS.breakByte (fromIntegral $ ord ' ')
 
 type Wd = DT.Text
 

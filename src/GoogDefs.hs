@@ -15,47 +15,22 @@ import qualified Data.Text.IO as DTIO
 import System.FilePath
 
 import BSUtil
+import qualified Cmn.GoogBk1Grams as GB1
+import Cmn.Cedict
 
 -- Need to regenerate this (where is the code for that?)
 --wiktByLangDir = "/home/danl/p/l/melang/data/wikt/???"
 
-freqFile = "/home/danl/p/l/melang/data/ngrams/20120701/cmn/out/1980"
-
-cedictFile = "/home/danl/l/l/z/cedict/dict"
-
+outFile :: FilePath
 outFile = "/home/danl/p/l/melang/data/cmn/gbRec/defs.20120701"
-
---type MyStr = BS.ByteString
-type MyStr = DT.Text
-
-data FreqLine = FreqLine
-    { fFreqRank       :: Int
-    , fFreqPerMillion :: MyStr
-    , fWd             :: MyStr
-    , fPartOfSpeech   :: MyStr
-    } deriving Show
 
 {-
 data DictLine = DictLine
-    { dWd   :: MyStr
-    , dType :: MyStr
-    , dDef  :: MyStr
+    { dWd   :: DT.Text
+    , dType :: DT.Text
+    , dDef  :: DT.Text
     } deriving Show
 -}
-
-data CedictLine = CedictLine
-    { cTrad :: MyStr
-    , cSimp :: MyStr
-    , cDef  :: MyStr
-    } deriving Show
-
-parseFreqLine :: Int -> BS.ByteString -> FreqLine
-parseFreqLine n str =
-    --FreqLine n a b c
-    FreqLine n (DTE.decodeUtf8 a) (DTE.decodeUtf8 b) (DTE.decodeUtf8 c)
-  where
-    (a, bAndC) = breakTab str
-    (b, c) = second BS.tail $ BS.breakByte (fromIntegral $ ord '_') bAndC
 
 {-
 parseDictLine :: Int -> BS.ByteString -> DictLine
@@ -70,16 +45,7 @@ parseDictLine n s =
   dMod d = if BSC.pack "# " `BS.isPrefixOf` d then BS.drop 2 d else d
 -}
 
-parseCedictLine :: Int -> BS.ByteString -> CedictLine
-parseCedictLine n str =
-  --CedictLine trad simp def
-  CedictLine (DTE.decodeUtf8 trad) (DTE.decodeUtf8 simp) (DTE.decodeUtf8 def)
-  where
-  (trad, simpAndDef) = doSplit str
-  (simp, def) = doSplit simpAndDef
-  doSplit = second BS.tail . BS.breakByte (fromIntegral $ ord ' ')
-
-sndSeq (a, b) = (,) a <$> b
+-- sndSeq (a, b) = (,) a <$> b
 
 killBrackets :: DT.Text -> DT.Text
 killBrackets x =
@@ -105,8 +71,7 @@ defCleanUp x =
 
 main :: IO ()
 main = do
-    freqLs <- zipWith parseFreqLine [1..] . BSC.lines <$>
-        BS.readFile freqFile
+    gb1Ls <- GB1.load
     cedictLs <- zipWith parseCedictLine [1..] .
         filter ((/= '#') . BSC.head) . BSC.lines <$>
         BS.readFile cedictFile
@@ -114,11 +79,12 @@ main = do
             M.fromListWith (++) $
             map (\ x -> (cSimp x, [cDef x])) cedictLs
         freqAndDef = catMaybes $
-            map (\ x -> (,) x <$> M.lookup (fWd x) wdToDefMap) freqLs
-        makePretty (FreqLine rank perM wd pos, defs) =
-            DT.intercalate "\t" [ DT.pack $ show rank, perM, wd, pos
-                                , DT.intercalate "; " defs
-                                ]
+            map (\ x -> (,) x <$> M.lookup (GB1.wd x) wdToDefMap) gb1Ls
+        makePretty (GB1.Entry rank perM wd pos, defs) =
+            DT.intercalate "\t"
+            [ DT.pack $ show rank, DT.pack $ show perM, wd, pos
+            , DT.intercalate "; " defs
+            ]
     DTIO.writeFile outFile . DT.unlines $ map makePretty freqAndDef
 
 {-
@@ -131,7 +97,7 @@ main = do
     BS.readFile (wiktByLangDir </> "Translingual")
   -}
     {-
-    freqSet = S.fromList $ map fWd freqLs
+    freqSet = S.fromList $ map GB1.wd gb1Ls
     tradWdsSet = S.fromList .
       map cTrad $ filter (\ l -> cTrad l /= cSimp l) cedictLs
     -}
@@ -160,7 +126,7 @@ main = do
       -}
       M.fromListWith (++) (map (\ d -> (cSimp d, [cDef d])) $ reverse cedictLs)
     res1 = (catMaybes . map (\ x -> sndSeq (x, flip M.lookup defs x)) .
-      filter (`S.notMember` tradWds) . map fWd) freqLs
+      filter (`S.notMember` tradWds) . map GB1.wd) gb1Ls
     res2 = M.toList (M.filterWithKey
         (\ k v -> not $
           isAscii (DT.head k) ||

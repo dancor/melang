@@ -3,8 +3,8 @@ import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
 import System.Environment
 
-import CmnSentenceWords
-import LangCmn
+import Cmn.Lang
+import Cmn.SentenceWords
 
 mainLoop :: Map.Map Wd WdInfo -> IO ()
 mainLoop d = do

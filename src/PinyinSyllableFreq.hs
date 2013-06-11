@@ -1,6 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-import Control.Arrow
 import Control.Applicative
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Char8 as BSC
@@ -10,11 +9,10 @@ import qualified Data.Map as M
 import Data.Maybe
 import Data.Ord
 import qualified Data.Text as DT
-import qualified Data.Text.Encoding as DTE
-import qualified Data.Text.IO as DTIO
+import qualified Data.Text.IO as DTI
 
-import BSUtil
-import LangCmn
+import Cmn.Cedict
+import qualified Cmn.GoogBk1Grams as GB1
 import SigFig
 
 killBrackets :: DT.Text -> DT.Text
@@ -57,8 +55,7 @@ defsGetSyllableMap defs =
 
 main :: IO ()
 main = do
-    freqLs <- zipWith parseFreqLine [1..] . BSC.lines <$>
-        BS.readFile freqFile
+    gb1Ls <- GB1.load
     cedictLs <- zipWith parseCedictLine [1..] .
         filter ((/= '#') . BSC.head) . BSC.lines <$>
         BS.readFile cedictFile
@@ -66,8 +63,8 @@ main = do
             M.fromListWith (++) $
             map (\ x -> (cSimp x, [cDef x])) cedictLs
         freqAndDefsList = drop 100 . take 20000 . catMaybes $
-            map (\ x -> (,) x <$> M.lookup (fWd x) wdToDefsMap) freqLs
-        _makePretty (FreqLine rank perM wd pos, defs) =
+            map (\ x -> (,) x <$> M.lookup (GB1.wd x) wdToDefsMap) gb1Ls
+        _makePretty (GB1.Entry rank perM wd pos, defs) =
             DT.intercalate "\t" [ DT.pack $ show rank, DT.pack $ show perM
                                 , wd, pos, DT.intercalate "; " defs
                                 ]
@@ -75,24 +72,24 @@ main = do
             M.unionsWith earlyFreqDefSumCount $
             map freqDefsGetSyllableMap freqAndDefsList
         earlyFreqDefSumCount (freqDef1, n1) (freqDef2, n2) =
-            ( if fRank (fst freqDef1) <=
-                 fRank (fst freqDef2)
+            ( if GB1.rank (fst freqDef1) <=
+                 GB1.rank (fst freqDef2)
                   then freqDef1
                   else freqDef2
             , n1 + n2
             )
         freqDefsGetSyllableMap
-            :: (FreqLine, [DT.Text])
-            -> M.Map DT.Text ((FreqLine, [DT.Text]), Float)
+            :: (GB1.Entry, [DT.Text])
+            -> M.Map DT.Text ((GB1.Entry, [DT.Text]), Float)
         freqDefsGetSyllableMap (freq, defs) =
-            M.map (\ num -> ((freq, defs'), num * fNumPerMillion freq)) $
+            M.map (\ num -> ((freq, defs'), num * GB1.numPerMillion freq)) $
             defsGetSyllableMap defs'
           where
             defs' = case onlyKeepOneDef of
                 Nothing -> defs
                 Just pinyin ->
                     filter (DT.concat ["[", pinyin, "]"] `DT.isPrefixOf`) defs
-            onlyKeepOneDef = case fRank freq of
+            onlyKeepOneDef = case GB1.rank freq of
                 1 -> Just "de5"
                 4 -> Just "le5"
                 5 -> Just "he2"
@@ -119,22 +116,28 @@ main = do
     let myShow total (syllable, ((freq, defs), count)) =
             DT.concat $
                 [ DT.pack . sigFig 2 $ 100 * count / total, "% "
-                , syllable, ":\tWord #", DT.pack . show $ fRank freq, ": "
+                , syllable, ":\tWord #", DT.pack . show $ GB1.rank freq, ": "
                 , DT.intercalate "; " defs
                 ]
-    putStrLn "Of the 50k most common Mandarin words (ignoring the top 100) in Google Books since 1980 and defined in CEDICT, weighted by word frequency:\n"
+    putStrLn $
+        "Of the 50k most common Mandarin words (ignoring the top 100) " ++
+        "in Google Books since 1980 and defined in CEDICT, weighted by " ++
+        "word frequency:\n"
     putStrLn "Top 10 Syllables:"
-    DTIO.putStr . DT.unlines .
-        zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest]) [1..] .
+    DTI.putStr . DT.unlines .
+        zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest])
+        [1 :: Int ..] .
         map (myShow (sum $ map (snd . snd) topSyllables)) $
         take 10 topSyllables
     putStrLn "\nTop 10 Syllables Ignoring Tone:"
-    DTIO.putStr . DT.unlines .
-        zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest]) [1..] .
+    DTI.putStr . DT.unlines .
+        zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest])
+        [1 :: Int ..] .
         map (myShow (sum $ map (snd . snd) topFlatSyllables)) $
         take 10 topFlatSyllables
     putStrLn "\nTone Occurrences:"
-    DTIO.putStr . DT.unlines .
-        zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest]) [1..] .
+    DTI.putStr . DT.unlines .
+        zipWith (\ n rest -> DT.concat [DT.pack $ show n, ") ", rest])
+        [1 :: Int ..] .
         map (myShow (sum $ map (snd . snd) topTones)) $
         topTones

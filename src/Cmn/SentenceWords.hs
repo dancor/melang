@@ -2,7 +2,7 @@
 
 -- | Parsing Mandarin sentences and fragments into individual words.
 
-module CmnSentenceWords where
+module Cmn.SentenceWords where
 
 import Control.Applicative
 import Control.Arrow
@@ -15,7 +15,7 @@ import qualified Data.Map as Map
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
 
-import LangCmn
+import Cmn.Lang
 
 doGloss :: WdInfo -> DT.Text
 doGloss =
