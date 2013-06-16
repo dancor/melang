@@ -1,11 +1,13 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 import Control.Applicative
+import Control.Arrow
 import Control.Exception
 import Control.Monad
 import Data.Aeson
 import Data.Attoparsec
 import qualified Data.ByteString.Char8 as BS
+import Data.Char
 import qualified Data.HashMap.Strict as HMS
 import Data.List
 import Data.Maybe
@@ -13,6 +15,7 @@ import qualified Data.Tree as Rose
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
 import qualified Data.Vector as Vec
+-- import Debug.Trace
 import Prelude hiding (catch)
 import System.IO
 import System.IO.Error hiding (catch)
@@ -131,7 +134,7 @@ assembleDefLine :: Int -> HMS.HashMap DT.Text Value -> DefLine
 assembleDefLine _n m =
     DefLine
         (sPart "zh")
-        (sPart "key") $
+        (pyMakeAscii $ sPart "key") $
     trMbCoverZipWith8 DefNode
         (tPart "field")
         (tPart "speech_part")
@@ -332,6 +335,149 @@ coverZipWith f (x1:r1) l2 =
     coverZipWith f r1 r2
   where
     (x2, r2) = coverUncons l2
+
+pyMakeAscii :: DT.Text -> DT.Text
+pyMakeAscii =
+-- pyMakeAscii xx =
+    DT.pack . step0 . DT.unpack
+    -- Mysteriously present in the data with combining tone marks following:
+    . DT.replace "ạ" "a"
+    . DT.replace "ẹ" "e"
+    . DT.replace "ị" "i"
+    . DT.replace "ọ" "o"
+    . DT.replace "u\776" "ü"
+    . DT.replace "ụ" "u"
+    -- Why does "combining minus sign below" ever appear?
+    . DT.replace "\800" ""
+    {-
+    $ if "\776" `DT.isInfixOf` xx
+      then trace ("XXX: " ++ DT.unpack xx) xx else xx
+    -}
+  where
+    step0 [] = []
+    step0 (' ':rest) = ' ' : step0 rest
+    step0 ('-':rest) = '-' : step0 rest
+    step0 ('*':rest) = '*' : step0 rest
+    step0 ('(':rest) = '(' : step0 rest
+    step0 (')':rest) = ')' : step0 rest
+    step0 ('\'':rest) = '\'' : step0 rest
+    step0 ('/':rest) = '/' : step0 rest
+    step0 ('“':rest) = '"' : step0 rest
+    step0 ('”':rest) = '"' : step0 rest
+    step0 (',':rest) = ',' : step0 rest
+    step0 ('¨':rest) = '¨' : step0 rest
+    -- Hm..
+    step0 ('Q':rest) = 'Q' : step0 rest
+    step0 rest = step1IsNum (0 :: Int) rest
+
+    -- Up to 58 appears!
+    step1IsNum n ('¹':rest) = step1IsNum (10 * n + 1) rest
+    step1IsNum n ('²':rest) = step1IsNum (10 * n + 2) rest
+    step1IsNum n ('³':rest) = step1IsNum (10 * n + 3) rest
+    step1IsNum n ('⁴':rest) = step1IsNum (10 * n + 4) rest
+    step1IsNum n ('⁵':rest) = step1IsNum (10 * n + 5) rest
+    step1IsNum n ('⁶':rest) = step1IsNum (10 * n + 6) rest
+    step1IsNum n ('⁷':rest) = step1IsNum (10 * n + 7) rest
+    step1IsNum n ('⁸':rest) = step1IsNum (10 * n + 8) rest
+    step1IsNum n ('⁹':rest) = step1IsNum (10 * n + 9) rest
+    step1IsNum n ('⁰':rest) = step1IsNum (10 * n) rest
+    step1IsNum n s =
+        if n > 0
+          then "[" ++ show n ++ "]" ++ step1IsNum 0 s
+          else step2IsTones s
+    step2IsTones s = 
+        if not (null pyVowel) || pyInitial `elem` ["m", "ng", "r"]
+          then
+            pyInitial ++ pyVowel ++ pyFinal ++ show pyTone ++ step0 sRest
+          else
+            {-
+            -- To make sure the exceptions are legit.  Looked good to me.
+            trace
+            ("No pinyin syllable: " ++
+            show (pyInitial, pyVowel, pyTone, pyFinal) ++ ": " ++ s) $
+            -}
+            head s : step0 (drop 1 s)
+      where
+        (pyInitial, s2) = span ((`elem` "bpmfdtnlgkhjqxzhcsryw") . toLower) s
+        ((pyVowel, pyTone), s3) = vAndT (5 :: Int) s2
+        (pyFinal, sRest) = span (`elem` "ng") s3
+
+        -- Combining marks:
+        vAndT _ (x:'\772':r) = first (first (x:)) $ vAndT 1 r
+        vAndT _ (x:'\769':r) = first (first (x:)) $ vAndT 2 r
+        vAndT _ (x:'\780':r) = first (first (x:)) $ vAndT 3 r
+        vAndT _ (x:'\768':r) = first (first (x:)) $ vAndT 4 r
+
+        -- Only in lone ng (ng5 handled above, through pyInitial):
+        -- n^_ never appears and there may not be a unicode char for it.
+        --vAndT t ('':r) = first (first ('n':)) $ vAndT 1 r
+        vAndT _ ('ń':r) = first (first ('n':)) $ vAndT 2 r
+        vAndT _ ('ň':r) = first (first ('n':)) $ vAndT 3 r
+        vAndT _ ('ǹ':r) = first (first ('n':)) $ vAndT 4 r
+
+        vAndT t ('a':r) = first (first ('a':)) $ vAndT t r
+        vAndT _ ('ā':r) = first (first ('a':)) $ vAndT 1 r
+        vAndT _ ('á':r) = first (first ('a':)) $ vAndT 2 r
+        vAndT _ ('ǎ':r) = first (first ('a':)) $ vAndT 3 r
+        vAndT _ ('à':r) = first (first ('a':)) $ vAndT 4 r
+        vAndT t ('e':r) = first (first ('e':)) $ vAndT t r
+        vAndT _ ('ē':r) = first (first ('e':)) $ vAndT 1 r
+        vAndT _ ('é':r) = first (first ('e':)) $ vAndT 2 r
+        vAndT _ ('ě':r) = first (first ('e':)) $ vAndT 3 r
+        vAndT _ ('è':r) = first (first ('e':)) $ vAndT 4 r
+        vAndT t ('i':r) = first (first ('i':)) $ vAndT t r
+        vAndT _ ('ī':r) = first (first ('i':)) $ vAndT 1 r
+        vAndT _ ('í':r) = first (first ('i':)) $ vAndT 2 r
+        vAndT _ ('ǐ':r) = first (first ('i':)) $ vAndT 3 r
+        vAndT _ ('ì':r) = first (first ('i':)) $ vAndT 4 r
+        vAndT t ('o':r) = first (first ('o':)) $ vAndT t r
+        vAndT _ ('ō':r) = first (first ('o':)) $ vAndT 1 r
+        vAndT _ ('ó':r) = first (first ('o':)) $ vAndT 2 r
+        vAndT _ ('ǒ':r) = first (first ('o':)) $ vAndT 3 r
+        vAndT _ ('ò':r) = first (first ('o':)) $ vAndT 4 r
+        vAndT t ('u':r) = first (first ('u':)) $ vAndT t r
+        vAndT _ ('ū':r) = first (first ('u':)) $ vAndT 1 r
+        vAndT _ ('ú':r) = first (first ('u':)) $ vAndT 2 r
+        vAndT _ ('ǔ':r) = first (first ('u':)) $ vAndT 3 r
+        vAndT _ ('ù':r) = first (first ('u':)) $ vAndT 4 r
+        vAndT t ('ü':r) = first (first ('v':)) $ vAndT t r
+        vAndT _ ('ǖ':r) = first (first ('v':)) $ vAndT 1 r
+        vAndT _ ('ǘ':r) = first (first ('v':)) $ vAndT 2 r
+        vAndT _ ('ǚ':r) = first (first ('v':)) $ vAndT 3 r
+        vAndT _ ('ǜ':r) = first (first ('v':)) $ vAndT 4 r
+
+        vAndT t ('A':r) = first (first ('A':)) $ vAndT t r
+        vAndT _ ('Ā':r) = first (first ('A':)) $ vAndT 1 r
+        vAndT _ ('Á':r) = first (first ('A':)) $ vAndT 2 r
+        vAndT _ ('Ǎ':r) = first (first ('A':)) $ vAndT 3 r
+        vAndT _ ('À':r) = first (first ('A':)) $ vAndT 4 r
+        vAndT t ('E':r) = first (first ('E':)) $ vAndT t r
+        vAndT _ ('Ē':r) = first (first ('E':)) $ vAndT 1 r
+        vAndT _ ('É':r) = first (first ('E':)) $ vAndT 2 r
+        vAndT _ ('Ě':r) = first (first ('E':)) $ vAndT 3 r
+        vAndT _ ('È':r) = first (first ('E':)) $ vAndT 4 r
+        vAndT t ('I':r) = first (first ('I':)) $ vAndT t r
+        vAndT _ ('Ī':r) = first (first ('I':)) $ vAndT 1 r
+        vAndT _ ('Í':r) = first (first ('I':)) $ vAndT 2 r
+        vAndT _ ('Ǐ':r) = first (first ('I':)) $ vAndT 3 r
+        vAndT _ ('Ì':r) = first (first ('I':)) $ vAndT 4 r
+        vAndT t ('O':r) = first (first ('O':)) $ vAndT t r
+        vAndT _ ('Ō':r) = first (first ('O':)) $ vAndT 1 r
+        vAndT _ ('Ó':r) = first (first ('O':)) $ vAndT 2 r
+        vAndT _ ('Ǒ':r) = first (first ('O':)) $ vAndT 3 r
+        vAndT _ ('Ò':r) = first (first ('O':)) $ vAndT 4 r
+        vAndT t ('U':r) = first (first ('U':)) $ vAndT t r
+        vAndT _ ('Ū':r) = first (first ('U':)) $ vAndT 1 r
+        vAndT _ ('Ú':r) = first (first ('U':)) $ vAndT 2 r
+        vAndT _ ('Ǔ':r) = first (first ('U':)) $ vAndT 3 r
+        vAndT _ ('Ù':r) = first (first ('U':)) $ vAndT 4 r
+        vAndT t ('Ü':r) = first (first ('V':)) $ vAndT t r
+        vAndT _ ('Ǖ':r) = first (first ('V':)) $ vAndT 1 r
+        vAndT _ ('Ǘ':r) = first (first ('V':)) $ vAndT 2 r
+        vAndT _ ('Ǚ':r) = first (first ('V':)) $ vAndT 3 r
+        vAndT _ ('Ǜ':r) = first (first ('V':)) $ vAndT 4 r
+
+        vAndT t r = (("", t), r)
 
 main :: IO ()
 main = do
