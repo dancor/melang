@@ -5,7 +5,7 @@ import Control.Arrow
 import Control.Exception
 import Control.Monad
 import Data.Aeson
-import Data.Attoparsec
+import Data.Attoparsec hiding (take)
 import qualified Data.ByteString.Char8 as BS
 import Data.Char
 import qualified Data.HashMap.Strict as HMS
@@ -19,6 +19,8 @@ import qualified Data.Vector as Vec
 import Prelude hiding (catch)
 import System.IO
 import System.IO.Error hiding (catch)
+
+import Util.CoverZip
 
 hReadLines :: Handle -> IO [BS.ByteString]
 hReadLines h =
@@ -76,23 +78,45 @@ data DefNode = DefNode
     , dnMeasureWord        :: !(Maybe (DT.Text))
     }
 
+killAts :: DT.Text -> DT.Text
+killAts s =
+    if "@" `DT.isInfixOf` s
+      then DT.pack . sKillAts $ DT.unpack s
+      else s
+
+sKillAts :: String -> String
+sKillAts [] = []
+sKillAts ('@':xs) = sKillAts . drop 1 $ dropWhile (/= '@') xs
+sKillAts (x:xs) = x : sKillAts xs
+
 showDefLine :: DefLine -> (DT.Text, DT.Text, DT.Text)
 showDefLine (DefLine zh py tr) =
-    (zh, tcText . tcConcat $ TCSemi py : pyExtra, tcText $ tcConcat def)
+    ( killAts zh
+    , tcText . tcConcat $ TCSemi py : (measWdT ++ constrs)
+    , tcText $ tcConcat defs)
   where
-    (pyExtra, def) = unzip $ map showDefNode (Rose.flatten tr)
+    (measWds, constrs, defs) = unzip3 $ map showDefNode (Rose.flatten tr)
+    measWdT = case catMaybes $ measWds of
+      [] -> []
+      ms -> [TCSemi $ DT.concat
+        ["(M: "
+        , DT.intercalate ", " $ map ((DT.cons '-') . pyMakeAscii) ms
+        , ")"]]
 
 -- | Text which needs padding from continued text, only if more text is
 -- present.
 data TextCont
     = TCWord 
-    { tcText :: DT.Text
+    { tcText :: !DT.Text
     }
     | TCSemi
-    { tcText :: DT.Text
+    { tcText :: !DT.Text
     }
     | TCNone
-    { tcText :: DT.Text
+    { tcText :: !DT.Text
+    }
+    | TCSemiNoRep
+    { tcText :: !DT.Text
     }
 
 tcAppend :: TextCont -> TextCont -> TextCont
@@ -100,32 +124,51 @@ tcAppend tc (TCNone t) = tc {tcText = DT.concat [tcText tc, t]}
 tcAppend (TCWord t) tc = tc {tcText = DT.concat [t, " ", tcText tc]}
 tcAppend (TCSemi t) tc = tc {tcText = DT.concat [t, "; ", tcText tc]}
 tcAppend (TCNone t) tc = tc {tcText = DT.concat [t, tcText tc]}
+tcAppend tc@(TCSemiNoRep _) (TCSemiNoRep _) = tc
+tcAppend (TCSemiNoRep t) tc = tc {tcText = DT.concat [t, "; ", tcText tc]}
 
 tcConcat :: [TextCont] -> TextCont
 tcConcat [] = TCNone ""
 tcConcat l = foldl1' tcAppend l
 
-showDefNode :: DefNode -> (TextCont, TextCont)
-showDefNode dn = (pyExtra, def)
+showDefNode :: DefNode -> (Maybe DT.Text, TextCont, TextCont)
+showDefNode dn = (measWd, constrPart, tcConcat defParts)
   where
-    pyExtra = tcConcat . catMaybes $
-        [ (\s -> TCSemi $ DT.concat ["(M: ", s, ")"]) <$> dnMeasureWord dn
-        , (\s -> TCSemi $ DT.concat ["(CONS: ", s, 
-          maybe "" (\s2 -> DT.concat [": ", s2]) $ dnUsage dn,
-          ")"]) <$> dnConstruction dn
+    measWd = dnMeasureWord dn
+    constrPart = case dnConstruction dn of
+        Nothing -> TCNone ""
+        Just s -> TCSemi $ DT.concat 
+          [ "(CONS: "
+          , DT.unwords . map (doHyphen . pyMakeAscii) . DT.words $
+            DT.replace "∼" "~" s
+          , maybe "" (": " `DT.append`) $ dnDefn dn
+          , ")"
+          ]
+    doHyphen s = if isDigit $ DT.last s then DT.cons '-' s else s
+    defParts = catMaybes
+        [ (\s -> TCWord $ DT.concat ["<", killAts s, ">"]) <$> dnField dn
+        , (\s -> TCSemi $ DT.concat ["(", s, ")"]) <$> dnUsage dn
+        , (const $ TCSemiNoRep "(M?)") <$> dnMeasureWord dn
+        , case dnConstruction dn of
+          -- Only show speech part when there is some definition as well.
+          -- (That is, kill phantom references.):
+          Nothing -> case dnDefn dn of
+              Nothing -> Nothing
+              Just s -> Just . tcConcat $ catMaybes
+                [ speechPartMb
+                , Just . TCSemi . DT.replace ";" "," . 
+                  DT.replace "“" "\"" .
+                  DT.replace "”" "\"" $
+                  killAts s
+                ]
+          Just _ -> Just $ TCSemi "(CONS?)"
         ]
-    def = tcConcat $ catMaybes
-        [ (\s -> TCWord $ DT.concat [DT.toUpper $ DT.replace "." "" s, ":"])
-          <$> dnSpeechPart dn
-        , (\s -> TCWord $ DT.concat ["<", s, ">"]) <$> dnField dn
-        , (\s -> TCSemi $ DT.concat ["", DT.replace ";" "," s]) <$> dnDefn dn
-        , (const $ TCSemi "(M?)") <$> dnMeasureWord dn
-        , maybe
-          ((\s -> TCSemi $ DT.concat ["(", s, ")"]) <$> dnUsage dn)
-          (const . Just $ TCSemi "(CONS?)") $ dnConstruction dn
-        ]
-    -- , (\s -> DT.concat ["ExZ: ", s]) <$> dnExampleZh dn
-    -- , (\s -> DT.concat ["ExT: ", s]) <$> dnExampleTranslation dn
+    speechPartMb =
+        case dnSpeechPart dn of
+          Nothing -> Nothing
+          Just "cons." -> Nothing
+          Just s -> Just . TCWord $
+            DT.concat [DT.toUpper . killAts $ DT.replace "." "" s, ":"]
 
 nothToTreeNoth :: Maybe (Tree (Maybe a)) -> Tree (Maybe a)
 nothToTreeNoth = maybe (Leaf Nothing) id
@@ -182,160 +225,6 @@ trMbCoverZipWith8 f t1 t2 t3 t4 t5 t6 t7 t8 =
         (nothToTreeNoth m7)
         (nothToTreeNoth m8)
 
-coverUncons :: [Maybe a] -> (Maybe a, [Maybe a])
-coverUncons (x:r) = (x, r)
-coverUncons _ = (Nothing, [])
-
-coverZipWith8
-    :: (Maybe a -> Maybe b -> Maybe c -> Maybe d
-       -> Maybe e -> Maybe f -> Maybe g -> Maybe h
-       -> i)
-    -> [Maybe a] -> [Maybe b] -> [Maybe c] -> [Maybe d]
-    -> [Maybe e] -> [Maybe f] -> [Maybe g] -> [Maybe h]
-    -> [i]
-coverZipWith8 f [] [] [] [] [] [] [] l8 =
-    map (f Nothing Nothing Nothing Nothing Nothing Nothing Nothing) l8
-coverZipWith8 f [] [] [] [] [] [] l7 l8 =
-    coverZipWith (f Nothing Nothing Nothing Nothing Nothing Nothing) l7 l8
-coverZipWith8 f [] [] [] [] [] l6 l7 l8 =
-    coverZipWith3 (f Nothing Nothing Nothing Nothing Nothing) l6 l7 l8
-coverZipWith8 f [] [] [] [] l5 l6 l7 l8 =
-    coverZipWith4 (f Nothing Nothing Nothing Nothing) l5 l6 l7 l8
-coverZipWith8 f [] [] [] l4 l5 l6 l7 l8 =
-    coverZipWith5 (f Nothing Nothing Nothing) l4 l5 l6 l7 l8
-coverZipWith8 f [] [] l3 l4 l5 l6 l7 l8 =
-    coverZipWith6 (f Nothing Nothing) l3 l4 l5 l6 l7 l8
-coverZipWith8 f [] l2 l3 l4 l5 l6 l7 l8 =
-    coverZipWith7 (f Nothing) l2 l3 l4 l5 l6 l7 l8
-coverZipWith8 f (x1:r1) l2 l3 l4 l5 l6 l7 l8 =
-    f x1 x2 x3 x4 x5 x6 x7 x8 :
-    coverZipWith8 f r1 r2 r3 r4 r5 r6 r7 r8
-  where
-    (x2, r2) = coverUncons l2
-    (x3, r3) = coverUncons l3
-    (x4, r4) = coverUncons l4
-    (x5, r5) = coverUncons l5
-    (x6, r6) = coverUncons l6
-    (x7, r7) = coverUncons l7
-    (x8, r8) = coverUncons l8
-
-coverZipWith7
-    :: (Maybe a -> Maybe b -> Maybe c -> Maybe d
-       -> Maybe e -> Maybe f -> Maybe g -> h)
-    -> [Maybe a] -> [Maybe b] -> [Maybe c] -> [Maybe d]
-    -> [Maybe e] -> [Maybe f] -> [Maybe g] -> [h]
-coverZipWith7 f [] [] [] [] [] [] l7 =
-    map (f Nothing Nothing Nothing Nothing Nothing Nothing) l7
-coverZipWith7 f [] [] [] [] [] l6 l7 =
-    coverZipWith (f Nothing Nothing Nothing Nothing Nothing) l6 l7
-coverZipWith7 f [] [] [] [] l5 l6 l7 =
-    coverZipWith3 (f Nothing Nothing Nothing Nothing) l5 l6 l7
-coverZipWith7 f [] [] [] l4 l5 l6 l7 =
-    coverZipWith4 (f Nothing Nothing Nothing) l4 l5 l6 l7
-coverZipWith7 f [] [] l3 l4 l5 l6 l7 =
-    coverZipWith5 (f Nothing Nothing) l3 l4 l5 l6 l7
-coverZipWith7 f [] l2 l3 l4 l5 l6 l7 =
-    coverZipWith6 (f Nothing) l2 l3 l4 l5 l6 l7
-coverZipWith7 f (x1:r1) l2 l3 l4 l5 l6 l7 =
-    f x1 x2 x3 x4 x5 x6 x7 :
-    coverZipWith7 f r1 r2 r3 r4 r5 r6 r7
-  where
-    (x2, r2) = coverUncons l2
-    (x3, r3) = coverUncons l3
-    (x4, r4) = coverUncons l4
-    (x5, r5) = coverUncons l5
-    (x6, r6) = coverUncons l6
-    (x7, r7) = coverUncons l7
-
-coverZipWith6
-    :: (Maybe a -> Maybe b -> Maybe c -> Maybe d
-       -> Maybe e -> Maybe f -> g)
-    -> [Maybe a] -> [Maybe b] -> [Maybe c] -> [Maybe d]
-    -> [Maybe e] -> [Maybe f] -> [g]
-coverZipWith6 f [] [] [] [] [] l6 =
-    map (f Nothing Nothing Nothing Nothing Nothing) l6
-coverZipWith6 f [] [] [] [] l5 l6 =
-    coverZipWith (f Nothing Nothing Nothing Nothing) l5 l6
-coverZipWith6 f [] [] [] l4 l5 l6 =
-    coverZipWith3 (f Nothing Nothing Nothing) l4 l5 l6
-coverZipWith6 f [] [] l3 l4 l5 l6 =
-    coverZipWith4 (f Nothing Nothing) l3 l4 l5 l6
-coverZipWith6 f [] l2 l3 l4 l5 l6 =
-    coverZipWith5 (f Nothing) l2 l3 l4 l5 l6
-coverZipWith6 f (x1:r1) l2 l3 l4 l5 l6 =
-    f x1 x2 x3 x4 x5 x6 :
-    coverZipWith6 f r1 r2 r3 r4 r5 r6
-  where
-    (x2, r2) = coverUncons l2
-    (x3, r3) = coverUncons l3
-    (x4, r4) = coverUncons l4
-    (x5, r5) = coverUncons l5
-    (x6, r6) = coverUncons l6
-
-coverZipWith5
-    :: (Maybe a -> Maybe b -> Maybe c -> Maybe d
-       -> Maybe e -> f)
-    -> [Maybe a] -> [Maybe b] -> [Maybe c] -> [Maybe d]
-    -> [Maybe e] -> [f]
-coverZipWith5 f [] [] [] [] l5 =
-    map (f Nothing Nothing Nothing Nothing) l5
-coverZipWith5 f [] [] [] l4 l5 =
-    coverZipWith (f Nothing Nothing Nothing) l4 l5
-coverZipWith5 f [] [] l3 l4 l5 =
-    coverZipWith3 (f Nothing Nothing) l3 l4 l5
-coverZipWith5 f [] l2 l3 l4 l5 =
-    coverZipWith4 (f Nothing) l2 l3 l4 l5
-coverZipWith5 f (x1:r1) l2 l3 l4 l5 =
-    f x1 x2 x3 x4 x5 :
-    coverZipWith5 f r1 r2 r3 r4 r5
-  where
-    (x2, r2) = coverUncons l2
-    (x3, r3) = coverUncons l3
-    (x4, r4) = coverUncons l4
-    (x5, r5) = coverUncons l5
-
-coverZipWith4
-    :: (Maybe a -> Maybe b -> Maybe c -> Maybe d -> e)
-    -> [Maybe a] -> [Maybe b] -> [Maybe c] -> [Maybe d] -> [e]
-coverZipWith4 f [] [] [] l4 =
-    map (f Nothing Nothing Nothing) l4
-coverZipWith4 f [] [] l3 l4 =
-    coverZipWith (f Nothing Nothing) l3 l4
-coverZipWith4 f [] l2 l3 l4 =
-    coverZipWith3 (f Nothing) l2 l3 l4
-coverZipWith4 f (x1:r1) l2 l3 l4 =
-    f x1 x2 x3 x4 :
-    coverZipWith4 f r1 r2 r3 r4
-  where
-    (x2, r2) = coverUncons l2
-    (x3, r3) = coverUncons l3
-    (x4, r4) = coverUncons l4
-
-coverZipWith3
-    :: (Maybe a -> Maybe b -> Maybe c -> d)
-    -> [Maybe a] -> [Maybe b] -> [Maybe c] -> [d]
-coverZipWith3 f [] [] l3 =
-    map (f Nothing Nothing) l3
-coverZipWith3 f [] l2 l3 =
-    coverZipWith (f Nothing) l2 l3
-coverZipWith3 f (x1:r1) l2 l3 =
-    f x1 x2 x3 :
-    coverZipWith3 f r1 r2 r3
-  where
-    (x2, r2) = coverUncons l2
-    (x3, r3) = coverUncons l3
-
-coverZipWith
-    :: (Maybe a -> Maybe b -> c)
-    -> [Maybe a] -> [Maybe b] -> [c]
-coverZipWith f [] l2 =
-    map (f Nothing) l2
-coverZipWith f (x1:r1) l2 =
-    f x1 x2 :
-    coverZipWith f r1 r2
-  where
-    (x2, r2) = coverUncons l2
-
 pyMakeAscii :: DT.Text -> DT.Text
 pyMakeAscii =
 -- pyMakeAscii xx =
@@ -349,12 +238,12 @@ pyMakeAscii =
     . DT.replace "ụ" "u"
     -- Why does "combining minus sign below" ever appear?
     . DT.replace "\800" ""
-    {-
-    $ if "\776" `DT.isInfixOf` xx
-      then trace ("XXX: " ++ DT.unpack xx) xx else xx
-    -}
   where
     step0 [] = []
+    -- To Ascii:
+    step0 ('“':rest) = '"' : step0 rest
+    step0 ('”':rest) = '"' : step0 rest
+    -- Keep:
     step0 (' ':rest) = ' ' : step0 rest
     step0 ('-':rest) = '-' : step0 rest
     step0 ('*':rest) = '*' : step0 rest
@@ -362,12 +251,9 @@ pyMakeAscii =
     step0 (')':rest) = ')' : step0 rest
     step0 ('\'':rest) = '\'' : step0 rest
     step0 ('/':rest) = '/' : step0 rest
-    step0 ('“':rest) = '"' : step0 rest
-    step0 ('”':rest) = '"' : step0 rest
     step0 (',':rest) = ',' : step0 rest
     step0 ('¨':rest) = '¨' : step0 rest
-    -- Hm..
-    step0 ('Q':rest) = 'Q' : step0 rest
+
     step0 rest = step1IsNum (0 :: Int) rest
 
     -- Up to 58 appears!
@@ -388,7 +274,8 @@ pyMakeAscii =
     step2IsTones s = 
         if not (null pyVowel) || pyInitial `elem` ["m", "ng", "r"]
           then
-            pyInitial ++ pyVowel ++ pyFinal ++ show pyTone ++ step0 sRest
+            pyInitial ++ pyVowel ++ pyFinal ++ maybe "" show pyTone ++
+            step0 sRest
           else
             {-
             -- To make sure the exceptions are legit.  Looked good to me.
@@ -399,83 +286,103 @@ pyMakeAscii =
             head s : step0 (drop 1 s)
       where
         (pyInitial, s2) = span ((`elem` "bpmfdtnlgkhjqxzhcsryw") . toLower) s
-        ((pyVowel, pyTone), s3) = vAndT (5 :: Int) s2
-        (pyFinal, sRest) = span (`elem` "ng") s3
+        ((pyVowel, pyTone), s3) = vAndT Nothing s2
+        (pyFinal, sRest)
+            | "ng" `isPrefixOf` s3 && all (not . isVow) (take 1 $ drop 2 s3)
+            = ("ng", drop 2 s3)
+            | "n" `isPrefixOf` s3 && all (not . isVow) (take 1 $ drop 1 s3)
+            = ("n", drop 1 s3)
+            -- For when n with a tone mark is the nucleus:
+            | "g" `isPrefixOf` s3 && all (not . isVow) (take 1 $ drop 1 s3)
+            = ("g", drop 1 s3)
+            | otherwise           = ("", s3)
+        isVow = (`elem` "aāáǎàeēéěèiīíǐìoōóǒòuūúǔùüǖǘǚǜ")
+
+        doTone :: Maybe Int -> Int -> Maybe Int
+        doTone (Just 5) newTone = Just newTone
+        doTone (Just oldTone) newTone = error $
+            "Two tone marks: " ++ show (oldTone, newTone) ++ ": " ++ show s
+        doTone Nothing newTone = Just newTone
+        mb5Tone :: Maybe Int -> Maybe Int
+        mb5Tone Nothing = Just 5
+        mb5Tone oldTone = oldTone
 
         -- Combining marks:
-        vAndT _ (x:'\772':r) = first (first (x:)) $ vAndT 1 r
-        vAndT _ (x:'\769':r) = first (first (x:)) $ vAndT 2 r
-        vAndT _ (x:'\780':r) = first (first (x:)) $ vAndT 3 r
-        vAndT _ (x:'\768':r) = first (first (x:)) $ vAndT 4 r
+        vAndT t (x:'\772':r) = first (first (x:)) $ vAndT (doTone t 1) r
+        vAndT t (x:'\769':r) = first (first (x:)) $ vAndT (doTone t 2) r
+        vAndT t (x:'\780':r) = first (first (x:)) $ vAndT (doTone t 3) r
+        vAndT t (x:'\768':r) = first (first (x:)) $ vAndT (doTone t 4) r
 
         -- Only in lone ng (ng5 handled above, through pyInitial):
         -- n^_ never appears and there may not be a unicode char for it.
         --vAndT t ('':r) = first (first ('n':)) $ vAndT 1 r
-        vAndT _ ('ń':r) = first (first ('n':)) $ vAndT 2 r
-        vAndT _ ('ň':r) = first (first ('n':)) $ vAndT 3 r
-        vAndT _ ('ǹ':r) = first (first ('n':)) $ vAndT 4 r
+        vAndT t ('ń':r) = first (first ('n':)) $ vAndT (doTone t 2) r
+        vAndT t ('ň':r) = first (first ('n':)) $ vAndT (doTone t 3) r
+        vAndT t ('ǹ':r) = first (first ('n':)) $ vAndT (doTone t 4) r
 
-        vAndT t ('a':r) = first (first ('a':)) $ vAndT t r
-        vAndT _ ('ā':r) = first (first ('a':)) $ vAndT 1 r
-        vAndT _ ('á':r) = first (first ('a':)) $ vAndT 2 r
-        vAndT _ ('ǎ':r) = first (first ('a':)) $ vAndT 3 r
-        vAndT _ ('à':r) = first (first ('a':)) $ vAndT 4 r
-        vAndT t ('e':r) = first (first ('e':)) $ vAndT t r
-        vAndT _ ('ē':r) = first (first ('e':)) $ vAndT 1 r
-        vAndT _ ('é':r) = first (first ('e':)) $ vAndT 2 r
-        vAndT _ ('ě':r) = first (first ('e':)) $ vAndT 3 r
-        vAndT _ ('è':r) = first (first ('e':)) $ vAndT 4 r
-        vAndT t ('i':r) = first (first ('i':)) $ vAndT t r
-        vAndT _ ('ī':r) = first (first ('i':)) $ vAndT 1 r
-        vAndT _ ('í':r) = first (first ('i':)) $ vAndT 2 r
-        vAndT _ ('ǐ':r) = first (first ('i':)) $ vAndT 3 r
-        vAndT _ ('ì':r) = first (first ('i':)) $ vAndT 4 r
-        vAndT t ('o':r) = first (first ('o':)) $ vAndT t r
-        vAndT _ ('ō':r) = first (first ('o':)) $ vAndT 1 r
-        vAndT _ ('ó':r) = first (first ('o':)) $ vAndT 2 r
-        vAndT _ ('ǒ':r) = first (first ('o':)) $ vAndT 3 r
-        vAndT _ ('ò':r) = first (first ('o':)) $ vAndT 4 r
-        vAndT t ('u':r) = first (first ('u':)) $ vAndT t r
-        vAndT _ ('ū':r) = first (first ('u':)) $ vAndT 1 r
-        vAndT _ ('ú':r) = first (first ('u':)) $ vAndT 2 r
-        vAndT _ ('ǔ':r) = first (first ('u':)) $ vAndT 3 r
-        vAndT _ ('ù':r) = first (first ('u':)) $ vAndT 4 r
-        vAndT t ('ü':r) = first (first ('v':)) $ vAndT t r
-        vAndT _ ('ǖ':r) = first (first ('v':)) $ vAndT 1 r
-        vAndT _ ('ǘ':r) = first (first ('v':)) $ vAndT 2 r
-        vAndT _ ('ǚ':r) = first (first ('v':)) $ vAndT 3 r
-        vAndT _ ('ǜ':r) = first (first ('v':)) $ vAndT 4 r
+        vAndT t ('a':r) = first (first ('a':)) $ vAndT (mb5Tone t) r
+        vAndT t ('ā':r) = first (first ('a':)) $ vAndT (doTone t 1) r
+        vAndT t ('á':r) = first (first ('a':)) $ vAndT (doTone t 2) r
+        vAndT t ('ǎ':r) = first (first ('a':)) $ vAndT (doTone t 3) r
+        vAndT t ('à':r) = first (first ('a':)) $ vAndT (doTone t 4) r
+        vAndT t ('e':r) = first (first ('e':)) $ vAndT (mb5Tone t) r
+        vAndT t ('ē':r) = first (first ('e':)) $ vAndT (doTone t 1) r
+        vAndT t ('é':r) = first (first ('e':)) $ vAndT (doTone t 2) r
+        vAndT t ('ě':r) = first (first ('e':)) $ vAndT (doTone t 3) r
+        vAndT t ('è':r) = first (first ('e':)) $ vAndT (doTone t 4) r
+        vAndT t ('i':r) = first (first ('i':)) $ vAndT (mb5Tone t) r
+        vAndT t ('ī':r) = first (first ('i':)) $ vAndT (doTone t 1) r
+        vAndT t ('í':r) = first (first ('i':)) $ vAndT (doTone t 2) r
+        vAndT t ('ǐ':r) = first (first ('i':)) $ vAndT (doTone t 3) r
+        vAndT t ('ì':r) = first (first ('i':)) $ vAndT (doTone t 4) r
+        vAndT t ('o':r) = first (first ('o':)) $ vAndT (mb5Tone t) r
+        vAndT t ('ō':r) = first (first ('o':)) $ vAndT (doTone t 1) r
+        vAndT t ('ó':r) = first (first ('o':)) $ vAndT (doTone t 2) r
+        vAndT t ('ǒ':r) = first (first ('o':)) $ vAndT (doTone t 3) r
+        vAndT t ('ò':r) = first (first ('o':)) $ vAndT (doTone t 4) r
+        vAndT t ('u':r) = first (first ('u':)) $ vAndT (mb5Tone t) r
+        vAndT t ('ū':r) = first (first ('u':)) $ vAndT (doTone t 1) r
+        vAndT t ('ú':r) = first (first ('u':)) $ vAndT (doTone t 2) r
+        vAndT t ('ǔ':r) = first (first ('u':)) $ vAndT (doTone t 3) r
+        vAndT t ('ù':r) = first (first ('u':)) $ vAndT (doTone t 4) r
+        vAndT t ('ü':r) = first (first ('v':)) $ vAndT (mb5Tone t) r
+        vAndT t ('ǖ':r) = first (first ('v':)) $ vAndT (doTone t 1) r
+        vAndT t ('ǘ':r) = first (first ('v':)) $ vAndT (doTone t 2) r
+        vAndT t ('ǚ':r) = first (first ('v':)) $ vAndT (doTone t 3) r
+        vAndT t ('ǜ':r) = first (first ('v':)) $ vAndT (doTone t 4) r
 
+        -- A, E, and O appear as English only, so shouldn't get a tone.
+        -- The other letters appear as pinyin only (I think..).
         vAndT t ('A':r) = first (first ('A':)) $ vAndT t r
-        vAndT _ ('Ā':r) = first (first ('A':)) $ vAndT 1 r
-        vAndT _ ('Á':r) = first (first ('A':)) $ vAndT 2 r
-        vAndT _ ('Ǎ':r) = first (first ('A':)) $ vAndT 3 r
-        vAndT _ ('À':r) = first (first ('A':)) $ vAndT 4 r
+        vAndT t ('Ā':r) = first (first ('A':)) $ vAndT (doTone t 1) r
+        vAndT t ('Á':r) = first (first ('A':)) $ vAndT (doTone t 2) r
+        vAndT t ('Ǎ':r) = first (first ('A':)) $ vAndT (doTone t 3) r
+        vAndT t ('À':r) = first (first ('A':)) $ vAndT (doTone t 4) r
         vAndT t ('E':r) = first (first ('E':)) $ vAndT t r
-        vAndT _ ('Ē':r) = first (first ('E':)) $ vAndT 1 r
-        vAndT _ ('É':r) = first (first ('E':)) $ vAndT 2 r
-        vAndT _ ('Ě':r) = first (first ('E':)) $ vAndT 3 r
-        vAndT _ ('È':r) = first (first ('E':)) $ vAndT 4 r
-        vAndT t ('I':r) = first (first ('I':)) $ vAndT t r
-        vAndT _ ('Ī':r) = first (first ('I':)) $ vAndT 1 r
-        vAndT _ ('Í':r) = first (first ('I':)) $ vAndT 2 r
-        vAndT _ ('Ǐ':r) = first (first ('I':)) $ vAndT 3 r
-        vAndT _ ('Ì':r) = first (first ('I':)) $ vAndT 4 r
+        vAndT t ('Ē':r) = first (first ('E':)) $ vAndT (doTone t 1) r
+        vAndT t ('É':r) = first (first ('E':)) $ vAndT (doTone t 2) r
+        vAndT t ('Ě':r) = first (first ('E':)) $ vAndT (doTone t 3) r
+        vAndT t ('È':r) = first (first ('E':)) $ vAndT (doTone t 4) r
+        vAndT t ('I':r) = first (first ('I':)) $ vAndT (mb5Tone t) r
+        vAndT t ('Ī':r) = first (first ('I':)) $ vAndT (doTone t 1) r
+        vAndT t ('Í':r) = first (first ('I':)) $ vAndT (doTone t 2) r
+        vAndT t ('Ǐ':r) = first (first ('I':)) $ vAndT (doTone t 3) r
+        vAndT t ('Ì':r) = first (first ('I':)) $ vAndT (doTone t 4) r
         vAndT t ('O':r) = first (first ('O':)) $ vAndT t r
-        vAndT _ ('Ō':r) = first (first ('O':)) $ vAndT 1 r
-        vAndT _ ('Ó':r) = first (first ('O':)) $ vAndT 2 r
-        vAndT _ ('Ǒ':r) = first (first ('O':)) $ vAndT 3 r
-        vAndT _ ('Ò':r) = first (first ('O':)) $ vAndT 4 r
-        vAndT t ('U':r) = first (first ('U':)) $ vAndT t r
-        vAndT _ ('Ū':r) = first (first ('U':)) $ vAndT 1 r
-        vAndT _ ('Ú':r) = first (first ('U':)) $ vAndT 2 r
-        vAndT _ ('Ǔ':r) = first (first ('U':)) $ vAndT 3 r
-        vAndT _ ('Ù':r) = first (first ('U':)) $ vAndT 4 r
-        vAndT t ('Ü':r) = first (first ('V':)) $ vAndT t r
-        vAndT _ ('Ǖ':r) = first (first ('V':)) $ vAndT 1 r
-        vAndT _ ('Ǘ':r) = first (first ('V':)) $ vAndT 2 r
-        vAndT _ ('Ǚ':r) = first (first ('V':)) $ vAndT 3 r
-        vAndT _ ('Ǜ':r) = first (first ('V':)) $ vAndT 4 r
+        vAndT t ('Ō':r) = first (first ('O':)) $ vAndT (doTone t 1) r
+        vAndT t ('Ó':r) = first (first ('O':)) $ vAndT (doTone t 2) r
+        vAndT t ('Ǒ':r) = first (first ('O':)) $ vAndT (doTone t 3) r
+        vAndT t ('Ò':r) = first (first ('O':)) $ vAndT (doTone t 4) r
+        vAndT t ('U':r) = first (first ('U':)) $ vAndT (mb5Tone t) r
+        vAndT t ('Ū':r) = first (first ('U':)) $ vAndT (doTone t 1) r
+        vAndT t ('Ú':r) = first (first ('U':)) $ vAndT (doTone t 2) r
+        vAndT t ('Ǔ':r) = first (first ('U':)) $ vAndT (doTone t 3) r
+        vAndT t ('Ù':r) = first (first ('U':)) $ vAndT (doTone t 4) r
+        vAndT t ('Ü':r) = first (first ('V':)) $ vAndT (mb5Tone t) r
+        vAndT t ('Ǖ':r) = first (first ('V':)) $ vAndT (doTone t 1) r
+        vAndT t ('Ǘ':r) = first (first ('V':)) $ vAndT (doTone t 2) r
+        vAndT t ('Ǚ':r) = first (first ('V':)) $ vAndT (doTone t 3) r
+        vAndT t ('Ǜ':r) = first (first ('V':)) $ vAndT (doTone t 4) r
 
         vAndT t r = (("", t), r)
 
@@ -484,5 +391,5 @@ main = do
     ls <- map parseLine <$> hReadLines stdin
     let res = map (showZhPyDef . showDefLine) $
             zipWith assembleDefLine [1..] ls
-        showZhPyDef (zh, py, def) = DT.unwords [zh, py, def]
+        showZhPyDef (zh, py, def) = DT.intercalate "\t" [zh, py, def]
     mapM_ DTI.putStrLn res

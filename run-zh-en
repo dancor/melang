@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+cabal configure -f zh-en-process
+cabal build
+
+# time < ~/p/l/melang/data/json/zh-en.json ./zh-en-process > ~/p/l/melang/data/zh-en-process.out
+time grep 同时 ~/p/l/melang/data/json/zh-en.json | ./zh-en-process
