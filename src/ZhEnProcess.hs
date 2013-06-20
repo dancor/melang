@@ -153,7 +153,8 @@ showDefNode dn = (measWd, constrPart, tcConcat defParts)
           -- Only show speech part when there is some definition as well.
           -- (That is, kill phantom references.):
           Nothing -> case dnDefn dn of
-              Nothing -> Nothing
+              -- For now show anyway..
+              Nothing -> speechPartMb
               Just s -> Just . tcConcat $ catMaybes
                 [ speechPartMb
                 , Just . TCSemi . DT.replace ";" "," . 
