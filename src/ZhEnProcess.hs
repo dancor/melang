@@ -295,6 +295,9 @@ pyMakeAscii =
             -- For when n with a tone mark is the nucleus:
             | "g" `isPrefixOf` s3 && all (not . isVow) (take 1 $ drop 1 s3)
             = ("g", drop 1 s3)
+            -- For er2 etc:
+            | "r" `isPrefixOf` s3 && all (not . isVow) (take 1 $ drop 1 s3)
+            = ("r", drop 1 s3)
             | otherwise           = ("", s3)
         isVow = (`elem` "aāáǎàeēéěèiīíǐìoōóǒòuūúǔùüǖǘǚǜ")
 
