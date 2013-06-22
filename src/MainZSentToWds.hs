@@ -1,12 +1,12 @@
-import qualified Data.Map as Map
+import qualified Data.HashMap.Strict as HMS
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
 import System.Environment
 
-import Cmn.Lang
-import Cmn.SentenceWords
+import Cmn.SentenceWords2
+import Cmn.WdInfo2
 
-mainLoop :: Map.Map Wd WdInfo -> IO ()
+mainLoop :: HMS.HashMap Wd WdInfo -> IO ()
 mainLoop d = do
     l <- DTI.getLine
     doSent d l

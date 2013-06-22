@@ -20,6 +20,7 @@ import Prelude hiding (catch)
 import System.IO
 import System.IO.Error hiding (catch)
 
+import qualified Cmn.GoogBk1Grams as GB1
 import Util.CoverZip
 
 hReadLines :: Handle -> IO [BS.ByteString]
@@ -392,8 +393,26 @@ pyMakeAscii =
 
 main :: IO ()
 main = do
+    let keepEarlierLoadingBackward _ x = x
+    gb <- HMS.fromListWith keepEarlierLoadingBackward .
+        map (\x -> (GB1.wd x, GB1.numPerMillion x)) <$> GB1.load
     ls <- map parseLine <$> hReadLines stdin
-    let res = map (showZhPyDef . showDefLine) $
+    let wdMap =
+            HMS.map (first  (DT.intercalate " \\ ") .
+                     second (DT.intercalate " \\ ") . unzip . reverse) .
+            HMS.fromListWith (++) .
+            map (\(zh, py, def) -> (zh, [(py, def)])) .
+            map showDefLine $
             zipWith assembleDefLine [1..] ls
-        showZhPyDef (zh, py, def) = DT.intercalate "\t" [zh, py, def]
-    mapM_ DTI.putStrLn res
+        wdLinesInOrder =
+            sortBy (flip compare) .
+            map (first (\zh -> (HMS.lookup zh gb, zh))) $
+            HMS.toList wdMap
+        showZhPyDef ((freq, zh), (py, def)) =
+            DT.intercalate "\t"
+                [ zh
+                , maybe "?" (DT.pack . show) freq
+                , py
+                , def
+                ]
+    mapM_ DTI.putStrLn $ map showZhPyDef wdLinesInOrder

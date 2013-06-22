@@ -15,7 +15,7 @@ import qualified Data.Map as Map
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
 
-import Cmn.Lang
+import Cmn.WdInfo
 
 doGloss :: WdInfo -> DT.Text
 doGloss =
@@ -33,9 +33,11 @@ loadDictAsIs =
 dictKillPos :: Map.Map Wd [WdInfo] -> Map.Map Wd WdInfo
 dictKillPos = Map.map wisKillPos
   where
-    wisKillPos wis =
-        WdInfo (sum $ map wiNumPerMillion wis) (wiWd $ head wis) ("???")
-        (nub $ concatMap wiDef wis)
+    wisKillPos wis = (head wis)
+        { wiNumPerMillion = sum $ map wiNumPerMillion wis
+        , wiPartOfSpeech  = "???"
+        , wiDef           = nub $ concatMap wiDef wis
+        }
 
 onDef :: ([PyDef] -> [PyDef]) -> WdInfo -> WdInfo
 onDef f wi = wi {wiDef = f $ wiDef wi}
@@ -76,11 +78,13 @@ loadDict :: IO (Map.Map Wd WdInfo)
 loadDict = do
     dict <-
         dictCollateSamePy . dictKillDumbDefs . dictKillPos <$> loadDictAsIs
-    let dupes =
+    let allWds = Map.keys dict
+        {-
+        dupes =
             -- sortBy (flip $ comparing wiNumPerMillion) .
             map snd . Map.toList $ Map.filter ((> 1) . length . wiDef) dict
         defPretty (PyDef pys d _) = DT.unwords [DT.concat pys, d]
-        allWds = Map.keys dict
+        -}
 
         wdsContaining :: Wd -> [(Wd, Int)]
         wdsContaining wd =
@@ -145,18 +149,21 @@ cleanSent = DT.replace "。" "." . DT.replace ", " "," . DT.replace "，" ","
 sentPy :: Map.Map Wd WdInfo -> DT.Text -> DT.Text
 sentPy dict = DT.unwords . map (either id doGloss) . textWds dict . cleanSent
 
-doWd :: WdInfo -> DT.Text
-doWd w = DT.unwords [wiWd w, doGloss w, DT.concat . map pdDef $ wiDef w]
+doWi :: WdInfo -> DT.Text
+doWi w = DT.unwords
+    [ DT.pack . show $ wiN w, wiWd w, doGloss w
+    , DT.concat . map pdDef $ wiDef w
+    ]
 
 doSent :: Map.Map Wd WdInfo -> DT.Text -> IO ()
 doSent dict =
     DTI.putStr .
-    DT.unlines . map (either id doWd) . textWds dict . cleanSent
+    DT.unlines . map (either id doWi) . textWds dict . cleanSent
 
 textWdsFile :: IO ()
 textWdsFile = do
     dict <- loadDict
     ls <- map (second DT.tail . DT.break (== '\t')) . DT.lines <$>
-        DTI.readFile "/home/danl/mass-sentence-method/cmn/en2zh"
-    DTI.writeFile "/home/danl/mass-sentence-method/cmn/list.txt" . DT.unlines $
-        map (processLine dict) ls
+        DTI.readFile "/home/danl/l/l/z/mass-sentence-method/cmn/en2zh"
+    DTI.writeFile "/home/danl/l/l/z/mass-sentence-method/cmn/list.txt" .
+        DT.unlines $ map (processLine dict) ls

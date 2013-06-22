@@ -1,23 +1,14 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Cmn.Lang where
+module Cmn.WdInfo where
 
-import Control.Applicative
-import Control.Arrow
 import Control.DeepSeq
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Char8 as BSC
-import Data.Char
-import Data.List
-import Data.Maybe
-import Data.Ord
-import qualified Data.Map as Map
 import qualified Data.Text as DT
-import qualified Data.Text.IO as DTI
 import qualified Data.Text.Encoding as DTE
 
 import BSUtil
-import Cmn.Cedict
 
 -- "Word Info": Google Books words with CEDICT entries.
 -- Line format:
@@ -39,6 +30,7 @@ data PyDef = PyDef
 
 data WdInfo = WdInfo
     { wiNumPerMillion :: !Float
+    , wiN             :: !Int
     , wiWd            :: !Wd
     , wiPartOfSpeech  :: !DT.Text
     , wiDef           :: ![PyDef]
@@ -48,11 +40,12 @@ instance NFData PyDef where
     rnf (PyDef a b c) = rnf a `seq` rnf b `seq` rnf c
 
 instance NFData WdInfo where
-    rnf (WdInfo a b c d) = rnf a `seq` rnf b `seq` rnf c `seq` rnf d
+    rnf (WdInfo a b c d e) =
+        rnf a `seq` rnf b `seq` rnf c `seq` rnf d `seq` rnf e
 
 parseWdInfoLine :: Int -> BS.ByteString -> WdInfo
-parseWdInfoLine _n str =
-    WdInfo (read $ BSC.unpack a) wd (DTE.decodeUtf8 c) .
+parseWdInfoLine n str =
+    WdInfo (read $ BSC.unpack a) n wd (DTE.decodeUtf8 c) .
     map (
         (\ (py, def) -> PyDef
             (fixPinyins . DT.words . DT.replace "u:" "v" $ DT.drop 1 py)
