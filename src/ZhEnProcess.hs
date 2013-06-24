@@ -148,8 +148,6 @@ showDefNode dn = (measWd, constrPart, tcConcat defParts)
     doHyphen s = if isDigit $ DT.last s then DT.cons '-' s else s
     defParts = catMaybes
         [ (\s -> TCWord $ DT.concat ["<", killAts s, ">"]) <$> dnField dn
-        , (\s -> TCSemi $ DT.concat ["(", s, ")"]) <$> dnUsage dn
-        , (const $ TCSemiNoRep "(M?)") <$> dnMeasureWord dn
         , case dnConstruction dn of
           -- Only show speech part when there is some definition as well.
           -- (That is, kill phantom references.):
@@ -164,6 +162,8 @@ showDefNode dn = (measWd, constrPart, tcConcat defParts)
                   killAts s
                 ]
           Just _ -> Just $ TCSemi "(CONS?)"
+        , (\s -> TCSemi $ DT.concat ["(", s, ")"]) <$> dnUsage dn
+        , (const $ TCSemiNoRep "(M?)") <$> dnMeasureWord dn
         ]
     speechPartMb =
         case dnSpeechPart dn of

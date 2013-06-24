@@ -17,7 +17,7 @@ import BSUtil
 --   pinyin1NoSpaces \ pinyin2 \ etc<tab>
 --   def1 \ def2 \ etc
 wdInfoFile :: String
-wdInfoFile = "/home/danl/p/l/melang/data/wdInfo"
+wdInfoFile = "/home/danl/p/l/melang/data/zh-en-process.out"
 
 type Wd = DT.Text
 
@@ -47,7 +47,6 @@ parseWdInfoLine n str = WdInfo 0 n wd def
           '儿' -> "{er2}"
           _ -> py
     -}
-    (col1, afterCol1) = breakTab str
-    (_col2, colRest)   = breakTab afterCol1
+    (col1, colRest) = breakTab str
     wd  = DTE.decodeUtf8 col1
     def = DTE.decodeUtf8 colRest
