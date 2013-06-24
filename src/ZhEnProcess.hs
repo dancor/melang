@@ -145,7 +145,10 @@ showDefNode dn = (measWd, constrPart, tcConcat defParts)
           , maybe "" (": " `DT.append`) $ dnDefn dn
           , ")"
           ]
-    doHyphen s = if isDigit $ DT.last s then DT.cons '-' s else s
+    doHyphen s =
+        if isDigit (DT.last s) && not (DT.length s == 2 && s == DT.toUpper s)
+          then DT.cons '-' s
+          else s
     defParts = catMaybes
         [ (\s -> TCWord $ DT.concat ["<", killAts s, ">"]) <$> dnField dn
         , case dnConstruction dn of
@@ -408,10 +411,10 @@ main = do
             sortBy (flip compare) .
             map (first (\zh -> (HMS.lookup zh gb, zh))) $
             HMS.toList wdMap
-        showZhPyDef ((freq, zh), (py, def)) =
+        showZhPyDef ((_freq, zh), (py, def)) =
             DT.intercalate "\t"
                 [ zh
-                , maybe "?" (DT.pack . show) freq
+                -- , maybe "?" (DT.pack . show) freq
                 , py
                 , def
                 ]
