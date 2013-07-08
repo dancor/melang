@@ -12,7 +12,7 @@ import System.Environment
 import System.FilePath
 import qualified Data.Map as M
 
-import PairUtil
+import Util.Pair
 import Wubi
 
 io :: IO a -> InputT IO a

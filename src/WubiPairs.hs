@@ -11,7 +11,7 @@ import System.FilePath
 import qualified System.IO.UTF8 as U
 import qualified Data.Map as M
 
-import PairUtil
+import Util.Pair
 import Wubi
 
 shortOrd :: (Ord a) => [a] -> [a] -> Ordering

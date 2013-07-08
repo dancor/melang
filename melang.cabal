@@ -160,13 +160,28 @@ executable zz
         base
       , deepseq
 
-flag zh-en-process
+flag proc-zh-en-json
     default: False
 
-executable zh-en-process
-    if !flag(zh-en-process)
+executable proc-zh-en-json
+    if !flag(proc-zh-en-json)
         buildable: False
-    main-is:         ZhEnProcess.hs
+    main-is:         ProcZhEnJson.hs
+    hs-source-dirs:  src
+    ghc-options:     -O2 -Wall
+    build-depends:
+        aeson
+      , attoparsec
+      , unordered-containers
+      , vector
+
+flag proc-hanzi-json
+    default: False
+
+executable proc-hanzi-json
+    if !flag(proc-hanzi-json)
+        buildable: False
+    main-is:         ProcHanziJson.hs
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
     build-depends:

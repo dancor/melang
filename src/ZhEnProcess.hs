@@ -14,7 +14,6 @@ import Data.Maybe
 import qualified Data.Tree as Rose
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
-import qualified Data.Vector as Vec
 -- import Debug.Trace
 import Prelude hiding (catch)
 import System.IO
@@ -22,43 +21,8 @@ import System.IO.Error hiding (catch)
 
 import qualified Cmn.GoogBk1Grams as GB1
 import Util.CoverZip
+import Util.Json
 
-hReadLines :: Handle -> IO [BS.ByteString]
-hReadLines h =
-    liftM2 (:) (BS.hGetLine h) (hReadLines h)
-    `catch`
-    (\e -> if isEOFError e then return [] else ioError e)
-
-parseLine :: BS.ByteString -> HMS.HashMap DT.Text Value
-parseLine l = result
-  where
-    Done _ (Object result) = parse json l
-
-data Tree a
-    = Leaf a | Tree [Tree a]
-    deriving (Show)
-
-tree :: (a -> b) -> ([Tree a] -> b) -> Tree a -> b
-tree f _ (Leaf x) = f x
-tree _ g (Tree x) = g x
-
-fromLeaf :: Show a => Tree a -> a
-fromLeaf = tree id (error . ("fromLeaf: " ++) . show)
-
-asLeaf :: Tree a -> Maybe a
-asLeaf = tree Just (const Nothing)
-
-asKids :: Tree a -> [Tree a]
-asKids = tree (const []) id
-
-valToTree :: Value -> Tree (Maybe DT.Text)
-valToTree Null = Leaf Nothing
-valToTree (String x) = Leaf $ Just x
-valToTree (Array x) = Tree . Vec.toList $ Vec.map valToTree x
-valToTree x = error $ "valToTree: " ++ show x
-
--- When a parent tree is present, it becomes a Right.
--- Other inputs become Lefts, in a natural way.
 seqMb :: Maybe (Maybe a) -> Maybe a
 seqMb = maybe Nothing id
 
