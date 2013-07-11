@@ -11,7 +11,7 @@ import Data.Char
 import qualified Data.Text as DT
 import qualified Data.Text.Encoding as DTE
 
-import BSUtil
+import Util.BS
 
 data Entry = Entry
     { rank          :: !Int

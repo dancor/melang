@@ -12,7 +12,6 @@ import qualified Data.ByteString.Char8 as BSC
 import qualified Data.HashMap.Strict as HMS
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
-import Text.Printf
 
 import Cmn.WdInfo2
 
@@ -27,7 +26,9 @@ textFind needle haystack =
     (pre, rest) = DT.breakOn needle haystack
 
 loadDict :: IO (HMS.HashMap Wd WdInfo)
-loadDict = HMS.fromList . map (\wi -> (wiWd wi, wi)) <$> readWdInfoFile
+-- loadDict = HMS.fromList . map (\wi -> (wiWd wi, wi)) <$> readWdInfoFile
+loadDict = HMS.fromList . map (\wi -> (wiWd wi, wi)) . take 100000 <$>
+    readWdInfoFile
 
 textWds :: HMS.HashMap Wd WdInfo -> DT.Text -> [Either DT.Text WdInfo]
 textWds dict text =
@@ -48,12 +49,32 @@ textWds dict text =
 cleanSent :: DT.Text -> DT.Text
 cleanSent = DT.replace "。" "." . DT.replace ", " "," . DT.replace "，" ","
 
+-- | Provide a one-sig-dig summary like "top100" for 93 or "top20k" for 17234
+sigSummary :: Int -> String
+sigSummary n
+    | n <= 0 = error "sigSummary: value is not positive"
+    | n <= 100 = "top100"
+    | otherwise = "top" ++
+        (resultDig1 : take extraOrdMagNum (repeat '0')) ++ sciOrdMagStr
+      where
+        dig1Char:digRestStr = show n
+        dig1                = read [dig1Char]
+        ceilDig1 = if null digRestStr ||
+                      read digRestStr == (0 :: Int) then dig1 else dig1 + 1
+        resultDig1:extraDigFromCeil    = show (ceilDig1 :: Int)
+        ordMagNum                      = length $ extraDigFromCeil ++ digRestStr
+        (sciOrdMagNum, extraOrdMagNum) = divMod ordMagNum 3
+        sciOrdMagStr =
+            ("" : map (:[]) "kMGTPEZY" ++
+            repeat (error "sigSummary: beyond metric prefixes")) !!
+            sciOrdMagNum
+
 doWi :: WdInfo -> DT.Text
 doWi w = DT.intercalate "\t"
-    [ DT.pack . printf "%.1f" .
-      (/ (10 :: Float)) . fromIntegral . (floor :: Float -> Int) . (* 10) $
-      log (fromIntegral $ wiN w) / log 10
-    , wiWd w, wiDef w]
+    [ DT.pack . sigSummary $ wiN w
+    , wiWd w
+    , wiDef w
+    ]
 
 doSent :: HMS.HashMap Wd WdInfo -> DT.Text -> IO ()
 doSent dict =

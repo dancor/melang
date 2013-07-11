@@ -7,7 +7,7 @@ import qualified Data.ByteString as BS
 import qualified Data.Text as DT
 import qualified Data.Text.Encoding as DTE
 
-import BSUtil
+import Util.BS
 
 -- "Word Info": Google Books word frequencies with dictionary entries.
 -- Line format:
@@ -17,7 +17,7 @@ import BSUtil
 --   pinyin1NoSpaces \ pinyin2 \ etc<tab>
 --   def1 \ def2 \ etc
 wdInfoFile :: String
-wdInfoFile = "/home/danl/p/l/melang/data/zh-en-process.out"
+wdInfoFile = "/home/danl/p/l/melang/data/proc-zh-en-json.out"
 
 type Wd = DT.Text
 
@@ -47,6 +47,12 @@ parseWdInfoLine n str = WdInfo 0 n wd def
           '儿' -> "{er2}"
           _ -> py
     -}
-    (col1, colRest) = breakTab str
+    -- (col1, rest1) = breakTab str
+    -- (col2, rest2) = breakTab rest1
+    -- (col3, col4)  = breakTab rest2
+    (col1, col2) = breakTab str
     wd  = DTE.decodeUtf8 col1
-    def = DTE.decodeUtf8 colRest
+    def = DTE.decodeUtf8 col2
+    -- py  = DTE.decodeUtf8 col2
+    -- pos = DTE.decodeUtf8 col3
+    -- def = DTE.decodeUtf8 col4

@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-cabal configure -f zh-en-process
+cabal configure -f proc-zh-en-json
 cabal build
 
-#time < ~/p/l/melang/data/json/zh-en.json ./zh-en-process > ~/p/l/melang/data/zh-en-process.out
-time grep 同时 ~/p/l/melang/data/json/zh-en.json | ./zh-en-process
+#time < ~/p/l/melang/data/json/zh-en.json ./proc-zh-en-json > ~/p/l/melang/data/proc-zh-en-json.out
+time grep 同时 ~/p/l/melang/data/json/zh-en.json | ./proc-zh-en-json

@@ -2,11 +2,7 @@
 
 import Control.Applicative
 import Control.Arrow
-import Control.Exception
-import Control.Monad
 import Data.Aeson
-import Data.Attoparsec hiding (take)
-import qualified Data.ByteString.Char8 as BS
 import Data.Char
 import qualified Data.HashMap.Strict as HMS
 import Data.List
@@ -15,11 +11,10 @@ import qualified Data.Tree as Rose
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
 -- import Debug.Trace
-import Prelude hiding (catch)
 import System.IO
-import System.IO.Error hiding (catch)
 
 import qualified Cmn.GoogBk1Grams as GB1
+import Util.BS
 import Util.CoverZip
 import Util.Json
 
@@ -71,7 +66,7 @@ showDefLine (DefLine zh py tr) =
 -- | Text which needs padding from continued text, only if more text is
 -- present.
 data TextCont
-    = TCWord 
+    = TCWord
     { tcText :: !DT.Text
     }
     | TCSemi
@@ -102,7 +97,7 @@ showDefNode dn = (measWd, constrPart, tcConcat defParts)
     measWd = dnMeasureWord dn
     constrPart = case dnConstruction dn of
         Nothing -> TCNone ""
-        Just s -> TCSemi $ DT.concat 
+        Just s -> TCSemi $ DT.concat
           [ "(CONS: "
           , DT.unwords . map (doHyphen . pyMakeAscii) . DT.words $
             DT.replace "∼" "~" s
@@ -123,7 +118,7 @@ showDefNode dn = (measWd, constrPart, tcConcat defParts)
               Nothing -> speechPartMb
               Just s -> Just . tcConcat $ catMaybes
                 [ speechPartMb
-                , Just . TCSemi . DT.replace ";" "," . 
+                , Just . TCSemi . DT.replace ";" "," .
                   DT.replace "“" "\"" .
                   DT.replace "”" "\"" $
                   killAts s
@@ -173,7 +168,7 @@ trMbCoverZipWith8
 trMbCoverZipWith8 f t1 t2 t3 t4 t5 t6 t7 t8 =
     Rose.Node curLabel kids
   where
-    curLabel = 
+    curLabel =
         f
         (asLeaf' t1) (asLeaf' t2) (asLeaf' t3) (asLeaf' t4)
         (asLeaf' t5) (asLeaf' t6) (asLeaf' t7) (asLeaf' t8)
@@ -240,7 +235,7 @@ pyMakeAscii =
         if n > 0
           then "[" ++ show n ++ "]" ++ step1IsNum 0 s
           else step2IsTones s
-    step2IsTones s = 
+    step2IsTones s =
         if not (null pyVowel) || pyInitial `elem` ["m", "ng", "r"]
           then
             pyInitial ++ pyVowel ++ pyFinal ++ maybe "" show pyTone ++
@@ -362,8 +357,9 @@ main :: IO ()
 main = do
     let keepEarlierLoadingBackward _ x = x
     gb <- HMS.fromListWith keepEarlierLoadingBackward .
-        map (\x -> (GB1.wd x, GB1.numPerMillion x)) <$> GB1.load
-    ls <- map parseLine <$> hReadLines stdin
+        map (\x -> (GB1.wd x, (GB1.numPerMillion x, GB1.partOfSpeech x))) <$>
+        GB1.load
+    ls <- map parseJson <$> hReadLines stdin
     let wdMap =
             HMS.map (first  (DT.intercalate " \\ ") .
                      second (DT.intercalate " \\ ") . unzip . reverse) .
@@ -375,11 +371,15 @@ main = do
             sortBy (flip compare) .
             map (first (\zh -> (HMS.lookup zh gb, zh))) $
             HMS.toList wdMap
-        showZhPyDef ((_freq, zh), (py, def)) =
+        showZhPyDef ((gbInfo, zh), (py, def)) =
             DT.intercalate "\t"
                 [ zh
-                -- , maybe "?" (DT.pack . show) freq
+                -- , freq
                 , py
+                , partOfSpeech
                 , def
                 ]
+          where
+            -- freq = maybe "?" (DT.pack . show . fst) gbInfo
+            partOfSpeech = maybe "?" snd gbInfo
     mapM_ DTI.putStrLn $ map showZhPyDef wdLinesInOrder
