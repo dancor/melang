@@ -1,5 +1,5 @@
 Data Sources
-* Google Ngrams
+* Google Ngrams (e.g. 30 billion word Chinese corpus of books since 1980)
 * Wiktionary
 * CEDICT (for Mandarin)
 

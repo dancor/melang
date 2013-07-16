@@ -60,7 +60,7 @@ showDefLine (DefLine zh py tr) =
       [] -> []
       ms -> [TCSemi $ DT.concat
         ["(M: "
-        , DT.intercalate ", " $ map ((DT.cons '-') . pyMakeAscii) ms
+        , DT.intercalate ", " $ map ((DT.cons '-') . makePinyinAscii) ms
         , ")"]]
 
 -- | Text which needs padding from continued text, only if more text is
@@ -99,7 +99,7 @@ showDefNode dn = (measWd, constrPart, tcConcat defParts)
         Nothing -> TCNone ""
         Just s -> TCSemi $ DT.concat
           [ "(CONS: "
-          , DT.unwords . map (doHyphen . pyMakeAscii) . DT.words $
+          , DT.unwords . map (doHyphen . makePinyinAscii) . DT.words $
             DT.replace "∼" "~" s
           , maybe "" (": " `DT.append`) $ dnDefn dn
           , ")"
@@ -141,7 +141,7 @@ assembleDefLine :: Int -> HMS.HashMap DT.Text Value -> DefLine
 assembleDefLine _n m =
     DefLine
         (sPart "zh")
-        (pyMakeAscii $ sPart "key") $
+        (makePinyinAscii $ sPart "key") $
     trMbCoverZipWith8 DefNode
         (tPart "field")
         (tPart "speech_part")
@@ -189,9 +189,8 @@ trMbCoverZipWith8 f t1 t2 t3 t4 t5 t6 t7 t8 =
         (nothToTreeNoth m7)
         (nothToTreeNoth m8)
 
-pyMakeAscii :: DT.Text -> DT.Text
-pyMakeAscii =
--- pyMakeAscii xx =
+makePinyinAscii :: DT.Text -> DT.Text
+makePinyinAscii =
     DT.pack . step0 . DT.unpack
     -- Mysteriously present in the data with combining tone marks following:
     . DT.replace "ạ" "a"
@@ -204,7 +203,7 @@ pyMakeAscii =
     . DT.replace "\800" ""
   where
     step0 [] = []
-    -- To Ascii:
+    -- Make Ascii:
     step0 ('“':rest) = '"' : step0 rest
     step0 ('”':rest) = '"' : step0 rest
     -- Keep:
@@ -213,11 +212,12 @@ pyMakeAscii =
     step0 ('*':rest) = '*' : step0 rest
     step0 ('(':rest) = '(' : step0 rest
     step0 (')':rest) = ')' : step0 rest
-    step0 ('\'':rest) = '\'' : step0 rest
     step0 ('/':rest) = '/' : step0 rest
     step0 (',':rest) = ',' : step0 rest
     step0 ('¨':rest) = '¨' : step0 rest
-
+    -- Kill:
+    step0 ('\'':rest) = step0 rest
+    -- Next step:
     step0 rest = step1IsNum (0 :: Int) rest
 
     -- Up to 58 appears!
