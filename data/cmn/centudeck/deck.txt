@@ -12,7 +12,7 @@
 对	dui4	PREP:for
 种	zhong3	NOUN:kind/type
 他	ta1	PRON:he
-这	zhe4	ADJ:this
+这	zhe4	PRON:this
 经济	jing1ji4	NOUN:economy
 第	di4	PRT:nth
 社会	she4hui4	NOUN:society
@@ -51,7 +51,7 @@
 人民	ren2min2	NOUN:the-people
 研究	yan2jiu1	NOUN:research
 进行	jin4xing2	VERB:progress
-各	ge4	ADJ:each
+各	ge4	PRON:each
 管理	guan3li3	NOUN:management
 者	zhe3	NOUN:-er/-ist
 所	suo3	PRT:place
@@ -104,12 +104,12 @@
 没有	mei2you3	VERB:doesn't-have
 地区	di4qu1	NOUN:area
 及	ji2	#4:CONJ:and
-这些	zhe4xie1	ADJ:these
+这些	zhe4xie1	PRON:these
 四	si4	NUM:4
 五	wu3	NUM:5
 活动	huo2dong4	NOUN:activity
 我国	wo3guo2	NOUN:our-country
-这个	zhe4ge5	ADJ:this-one
+这个	zhe4ge5	PRON:this-one
 制度	zhi4du4	NOUN:system
 科学	ke1xue2	NOUN:science
 国	guo2	#2:NOUN:country
@@ -120,7 +120,7 @@
 间	jian1	PRT:room
 必须	bi4xu1	VERB:must
 基础	ji1chu3	NOUN:basis
-一些	yi4xie1	ADJ:some
+一些	yi4xie1	NOUN:some
 部门	bu4men2	NOUN:department
 产品	chan3pin3	NOUN:product
 可	ke3	#3:VERB:can
@@ -230,7 +230,7 @@
 提高	ti2gao1	VERB:raise
 七	qi1	NUM:7
 银行	yin2hang2	NOUN:bank
-每	mei3	ADJ:every
+每	mei3	PRON:every
 不同	bu4tong2	ADJ:not-alike
 加强	jia1qiang2	VERB:strengthen
 提供	ti2gong1	VERB:supply
@@ -271,7 +271,7 @@
 意义	yi4yi4	NOUN:meaning
 一次	yi2ci4	ADV:linear
 权	#2:quan2	NOUN:authority
-某	mou3	ADJ:certain/particular
+某	mou3	PRON:certain/particular
 特别	te4bie2	ADV:especially
 原则	yuan2ze2	NOUN:principle
 资料	zi1liao4	NOUN:material
@@ -288,7 +288,7 @@
 知道	zhi1dao5	VERB:know
 事	#3:shi4	NOUN:issue/matter/thing
 年代	nian2dai4	NOUN:age/time
-该	gai1	ADJ:said/given
+该	gai1	PRON:said/given
 商品	shang1pin3	NOUN:merchandise
 这样	zhe4yang4	ADV:in-this-way
 局	ju2	NOUN:bureau/branch
@@ -302,14 +302,14 @@
 体制	ti3zhi4	#3:NOUN:system
 去	qu4	VERB:go
 产生	chan3sheng1	VERB:produce
-一定	yi1ding4	ADJ:specified
+一定	yi1ding4	ADV:definitely
 项目	xiang4mu4	NOUN:clause/item
 价格	jia4ge2	NOUN:price
 利益	li4yi4	NOUN:benefit
 阶段	jie1duan4	#2:NOUN:phase
 力	li4	NOUN:force
 使用	shi3yong4	#2:VERB:use
-什么	shen2me5	ADJ:what
+什么	shen2me5	PRON:what
 当时	dang1shi2	NOUN:that-very-moment
 应该	ying1gai1	VERB:should
 时候	shi2hou5	NOUN:point-in-time
@@ -374,7 +374,7 @@
 高	gao1	VERB:tall
 实践	shi2jian4	NOUN:practice
 这里	zhe4li3	PRON:here
-些	xie1	#2:ADJ:some
+些	xie1	#2:MEAS:indef-small-amount
 反映	fan3ying4	VERB:reflect
 给	gei3	VERB:give
 指出	zhi3chu1	VERB:point-out
@@ -509,7 +509,7 @@
 东西	dong1xi5	#2:NOUN:thing
 制定	zhi4ding4	VERB:formulate
 注意	zhu4yi4	VERB:take-note-of
-斯	si1	NOUN:this
+斯	si1	PRON:this
 非常	fei1chang2	ADV:extraordinarily
 国有	guo2you3	ADJ:state-owned
 级	#3:ji2	NUM:level
@@ -571,7 +571,7 @@
 最大	zui4da4	ADJ:biggest
 处理	chu3li3	VERB:handle
 美	#2:mei3	NOUN:beauty
-那些	na4xie1	ADJ:those
+那些	na4xie1	PRON:those
 法院	fa3yuan4	NOUN:law-court
 重大	zhong4da4	ADJ:great
 功能	gong1neng2	NOUN:function
@@ -654,7 +654,7 @@
 方针	fang1zhen1	#2:NOUN:policy
 据	ju4	PREP:according-to
 区域	qu1yu4	#2:NOUN:region
-非	fei1	ADJ:not
+非	fei1	ADV:not
 召开	zhao4kai1	VERB:convene
 希望	xi1wang4	VERB:hope
 自由	zi4you2	NOUN:freedom
@@ -700,7 +700,7 @@
 居民	ju1min2	NOUN:resident
 一个	yi2ge4	ADJ:a
 由	you2	PREP:by/from
-其他	qi2ta1	ADJ:other/else
+其他	qi2ta1	PRON:others/the-rest
 那么	na4me5	ADV:in-that-way
 作出	zuo4chu1	VERB:made
 充分	chong1fen4	ADJ:full/ample
