@@ -4,6 +4,7 @@
 module Main where
 
 import Control.Applicative
+import Control.DeepSeq
 import Data.Char
 import Data.List
 import qualified Data.Map as Map
@@ -18,6 +19,11 @@ data Centuline = Centuline
     , clGloss  :: !DT.Text
     , clExtra  :: ![DT.Text]
     } deriving (Show)
+
+{-
+instance NFData Centuline where
+    rnf (Centuline a b c d) = rnf a `seq` rnf b `seq` rnf c `seq` rnf d
+-}
 
 onClPinyin :: (DT.Text -> DT.Text) -> Centuline -> Centuline
 onClPinyin f cl = cl {clPinyin = f $ clPinyin cl}
@@ -45,7 +51,18 @@ prepPinyin = DT.pack . f . DT.unpack
     f ('/':_) = error "Pinyin cannot contain '/'!"
     f ('\\':_) = error "Pinyin cannot contain '\\'!"
     f (c:x) = c : f x
-    
+
+prepGloss :: DT.Text -> DT.Text
+prepGloss g =
+    if partOfSpeech `elem`
+        [ "ADJ", "ADV", "CONJ", "MEAS", "NOUN"
+        , "NUM", "PREP", "PRON", "PRT", "VERB"
+        ]
+      then g
+      else error $ "Unknown part-of-speech: " ++ show partOfSpeech
+  where
+    (partOfSpeech, _) = DT.breakOn ":" g
+   
 centuprepPinyin :: Centudeck -> Centudeck
 centuprepPinyin = map (onClPinyin prepPinyin)
 
@@ -81,7 +98,7 @@ centuprepGlossUniq = snd . foldl' f (Map.empty, [])
         , cDeck ++ [cLine']
         )
       where
-        gloss = killNum $ clGloss cLine
+        gloss = prepGloss . killNum $ clGloss cLine
         cLine' = case Map.lookup gloss seen of
           Just n -> cLine {
             clGloss = prefNum (n + 1) `DT.append` gloss}
@@ -92,6 +109,18 @@ centuprep = centuprepGlossUniq . centuprepPinyinUniq . centuprepPinyin
 
 main :: IO ()
 main = do
+    let deckF = "/home/danl/p/l/melang/data/cmn/centudeck/deck.txt"
+    deckOut <-
+        DT.unlines . map showCentuline .
+        centuprep . map readCentuline . DT.lines <$> DTI.readFile deckF
+    
+    -- Why, on file format error, does outputing not kill the file but
+    -- rnf does?
+    --let _ = rnf deckOut
+    DTI.putStr deckOut
+
+    DTI.writeFile deckF deckOut
+    {-
     args <- getArgs
     case args of
       [] -> do
@@ -101,3 +130,4 @@ main = do
         putStrLn
             "Usage: cat deck-tsv.txt | ./centuprep > prepped-deck-tsv.txt"
         putStrLn "Filters pinyin and numbers repeated glosses."
+    -}
