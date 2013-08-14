@@ -66,7 +66,7 @@
 政府	zheng4fu3	NOUN:government
 大	da4	ADJ:big
 着	zhe5	PRT:-ing
-两	liang3	NUM:pair
+两	liang3	NUM:two
 时	#2:shi2	PRT:time
 它	#2:ta1	PRON:it
 技术	ji4shu4	NOUN:technology
@@ -218,7 +218,7 @@
 包括	bao1kuo4	VERB:include
 理论	li3lun4	#2:NOUN:-ism
 开始	kai1shi3	VERB:begin
-此	ci3	PRON:this
+此	ci3	#2:PRON:this
 已经	yi3jing5	#2:ADV:already
 全	quan2	ADJ:complete/whole
 实现	shi2xian4	VERB:make-real
@@ -509,7 +509,7 @@
 东西	dong1xi5	#2:NOUN:thing
 制定	zhi4ding4	VERB:formulate
 注意	zhu4yi4	VERB:take-note-of
-斯	si1	PRON:this
+斯	si1	#3:PRON:this
 非常	fei1chang2	ADV:extraordinarily
 国有	guo2you3	ADJ:state-owned
 级	#3:ji2	NUM:level
@@ -654,7 +654,7 @@
 方针	fang1zhen1	#2:NOUN:policy
 据	ju4	PREP:according-to
 区域	qu1yu4	#2:NOUN:region
-非	fei1	ADV:not
+非	fei1	#2:ADV:not
 召开	zhao4kai1	VERB:convene
 希望	xi1wang4	VERB:hope
 自由	zi4you2	NOUN:freedom
