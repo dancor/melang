@@ -243,7 +243,7 @@
 用	yong4	VERB:use
 八	ba1	NUM:8
 个人	ge4ren2	NOUN:individual
-如	ru2	CONJ:if
+如	ru2	#2:CONJ:if
 委员会	wei3yuan2hui4	NOUN:committee
 艺术	yi4shu4	NOUN:art
 里	li3	#2:PRT:inside
@@ -346,7 +346,7 @@
 目标	mu4biao1	NOUN:goal
 世纪	shi4ji4	NOUN:century
 书	shu1	NOUN:book
-却	que4	#3:ADV:but
+却	que4	#2:ADV:but
 办法	ban4fa3	NOUN:ways-and-means
 位	#2:wei4	MEAS:person
 原因	yuan2yin1	NOUN:reason
@@ -530,7 +530,7 @@
 主体	zhu3ti3	NOUN:main-part
 委员	wei3yuan2	NOUN:committee-member
 重点	zhong4dian3	NOUN:focal-point
-然而	ran2er2	#4:ADV:but
+然而	ran2er2	#3:ADV:but
 接受	jie1shou4	#2:VERB:receive
 同	tong2	PREP:with
 点	dian3	NOUN:dot
@@ -663,7 +663,7 @@
 往往	wang3wang3	ADV:often
 行动	xing2dong4	#3:NOUN:action
 特征	te4zheng1	#2:NOUN:characteristic
-仅	jin3	#3:ADV:only
+仅	jin3	#2:ADV:only
 史	#2:shi3	#2:NOUN:history
 仍然	reng2ran2	ADV:yet
 逐步	zhu2bu4	ADV:step-by-step
@@ -679,7 +679,7 @@
 成果	cheng2guo3	NOUN:achievement
 一起	yi1qi3	ADV:together
 基金	ji1jin1	#2:NOUN:fund
-不过	bu5guo4	#4:ADV:only
+不过	bu5guo4	#3:ADV:only
 并且	bing4qie3	ADV:moreover
 队	#2:dui4	NOUN:line-of-people
 现实	xian4shi2	NOUN:reality

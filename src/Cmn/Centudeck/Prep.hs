@@ -55,7 +55,7 @@ prepPinyin = DT.pack . f . DT.unpack
 prepGloss :: DT.Text -> DT.Text
 prepGloss g =
     if partOfSpeech `elem`
-        [ "ADJ", "ADV", "CONJ", "MEAS", "NOUN"
+        [ "ADJ", "ADV", "AUXV", "CONJ", "MEAS", "NOUN"
         , "NUM", "PREP", "PRON", "PRT", "VERB"
         ]
       then g
