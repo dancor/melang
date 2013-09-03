@@ -42,4 +42,6 @@ main = do
         take 40 .
         filter (not . (`Set.member` deckWordSet) . dlWord) .
         zipWith readDictline [1..] . DT.lines <$> DTI.readFile dictF
-    DTI.putStr . DT.unlines $ map showDictline dictNext
+    DTI.appendFile deckF . DT.unlines $
+        map (\l -> DT.intercalate "\t"
+        [dlWord l, ".", dlPartOfSpeech l `DT.append` ":."]) dictNext
