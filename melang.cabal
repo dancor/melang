@@ -19,7 +19,7 @@ executable wlk
     build-depends:   base >= 4
                    , containers
                    , filepath
-                   , haskeline
+                   -- , haskeline
 
 flag text-ch-freq
     default: False
@@ -33,7 +33,7 @@ executable text-ch-freq
     build-depends:   base >= 4
                    , containers
                    , filepath
-                   , haskeline
+                   -- , haskeline
                    , mtl
 
 flag goog-recent
@@ -108,7 +108,7 @@ executable wikt-to-defs
     ghc-options:     -Wall
     build-depends:   base >= 4
                    , bytestring
-                   , tagsoup
+                   -- , tagsoup
                    , text
 
 flag goog-defs
@@ -189,3 +189,25 @@ executable proc-hanzi-json
       , attoparsec
       , unordered-containers
       , vector
+
+flag centuprep
+    default: False
+
+executable centuprep
+    if !flag(centuprep)
+        buildable: False
+    main-is:         Cmn/Centudeck/Prep.hs
+    hs-source-dirs:  src
+    ghc-options:     -O2 -Wall
+    build-depends:
+
+flag centunext
+    default: False
+
+executable centunext
+    if !flag(centunext)
+        buildable: False
+    main-is:         Cmn/Centudeck/Next.hs
+    hs-source-dirs:  src
+    ghc-options:     -O2 -Wall
+    build-depends:
