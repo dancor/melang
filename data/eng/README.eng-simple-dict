@@ -1,0 +1,17 @@
+Generation method:
+- Take the 20120701 English 1-grams.
+- Filter:
+  - Count word instances appearing since 1980.
+  - Require words to contain some "alpha" character.
+  - Exclude words containing character ".".
+    (Excludes name abbreviations like "H." in "Jesus H. Christ".)
+  - Exclude lines (words or tags) containing character "X".
+    (Excludes untagged things which are often nonsense-seeming or foreign
+    like "de" and "en".)
+  - Exclude words containing character "'".
+    (Weird things to be in a top-words list, like "'s".)
+- Combine:
+  - Sum occurrences across years.
+  - Combine across part-of-speech, keeping part-of-speech tag of
+    most common line.
+- Sort by occurrence, decreasing.
