@@ -5,13 +5,17 @@ module Main where
 
 import Control.Applicative
 import Control.DeepSeq
+import qualified Data.HashMap.Strict as HMS
+import Data.List
+import Data.Maybe
+import Data.Ord
 import qualified Data.Set as Set
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
 
 import Cmn.Centudeck
 
--- | Example: Centuline "的" "PRT" 1680518088 1
+-- | Example: Dictline "的" "PRT" 1680518088 1
 data Dictline = Dictline
     { dlWord         :: !DT.Text
     , dlPartOfSpeech :: !DT.Text
@@ -34,15 +38,22 @@ showDictline (Dictline w p o n) =
 
 main :: IO ()
 main = do
-    let deckF = "/home/danl/p/l/melang/data/cmn/deck.txt"
-    deck <- map readCentuline . DT.lines <$> DTI.readFile deckF
-    let deckWordSet = Set.fromList $ map clWord deck
+    let deckF = "/home/danl/p/l/melang/data/cmn/centudeck/deck.txt"
         dictF = "/home/danl/p/l/melang/data/cmn/dict"
-    deckNext <-
-        take 40 .
-        map (\l -> Centuline (dlWord l) ""
-            (dlPartOfSpeech l `DT.append` ":")) .
-        filter (not . (`Set.member` deckWordSet) . dlWord) .
-        zipWith readDictline [1..] . DT.lines <$> DTI.readFile dictF
-    -- DTI.appendFile deckF . DT.unlines $
-    DTI.writeFile deckF . DT.unlines . map showCentuline $ deck ++ deckNext
+    deck <- map readCentuline . DT.lines <$> DTI.readFile deckF
+    dict <- zipWith readDictline [1..] . DT.lines <$> DTI.readFile dictF
+    let deckWordSet = Set.fromList $ map clWord deck
+        dictToDeck :: Dictline -> Centuline
+        dictToDeck l =
+            Centuline (dlWord l) "" (dlPartOfSpeech l `DT.append` ":")
+        deckNext =
+            take 40 .
+            map dictToDeck $
+            filter (not . (`Set.member` deckWordSet) . dlWord) dict
+
+        wdToPos = HMS.fromList $ map (\l -> (dlWord l, dlOccurs l)) dict
+        deck' =
+            map snd .
+            sortBy (flip $ comparing fst) $
+            map (\x -> (fromJust $ HMS.lookup (clWord x) wdToPos, x)) deck
+    DTI.writeFile deckF . DT.unlines . map showCentuline $ deck' ++ deckNext
