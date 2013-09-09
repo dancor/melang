@@ -11,7 +11,7 @@ import qualified Data.Text.IO as DTI
 
 import Cmn.Centudeck
 
--- | Example: Centuline "的" "PRT" 1680518088
+-- | Example: Centuline "的" "PRT" 1680518088 1
 data Dictline = Dictline
     { dlWord         :: !DT.Text
     , dlPartOfSpeech :: !DT.Text
@@ -37,11 +37,12 @@ main = do
     let deckF = "/home/danl/p/l/melang/data/cmn/deck.txt"
     deck <- map readCentuline . DT.lines <$> DTI.readFile deckF
     let deckWordSet = Set.fromList $ map clWord deck
-    let dictF = "/home/danl/p/l/melang/data/cmn/dict"
-    dictNext <-
+        dictF = "/home/danl/p/l/melang/data/cmn/dict"
+    deckNext <-
         take 40 .
+        map (\l -> Centuline (dlWord l) "."
+            (dlPartOfSpeech l `DT.append` ":.")) .
         filter (not . (`Set.member` deckWordSet) . dlWord) .
         zipWith readDictline [1..] . DT.lines <$> DTI.readFile dictF
-    DTI.appendFile deckF . DT.unlines $
-        map (\l -> DT.intercalate "\t"
-        [dlWord l, ".", dlPartOfSpeech l `DT.append` ":."]) dictNext
+    -- DTI.appendFile deckF . DT.unlines $
+    DTI.writeFile deckF . DT.unlines . map showCentuline $ deck ++ deckNext
