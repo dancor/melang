@@ -40,8 +40,8 @@ main = do
         dictF = "/home/danl/p/l/melang/data/cmn/dict"
     deckNext <-
         take 40 .
-        map (\l -> Centuline (dlWord l) "."
-            (dlPartOfSpeech l `DT.append` ":.")) .
+        map (\l -> Centuline (dlWord l) ""
+            (dlPartOfSpeech l `DT.append` ":")) .
         filter (not . (`Set.member` deckWordSet) . dlWord) .
         zipWith readDictline [1..] . DT.lines <$> DTI.readFile dictF
     -- DTI.appendFile deckF . DT.unlines $
