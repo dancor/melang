@@ -211,3 +211,16 @@ executable centunext
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
     build-depends:
+
+flag extract-wikipedia-pages
+    default: False
+
+executable extract-wikipedia-pages
+    if !flag(extract-wikipedia-pages)
+        buildable: False
+    main-is:         ExtractWikipediaPages.hs
+    hs-source-dirs:  src
+    ghc-options:     -O2 -Wall
+    build-depends:
+        dlist
+      , hexpat
