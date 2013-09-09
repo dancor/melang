@@ -57,7 +57,7 @@ centuprepPinyinUniq = snd . foldl' f (Map.empty, [])
         , cDeck ++ [cLine']
         )
       where
-        pinyin = killNum $ clPinyin cLine
+        pinyin = clPinyin cLine
         cLine' = case Map.lookup pinyin seen of
           Just n -> cLine {
             clPinyin = prefNum (n + 1) `DT.append` pinyin}
@@ -71,21 +71,28 @@ centuprepGlossUniq = snd . foldl' f (Map.empty, [])
         , cDeck ++ [cLine']
         )
       where
-        gloss = prepGloss . killNum $ clGloss cLine
+        gloss = prepGloss $ clGloss cLine
         cLine' = case Map.lookup gloss seen of
           Just n -> cLine {
             clGloss = prefNum (n + 1) `DT.append` gloss}
           _ -> cLine
 
+centuKillNums :: Centuline -> Centuline
+centuKillNums (Centuline wd py gloss) =
+    Centuline wd (killNum py) (killNum gloss)
+
 centuprep :: Centudeck -> Centudeck
-centuprep = centuprepGlossUniq . centuprepPinyinUniq . centuprepPinyin
+centuprep =
+    centuprepGlossUniq . centuprepPinyinUniq . centuprepPinyin .
+    map centuKillNums
 
 main :: IO ()
 main = do
     let deckF = "/home/danl/p/l/melang/data/cmn/centudeck/deck.txt"
     deckOut <-
         DT.unlines . map showCentuline .
-        centuprep . map readCentuline . DT.lines <$> DTI.readFile deckF
+        centuprep .
+        map readCentuline . DT.lines <$> DTI.readFile deckF
     
     -- Why, on file format error, does outputing not kill the file but
     -- rnf does?
