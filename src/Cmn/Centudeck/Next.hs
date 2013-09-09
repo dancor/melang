@@ -41,7 +41,9 @@ main = do
     let deckF = "/home/danl/p/l/melang/data/cmn/centudeck/deck.txt"
         dictF = "/home/danl/p/l/melang/data/cmn/dict"
     deck <- map readCentuline . DT.lines <$> DTI.readFile deckF
-    dict <- zipWith readDictline [1..] . DT.lines <$> DTI.readFile dictF
+    dict <-
+        filter ((/= "一条") . dlWord) .
+        zipWith readDictline [1..] . DT.lines <$> DTI.readFile dictF
     let deckWordSet = Set.fromList $ map clWord deck
         dictToDeck :: Dictline -> Centuline
         dictToDeck l =
