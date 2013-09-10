@@ -6,28 +6,30 @@ import Control.Applicative
 import Control.Monad
 import qualified Data.ByteString.Char8 as BS
 import qualified Data.ByteString.Lazy as BSL
+import qualified Data.ByteString.Lazy.Char8 as BSLC
 import qualified Data.DList as DL
+import Data.Maybe
 import qualified Data.Text as DT
 import qualified Data.Text.Encoding as DTE
-import qualified Data.Text.IO as DTI
-import Data.Maybe
+-- import qualified Data.Text.IO as DTI
+import System.IO
 import Text.XML.Expat.Proc
 import Text.XML.Expat.Tree
 
 validatePage :: (Maybe a, Maybe b) -> Maybe (a, b)
 validatePage pageData = case pageData of
-    (Just a, Just b) -> Just (a, b)
-    (_, _) -> Nothing
+  (Just a, Just b) -> Just (a, b)
+  (_, _) -> Nothing
 
 scanChildren :: [UNode BS.ByteString] -> DL.DList BS.ByteString
 scanChildren c = case c of
-    h:t -> DL.append (getContent h) (scanChildren t)
-    []  -> DL.fromList []
+  h:t -> DL.append (getContent h) (scanChildren t)
+  []  -> DL.fromList []
 
 getContent :: UNode BS.ByteString -> DL.DList BS.ByteString
 getContent treeElement = case treeElement of
-    Element _name _attributes children -> scanChildren children
-    Text text -> DL.fromList [text]
+  Element _name _attributes children -> scanChildren children
+  Text text -> DL.fromList [text]
 
 extractText
     :: NodeG [] BS.ByteString text
@@ -57,12 +59,26 @@ outputPages pagesText = do
     let flattenedPages = map DL.toList pagesText
     mapM_ (mapM_ BS.putStr) flattenedPages
 
+-- Some Wikimedia dumps start with a line like:
+-- ------> ../enwiktionary-20130907-pages-articles.xml.bz2 <------
+killPossibleHeader :: BSL.ByteString -> BSL.ByteString
+killPossibleHeader s = if "-" `BSLC.isPrefixOf` s
+  then BSL.tail $ BSLC.dropWhile (/= '\n') s
+  else s
+
 main :: IO ()
 main = do
-    xmlStr <- BSL.getContents
+    xmlStr <- killPossibleHeader <$> BSL.getContents
+    -- Awkwardly, I see no way to process the mErr (even after the pages)
+    -- without having an unacceptable space leak. Who is to blame?
     let (tree, _mErr) = parse defaultParseOptions xmlStr
         pages = pageDetails tree
     forM_ pages $ \(title, text) ->
         unless (":" `DT.isInfixOf` title || "/" `DT.isInfixOf` title) $ do
             -- DTI.putStrLn title
             BS.writeFile (DT.unpack title) $ BS.concat $ DL.toList text
+    {-
+    case mErr of
+      Just err -> hPutStr stderr $ show err
+      _ -> return ()
+    -}
