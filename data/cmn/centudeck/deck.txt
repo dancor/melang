@@ -542,7 +542,7 @@
 努力	nu3li4	VERB:try-hard/make-great-effort
 有效	you3xiao4	ADJ:effective/valid
 文	wen2	NOUN:writing
-过去	guo4qu5	NOUN:the-past
+过去	guo4qu4	NOUN:the-past
 综合	zong1he2	ADJ:synthetic/composite
 一点	yi4dian3	ADV:a-little
 组	zu3	NOUN:section
