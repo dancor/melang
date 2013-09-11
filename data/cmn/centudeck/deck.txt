@@ -429,7 +429,7 @@
 页	#2:ye4	NOUN:book-page
 发现	fa1xian4	VERB:find
 之后	zhi1hou4	PRT:after/later
-战争	zhan4zheng1	NOUN:war/warfare
+战争	zhan4zheng1	NOUN:war
 报告	bao4gao4	NOUN:report
 取得	qu3de2	VERB:gain
 矛盾	mao2dun4	NOUN:contradiction
@@ -964,7 +964,7 @@
 通知	tong1zhi1	NOUN:notice/circular
 各国	ge4guo2	NOUN:each-country
 所谓	suo3wei4	ADJ:so-called/what-is-called
-战	#2:zhan4	NOUN:war
+战	#2:zhan4	#2:NOUN:war
 另外	ling4wai4	ADJ:additional/another
 面积	mian4ji1	NOUN:area-(geometry)
 路	lu4	#2:NOUN:road/way
