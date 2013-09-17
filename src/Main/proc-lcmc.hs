@@ -1,11 +1,13 @@
-import Control.Applicative
-import Control.DeepSeq
-import Data.Time
+-- import Control.Applicative
+-- import Control.DeepSeq
+-- import Data.Time
 
 import Cmn.Lcmc
 
 main :: IO ()
 main = do
+    myMain
+{-
     putStrLn "Reading corpus words."
     time0 <- getCurrentTime
     wds <- flattenCorpus <$> readLcmcCorpus
@@ -15,6 +17,6 @@ main = do
         print $ length wds
         time2 <- getCurrentTime
         putStrLn $ "Counted corpus words: " ++ show (diffUTCTime time2 time1)
-
+-}
     --res <- wordStats . flattenCorpus <$> readLcmcCorpus
     --mapM_ putStrLn res

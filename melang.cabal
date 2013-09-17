@@ -247,5 +247,7 @@ executable proc-lcmc
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
     build-depends:
-        time
+        conduit
+      , time
       , xml
+      , xml-conduit

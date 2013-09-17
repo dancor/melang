@@ -1,6 +1,14 @@
 {-# LANGUAGE BangPatterns #-}
+{-# LANGUAGE OverloadedStrings #-}
 
 module Cmn.Lcmc where
+
+import Data.Conduit
+import qualified Data.Conduit.List as CL
+import Data.XML.Types as XT
+import qualified Text.XML.Stream.Parse as XSP
+import Data.String (fromString)
+import Data.Void
 
 import Control.Applicative
 import Control.DeepSeq
@@ -9,6 +17,7 @@ import Data.List
 import qualified Data.Map as Map
 import Data.Maybe
 import Data.Ord
+import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
 import System.FilePath
 import qualified Text.XML.Light as TXL
@@ -192,7 +201,8 @@ readLcmcCategory !cat = do
 readLcmcCorpus :: IO LcmcCorpus
 readLcmcCorpus = mapM (\x -> readLcmcCategory [x]) "ABCDEFGHJKLMNPR"
 
--- readFlatCorpus :: IO [LcmcWord]
+{-
+readFlatCorpus :: IO [LcmcWord]
 readFlatCorpus = do
     res1 <- flattenCategory <$> readLcmcCategory "A"
     print $ length res1
@@ -200,6 +210,7 @@ readFlatCorpus = do
     print $ length res2
     res3 <- flattenCategory <$> readLcmcCategory "C"
     print $ length res3
+-}
 
 flattenParagraph :: LcmcParagraph -> [LcmcWord]
 flattenParagraph = concat
@@ -238,3 +249,57 @@ wordStats =
           )
         )
     )
+
+parseFileWords :: String -> IO FileLol
+parseFileWords fileName = runResourceT $
+    XSP.parseFile XSP.def (fromString fileName) $$ parseXml
+
+data FileLol = FileLol DT.Text
+    deriving (Show)
+
+{-
+skipTag :: ConduitM XT.Event o (ResourceT IO) ()
+skipTag =
+    XSP.tagPredicate (const True) XSP.ignoreAttrs $ const skipContents
+
+skipContents :: ConduitM XT.Event o (ResourceT IO) ()
+skipContents = do
+    x <- await
+    case x of
+      Nothing -> Done x Nothing
+      _ -> return XSP.many skipTag
+-}
+
+skipTagAndContents :: Name -> Sink Event (ResourceT IO) (Maybe ())
+skipTagAndContents n = XSP.tagName n XSP.ignoreAttrs $ const $
+    XSP.many (skipElements n) >> return ()
+
+skipElements :: Name -> ConduitM Event o (ResourceT IO) (Maybe ())
+skipElements t = do
+    x <- await
+    case x of
+      Just (EventEndElement n) | n == t -> return Nothing
+      Nothing -> return $ Just ()
+      _ -> skipElements t
+
+parseXml :: ConduitM XT.Event Void (ResourceT IO) FileLol
+parseXml =
+    XSP.force "Missing <LCMC> tag." $
+    XSP.tagName "LCMC" XSP.ignoreAttrs $ const $
+    skipTagAndContents "header" >>
+    XSP.force "Missing <text> tag."
+    (XSP.tagName "text" XSP.ignoreAttrs $ const $ return $ FileLol "Yes.")
+    {-
+    XSP.tagName "LCMC" XSP.ignoreAttrs $ const $
+    XSP.tagName "text" XSP.ignoreAttrs $ const $
+    XSP.many $ XSP.tagName "file" (XSP.requireAttr "ID") $ \theId -> do
+        return $ FileLol theId
+    -}
+
+myMain :: IO ()
+myMain = do
+    res <- parseFileWords $ 
+        (lcmcDataDir </> "character" </> ("LCMC_" ++ "A" ++ ".XML"))
+    print res
+
+
