@@ -435,7 +435,7 @@
 矛盾	mao2dun4	NOUN:contradiction
 职工	zhi2gong1	NOUN:workers
 采取	cai3qu3	VERB:take
-天	tian1	NUM:sky
+天	tian1	MEAS:day
 体系	ti3xi4	#4:NOUN:system
 这里	zhe4li3	PRON:here
 成立	cheng2li4	#2:VERB:establish
@@ -663,7 +663,7 @@
 法院	fa3yuan4	NOUN:law-court
 行业	hang2ye4	NOUN:profession/industry
 创作	chuang4zuo4	NOUN:create
-尔	er3	NOUN:you
+尔	er3	#2:PRON:you
 重视	zhong4shi4	VERB:attach-importance-to/value
 回	hui2	VERB:reply/return
 分子	fen1zi3	NOUN:member/constituent
@@ -690,7 +690,7 @@
 明显	ming2xian3	ADJ:clean/obvious
 关	guan1	NOUN:barrier/check
 强调	qiang2diao4	VERB:stress
-期间	qi1jian1	NOUN:time
+期间	qi1jian1	NOUN:time/-period
 准备	zhun4bei4	VERB:prepare/plan
 指	#2:zhi3	VERB:point
 中共	Zhong1gong4	NOUN:Chinese-Communist-Party

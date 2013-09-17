@@ -236,3 +236,16 @@ executable wikt2
     ghc-options:     -O2 -Wall
     build-depends:
         directory
+
+flag proc-lcmc
+    default: False
+
+executable proc-lcmc
+    if !flag(proc-lcmc)
+        buildable: False
+    main-is:         Main/proc-lcmc.hs
+    hs-source-dirs:  src
+    ghc-options:     -O2 -Wall
+    build-depends:
+        time
+      , xml
