@@ -3,24 +3,22 @@
 
 module Cmn.Lcmc where
 
-import Data.Conduit
-import qualified Data.Conduit.List as CL
-import Data.XML.Types as XT
-import qualified Text.XML.Stream.Parse as XSP
-import Data.String (fromString)
-import Data.Void
-
 import Control.Applicative
 import Control.DeepSeq
+import qualified Data.ByteString as BS
+import qualified Data.ByteString.Char8 as BSC
+import qualified Data.ByteString.Lazy as BSL
 import Data.Char
+import Data.Either
 import Data.List
 import qualified Data.Map as Map
 import Data.Maybe
 import Data.Ord
 import qualified Data.Text as DT
+import qualified Data.Text.Encoding as DTE
 import qualified Data.Text.IO as DTI
 import System.FilePath
-import qualified Text.XML.Light as TXL
+import Text.XML.Expat.SAX
 
 data Tag
     = TAdjective
@@ -75,7 +73,7 @@ data Tag
     | TDescriptiveMorpheme
     deriving (Eq, Ord, Show)
 
-tagAbbrs :: [(Tag, String)]
+tagAbbrs :: [(Tag, BS.ByteString)]
 tagAbbrs =
     [ (TAdjective, "a")
     , (TAdjectiveAsAdverbial, "ad")
@@ -134,107 +132,83 @@ lcmcDataDir = "/home/danl/p/l/melang/data/cmn/LCMC/2474/Lcmc/data"
 
 data LcmcWord = LcmcWord
     { lwPos    :: !Tag
-    , lwWord   :: !String
-    , lwPinyin :: !String
+    , lwWord   :: !DT.Text
+    , lwPinyin :: !DT.Text
     } deriving (Eq, Ord, Show)
 
 instance NFData LcmcWord
 
-type LcmcSentence = [LcmcWord]
-
-type LcmcParagraph = [LcmcSentence]
-
-type LcmcSample = [LcmcParagraph]
-
-type LcmcCategory = [LcmcSample]
-
-type LcmcCorpus = [LcmcCategory]
-
-lookupTag :: String -> Tag
+lookupTag :: BS.ByteString -> Tag
 lookupTag !str = fst .
     fromMaybe (error $ "Unknown Tag: " ++ show str) . listToMaybe $
     filter ((== strNorm) . snd) tagAbbrs
   where
-    strNorm = filter (not . isSpace) str
+    strNorm = BSC.filter (not . isSpace) str
 
-procWord :: TXL.Element -> TXL.Element -> LcmcWord
-procWord !wordX !pinyinX =
-    LcmcWord (lookupTag tStr) (TXL.strContent wordX) (TXL.strContent pinyinX)
+breakCharacterData
+    :: [SAXEvent BS.ByteString BS.ByteString]
+    -> ([BS.ByteString], [SAXEvent BS.ByteString BS.ByteString])
+breakCharacterData = breakCharacterDataAccum []
   where
-    Just tStr = TXL.findAttr (TXL.unqual "POS") wordX
+    breakCharacterDataAccum !accum (CharacterData text : rest) =
+        breakCharacterDataAccum (accum ++ [text]) rest
+    breakCharacterDataAccum !accum rest = (accum, rest)
 
-procSentence :: TXL.Element -> TXL.Element -> LcmcSentence
-procSentence !wordX !pinyinX = zipWith procWord (f wordX) (f pinyinX)
+data NewSection = NewSentence
+    deriving (Eq, Ord, Show)
+
+instance NFData NewSection
+
+procSax
+    :: [SAXEvent BS.ByteString BS.ByteString]
+    -> [Either NewSection (BS.ByteString, BS.ByteString)]
+procSax (StartElement "s" _ : rest) = Left NewSentence : procSax rest
+procSax (StartElement "w" [("POS", pos)] : rest) =
+    Right (pos, BS.concat texts) : procSax rest'
   where
-    f = filter ((== TXL.unqual "w") . TXL.elName) .
-        TXL.onlyElems . TXL.elContent
+    (texts, EndElement "w" : rest') = breakCharacterData rest
+procSax (StartElement "w" attrs : _rest) =
+    error $ "Unexpected attrs:" ++ show attrs
+procSax (_ : rest) = procSax rest
+procSax [] = []
 
-procParagraph :: TXL.Element -> TXL.Element -> LcmcParagraph
-procParagraph !wordX !pinyinX = zipWith procSentence (f wordX) (f pinyinX)
-  where
-    f = filter ((== TXL.unqual "s") . TXL.elName) .
-        TXL.onlyElems . TXL.elContent
+saxErr
+    :: SAXEvent BS.ByteString BS.ByteString
+    -> SAXEvent BS.ByteString BS.ByteString
+saxErr (FailDocument e) = error $ show e
+saxErr x = x
 
-procSample :: TXL.Element -> TXL.Element -> LcmcSample
-procSample !wordX !pinyinX = zipWith procParagraph (f wordX) (f pinyinX)
-  where
-    f = filter ((== TXL.unqual "p") . TXL.elName) .
-        TXL.onlyElems . TXL.elContent
-
-procCategory :: TXL.Element -> TXL.Element -> LcmcCategory
-procCategory !wordX !pinyinX = zipWith procSample (f wordX) (f pinyinX)
-  where f = TXL.findChildren (TXL.unqual "file")
-
-readLcmcCategory :: String -> IO LcmcCategory
-readLcmcCategory !cat = do
-    let procX =
-            fromMaybe (error $ "No text node in: " ++ cat) . listToMaybe .
-            TXL.findChildren (TXL.unqual "text") .
-            fromMaybe (error $ "Couldn't parse " ++ cat ++ " XML.") .
-            TXL.parseXMLDoc
-    wordX <- procX <$> DTI.readFile
+readLcmcCategory :: String -> IO [Either NewSection LcmcWord]
+readLcmcCategory cat = do
+    let procX = procSax . map saxErr . parse defaultParseOptions
+        combineF wordP pinyinP = case (wordP, pinyinP) of
+          (Right (pos, word), Right (_, pinyin)) ->
+            Right $ LcmcWord (lookupTag pos)
+                (DTE.decodeUtf8 word)
+                (DTE.decodeUtf8 pinyin)
+          (Left s1, Left s2) | s1 == s2 -> Left s1
+          _ -> error "Word and pinyin data not aligned."
+    wordX <- procX <$> BSL.readFile
         (lcmcDataDir </> "character" </> ("LCMC_" ++ cat ++ ".XML"))
-    pinyinX <- procX <$> DTI.readFile
+    pinyinX <- procX <$> BSL.readFile
         (lcmcDataDir </> "pinyin" </> ("LCMC_" ++ cat ++ ".xml"))
-    return $ procCategory wordX pinyinX
+    return $ zipWith combineF wordX pinyinX
 
-readLcmcCorpus :: IO LcmcCorpus
-readLcmcCorpus = mapM (\x -> readLcmcCategory [x]) "ABCDEFGHJKLMNPR"
+readLcmcCorpus :: IO [Either NewSection LcmcWord]
+readLcmcCorpus =
+    concat <$> mapM (\x -> readLcmcCategory [x]) "ABCDEFGHJKLMNPR"
 
-{-
-readFlatCorpus :: IO [LcmcWord]
-readFlatCorpus = do
-    res1 <- flattenCategory <$> readLcmcCategory "A"
-    print $ length res1
-    res2 <- flattenCategory <$> readLcmcCategory "B"
-    print $ length res2
-    res3 <- flattenCategory <$> readLcmcCategory "C"
-    print $ length res3
--}
-
-flattenParagraph :: LcmcParagraph -> [LcmcWord]
-flattenParagraph = concat
-
-flattenSample :: LcmcSample -> [LcmcWord]
-flattenSample = concatMap flattenParagraph
-
-flattenCategory :: LcmcCategory -> [LcmcWord]
-flattenCategory = concatMap flattenSample
-
-flattenCorpus :: LcmcCorpus -> [LcmcWord]
-flattenCorpus = concatMap flattenCategory
-
-showPinyinStats :: Map.Map String (Map.Map Tag Int) -> [String]
+showPinyinStats :: Map.Map DT.Text (Map.Map Tag Int) -> [String]
 showPinyinStats =
     map ("- " ++) .
-    map (\(k, _) -> k) .
+    map (\(k, _) -> DT.unpack k) .
     Map.toList
-
 
 wordStats :: [LcmcWord] -> [String]
 wordStats =
     concatMap (\(k, (n, pinyinStats)) -> 
-        (show (n :: Int) ++ "\t" ++ k) : showPinyinStats pinyinStats
+        (show (n :: Int) ++ "\t" ++ DT.unpack k) :
+        showPinyinStats pinyinStats
     ) .
     sortBy (flip $ comparing (fst . snd)) .
     Map.toList .
@@ -250,56 +224,26 @@ wordStats =
         )
     )
 
-parseFileWords :: String -> IO FileLol
-parseFileWords fileName = runResourceT $
-    XSP.parseFile XSP.def (fromString fileName) $$ parseXml
-
-data FileLol = FileLol DT.Text
-    deriving (Show)
-
-{-
-skipTag :: ConduitM XT.Event o (ResourceT IO) ()
-skipTag =
-    XSP.tagPredicate (const True) XSP.ignoreAttrs $ const skipContents
-
-skipContents :: ConduitM XT.Event o (ResourceT IO) ()
-skipContents = do
-    x <- await
-    case x of
-      Nothing -> Done x Nothing
-      _ -> return XSP.many skipTag
--}
-
-skipTagAndContents :: Name -> Sink Event (ResourceT IO) (Maybe ())
-skipTagAndContents n = XSP.tagName n XSP.ignoreAttrs $ const $
-    XSP.many (skipElements n) >> return ()
-
-skipElements :: Name -> ConduitM Event o (ResourceT IO) (Maybe ())
-skipElements t = do
-    x <- await
-    case x of
-      Just (EventEndElement n) | n == t -> return Nothing
-      Nothing -> return $ Just ()
-      _ -> skipElements t
-
-parseXml :: ConduitM XT.Event Void (ResourceT IO) FileLol
-parseXml =
-    XSP.force "Missing <LCMC> tag." $
-    XSP.tagName "LCMC" XSP.ignoreAttrs $ const $
-    skipTagAndContents "header" >>
-    XSP.force "Missing <text> tag."
-    (XSP.tagName "text" XSP.ignoreAttrs $ const $ return $ FileLol "Yes.")
-    {-
-    XSP.tagName "LCMC" XSP.ignoreAttrs $ const $
-    XSP.tagName "text" XSP.ignoreAttrs $ const $
-    XSP.many $ XSP.tagName "file" (XSP.requireAttr "ID") $ \theId -> do
-        return $ FileLol theId
-    -}
+chunkRights :: [Either a b] -> [[b]]
+chunkRights = chunkRightsAccum []
+  where
+    chunkRightsAccum !accum [] = [accum]
+    chunkRightsAccum !accum (Left _ : rest) =
+        accum : chunkRightsAccum [] rest
+    chunkRightsAccum !accum (Right x : rest) =
+        chunkRightsAccum (accum ++ [x]) rest
 
 myMain :: IO ()
 myMain = do
-    res <- parseFileWords $ 
-        (lcmcDataDir </> "character" </> ("LCMC_" ++ "A" ++ ".XML"))
-    print res
-
-
+    res <- readLcmcCorpus
+    res `deepseq` do
+{-
+        mapM_ DTI.putStrLn .
+            concatMap (\x ->
+                [ DT.intercalate " " $ map lwWord x
+                , DT.intercalate " " $ map lwPinyin x
+                ]
+            ) .
+            tail $ chunkRights res
+-}
+        mapM_ putStrLn . wordStats $ rights res

@@ -12,6 +12,11 @@
     * Some non-words (yi2tiao4 "a strip" is not one word).
     * Many parts-of-speech are quite wrong and need hand-correction.
     * Doesn't even match much-better Google Translate's individual-words-info.
+* LCMC (for Mandarin)
+  * Source of: Parts-of-speech, Sentences, Words
+  * Note:
+    * Pronunciations only have one for each word, possibly not even
+      most common (e.g. they have only di4 for 地).
 * Wikipedia
   * Source of: Sentences
   * Note:
@@ -27,4 +32,16 @@
     * Integrating "Translingual" Chinese info could also be hard.
 
 # Todo
-* Consider Scrabble dictionary as a word source?
+* Parse wiktionary. (Projects exist for this, everything seems a bit wack.)
+  * For Goog top-10k:
+    * 4k have no wiktionary entry (at least one Goog word isn't a real word.)
+    * 1k have wiktionary entries with seemingly no part of speech or
+      good definiton.
+* See how CEDICT looks lately.
+* Try to pull sentences out of zhwiki.
+* Automated/fake/non-hand-checked glosses for top-10k Mandarin words.
+  * Interested in how ~1k words compare to ~2k.
+
+# Maybe Ever
+* Look for a Chinese wordnet (may only exist for Taiwan traditional?)
+* Consider Scrabble dictionary as English word source?
