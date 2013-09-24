@@ -506,7 +506,7 @@
 统计	tong3ji4	NOUN:statistics
 受	shou4	#2:VERB:receive
 特点	te4dian3	NOUN:characteristic
-支持	zhi1che2	VERB:support/back
+支持	zhi1chi2	VERB:support/back
 才能	cai2neng2	NOUN:ability-only-then
 现象	xian4xiang4	NOUN:phenomenon/appearance
 根本	gen1ben3	ADJ:basic/fundamental
@@ -514,7 +514,7 @@
 意见	yi4jian5	NOUN:idea
 提	ti2	VERB:carry/raise
 以来	yi3lai2	PRT:since-(time)
-正确	zheng4que4	ADJ:correct/right
+正确	zheng4que4	ADJ:correct/proper
 商业	shang1ye4	NOUN:commerce
 场	chang3	NOUN:gathering-place/field
 受到	shou4dao4	VERB:be-given/receive
@@ -646,7 +646,7 @@
 文章	wen2zhang1	NOUN:essay
 性质	xing4zhi4	NOUN:quality/nature
 香港	Xiang1gang3	NOUN:Hong-Kong
-作出	zuo4chu1	VERB:made
+作出	zuo4chu1	VERB:make
 权利	quan2li4	NOUN:right/privilege
 大量	da4liang4	ADJ:a-large-quantity-of
 军事	jun1shi4	NOUN:military-affairs
@@ -679,7 +679,7 @@
 式	#4:shi4	NOUN:pattern/formula
 状况	zhuang4kuang4	NOUN:status
 卫生	wei4sheng1	NOUN:hygiene
-仍	reng2	#2:ADV:however
+仍	reng2	ADV:nevertheless
 成本	cheng2ben3	NOUN:net-cost
 机	ji1	NOUN:machine
 需求	xu1qiu2	#2:NOUN:requirement
@@ -770,7 +770,7 @@
 界	#2:jie4	NOUN:boundary
 仅	jin3	#2:ADV:only
 史	#2:shi3	#2:NOUN:history
-仍然	reng2ran2	ADV:however
+仍然	reng2ran2	#2:ADV:nevertheless
 先生	xian1sheng5	NOUN:mister
 评价	ping2jia4	VERB:appraise/evaluate
 优势	you1shi4	NOUN:superiority
@@ -895,7 +895,7 @@
 旅游	lv3you2	NOUN:tour/tourism
 吗	ma5	PRT:(?)
 无论	wu2lun4	CONJ:Regardless-of-
-此外	ci3wai4	CONJ:moreover
+此外	ci3wai4	#2:CONJ:moreover
 增	zeng1	#2:VERB:increase
 交流	jiao1liu2	VERB:exchange-(information)
 共	gong4	ADV:together/altogether
