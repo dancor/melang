@@ -10,7 +10,7 @@ import qualified Data.Map as Map
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
 
-import Cmn.Centudeck
+import Cmn.KiloDeck
 
 prepPinyin :: DT.Text -> DT.Text
 prepPinyin = DT.pack . f . DT.unpack
@@ -36,8 +36,8 @@ prepGloss g =
   where
     (partOfSpeech, _) = DT.breakOn ":" g
    
-centuprepPinyin :: Centudeck -> Centudeck
-centuprepPinyin = map (onClPinyin prepPinyin)
+kiloPrepPinyin :: KiloDeck -> KiloDeck
+kiloPrepPinyin = map (onKLPinyin prepPinyin)
 
 -- | Remove any prefix like "#1:", "#2:", ..
 killNum :: DT.Text -> DT.Text
@@ -49,50 +49,50 @@ killNum = DT.pack . f . DT.unpack
 prefNum :: Int -> DT.Text
 prefNum n = DT.pack ('#' : show n ++ ":")
 
-centuprepPinyinUniq :: Centudeck -> Centudeck
-centuprepPinyinUniq = snd . foldl' f (Map.empty, [])
+kiloPrepPinyinUniq :: KiloDeck -> KiloDeck
+kiloPrepPinyinUniq = snd . foldl' f (Map.empty, [])
   where
-    f (!seen, !cDeck) cLine =
+    f (!seen, !kDeck) kLine =
         ( Map.insertWith (+) pinyin (1 :: Int) seen
-        , cDeck ++ [cLine']
+        , kDeck ++ [kLine']
         )
       where
-        pinyin = clPinyin cLine
-        cLine' = case Map.lookup pinyin seen of
-          Just n -> cLine {
-            clPinyin = prefNum (n + 1) `DT.append` pinyin}
-          _ -> cLine
+        pinyin = kLPinyin kLine
+        kLine' = case Map.lookup pinyin seen of
+          Just n -> kLine {
+            kLPinyin = prefNum (n + 1) `DT.append` pinyin}
+          _ -> kLine
 
-centuprepGlossUniq :: Centudeck -> Centudeck
-centuprepGlossUniq = snd . foldl' f (Map.empty, [])
+kiloPrepGlossUniq :: KiloDeck -> KiloDeck
+kiloPrepGlossUniq = snd . foldl' f (Map.empty, [])
   where
-    f (!seen, !cDeck) cLine =
+    f (!seen, !kDeck) kLine =
         ( Map.insertWith (+) gloss (1 :: Int) seen
-        , cDeck ++ [cLine']
+        , kDeck ++ [kLine']
         )
       where
-        gloss = prepGloss $ clGloss cLine
-        cLine' = case Map.lookup gloss seen of
-          Just n -> cLine {
-            clGloss = prefNum (n + 1) `DT.append` gloss}
-          _ -> cLine
+        gloss = prepGloss $ kLGloss kLine
+        kLine' = case Map.lookup gloss seen of
+          Just n -> kLine {
+            kLGloss = prefNum (n + 1) `DT.append` gloss}
+          _ -> kLine
 
-centuKillNums :: Centuline -> Centuline
-centuKillNums (Centuline wd py gloss) =
-    Centuline wd (killNum py) (killNum gloss)
+kiloKillNums :: KiloLine -> KiloLine
+kiloKillNums (KiloLine wd py gloss) =
+    KiloLine wd (killNum py) (killNum gloss)
 
-centuprep :: Centudeck -> Centudeck
-centuprep =
-    centuprepGlossUniq . centuprepPinyinUniq . centuprepPinyin .
-    map centuKillNums
+kiloPrep :: KiloDeck -> KiloDeck
+kiloPrep =
+    kiloPrepGlossUniq . kiloPrepPinyinUniq . kiloPrepPinyin .
+    map kiloKillNums
 
 main :: IO ()
 main = do
-    let deckF = "/home/danl/p/l/melang/data/cmn/centudeck/deck.txt"
+    let deckF = "/home/danl/p/l/melang/data/cmn/kilodeck/deck.txt"
     deckOut <-
-        DT.unlines . map showCentuline .
-        centuprep .
-        map readCentuline . DT.lines <$> DTI.readFile deckF
+        DT.unlines . map showKiloLine .
+        kiloPrep .
+        map readKiloLine . DT.lines <$> DTI.readFile deckF
     
     -- Why, on file format error, does outputing not kill the file but
     -- rnf does?
@@ -104,10 +104,10 @@ main = do
     args <- getArgs
     case args of
       [] -> do
-        c <- map readCentuline . DT.lines <$> DTI.getContents
-        DTI.putStr . DT.unlines . map showCentuline $ centuprep c
+        c <- map readKiloLine . DT.lines <$> DTI.getContents
+        DTI.putStr . DT.unlines . map showKiloLine $ kiloPrep c
       _ -> do
         putStrLn
-            "Usage: cat deck-tsv.txt | ./centuprep > prepped-deck-tsv.txt"
+            "Usage: cat deck-tsv.txt | ./kilo-prep > prepped-deck-tsv.txt"
         putStrLn "Filters pinyin and numbers repeated glosses."
     -}

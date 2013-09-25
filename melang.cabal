@@ -190,24 +190,24 @@ executable proc-hanzi-json
       , unordered-containers
       , vector
 
-flag centuprep
+flag kilo-prep
     default: False
 
-executable centuprep
-    if !flag(centuprep)
+executable kilo-prep
+    if !flag(kilo-prep)
         buildable: False
-    main-is:         Cmn/Centudeck/Prep.hs
+    main-is:         Cmn/KiloDeck/Prep.hs
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
     build-depends:
 
-flag centunext
+flag kilo-next
     default: False
 
-executable centunext
-    if !flag(centunext)
+executable kilo-next
+    if !flag(kilo-next)
         buildable: False
-    main-is:         Cmn/Centudeck/Next.hs
+    main-is:         Cmn/KiloDeck/Next.hs
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
     build-depends:
