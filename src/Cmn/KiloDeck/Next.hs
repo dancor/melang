@@ -17,9 +17,9 @@ import GB1
 
 main :: IO ()
 main = do
-    let deckF = "/home/danl/p/l/melang/data/cmn/centudeck/deck.txt"
+    let deckF = kiloDir </> "mando-gloss-1k.txt"
         dictF = "/home/danl/p/l/melang/data/cmn/dict"
-    deck <- map readKiloLine . DT.lines <$> DTI.readFile deckF
+    deck <- loadKiloDeck deckF
     dict <- filter ((/= "一条") . dlWord) .
         zipWith readDictline [1..] . DT.lines <$> DTI.readFile dictF
     let deckWordSet = Set.fromList $ map kLWord deck

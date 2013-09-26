@@ -16,7 +16,6 @@ import Data.Maybe
 import Data.Ord
 import qualified Data.Text as DT
 import qualified Data.Text.Encoding as DTE
-import qualified Data.Text.IO as DTI
 import System.FilePath
 import Text.XML.Expat.SAX
 
@@ -72,6 +71,85 @@ data Tag
     | TDescriptive
     | TDescriptiveMorpheme
     deriving (Eq, Ord, Show)
+
+tagGroups :: [(String, [Tag])]
+tagGroups = 
+    [ ("ADJ",   [ TAdjective
+                , TNonPredicateAdjective
+                , TAdjectiveMorpheme
+                , TNonPredicateAdjectiveMorpheme
+                ])
+    , ("ADV",   [ TAdjectiveAsAdverbial
+                , TAdverb
+                , TAdverbMorpheme
+                , TVerbAsAdverbial
+                , TSpaceWord
+                , TTimeWord
+                , TTimeWordMorpheme
+                ])
+    , ("CONJ",  [ TConjunction
+                , TConjunctionMorpheme
+                ])
+    , ("MEAS",  [ TClassifier
+                , TClassifierMorpheme
+                ])
+    , ("NOUN",  [ TAdjectiveWithNominalFunction
+                , TCommonNoun
+                , TNounMorpheme
+                , TPersonalName
+                , TPlaceName
+                , TOrganizationName
+                , TOtherProperNoun
+                , TVerbWithNominalFunction
+                , TAbbreviation
+                ])
+    , ("NUM",   [ TNumeral
+                , TNumericMorpheme
+                ])
+    , ("PREP",  [ TPreposition
+                , TPrepositionMorpheme
+                ])
+    , ("PRON",  [ TPronoun
+                , TPronounMorpheme
+                ])
+    , ("PRT",   [ TAuxiliary
+                , TDirectionalLocality
+                , TLocalityMorpheme
+                , TModalParticle
+                , TModalParticleMorpheme
+                , TMorpheme
+                , TOnomatopoeia
+                , TPrefix
+                , TSuffix
+                , TInterjection
+                ])
+    , ("VERB",  [ TVerb
+                , TVerbMorpheme
+                ])
+    ]               
+
+{-
+TFixedExpressions
+TIdiom
+TSententialPunctuation
+TNominalCharacterString
+TSymbolAndNonSententialPunctuation
+TUnclassifiedItems
+TDescriptive
+TDescriptiveMorpheme
+-}
+
+tagNameMap :: Map.Map Tag String
+tagNameMap =
+    Map.fromList [(tag, name) | (name, tags) <- tagGroups, tag <- tags]
+
+showTag :: Tag -> String
+showTag tag =
+    --fromMaybe ("Tag" ++ tail (show tag)) $ Map.lookup tag tagNameMap
+    maybe ("Tag" ++ baseName) (\n -> n ++ ":" ++ baseName) $
+    Map.lookup tag tagNameMap
+  where
+    baseName = tail (show tag)
 
 tagAbbrs :: [(Tag, BS.ByteString)]
 tagAbbrs =
@@ -198,28 +276,50 @@ readLcmcCorpus :: IO [Either NewSection LcmcWord]
 readLcmcCorpus =
     concat <$> mapM (\x -> readLcmcCategory [x]) "ABCDEFGHJKLMNPR"
 
-showPinyinStats :: Map.Map DT.Text (Map.Map Tag Int) -> [String]
-showPinyinStats =
-    map ("- " ++) .
-    map (\(k, _) -> DT.unpack k) .
-    Map.toList
+makeLwiPos :: Map.Map Tag Int -> [(Int, String)]
+makeLwiPos stats
+  | Map.null stats = []
+  | otherwise =
+        map (\(k, v) -> (100 * v `div` totOccur, showTag k)) $
+        takeWhile ((> maxOccur) . (* 2) . snd) statsL
+      where
+        totOccur = sum occurs
+        maxOccur = head occurs
+        occurs = map snd statsL
+        statsL = sortBy (flip $ comparing snd) $ Map.toList stats
 
-wordStats :: [LcmcWord] -> [String]
-wordStats =
-    concatMap (\(k, (n, pinyinStats)) -> 
-        (show (n :: Int) ++ "\t" ++ DT.unpack k) :
-        showPinyinStats pinyinStats
-    ) .
-    sortBy (flip $ comparing (fst . snd)) .
+data LcmcWdInfo = LcmcWdInfo
+    { lwiRank :: Int
+    , lwiWd   :: DT.Text
+    -- LCMC's pinyin data is incomplete: each word has only one pinyin, not
+    -- necessarily even the most common (e.g., 地 is always assigned di4).
+    , lwiPy   :: DT.Text
+    , lwiPos  :: [(Int, String)]  -- Percentage, Part-of-speech
+    }
+
+showLwi :: LcmcWdInfo -> DT.Text
+showLwi (LcmcWdInfo r w py poss) = DT.intercalate "\t"
+    [ DT.pack (show r), w, py
+    , DT.intercalate " \\ " $
+      map (\(n, pos) -> DT.pack $ show n ++ "% " ++ pos) poss
+    ]
+
+makeLwis :: [LcmcWord] -> [LcmcWdInfo]
+makeLwis =
+    zipWith (\n (wd, (_, py, stats)) ->
+        LcmcWdInfo n wd py (makeLwiPos stats)
+    ) [1..] .
+    sortBy (flip $ comparing ((\(n, _, _) -> n :: Int) . snd)) .
     Map.toList .
     Map.fromListWith
-        (\(n1, m1) (n2, m2) ->
-            (n1 + n2, Map.unionWith (Map.unionWith (+)) m1 m2)
+        (\(n1, py, m1) (n2, _, m2) ->
+            (n1 + n2, py, Map.unionWith (+) m1 m2)
         ) .
     map (\lw ->
         ( lwWord lw
         , ( 1
-          , Map.singleton (lwPinyin lw) (Map.singleton (lwPos lw) 1)
+          , lwPinyin lw
+          , Map.singleton (lwPos lw) 1
           )
         )
     )
@@ -233,17 +333,5 @@ chunkRights = chunkRightsAccum []
     chunkRightsAccum !accum (Right x : rest) =
         chunkRightsAccum (accum ++ [x]) rest
 
-myMain :: IO ()
-myMain = do
-    res <- readLcmcCorpus
-    res `deepseq` do
-{-
-        mapM_ DTI.putStrLn .
-            concatMap (\x ->
-                [ DT.intercalate " " $ map lwWord x
-                , DT.intercalate " " $ map lwPinyin x
-                ]
-            ) .
-            tail $ chunkRights res
--}
-        mapM_ putStrLn . wordStats $ rights res
+loadLwis :: IO [LcmcWdInfo]
+loadLwis = makeLwis . rights <$> readLcmcCorpus

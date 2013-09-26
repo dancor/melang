@@ -39,13 +39,6 @@ prepGloss g =
 kiloPrepPinyin :: KiloDeck -> KiloDeck
 kiloPrepPinyin = map (onKLPinyin prepPinyin)
 
--- | Remove any prefix like "#1:", "#2:", ..
-killNum :: DT.Text -> DT.Text
-killNum = DT.pack . f . DT.unpack
-  where
-    f ('#':x) = dropWhile (== ':') $ dropWhile isDigit x
-    f x = x
-
 prefNum :: Int -> DT.Text
 prefNum n = DT.pack ('#' : show n ++ ":")
 
@@ -88,7 +81,9 @@ kiloPrep =
 
 main :: IO ()
 main = do
-    let deckF = "/home/danl/p/l/melang/data/cmn/kilodeck/deck.txt"
+    let deckDir = "/home/danl/p/l/melang/data/cmn/kilo-deck"
+
+        /mando-gloss-1k.txt"
     deckOut <-
         DT.unlines . map showKiloLine .
         kiloPrep .
