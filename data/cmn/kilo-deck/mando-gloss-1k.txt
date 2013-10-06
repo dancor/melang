@@ -49,7 +49,7 @@
 以	yi3	PREP:using
 问题	wen4ti2	NOUN:question/problem
 研究	yan2jiu1	NOUN:research
-并	bing4	#3:CONJ:and
+并	bing4	#2:CONJ:and
 但	dan4	CONJ:but
 三	san1	NUM:3
 于	yu2	PREP:by
@@ -109,7 +109,7 @@
 这些	zhe4xie1	PRON:these
 这个	zhe4ge5	PRON:this-one
 五	wu3	NUM:5
-及	ji2	#4:CONJ:and
+及	ji2	#3:CONJ:and
 情况	qing2kuang4	NOUN:circumstances
 四	si4	NUM:4
 更	geng4	ADV:even-more
@@ -262,7 +262,7 @@
 八	ba1	NUM:8
 包括	bao1kuo4	VERB:include
 理论	li3lun4	NOUN:theory/-ism
-增加	zeng1jia1	VERB:increase
+增加	zeng1jia1	#2:VERB:increase
 发生	fa1sheng1	VERB:happen
 已经	yi3jing5	#2:ADV:already
 解决	jie3jue2	VERB:solve
@@ -320,7 +320,7 @@
 期	#2:qi1	NOUN:period-of-time
 权	#2:quan2	NOUN:authority
 一次	yi2ci4	ADJ:linear
-产生	chan3sheng1	#2:VERB:produce
+产生	chan3sheng1	VERB:produce
 小	xiao3	ADJ:small
 资料	zi1liao4	NOUN:material
 区	qu1	NOUN:region
@@ -373,7 +373,7 @@
 行	xing2	ADJ:OK
 另	ling4	PRON:other/another
 民主	min2zhu3	NOUN:democracy
-产	chan3	VERB:produce
+产	chan3	#2:VERB:produce
 再	#2:zai4	#2:ADV:again
 完成	wan2cheng2	VERB:accomplish
 参加	can1jia1	VERB:take-part-in
@@ -403,7 +403,7 @@
 应当	ying1dang1	#2:VERB:should
 书	shu1	NOUN:book
 贸易	mao4yi4	NOUN:trade
-学习	xue2xi2	VERB:study
+学习	xue2xi2	#2:VERB:study
 目标	mu4biao1	NOUN:goal
 却	que4	#3:CONJ:but
 世纪	shi4ji4	NOUN:century
@@ -651,11 +651,11 @@
 大量	da4liang4	ADJ:a-large-quantity-of
 军事	jun1shi4	NOUN:military-affairs
 新闻	xin1wen2	NOUN:news
-没	mei2	#3:ADV:not
+没	mei2	#2:ADV:not
 规律	gui1lv4	NOUN:law
 军	jun1	NOUN:army
 那些	na4xie1	PRON:those
-样	yang4	MEAS:kind/type
+样	yang4	#2:MEAS:kind/type
 了解	liao3jie3	VERB:understand
 不得	bu4de2	VERB:must-not
 最大	zui4da4	ADJ:biggest
@@ -896,7 +896,7 @@
 吗	ma5	PRT:(?)
 无论	wu2lun4	CONJ:Regardless-of-
 此外	ci3wai4	#2:CONJ:moreover
-增	zeng1	#2:VERB:increase
+增	zeng1	#3:VERB:increase
 交流	jiao1liu2	VERB:exchange-(information)
 共	gong4	ADV:together/altogether
 突出	tu1chu1	VERB:highlight/stress

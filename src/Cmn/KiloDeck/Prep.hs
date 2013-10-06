@@ -4,13 +4,18 @@
 module Main where
 
 import Control.Applicative
-import Data.Char
 import Data.List
+import Data.Maybe
+import Data.Ord
+import qualified Data.HashMap.Strict as HMS
 import qualified Data.Map as Map
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
+import System.FilePath
 
 import Cmn.KiloDeck
+import GB1
+
 
 prepPinyin :: DT.Text -> DT.Text
 prepPinyin = DT.pack . f . DT.unpack
@@ -79,30 +84,36 @@ kiloPrep =
     kiloPrepGlossUniq . kiloPrepPinyinUniq . kiloPrepPinyin .
     map kiloKillNums
 
+{- To add new words:
+
+    let deckWordSet = Set.fromList $ map kLWord deck
+        dictToDeck :: Dictline -> KiloLine
+        dictToDeck l =
+            KiloLine (dlWord l) "" (dlPartOfSpeech l `DT.append` ":")
+        deckNext = take 40 . map dictToDeck $
+            filter (not . (`Set.member` deckWordSet) . dlWord) dict
+    DTI.writeFile deckF . DT.unlines . map showKiloLine $ deck' ++ deckNext
+-}
+
 main :: IO ()
 main = do
-    let deckDir = "/home/danl/p/l/melang/data/cmn/kilo-deck"
+    -- Load dict for reordering purposes.
+    let dictF = "/home/danl/p/l/melang/data/cmn/dict"
+    dict <- filter ((/= "一条") . dlWord) .
+        zipWith readDictline [1..] . DT.lines <$> DTI.readFile dictF
+    let wdToPos = HMS.fromList $ map (\l -> (dlWord l, dlOccurs l)) dict
 
-        /mando-gloss-1k.txt"
-    deckOut <-
-        DT.unlines . map showKiloLine .
-        kiloPrep .
-        map readKiloLine . DT.lines <$> DTI.readFile deckF
+    let deckDir = "/home/danl/p/l/melang/data/cmn/kilo-deck"
+        deckF = deckDir </> "mando-gloss-1k.txt"
+    deck <- kiloPrep <$> loadKiloDeck deckF
     
+    let deck' = map snd .
+            sortBy (flip $ comparing fst) $
+            map (\x -> (fromJust $ HMS.lookup (kLWord x) wdToPos, x)) deck
+
+    let deckOut = DT.unlines $ map showKiloLine deck'
     -- Why, on file format error, does outputing not kill the file but
     -- rnf does?
     --let _ = rnf deckOut
     DTI.putStr deckOut
-
     DTI.writeFile deckF deckOut
-    {-
-    args <- getArgs
-    case args of
-      [] -> do
-        c <- map readKiloLine . DT.lines <$> DTI.getContents
-        DTI.putStr . DT.unlines . map showKiloLine $ kiloPrep c
-      _ -> do
-        putStrLn
-            "Usage: cat deck-tsv.txt | ./kilo-prep > prepped-deck-tsv.txt"
-        putStrLn "Filters pinyin and numbers repeated glosses."
-    -}
