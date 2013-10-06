@@ -312,7 +312,7 @@
 变化	bian4hua4	#2:NOUN:change
 资金	zi1jin1	NOUN:fund
 位	#2:wei4	MEAS:person
-经	jing1	PREP:as-a-result-of/after
+经	jing1	PREP:as-a-result-of/through
 资本	zi1ben3	NOUN:economic-capital
 能力	neng2li4	NOUN:ability
 意义	yi4yi4	NOUN:meaning
@@ -322,7 +322,7 @@
 一次	yi2ci4	ADJ:linear
 产生	chan3sheng1	VERB:produce
 小	xiao3	ADJ:small
-资料	zi1liao4	NOUN:material
+资料	zi1liao4	NOUN:data/material
 区	qu1	NOUN:region
 北京	Bei3jing1	NOUN:Beijing
 具体	ju4ti3	ADJ:specific
@@ -557,7 +557,7 @@
 不可	bu4ke3	VERB:cannot
 整个	zheng3ge4	ADJ:whole
 工人	gong1ren2	NOUN:worker
-经过	jing1guo4	PREP:through
+经过	jing1guo4	#2:PREP:as-a-result-of/through
 干部	gan4bu4	NOUN:cadre
 事实	shi4shi2	NOUN:fact
 效益	xiao4yi4	NOUN:beneficial-result
@@ -578,7 +578,7 @@
 非常	fei1chang2	ADV:extraordinarily
 美	#2:mei3	NOUN:beauty
 斯	si1	#3:PRON:this
-材料	cai2liao4	#2:NOUN:material
+材料	cai2liao4	NOUN:material
 最后	zui4hou4	ADV:at-last/finally
 合理	he2li3	ADJ:rational/reasonable
 改变	gai3bian4	#2:VERB:change
@@ -624,7 +624,7 @@
 内部	nei4bu4	NOUN:inside
 问	wen4	VERB:ask/inquire
 手段	shou3duan4	#3:NOUN:method
-物质	wu4zhi4	#3:NOUN:material
+物质	wu4zhi4	#2:NOUN:material
 千	qian1	NUM:1k
 件	jian4	MEAS:item/article
 民	min2	#2:NOUN:people
@@ -687,7 +687,7 @@
 例如	li4ru2	ADV:e.g.
 对象	dui4xiang4	NOUN:target
 数	shu4	NOUN:number/figure
-明显	ming2xian3	ADJ:clean/obvious
+明显	ming2xian3	ADJ:clear/obvious
 关	guan1	NOUN:barrier/check
 强调	qiang2diao4	VERB:emphasize/stress
 期间	qi1jian1	NOUN:time/-period
@@ -710,7 +710,7 @@
 减少	jian3shao3	VERB:reduce
 相互	xiang1hu4	ADV:mutually/reciprocally
 反对	fan3dui4	VERB:oppose
-保持	bao3chi2	VERB:keep
+保持	bao3chi2	VERB:keep/maintain
 分别	fen1bie2	ADV:separately
 模式	mo2shi4	NOUN:pattern
 政	#2:zheng4	#2:NOUN:government
@@ -751,7 +751,7 @@
 国务院	Guo2wu4yuan4	NOUN:State-Council
 错误	cuo4wu4	NOUN:error/mistake
 然后	ran2hou4	ADV:after-that
-广泛	guang3fan4	VERB:extensive/wide-ranging
+广泛	guang3fan4	ADJ:extensive/wide-ranging
 先进	xian1jin4	ADJ:advanced
 培训	pei2xun4	NOUN:training
 采用	cai3yong4	VERB:select-for-use
@@ -826,7 +826,7 @@
 利于	li4yu2	VERB:be-of-advantage-to
 证明	zheng4ming2	VERB:prove/testify
 构成	#2:guo4cheng2	VERB:constitute/make-up
-在于	zai4yu2	VERB:consist-in/rest-with
+在于	zai4yu2	VERB:be-determined-by/lie-in
 平均	ping2jun1	ADJ:average
 举行	ju3xing2	VERB:hold-a-meeting
 生命	sheng1ming4	NOUN:life
@@ -889,7 +889,7 @@
 职业	zhi2ye4	NOUN:occupation/vocation
 近	#2:jin4	ADJ:near/close
 米	mi3	NOUN:rice/one-meter
-电影	dian4yin3	NOUN:movie
+电影	dian4ying3	NOUN:movie
 部队	bu4dui4	NOUN:army/troops
 方案	fang1an4	NOUN:plan/scheme
 旅游	lv3you2	NOUN:tour/tourism

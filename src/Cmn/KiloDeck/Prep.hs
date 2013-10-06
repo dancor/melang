@@ -105,13 +105,13 @@ main = do
 
     let deckDir = "/home/danl/p/l/melang/data/cmn/kilo-deck"
         deckF = deckDir </> "mando-gloss-1k.txt"
-    deck <- kiloPrep <$> loadKiloDeck deckF
+    deck <- loadKiloDeck deckF
     
     let deck' = map snd .
             sortBy (flip $ comparing fst) $
             map (\x -> (fromJust $ HMS.lookup (kLWord x) wdToPos, x)) deck
 
-    let deckOut = DT.unlines $ map showKiloLine deck'
+    let deckOut = DT.unlines . map showKiloLine $ kiloPrep deck'
     -- Why, on file format error, does outputing not kill the file but
     -- rnf does?
     --let _ = rnf deckOut
