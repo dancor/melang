@@ -1,7 +1,7 @@
 的	de5	PRT:of
 是	shi4	VERB:is
 在	zai4	PREP:at
-了	le5	PRT:(did)
+了	le5	PRT:(completion-marker)
 和	he2	CONJ:and
 年	nian2	MEAS:year
 一	yi1	NUM:1
@@ -14,7 +14,7 @@
 为	wei4	PREP:for
 种	zhong3	MEAS:kind/type
 对	dui4	#2:PREP:for
-第	di4	NUM:nth
+第	di4	NUM:(ordinal-prefix)
 他	ta1	PRON:he
 经济	jing1ji4	NOUN:economy
 社会	she4hui4	NOUN:society
@@ -26,7 +26,7 @@
 一个	yi2ge4	ADJ:a
 与	yu3	PREP:with/to
 十	shi2	NUM:10
-个	ge5	MEAS:(gen.)
+个	ge5	MEAS:(general)
 我们	wo3men5	PRON:we
 中国	Zhong1guo2	NOUN:China
 企业	qi3ye4	NOUN:enterprise
@@ -59,7 +59,7 @@
 他们	ta1men5	PRON:they
 时	#2:shi2	PRT:time
 可以	ke3yi3	VERB:can
-还	hai2	ADV:still
+还	hai2	ADV:still/yet
 生产	sheng1chan3	NOUN:production/manufacture
 没有	mei2you3	VERB:don't-have
 人民	ren2min2	NOUN:the-people
@@ -103,7 +103,7 @@
 重要	zhong4yao4	ADJ:important
 生活	sheng1huo2	NOUN:life/livelihood
 由	you2	PREP:by/from
-把	ba3	PREP:(preverbal direct-object)
+把	ba3	PREP:(preverbal-direct-object)
 好	hao3	ADJ:good
 政治	zheng4zhi4	NOUN:politics
 这些	zhe4xie1	PRON:these
@@ -423,7 +423,7 @@
 上海	Shang4hai3	NOUN:Shanghai
 完全	wan2quan2	ADV:completely
 工程	gong1cheng2	NOUN:engineering
-些	xie1	MEAS:indef-small-amount
+些	xie1	MEAS:indefinite-small-amount
 地位	di4wei4	NOUN:position/status
 程度	cheng2du5	#2:NOUN:level
 页	#2:ye4	MEAS:book-page
@@ -679,7 +679,7 @@
 式	#4:shi4	NOUN:pattern/formula
 状况	zhuang4kuang4	NOUN:status
 卫生	wei4sheng1	NOUN:hygiene
-仍	reng2	ADV:nevertheless
+仍	reng2	#2:ADV:still/yet
 成本	cheng2ben3	NOUN:net-cost
 机	ji1	NOUN:machine
 需求	xu1qiu2	#2:NOUN:requirement
@@ -770,7 +770,7 @@
 界	#2:jie4	NOUN:boundary
 仅	jin3	#2:ADV:only
 史	#2:shi3	#2:NOUN:history
-仍然	reng2ran2	#2:ADV:nevertheless
+仍然	reng2ran2	#3:ADV:still/yet
 先生	xian1sheng5	NOUN:mister
 评价	ping2jia4	VERB:appraise/evaluate
 优势	you1shi4	NOUN:superiority
