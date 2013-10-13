@@ -65,7 +65,7 @@ main = do
 
     xmlStr <- BSL.getContents
     mapM_ (\(title, text) -> BS.writeFile (DT.unpack title) text) .
-        -- take 10000 . 
+        -- take 10000 .
         catMaybes .
         map (seqSnd . second procBody) .
         filter ((`elem` dictWds) . fst) $

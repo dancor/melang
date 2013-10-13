@@ -862,6 +862,7 @@
 曾	ceng2	ADV:once/formerly
 英国	Ying1guo2	NOUN:England
 公共	gong1gong4	ADJ:public/communal
+一条	yi4tiao2	NOUN:one-strip
 尽管	jin3guan3	CONJ:despite
 道德	dao4de2	NOUN:morals/ethics
 利	#2:li4	NOUN:profit/benefit
@@ -997,4 +998,3 @@
 费用	fei4yong4	#2:NOUN:cost
 维护	wei2hu4	VERB:safeguard/defend
 几乎	ji1hu1	ADV:almost
-专家	zhuan1jia1	NOUN:expert

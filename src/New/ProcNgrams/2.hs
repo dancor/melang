@@ -49,7 +49,7 @@ main = do
             (\x y -> lWd x == lWd y && lPartOfSpeech x == lPartOfSpeech y) .
 
         -- filter (DT.any isIdeographic . lWd) .
-        
+
         filter (DT.any isAscii . lWd) .
         filter ((>= 1980) . lYr) .
 

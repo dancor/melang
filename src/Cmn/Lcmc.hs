@@ -73,7 +73,7 @@ data Tag
     deriving (Eq, Ord, Show)
 
 tagGroups :: [(String, [Tag])]
-tagGroups = 
+tagGroups =
     [ ("ADJ",   [ TAdjective
                 , TNonPredicateAdjective
                 , TAdjectiveMorpheme
@@ -126,7 +126,7 @@ tagGroups =
     , ("VERB",  [ TVerb
                 , TVerbMorpheme
                 ])
-    ]               
+    ]
 
 {-
 TFixedExpressions

@@ -38,6 +38,6 @@ parseCedictLine line =
 
 loadCedict :: IO [CedictLine]
 loadCedict =
-    map (parseCedictLine . BSL.toStrict) . 
+    map (parseCedictLine . BSL.toStrict) .
     dropWhile ("#" `BSL.isPrefixOf`) . BSLC.lines <$>
     BSL.readFile cedictFile
