@@ -545,7 +545,7 @@
 过去	guo4qu4	NOUN:the-past
 综合	zong1he2	ADJ:synthetic/composite
 一点	yi4dian3	ADV:a-little
-组	zu3	NOUN:section
+组	zu3	MEAS:group/set
 稳定	wen3ding4	ADJ:stable/steady
 开放	kai1fang4	NOUN:opening-up
 重点	zhong4dian3	NOUN:focal-point
