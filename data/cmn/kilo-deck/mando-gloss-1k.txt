@@ -762,7 +762,7 @@
 方针	fang1zhen1	#2:NOUN:policy
 帮助	bang1zhu4	VERB:help/assist
 强	qiang2	ADJ:strong/powerful
-体现	ti1xiang3	VERB:embody/give-expression-to
+体现	ti3xian4	VERB:embody/give-expression-to
 解释	jie3shi4	VERB:explain/interpret
 销售	xiao1shou4	VERB:sell/market
 往往	wang3wang3	ADV:often
@@ -825,7 +825,7 @@
 办	ban4	VERB:attend-to/set-up
 利于	li4yu2	VERB:be-of-advantage-to
 证明	zheng4ming2	VERB:prove/testify
-构成	#2:guo4cheng2	VERB:constitute/make-up
+构成	gou4cheng2	VERB:constitute/make-up
 在于	zai4yu2	VERB:be-determined-by/lie-in
 平均	ping2jun1	ADJ:average
 举行	ju3xing2	VERB:hold-a-meeting
@@ -834,7 +834,7 @@
 满足	man3zu2	ADJ:contented/satisfied
 建	#3:jian4	VERB:build
 迅速	xun4su4	ADV:speedily/rapidly
-限制	xian4zhi4	NOUN:restriction/confinement
+限制	xian4zhi4	NOUN:restriction/limit
 从事	cong2shi4	VERB:be-engaged-in/deal-with
 大家	da4jia1	PRON:everyone
 方向	fang1xiang4	NOUN:direction/orientation
@@ -851,7 +851,7 @@
 网络	wang3luo4	NOUN:computer-network
 广大	guang3da4	ADJ:vast/wide
 资	zi1	NOUN:money/expenses
-贡献	gong1xian4	NOUN:contribution
+贡献	gong4xian4	NOUN:contribution
 恢复	hui1fu4	VERB:resume/restore
 巨大	ju4da4	ADJ:huge/gigantic
 作家	zuo4jia1	NOUN:writer
@@ -882,7 +882,7 @@
 一致	yi2zhi4	ADJ:identical/unaninmouns
 故事	gu4shi5	NOUN:tale/plot
 号	hao4	NOUN:number
-更加	geng1jia1	#2:ADV:even-more
+更加	geng4jia1	#2:ADV:even-more
 建议	jian4yi4	NOUN:proposal/suggestion
 系列	xi4lie4	NOUN:set/series
 宗教	zong1jiao4	NOUN:religion
