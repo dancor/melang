@@ -1,10 +1,8 @@
 module Cmn.GoogBk where
 
 import Control.Applicative
-import Control.Arrow
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Char8 as BSC
-import Data.Char
 import qualified Data.Text as DT
 import qualified Data.Text.Encoding as DTE
 
@@ -16,6 +14,8 @@ data GWdInfo = GWdInfo
     , gPos :: !DT.Text
     , gOccurs :: !Int
     } deriving Show
+
+type GWdInfos = [GWdInfo]
 
 parseGWdInfo :: BS.ByteString -> GWdInfo
 parseGWdInfo line =

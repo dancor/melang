@@ -248,3 +248,14 @@ executable goog-vs-lcmc
     ghc-options:     -O2 -Wall
     build-depends:
         split
+
+flag score-tatoeba
+    default: False
+
+executable score-tatoeba
+    if !flag(score-tatoeba)
+        buildable: False
+    main-is:         Main/score-tatoeba.hs
+    hs-source-dirs:  src
+    ghc-options:     -O2 -Wall
+    build-depends:
