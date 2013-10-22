@@ -36,6 +36,9 @@ prepPinyin = DT.pack . f . DT.unpack
     f (c:x) = c : f x
 
 prepGloss :: DT.Text -> DT.Text
+prepGloss "ADP:" = "PREP:"
+-- It's most common for NUM in the Google data to mean MEAS.
+prepGloss "NUM:" = "MEAS:"
 prepGloss g =
     if partOfSpeech `elem`
         [ "ADJ", "ADV", "AUXV", "CONJ", "MEAS", "NOUN"
