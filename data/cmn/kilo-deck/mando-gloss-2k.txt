@@ -78,7 +78,7 @@
 队伍	dui4wu5	NOUN:troops/contingent
 主任	zhu3ren4	NOUN:director/head
 层次	ceng2ci4	NOUN:administrative-level/rank-order
-未来	wei4lai2	NOUN:future/tomorrow
+未来	wei4lai2	NOUN:the-future/time-yet-to-come
 自我	zi4wo3	#2:PRON:self
 城镇	cheng2zhen1	NOUN:cities-and-towns
 基	#2:ji1	#3:NOUN:base/foundation
