@@ -82,8 +82,8 @@
 自我	zi4wo3	#2:PRON:self
 城镇	cheng2zhen1	NOUN:cities-and-towns
 基	#2:ji1	#3:NOUN:base/foundation
-初	chu1	PRT:first-(in-order)-
-农	nong2	NOUN:agriculture
+初	#2:chu1	PRT:first-(in-order)-
+农	nong2	#2:NOUN:agriculture
 即使	ji2shi3	CONJ:even-though
 伟大	wei3da4	ADJ:great/mighty
 讲	jiang3	VERB:speak/tell
@@ -95,6 +95,6 @@
 转移	zhuan3yi2	VERB:transfer/divert
 毛泽东	Mao2-Ze2dong1	NOUN:Mao-Zedong
 打	da3	VERB:strike/hit
-其它	qi2ta1	PRON:others/the-rest
-查	cha2	VERB:investigate
+其它	#2:qi2ta1	#2:PRON:others/the-rest
+查	cha2	#2:VERB:investigate
 探索	tan4suo3	VERB:explore/probe
