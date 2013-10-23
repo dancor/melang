@@ -144,7 +144,7 @@
 影响	ying3xiang3	NOUN:influence
 必须	bi4xu1	VERB:must
 要求	yao1qiu2	VERB:demand
-基础	ji1chu3	NOUN:basis
+基础	ji1chu3	NOUN:base/foundation
 一些	yi4xie1	MEAS:some
 被	bei4	PRT:(passive-voice)
 应	ying1	VERB:promise
@@ -820,7 +820,7 @@
 进入	jin4ru4	VERB:enter/get-into
 成员	cheng2yuan2	NOUN:member
 指标	zhi3biao1	NOUN:target/quota
-调查	diao4cha2	VERB:investigate/survey
+调查	diao4cha2	VERB:investigate
 货币	huo4bi4	NOUN:money/currency
 办	ban4	VERB:attend-to/set-up
 利于	li4yu2	VERB:be-of-advantage-to
@@ -948,7 +948,7 @@
 以前	yi3qian2	ADV:before/formerly
 余	#2:yu2	NOUN:surplus/remainder
 比例	bi3li4	NOUN:proportion/scale
-依据	yi1ju4	#2:NOUN:basis
+依据	yi1ju4	#2:NOUN:base/foundation
 双方	shuang1fang4	NOUN:both-sides
 反	fan3	VERB:turn-over/oppose
 合	#2:he2	VERB:close/suit

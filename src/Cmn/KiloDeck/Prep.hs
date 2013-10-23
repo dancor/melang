@@ -37,6 +37,7 @@ prepPinyin = DT.pack . f . DT.unpack
 
 prepGloss :: DT.Text -> DT.Text
 prepGloss "ADP:" = "PREP:"
+prepGloss "DET:" = "PRON:"
 -- It's most common for NUM in the Google data to mean MEAS.
 prepGloss "NUM:" = "MEAS:"
 prepGloss g =
