@@ -36,19 +36,19 @@ prepPinyin = DT.pack . f . DT.unpack
     f (c:x) = c : f x
 
 prepGloss :: DT.Text -> DT.Text
-prepGloss "ADP:" = "PREP:"
-prepGloss "DET:" = "PRON:"
--- It's most common for NUM in the Google data to mean MEAS.
-prepGloss "NUM:" = "MEAS:"
 prepGloss g =
     if partOfSpeech `elem`
         [ "ADJ", "ADV", "AUXV", "CONJ", "MEAS", "NOUN"
         , "NUM", "PREP", "PRON", "PRT", "VERB"
         ]
-      then g
+      then partOfSpeech `DT.append` rest
       else error $ "Unknown part-of-speech: " ++ show partOfSpeech
   where
-    (partOfSpeech, _) = DT.breakOn ":" g
+    (p1, rest) = DT.breakOn ":" g
+    fixP "ADP" = "PREP"
+    fixP "DET" = "PRON"
+    fixP x = x
+    partOfSpeech = fixP p1
 
 kiloPrepPinyin :: KiloDeck -> KiloDeck
 kiloPrepPinyin = map (onKLPinyin prepPinyin)
@@ -80,11 +80,12 @@ kiloPrepGlossUniq = snd . foldl' f (Map.empty, [])
         )
       where
         gloss = prepGloss $ kLGloss kLine
-        kLine' = if ":" `DT.isSuffixOf` gloss then kLine else
-            case Map.lookup gloss seen of
-              Just n -> kLine {
-                kLGloss = prefNum (n + 1) `DT.append` gloss}
-              _ -> kLine
+        kLine' = kLine {
+            kLGloss = if ":" `DT.isSuffixOf` gloss then gloss else
+              case Map.lookup gloss seen of
+                Just n -> prefNum (n + 1) `DT.append` gloss
+                _ -> gloss
+        }
 
 kiloKillNums :: KiloLine -> KiloLine
 kiloKillNums (KiloLine wd py gloss) =
@@ -150,6 +151,7 @@ main = do
       [n] -> read n
       _ -> error $ "Unknown grow-size: " ++ show args
     dict <- readDict dictF
-    deck <- loadDecks deckDir
-    writeDecks deckDir . kiloPrep . sortDeck dict $
-        growDeck dict growSize deck
+    deck <- kiloPrep . sortDeck dict . growDeck dict growSize <$>
+        loadDecks deckDir
+    mapM_ (DTI.putStrLn . showKiloLine) deck
+    writeDecks deckDir deck
