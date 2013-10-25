@@ -4,6 +4,7 @@
 module Main where
 
 import Control.Applicative
+import Control.DeepSeq
 import Control.Exception
 import Control.Monad
 import Data.List
@@ -153,5 +154,4 @@ main = do
     dict <- readDict dictF
     deck <- kiloPrep . sortDeck dict . growDeck dict growSize <$>
         loadDecks deckDir
-    mapM_ (DTI.putStrLn . showKiloLine) deck
-    writeDecks deckDir deck
+    writeDecks deckDir $!! deck
