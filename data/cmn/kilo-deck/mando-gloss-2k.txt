@@ -116,14 +116,14 @@
 避免	bi4mian3	VERB:avoid/refrain-from
 主管	zhu3guan3	NOUN:person-in-charge
 际	#4:ji4	NOUN:border
-及时	ji2shi2	ADV:timely/promptly
+及时	ji2shi2	ADV:in-timely-fashion/promptly
 术	#2:shu4	#2:NOUN:art
 德	de2	NOUN:morals/virtue
 一天	yi4tian1	ADV:one-day
 司法	si1fa3	NOUN:administration-of-justice
 字	#2:zi4	NOUN:written-character
 管	#2:guan3	VERB:be-in-charge-of/bother-about
-落实	luo4shi2	VERB:fix-in-advance/implement
+落实	luo4shi2	VERB:decide-in-advance/implement
 加快	jia1kuai4	VERB:speed-up/accelerate
 值得	zhi2de5	VERB:be-worth-it/be-of-value
 儿童	er2tong2	NOUN:children
