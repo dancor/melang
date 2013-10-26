@@ -947,7 +947,7 @@
 觉得	jue2de5	VERB:feel/believe-(idea)
 以前	yi3qian2	ADV:before/formerly
 余	#2:yu2	NOUN:surplus/remainder
-比例	bi3li4	NOUN:proportion/scale
+比例	bi3li4	NOUN:proportion
 依据	yi1ju4	#2:NOUN:base/foundation
 双方	shuang1fang4	NOUN:both-sides
 反	fan3	VERB:turn-over/oppose

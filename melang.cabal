@@ -19,7 +19,7 @@ executable wlk
     build-depends:   base >= 4
                    , containers
                    , filepath
-                   -- , haskeline
+                   , haskeline
 
 flag text-ch-freq
     default: False
