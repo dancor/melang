@@ -1,7 +1,7 @@
 的	de5	PRT:of
 是	shi4	VERB:is
 在	zai4	PREP:at
-了	le5	PRT:(completion-marker)
+了	le5	PRT:(completed/relevant)
 和	he2	CONJ:and
 年	nian2	MEAS:year
 一	yi1	NUM:1
@@ -14,7 +14,7 @@
 为	wei4	PREP:for
 种	zhong3	MEAS:kind/type
 对	dui4	#2:PREP:for
-第	di4	NUM:(ordinal-prefix)
+第	di4	PRT:(ordinal-prefix)
 他	ta1	PRON:he
 经济	jing1ji4	NOUN:economy
 社会	she4hui4	NOUN:society
@@ -250,7 +250,7 @@
 使用	shi3yong4	#2:VERB:use
 每	mei3	PRON:every
 人们	ren2men5	NOUN:people
-单位	dan1wei4	NOUN:unit
+单位	dan1wei4	NOUN:unit-(measurement-or-organization)
 阶级	jie1ji2	NOUN:social-class/rank
 起来	qi3lai5	#2:VERB:rise
 城市	cheng2shi4	#2:NOUN:city
@@ -416,14 +416,14 @@
 现代	xian4dai4	ADJ:modern
 现	xian4	ADV:just/at-the-time
 斗争	dou4zheng1	NOUN:fight
-责任	ze2ren4	NOUN:blame
+责任	ze2ren4	NOUN:responsibility/blame
 话	#2:hua4	NOUN:speech
 任何	ren4he2	PRON:any
-实践	shi2jian4	NOUN:practice
+实践	shi2jian4	NOUN:practice/use
 上海	Shang4hai3	NOUN:Shanghai
 完全	wan2quan2	ADV:completely
 工程	gong1cheng2	NOUN:engineering
-些	xie1	MEAS:indefinite-small-amount
+些	xie1	MEAS:(indefinite-small-amount)
 地位	di4wei4	NOUN:position/status
 程度	cheng2du5	#2:NOUN:level
 页	#2:ye4	MEAS:book-page
@@ -434,7 +434,7 @@
 取得	qu3de2	VERB:gain
 矛盾	mao2dun4	NOUN:contradiction
 职工	zhi2gong1	NOUN:workers
-采取	cai3qu3	VERB:take
+采取	cai3qu3	VERB:take-(measures)
 天	tian1	MEAS:day
 体系	ti3xi4	#4:NOUN:system
 这里	zhe4li3	PRON:here
@@ -674,12 +674,12 @@
 有些	you3xie1	PRON:some
 适应	shi4ying4	VERB:adapt
 台湾	Tai2wan1	NOUN:Taiwan
-成功	cheng2gong1	VERB:succeed
+成功	cheng2gong1	VERB:succeed/be-a-success
 同志	tong2zhi4	NOUN:comrade
 式	#4:shi4	NOUN:pattern/formula
 状况	zhuang4kuang4	NOUN:status
 卫生	wei4sheng1	NOUN:hygiene
-仍	reng2	#2:ADV:still/yet
+仍	reng2	ADV:nevertheless
 成本	cheng2ben3	NOUN:net-cost
 机	ji1	NOUN:machine
 需求	xu1qiu2	#2:NOUN:requirement
@@ -725,7 +725,7 @@
 应用	ying4yong4	NOUN:application/practice
 国民党	Guo2min2dang3	NOUN:KMT
 主席	zhu3xi2	NOUN:chair-of-a-meeting
-版	ban3	NOUN:printing-plate
+版	ban3	NOUN:edition/newspaper-page
 培养	pei2yang3	VERB:nurture/foster
 道	#2:dao4	NOUN:path
 值	zhi2	#2:NOUN:value
@@ -770,7 +770,7 @@
 界	#2:jie4	NOUN:boundary
 仅	jin3	#2:ADV:only
 史	#2:shi3	#2:NOUN:history
-仍然	reng2ran2	#3:ADV:still/yet
+仍然	reng2ran2	#2:ADV:nevertheless
 先生	xian1sheng5	NOUN:mister
 评价	ping2jia4	VERB:appraise/evaluate
 优势	you1shi4	NOUN:superiority
@@ -894,7 +894,7 @@
 部队	bu4dui4	NOUN:army/troops
 方案	fang1an4	NOUN:plan/scheme
 旅游	lv3you2	NOUN:tour/tourism
-吗	ma5	PRT:(?)
+吗	ma5	PRT:(question-particle)
 无论	wu2lun4	CONJ:Regardless-of-
 此外	ci3wai4	#2:CONJ:moreover
 增	zeng1	#3:VERB:increase
@@ -960,7 +960,7 @@
 学者	xue2zhe3	NOUN:scholar
 深	shen1	ADJ:deep/dark-color
 掌握	zhang3wo4	VERB:grasp/know-well
-事情	shi4qing2	#2:NOUN:issue/matter/thing
+事情	shi4qing5	#2:NOUN:issue/matter/thing
 观	#2:guan1	NOUN:view/outlook
 通知	tong1zhi1	NOUN:notice/circular
 各国	ge4guo2	NOUN:each-country
