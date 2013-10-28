@@ -161,7 +161,7 @@
 路线	lu4xian4	NOUN:route/itinerary
 显示	xian3shi4	VERB:show/demonstrate
 令	#2:ling4	VERB:command/decree
-感	gan3	NOUN:feel/sense
+感	gan3	NOUN:feeling/sense
 倍	#2:bei4	MEAS:-times/-fold
 固定	gu4ding4	ADJ:fixed/regular
 训练	xun4lian4	#2:NOUN:training
