@@ -5,7 +5,7 @@
 和	he2	CONJ:and
 年	nian2	MEAS:year
 一	yi1	NUM:1
-有	you3	VERB:have
+有	you3	VERB:have/possess
 这	zhe4	PRON:this
 中	zhong1	PRT:middle
 不	bu4	ADV:not
@@ -179,7 +179,7 @@
 如果	ru2guo3	CONJ:if
 其他	qi2ta1	PRON:others/the-rest
 内	nei4	PRT:inside
-具有	ju4you3	VERB:possess
+具有	ju4you3	#2:VERB:have/possess
 农业	nong2ye4	NOUN:agriculture
 市	#2:shi4	NOUN:city
 法	fa3	NOUN:law/method
@@ -459,7 +459,7 @@
 人类	ren2lei4	NOUN:human-being
 专业	zhuan1ye4	NOUN:special-field-of-research
 方	fang1	NOUN:direction
-规模	gui1mo2	NOUN:scale
+规模	gui1mo2	NOUN:scale/scope
 加	#2:jia1	VERB:add
 达到	da2dao4	VERB:achieve
 质量	zhi4liang4	#2:NOUN:quality
