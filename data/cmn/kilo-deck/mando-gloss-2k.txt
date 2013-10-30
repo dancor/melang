@@ -131,7 +131,7 @@
 素质	su4zhi4	NOUN:quality/character
 来源	lai2yuan2	NOUN:source/origin
 站	#3:zhan4	NOUN:station/stop
-同意	tong2yi2	VERB:agree
+同意	tong2yi4	VERB:agree
 父亲	fu4qin5	NOUN:father
 进口	jin4kou3	NOUN:entrance-(place)
 逻辑	luo2ji5	#2:NOUN:logic

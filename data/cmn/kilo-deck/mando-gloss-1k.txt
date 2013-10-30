@@ -913,7 +913,7 @@
 胜利	sheng4li4	NOUN:victory
 效果	xiao4guo3	NOUN:effect/result
 道路	dao4lu4	NOUN:road/way
-计	#2:ji4	VERB:count/guage
+计	#2:ji4	VERB:count/gauge
 金	jin1	NOUN:gold
 缺乏	que1fa2	VERB:lack/be-short-of
 电子	dian4zi5	NOUN:electron
