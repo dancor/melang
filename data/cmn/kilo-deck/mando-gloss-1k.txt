@@ -354,7 +354,7 @@
 项目	xiang4mu4	NOUN:clause/item
 或者	huo4zhe3	#2:CONJ:or
 价格	jia4ge2	NOUN:price
-利益	li4yi4	NOUN:benefit
+利益	li4yi4	NOUN:profit
 发	fa1	VERB:send/start
 标准	biao1zhun3	NOUN:standard
 阶段	jie1duan4	NOUN:phase
@@ -865,7 +865,7 @@
 一条	yi4tiao2	NOUN:one-strip
 尽管	jin3guan3	CONJ:despite
 道德	dao4de2	NOUN:morals/ethics
-利	#2:li4	NOUN:profit/benefit
+利	#2:li4	#2:NOUN:profit
 心	#2:xin1	NOUN:heart/mind
 协调	xie2tiao2	VERB:coordinate/harmonize
 导致	dao3zhi4	VERB:lead-to/result-in
