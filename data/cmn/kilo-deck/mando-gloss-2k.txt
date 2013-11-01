@@ -259,7 +259,7 @@
 观察	guan1cha2	VERB:observe/examine
 背景	bei4jing3	NOUN:background/backdrop
 总结	zong3jie2	VERB:summarize
-传播	chuan2bo1	NOUN:spread/disseminate
+传播	chuan2bo1	VERB:spread/disseminate
 倾向	qing1xiang4	#2:NOUN:trend/tendency
 西	xi1	#2:NOUN:west
 工会	gong1hui4	NOUN:trade-union
