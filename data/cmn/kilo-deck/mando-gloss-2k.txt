@@ -310,7 +310,7 @@
 位置	wei4zhi4	NOUN:position
 共产	gong4chan3	NOUN:communist
 外资	wai4zi1	NOUN:foreign-investment
-发出	fa1chu11	VERB:send-out
+发出	fa1chu1	VERB:send-out
 推广	tui1guang3	#2:VERB:spread/disseminate
 记载	ji4zai4	NOUN:record/account
 班	ban1	NOUN:squad
