@@ -1343,7 +1343,7 @@
 成绩	cheng2ji4
 工商	gong1shang1
 意思	yi4si5
-城	cheng2
+城	#3:cheng2
 教授	jiao4shou4
 原来	yuan2lai2
 经费	jing1fei4
@@ -1358,7 +1358,7 @@
 本文	ben3wen2
 占有	zhan4you3
 石油	shi2you2
-事务	shi4wu4
+事务	#2:shi4wu4
 解	jie3
 宪法	xian4fa3
 污染	wu1ran3
@@ -1372,11 +1372,11 @@
 有力	you3li4
 引进	yin3jin4
 日益	ri4yi4
-具	ju4
+具	#2:ju4
 夫	fu1
 古代	gu3dai4
-指示	zhi3shi4
-供	gong1
+指示	#2:zhi3shi4
+供	#3:gong1
 格	ge2
 关注	guan1zhu4
 消息	xiao1xi5
@@ -1560,11 +1560,11 @@
 防止	fang2zhi3
 势力	shi4li5
 描述	miao2shu4
-一句	yi1ju4
+一句	yi2ju4
 马	ma3
 股票	gu3piao4
 吸引	xi1yin3
-不但	bu4dan4
+不但	bu2dan4
 身体	shen1ti3
 父母	fu4mu3
 祖国	zu3guo2
@@ -1644,7 +1644,7 @@
 遇	yu4
 她们	ta1men5
 套	tao4
-不够	bu4gou4
+不够	bu2gou4
 相反	xiang1fan3
 海	hai3
 投	tou2
@@ -1656,7 +1656,7 @@
 否定	fou3ding4
 主导	zhu3dao3
 否则	fou3ze2
-一家	yi1jia1
+一家	yi4jia1
 进展	jin4zhan3
 差别	cha1bie2
 审判	shen3pan4
@@ -1714,7 +1714,7 @@
 比如	bi3ru2
 许可	xu3ke3
 激烈	ji1lie4
-一方	yi1fang1
+一方	yi4fang1
 强大	qiang2da4
 情绪	qing2xu4
 模型	mo2xing2
@@ -1722,13 +1722,13 @@
 寻找	xun2zhao3
 膨胀	peng2zhang4
 营业	ying2ye4
-官	Guan1 \ guan1
-广	Guang3 \ guang3
+官	guan1
+广	guang3
 至于	zhi4yu2
 委托	wei3tuo1
-安	An1 \ an1
+安	an1
 您	nin2
-读	dou4 \ du2
+读	du2
 协商	xie2shang1
 南京	Nan2jing1
 靠	kao4
@@ -1740,7 +1740,7 @@
 永远	yong3yuan3
 更新	geng1xin1
 权益	quan2yi4
-连	Lian2 \ lian2
+连	lian2
 境	jing4
 轻	qing1
 损害	sun3hai4
@@ -1758,7 +1758,7 @@
 慢	man4
 进攻	jin4gong1
 多元	duo1yuan2
-角色	jiao3se4 \ jue2se4
+角色	jue2se4
 侵略	qin1lve4
 挑战	tiao3zhan4
 房屋	fang2wu1
@@ -1774,7 +1774,7 @@
 标	biao1
 理由	li3you2
 违法	wei2fa3
-划	hua2 \ hua4
+划	hua4
 铁路	tie3lu4
 吸收	xi1shou1
 奋斗	fen4dou4
@@ -1784,7 +1784,7 @@
 报纸	bao4zhi3
 保留	bao3liu2
 加入	jia1ru4
-世	Shi4 \ shi4
+世	shi4
 拒绝	ju4jue2
 成熟	cheng2shu2
 立场	li4chang3
@@ -1797,7 +1797,7 @@
 股东	gu3dong1
 真理	zhen1li3
 翻译	fan1yi4
-楼	Lou2 \ lou2
+楼	lou2
 城乡	cheng2xiang1
 公布	gong1bu4
 信用	xin4yong4
@@ -1806,19 +1806,19 @@
 接触	jie1chu4
 感受	gan3shou4
 配套	pei4tao4
-否	fou3 \ pi3
+否	fou3
 演出	yan3chu1
 想象	xiang3xiang4
 确保	que4bao3
 流	liu2
-东北	Dong1bei3 \ dong1bei3
+东北	dong1bei3
 剥削	bo1xue1
 初期	chu1qi1
 面前	mian4qian2
 亚洲	Ya4zhou1
 预测	yu4ce4
 证据	zheng4ju4
-京	Jing1 \ jing1
+京	jing1
 情感	qing2gan3
 住房	zhu4fang2
 纳税	na4shui4
@@ -1836,7 +1836,7 @@
 教训	jiao4xun5
 婚姻	hun1yin1
 研	yan2
-易	Yi4 \ yi4
+易	yi4
 家里	jia1li3
 软件	ruan3jian4
 下面	xia4mian5
@@ -1844,7 +1844,7 @@
 公平	gong1ping2
 不管	bu4guan3
 源	yuan2
-士	Shi4 \ shi4
+士	shi4
 享受	xiang3shou4
 阶层	jie1ceng2
 秘密	mi4mi4
@@ -1894,10 +1894,10 @@
 可靠	ke3kao4
 赔偿	pei2chang2
 公斤	gong1jin1
-一旦	yi1dan4
-益	Yi4 \ yi4
+一旦	yi2dan4
+益	yi4
 主观	zhu3guan1
-中小	zhong1 | xiao3
+中小	zhong1xiao3
 减	jian3
 革	ge2
 检察	jian3cha2
@@ -1918,7 +1918,7 @@
 行使	xing2shi3
 活力	huo2li4
 领	ling3
-周	Zhou1 \ zhou1
+周	zhou1
 超越	chao1yue4
 通信	tong1xin4
 腐败	fu3bai4
@@ -1927,7 +1927,7 @@
 危害	wei1hai4
 节目	jie2mu4
 势	shi4
-色	se4 \ shai3
+色	se4
 制订	zhi4ding4
 纺织	fang3zhi1
 海外	hai3wai4
@@ -1936,12 +1936,12 @@
 装备	zhuang1bei4
 原理	yuan2li3
 旧	jiu4
-干	Gan1 \ gan1 \ gan4
+干	gan4
 上市	shang4shi4
 他人	ta1ren2
 外贸	wai4mao4
 紧密	jin3mi4
-一代	yi1dai4
+一代	yi2dai4
 对待	dui4dai4
 阅读	yue4du2
 附近	fu4jin4
@@ -1952,7 +1952,7 @@
 息	xi1
 内涵	nei4han2
 沿海	yan2hai3
-尚	Shang4 \ shang4
+尚	shang4
 媒体	mei2ti3
 写作	xie3zuo4
 摆脱	bai3tuo1
@@ -1961,13 +1961,13 @@
 自治区	zi4zhi4qu1
 转让	zhuan3rang4
 悲剧	bei1ju4
-众	Zhong4 \ zhong4
+众	zhong4
 研讨	yan2tao3
 考试	kao3shi4
-纳	Na4 \ na4
+纳	na4
 幸福	xing4fu2
 将来	jiang1lai2
-属	shu3 \ zhu3
+属	shu3
 律师	lv4shi1
 期限	qi1xian4
 注重	zhu4zhong4
@@ -1977,8 +1977,8 @@
 物理	wu4li3
 整理	zheng3li3
 爱国	ai4guo2
-花	Hua1 \ hua1
-吃	chi1 \ ji2
+花	hua1
+吃	chi1
 抽象	chou1xiang4
 牺牲	xi1sheng1
 大革命	da4ge2ming4
@@ -1988,9 +1988,9 @@
 考核	kao3he2
 审查	shen3cha2
 满意	man3yi4
-儿	er2 \ r5
+儿	er2
 联邦	lian2bang1
-一块	yi1kuai4
+一块	yi2kuai4
 信仰	xin4yang3
 间接	jian4jie1
 灵活	ling2huo2
@@ -2010,13 +2010,13 @@
 前面	qian2mian4
 声	sheng1
 民众	min2zhong4
-巴	Ba1 \ ba1
+巴	ba1
 梦	meng4
 适合	shi4he2
 众多	zhong4duo1
 论述	lun4shu4
 从此	cong2ci3
-策	Ce4 \ ce4
+策	ce4
 交往	jiao1wang3
 流行	liu2xing2
 协助	xie2zhu4
@@ -2029,7 +2029,7 @@
 方便	fang1bian4
 上面	shang4mian5
 一体	yi1ti3
-最低	zui4 | di1
+最低	zui4di1
 法人	fa3ren2
 英	Ying1 \ ying1
 大众	Da4zhong4 \ da4zhong4
