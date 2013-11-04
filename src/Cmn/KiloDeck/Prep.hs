@@ -4,11 +4,9 @@
 module Main where
 
 import Control.Applicative
+import Control.Arrow
 import Control.DeepSeq
-import Control.Exception
-import Control.Monad
 import Data.List
-import Data.List.Split
 import Data.Maybe
 import Data.Ord
 import qualified Data.HashMap.Strict as HMS
@@ -17,8 +15,6 @@ import qualified Data.Set as Set
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
 import System.Environment
-import System.FilePath
-import System.IO.Error
 
 import Cmn.KiloDeck
 import GB1
@@ -97,61 +93,37 @@ kiloPrep =
     kiloPrepGlossUniq . kiloPrepPinyinUniq . kiloPrepPinyin .
     map kiloKillNums
 
-growDeck :: Dict -> Int -> KiloDeck -> KiloDeck
-growDeck _ 0 deck = deck
-growDeck dict growSize deck = deck ++ deckNext
+growDeck :: Map.Map DT.Text DT.Text -> Goog -> Int -> KiloDeck -> KiloDeck
+growDeck _ _ 0 deck = deck
+growDeck pronMap goog growSize deck = deck ++ deckNext
   where
     deckWordSet = Set.fromList $ map kLWord deck
-    dictToDeck l = KiloLine (dlWord l) "" (dlPartOfSpeech l `DT.append` ":")
+    dictToDeck l = KiloLine w (fromMaybe "" $ Map.lookup w pronMap)
+        (dlPartOfSpeech l `DT.append` ":")
+      where w = dlWord l
     deckNext = take growSize . map dictToDeck $
-        filter (not . (`Set.member` deckWordSet) . dlWord) dict
+        filter (not . (`Set.member` deckWordSet) . dlWord) goog
 
-intToDeckName :: Int -> FilePath
-intToDeckName n = "mando-gloss-" ++ show n ++ "k.txt"
-
-seqWhileJust :: [IO (Maybe a)] -> IO [a]
-seqWhileJust [] = return []
-seqWhileJust (x:xs) = do
-    rMb <- x
-    case rMb of
-      Nothing -> return []
-      Just r -> (r:) <$> seqWhileJust xs
-
-loadDeckIfExists :: FilePath -> IO (Maybe KiloDeck)
-loadDeckIfExists f = (Just <$> loadKiloDeck f) `catch` handleExists
-  where
-    handleExists e
-      | isDoesNotExistError e = return Nothing
-      | otherwise = throwIO e
-
-loadDecks :: FilePath -> IO KiloDeck
-loadDecks dir = concat <$>
-    seqWhileJust (map (loadDeckIfExists . (dir </>) . intToDeckName) [1..])
-
-writeDeck :: FilePath -> KiloDeck -> IO ()
-writeDeck f = DTI.writeFile f . DT.unlines . map showKiloLine
-
-writeDecks :: FilePath -> KiloDeck -> IO ()
-writeDecks dir = zipWithM_
-    (\n -> writeDeck (dir </> intToDeckName n)) [1..] . chunksOf 1000
-
-sortDeck :: Dict -> KiloDeck -> KiloDeck
-sortDeck dict =
+sortDeck :: Goog -> KiloDeck -> KiloDeck
+sortDeck goog =
     map snd . sortBy (flip $ comparing fst) .
     map (\x -> (fromJust $ HMS.lookup (kLWord x) wdToPos, x))
   where
-    wdToPos = HMS.fromList $ map (\l -> (dlWord l, dlOccurs l)) dict
+    wdToPos = HMS.fromList $ map (\l -> (dlWord l, dlOccurs l)) goog
+
+breakTab :: DT.Text -> (DT.Text, DT.Text)
+breakTab = second DT.tail . DT.break (== '\t')
 
 main :: IO ()
 main = do
-    let deckDir = "/home/danl/p/l/melang/data/cmn/kilo-deck"
-        dictF = "/home/danl/p/l/melang/data/cmn/dict"
     args <- getArgs
     growSize <- return $ case args of
       [] -> 0
       [n] -> read n
       _ -> error $ "Unknown grow-size: " ++ show args
-    dict <- readDict dictF
-    deck <- kiloPrep . sortDeck dict . growDeck dict growSize <$>
-        loadDecks deckDir
-    writeDecks deckDir $!! deck
+    goog <- readGoog "/home/danl/p/l/melang/data/cmn/gb-rec"
+    pronMap <- Map.fromList . map breakTab . DT.lines <$>
+        DTI.readFile "/home/danl/p/l/melang/data/cmn/pinyin"
+    deck <- kiloPrep . sortDeck goog . growDeck pronMap goog growSize <$>
+        loadKiloDecks kiloDeckDir
+    writeKiloDecks kiloDeckDir $!! deck

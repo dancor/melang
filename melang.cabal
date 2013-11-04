@@ -259,3 +259,14 @@ executable score-tatoeba
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
     build-depends:
+
+flag get-pronunciations
+    default: False
+
+executable get-pronunciations
+    if !flag(get-pronunciations)
+        buildable: False
+    main-is:         Main/get-pronunciations.hs
+    hs-source-dirs:  src
+    ghc-options:     -O2 -Wall
+    build-depends:

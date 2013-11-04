@@ -6,27 +6,27 @@ import Control.DeepSeq
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
 
--- | Example: Dictline "的" "PRT" 1680518088 1
-data DictLine = DictLine
+-- | Example: GoogLine "的" "PRT" 1680518088 1
+data GoogLine = GoogLine
     { dlWord         :: !DT.Text
     , dlPartOfSpeech :: !DT.Text
     , dlOccurs       :: !Int
     , dlN            :: !Int
     } deriving (Show)
 
-instance NFData DictLine
+instance NFData GoogLine
 
-type Dict = [DictLine]
+type Goog = [GoogLine]
 
-readDict :: FilePath -> IO Dict
-readDict = fmap (zipWith readDictLine [1..] . DT.lines) . DTI.readFile
+readGoog :: FilePath -> IO Goog
+readGoog = fmap (zipWith readGoogLine [1..] . DT.lines) . DTI.readFile
 
-readDictLine :: Int -> DT.Text -> DictLine
-readDictLine n s =
+readGoogLine :: Int -> DT.Text -> GoogLine
+readGoogLine n s =
     case DT.splitOn "\t" s of
-      [w, p, o] -> DictLine w p (read $ DT.unpack o) n
-      x -> error $ "readDictline: " ++ show x
+      [w, p, o] -> GoogLine w p (read $ DT.unpack o) n
+      x -> error $ "readGoogline: " ++ show x
 
-showDictLine :: DictLine -> DT.Text
-showDictLine (DictLine w p o n) =
+showGoogLine :: GoogLine -> DT.Text
+showGoogLine (GoogLine w p o n) =
     DT.intercalate "\t" [w, p, DT.pack $ show o, DT.pack $ show n]
