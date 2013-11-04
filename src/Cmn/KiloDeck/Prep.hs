@@ -111,9 +111,6 @@ sortDeck goog =
   where
     wdToPos = HMS.fromList $ map (\l -> (dlWord l, dlOccurs l)) goog
 
-breakTab :: DT.Text -> (DT.Text, DT.Text)
-breakTab = second DT.tail . DT.break (== '\t')
-
 main :: IO ()
 main = do
     args <- getArgs
@@ -122,7 +119,7 @@ main = do
       [n] -> read n
       _ -> error $ "Unknown grow-size: " ++ show args
     goog <- readGoog "/home/danl/p/l/melang/data/cmn/gb-rec"
-    pronMap <- Map.fromList . map breakTab . DT.lines <$>
+    pronMap <- Map.fromList . map (breakOnCh '\t') . DT.lines <$>
         DTI.readFile "/home/danl/p/l/melang/data/cmn/pinyin"
     deck <- kiloPrep . sortDeck goog . growDeck pronMap goog growSize <$>
         loadKiloDecks kiloDeckDir

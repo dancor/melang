@@ -25,7 +25,7 @@ parseGWdInfo line =
     (b, c) = breakTab bAndC
 
 recentFile :: String
-recentFile = "/home/danl/p/l/melang/data/cmn/gbRec"
+recentFile = "/home/danl/p/l/melang/data/cmn/gb-rec"
 
 loadGoogBk :: IO [GWdInfo]
 loadGoogBk = map parseGWdInfo . BSC.lines <$> BS.readFile recentFile
