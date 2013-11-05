@@ -4,7 +4,6 @@
 module Main where
 
 import Control.Applicative
-import Control.Arrow
 import Control.DeepSeq
 import Data.List
 import Data.Maybe
@@ -18,6 +17,7 @@ import System.Environment
 
 import Cmn.KiloDeck
 import GB1
+import Util.DT
 
 prepPinyin :: DT.Text -> DT.Text
 prepPinyin = DT.pack . f . DT.unpack
@@ -37,6 +37,7 @@ prepGloss g =
     if partOfSpeech `elem`
         [ "ADJ", "ADV", "AUXV", "CONJ", "MEAS", "NOUN"
         , "NUM", "PREP", "PRON", "PRT", "VERB"
+        , "X"
         ]
       then partOfSpeech `DT.append` rest
       else error $ "Unknown part-of-speech: " ++ show partOfSpeech
