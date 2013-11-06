@@ -535,7 +535,7 @@
 指导	zhi3dao3	NOUN:guidance
 联合	lian2he2	ADJ:joint/combined
 员	#2:yuan2	NOUN:-er/member
-确定	que4ding4	VERB:define
+确定	que4ding4	VERB:fix-definitely/determine
 节	jie2	MEAS:segment/division
 讨论	tao3lun4	VERB:discuss
 从而	cong2er2	CONJ:thus
