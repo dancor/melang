@@ -1379,14 +1379,14 @@
 供	#3:gong1	#2:VERB:supply
 格	ge2	NOUN:grid
 关注	guan1zhu4	VERB:pay-close-attention-to
-消息	xiao1xi5	NOUN:news
+消息	xiao1xi5	#2:NOUN:news
 能源	neng2yuan2	NOUN:energy
 评论	ping2lun4	NOUN:comment
 支付	zhi1fu4	VERB:pay-money
 预算	yu4suan4	NOUN:budget
 举办	ju3ban4	VERB:hold-(an-event)
 种种	zhong3zhong3	ADJ:various
-人士	ren2shi4	NOUN:person
+人士	ren2shi4	#2:NOUN:person
 生存	sheng1cun2	NOUN:survival
 族	zu2	NOUN:race/nationality
 立即	li4ji2	ADV:immediately
@@ -6180,7 +6180,7 @@
 跳	tiao4	VERB:
 防护	fang2hu4	NOUN:
 查询	cha2xun2	VERB:
-绩	#13:ji4	NOUN:achievement
+绩	#13:ji4	#3:NOUN:achievement
 无线	#2:wu2xian4	ADJ:
 一周	yi4zhou1	VERB:
 叛乱	pan4luan4	NOUN:
@@ -9960,7 +9960,7 @@
 下限	xia4xian4	NOUN:
 吉尔	Ji2er3	NOUN:
 历史剧	li4shi3ju4	NOUN:
-秩	#10:zhi4	NOUN:order/sequence
+秩	#10:zhi4	#2:NOUN:order/sequence
 逼	bi1	VERB:
 晚会	wan3hui4	NOUN:
 慢性	man4xing4	ADJ:
