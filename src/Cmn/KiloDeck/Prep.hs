@@ -6,18 +6,10 @@ module Main where
 import Control.Applicative
 import Control.DeepSeq
 import Data.List
-import Data.Maybe
-import Data.Ord
-import qualified Data.HashMap.Strict as HMS
 import qualified Data.Map as Map
-import qualified Data.Set as Set
 import qualified Data.Text as DT
-import qualified Data.Text.IO as DTI
-import System.Environment
 
 import Cmn.KiloDeck
-import GB1
-import Util.DT
 
 prepPinyin :: DT.Text -> DT.Text
 prepPinyin = DT.pack . f . DT.unpack
@@ -94,34 +86,9 @@ kiloPrep =
     kiloPrepGlossUniq . kiloPrepPinyinUniq . kiloPrepPinyin .
     map kiloKillNums
 
-growDeck :: Map.Map DT.Text DT.Text -> Goog -> Int -> KiloDeck -> KiloDeck
-growDeck _ _ 0 deck = deck
-growDeck pronMap goog growSize deck = deck ++ deckNext
-  where
-    deckWordSet = Set.fromList $ map kLWord deck
-    dictToDeck l = KiloLine w (fromMaybe "" $ Map.lookup w pronMap)
-        (dlPartOfSpeech l `DT.append` ":")
-      where w = dlWord l
-    deckNext = take growSize . map dictToDeck $
-        filter (not . (`Set.member` deckWordSet) . dlWord) goog
-
-sortDeck :: Goog -> KiloDeck -> KiloDeck
-sortDeck goog =
-    map snd . sortBy (flip $ comparing fst) .
-    map (\x -> (fromJust $ HMS.lookup (kLWord x) wdToPos, x))
-  where
-    wdToPos = HMS.fromList $ map (\l -> (dlWord l, dlOccurs l)) goog
-
 main :: IO ()
 main = do
-    args <- getArgs
-    growSize <- return $ case args of
-      [] -> 0
-      [n] -> read n
-      _ -> error $ "Unknown grow-size: " ++ show args
-    goog <- readGoog "/home/danl/p/l/melang/data/cmn/gb-rec"
-    pronMap <- Map.fromList . map (breakOnCh '\t') . DT.lines <$>
-        DTI.readFile "/home/danl/p/l/melang/data/cmn/pinyin"
-    deck <- kiloPrep . sortDeck goog . growDeck pronMap goog growSize <$>
-        loadKiloDecks kiloDeckDir
-    writeKiloDecks kiloDeckDir $!! deck
+    dict <- kiloPrep <$> readKiloDeck kiloDictFile
+    writeKiloDeck kiloDictFile $!! dict
+    writeKiloDecks kiloDeckDir $!!
+        takeWhile (not . (":" `DT.isSuffixOf`) . kLGloss) dict

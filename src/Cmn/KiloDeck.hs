@@ -43,11 +43,14 @@ readKiloLine s =
 showKiloLine :: KiloLine -> DT.Text
 showKiloLine (KiloLine w p g) = DT.intercalate "\t" [w, p, g]
 
+kiloDictFile :: FilePath
+kiloDictFile = "/home/danl/p/l/melang/data/cmn/dict"
+
 kiloDeckDir :: FilePath
 kiloDeckDir = "/home/danl/p/l/melang/data/cmn/kilo-deck"
 
-loadKiloDeck :: FilePath -> IO [KiloLine]
-loadKiloDeck = fmap (map readKiloLine . DT.lines) . DTI.readFile
+readKiloDeck :: FilePath -> IO [KiloLine]
+readKiloDeck = fmap (map readKiloLine . DT.lines) . DTI.readFile
 
 type KiloDeck = [KiloLine]
 
@@ -62,16 +65,16 @@ seqWhileJust (x:xs) = do
       Nothing -> return []
       Just r -> (r:) <$> seqWhileJust xs
 
-loadDeckIfExists :: FilePath -> IO (Maybe KiloDeck)
-loadDeckIfExists f = (Just <$> loadKiloDeck f) `catch` handleExists
+readDeckIfExists :: FilePath -> IO (Maybe KiloDeck)
+readDeckIfExists f = (Just <$> readKiloDeck f) `catch` handleExists
   where
     handleExists e
       | isDoesNotExistError e = return Nothing
       | otherwise = throwIO e
 
-loadKiloDecks :: FilePath -> IO KiloDeck
-loadKiloDecks dir = concat <$>
-    seqWhileJust (map (loadDeckIfExists . (dir </>) . intToDeckName) [1..])
+readKiloDecks :: FilePath -> IO KiloDeck
+readKiloDecks dir = concat <$>
+    seqWhileJust (map (readDeckIfExists . (dir </>) . intToDeckName) [1..])
 
 writeKiloDeck :: FilePath -> KiloDeck -> IO ()
 writeKiloDeck f = DTI.writeFile f . DT.unlines . map showKiloLine
