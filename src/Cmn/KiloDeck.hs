@@ -14,15 +14,15 @@ import qualified Data.Text.IO as DTI
 import System.FilePath
 import System.IO.Error
 
--- | Example: KiloLine "的" "de5" "PRT:of"
+-- | Example: KiloLine 1 "的" "de5" "PRT:of"
 data KiloLine = KiloLine
-    { kLWord   :: !DT.Text
+    { kLNum    :: !Int
+    , kLWord   :: !DT.Text
     , kLPinyin :: !DT.Text
     , kLGloss  :: !DT.Text
     } deriving (Show)
 
-instance NFData KiloLine where
-    rnf (KiloLine a b c) = rnf a `seq` rnf b `seq` rnf c
+instance NFData KiloLine
 
 -- | Remove any prefix like "#1:", "#2:", ..
 killNum :: DT.Text -> DT.Text
@@ -34,14 +34,14 @@ killNum = DT.pack . f . DT.unpack
 onKLPinyin :: (DT.Text -> DT.Text) -> KiloLine -> KiloLine
 onKLPinyin f kL = kL {kLPinyin = f $ kLPinyin kL}
 
-readKiloLine :: DT.Text -> KiloLine
-readKiloLine s =
+readKiloLine :: Int -> DT.Text -> KiloLine
+readKiloLine n s =
     case DT.splitOn "\t" s of
-      [w, p, g] -> KiloLine w p g
-      x -> error $ "readKiloLine: " ++ show x
+      [w, p, g] -> KiloLine n w p g
+      x -> error $ "readKiloLine: " ++ show n ++ ": " ++ show x
 
 showKiloLine :: KiloLine -> DT.Text
-showKiloLine (KiloLine w p g) = DT.intercalate "\t" [w, p, g]
+showKiloLine (KiloLine _ w p g) = DT.intercalate "\t" [w, p, g]
 
 kiloDictFile :: FilePath
 kiloDictFile = "/home/danl/p/l/melang/data/cmn/dict"
@@ -50,7 +50,7 @@ kiloDeckDir :: FilePath
 kiloDeckDir = "/home/danl/p/l/melang/data/cmn/kilo-deck"
 
 readKiloDeck :: FilePath -> IO [KiloLine]
-readKiloDeck = fmap (map readKiloLine . DT.lines) . DTI.readFile
+readKiloDeck = fmap (zipWith readKiloLine [1..] . DT.lines) . DTI.readFile
 
 type KiloDeck = [KiloLine]
 
