@@ -358,7 +358,7 @@
 发	fa1	VERB:send/start
 标准	biao1zhun3	NOUN:standard
 阶段	jie1duan4	NOUN:phase
-处	chu3	NOUN:situation
+处	chu3	VERB:be-in-a-certain-position
 当时	dang1shi2	NOUN:that-very-moment
 不仅	bu4jin3	ADV:not-the-only-one/non-uniquely
 应该	ying1gai1	VERB:should
