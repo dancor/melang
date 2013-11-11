@@ -345,7 +345,7 @@
 局	ju2	NOUN:bureau/branch
 商品	shang1pin3	NOUN:commodity/goods
 直接	zhi2jie1	ADV:directly
-力	li4	NOUN:force
+力	li4	NOUN:power/force
 实行	shi2xing2	VERB:implement/put-into-effect
 时期	shi2qi1	#2:NOUN:period-of-time
 不断	bu2duan4	ADV:unceasingly
