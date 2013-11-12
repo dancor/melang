@@ -346,7 +346,7 @@
 商品	shang1pin3	NOUN:commodity/goods
 直接	zhi2jie1	ADV:directly
 力	li4	NOUN:power/force
-实行	shi2xing2	VERB:implement/put-into-effect
+实行	shi2xing2	VERB:carry-out/implement
 时期	shi2qi1	#2:NOUN:period-of-time
 不断	bu2duan4	ADV:unceasingly
 体制	ti3zhi4	#3:NOUN:system
