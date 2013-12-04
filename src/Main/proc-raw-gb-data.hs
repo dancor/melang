@@ -4,10 +4,10 @@
 -- We specifically treat the part-of-speech-tagged data released in 2012.
 --
 -- We only consider the alphabetic files "a.gz" to "z.gz" and
--- not "0.gz" or "other.gz" or such. "Words" that start with numbers or
+-- not "0.gz" or "other.gz" or such. Words that start with numbers or
 -- punctuation are not as interesting for learning vocabularly.
 --
--- This currently works with "Chinese (Simplified)" or "English".
+-- I use this currently for data-sets "chi-sim" and "eng".
 -- Adding other data-sets is simple.
 --
 -- We only consider Google Books published on or after 1980.
@@ -33,40 +33,36 @@
 -- For English:
 -- - Combine words case-insensitively.
 
+import Control.Applicative
 import Control.Arrow
 import Data.Char
+import Data.Conduit
+import qualified Data.Conduit.Binary as CB
+import qualified Data.Conduit.List as CL
+import qualified Data.Conduit.Text as CT
+import qualified Data.Conduit.Util as CU
 import Data.Function
 import Data.List
 import qualified Data.Map as Map
-import Data.Maybe
+import Data.Monoid
 import Data.Ratio
 import qualified Data.Set as Set
-import qualified Data.Text.Lazy as DTL
-import qualified Data.Text.Lazy.IO as DTLI
+import qualified Data.Text as DT
 import System.Environment
 import System.FilePath
+import System.IO
+import System.Process
 
 import Util.SciSigFig
 
 data RawLine
     = RawLine
-    { rWord   :: !DTL.Text
-    , rSpPart :: !DTL.Text
+    { rWord   :: !DT.Text
+    , rSpPart :: !DT.Text
     , rOccurs :: !Int
     }
-    deriving (Show)
+    deriving (Eq, Show)
 
-type MyMap = Map.Map DTL.Text (Map.Map DTL.Text Int)
-
-tagSet :: Set.Set DTL.Text
-tagSet = Set.fromList
-    [ "ADJ", "ADP", "ADV", "CONJ", "DET", "NOUN", "NUM"
-    , "PRON", "PRT", "VERB", "X"]
-
-isCjkCommon :: Char -> Bool
-isCjkCommon c = i >= 0x4E00 && i <= 0x9FCC where i = ord c
-
--- Only 17 "non-common" characters in GB1980.
 isCjk :: Char -> Bool
 isCjk c =
     i >= 0x4E00 && i <= 0x9FCC ||
@@ -76,60 +72,119 @@ isCjk c =
     i >= 0x2B740 && i <= 0x2B81D
   where i = ord c
 
-readRawLine :: DTL.Text -> Maybe RawLine
-readRawLine l = case DTL.split (== '\t') l of
+tagSet :: Set.Set DT.Text
+tagSet = Set.fromList
+    [ "ADJ", "ADP", "ADV", "CONJ", "DET", "NOUN", "NUM"
+    , "PRON", "PRT", "VERB", "X"]
+
+data Lang = Eng | Chi
+
+readCols :: DT.Text -> [DT.Text]
+readCols = DT.split (== '\t')
+
+showCols :: [DT.Text] -> DT.Text
+showCols = DT.intercalate "\t"
+
+readRawLine :: Lang -> DT.Text -> Maybe RawLine
+readRawLine lang l = case readCols l of
   [wordSpPart, yearStr, occursStr, _bkOccursStr] ->
-      if DTL.all (not . isCjk) wordSpPart ||
-          DTL.all (not . (== '_')) wordSpPart ||
+      if year < (1980 :: Int) ||
           spPart `Set.notMember` tagSet ||
-          year < (1980 :: Int)
+          DT.null wordUnd ||
+          langBadWord word
         then Nothing
         else Just $ RawLine word spPart occurs
     where
-      (wordUnd, spPart) = DTL.breakOnEnd "_" wordSpPart
-      word = DTL.init wordUnd
-      year = read $ DTL.unpack yearStr
-      occurs = read $ DTL.unpack occursStr
+      langBadWord = case lang of
+        Eng -> DT.all (not . isAlpha)
+        Chi -> DT.all (not . isCjk)
+      (wordUnd, spPart) = DT.breakOnEnd "_" wordSpPart
+      word = DT.init wordUnd
+      year = read $ DT.unpack yearStr
+      occurs = read $ DT.unpack occursStr
   _ -> error "CSV format error."
 
-readRawLines :: DTL.Text -> [RawLine]
-readRawLines = catMaybes . map readRawLine . DTL.lines
+rawLineCols :: RawLine -> [DT.Text]
+rawLineCols (RawLine word spPart occurs) =
+    [word, spPart, DT.pack $ show occurs]
 
-collateRawLines :: [RawLine] -> MyMap
-collateRawLines = Map.fromListWith (Map.unionWith (+)) .
-    map (\x -> (rWord x, Map.singleton (rSpPart x) (rOccurs x)))
-
-mapToResults :: MyMap -> [((DTL.Text, Int), [(DTL.Text, Int)])]
-mapToResults = 
-    sortBy (flip compare `on` snd . fst) . map doWordResult . Map.toList
-  where
-    doWordResult (word, m) =
-        ( (word, totOccurs)
-        , filter ((>= 10) . snd) $ map (second perC) spPartAndOccurs
-        )
-      where
-        totOccurs = sum $ map snd spPartAndOccurs
-        perC x = round $ x * 100 % totOccurs
-        spPartAndOccurs =
-            sortBy (flip compare `on` snd) $ Map.toList m
-
-showResult :: Int -> ((DTL.Text, Int), [(DTL.Text, Int)]) -> DTL.Text
-showResult grandTotOccurs ((word, wordOccurs), spPartLines) =
-    DTL.intercalate "\t"
-    [ word
-    , DTL.pack . showN . round $ grandTotOccurs % wordOccurs
-    , DTL.intercalate "/" spParts
-    , DTL.intercalate "/" $ map (DTL.pack . show) spPartOccurs
-    ]
-  where
-    (spParts, spPartOccurs) = unzip spPartLines
-
-rawFiles :: String -> [FilePath]
+rawFiles :: String -> [(String, FilePath)]
 rawFiles dataSetName =
-    [ "/home/danl/data/goog-ngrams/20120701/1grams" </> dataSetName </>
-      "googlebooks-" ++ dataSetName ++ "-all-1gram-20120701-" ++ [x] ++ ".gz"
-    | x <- ['a'..'z']
+    [ ( x
+      , "/home/danl/data/goog-ngrams/20120701/1grams" </> dataSetName </>
+        "googlebooks-" ++ dataSetName ++ "-all-1gram-20120701-" ++ x ++ ".gz"
+      )
+    | x <- map (:[]) ['a'..'z']
+    -- | x <- map (:[]) ['a']
     ]
+
+sumSameWordSpPart :: Monad m => Conduit RawLine m RawLine
+sumSameWordSpPart =
+    CL.groupBy (\x y ->
+        DT.toLower (rWord x) == DT.toLower (rWord y) &&
+        rSpPart x == rSpPart y)
+    =$= CL.map (\xs@(x:_) ->
+        RawLine (rWord x) (rSpPart x) (sum $ map rOccurs xs))
+
+showInt :: Int -> String
+showInt = show
+
+combineSameWord :: Monad m => Conduit RawLine m (Integer, [DT.Text])
+combineSameWord =
+    CL.groupBy ((==) `on` DT.toLower . rWord)
+    =$= CL.map spPartProc
+  where
+    -- Take the capitalization which is most common, over all
+    -- possibilites.
+    takeMostCommon :: [(DT.Text, Int)] -> DT.Text
+    takeMostCommon = fst . maximumBy (compare `on` snd) .
+        Map.toList . Map.fromListWith (+)
+
+    -- Consider spPart occurs as a percentage of the total occurs for the
+    -- word, and only show those with >= 10%.
+    takeCommon :: Int -> [(DT.Text, Int)] -> ([DT.Text], [Ratio Int])
+    takeCommon totPoss = unzip . sortBy (flip compare `on` snd) .
+        filter ((>= 1 % 10) . snd) . map (second (% totPoss)) .
+        Map.toList . Map.fromListWith (+)
+
+    spPartProc :: [RawLine] -> (Integer, [DT.Text])
+    spPartProc rs = (,) (fromIntegral rsOccursSum)
+        [ takeMostCommon $ map (\r -> (rWord r, rOccurs r)) rs
+        , DT.pack $ show rsOccursSum
+        , DT.intercalate "/" commonSpParts
+        , DT.intercalate "/" $
+            map (DT.pack . showInt . round . (* 100)) commonSpPartFreqs
+        ]
+      where
+        rsOccursSum = sum $ map rOccurs rs
+        (commonSpParts, commonSpPartFreqs) =
+            takeCommon rsOccursSum $ map (\r -> (rSpPart r, rOccurs r)) rs
+
+colsToRawLine :: [DT.Text] -> RawLine
+colsToRawLine [word, spPart, occurs] =
+    RawLine word spPart (read $ DT.unpack occurs)
+colsToRawLine x = error $ "Bad raw line: " ++ show x
+
+doFile :: Lang -> Handle -> (String, FilePath) -> IO Integer
+doFile lang bigSortIn (_name, fp) = do
+    (_, zOut, _, _) <- runInteractiveProcess "zcat" [fp] Nothing (Just [])
+    (sortIn, sortOut, _, _) <- runInteractiveProcess "sort"
+        ["-f", "-t", "\t", "-k", "1,1"] Nothing (Just [])
+    runResourceT $ CB.sourceHandle zOut $$ CT.decode CT.utf8 =$ CT.lines
+        =$ CL.mapMaybe (readRawLine lang)
+        =$ sumSameWordSpPart
+        =$ CL.map ((<> "\n") . showCols . rawLineCols)
+        =$ CT.encode CT.utf8 =$ CB.sinkHandle sortIn
+    hClose sortIn
+    (totOccurs, ()) <- runResourceT $ CB.sourceHandle sortOut
+        $$ CT.decode CT.utf8 =$ CT.lines
+        =$ CL.map (colsToRawLine . readCols)
+        =$ combineSameWord
+        =$ CU.zipSinks
+           (CL.map fst =$ CL.fold (+) 0)
+           (CL.map ((<> "\n") . showCols . snd) =$ CT.encode CT.utf8
+               =$ CB.sinkHandle bigSortIn)
+    return totOccurs
 
 main :: IO ()
 main = do
@@ -137,8 +192,14 @@ main = do
     let dataSetName = case args of
           [x] -> x
           _ -> error "usage"
-    fields <- fmap concat . mapM (fmap readRawLines . DTLI.readFile) $
-        rawFiles dataSetName
-    let grandTotOccurs = sum $ map rOccurs fields
-    DTLI.writeFile "out" . DTL.unlines . map (showResult grandTotOccurs) .
-        mapToResults $! collateRawLines fields
+        lang = case dataSetName of
+          "chi-sim" -> Chi
+          "eng" -> Eng
+          _ -> error "unknown data-set"
+        myFiles = rawFiles dataSetName
+    (bigSortIn, _, _, bigSortProc) <- runInteractiveProcess "sort"
+        ["-t", "\t", "-k", "2,2nr", "-o", "out"] Nothing (Just [])
+    totOccurs <- sum <$> mapM (doFile lang bigSortIn) myFiles
+    hClose bigSortIn
+    _ <- waitForProcess bigSortProc
+    print totOccurs
