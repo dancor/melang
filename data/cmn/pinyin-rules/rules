@@ -1,0 +1,64 @@
+== Pronouncing pinyin ==
+
+1. Initial changes (pinyin lies):
+- After b f m p, o -> uo.
+- yu -> v. After c j q x, u -> v.
+- yi to i. y -> i.
+- wu to u. w -> u.
+- un -> uen.
+- ui -> uei.
+- iu -> iou.
+
+Now the initial is the starting consonants if any,
+and the final is the rest of the letters.
+
+2. Now each written vowel is one IPA vowel (except e in one case):
+- a has 4 possibilities:
+  - [a] in the finals: ai/uai.            (front low)
+  - [ä] in the finals: a/ia/ua/an/uan.    (central low)
+  - [ɑ] in the finals: ang/iang/uang/iao. (back low)
+  - [ɛ] in the finals: ian/van. (low-mid front)
+- e has 6 possibilities:
+  - [Ɯʌ] in the final: e.  (high back to low-mid back)
+  - [e] before an 'i'.     (high-mid front)
+  - [ɤ] before 'ng'.       (high-mid back)
+  - [ə] before a last 'n'. (mid central)
+  - [œ] in the final: ve.  (low-mid front rounded)
+  - [ɛ] in the final: ie.  (low-mid front)
+- i is [ɨ] if the only vowel and after ch/sh/zh/r. (high central)
+  Otherwise [i] if the first vowel. (high front)
+  Otherwise [ɪ].                    (near-high near-front)
+- o is [ʊ] after an 'a' or before 'ng'. (near-high near-back rounded)
+  o is [ɔ] in the final: uo. (low-mid back rounded)
+  Otherwise [o].             (high-mid back rounded)
+- u is [u] if the first vowel; (high back rounded)
+  Otherwise [ʊ].               (near-high near-back rounded)
+- v is [y]. (high front rounded)
+
+Note: o/u/v always rounded and e in the final ve; no others.
+Note: After an 'a' or before 'ng', o is more like a u.
+
+   Front Cntrl Back
+   --------------
+H |iy    ɨ.    Ɯu
+  |   ɪ. .. .ʊ
+  |e.    ..    ɤo
+M |      ə.
+  |ɛœ    ..    ʌɔ
+  |..    ..
+L |a.    ä.    ɑ.
+
+ɨ: "i bar"
+Ɯ: "turned m"
+ɪ: "small capital i"
+ʊ: "horseshoe u"
+ɤ: "ram's horns"
+ə: "turned e"
+ɛ: "Latin epsilon"
+œ: "oe ligature"
+ʌ: "turned v"
+ɔ: "open o"
+ä: "a umlaut"
+
+There are 13 vowel tongue positions in Mandarin,
+and 5 have a roundedness distinction.
