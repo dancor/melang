@@ -36,6 +36,12 @@ loadDict =
     readDictEntry n x =
         error $ "loadDict: invalid line " ++ show n ++ ": " ++ show x
 
+writeDict :: Dict -> IO ()
+writeDict =
+    DTI.writeFile "/home/danl/p/l/melang/data/cmn/dict" . DT.unlines .
+    map (\ (DictEntry _ wd pinyin spPartFreqs spParts gloss) ->
+    DT.intercalate "\t" [wd, pinyin, spPartFreqs, spParts, gloss])
+
 showEntry :: DictEntry -> DT.Text
 showEntry (DictEntry n wd pinyin spPartFreqs spParts gloss) =
     DT.intercalate "\t"
