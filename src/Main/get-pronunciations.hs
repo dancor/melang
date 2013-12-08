@@ -31,7 +31,7 @@ dedupeCaps = Map.map f
 
 main :: IO ()
 main = do
-    goog <- take 10000 <$> loadGoogBk
+    dict <- loadDict
     deckPronMap <- Map.fromList .
         map (\x -> (kLWord x, Set.singleton $ kLPinyin x)) <$>
         loadKiloDecks kiloDeckDir
