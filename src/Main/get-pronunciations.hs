@@ -30,7 +30,7 @@ main = do
     let doEntry entry
           | ePinyin entry == "?"
           , Just pinyins <- Map.lookup (eWord entry) pinyinMap
-          , Set.size pinyins == 1
+          -- , Set.size pinyins == 1
           , pinyin <- DT.intercalate "|" (Set.toList pinyins) =
             entry {ePinyin = pinyin}
           | otherwise = entry
