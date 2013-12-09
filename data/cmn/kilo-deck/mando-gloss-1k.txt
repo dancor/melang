@@ -85,9 +85,9 @@
 关系	guan1xi5	NOUN:connections
 文化	wen2hua4	NOUN:culture
 公司	gong1si1	NOUN:corporation
-元	yuan2	MEAS:dollar
 很	hen3	ADV:very
 看	kan4	VERB:look
+元	yuan2	MEAS:dollar
 主要	zhu3yao4	ADJ:main
 组织	zu3zhi1	NOUN:organization
 将	jiang1	ADV:(will)-soon

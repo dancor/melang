@@ -3,12 +3,12 @@
 
 module Main where
 
-import Control.Applicative
+import Control.DeepSeq
 import Control.Monad
 import Data.Char
 import Data.List
 import Data.List.Split
-import qualified Data.Map as Map
+import qualified Data.Map.Strict as Map
 import Data.Monoid
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
@@ -41,11 +41,11 @@ prefNum :: Int -> DT.Text
 prefNum n = DT.pack ('#' : show n ++ ":")
 
 deDupePinyins :: Dict -> Dict
-deDupePinyins = snd . foldl' f (Map.empty, [])
+deDupePinyins = reverse . snd . foldl' f (Map.empty, [])
   where
     f (!seen, !dict) entry =
         ( Map.insertWith (+) pinyin (1 :: Int) seen
-        , dict ++ [entry']
+        , entry':dict
         )
       where
         pinyin = ePinyin entry
@@ -58,11 +58,11 @@ glossIsEmpty :: DT.Text -> Bool
 glossIsEmpty x = x == "?" || ":" `DT.isSuffixOf` x
 
 deDupeGlosses :: Dict -> Dict
-deDupeGlosses = snd . foldl' f (Map.empty, [])
+deDupeGlosses = reverse . snd . foldl' f (Map.empty, [])
   where
     f (!seen, !dict) entry =
         ( Map.insertWith (+) gloss (1 :: Int) seen
-        , dict ++ [entry']
+        , entry':dict
         )
       where
         gloss = eGloss entry
@@ -79,7 +79,8 @@ entryKillNums entry = entry
 
 main :: IO ()
 main = do
-    dict <- deDupeGlosses . deDupePinyins . map entryKillNums <$> loadDict
-    writeDict dict
-    writeKiloDecks kiloDeckDir $
-        takeWhile (not . glossIsEmpty . eGloss) dict
+    dict <- loadDict
+    let dict' = deDupeGlosses $!! deDupePinyins $!! map entryKillNums dict
+    writeDict $!! dict'
+    writeKiloDecks kiloDeckDir $!!
+        takeWhile (not . glossIsEmpty . eGloss) $!! dict'
