@@ -203,7 +203,7 @@
 也许	ye3xu3	ADV:perhaps
 谈	tan2	VERB:talk/chat
 文艺	wen2yi4	NOUN:art-and-literature
-联	lian2	VERB:ally/unite
+联	lian2	NOUN:allies/joining
 民间	min2jian1	ADJ:folk/nongovernmental
 适当	shi4dang4	ADJ:suitable/appropriate
 线	#3:xian4	NOUN:string/wire

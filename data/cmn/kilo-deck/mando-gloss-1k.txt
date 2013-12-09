@@ -11,7 +11,7 @@
 不	bu4	ADV:not
 人	ren2	NOUN:person
 上	shang4	PRT:up
-为	wei4	PREP:for
+为	wei4	PREP:for\VERB:be/act-as
 种	zhong3	MEAS:kind/type
 对	dui4	#2:PREP:for
 第	di4	PRT:(ordinal-prefix)
@@ -409,7 +409,7 @@
 世纪	shi4ji4	NOUN:century
 以上	yi3shang4	PRT:above
 办法	ban4fa3	NOUN:ways-and-means
-联系	lian2xi4	VERB:link/get-in-touch-with
+联系	lian2xi4	NOUN:contact/connection
 执行	zhi2xing2	VERB:carry-out/execute
 原因	yuan2yin1	NOUN:reason/cause
 目前	mu4qian2	NOUN:the-moment

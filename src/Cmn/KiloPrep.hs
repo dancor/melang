@@ -61,7 +61,7 @@ deDupeGlosses :: Dict -> Dict
 deDupeGlosses = reverse . snd . foldl' f (Map.empty, [])
   where
     f (!seen, !dict) entry =
-        ( Map.insertWith (+) gloss (1 :: Int) seen
+        ( Map.insertWith (+) (DT.takeWhile (/= '\\') gloss) (1 :: Int) seen
         , entry':dict
         )
       where
