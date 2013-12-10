@@ -2307,7 +2307,7 @@
 男人	nan2ren2	100	NOUN	NOUN:
 久	#3:jiu3	49/28/22	NOUN/VERB/ADV	NOUN:
 地震	di4zhen4	100	NOUN	NOUN:
-验	yan4	56/44	NOUN/VERB	NOUN:
+验	yan4	56/44	NOUN/VERB	VERB:examine/check
 普及	pu3ji2	62/35	NOUN/VERB	NOUN:
 准则	zhun3ze2	100	NOUN	NOUN:
 哪里	na3li3	100	PRON	PRON:
@@ -2426,7 +2426,7 @@
 老人	lao3ren2	100	NOUN	NOUN:
 本地	ben3di4	100	NOUN	NOUN:
 结婚	jie2hun1	77/23	VERB/NOUN	VERB:
-注	#4:zhu4	49/34/12	VERB/NOUN/NUM	VERB:
+注	#4:zhu4	49/34/12	VERB/NOUN/NUM	VERB:concentrate
 描写	miao2xie3	85/15	VERB/NOUN	VERB:
 融资	rong2zi1	96	NOUN	NOUN:
 采购	cai3gou4	84/16	NOUN/VERB	NOUN:
@@ -2688,9 +2688,9 @@
 开会	kai1hui4	98	VERB	VERB:
 审美	shen3mei3	91	ADJ	ADJ:
 条款	tiao2kuan3	96	NOUN	NOUN:
-直	#3:zhi2	80/15	ADV/ADJ	ADV:
+直	#3:zhi2	80/15	ADV/ADJ	ADV:directly/straight
 邀请	yao1qing3	67/33	VERB/NOUN	VERB:
-册	#2:ce4	63/37	NUM/NOUN	NUM:
+册	#2:ce4	63/37	NUM/NOUN	MEAS:book-volume/copy
 电视台	dian4shi4tai2	100	NOUN	NOUN:
 文本	wen2ben3	100	NOUN	NOUN:
 党派	dang3pai4	64/36	NOUN/ADJ	NOUN:
@@ -3375,7 +3375,7 @@
 官方	guan1fang1	96	NOUN	NOUN:
 悠久	you1jiu3	84/16	VERB/ADJ	VERB:
 流失	liu2shi1	63/37	VERB/NOUN	VERB:
-订	#2:ding4	98	VERB	VERB:
+订	#2:ding4	98	VERB	VERB:conclude/draw-up
 用途	yong4tu2	100	NOUN	NOUN:
 杀	sha1	91	VERB	VERB:
 赶	#3:gan3	100	VERB	VERB:
@@ -3462,7 +3462,7 @@
 感性	gan3xing4	71/24	ADJ/NOUN	ADJ:
 潮流	chao2liu2	100	NOUN	NOUN:
 库存	ku4cun2	78/19	NOUN/VERB	NOUN:
-诉	#3:su4	78/22	VERB/NOUN	VERB:
+诉	#3:su4	78/22	VERB/NOUN	VERB:tell/relate
 同学	tong2xue2	100	NOUN	NOUN:
 颇	po1	100	ADV	ADV:
 严厉	yan2li4	45/32/23	VERB/ADV/ADJ	VERB:
@@ -4922,7 +4922,7 @@
 出身	chu1shen1	53/47	NOUN/VERB	NOUN:
 既定	ji4ding4	95	ADJ	ADJ:
 情境	qing2jing4	100	NOUN	NOUN:
-签	#3:qian1	74/26	VERB/NOUN	VERB:
+签	#3:qian1	74/26	VERB/NOUN	VERB:sign/autograph
 野生	ye3sheng1	98	ADJ	ADJ:
 恩	en1	99	NOUN	NOUN:
 首位	shou3wei4	99	NOUN	NOUN:
@@ -7396,7 +7396,7 @@
 春季	chun1ji4	98	NOUN	NOUN:
 保证人	bao3zheng4ren2	90	NOUN	NOUN:
 上台	shang4tai2	100	VERB	VERB:
-讼	#2:song4	89	VERB	VERB:
+讼	#2:song4	89	VERB	VERB:bring-a-case-to-court
 外籍	wai4ji2	98	ADJ	ADJ:
 托管	tuo1guan3	85/15	NOUN/VERB	NOUN:
 稀缺	xi1que1	44/42/13	ADJ/VERB/NOUN	ADJ:
@@ -9805,7 +9805,7 @@
 恢	#2:hui1	80/16	VERB/NOUN	VERB:
 底下	di3xia5	66/34	PRT/NOUN	PRT:
 衣着	yi1zhuo2	85/15	NOUN/ADJ	NOUN:
-忽	#3:hu1	96	VERB	VERB:
+忽	#3:hu1	96	VERB	VERB:neglect/overlook
 商界	shang1jie4	100	NOUN	NOUN:
 贫寒	pin2han2	80/16	VERB/NOUN	VERB:
 山村	shan1cun1	94	NOUN	NOUN:
