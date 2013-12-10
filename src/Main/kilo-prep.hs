@@ -1,8 +1,6 @@
 {-# LANGUAGE BangPatterns #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-module Main where
-
 import Control.DeepSeq
 import Control.Monad
 import Data.Char
@@ -31,7 +29,8 @@ intToDeckName n = "mando-gloss-" ++ show n ++ "k.txt"
 
 writeKiloDeck :: FilePath -> Dict -> IO ()
 writeKiloDeck f = DTI.writeFile f . DT.unlines . map (\entry ->
-    eWord entry <> "\t" <> ePinyin entry <> "\t" <> eGloss entry)
+    eWord entry <> "\t" <> ePinyin entry <> "\t" <> eGloss entry <> "\t" <>
+    DT.replace "ADP" "PREP" (eSpParts entry) <> " " <> eSpPartFreqs entry)
 
 writeKiloDecks :: FilePath -> Dict -> IO ()
 writeKiloDecks dir = zipWithM_

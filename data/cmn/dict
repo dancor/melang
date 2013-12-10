@@ -2005,7 +2005,7 @@
 印刷	yin4shua1	95	NOUN	NOUN:
 发言	fa1yan2	82/18	NOUN/VERB	NOUN:
 风	feng1	98	NOUN	NOUN:
-引	yin3	87/13	VERB/NOUN	VERB:
+引	yin3	87/13	VERB/NOUN	VERB:lead/guide
 距离	ju4li2	76/15	NOUN/VERB	NOUN:
 前面	qian2mian4	98	NOUN	NOUN:
 声	#2:sheng1	92	NOUN	NOUN:
@@ -3132,7 +3132,7 @@
 人身	ren2shen1	97	NOUN	NOUN:
 一片	yi2pian4	72/28	ADV/VERB	ADV:
 抑制	#2:yi4zhi4	86/14	VERB/NOUN	VERB:
-好像	hao3xiang4	95	ADV	ADV:seemingly
+好像	hao3xiang4	95	ADV	#2:ADV:seemingly
 锻炼	duan4lian4	60/40	NOUN/VERB	NOUN:
 壮大	zhuang4da4	93	VERB	VERB:
 构造	gou4zao4	87/12	NOUN/VERB	NOUN:
@@ -7208,7 +7208,7 @@
 愤慨	fen4kai3	80/20	NOUN/VERB	NOUN:
 慷慨	kang1kai3	57/19/13/11	VERB/ADV/NOUN/ADJ	VERB:
 形形色色	xing2xing2se4se4	91	ADJ	ADJ:
-忆	#12:yi4	82/16	VERB/NOUN	VERB:recall/recollect
+忆	#12:yi4	82/16	VERB/NOUN	#2:VERB:recall/recollect
 肃	#4:su4	67/19/12	VERB/NOUN/NUM	VERB:
 存货	cun2huo4	100	NOUN	NOUN:
 四周	si4zhou1	97	NOUN	NOUN:
@@ -9805,7 +9805,7 @@
 恢	#2:hui1	80/16	VERB/NOUN	VERB:
 底下	di3xia5	66/34	PRT/NOUN	PRT:
 衣着	yi1zhuo2	85/15	NOUN/ADJ	NOUN:
-忽	#3:hu1	96	VERB	VERB:neglect/overlook
+忽	#3:hu1	96	VERB	#2:VERB:neglect/overlook
 商界	shang1jie4	100	NOUN	NOUN:
 贫寒	pin2han2	80/16	VERB/NOUN	VERB:
 山村	shan1cun1	94	NOUN	NOUN:
@@ -11326,7 +11326,7 @@
 崇	#2:chong2	47/29/14	NOUN/VERB/ADJ	?
 缺席	que1xi2	68/22/10	VERB/ADJ/NOUN	?
 原件	#2:yuan2jian4	95	NOUN	?
-悄	qiao1	43/27/26	ADV/VERB/NOUN	ADV:quietly/stealthily
+悄	#2:qiao1	43/27/26	ADV/VERB/NOUN	#2:ADV:quietly/stealthily
 失职	shi1zhi2	59/40	VERB/NOUN	?
 开花	kai1hua1	100	VERB	?
 择业	?	84/15	VERB/NOUN	?
@@ -21075,7 +21075,7 @@
 棘	#12:ji2	92	NOUN	?
 千岛	?	100	NOUN	?
 减损	jian3sun3	85/15	VERB/NOUN	?
-意想	yi4xiang3	52/47	NOUN/VERB	VERB:imagine/expect
+意想	#2:yi4xiang3	52/47	NOUN/VERB	VERB:imagine/expect
 诸葛	Zhu1ge3	54/28/15	NOUN/ADV/VERB	?
 听之任之	ting1zhi1ren4zhi1	99	VERB	?
 姑	#4:gu1	70/12	NOUN/VERB	?
@@ -39994,7 +39994,7 @@
 翻砂	?	67/33	NOUN/VERB	?
 蒋以任	?	100	NOUN	?
 邪道	xie2dao4	73/27	NOUN/VERB	?
-锹	#2:qiao1	62/20/18	NOUN/VERB/NUM	?
+锹	#3:qiao1	62/20/18	NOUN/VERB/NUM	?
 集藏	?	61/39	NOUN/VERB	?
 颖悟	ying3wu4	68/32	NOUN/VERB	?
 驹子	ju1zi5	100	NOUN	?
@@ -41522,7 +41522,7 @@
 李金斗	?	100	NOUN	?
 林祖涵	?	86/14	NOUN/VERB	?
 枯瘦	?	76/24	VERB/NOUN	?
-橇	#3:qiao1	61/39	NOUN/VERB	?
+橇	#4:qiao1	61/39	NOUN/VERB	?
 氲	yun1	64/36	NOUN/VERB	?
 海纳	?	100	NOUN	?
 罗念生	?	100	NOUN	?

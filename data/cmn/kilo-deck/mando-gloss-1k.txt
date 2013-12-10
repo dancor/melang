@@ -1,1000 +1,1000 @@
-的	de5	PRT:of
-是	shi4	VERB:is
-在	zai4	PREP:at
-了	le5	PRT:(completed/relevant)
-和	he2	CONJ:and
-年	nian2	MEAS:year
-一	yi1	NUM:1
-有	you3	VERB:have/possess
-这	zhe4	PRON:this
-中	zhong1	PRT:middle
-不	bu4	ADV:not
-人	ren2	NOUN:person
-上	shang4	PRT:up
-为	wei4	PREP:for\VERB:be/act-as
-种	zhong3	MEAS:kind/type
-对	dui4	#2:PREP:for
-第	di4	PRT:(ordinal-prefix)
-他	ta1	PRON:he
-经济	jing1ji4	NOUN:economy
-社会	she4hui4	NOUN:society
-发展	fa1zhan3	NOUN:development
-我	wo3	PRON:I
-也	ye3	ADV:also
-到	dao4	VERB:arrive
-月	yue4	NOUN:moon
-一个	yi2ge4	ADJ:a
-与	yu3	PREP:with/to
-十	shi2	NUM:10
-个	ge5	MEAS:(general)
-我们	wo3men5	PRON:we
-中国	Zhong1guo2	NOUN:China
-企业	qi3ye4	NOUN:enterprise
-来	lai2	VERB:come
-说	shuo1	VERB:talk
-而	er2	CONJ:and-yet
-工作	gong1zuo4	NOUN:work
-之	zhi1	#2:PRT:of
-大	da4	ADJ:big
-主义	zhu3yi4	NOUN:doctrine/-ism
-地	#2:de5	PRT:-ly
-就	jiu4	ADV:precisely
-性	xing4	NOUN:disposition
-要	yao4	VERB:want
-都	dou1	ADV:all
-会	hui4	VERB:is-able
-国家	guo2jia1	NOUN:country
-日	ri4	NOUN:sun
-二	er4	NUM:2
-以	yi3	PREP:using
-问题	wen4ti2	NOUN:question/problem
-研究	yan2jiu1	NOUN:research
-并	bing4	#2:CONJ:and
-但	dan4	CONJ:but
-三	san1	NUM:3
-于	yu2	PREP:by
-其	qi2	PRON:its
-从	cong2	PREP:from
-所	suo3	PRT:place
-他们	ta1men5	PRON:they
-时	#2:shi2	PRT:time
-可以	ke3yi3	VERB:can
-还	hai2	ADV:still/yet
-生产	sheng1chan3	NOUN:production/manufacture
-没有	mei2you3	VERB:don't-have
-人民	ren2min2	NOUN:the-people
-多	duo1	ADJ:many
-各	ge4	PRON:each
-进行	jin4xing2	VERB:progress
-管理	guan3li3	NOUN:management
-等	deng3	PRT:etc.
-者	zhe3	NOUN:-er/-ist
-着	zhe5	PRT:-ing
-下	xia4	PRT:down
-方面	fang1mian4	NOUN:aspect
-自己	zi4ji3	PRON:oneself
-政府	zheng4fu3	NOUN:government
-新	xin1	ADJ:new
-后	hou4	PRT:after
-两	liang3	NUM:two
-它	#2:ta1	PRON:it
-技术	ji4shu4	NOUN:technology
-出	chu1	VERB:go-out
-市场	shi4chang3	NOUN:market/bazaar
-教育	jiao4yu4	NOUN:education
-关系	guan1xi5	NOUN:connections
-文化	wen2hua4	NOUN:culture
-公司	gong1si1	NOUN:corporation
-很	hen3	ADV:very
-看	kan4	VERB:look
-元	yuan2	MEAS:dollar
-主要	zhu3yao4	ADJ:main
-组织	zu3zhi1	NOUN:organization
-将	jiang1	ADV:(will)-soon
-万	wan4	NUM:10k
-建设	jian4she4	NOUN:construction
-就是	jiu4shi4	#2:ADV:precisely
-历史	li4shi3	NOUN:history
-使	shi3	VERB:send
-能	neng2	#2:VERB:can
-或	huo4	CONJ:or
-化	hua4	NOUN:change
-间	jian1	PRT:room
-重要	zhong4yao4	ADJ:important
-生活	sheng1huo2	NOUN:life/livelihood
-由	you2	PREP:by/from
-把	ba3	PREP:(preverbal-direct-object)
-好	hao3	ADJ:good
-政治	zheng4zhi4	NOUN:politics
-这些	zhe4xie1	PRON:these
-这个	zhe4ge5	PRON:this-one
-五	wu3	NUM:5
-及	ji2	#3:CONJ:and
-情况	qing2kuang4	NOUN:circumstances
-四	si4	NUM:4
-更	geng4	ADV:even-more
-改革	gai3ge2	NOUN:reform
-此	ci3	#2:PRON:this
-你	ni3	PRON:you
-不是	bu2shi4	CONJ:is-not
-不同	bu4tong2	ADJ:not-alike
-思想	si1xiang3	NOUN:thought
-学	xue2	VERB:study
-科学	ke1xue2	NOUN:science
-世界	shi4jie4	NOUN:world
-地区	di4qu1	NOUN:area
-活动	huo2dong4	NOUN:activity
-这样	zhe4yang4	ADV:in-this-way
-规定	gui1ding4	NOUN:rule/stipulation
-通过	tong1guo4	PREP:by-means-of
-我国	wo3guo2	NOUN:our-country
-部	#2:bu4	NOUN:part
-不能	bu4neng2	AUXV:unable
-制度	zhi4du4	NOUN:system
-用	yong4	VERB:use
-又	you4	ADV:again
-国	guo2	#2:NOUN:country
-可	ke3	#3:VERB:can
-由于	you2yu2	PREP:owing-to
-可能	ke3neng2	VERB:maybe
-九	jiu3	NUM:9
-认为	ren4wei2	VERB:think-that
-次	ci4	MEAS:occurrence
-总	zong3	ADJ:total/general
-影响	ying3xiang3	NOUN:influence
-必须	bi4xu1	VERB:must
-要求	yao1qiu2	VERB:demand
-基础	ji1chu3	NOUN:base/foundation
-一些	yi4xie1	MEAS:some
-被	bei4	PRT:(passive-voice)
-应	ying1	VERB:promise
-什么	shen2me5	PRON:what
-部门	bu4men2	NOUN:department
-产品	chan3pin3	NOUN:product
-需要	xu1yao4	VERB:need
-因此	yin1ci3	CONJ:therefore
-同时	tong2shi2	ADV:simultaneously
-民族	min2zu2	NOUN:ethnic-group
-家	jia1	NOUN:household
-政策	zheng4ce4	NOUN:policy
-基本	ji1ben3	ADJ:basic
-向	xiang4	PREP:towards
-作用	zuo4yong4	NOUN:action
-建立	jian4li4	VERB:establish
-因为	yin1wei4	CONJ:because
-领导	ling3dao3	NOUN:leadership
-她	#3:ta1	PRON:she
-条件	tiao2jian4	NOUN:requirement
-作为	zuo4wei2	VERB:accomplish/do-something-worthwhile
-长	chang2	ADJ:long
-投资	tou2zi1	NOUN:investment
-工业	gong1ye4	NOUN:industry
-作	zuo4	VERB:do
-过	guo4	PRT:in-the-past
-业	ye4	NOUN:line-of-business
-代表	dai4biao3	NOUN:representative
-计划	ji4hua4	NOUN:project
-国际	guo2ji4	NOUN:internationalism
-本	ben3	MEAS:books
-如果	ru2guo3	CONJ:if
-其他	qi2ta1	PRON:others/the-rest
-内	nei4	PRT:inside
-具有	ju4you3	#2:VERB:have/possess
-农业	nong2ye4	NOUN:agriculture
-市	#2:shi4	NOUN:city
-法	fa3	NOUN:law/method
-最	zui4	ADV:the-most
-做	#2:zuo4	#2:VERB:do
-提出	ti2chu1	VERB:put-forward/pose
-党	dang3	NOUN:political-party
-几	ji3	NUM:how-many/a-few
-高	gao1	ADJ:tall
-人员	ren2yuan2	NOUN:personnel
-结构	jie2gou4	NOUN:structure
-有关	you3guan1	ADJ:relevant
-美国	Mei3guo2	NOUN:United-States
-分	fen1	VERB:divide
-中央	zhong1yang1	NOUN:center
-但是	dan4shi4	#2:CONJ:but
-全国	quan2guo2	NOUN:whole-nation
-成	cheng2	VERB:become
-如	ru2	VERB:be-like/measure-up-to
-服务	fu2wu4	NOUN:service
-出版	chu1ban3	NOUN:publishing
-经营	jing1ying2	#2:NOUN:management
-根据	gen1ju4	PREP:on-the-basis-of
-过程	guo4cheng2	NOUN:course/history
-存在	cun2zai4	VERB:exist
-已	#2:yi3	ADV:already
-外	wai4	NOUN:outside
-以及	yi3ji2	CONJ:as-well-as
-关于	guan1yu2	PREP:with-regard-to
-方法	fang1fa3	NOUN:method
-系统	xi4tong3	#2:NOUN:system
-会议	hui4yi4	NOUN:meeting
-成为	cheng2wei2	#2:VERB:become
-给	gei3	VERB:give
-其中	qi2zhong1	NOUN:content/among
-实际	shi2ji4	ADJ:practical
-增长	zeng1zhang3	VERB:increase
-项	#2:xiang4	MEAS:item
-地方	di4fang1	NOUN:place
-全	quan2	ADJ:complete/whole
-那	na4	PRON:that
-而且	er2qie3	CONJ:moreover
-里	li3	#2:PRT:inside
-六	liu4	NUM:6
-一定	yi2ding4	ADV:definitely
-劳动	lao2dong4	NOUN:labor/work
-形式	xing2shi4	NOUN:form
-开始	kai1shi3	VERB:begin
-革命	ge2ming4	NOUN:revolt
-时间	shi2jian1	NOUN:time-(span)
-环境	huan2jing4	NOUN:environment
-部分	bu4fen5	#2:NOUN:part
-得	#3:de5	PRT:(how?:)
-提高	ti2gao1	VERB:raise
-对于	dui4yu2	PREP:in-regard-to
-法律	fa3lv4	NOUN:statute
-内容	nei4rong2	NOUN:content
-也是	ye3shi4	ADV:also/similarly
-较	jiao4	ADV:clearly
-们	men5	NOUN:plural-suffix
-省	sheng3	NOUN:province
-七	qi1	NUM:7
-方式	fang1shi4	#2:NOUN:method
-实现	shi2xian4	VERB:make-real
-起	qi3	VERB:rise
-机构	ji1gou4	NOUN:mechanism
-精神	jing1shen2	NOUN:essence
-使用	shi3yong4	#2:VERB:use
-每	mei3	PRON:every
-人们	ren2men5	NOUN:people
-单位	dan1wei4	NOUN:unit-(measurement-or-organization)
-阶级	jie1ji2	NOUN:social-class/rank
-起来	qi3lai5	#2:VERB:rise
-城市	cheng2shi4	#2:NOUN:city
-农村	nong2cun1	NOUN:rural-area
-决定	jue2ding4	VERB:decide
-分析	fen1xi1	VERB:analyze
-水平	shui3ping2	NOUN:level
-出现	chu1xian4	VERB:emerge
-八	ba1	NUM:8
-包括	bao1kuo4	VERB:include
-理论	li3lun4	NOUN:theory/-ism
-增加	zeng1jia1	#2:VERB:increase
-发生	fa1sheng1	VERB:happen
-已经	yi3jing5	#2:ADV:already
-解决	jie3jue2	VERB:solve
-为了	wei4le5	#3:PREP:for
-前	qian2	PRT:front
-社	she4	#2:NOUN:society
-特别	te4bie2	ADV:especially
-知识	zhi1shi5	NOUN:knowledge
-加强	jia1qiang2	VERB:strengthen
-比较	bi3jiao4	ADV:relatively
-银行	yin2hang2	NOUN:bank
-提供	ti2gong1	VERB:supply
-许多	xu3duo1	#2:ADJ:many
-行政	xing2zheng4	NOUN:administration
-只	zhi3	ADV:only
-个人	ge4ren2	NOUN:individual
-认识	ren4shi5	VERB:know/recognize
-信息	xin4xi1	NOUN:information
-该	gai1	PRON:said/given
-所以	suo3yi3	#2:CONJ:therefore
-亿	yi4	NUM:100M
-自然	zi4ran2	NOUN:natural-world
-形成	xing2cheng2	VERB:form
-委员会	wei3yuan2hui4	NOUN:committee
-则	ze2	ADV:in-that-case
-群众	qun2zhong4	#2:NOUN:the-people
-艺术	yi4shu4	NOUN:art
-积极	ji1ji2	ADV:energetic
-人口	ren2kou3	NOUN:population
-级	#2:ji2	MEAS:step/level
-得到	de2dao4	VERB:succeed-in-obtaining
-现在	xian4zai4	NOUN:now/modern-times
-一般	yi4ban1	ADV:ordinary
-价值	jia4zhi2	NOUN:value
-无	wu2	VERB:not-have
-少	shao3	VERB:lack
-比	bi3	PREP:compared-to
-表现	biao3xian4	VERB:show/show-off
-产业	chan3ye4	NOUN:property
-即	#3:ji2	ADV:at-present
-去	qu4	VERB:go
-同	tong2	PREP:with
-原则	yuan2ze2	NOUN:principle
-资产	zi1chan3	#2:NOUN:property
-行为	xing2wei2	#2:NOUN:action
-资源	zi1yuan2	NOUN:natural-resources
-变化	bian4hua4	#2:NOUN:change
-资金	zi1jin1	NOUN:fund
-位	#2:wei4	MEAS:person
-经	jing1	PREP:as-a-result-of/through
-资本	zi1ben3	NOUN:economic-capital
-能力	neng2li4	NOUN:ability
-意义	yi4yi4	NOUN:meaning
-某	mou3	PRON:certain/particular
-期	#2:qi1	NOUN:period-of-time
-权	#2:quan2	NOUN:authority
-一次	yi2ci4	ADJ:linear
-产生	chan3sheng1	VERB:produce
-小	xiao3	ADJ:small
-资料	zi1liao4	NOUN:data/material
-区	qu1	NOUN:region
-北京	Bei3jing1	NOUN:Beijing
-具体	ju4ti3	ADJ:specific
-至	zhi4	PREP:until/up-to
-中心	zhong1xin1	#2:NOUN:center
-农民	nong2min2	NOUN:peasant
-文学	wen2xue2	NOUN:literature
-大学	da4xue2	NOUN:college
-事	#3:shi4	NOUN:issue/matter/thing
-传统	chuan2tong3	NOUN:tradition/convention
-当	dang1	PREP:at-a-time/place
-知道	zhi1dao5	VERB:know
-制	#2:zhi4	NOUN:-ism/system
-运动	yun4dong4	NOUN:movement
-生	sheng1	VERB:birth
-进	jin4	VERB:advance/enter
-自	zi4	PRON:self
-只有	zhi3you3	CONJ:only-if
-年代	nian2dai4	NOUN:age/time
-局	ju2	NOUN:bureau/branch
-商品	shang1pin3	NOUN:commodity/goods
-直接	zhi2jie1	ADV:directly
-力	li4	NOUN:power/force
-实行	shi2xing2	VERB:carry-out/implement
-时期	shi2qi1	#2:NOUN:period-of-time
-不断	bu2duan4	ADV:unceasingly
-体制	ti3zhi4	#3:NOUN:system
-时候	shi2hou5	NOUN:point-in-time
-项目	xiang4mu4	NOUN:clause/item
-或者	huo4zhe3	#2:CONJ:or
-价格	jia4ge2	NOUN:price
-利益	li4yi4	NOUN:profit
-发	fa1	VERB:send/start
-标准	biao1zhun3	NOUN:standard
-阶段	jie1duan4	NOUN:phase
-处	chu3	VERB:be-in-a-certain-position
-当时	dang1shi2	NOUN:that-very-moment
-不仅	bu4jin3	ADV:not-the-only-one/non-uniquely
-应该	ying1gai1	VERB:should
-还是	hai2shi4	CONJ:or?
-学生	xue2sheng5	NOUN:student
-一切	yi2qie4	PRON:everything
-土地	tu3di4	NOUN:land
-利用	li4yong4	VERB:exploit
-合作	he2zuo4	NOUN:cooperation
-结果	jie2guo3	NOUN:result
-相	xiang1	ADV:mutually
-行	xing2	ADJ:OK
-另	ling4	PRON:other/another
-民主	min2zhu3	NOUN:democracy
-产	chan3	#2:VERB:produce
-再	#2:zai4	#2:ADV:again
-完成	wan2cheng2	VERB:accomplish
-参加	can1jia1	VERB:take-part-in
-保护	bao3hu4	NOUN:protection
-以后	yi3hou4	#2:PRT:after
-所有	suo3you3	ADJ:all
-虽然	sui1ran2	CONJ:though
-范围	fan4wei2	NOUN:scope/limits
-学校	xue2xiao4	NOUN:school
-事业	shi4ye4	NOUN:pursuit/undertaking
-开发	kai1fa1	#2:NOUN:development
-进一步	jin4yi2bu4	ADV:going-a-step-further
-任务	ren4wu5	NOUN:task
-百	bai3	NUM:100
-反映	fan3ying4	VERB:reflect
-日本	Ri4ben3	NOUN:Japan
-点	dian3	NOUN:dot
-名	ming2	MEAS:name
-类	lei4	MEAS:class/category
-处理	chu3li3	VERB:handle/deal-with
-想	xiang3	VERB:think
-越	#2:yue4	ADV:exceedingly
-控制	kong4zhi4	VERB:control
-经验	jing1yan4	NOUN:experience
-收入	shou1ru4	NOUN:income
-财政	cai2zheng4	NOUN:financial-administration
-应当	ying1dang1	#2:VERB:should
-书	shu1	NOUN:book
-贸易	mao4yi4	NOUN:trade
-学习	xue2xi2	#2:VERB:study
-目标	mu4biao1	NOUN:goal
-却	que4	#3:CONJ:but
-世纪	shi4ji4	NOUN:century
-以上	yi3shang4	PRT:above
-办法	ban4fa3	NOUN:ways-and-means
-联系	lian2xi4	NOUN:contact/connection
-执行	zhi2xing2	VERB:carry-out/execute
-原因	yuan2yin1	NOUN:reason/cause
-目前	mu4qian2	NOUN:the-moment
-现代	xian4dai4	ADJ:modern
-现	xian4	ADV:just/at-the-time
-斗争	dou4zheng1	NOUN:fight
-责任	ze2ren4	NOUN:responsibility/blame
-话	#2:hua4	NOUN:speech
-任何	ren4he2	PRON:any
-实践	shi2jian4	NOUN:practice/use
-上海	Shang4hai3	NOUN:Shanghai
-完全	wan2quan2	ADV:completely
-工程	gong1cheng2	NOUN:engineering
-些	xie1	MEAS:(indefinite-small-amount)
-地位	di4wei4	NOUN:position/status
-程度	cheng2du5	#2:NOUN:level
-页	#2:ye4	MEAS:book-page
-发现	fa1xian4	VERB:find
-之后	zhi1hou4	PRT:after/later
-战争	zhan4zheng1	NOUN:war
-报告	bao4gao4	NOUN:report
-取得	qu3de2	VERB:gain
-矛盾	mao2dun4	NOUN:contradiction
-职工	zhi2gong1	NOUN:workers
-采取	cai3qu3	VERB:take-(measures)
-天	tian1	MEAS:day
-体系	ti3xi4	#4:NOUN:system
-这里	zhe4li3	PRON:here
-成立	cheng2li4	#2:VERB:establish
-指出	zhi3chu1	VERB:point-out
-实施	shi2shi1	VERB:put-into-effect
-因	yin1	PREP:because
-竞争	jing4zheng1	NOUN:competition
-国内	guo2nei4	NOUN:interior/domestic
-目的	mu4di4	#2:NOUN:goal
-量	liang4	NOUN:quality
-充分	chong1fen4	ADJ:full/ample
-国民	guo2min2	NOUN:citizen
-条	tiao2	MEAS:strip
-科技	ke1ji4	NOUN:science-and-tech
-带	dai4	VERB:take/carry
-促进	cu4jin4	VERB:promote
-现实	xian4shi2	NOUN:reality
-开展	kai1zhan3	VERB:develop
-统一	tong3yi1	VERB:unify/unite
-才	cai2	ADV:later-than-expected
-人类	ren2lei4	NOUN:human-being
-专业	zhuan1ye4	NOUN:special-field-of-research
-方	fang1	NOUN:direction
-规模	gui1mo2	NOUN:scale/scope
-加	#2:jia1	VERB:add
-达到	da2dao4	VERB:achieve
-质量	zhi4liang4	#2:NOUN:quality
-正	zheng4	#3:ADV:precisely
-说明	shuo1ming2	VERB:explain
-只是	zhi3shi4	ADV:merely
-能够	neng2gou4	#4:VERB:can
-出口	chu1kou3	NOUN:exit
-选择	xuan3ze2	VERB:select
-大会	da4hui4	NOUN:plenary-meeting
-工	gong1	#2:NOUN:work
-率	lv4	NOUN:-rate
-扩大	kuo4da4	VERB:enlarge
-业务	ye4wu4	NOUN:professional-work/business
-意识	yi4shi5	NOUN:consciousness
-那么	na4me5	ADV:in-that-way
-定	ding4	#2:VERB:decide
-岁	sui4	MEAS:year-(age)
-面	mian4	NOUN:face
-金融	jin1rong2	NOUN:finance/banking
-它们	#2:ta1men5	PRON:they-nonhuman
-非	fei1	ADV:not-
-如何	ru2he2	ADV:how/how-about-it
-自由	zi4you2	NOUN:freedom
-继续	ji4xu4	VERB:continue
-哲学	zhe2xue2	NOUN:philosophy
-注意	zhu4yi4	VERB:take-note-of
-结合	jie2he2	VERB:combine
-创造	chuang4zao4	VERB:create
-因素	yin1su4	NOUN:factor
-按照	an4zhao4	PREP:in-light-of
-全面	quan2mian4	ADJ:overall/all-round
-措施	cuo4shi1	NOUN:measure/suitable-action
-主	zhu3	NOUN:master
-共同	gong4tong2	ADV:together/jointly
-发挥	fa1hui1	VERB:bring-into-play
-严重	yan2zhong4	ADJ:serious/grave
-调整	tiao2zheng3	NOUN:adjustment
-力量	li4liang5	NOUN:physical-strength
-获得	huo4de2	#2:VERB:gain
-消费	xiao1fei4	NOUN:consumption
-收	shou1	VERB:receive
-战略	zhan4lve4	NOUN:strategy
-统计	tong3ji4	NOUN:statistics
-受	shou4	#2:VERB:receive
-特点	te4dian3	NOUN:characteristic
-支持	zhi1chi2	VERB:support/back
-才能	cai2neng2	NOUN:ability-only-then
-现象	xian4xiang4	NOUN:phenomenon/appearance
-根本	gen1ben3	ADJ:basic/fundamental
-机关	ji1guan1	NOUN:office/organ
-意见	yi4jian5	NOUN:idea
-提	ti2	VERB:carry/raise
-以来	yi3lai2	PRT:since-(time)
-正确	zheng4que4	ADJ:correct/proper
-商业	shang1ye4	NOUN:commerce
-场	chang3	NOUN:gathering-place/field
-受到	shou4dao4	VERB:be-given/receive
-甚至	shen4zhi4	ADV:even-to-the-point-of
-造成	zao4cheng2	#2:VERB:create
-建筑	jian4zhu4	NOUN:a-building/architecture
-占	zhan4	VERB:make-up/constitute
-开	kai1	VERB:open
-未	#3:wei4	ADV:haven't-yet/not-thus-far-ly
-安全	an1quan2	NOUN:safety
-保证	bao3zheng4	VERB:pledge
-变	bian4	VERB:change
-随	sui2	VERB:follow
-语言	yu3yan2	NOUN:language
-入	ru4	VERB:enter
-让	rang4	VERB:yield/allow
-十分	shi2fen1	ADV:fully
-指导	zhi3dao3	NOUN:guidance
-联合	lian2he2	ADJ:joint/combined
-员	#2:yuan2	NOUN:-er/member
-确定	que4ding4	VERB:fix-definitely/determine
-节	jie2	MEAS:segment/division
-讨论	tao3lun4	VERB:discuss
-从而	cong2er2	CONJ:thus
-努力	nu3li4	VERB:try-hard/make-great-effort
-有效	you3xiao4	ADJ:effective/valid
-文	wen2	NOUN:writing
-过去	guo4qu4	NOUN:the-past
-综合	zong1he2	ADJ:synthetic/composite
-一点	yi4dian3	ADV:a-little
-组	zu3	MEAS:group/set
-稳定	wen3ding4	ADJ:stable/steady
-开放	kai1fang4	NOUN:opening-up
-重点	zhong4dian3	NOUN:focal-point
-首先	shou3xian1	ADV:first-of-all
-时代	shi2dai4	NOUN:times/age
-制定	zhi4ding4	VERB:formulate/draft
-领域	ling3yu4	NOUN:territory
-家庭	jia1ting2	NOUN:family
-不可	bu4ke3	VERB:cannot
-整个	zheng3ge4	ADJ:whole
-工人	gong1ren2	NOUN:worker
-经过	jing1guo4	#2:PREP:as-a-result-of/through
-干部	gan4bu4	NOUN:cadre
-事实	shi4shi2	NOUN:fact
-效益	xiao4yi4	NOUN:beneficial-result
-作品	zuo4pin3	NOUN:works-of-literature/art
-出来	chu1lai5	VERB:come-out
-教学	jiao4xue2	NOUN:teaching
-一样	yi2yang4	VERB:are-same
-重大	zhong4da4	ADJ:great
-机制	ji1zhi4	#2:NOUN:mechanism
-设备	she4bei4	NOUN:equipment/facilities
-设计	she4ji4	NOUN:plan
-保险	bao3xian3	NOUN:insurance
-以下	yi3xia4	NOUN:-below
-坚持	jian1chi2	VERB:persist-in
-呢	ne5	PRT:(..?)
-监督	jian1du1	NOUN:supervisor
-负责	fu4ze2	VERB:be-responsible-for/be-in-charge-of
-非常	fei1chang2	ADV:extraordinarily
-美	#2:mei3	NOUN:beauty
-斯	si1	#3:PRON:this
-材料	cai2liao4	NOUN:material
-最后	zui4hou4	ADV:at-last/finally
-合理	he2li3	ADJ:rational/reasonable
-改变	gai3bian4	#2:VERB:change
-走	zou3	VERB:walk/go
-考虑	kao3lv4	VERB:think-over
-真正	zhen1zheng4	ADV:genuine/true
-国有	guo2you3	ADJ:state-owned
-东西	dong1xi5	NOUN:thing
-必要	bi4yao4	ADJ:necessary/indispensable
-明确	ming2que4	ADJ:clear/unequivocal
-有限	you3xian4	ADJ:limited
-动	dong4	VERB:move
-写	xie3	VERB:write
-独立	du2li4	ADJ:independent/on-one's-own
-理	#2:li3	NOUN:logic
-达	da2	VERB:reach
-当然	dang1ran2	ADV:as-it-should-be
-孩子	hai2zi5	NOUN:child
-观念	guan1nian4	NOUN:idea/concept
-论	lun4	NOUN:theory
-集中	ji2zhong1	VERB:assemble
-度	du4	NOUN:degree
-观点	guan1dian3	NOUN:viewpoint
-希望	xi1wang4	VERB:hope
-困难	kun4nan5	NOUN:difficulty/dire-straits
-引起	yin3qi3	VERB:give-rise-to
-集团	ji2tuan2	NOUN:group
-报	bao4	NOUN:newspaper
-相当	xiang1dang1	ADV:quite
-接受	jie1shou4	#3:VERB:receive
-届	jie4	MEAS:session
-合同	he2tong2	NOUN:contract
-长期	chang2qi1	ADJ:long-term/over-a-long-period-of-time
-集体	ji2ti3	NOUN:team
-主体	zhu3ti3	NOUN:main-part
-委员	wei3yuan2	NOUN:committee-member
-表示	biao3shi4	VERB:show
-然而	ran2er2	#4:CONJ:but
-实	#3:shi2	ADJ:solid/true
-怎么	zen3me5	ADV:how?
-据	ju4	PREP:according-to
-院	yuan4	NOUN:courtyard
-内部	nei4bu4	NOUN:inside
-问	wen4	VERB:ask/inquire
-手段	shou3duan4	#3:NOUN:method
-物质	wu4zhi4	#2:NOUN:material
-千	qian1	NUM:1k
-件	jian4	MEAS:item/article
-民	min2	#2:NOUN:people
-人物	ren2wu4	NOUN:personage
-按	an4	PREP:in-accordance-with
-现代化	xian4dai4hua4	NOUN:modernization
-今天	jin1tian1	NOUN:today
-是否	shi4fou3	VERB:whether-or-not
-系	xi4	#5:NOUN:system
-重	zhong4	ADJ:important/heavy
-物	wu4	#2:NOUN:thing
-体	ti3	NOUN:body
-中华	Zhong1hua2	#2:NOUN:China
-住	zhu4	VERB:reside
-低	di1	ADJ:low
-规划	gui1hua4	NOUN:plan/program
-功能	gong1neng2	NOUN:function/what-something-does
-分配	fen1pei4	VERB:distribute/allot
-文章	wen2zhang1	NOUN:essay
-性质	xing4zhi4	NOUN:quality/nature
-香港	Xiang1gang3	NOUN:Hong-Kong
-作出	zuo4chu1	VERB:make
-权利	quan2li4	NOUN:right/privilege
-大量	da4liang4	ADJ:a-large-quantity-of
-军事	jun1shi4	NOUN:military-affairs
-新闻	xin1wen2	NOUN:news
-没	mei2	#2:ADV:not
-规律	gui1lv4	NOUN:law
-军	jun1	NOUN:army
-那些	na4xie1	PRON:those
-样	yang4	#2:MEAS:kind/type
-了解	liao3jie3	VERB:understand
-不得	bu4de2	VERB:must-not
-最大	zui4da4	ADJ:biggest
-特殊	te4shu1	ADJ:peculiar/exceptional
-法院	fa3yuan4	NOUN:law-court
-行业	hang2ye4	NOUN:profession/industry
-创作	chuang4zuo4	NOUN:creation/creative-work
-尔	er3	#2:PRON:you
-重视	zhong4shi4	VERB:attach-importance-to/value
-回	hui2	VERB:reply/return
-分子	fen1zi3	NOUN:member/constituent
-全部	quan2bu4	NOUN:whole
-并且	bing4qie3	ADV:moreover
-理解	li3jie3	VERB:understand/comprehend
-言	yan2	VERB:say/talk
-有些	you3xie1	PRON:some
-适应	shi4ying4	VERB:adapt
-台湾	Tai2wan1	NOUN:Taiwan
-成功	cheng2gong1	VERB:succeed/be-a-success
-同志	tong2zhi4	NOUN:comrade
-式	#4:shi4	NOUN:pattern/formula
-状况	zhuang4kuang4	NOUN:status
-卫生	wei4sheng1	NOUN:hygiene
-仍	reng2	ADV:nevertheless
-成本	cheng2ben3	NOUN:net-cost
-机	ji1	NOUN:machine
-需求	xu1qiu2	#2:NOUN:requirement
-很多	hen3duo1	ADJ:very-many
-例如	li4ru2	ADV:e.g.
-对象	dui4xiang4	NOUN:target
-数	shu4	NOUN:number/figure
-明显	ming2xian3	ADJ:clear/obvious
-关	guan1	NOUN:barrier/check
-强调	qiang2diao4	VERB:emphasize/stress
-期间	qi1jian1	NOUN:time/-period
-准备	zhun4bei4	VERB:prepare/plan
-指	#2:zhi3	VERB:point
-中共	Zhong1gong4	NOUN:Chinese-Communist-Party
-作者	zuo4zhe3	NOUN:author
-工资	gong1zi1	NOUN:wages
-因而	yin1er2	ADV:consequently
-青年	qing1nian2	NOUN:youth
-普遍	pu3bian4	ADJ:universal/general
-西方	xi1fang1	NOUN:west
-快	kuai4	ADJ:fast/quick
-犯罪	fan4zui4	NOUN:crime
-马克思	Ma3ke4si1	NOUN:Marx
-上述	shang4shu4	ADJ:above-mentioned
-美元	Mei3yuan2	MEAS:U.S.-dollar
-宣传	xuan1chuan2	NOUN:dissemination/publicity
-妇女	fu4nv3	NOUN:women
-减少	jian3shao3	VERB:reduce
-相互	xiang1hu4	ADV:mutually/reciprocally
-反对	fan3dui4	VERB:oppose
-保持	bao3chi2	VERB:keep/maintain
-分别	fen1bie2	ADV:separately
-模式	mo2shi4	NOUN:pattern
-政	#2:zheng4	#2:NOUN:government
-如此	ru2ci3	ADV:in-this-way/as-such
-团	tuan2	NOUN:regiment
-逐步	zhu2bu4	ADV:step-by-step/progressively
-客观	ke4guan1	ADJ:objective
-极	#4:ji2	ADV:extremely
-尤其	you2qi2	#2:ADV:especially
-文件	wen2jian4	NOUN:document
-副	fu4	NOUN:assistant
-应用	ying4yong4	NOUN:application/practice
-国民党	Guo2min2dang3	NOUN:KMT
-主席	zhu3xi2	NOUN:chair-of-a-meeting
-版	ban3	NOUN:edition/newspaper-page
-培养	pei2yang3	VERB:nurture/foster
-道	#2:dao4	NOUN:path
-值	zhi2	#2:NOUN:value
-费	fei4	NOUN:cost
-改造	gai3zao4	VERB:transform/remold
-见	#2:jian4	VERB:see
-区域	qu1yu4	#2:NOUN:region
-展	zhan3	NOUN:-exhibition
-学术	xue2shu4	NOUN:learning
-完善	wan2shan4	ADJ:perfect/consummate
-概念	gai4nian4	#2:NOUN:idea
-符合	fu2he2	VERB:conform
-厂	#2:chang3	NOUN:factory
-教师	jiao4shi1	NOUN:teacher
-心理	xin1li3	NOUN:psychology
-发表	fa1biao3	VERB:publish
-召开	zhao4kai1	VERB:convene
-表	biao3	NOUN:table/list
-一起	yi4qi3	ADV:together
-交通	jiao1tong1	NOUN:traffic
-设	#2:she4	#3:VERB:establish
-行动	xing2dong4	#3:NOUN:action
-国务院	Guo2wu4yuan4	NOUN:State-Council
-错误	cuo4wu4	NOUN:error/mistake
-然后	ran2hou4	ADV:after-that
-广泛	guang3fan4	ADJ:extensive/wide-ranging
-先进	xian1jin4	ADJ:advanced
-培训	pei2xun4	NOUN:training
-采用	cai3yong4	VERB:select-for-use
-态度	tai4du5	NOUN:manner/bearing
-相关	xiang1guan1	ADJ:interrelated
-特	te4	ADV:specially/for-a-special-purpose
-一直	yi4zhi2	ADV:(in-a)-straight-(line)/all-along
-方针	fang1zhen1	#2:NOUN:policy
-帮助	bang1zhu4	VERB:help/assist
-强	qiang2	ADJ:strong/powerful
-体现	ti3xian4	VERB:embody/give-expression-to
-解释	jie3shi4	VERB:explain/interpret
-销售	xiao1shou4	VERB:sell/market
-往往	wang3wang3	ADV:often
-特征	te4zheng1	#2:NOUN:characteristic
-界	#2:jie4	NOUN:boundary
-仅	jin3	#2:ADV:only
-史	#2:shi3	#2:NOUN:history
-仍然	reng2ran2	#2:ADV:nevertheless
-先生	xian1sheng5	NOUN:mister
-评价	ping2jia4	VERB:appraise/evaluate
-优势	you1shi4	NOUN:superiority
-人才	ren2cai2	NOUN:talented-person
-无法	wu2fa3	ADV:unable
-程序	cheng2xu4	NOUN:procedure/sequence
-队	#2:dui4	NOUN:line-of-people
-丰富	feng1fu4	ADJ:rich/adundant
-生产力	sheng1chan3li4	NOUN:productivity
-粮食	liang2shi5	NOUN:grain-food
-多数	duo1shu4	NOUN:majority
-参与	can1yu4	VERB:participate-in
-复杂	fu4za2	ADJ:complicated/complex
-义	#2:yi4	NOUN:righteousness/meaning
-成果	cheng2guo3	NOUN:achievement
-超过	chao1guo4	VERB:exceed
-基金	ji1jin1	#2:NOUN:fund
-文明	wen2ming2	NOUN:civilization/culture
-规范	gui1fan4	NOUN:norm/standard
-不过	bu5guo4	#3:ADV:only
-相对	xiang1dui4	ADV:relatively/comparatively
-子	zi3	NOUN:son/seed
-状态	zhuang4tai4	NOUN:state-of-affairs
-批准	pi1zhun3	VERB:approve/sanction
-发达	fa1da2	ADJ:developed/fluorishing
-交易	jiao1yi4	NOUN:deal/transaction
-制造	zhi4zao4	VERB:manufacture/fabricate
-保障	bao3zhang4	VERB:ensure/guarantee
-进步	jin4bu4	VERB:progress/improve
-本身	ben3shen1	PRON:itself
-对外	dui4wai4	ADJ:foreign/external
-卷	juan3	MEAS:spool/cylindrical-mass
-档案	dang4an4	NOUN:record/archive
-品	pin3	NOUN:article/product
-推动	tui1dong4	VERB:promote/spur-forward
-安排	an1pai2	VERB:arrange/plan
-代	#2:dai4	NOUN:generation/historical-period
-便	#2:bian4	ADV:in-that-case/then
-形势	#2:xing2shi4	NOUN:situation/terrain
-介绍	jie4shao4	VERB:introduce/recommend
-一部分	yi2bu4fen1	NOUN:part-of
-创新	chuang4xin1	VERB:bring-forth-new-ideas/blaze-new-trails
-居民	ju1min2	NOUN:resident
-共产党	Gong4chan3dang3	NOUN:Communist-Party
-形象	xing2xiang4	NOUN:image/imagery
-正在	zheng4zai4	ADV:in-the-process-of-
-进入	jin4ru4	VERB:enter/get-into
-成员	cheng2yuan2	NOUN:member
-指标	zhi3biao1	NOUN:target/quota
-调查	diao4cha2	VERB:investigate
-货币	huo4bi4	NOUN:money/currency
-办	ban4	VERB:attend-to/set-up
-利于	li4yu2	VERB:be-of-advantage-to
-证明	zheng4ming2	VERB:prove/testify
-构成	gou4cheng2	VERB:constitute/make-up
-在于	zai4yu2	VERB:be-determined-by/lie-in
-平均	ping2jun1	ADJ:average
-举行	ju3xing2	VERB:hold-a-meeting
-生命	sheng1ming4	NOUN:life
-外国	wai4guo2	NOUN:foreign-country
-满足	man3zu2	ADJ:contented/satisfied
-建	#3:jian4	VERB:build
-迅速	xun4su4	ADV:speedily/rapidly
-限制	xian4zhi4	NOUN:restriction/limit
-从事	cong2shi4	VERB:be-engaged-in/deal-with
-大家	da4jia1	PRON:everyone
-方向	fang1xiang4	NOUN:direction/orientation
-共和国	gong4he2guo2	NOUN:republic
-权力	#2:quan2li4	NOUN:power/authority
-自身	zi4shen1	PRON:self/oneself
-数据	shu4ju4	NOUN:data
-为什么	wei4shen2me5	ADV:why?
-音乐	yin1yue4	NOUN:music
-税	shui4	NOUN:tax/duty
-既	ji4	CONJ:since/now-that
-称	cheng1	VERB:call/name
-原	#3:yuan2	ADJ:primary/original
-网络	wang3luo4	NOUN:computer-network
-广大	guang3da4	ADJ:vast/wide
-资	zi1	NOUN:money/expenses
-贡献	gong4xian4	NOUN:contribution
-恢复	hui1fu4	VERB:resume/restore
-巨大	ju4da4	ADJ:huge/gigantic
-作家	zuo4jia1	NOUN:writer
-远	yuan3	ADJ:far/distant
-左右	zuo3you4	PRT:-more-or-less/-about
-你们	ni3men5	PRON:y'all
-任	ren4	VERB:assume-a-post/appoint
-曾	ceng2	ADV:once/formerly
-英国	Ying1guo2	NOUN:England
-公共	gong1gong4	ADJ:public/communal
-一条	yi4tiao2	NOUN:one-strip
-尽管	jin3guan3	CONJ:despite
-道德	dao4de2	NOUN:morals/ethics
-利	#2:li4	#2:NOUN:profit
-心	#2:xin1	NOUN:heart/mind
-协调	xie2tiao2	VERB:coordinate/harmonize
-导致	dao3zhi4	VERB:lead-to/result-in
-解放	jie3fang4	NOUN:liberation/emancipation
-决策	jue2ce4	NOUN:policy-decision
-读者	du2zhe3	NOUN:reader
-贷款	dai4kuan3	NOUN:loan
-题	#2:ti2	NOUN:topic
-运输	yun4shu1	NOUN:transport/conveyance
-数量	shu4liang4	NOUN:quantity/amount
-证	#3:zheng4	NOUN:certificate
-同样	tong2yang4	ADJ:same/similar
-运用	yun4yong4	VERB:utilize/wield
-一致	yi2zhi4	ADJ:identical/unaninmouns
-故事	gu4shi5	NOUN:tale/plot
-号	hao4	NOUN:number
-更加	geng4jia1	#2:ADV:even-more
-建议	jian4yi4	NOUN:proposal/suggestion
-系列	xi4lie4	NOUN:set/series
-宗教	zong1jiao4	NOUN:religion
-必然	bi4ran2	ADJ:inevitable/certain
-职业	zhi2ye4	NOUN:occupation/vocation
-近	#2:jin4	ADJ:near/close
-米	mi3	NOUN:rice/one-meter
-电影	dian4ying3	NOUN:movie
-部队	bu4dui4	NOUN:army/troops
-方案	fang1an4	NOUN:plan/scheme
-旅游	lv3you2	NOUN:tour/tourism
-吗	ma5	PRT:(question-particle)
-无论	wu2lun4	CONJ:Regardless-of-
-此外	ci3wai4	#2:CONJ:moreover
-增	zeng1	#3:VERB:increase
-交流	jiao1liu2	VERB:exchange-(information)
-共	gong4	ADV:together/altogether
-突出	tu1chu1	VERB:highlight/stress
-学院	xue2yuan4	NOUN:college/institute
-务	#2:wu4	NOUN:affair/business
-似乎	si4hu1	ADV:seemingly
-听	ting1	VERB:listen/hear
-多年	duo1nian2	ADV:for-many-years
-计算	ji4suan4	VERB:count/calculate
-难	nan2	ADJ:hard/difficult
-感到	gan3dao4	VERB:feel-(a-feeling)
-水	shui3	NOUN:water
-胜利	sheng4li4	NOUN:victory
-效果	xiao4guo3	NOUN:effect/result
-道路	dao4lu4	NOUN:road/way
-计	#2:ji4	VERB:count/gauge
-金	jin1	NOUN:gold
-缺乏	que1fa2	VERB:lack/be-short-of
-电子	dian4zi5	NOUN:electron
-不足	bu4zu2	ADJ:insufficient/inadequate
-组成	zu3cheng2	#2:VERB:make-up/constitute
-当前	dang1qian2	NOUN:the-present/here-and-now
-简单	jian3dan1	ADJ:simple/uncomplicated
-县	#2:xian4	NOUN:county
-编辑	bian1ji2	VERB:edit/compile
-风险	feng1xian3	NOUN:risk/hazard
-章	zhang1	MEAS:chapter
-有人	you3ren2	PRON:some-people
-工具	gong1ju4	NOUN:tool/instrument
-速度	su4du4	NOUN:speed/velocity
-就业	jiu4ye4	NOUN:obtain-employment/get-a-job
-汽车	qi4che1	NOUN:car/motor-vehicle
-严格	yan2ge2	ADJ:strict/rigorous
-表明	biao3ming2	VERB:make-known/indicate
-商	shang1	#2:NOUN:commerce
-下降	xia4jiang4	VERB:descend/go-down
-属于	shu3yu2	VERB:belong-to/be-part-of
-除了	chu2le5	PREP:except/besides
-加以	jia1yi3	VERB:needs/(way-to-do-preceeding-need:)
-均	#2:jun1	ADV:evenly/missing-none
-各地	ge4di4	NOUN:various-places
-改善	gai3shan4	VERB:improve/better
-少数	shao3shu4	NOUN:a-small-number/minority
-电话	dian4hua4	NOUN:telephone
-劳动力	lao2dong4li4	NOUN:labor-force
-形态	xing2tai4	NOUN:form/shape
-觉得	jue2de5	VERB:feel/believe-(idea)
-以前	yi3qian2	ADV:before/formerly
-余	#2:yu2	NOUN:surplus/remainder
-比例	bi3li4	NOUN:proportion
-依据	yi1ju4	#2:NOUN:base/foundation
-双方	shuang1fang4	NOUN:both-sides
-反	fan3	VERB:turn-over/oppose
-合	#2:he2	VERB:close/suit
-小说	xiao3shuo1	NOUN:novel
-相同	xiang1tong2	ADJ:identical/same
-机会	ji1hui4	NOUN:opportunity
-设施	she4shi1	NOUN:installation/faciity
-逐渐	zhu2jian4	ADV:gradually
-学者	xue2zhe3	NOUN:scholar
-深	shen1	ADJ:deep/dark-color
-掌握	zhang3wo4	VERB:grasp/know-well
-事情	shi4qing5	#2:NOUN:issue/matter/thing
-观	#2:guan1	NOUN:view/outlook
-通知	tong1zhi1	NOUN:notice/circular
-各国	ge4guo2	NOUN:each-country
-所谓	suo3wei4	ADJ:so-called/what-is-called
-战	#2:zhan4	#2:NOUN:war
-另外	ling4wai4	ADJ:additional/another
-面积	mian4ji1	NOUN:area-(geometry)
-路	lu4	#2:NOUN:road/way
-给予	ji3yu3	#2:VERB:give
-趋势	qu1shi4	NOUN:trend/tendency
-怎样	zen3yang4	#2:ADV:how?
-申请	shen1qing3	NOUN:application-(paperwork)
-委	wei3	VERB:entrust/appoint
-然	ran2	#5:CONJ:but
-正式	zheng4shi4	ADJ:formal/official
-发行	fa1xing2	VERB:issue/publish
-产值	chan3zhi2	NOUN:production-value
-信	xin4	NOUN:letter-(mail)
-角度	jiao3du4	NOUN:angle-(geometry)
-深入	shen1ru4	VERB:go-deep-into
-各个	ge4ge5	#2:PRON:each
-事件	shi4jian4	NOUN:incident/event
-公	#2:gong1	ADJ:public
-额	e2	NOUN:quota/forehead
-文字	wen2zi4	NOUN:writing/characters
-增强	zeng1qiang2	#2:VERB:strengthen
-济	#3:ji4	VERB:aid
-乡镇	xiang1zhen4	NOUN:villages-and-towns
-约	yue1	ADV:approximately
-专门	zhuan1men2	ADJ:specialized/technical
-只要	zhi3yao4	CONJ:so-long-as/provided
-空间	kong1jian1	NOUN:space
-重新	chong2xin1	ADV:anew/afresh
-关键	guan1jian4	NOUN:key/crux
-费用	fei4yong4	#2:NOUN:cost
-维护	wei2hu4	VERB:safeguard/defend
-几乎	ji1hu1	ADV:almost
+的	de5	PRT:of	PRT 100
+是	shi4	VERB:is	VERB 96
+在	zai4	PREP:at	PREP 93
+了	le5	PRT:(completed/relevant)	PRT 98
+和	he2	CONJ:and	CONJ 95
+年	nian2	MEAS:year	NOUN/NUM 67/32
+一	yi1	NUM:1	NUM 89
+有	you3	VERB:have/possess	VERB 99
+这	zhe4	PRON:this	DET/PRON 62/37
+中	zhong1	PRT:middle	PRT/NOUN 79/17
+不	bu4	ADV:not	ADV 98
+人	ren2	NOUN:person	NOUN 99
+上	shang4	PRT:up	PRT/VERB 79/13
+为	wei4	PREP:for\VERB:be/act-as	PREP/VERB 60/40
+种	zhong3	MEAS:kind/type	NUM 94
+对	dui4	#2:PREP:for	PREP 95
+第	di4	PRT:(ordinal-prefix)	NUM 94
+他	ta1	PRON:he	PRON 100
+经济	jing1ji4	NOUN:economy	NOUN 100
+社会	she4hui4	NOUN:society	NOUN 100
+发展	fa1zhan3	NOUN:development	NOUN/VERB 69/29
+我	wo3	PRON:I	PRON 100
+也	ye3	ADV:also	ADV 99
+到	dao4	VERB:arrive	VERB 89
+月	yue4	NOUN:moon	NOUN 100
+一个	yi2ge4	ADJ:a	ADV/NUM 68/32
+与	yu3	PREP:with/to	CONJ/PREP 67/33
+十	shi2	NUM:10	NUM 94
+个	ge5	MEAS:(general)	NUM 92
+我们	wo3men5	PRON:we	PRON 100
+中国	Zhong1guo2	NOUN:China	NOUN 100
+企业	qi3ye4	NOUN:enterprise	NOUN 100
+来	lai2	VERB:come	VERB/PRT 52/46
+说	shuo1	VERB:talk	VERB 98
+而	er2	CONJ:and-yet	ADV/PRT/CONJ 58/30/11
+工作	gong1zuo4	NOUN:work	NOUN 96
+之	zhi1	#2:PRT:of	PRT 82
+大	da4	ADJ:big	ADJ/VERB 57/32
+主义	zhu3yi4	NOUN:doctrine/-ism	NOUN 100
+地	#2:de5	PRT:-ly	PRT/NOUN 76/24
+就	jiu4	ADV:precisely	ADV 95
+性	xing4	NOUN:disposition	NOUN/ADJ 65/34
+要	yao4	VERB:want	VERB 99
+都	dou1	ADV:all	ADV 100
+会	hui4	VERB:is-able	VERB/NOUN 69/31
+国家	guo2jia1	NOUN:country	NOUN 100
+日	ri4	NOUN:sun	NOUN 90
+二	er4	NUM:2	NUM 93
+以	yi3	PREP:using	PREP/PRT 71/24
+问题	wen4ti2	NOUN:question/problem	NOUN 100
+研究	yan2jiu1	NOUN:research	NOUN/VERB 85/15
+并	bing4	#2:CONJ:and	CONJ/ADV 55/44
+但	dan4	CONJ:but	ADV 100
+三	san1	NUM:3	NUM 96
+于	yu2	PREP:by	PREP/VERB 81/18
+其	qi2	PRON:its	PRON 98
+从	cong2	PREP:from	PREP 98
+所	suo3	PRT:place	PRT/NOUN 86/11
+他们	ta1men5	PRON:they	PRON 100
+时	#2:shi2	PRT:time	PRT/NOUN 79/14
+可以	ke3yi3	VERB:can	VERB 100
+还	hai2	ADV:still/yet	ADV 99
+生产	sheng1chan3	NOUN:production/manufacture	NOUN/VERB 79/21
+没有	mei2you3	VERB:don't-have	VERB/ADV 56/44
+人民	ren2min2	NOUN:the-people	NOUN 100
+多	duo1	ADJ:many	NUM/VERB/ADV 53/26/13
+各	ge4	PRON:each	DET 97
+进行	jin4xing2	VERB:progress	VERB 99
+管理	guan3li3	NOUN:management	NOUN 97
+等	deng3	PRT:etc.	PRT 92
+者	zhe3	NOUN:-er/-ist	NOUN 100
+着	zhe5	PRT:-ing	PRT 90
+下	xia4	PRT:down	PRT/VERB 72/17
+方面	fang1mian4	NOUN:aspect	NOUN 100
+自己	zi4ji3	PRON:oneself	PRON 100
+政府	zheng4fu3	NOUN:government	NOUN 99
+新	xin1	ADJ:new	ADJ/VERB 68/23
+后	hou4	PRT:after	PRT/NOUN 82/12
+两	liang3	NUM:two	NUM 100
+它	#2:ta1	PRON:it	PRON 100
+技术	ji4shu4	NOUN:technology	NOUN 100
+出	chu1	VERB:go-out	VERB 98
+市场	shi4chang3	NOUN:market/bazaar	NOUN 100
+教育	jiao4yu4	NOUN:education	NOUN 99
+关系	guan1xi5	NOUN:connections	NOUN 99
+文化	wen2hua4	NOUN:culture	NOUN 100
+公司	gong1si1	NOUN:corporation	NOUN 100
+很	hen3	ADV:very	ADV 100
+看	kan4	VERB:look	VERB 100
+元	yuan2	MEAS:dollar	NUM/NOUN 90/10
+主要	zhu3yao4	ADJ:main	ADJ/ADV 55/43
+组织	zu3zhi1	NOUN:organization	NOUN/VERB 88/11
+将	jiang1	ADV:(will)-soon	ADV/X 57/43
+万	wan4	NUM:10k	NUM 98
+建设	jian4she4	NOUN:construction	NOUN 90
+就是	jiu4shi4	#2:ADV:precisely	ADV 100
+历史	li4shi3	NOUN:history	NOUN 100
+使	shi3	VERB:send	VERB 99
+能	neng2	#2:VERB:can	VERB 99
+或	huo4	CONJ:or	CONJ 97
+化	hua4	NOUN:change	NOUN/VERB 59/35
+间	jian1	PRT:room	PRT/NOUN 78/17
+重要	zhong4yao4	ADJ:important	ADJ/VERB 65/34
+生活	sheng1huo2	NOUN:life/livelihood	NOUN 93
+由	you2	PREP:by/from	PREP 98
+把	ba3	PREP:(preverbal-direct-object)	X 99
+好	hao3	ADJ:good	VERB/ADJ 65/27
+政治	zheng4zhi4	NOUN:politics	NOUN 100
+这些	zhe4xie1	PRON:these	DET 92
+这个	zhe4ge5	PRON:this-one	DET/PRON 90/10
+五	wu3	NUM:5	NUM 92
+及	ji2	#3:CONJ:and	CONJ 94
+情况	qing2kuang4	NOUN:circumstances	NOUN 100
+四	si4	NUM:4	NUM 95
+更	geng4	ADV:even-more	ADV 100
+改革	gai3ge2	NOUN:reform	NOUN 97
+此	ci3	#2:PRON:this	PRON/DET 56/38
+你	ni3	PRON:you	PRON 100
+不是	bu2shi4	CONJ:is-not	CONJ/ADV 66/34
+不同	bu4tong2	ADJ:not-alike	ADJ/VERB 55/39
+思想	si1xiang3	NOUN:thought	NOUN 100
+学	xue2	VERB:study	NOUN/VERB 61/39
+科学	ke1xue2	NOUN:science	NOUN 92
+世界	shi4jie4	NOUN:world	NOUN 100
+地区	di4qu1	NOUN:area	NOUN 100
+活动	huo2dong4	NOUN:activity	NOUN 98
+这样	zhe4yang4	ADV:in-this-way	ADV/ADJ/VERB/PRON 47/27/13/13
+规定	gui1ding4	NOUN:rule/stipulation	NOUN/VERB 58/42
+通过	tong1guo4	PREP:by-means-of	PREP/VERB 73/26
+我国	wo3guo2	NOUN:our-country	NOUN 100
+部	#2:bu4	NOUN:part	NOUN/NUM 79/21
+不能	bu4neng2	AUXV:unable	ADV/VERB 58/38
+制度	zhi4du4	NOUN:system	NOUN 100
+用	yong4	VERB:use	VERB/PREP 58/38
+又	you4	ADV:again	ADV 97
+国	guo2	#2:NOUN:country	NOUN 100
+可	ke3	#3:VERB:can	VERB 92
+由于	you2yu2	PREP:owing-to	PREP 99
+可能	ke3neng2	VERB:maybe	VERB/NOUN 72/19
+九	jiu3	NUM:9	NUM/NOUN 88/12
+认为	ren4wei2	VERB:think-that	VERB 100
+次	ci4	MEAS:occurrence	NUM 87
+总	zong3	ADJ:total/general	ADJ/ADV 74/22
+影响	ying3xiang3	NOUN:influence	NOUN/VERB 75/25
+必须	bi4xu1	VERB:must	VERB 100
+要求	yao1qiu2	VERB:demand	VERB/NOUN 57/43
+基础	ji1chu3	NOUN:base/foundation	NOUN 99
+一些	yi4xie1	MEAS:some	NUM 99
+被	bei4	PRT:(passive-voice)	X 100
+应	ying1	VERB:promise	VERB 99
+什么	shen2me5	PRON:what	DET/PRON 51/43
+部门	bu4men2	NOUN:department	NOUN 100
+产品	chan3pin3	NOUN:product	NOUN 100
+需要	xu1yao4	VERB:need	VERB/NOUN 74/26
+因此	yin1ci3	CONJ:therefore	ADV 100
+同时	tong2shi2	ADV:simultaneously	ADV/NOUN 74/26
+民族	min2zu2	NOUN:ethnic-group	NOUN 100
+家	jia1	NOUN:household	NOUN/NUM 83/17
+政策	zheng4ce4	NOUN:policy	NOUN 98
+基本	ji1ben3	ADJ:basic	ADJ/ADV 71/28
+向	xiang4	PREP:towards	PREP 96
+作用	zuo4yong4	NOUN:action	NOUN 100
+建立	jian4li4	VERB:establish	VERB 94
+因为	yin1wei4	CONJ:because	PREP 100
+领导	ling3dao3	NOUN:leadership	NOUN/VERB 89/11
+她	#3:ta1	PRON:she	PRON 100
+条件	tiao2jian4	NOUN:requirement	NOUN 100
+作为	zuo4wei2	VERB:accomplish/do-something-worthwhile	VERB/PREP 52/45
+长	chang2	ADJ:long	NOUN/VERB/ADJ 52/31/13
+投资	tou2zi1	NOUN:investment	NOUN/VERB 85/15
+工业	gong1ye4	NOUN:industry	NOUN 100
+作	zuo4	VERB:do	VERB 93
+过	guo4	PRT:in-the-past	PRT/VERB 66/27
+业	ye4	NOUN:line-of-business	NOUN 100
+代表	dai4biao3	NOUN:representative	NOUN/VERB 80/20
+计划	ji4hua4	NOUN:project	NOUN 93
+国际	guo2ji4	NOUN:internationalism	NOUN 100
+本	ben3	MEAS:books	DET/NOUN/NUM 63/19/12
+如果	ru2guo3	CONJ:if	CONJ 100
+其他	qi2ta1	PRON:others/the-rest	DET 99
+内	nei4	PRT:inside	PRT/NOUN 81/18
+具有	ju4you3	#2:VERB:have/possess	VERB 100
+农业	nong2ye4	NOUN:agriculture	NOUN 100
+市	#2:shi4	NOUN:city	NOUN 100
+法	fa3	NOUN:law/method	NOUN 99
+最	zui4	ADV:the-most	ADV 98
+做	#2:zuo4	#2:VERB:do	VERB 100
+提出	ti2chu1	VERB:put-forward/pose	VERB 98
+党	dang3	NOUN:political-party	NOUN 99
+几	ji3	NUM:how-many/a-few	NUM 99
+高	gao1	ADJ:tall	VERB/ADJ 50/36
+人员	ren2yuan2	NOUN:personnel	NOUN 100
+结构	jie2gou4	NOUN:structure	NOUN 100
+有关	you3guan1	ADJ:relevant	ADJ/PREP 84/10
+美国	Mei3guo2	NOUN:United-States	NOUN 100
+分	fen1	VERB:divide	VERB/NUM/NOUN 54/25/17
+中央	zhong1yang1	NOUN:center	NOUN 100
+但是	dan4shi4	#2:CONJ:but	ADV 100
+全国	quan2guo2	NOUN:whole-nation	NOUN/ADJ 59/41
+成	cheng2	VERB:become	VERB 92
+如	ru2	VERB:be-like/measure-up-to	ADV/PREP 77/13
+服务	fu2wu4	NOUN:service	NOUN 92
+出版	chu1ban3	NOUN:publishing	NOUN/VERB 61/39
+经营	jing1ying2	#2:NOUN:management	NOUN/VERB 82/18
+根据	gen1ju4	PREP:on-the-basis-of	PREP 92
+过程	guo4cheng2	NOUN:course/history	NOUN 100
+存在	cun2zai4	VERB:exist	VERB/NOUN 87/13
+已	#2:yi3	ADV:already	ADV 99
+外	wai4	NOUN:outside	NOUN/PRT 52/46
+以及	yi3ji2	CONJ:as-well-as	CONJ 100
+关于	guan1yu2	PREP:with-regard-to	PREP 100
+方法	fang1fa3	NOUN:method	NOUN 100
+系统	xi4tong3	#2:NOUN:system	NOUN 96
+会议	hui4yi4	NOUN:meeting	NOUN 100
+成为	cheng2wei2	#2:VERB:become	VERB 100
+给	gei3	VERB:give	VERB/PREP 53/46
+其中	qi2zhong1	NOUN:content/among	NOUN 100
+实际	shi2ji4	ADJ:practical	ADJ/NOUN/ADV 46/27/26
+增长	zeng1zhang3	VERB:increase	NOUN/VERB 61/39
+项	#2:xiang4	MEAS:item	NUM/NOUN 89/10
+地方	di4fang1	NOUN:place	NOUN 97
+全	quan2	ADJ:complete/whole	DET/ADV 86/10
+那	na4	PRON:that	PRON/DET/ADV 45/44/11
+而且	er2qie3	CONJ:moreover	ADV 93
+里	li3	#2:PRT:inside	PRT/NOUN 80/13
+六	liu4	NUM:6	NUM 91
+一定	yi2ding4	ADV:definitely	ADJ/ADV 67/32
+劳动	lao2dong4	NOUN:labor/work	NOUN 98
+形式	xing2shi4	NOUN:form	NOUN 100
+开始	kai1shi3	VERB:begin	VERB 90
+革命	ge2ming4	NOUN:revolt	NOUN 99
+时间	shi2jian1	NOUN:time-(span)	NOUN 100
+环境	huan2jing4	NOUN:environment	NOUN 100
+部分	bu4fen5	#2:NOUN:part	NOUN/NUM 70/30
+得	#3:de5	PRT:(how?:)	PRT/VERB 59/40
+提高	ti2gao1	VERB:raise	VERB/NOUN 88/12
+对于	dui4yu2	PREP:in-regard-to	PREP 98
+法律	fa3lv4	NOUN:statute	NOUN 100
+内容	nei4rong2	NOUN:content	NOUN 100
+也是	ye3shi4	ADV:also/similarly	ADV 95
+较	jiao4	ADV:clearly	ADV 95
+们	men5	NOUN:plural-suffix	NOUN/PRON 81/19
+省	sheng3	NOUN:province	NOUN 95
+七	qi1	NUM:7	NUM 91
+方式	fang1shi4	#2:NOUN:method	NOUN 100
+实现	shi2xian4	VERB:make-real	VERB 94
+起	qi3	VERB:rise	VERB/PRT 70/24
+机构	ji1gou4	NOUN:mechanism	NOUN 100
+精神	jing1shen2	NOUN:essence	NOUN 100
+使用	shi3yong4	#2:VERB:use	VERB/NOUN 72/28
+每	mei3	PRON:every	DET 92
+人们	ren2men5	NOUN:people	NOUN 100
+单位	dan1wei4	NOUN:unit-(measurement-or-organization)	NOUN 100
+阶级	jie1ji2	NOUN:social-class/rank	NOUN 100
+起来	qi3lai5	#2:VERB:rise	VERB 100
+城市	cheng2shi4	#2:NOUN:city	NOUN 100
+农村	nong2cun1	NOUN:rural-area	NOUN 100
+决定	jue2ding4	VERB:decide	VERB/NOUN 66/34
+分析	fen1xi1	VERB:analyze	VERB/NOUN 50/49
+水平	shui3ping2	NOUN:level	NOUN 100
+出现	chu1xian4	VERB:emerge	VERB 92
+八	ba1	NUM:8	NUM 92
+包括	bao1kuo4	VERB:include	VERB 100
+理论	li3lun4	NOUN:theory/-ism	NOUN 100
+增加	zeng1jia1	#2:VERB:increase	VERB 90
+发生	fa1sheng1	VERB:happen	VERB 94
+已经	yi3jing5	#2:ADV:already	ADV 100
+解决	jie3jue2	VERB:solve	VERB 91
+为了	wei4le5	#3:PREP:for	PREP 99
+前	qian2	PRT:front	PRT/ADJ/DET 59/20/12
+社	she4	#2:NOUN:society	NOUN 100
+特别	te4bie2	ADV:especially	ADV/ADJ 86/13
+知识	zhi1shi5	NOUN:knowledge	NOUN 100
+加强	jia1qiang2	VERB:strengthen	VERB 99
+比较	bi3jiao4	ADV:relatively	ADV/VERB 76/16
+银行	yin2hang2	NOUN:bank	NOUN 100
+提供	ti2gong1	VERB:supply	VERB 99
+许多	xu3duo1	#2:ADJ:many	NUM 99
+行政	xing2zheng4	NOUN:administration	NOUN 99
+只	zhi3	ADV:only	ADV 96
+个人	ge4ren2	NOUN:individual	NOUN 99
+认识	ren4shi5	VERB:know/recognize	VERB/NOUN 55/45
+信息	xin4xi1	NOUN:information	NOUN 100
+该	gai1	PRON:said/given	DET/VERB 84/16
+所以	suo3yi3	#2:CONJ:therefore	ADV 97
+亿	yi4	NUM:100M	NUM 96
+自然	zi4ran2	NOUN:natural-world	NOUN/ADV 71/23
+形成	xing2cheng2	VERB:form	VERB/NOUN 88/12
+委员会	wei3yuan2hui4	NOUN:committee	NOUN 100
+则	ze2	ADV:in-that-case	ADV 97
+群众	qun2zhong4	#2:NOUN:the-people	NOUN 99
+艺术	yi4shu4	NOUN:art	NOUN 100
+积极	ji1ji2	ADV:energetic	ADV/ADJ/VERB 46/36/17
+人口	ren2kou3	NOUN:population	NOUN 100
+级	#2:ji2	MEAS:step/level	NUM/NOUN/ADJ 50/39/10
+得到	de2dao4	VERB:succeed-in-obtaining	VERB 100
+现在	xian4zai4	NOUN:now/modern-times	NOUN 100
+一般	yi4ban1	ADV:ordinary	ADV/ADJ 47/46
+价值	jia4zhi2	NOUN:value	NOUN 99
+无	wu2	VERB:not-have	VERB/ADJ 86/13
+少	shao3	VERB:lack	VERB/ADV 64/26
+比	bi3	PREP:compared-to	PREP 87
+表现	biao3xian4	VERB:show/show-off	VERB/NOUN 58/42
+产业	chan3ye4	NOUN:property	NOUN 100
+即	#3:ji2	ADV:at-present	ADV 92
+去	qu4	VERB:go	VERB/PRT 86/12
+同	tong2	PREP:with	PREP/NOUN/DET 49/18/12
+原则	yuan2ze2	NOUN:principle	NOUN 95
+资产	zi1chan3	#2:NOUN:property	NOUN 100
+行为	xing2wei2	#2:NOUN:action	NOUN 100
+资源	zi1yuan2	NOUN:natural-resources	NOUN 100
+变化	bian4hua4	#2:NOUN:change	NOUN 92
+资金	zi1jin1	NOUN:fund	NOUN 100
+位	#2:wei4	MEAS:person	NUM/NOUN 77/14
+经	jing1	PREP:as-a-result-of/through	NOUN/PREP/VERB 48/39/10
+资本	zi1ben3	NOUN:economic-capital	NOUN 100
+能力	neng2li4	NOUN:ability	NOUN 100
+意义	yi4yi4	NOUN:meaning	NOUN 100
+某	mou3	PRON:certain/particular	DET 100
+期	#2:qi1	NOUN:period-of-time	NOUN/NUM 47/43
+权	#2:quan2	NOUN:authority	NOUN 100
+一次	yi2ci4	ADJ:linear	ADV 100
+产生	chan3sheng1	VERB:produce	VERB 90
+小	xiao3	ADJ:small	ADJ/VERB 66/25
+资料	zi1liao4	NOUN:data/material	NOUN 100
+区	qu1	NOUN:region	NOUN 99
+北京	Bei3jing1	NOUN:Beijing	NOUN 100
+具体	ju4ti3	ADJ:specific	ADJ/ADV/VERB 70/15/15
+至	zhi4	PREP:until/up-to	CONJ/VERB/PREP 54/21/19
+中心	zhong1xin1	#2:NOUN:center	NOUN 100
+农民	nong2min2	NOUN:peasant	NOUN 100
+文学	wen2xue2	NOUN:literature	NOUN 100
+大学	da4xue2	NOUN:college	NOUN 100
+事	#3:shi4	NOUN:issue/matter/thing	NOUN 98
+传统	chuan2tong3	NOUN:tradition/convention	ADJ/NOUN 71/28
+当	dang1	PREP:at-a-time/place	PREP/VERB 63/32
+知道	zhi1dao5	VERB:know	VERB 100
+制	#2:zhi4	NOUN:-ism/system	NOUN/VERB 81/15
+运动	yun4dong4	NOUN:movement	NOUN 98
+生	sheng1	VERB:birth	VERB/NOUN 48/44
+进	jin4	VERB:advance/enter	VERB/NOUN 82/18
+自	zi4	PRON:self	VERB/PREP/ADV 38/36/13
+只有	zhi3you3	CONJ:only-if	ADV 98
+年代	nian2dai4	NOUN:age/time	NOUN 100
+局	ju2	NOUN:bureau/branch	NOUN 100
+商品	shang1pin3	NOUN:commodity/goods	NOUN 100
+直接	zhi2jie1	ADV:directly	ADV/ADJ 56/42
+力	li4	NOUN:power/force	NOUN 96
+实行	shi2xing2	VERB:carry-out/implement	VERB 99
+时期	shi2qi1	#2:NOUN:period-of-time	NOUN 100
+不断	bu2duan4	ADV:unceasingly	ADV/VERB 79/11
+体制	ti3zhi4	#3:NOUN:system	NOUN 100
+时候	shi2hou5	NOUN:point-in-time	NOUN 97
+项目	xiang4mu4	NOUN:clause/item	NOUN 100
+或者	huo4zhe3	#2:CONJ:or	CONJ 96
+价格	jia4ge2	NOUN:price	NOUN 100
+利益	li4yi4	NOUN:profit	NOUN 100
+发	fa1	VERB:send/start	VERB/NOUN 73/25
+标准	biao1zhun3	NOUN:standard	NOUN 98
+阶段	jie1duan4	NOUN:phase	NOUN 100
+处	chu3	VERB:be-in-a-certain-position	NOUN/VERB 79/16
+当时	dang1shi2	NOUN:that-very-moment	NOUN 100
+不仅	bu4jin3	ADV:not-the-only-one/non-uniquely	ADV/CONJ 76/24
+应该	ying1gai1	VERB:should	VERB 100
+还是	hai2shi4	CONJ:or?	ADV/CONJ 74/26
+学生	xue2sheng5	NOUN:student	NOUN 100
+一切	yi2qie4	PRON:everything	DET/PRON 58/42
+土地	tu3di4	NOUN:land	NOUN 100
+利用	li4yong4	VERB:exploit	VERB/NOUN 87/13
+合作	he2zuo4	NOUN:cooperation	NOUN/VERB 86/14
+结果	jie2guo3	NOUN:result	NOUN/ADV 80/19
+相	xiang1	ADV:mutually	ADV/VERB 76/16
+行	xing2	ADJ:OK	NOUN/VERB 58/41
+另	ling4	PRON:other/another	DET/ADV 75/24
+民主	min2zhu3	NOUN:democracy	NOUN 93
+产	chan3	#2:VERB:produce	NOUN/VERB/ADJ 45/31/24
+再	#2:zai4	#2:ADV:again	ADV 98
+完成	wan2cheng2	VERB:accomplish	VERB 96
+参加	can1jia1	VERB:take-part-in	VERB 99
+保护	bao3hu4	NOUN:protection	NOUN/VERB 69/31
+以后	yi3hou4	#2:PRT:after	PRT/ADV 75/17
+所有	suo3you3	ADJ:all	DET 98
+虽然	sui1ran2	CONJ:though	CONJ 100
+范围	fan4wei2	NOUN:scope/limits	NOUN 100
+学校	xue2xiao4	NOUN:school	NOUN 100
+事业	shi4ye4	NOUN:pursuit/undertaking	NOUN 100
+开发	kai1fa1	#2:NOUN:development	NOUN/VERB 74/26
+进一步	jin4yi2bu4	ADV:going-a-step-further	ADV/ADJ 82/18
+任务	ren4wu5	NOUN:task	NOUN 100
+百	bai3	NUM:100	NUM 98
+反映	fan3ying4	VERB:reflect	VERB/NOUN 89/11
+日本	Ri4ben3	NOUN:Japan	NOUN 100
+点	dian3	NOUN:dot	NOUN/NUM 62/31
+名	ming2	MEAS:name	NUM/NOUN 68/29
+类	lei4	MEAS:class/category	NUM/NOUN 71/28
+处理	chu3li3	VERB:handle/deal-with	VERB/NOUN 59/41
+想	xiang3	VERB:think	VERB 100
+越	#2:yue4	ADV:exceedingly	ADV 95
+控制	kong4zhi4	VERB:control	VERB/NOUN 55/45
+经验	jing1yan4	NOUN:experience	NOUN 100
+收入	shou1ru4	NOUN:income	NOUN 99
+财政	cai2zheng4	NOUN:financial-administration	NOUN 100
+应当	ying1dang1	#2:VERB:should	VERB 100
+书	shu1	NOUN:book	NOUN 99
+贸易	mao4yi4	NOUN:trade	NOUN 100
+学习	xue2xi2	#2:VERB:study	VERB/NOUN 57/43
+目标	mu4biao1	NOUN:goal	NOUN 100
+却	que4	#3:CONJ:but	ADV 100
+世纪	shi4ji4	NOUN:century	NOUN 100
+以上	yi3shang4	PRT:above	PRT/PRON/ADJ 73/13/11
+办法	ban4fa3	NOUN:ways-and-means	NOUN 100
+联系	lian2xi4	NOUN:contact/connection	NOUN/VERB 66/34
+执行	zhi2xing2	VERB:carry-out/execute	VERB/NOUN 59/41
+原因	yuan2yin1	NOUN:reason/cause	NOUN 100
+目前	mu4qian2	NOUN:the-moment	NOUN 100
+现代	xian4dai4	ADJ:modern	ADJ 93
+现	xian4	ADV:just/at-the-time	ADV/NOUN/VERB 48/26/20
+斗争	dou4zheng1	NOUN:fight	NOUN 96
+责任	ze2ren4	NOUN:responsibility/blame	NOUN 100
+话	#2:hua4	NOUN:speech	NOUN/PRT 60/38
+任何	ren4he2	PRON:any	DET 100
+实践	shi2jian4	NOUN:practice/use	NOUN 95
+上海	Shang4hai3	NOUN:Shanghai	NOUN 100
+完全	wan2quan2	ADV:completely	ADV 88
+工程	gong1cheng2	NOUN:engineering	NOUN 100
+些	xie1	MEAS:(indefinite-small-amount)	NUM 95
+地位	di4wei4	NOUN:position/status	NOUN 100
+程度	cheng2du5	#2:NOUN:level	NOUN 100
+页	#2:ye4	MEAS:book-page	NOUN/NUM 65/35
+发现	fa1xian4	VERB:find	VERB 92
+之后	zhi1hou4	PRT:after/later	PRT/ADV 81/18
+战争	zhan4zheng1	NOUN:war	NOUN 100
+报告	bao4gao4	NOUN:report	NOUN 91
+取得	qu3de2	VERB:gain	VERB 99
+矛盾	mao2dun4	NOUN:contradiction	NOUN 93
+职工	zhi2gong1	NOUN:workers	NOUN 100
+采取	cai3qu3	VERB:take-(measures)	VERB 100
+天	tian1	MEAS:day	NUM/NOUN 68/30
+体系	ti3xi4	#4:NOUN:system	NOUN 100
+这里	zhe4li3	PRON:here	PRON 100
+成立	cheng2li4	#2:VERB:establish	VERB 95
+指出	zhi3chu1	VERB:point-out	VERB 99
+实施	shi2shi1	VERB:put-into-effect	VERB/NOUN 81/19
+因	yin1	PREP:because	PREP 87
+竞争	jing4zheng1	NOUN:competition	NOUN 92
+国内	guo2nei4	NOUN:interior/domestic	NOUN 100
+目的	mu4di4	#2:NOUN:goal	NOUN 100
+量	liang4	NOUN:quality	NOUN 99
+充分	chong1fen4	ADJ:full/ample	ADV/ADJ/VERB 66/19/15
+国民	guo2min2	NOUN:citizen	NOUN 100
+条	tiao2	MEAS:strip	NUM/NOUN 81/19
+科技	ke1ji4	NOUN:science-and-tech	NOUN 100
+带	dai4	VERB:take/carry	VERB 94
+促进	cu4jin4	VERB:promote	VERB 96
+现实	xian4shi2	NOUN:reality	NOUN/ADJ 55/42
+开展	kai1zhan3	VERB:develop	VERB 94
+统一	tong3yi1	VERB:unify/unite	NOUN/ADJ/ADV/VERB 48/20/17/15
+才	cai2	ADV:later-than-expected	ADV 98
+人类	ren2lei4	NOUN:human-being	NOUN 100
+专业	zhuan1ye4	NOUN:special-field-of-research	NOUN/ADJ 83/16
+方	fang1	NOUN:direction	NOUN 98
+规模	gui1mo2	NOUN:scale/scope	NOUN 100
+加	#2:jia1	VERB:add	VERB/NOUN 73/18
+达到	da2dao4	VERB:achieve	VERB 100
+质量	zhi4liang4	#2:NOUN:quality	NOUN 100
+正	zheng4	#3:ADV:precisely	ADV 89
+说明	shuo1ming2	VERB:explain	VERB/NOUN 80/20
+只是	zhi3shi4	ADV:merely	ADV 100
+能够	neng2gou4	#4:VERB:can	VERB 100
+出口	chu1kou3	NOUN:exit	NOUN 94
+选择	xuan3ze2	VERB:select	VERB/NOUN 56/44
+大会	da4hui4	NOUN:plenary-meeting	NOUN 100
+工	gong1	#2:NOUN:work	NOUN 96
+率	lv4	NOUN:-rate	NOUN 99
+扩大	kuo4da4	VERB:enlarge	VERB 93
+业务	ye4wu4	NOUN:professional-work/business	NOUN 100
+意识	yi4shi5	NOUN:consciousness	NOUN/VERB 86/14
+那么	na4me5	ADV:in-that-way	ADV 98
+定	ding4	#2:VERB:decide	VERB 84
+岁	sui4	MEAS:year-(age)	NUM/NOUN 79/21
+面	mian4	NOUN:face	NOUN 94
+金融	jin1rong2	NOUN:finance/banking	NOUN 100
+它们	#2:ta1men5	PRON:they-nonhuman	PRON 100
+非	fei1	ADV:not-	ADJ/VERB/NOUN 62/19/10
+如何	ru2he2	ADV:how/how-about-it	ADV 92
+自由	zi4you2	NOUN:freedom	NOUN/ADJ/ADV 62/18/15
+继续	ji4xu4	VERB:continue	VERB 98
+哲学	zhe2xue2	NOUN:philosophy	NOUN 99
+注意	zhu4yi4	VERB:take-note-of	VERB/NOUN 81/19
+结合	jie2he2	VERB:combine	VERB/NOUN 87/13
+创造	chuang4zao4	VERB:create	VERB 91
+因素	yin1su4	NOUN:factor	NOUN 100
+按照	an4zhao4	PREP:in-light-of	PREP 99
+全面	quan2mian4	ADJ:overall/all-round	ADV/ADJ/VERB 49/38/11
+措施	cuo4shi1	NOUN:measure/suitable-action	NOUN 100
+主	zhu3	NOUN:master	NOUN/ADJ 68/25
+共同	gong4tong2	ADV:together/jointly	ADV/ADJ 53/47
+发挥	fa1hui1	VERB:bring-into-play	VERB 96
+严重	yan2zhong4	ADJ:serious/grave	VERB/ADJ/ADV 47/32/21
+调整	tiao2zheng3	NOUN:adjustment	NOUN/VERB 62/38
+力量	li4liang5	NOUN:physical-strength	NOUN 100
+获得	huo4de2	#2:VERB:gain	VERB 98
+消费	xiao1fei4	NOUN:consumption	NOUN 92
+收	shou1	VERB:receive	VERB/NOUN 65/33
+战略	zhan4lve4	NOUN:strategy	NOUN 100
+统计	tong3ji4	NOUN:statistics	NOUN/VERB 89/11
+受	shou4	#2:VERB:receive	VERB 97
+特点	te4dian3	NOUN:characteristic	NOUN 100
+支持	zhi1chi2	VERB:support/back	VERB/NOUN 53/47
+才能	cai2neng2	NOUN:ability-only-then	NOUN 100
+现象	xian4xiang4	NOUN:phenomenon/appearance	NOUN 100
+根本	gen1ben3	ADJ:basic/fundamental	ADJ/ADV/NOUN 50/30/19
+机关	ji1guan1	NOUN:office/organ	NOUN 100
+意见	yi4jian5	NOUN:idea	NOUN 100
+提	ti2	VERB:carry/raise	VERB/NOUN 87/13
+以来	yi3lai2	PRT:since-(time)	PRT 94
+正确	zheng4que4	ADJ:correct/proper	VERB/ADJ/ADV 48/27/24
+商业	shang1ye4	NOUN:commerce	NOUN 99
+场	chang3	NOUN:gathering-place/field	NOUN/NUM 58/40
+受到	shou4dao4	VERB:be-given/receive	VERB 100
+甚至	shen4zhi4	ADV:even-to-the-point-of	ADV 100
+造成	zao4cheng2	#2:VERB:create	VERB 100
+建筑	jian4zhu4	NOUN:a-building/architecture	NOUN 100
+占	zhan4	VERB:make-up/constitute	VERB 100
+开	kai1	VERB:open	VERB 95
+未	#3:wei4	ADV:haven't-yet/not-thus-far-ly	ADV 98
+安全	an1quan2	NOUN:safety	NOUN 90
+保证	bao3zheng4	VERB:pledge	VERB/NOUN 81/19
+变	bian4	VERB:change	VERB/NOUN 87/13
+随	sui2	VERB:follow	VERB 90
+语言	yu3yan2	NOUN:language	NOUN 100
+入	ru4	VERB:enter	VERB 94
+让	rang4	VERB:yield/allow	VERB 100
+十分	shi2fen1	ADV:fully	ADV 95
+指导	zhi3dao3	NOUN:guidance	NOUN/VERB 76/24
+联合	lian2he2	ADJ:joint/combined	ADJ/ADV/NOUN 40/40/13
+员	#2:yuan2	NOUN:-er/member	NOUN 100
+确定	que4ding4	VERB:fix-definitely/determine	VERB 96
+节	jie2	MEAS:segment/division	NUM/NOUN 61/39
+讨论	tao3lun4	VERB:discuss	VERB/NOUN 64/36
+从而	cong2er2	CONJ:thus	ADV 100
+努力	nu3li4	VERB:try-hard/make-great-effort	ADV/NOUN/VERB 44/40/16
+有效	you3xiao4	ADJ:effective/valid	VERB/ADJ/ADV 48/40/12
+文	wen2	NOUN:writing	NOUN 95
+过去	guo4qu4	NOUN:the-past	NOUN/VERB 78/22
+综合	zong1he2	ADJ:synthetic/composite	ADJ/VERB 81/16
+一点	yi4dian3	ADV:a-little	NUM/ADV 63/36
+组	zu3	MEAS:group/set	NOUN/VERB/NUM 74/14/12
+稳定	wen3ding4	ADJ:stable/steady	NOUN/VERB 48/42
+开放	kai1fang4	NOUN:opening-up	NOUN/VERB 67/31
+重点	zhong4dian3	NOUN:focal-point	NOUN/ADV 87/12
+首先	shou3xian1	ADV:first-of-all	ADV 100
+时代	shi2dai4	NOUN:times/age	NOUN 100
+制定	zhi4ding4	VERB:formulate/draft	VERB 94
+领域	ling3yu4	NOUN:territory	NOUN 100
+家庭	jia1ting2	NOUN:family	NOUN 99
+不可	bu4ke3	VERB:cannot	VERB/ADV 74/14
+整个	zheng3ge4	ADJ:whole	DET 98
+工人	gong1ren2	NOUN:worker	NOUN 100
+经过	jing1guo4	#2:PREP:as-a-result-of/through	PREP/VERB 81/16
+干部	gan4bu4	NOUN:cadre	NOUN 100
+事实	shi4shi2	NOUN:fact	NOUN 100
+效益	xiao4yi4	NOUN:beneficial-result	NOUN 100
+作品	zuo4pin3	NOUN:works-of-literature/art	NOUN 100
+出来	chu1lai5	VERB:come-out	VERB 100
+教学	jiao4xue2	NOUN:teaching	NOUN 99
+一样	yi2yang4	VERB:are-same	VERB 93
+重大	zhong4da4	ADJ:great	ADJ/VERB 84/16
+机制	ji1zhi4	#2:NOUN:mechanism	NOUN 100
+设备	she4bei4	NOUN:equipment/facilities	NOUN 100
+设计	she4ji4	NOUN:plan	NOUN/VERB 73/27
+保险	bao3xian3	NOUN:insurance	NOUN 100
+以下	yi3xia4	NOUN:-below	ADJ/PRT/PRON 45/41/13
+坚持	jian1chi2	VERB:persist-in	VERB 99
+呢	ne5	PRT:(..?)	PRT 100
+监督	jian1du1	NOUN:supervisor	NOUN/VERB 88/12
+负责	fu4ze2	VERB:be-responsible-for/be-in-charge-of	VERB/NOUN 67/32
+非常	fei1chang2	ADV:extraordinarily	ADV 97
+美	#2:mei3	NOUN:beauty	NOUN 86
+斯	si1	#3:PRON:this	NOUN 98
+材料	cai2liao4	NOUN:material	NOUN 100
+最后	zui4hou4	ADV:at-last/finally	ADV/ADJ 59/37
+合理	he2li3	ADJ:rational/reasonable	ADJ/VERB/ADV 45/37/16
+改变	gai3bian4	#2:VERB:change	VERB/NOUN 82/18
+走	zou3	VERB:walk/go	VERB 100
+考虑	kao3lv4	VERB:think-over	VERB 91
+真正	zhen1zheng4	ADV:genuine/true	ADV/ADJ 52/42
+国有	guo2you3	ADJ:state-owned	ADJ 99
+东西	dong1xi5	NOUN:thing	NOUN 100
+必要	bi4yao4	ADJ:necessary/indispensable	ADJ/VERB/NOUN 42/29/29
+明确	ming2que4	ADJ:clear/unequivocal	VERB/ADV/ADJ 44/36/20
+有限	you3xian4	ADJ:limited	ADJ/VERB 79/21
+动	dong4	VERB:move	VERB/NOUN 69/31
+写	xie3	VERB:write	VERB 99
+独立	du2li4	ADJ:independent/on-one's-own	ADJ/VERB/ADV/NOUN 35/34/16/16
+理	#2:li3	NOUN:logic	NOUN/VERB 82/17
+达	da2	VERB:reach	VERB 91
+当然	dang1ran2	ADV:as-it-should-be	ADV 100
+孩子	hai2zi5	NOUN:child	NOUN 100
+观念	guan1nian4	NOUN:idea/concept	NOUN 100
+论	lun4	NOUN:theory	NOUN/VERB 77/22
+集中	ji2zhong1	VERB:assemble	VERB 88
+度	du4	NOUN:degree	NOUN/NUM 74/19
+观点	guan1dian3	NOUN:viewpoint	NOUN 100
+希望	xi1wang4	VERB:hope	VERB/NOUN 79/21
+困难	kun4nan5	NOUN:difficulty/dire-straits	NOUN/VERB 72/26
+引起	yin3qi3	VERB:give-rise-to	VERB 100
+集团	ji2tuan2	NOUN:group	NOUN 100
+报	bao4	NOUN:newspaper	NOUN/VERB 87/13
+相当	xiang1dang1	ADV:quite	ADV/ADJ 80/17
+接受	jie1shou4	#3:VERB:receive	VERB 99
+届	jie4	MEAS:session	NUM 96
+合同	he2tong2	NOUN:contract	NOUN 100
+长期	chang2qi1	ADJ:long-term/over-a-long-period-of-time	ADV/ADJ/NOUN 46/29/25
+集体	ji2ti3	NOUN:team	NOUN 91
+主体	zhu3ti3	NOUN:main-part	NOUN 100
+委员	wei3yuan2	NOUN:committee-member	NOUN 100
+表示	biao3shi4	VERB:show	VERB 98
+然而	ran2er2	#4:CONJ:but	ADV 100
+实	#3:shi2	ADJ:solid/true	NOUN/ADV 50/34
+怎么	zen3me5	ADV:how?	ADV/VERB 84/13
+据	ju4	PREP:according-to	PREP 82
+院	yuan4	NOUN:courtyard	NOUN 99
+内部	nei4bu4	NOUN:inside	NOUN 99
+问	wen4	VERB:ask/inquire	VERB/NOUN 71/29
+手段	shou3duan4	#3:NOUN:method	NOUN 100
+物质	wu4zhi4	#2:NOUN:material	NOUN 100
+千	qian1	NUM:1k	NUM 97
+件	jian4	MEAS:item/article	NUM/NOUN 57/38
+民	min2	#2:NOUN:people	NOUN 97
+人物	ren2wu4	NOUN:personage	NOUN 100
+按	an4	PREP:in-accordance-with	PREP 98
+现代化	xian4dai4hua4	NOUN:modernization	NOUN 92
+今天	jin1tian1	NOUN:today	NOUN 100
+是否	shi4fou3	VERB:whether-or-not	VERB/ADV 51/49
+系	xi4	#5:NOUN:system	NOUN/VERB 83/16
+重	zhong4	ADJ:important/heavy	VERB/ADV/NOUN 41/27/24
+物	wu4	#2:NOUN:thing	NOUN 98
+体	ti3	NOUN:body	NOUN 93
+中华	Zhong1hua2	#2:NOUN:China	NOUN 100
+住	zhu4	VERB:reside	VERB 97
+低	di1	ADJ:low	VERB/ADJ 73/24
+规划	gui1hua4	NOUN:plan/program	NOUN/VERB 77/23
+功能	gong1neng2	NOUN:function/what-something-does	NOUN 96
+分配	fen1pei4	VERB:distribute/allot	NOUN/VERB 65/35
+文章	wen2zhang1	NOUN:essay	NOUN 100
+性质	xing4zhi4	NOUN:quality/nature	NOUN 100
+香港	Xiang1gang3	NOUN:Hong-Kong	NOUN 100
+作出	zuo4chu1	VERB:make	VERB 100
+权利	quan2li4	NOUN:right/privilege	NOUN 100
+大量	da4liang4	ADJ:a-large-quantity-of	NUM/ADV 76/24
+军事	jun1shi4	NOUN:military-affairs	NOUN 99
+新闻	xin1wen2	NOUN:news	NOUN 100
+没	mei2	#2:ADV:not	ADV/VERB 77/23
+规律	gui1lv4	NOUN:law	NOUN 100
+军	jun1	NOUN:army	NOUN 100
+那些	na4xie1	PRON:those	DET 99
+样	yang4	#2:MEAS:kind/type	NUM/ADJ/VERB/ADV/NOUN 28/27/21/12/10
+了解	liao3jie3	VERB:understand	VERB/NOUN 82/18
+不得	bu4de2	VERB:must-not	ADV/VERB 79/21
+最大	zui4da4	ADJ:biggest	ADJ 100
+特殊	te4shu1	ADJ:peculiar/exceptional	ADJ/VERB 76/23
+法院	fa3yuan4	NOUN:law-court	NOUN 100
+行业	hang2ye4	NOUN:profession/industry	NOUN 99
+创作	chuang4zuo4	NOUN:creation/creative-work	NOUN/VERB 89/11
+尔	er3	#2:PRON:you	NOUN 97
+重视	zhong4shi4	VERB:attach-importance-to/value	VERB/NOUN 71/29
+回	hui2	VERB:reply/return	VERB/NUM 82/16
+分子	fen1zi3	NOUN:member/constituent	NOUN 100
+全部	quan2bu4	NOUN:whole	DET/ADV 55/43
+并且	bing4qie3	ADV:moreover	ADV/CONJ 85/15
+理解	li3jie3	VERB:understand/comprehend	VERB/NOUN 61/39
+言	yan2	VERB:say/talk	VERB/NOUN 82/18
+有些	you3xie1	PRON:some	DET/ADV 71/21
+适应	shi4ying4	VERB:adapt	VERB 96
+台湾	Tai2wan1	NOUN:Taiwan	NOUN 100
+成功	cheng2gong1	VERB:succeed/be-a-success	VERB/NOUN 52/35
+同志	tong2zhi4	NOUN:comrade	NOUN 100
+式	#4:shi4	NOUN:pattern/formula	NOUN/ADJ 56/41
+状况	zhuang4kuang4	NOUN:status	NOUN 100
+卫生	wei4sheng1	NOUN:hygiene	NOUN 100
+仍	reng2	ADV:nevertheless	ADV 100
+成本	cheng2ben3	NOUN:net-cost	NOUN 100
+机	ji1	NOUN:machine	NOUN 97
+需求	xu1qiu2	#2:NOUN:requirement	NOUN 99
+很多	hen3duo1	ADJ:very-many	NUM 94
+例如	li4ru2	ADV:e.g.	ADV 100
+对象	dui4xiang4	NOUN:target	NOUN 100
+数	shu4	NOUN:number/figure	NOUN/NUM 67/23
+明显	ming2xian3	ADJ:clear/obvious	VERB/ADV/ADJ 52/27/21
+关	guan1	NOUN:barrier/check	NOUN/VERB 63/29
+强调	qiang2diao4	VERB:emphasize/stress	VERB 99
+期间	qi1jian1	NOUN:time/-period	NOUN 100
+准备	zhun4bei4	VERB:prepare/plan	VERB/NOUN 66/34
+指	#2:zhi3	VERB:point	VERB 100
+中共	Zhong1gong4	NOUN:Chinese-Communist-Party	NOUN 100
+作者	zuo4zhe3	NOUN:author	NOUN 100
+工资	gong1zi1	NOUN:wages	NOUN 100
+因而	yin1er2	ADV:consequently	ADV 100
+青年	qing1nian2	NOUN:youth	NOUN 100
+普遍	pu3bian4	ADJ:universal/general	ADV/ADJ/VERB 46/36/18
+西方	xi1fang1	NOUN:west	NOUN 100
+快	kuai4	ADJ:fast/quick	VERB/ADV 53/40
+犯罪	fan4zui4	NOUN:crime	NOUN 95
+马克思	Ma3ke4si1	NOUN:Marx	NOUN 100
+上述	shang4shu4	ADJ:above-mentioned	ADJ 100
+美元	Mei3yuan2	MEAS:U.S.-dollar	NUM/NOUN 84/16
+宣传	xuan1chuan2	NOUN:dissemination/publicity	NOUN/VERB 80/20
+妇女	fu4nv3	NOUN:women	NOUN 100
+减少	jian3shao3	VERB:reduce	VERB 96
+相互	xiang1hu4	ADV:mutually/reciprocally	ADV/ADJ/PRON 60/30/11
+反对	fan3dui4	VERB:oppose	VERB/NOUN 87/12
+保持	bao3chi2	VERB:keep/maintain	VERB 100
+分别	fen1bie2	ADV:separately	ADV 99
+模式	mo2shi4	NOUN:pattern	NOUN 100
+政	#2:zheng4	#2:NOUN:government	NOUN 100
+如此	ru2ci3	ADV:in-this-way/as-such	ADV/PRON/VERB 40/33/22
+团	tuan2	NOUN:regiment	NOUN 96
+逐步	zhu2bu4	ADV:step-by-step/progressively	ADV 93
+客观	ke4guan1	ADJ:objective	ADJ/NOUN/VERB 62/16/15
+极	#4:ji2	ADV:extremely	ADV/NOUN 89/10
+尤其	you2qi2	#2:ADV:especially	ADV 100
+文件	wen2jian4	NOUN:document	NOUN 100
+副	fu4	NOUN:assistant	NOUN 96
+应用	ying4yong4	NOUN:application/practice	NOUN/VERB 69/23
+国民党	Guo2min2dang3	NOUN:KMT	NOUN 100
+主席	zhu3xi2	NOUN:chair-of-a-meeting	NOUN 100
+版	ban3	NOUN:edition/newspaper-page	NOUN 93
+培养	pei2yang3	VERB:nurture/foster	VERB/NOUN 81/19
+道	#2:dao4	NOUN:path	NOUN/VERB 84/14
+值	zhi2	#2:NOUN:value	NOUN/VERB 90/10
+费	fei4	NOUN:cost	NOUN 98
+改造	gai3zao4	VERB:transform/remold	NOUN/VERB 81/19
+见	#2:jian4	VERB:see	VERB 99
+区域	qu1yu4	#2:NOUN:region	NOUN 97
+展	zhan3	NOUN:-exhibition	NOUN/VERB 89/11
+学术	xue2shu4	NOUN:learning	NOUN 100
+完善	wan2shan4	ADJ:perfect/consummate	VERB 87
+概念	gai4nian4	#2:NOUN:idea	NOUN 100
+符合	fu2he2	VERB:conform	VERB 99
+厂	#2:chang3	NOUN:factory	NOUN 99
+教师	jiao4shi1	NOUN:teacher	NOUN 100
+心理	xin1li3	NOUN:psychology	NOUN 100
+发表	fa1biao3	VERB:publish	VERB 98
+召开	zhao4kai1	VERB:convene	VERB 98
+表	biao3	NOUN:table/list	NOUN/VERB 75/25
+一起	yi4qi3	ADV:together	ADV 94
+交通	jiao1tong1	NOUN:traffic	NOUN 100
+设	#2:she4	#3:VERB:establish	VERB 94
+行动	xing2dong4	#3:NOUN:action	NOUN 97
+国务院	Guo2wu4yuan4	NOUN:State-Council	NOUN 100
+错误	cuo4wu4	NOUN:error/mistake	NOUN/VERB/ADJ 52/27/20
+然后	ran2hou4	ADV:after-that	ADV 100
+广泛	guang3fan4	ADJ:extensive/wide-ranging	VERB/ADV/ADJ 48/33/19
+先进	xian1jin4	ADJ:advanced	ADJ/VERB 78/21
+培训	pei2xun4	NOUN:training	NOUN/VERB 88/12
+采用	cai3yong4	VERB:select-for-use	VERB 100
+态度	tai4du5	NOUN:manner/bearing	NOUN 100
+相关	xiang1guan1	ADJ:interrelated	ADJ/VERB 76/23
+特	te4	ADV:specially/for-a-special-purpose	NOUN/ADV 69/25
+一直	yi4zhi2	ADV:(in-a)-straight-(line)/all-along	ADV 100
+方针	fang1zhen1	#2:NOUN:policy	NOUN 100
+帮助	bang1zhu4	VERB:help/assist	VERB/NOUN 67/33
+强	qiang2	ADJ:strong/powerful	VERB/ADJ/NOUN 65/21/11
+体现	ti3xian4	VERB:embody/give-expression-to	VERB/NOUN 87/13
+解释	jie3shi4	VERB:explain/interpret	VERB/NOUN 59/41
+销售	xiao1shou4	VERB:sell/market	NOUN/VERB 89/11
+往往	wang3wang3	ADV:often	ADV 100
+特征	te4zheng1	#2:NOUN:characteristic	NOUN 100
+界	#2:jie4	NOUN:boundary	NOUN 99
+仅	jin3	#2:ADV:only	ADV 100
+史	#2:shi3	#2:NOUN:history	NOUN 100
+仍然	reng2ran2	#2:ADV:nevertheless	ADV 100
+先生	xian1sheng5	NOUN:mister	NOUN 100
+评价	ping2jia4	VERB:appraise/evaluate	NOUN/VERB 89/11
+优势	you1shi4	NOUN:superiority	NOUN 97
+人才	ren2cai2	NOUN:talented-person	NOUN 100
+无法	wu2fa3	ADV:unable	ADV 100
+程序	cheng2xu4	NOUN:procedure/sequence	NOUN 93
+队	#2:dui4	NOUN:line-of-people	NOUN 98
+丰富	feng1fu4	ADJ:rich/adundant	VERB/ADJ 84/12
+生产力	sheng1chan3li4	NOUN:productivity	NOUN 100
+粮食	liang2shi5	NOUN:grain-food	NOUN 100
+多数	duo1shu4	NOUN:majority	NUM/NOUN 63/37
+参与	can1yu4	VERB:participate-in	VERB 91
+复杂	fu4za2	ADJ:complicated/complex	VERB/ADJ 69/30
+义	#2:yi4	NOUN:righteousness/meaning	NOUN 95
+成果	cheng2guo3	NOUN:achievement	NOUN 100
+超过	chao1guo4	VERB:exceed	VERB 97
+基金	ji1jin1	#2:NOUN:fund	NOUN 100
+文明	wen2ming2	NOUN:civilization/culture	NOUN 91
+规范	gui1fan4	NOUN:norm/standard	NOUN/VERB 60/38
+不过	bu5guo4	#3:ADV:only	ADV 100
+相对	xiang1dui4	ADV:relatively/comparatively	ADV/ADJ 78/16
+子	zi3	NOUN:son/seed	NOUN 86
+状态	zhuang4tai4	NOUN:state-of-affairs	NOUN 100
+批准	pi1zhun3	VERB:approve/sanction	VERB/NOUN 86/14
+发达	fa1da2	ADJ:developed/fluorishing	ADJ/VERB 61/37
+交易	jiao1yi4	NOUN:deal/transaction	NOUN 95
+制造	zhi4zao4	VERB:manufacture/fabricate	NOUN/VERB 64/36
+保障	bao3zhang4	VERB:ensure/guarantee	NOUN/VERB 75/25
+进步	jin4bu4	VERB:progress/improve	NOUN/VERB 87/13
+本身	ben3shen1	PRON:itself	PRON 99
+对外	dui4wai4	ADJ:foreign/external	ADJ/ADV 89/11
+卷	juan3	MEAS:spool/cylindrical-mass	NUM/NOUN 50/47
+档案	dang4an4	NOUN:record/archive	NOUN 100
+品	pin3	NOUN:article/product	NOUN 92
+推动	tui1dong4	VERB:promote/spur-forward	VERB/NOUN 85/15
+安排	an1pai2	VERB:arrange/plan	VERB/NOUN 64/36
+代	#2:dai4	NOUN:generation/historical-period	NOUN/VERB/NUM 60/19/18
+便	#2:bian4	ADV:in-that-case/then	ADV 96
+形势	#2:xing2shi4	NOUN:situation/terrain	NOUN 100
+介绍	jie4shao4	VERB:introduce/recommend	VERB/NOUN 84/16
+一部分	yi2bu4fen1	NOUN:part-of	NUM/NOUN 82/18
+创新	chuang4xin1	VERB:bring-forth-new-ideas/blaze-new-trails	NOUN/VERB 82/17
+居民	ju1min2	NOUN:resident	NOUN 100
+共产党	Gong4chan3dang3	NOUN:Communist-Party	NOUN 100
+形象	xing2xiang4	NOUN:image/imagery	NOUN 99
+正在	zheng4zai4	ADV:in-the-process-of-	ADV 100
+进入	jin4ru4	VERB:enter/get-into	VERB 99
+成员	cheng2yuan2	NOUN:member	NOUN 100
+指标	zhi3biao1	NOUN:target/quota	NOUN 100
+调查	diao4cha2	VERB:investigate	NOUN/VERB 87/13
+货币	huo4bi4	NOUN:money/currency	NOUN 99
+办	ban4	VERB:attend-to/set-up	VERB 93
+利于	li4yu2	VERB:be-of-advantage-to	VERB 100
+证明	zheng4ming2	VERB:prove/testify	VERB/NOUN 82/18
+构成	gou4cheng2	VERB:constitute/make-up	VERB/NOUN 86/14
+在于	zai4yu2	VERB:be-determined-by/lie-in	VERB 100
+平均	ping2jun1	ADJ:average	ADJ/ADV 59/38
+举行	ju3xing2	VERB:hold-a-meeting	VERB 99
+生命	sheng1ming4	NOUN:life	NOUN 100
+外国	wai4guo2	NOUN:foreign-country	NOUN 100
+满足	man3zu2	ADJ:contented/satisfied	VERB/NOUN 85/15
+建	#3:jian4	VERB:build	VERB/NOUN 71/29
+迅速	xun4su4	ADV:speedily/rapidly	ADV/VERB/ADJ 64/24/12
+限制	xian4zhi4	NOUN:restriction/limit	NOUN/VERB 56/44
+从事	cong2shi4	VERB:be-engaged-in/deal-with	VERB 100
+大家	da4jia1	PRON:everyone	PRON 99
+方向	fang1xiang4	NOUN:direction/orientation	NOUN 100
+共和国	gong4he2guo2	NOUN:republic	NOUN 100
+权力	#2:quan2li4	NOUN:power/authority	NOUN 100
+自身	zi4shen1	PRON:self/oneself	PRON 100
+数据	shu4ju4	NOUN:data	NOUN 100
+为什么	wei4shen2me5	ADV:why?	ADV 99
+音乐	yin1yue4	NOUN:music	NOUN 100
+税	shui4	NOUN:tax/duty	NOUN 100
+既	ji4	CONJ:since/now-that	CONJ/ADV 60/40
+称	cheng1	VERB:call/name	VERB 97
+原	#3:yuan2	ADJ:primary/original	ADJ/NOUN/ADV 37/36/27
+网络	wang3luo4	NOUN:computer-network	NOUN 100
+广大	guang3da4	ADJ:vast/wide	ADJ 97
+资	zi1	NOUN:money/expenses	NOUN 96
+贡献	gong4xian4	NOUN:contribution	NOUN 94
+恢复	hui1fu4	VERB:resume/restore	VERB 93
+巨大	ju4da4	ADJ:huge/gigantic	ADJ/VERB 64/35
+作家	zuo4jia1	NOUN:writer	NOUN 100
+远	yuan3	ADJ:far/distant	ADV/VERB 66/28
+左右	zuo3you4	PRT:-more-or-less/-about	PRT/VERB 73/21
+你们	ni3men5	PRON:y'all	PRON 100
+任	ren4	VERB:assume-a-post/appoint	VERB/NOUN 51/43
+曾	ceng2	ADV:once/formerly	ADV 98
+英国	Ying1guo2	NOUN:England	NOUN 100
+公共	gong1gong4	ADJ:public/communal	ADJ 99
+一条	yi4tiao2	NOUN:one-strip	NUM/ADJ/ADV/VERB 51/15/14/11
+尽管	jin3guan3	CONJ:despite	CONJ 99
+道德	dao4de2	NOUN:morals/ethics	NOUN 98
+利	#2:li4	#2:NOUN:profit	NOUN/VERB 77/20
+心	#2:xin1	NOUN:heart/mind	NOUN 93
+协调	xie2tiao2	VERB:coordinate/harmonize	VERB/NOUN 59/41
+导致	dao3zhi4	VERB:lead-to/result-in	VERB 100
+解放	jie3fang4	NOUN:liberation/emancipation	NOUN/VERB 51/49
+决策	jue2ce4	NOUN:policy-decision	NOUN 98
+读者	du2zhe3	NOUN:reader	NOUN 100
+贷款	dai4kuan3	NOUN:loan	NOUN 96
+题	#2:ti2	NOUN:topic	NOUN/VERB 74/26
+运输	yun4shu1	NOUN:transport/conveyance	NOUN 98
+数量	shu4liang4	NOUN:quantity/amount	NOUN 99
+证	#3:zheng4	NOUN:certificate	NOUN 89
+同样	tong2yang4	ADJ:same/similar	ADV/ADJ 73/25
+运用	yun4yong4	VERB:utilize/wield	VERB/NOUN 85/15
+一致	yi2zhi4	ADJ:identical/unaninmouns	VERB/ADJ/ADV/NOUN 43/26/17/14
+故事	gu4shi5	NOUN:tale/plot	NOUN 100
+号	hao4	NOUN:number	NOUN/NUM 82/18
+更加	geng4jia1	#2:ADV:even-more	ADV 97
+建议	jian4yi4	NOUN:proposal/suggestion	NOUN/VERB 51/49
+系列	xi4lie4	NOUN:set/series	NUM/NOUN 73/22
+宗教	zong1jiao4	NOUN:religion	NOUN 100
+必然	bi4ran2	ADJ:inevitable/certain	ADV/ADJ 65/28
+职业	zhi2ye4	NOUN:occupation/vocation	NOUN/ADJ 75/25
+近	#2:jin4	ADJ:near/close	ADV 82
+米	mi3	NOUN:rice/one-meter	NOUN/NUM 56/43
+电影	dian4ying3	NOUN:movie	NOUN 100
+部队	bu4dui4	NOUN:army/troops	NOUN 100
+方案	fang1an4	NOUN:plan/scheme	NOUN 100
+旅游	lv3you2	NOUN:tour/tourism	NOUN 93
+吗	ma5	PRT:(question-particle)	PRT 100
+无论	wu2lun4	CONJ:Regardless-of-	ADV 90
+此外	ci3wai4	#2:CONJ:moreover	ADV 100
+增	zeng1	#3:VERB:increase	VERB/NOUN 79/19
+交流	jiao1liu2	VERB:exchange-(information)	NOUN/VERB 88/12
+共	gong4	ADV:together/altogether	ADV/NOUN 85/11
+突出	tu1chu1	VERB:highlight/stress	VERB/ADJ 81/19
+学院	xue2yuan4	NOUN:college/institute	NOUN 100
+务	#2:wu4	NOUN:affair/business	NOUN 94
+似乎	si4hu1	ADV:seemingly	ADV 96
+听	ting1	VERB:listen/hear	VERB 99
+多年	duo1nian2	ADV:for-many-years	NOUN/ADV 52/48
+计算	ji4suan4	VERB:count/calculate	VERB/NOUN 78/22
+难	nan2	ADJ:hard/difficult	ADV/VERB/NOUN 63/25/11
+感到	gan3dao4	VERB:feel-(a-feeling)	VERB 100
+水	shui3	NOUN:water	NOUN 100
+胜利	sheng4li4	NOUN:victory	NOUN 93
+效果	xiao4guo3	NOUN:effect/result	NOUN 100
+道路	dao4lu4	NOUN:road/way	NOUN 100
+计	#2:ji4	VERB:count/gauge	VERB/NOUN 55/45
+金	jin1	NOUN:gold	NOUN/ADJ 90/10
+缺乏	que1fa2	VERB:lack/be-short-of	VERB 100
+电子	dian4zi5	NOUN:electron	NOUN 100
+不足	bu4zu2	ADJ:insufficient/inadequate	VERB/NOUN 79/19
+组成	zu3cheng2	#2:VERB:make-up/constitute	VERB/NOUN 69/31
+当前	dang1qian2	NOUN:the-present/here-and-now	NOUN 100
+简单	jian3dan1	ADJ:simple/uncomplicated	VERB/ADJ 68/26
+县	#2:xian4	NOUN:county	NOUN 100
+编辑	bian1ji2	VERB:edit/compile	VERB/NOUN 52/48
+风险	feng1xian3	NOUN:risk/hazard	NOUN 100
+章	zhang1	MEAS:chapter	NUM/NOUN 76/22
+有人	you3ren2	PRON:some-people	PRON 99
+工具	gong1ju4	NOUN:tool/instrument	NOUN 100
+速度	su4du4	NOUN:speed/velocity	NOUN 100
+就业	jiu4ye4	NOUN:obtain-employment/get-a-job	NOUN/VERB 90/10
+汽车	qi4che1	NOUN:car/motor-vehicle	NOUN 100
+严格	yan2ge2	ADJ:strict/rigorous	ADV/VERB/ADJ 54/34/12
+表明	biao3ming2	VERB:make-known/indicate	VERB 100
+商	shang1	#2:NOUN:commerce	NOUN 96
+下降	xia4jiang4	VERB:descend/go-down	VERB/NOUN 88/12
+属于	shu3yu2	VERB:belong-to/be-part-of	VERB 100
+除了	chu2le5	PREP:except/besides	PREP 100
+加以	jia1yi3	VERB:needs/(way-to-do-preceeding-need:)	VERB 100
+均	#2:jun1	ADV:evenly/missing-none	ADV 97
+各地	ge4di4	NOUN:various-places	NOUN 97
+改善	gai3shan4	VERB:improve/better	VERB/NOUN 76/24
+少数	shao3shu4	NOUN:a-small-number/minority	ADJ/NUM/NOUN 46/44/10
+电话	dian4hua4	NOUN:telephone	NOUN 100
+劳动力	lao2dong4li4	NOUN:labor-force	NOUN 100
+形态	xing2tai4	NOUN:form/shape	NOUN 100
+觉得	jue2de5	VERB:feel/believe-(idea)	VERB 100
+以前	yi3qian2	ADV:before/formerly	PRT/NOUN 57/43
+余	#2:yu2	NOUN:surplus/remainder	NUM/NOUN 71/26
+比例	bi3li4	NOUN:proportion	NOUN 100
+依据	yi1ju4	#2:NOUN:base/foundation	NOUN/PREP 65/32
+双方	shuang1fang4	NOUN:both-sides	PRON 100
+反	fan3	VERB:turn-over/oppose	VERB/ADJ 71/24
+合	#2:he2	VERB:close/suit	NOUN/VERB 58/41
+小说	xiao3shuo1	NOUN:novel	NOUN 100
+相同	xiang1tong2	ADJ:identical/same	VERB/ADJ 85/15
+机会	ji1hui4	NOUN:opportunity	NOUN 100
+设施	she4shi1	NOUN:installation/faciity	NOUN 100
+逐渐	zhu2jian4	ADV:gradually	ADV 99
+学者	xue2zhe3	NOUN:scholar	NOUN 100
+深	shen1	ADJ:deep/dark-color	VERB/ADV/ADJ 35/34/23
+掌握	zhang3wo4	VERB:grasp/know-well	VERB 97
+事情	shi4qing5	#2:NOUN:issue/matter/thing	NOUN 100
+观	#2:guan1	NOUN:view/outlook	NOUN 94
+通知	tong1zhi1	NOUN:notice/circular	NOUN/VERB 68/32
+各国	ge4guo2	NOUN:each-country	NOUN 71
+所谓	suo3wei4	ADJ:so-called/what-is-called	ADJ 95
+战	#2:zhan4	#2:NOUN:war	NOUN 95
+另外	ling4wai4	ADJ:additional/another	ADV/DET 77/21
+面积	mian4ji1	NOUN:area-(geometry)	NOUN 99
+路	lu4	#2:NOUN:road/way	NOUN 97
+给予	ji3yu3	#2:VERB:give	VERB 100
+趋势	qu1shi4	NOUN:trend/tendency	NOUN 100
+怎样	zen3yang4	#2:ADV:how?	ADV/VERB/ADJ 64/22/13
+申请	shen1qing3	NOUN:application-(paperwork)	NOUN/VERB 62/38
+委	wei3	VERB:entrust/appoint	NOUN/VERB 83/17
+然	ran2	#5:CONJ:but	ADV/VERB/NOUN 57/31/11
+正式	zheng4shi4	ADJ:formal/official	ADV/ADJ 65/32
+发行	fa1xing2	VERB:issue/publish	VERB/NOUN 65/35
+产值	chan3zhi2	NOUN:production-value	NOUN 100
+信	xin4	NOUN:letter-(mail)	NOUN 91
+角度	jiao3du4	NOUN:angle-(geometry)	NOUN 100
+深入	shen1ru4	VERB:go-deep-into	VERB/ADV/ADJ/NOUN 41/31/16/12
+各个	ge4ge5	#2:PRON:each	DET 100
+事件	shi4jian4	NOUN:incident/event	NOUN 100
+公	#2:gong1	ADJ:public	NOUN/ADJ 74/18
+额	e2	NOUN:quota/forehead	NOUN 95
+文字	wen2zi4	NOUN:writing/characters	NOUN 100
+增强	zeng1qiang2	#2:VERB:strengthen	VERB 96
+济	#3:ji4	VERB:aid	NOUN/VERB 89/11
+乡镇	xiang1zhen4	NOUN:villages-and-towns	NOUN 100
+约	yue1	ADV:approximately	ADV/NOUN 75/21
+专门	zhuan1men2	ADJ:specialized/technical	ADV/ADJ 55/45
+只要	zhi3yao4	CONJ:so-long-as/provided	CONJ 93
+空间	kong1jian1	NOUN:space	NOUN 100
+重新	chong2xin1	ADV:anew/afresh	ADV 92
+关键	guan1jian4	NOUN:key/crux	NOUN/ADJ 58/40
+费用	fei4yong4	#2:NOUN:cost	NOUN 100
+维护	wei2hu4	VERB:safeguard/defend	VERB 97
+几乎	ji1hu1	ADV:almost	ADV 100
