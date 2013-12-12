@@ -350,7 +350,7 @@
 流通	liu2tong1	NOUN:circulation	NOUN/VERB 80/20
 敌人	di2ren2	NOUN:enemy	NOUN 100
 老	lao3	ADJ:old	ADJ 81
-找	zhao3	VERB:seek	VERB 100
+找	zhao3	VERB:look-for/seek	VERB 100
 秘书	mi4shu1	NOUN:secretary	NOUN 100
 早	zao3	ADJ:early	ADV/VERB 71/21
 依靠	yi1kao4	VERB:rely-on	VERB 97
@@ -719,7 +719,7 @@
 情绪	qing2xu4	NOUN:mood/morale	NOUN 99
 模型	mo2xing2	NOUN:model/pattern	NOUN 100
 著作	zhu4zuo4	NOUN:works/writings	NOUN 100
-寻找	xun2zhao3	VERB:look-for/seek	VERB 99
+寻找	xun2zhao3	#2:VERB:look-for/seek	VERB 99
 膨胀	peng2zhang4	VERB:expand/inflate	VERB/NOUN 76/24
 营业	ying2ye4	VERB:do-business/trade	NOUN 90
 官	#3:guan1	NOUN:official/officer	NOUN 100
