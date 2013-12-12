@@ -707,7 +707,7 @@
 命	ming4	NOUN:life/command	NOUN/VERB 74/26
 其次	qi2ci4	ADV:secondly/secondarily	ADV 98
 差距	cha1ju4	NOUN:gap/difference	NOUN 100
-策略	ce4lve4	NOUN:tactics	NOUN 100
+策略	ce4lue4	NOUN:tactics	NOUN 100
 宣布	xuan1bu4	VERB:declare/announce	VERB 99
 充满	chong1man3	VERB:fill-to-the-brim	VERB 100
 片	pian4	NOUN:flat-thin-piece\MEAS:slice/scene/mood/expanse	NOUN/NUM 87/11

@@ -666,7 +666,7 @@
 尔	er3	#2:PRON:you	NOUN 97
 重视	zhong4shi4	VERB:attach-importance-to/value	VERB/NOUN 71/29
 回	hui2	VERB:reply/return	VERB/NUM 82/16
-分子	fen1zi3	NOUN:member/constituent	NOUN 100
+分子	fen4zi3	NOUN:member/constituent	NOUN 100
 全部	quan2bu4	NOUN:whole	DET/ADV 55/43
 并且	bing4qie3	ADV:moreover	ADV/CONJ 85/15
 理解	li3jie3	VERB:understand/comprehend	VERB/NOUN 61/39
