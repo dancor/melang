@@ -279,7 +279,7 @@
 行政	xing2zheng4	99	NOUN	NOUN:administration
 只	zhi3	96	ADV	ADV:only
 个人	ge4ren2	99	NOUN	NOUN:individual
-认识	ren4shi5	55/45	VERB/NOUN	VERB:know/recognize
+认识	ren4shi5	55/45	VERB/NOUN	VERB:know/recognize\NOUN:knowledge
 信息	xin4xi1	100	NOUN	NOUN:information
 该	gai1	84/16	DET/VERB	PRON:said/given
 所以	suo3yi3	97	ADV	#2:CONJ:therefore
@@ -2712,7 +2712,7 @@
 规章	gui1zhang1	100	NOUN	NOUN:
 港	gang3	99	NOUN	NOUN:
 敢	#2:gan3	100	VERB	VERB:
-害	hai4	68/32	VERB/NOUN	VERB:
+害	hai4	68/32	VERB/NOUN	NOUN:harm\ADJ:harmful\VERB:harm
 中外	zhong1wai4	100	NOUN	NOUN:
 口号	kou3hao4	100	NOUN	NOUN:
 水利	shui3li4	100	NOUN	NOUN:
@@ -3168,7 +3168,7 @@
 延长	yan2chang2	90/10	VERB/NOUN	VERB:
 缓慢	huan3man4	84/12	VERB/ADV	VERB:
 最新	zui4xin1	90	ADJ	ADJ:
-损	sun3	60/40	NOUN/VERB	NOUN:
+损	sun3	60/40	NOUN/VERB	VERB:damage
 村庄	cun1zhuang1	100	NOUN	NOUN:
 民政	min2zheng4	99	NOUN	NOUN:
 构建	gou4jian4	100	VERB	VERB:
@@ -3543,7 +3543,7 @@
 承	#4:cheng2	66/34	VERB/NOUN	VERB:undertake
 辑	#6:ji2	54/23/20	NOUN/NUM/VERB	NOUN:
 罢工	ba4gong1	90	NOUN	NOUN:
-轻松	qing1song1	79/18	VERB/NOUN	VERB:
+轻松	qing1song1	79/18	VERB/NOUN	ADJ:relaxed
 贵族	gui4zu2	99	NOUN	NOUN:
 事宜	#2:shi4yi2	100	NOUN	NOUN:
 静	#3:jing4	94	VERB	VERB:
@@ -3701,7 +3701,7 @@
 调研	diao4yan2	85/13	NOUN/VERB	NOUN:
 筹集	chou2ji2	84/16	VERB/NOUN	VERB:
 解放区	Jie3fang4qu1	100	NOUN	NOUN:
-放松	fang4song1	89/11	VERB/NOUN	VERB:
+放松	fang4song1	89/11	VERB/NOUN	VERB:relax/loosen
 啊	a5	90	PRT	PRT:
 投产	tou2chan3	88/12	VERB/NOUN	VERB:
 周转	zhou1zhuan3	73/27	NOUN/VERB	NOUN:
@@ -4780,7 +4780,7 @@
 婴儿	ying1er2	100	NOUN	NOUN:
 机电	ji1dian4	100	NOUN	NOUN:
 培	pei2	59/38	NOUN/VERB	NOUN:
-泛	#3:fan4	66/20/15	VERB/NOUN/ADJ	VERB:
+泛	#3:fan4	66/20/15	VERB/NOUN/ADJ	VERB:flood/inundate
 滥用	lan4yong4	89/11	VERB/NOUN	VERB:
 粉碎	fen3sui4	100	VERB	VERB:
 推测	tui1ce4	74/26	VERB/NOUN	VERB:
@@ -6733,7 +6733,7 @@
 思想性	si1xiang3xing4	91	NOUN	NOUN:
 穆	#5:mu4	96	NOUN	NOUN:
 含糊	han2hu2	94	VERB	VERB:
-挑	tiao1	60/40	VERB/NOUN	VERB:
+挑	tiao1	60/40	VERB/NOUN	VERB:choose/select
 口径	kou3jing4	100	NOUN	NOUN:
 危及	wei1ji2	100	VERB	VERB:
 奶奶	nai3nai5	100	NOUN	NOUN:
@@ -6897,7 +6897,7 @@
 何在	he2zai4	98	VERB	VERB:
 特大	te4da4	100	ADJ	ADJ:
 世贸	Shi4mao4	98	NOUN	NOUN:
-侵	#2:qin1	52/41	VERB/NOUN	VERB:
+侵	#2:qin1	52/41	VERB/NOUN	VERB:invade
 音像	yin1xiang4	100	NOUN	NOUN:
 政变	zheng4bian4	94	NOUN	NOUN:
 黄昏	huang2hun1	100	NOUN	NOUN:
@@ -18932,7 +18932,7 @@
 化名	hua4ming2	92	NOUN	?
 纳尔逊	Na4er3xun4	70	NOUN	?
 丰饶	feng1rao2	53/43	VERB/NOUN	?
-深深	shen1shen1	66/24/10	ADV/VERB/ADJ	?
+深深	shen1shen1	66/24/10	ADV/VERB/ADJ	ADV:deeply\ADJ:deep
 贵人	gui4ren2	97	NOUN	?
 父兄	fu4xiong1	97	NOUN	?
 锁链	suo3lian4	96	NOUN	?

@@ -4,6 +4,7 @@
 import Control.DeepSeq
 import Control.Monad
 import Data.Char
+import qualified Data.HashMap.Strict as HMS
 import Data.List
 import Data.List.Split
 import qualified Data.Map.Strict as Map
@@ -27,14 +28,28 @@ kiloDeckDir = "/home/danl/p/l/melang/data/cmn/kilo-deck"
 intToDeckName :: Int -> FilePath
 intToDeckName n = "mando-gloss-" ++ show n ++ "k.txt"
 
-writeKiloDeck :: FilePath -> Dict -> IO ()
-writeKiloDeck f = DTI.writeFile f . DT.unlines . map (\entry ->
-    eWord entry <> "\t" <> ePinyin entry <> "\t" <> eGloss entry <> "\t" <>
-    DT.replace "ADP" "PREP" (eSpParts entry) <> " " <> eSpPartFreqs entry)
+prepSubEntry :: WdDict -> DT.Text -> DT.Text
+prepSubEntry wdDict word = "<br>" <> word <> " " <>
+    case HMS.lookup word wdDict of
+      Nothing -> "?"
+      Just entry -> DT.intercalate " " [ePinyin entry, eGloss entry,
+        DT.replace "ADP" "PREP" (eSpPartsq entry), eSpPartFreqs entry]
 
-writeKiloDecks :: FilePath -> Dict -> IO ()
-writeKiloDecks dir = zipWithM_
-    (\n -> writeKiloDeck (dir </> intToDeckName n)) [1..] . chunksOf 1000
+prepEntry :: WdDict -> DictEntry -> DT.Text
+prepEntry wdDict entry =
+    eWord entry <> "\t" <> ePinyin entry <> "\t" <> eGloss entry <> "\t" <>
+    DT.replace "ADP" "PREP" (eSpPartsq entry) <> " " <> eSpPartFreqs entry <>
+    if DT.length (eWord entry) == 1
+      then ""
+      else 
+        DT.concat . map (prepSubEntry wdDict . DT.singleton) $ DT.unpack entry
+
+writeKiloDeck :: FilePath -> WdDict -> Dict -> IO ()
+writeKiloDeck f wdDict = DTI.writeFile f . DT.unlines . map (prepEntry wdDict)
+
+writeKiloDecks :: FilePath -> WdDict -> Dict -> IO ()
+writeKiloDecks dir wdDict = zipWithM_ (\n ->
+    writeKiloDeck wdDict (dir </> intToDeckName n)) [1..] . chunksOf 1000
 
 prefNum :: Int -> DT.Text
 prefNum n = DT.pack ('#' : show n ++ ":")
@@ -78,8 +93,9 @@ entryKillNums entry = entry
 
 main :: IO ()
 main = do
-    dict <- loadDict
-    let dict' = deDupeGlosses $!! deDupePinyins $!! map entryKillNums dict
-    writeDict $!! dict'
-    writeKiloDecks kiloDeckDir $!!
-        takeWhile (not . glossIsEmpty . eGloss) $!! dict'
+    oldDict <- loadDict
+    let dict = deDupeGlosses . deDupePinyins $ map entryKillNums oldDict
+        wdDict = dictToWdDict dict
+    writeDict dict
+    writeKiloDecks kiloDeckDir $
+        takeWhile (not . glossIsEmpty . eGloss) dict
