@@ -237,7 +237,7 @@
 认	#2:ren4	#2:VERB:acknowledge/recognize	VERB/NOUN 82/18
 面临	mian4lin2	VERB:be-faced-with	VERB 100<br>面 mian4 NOUN:face NOUN 94<br>临 #3:lin2 NOUN: NOUN/VERB/ADJ 52/31/15
 死亡	si3wang2	#2:VERB:die	VERB/NOUN 65/35<br>死 si3 VERB:die VERB 91<br>亡 #2:wang2 VERB: VERB/NOUN 69/31
-战斗	zhan4dou4	NOUN:battle	NOUN/VERB 84/15<br>战 #2:zhan4 #2:NOUN:war NOUN 95<br>斗 dou4 VERB: VERB/NOUN 67/31
+战斗	zhan4dou4	NOUN:battle	NOUN/VERB 84/15<br>战 #2:zhan4 #2:NOUN:war NOUN 95<br>斗 dou4 VERB:fight/struggle-against VERB/NOUN 67/31
 一下	yi2xia4	ADV:in-a-short-while/all-at-once	ADV 100<br>一 yi1 NUM:1 NUM 89<br>下 xia4 PRT:down PRT/VERB 72/17
 今年	jin1nian2	NOUN:this-year	NOUN 100<br>今 #2:jin1 NOUN: NOUN 94<br>年 nian2 MEAS:year NOUN/NUM 67/32
 部长	bu4zhang3	NOUN:minister/section-head	NOUN 100<br>部 #2:bu4 NOUN:part NOUN/NUM 79/21<br>长 chang2 ADJ:long NOUN/VERB/ADJ 52/31/13
@@ -537,7 +537,7 @@
 谈判	tan2pan4	NOUN:negotiations/talks	NOUN 95<br>谈 tan2 VERB:talk/chat VERB 94<br>判 pan4 VERB:judge/sentence\NOUN:legal-sentence VERB/NOUN 68/32
 西部	xi1bu4	NOUN:western-part/the-west	NOUN 100<br>西 xi1 #2:NOUN:west NOUN 99<br>部 #2:bu4 NOUN:part NOUN/NUM 79/21
 想到	xiang3dao4	VERB:think-of/call-to-mind	VERB 100<br>想 xiang3 VERB:think VERB 100<br>到 dao4 VERB:arrive VERB 89
-违反	wei2fan3	VERB:violate/run-counter-to	VERB 100<br>违 #4:wei2 NOUN: NOUN/VERB 71/29<br>反 fan3 VERB:turn-over/oppose VERB/ADJ 71/24
+违反	wei2fan3	VERB:violate/run-counter-to	VERB 100<br>违 #4:wei2 VERB:violate/disobey NOUN/VERB 71/29<br>反 fan3 VERB:turn-over/oppose VERB/ADJ 71/24
 争	zheng1	VERB:contend/dispute	VERB/NOUN 71/28
 地产	di4chan3	NOUN:real-estate	NOUN 100<br>地 #2:de5 PRT:-ly PRT/NOUN 76/24<br>产 chan3 #2:VERB:produce NOUN/VERB/ADJ 45/31/24
 算	suan4	#2:VERB:count/calculate	VERB 98
@@ -756,7 +756,7 @@
 主持	zhu3chi2	VERB:preside-over	VERB 91<br>主 zhu3 NOUN:master NOUN/ADJ 68/25<br>持 chi2 #2:VERB:keep/maintain VERB 98
 转化	zhuan3hua4	VERB:transform	VERB/NOUN 74/26<br>转 zhuan3 VERB:turn VERB 95<br>化 hua4 NOUN:change NOUN/VERB 59/35
 慢	man4	ADJ:slow\VERB:slow/postpone	VERB/ADV/ADJ 63/19/11
-进攻	jin4gong1	VERB:attack	VERB/NOUN 48/48<br>进 jin4 VERB:advance/enter VERB/NOUN 82/18<br>攻 #5:gong1 NOUN: NOUN/VERB 62/38
+进攻	jin4gong1	VERB:attack	VERB/NOUN 48/48<br>进 jin4 VERB:advance/enter VERB/NOUN 82/18<br>攻 #5:gong1 #2:VERB:attack NOUN/VERB 62/38
 多元	duo1yuan2	ADJ:multi-	ADJ/ADV/NOUN/VERB 38/26/20/16<br>多 duo1 ADJ:many NUM/VERB/ADV 53/26/13<br>元 yuan2 MEAS:dollar NUM/NOUN 90/10
 角色	jue2se4	NOUN:role	NOUN 100<br>角 #2:jiao3 NOUN:angle/horn NOUN/VERB/PRT 70/13/12<br>色 se4 NOUN:color NOUN 92
 侵略	qin1lve4	NOUN:invasion\VERB:invade	NOUN/VERB 77/23<br>侵 #2:qin1 VERB:invade VERB/NOUN 52/41<br>略 lve4 ADV:sligthly\ADJ:brief\VERB:omit ADV/VERB 69/31
@@ -769,12 +769,12 @@
 料	liao4	NOUN:material\VERB:expect	NOUN/VERB 84/16
 信贷	xin4dai4	NOUN:credit	NOUN 100<br>信 xin4 NOUN:letter-(mail) NOUN 91<br>贷 #4:dai4 NOUN: NOUN/VERB 60/40
 明白	ming2bai5	#2:VERB:understand	VERB 91<br>明 #2:ming2 ADJ:bright/next NOUN/VERB 45/38<br>白 bai2 ADJ: ADJ/VERB/NOUN 37/35/28
-岗位	gang3wei4	NOUN:post/job	NOUN 100<br>岗 #2:gang3 NOUN: NOUN 96<br>位 #2:wei4 MEAS:person NUM/NOUN 77/14
+岗位	gang3wei4	NOUN:post/job	NOUN 100<br>岗 #2:gang3 NOUN:hillock NOUN 96<br>位 #2:wei4 MEAS:person NUM/NOUN 77/14
 配置	pei4zhi4	VERB:deploy	NOUN/VERB 67/33<br>配 pei4 VERB:match VERB/NOUN 81/19<br>置 #7:zhi4 VERB: VERB/NOUN 77/23
 标	biao1	NOUN:mark/sign	NOUN 89
 理由	li3you2	NOUN:reason/grounds	NOUN 100<br>理 #2:li3 NOUN:logic NOUN/VERB 82/17<br>由 you2 PREP:by/from PREP 98
-违法	wei2fa3	VERB:break-the-law	ADJ/VERB/NOUN 66/14/11<br>违 #4:wei2 NOUN: NOUN/VERB 71/29<br>法 fa3 NOUN:law/method NOUN 99
+违法	wei2fa3	VERB:break-the-law	ADJ/VERB/NOUN 66/14/11<br>违 #4:wei2 VERB:violate/disobey NOUN/VERB 71/29<br>法 fa3 NOUN:law/method NOUN 99
 划	#3:hua4	VERB:delimit/differentiate	VERB/NOUN 88/11
 铁路	tie3lu4	NOUN:railroad	NOUN 100<br>铁 tie3 NOUN: NOUN 99<br>路 lu4 #2:NOUN:road/way NOUN 97
 吸收	xi1shou1	VERB:absorb	VERB 97<br>吸 #5:xi1 VERB: VERB 93<br>收 shou1 VERB:receive VERB/NOUN 65/33
-奋斗	fen4dou4	VERB:struggle/strive	VERB/NOUN 66/34<br>奋 #2:fen4 NOUN: NOUN/ADV/VERB 33/32/30<br>斗 dou4 VERB: VERB/NOUN 67/31
+奋斗	fen4dou4	VERB:struggle/strive	VERB/NOUN 66/34<br>奋 #2:fen4 VERB:exert-oneself/act-vigorously NOUN/ADV/VERB 33/32/30<br>斗 dou4 VERB:fight/struggle-against VERB/NOUN 67/31

@@ -3823,7 +3823,7 @@
 密度	mi4du4	100	NOUN	NOUN:
 感动	gan3dong4	66/34	VERB/NOUN	VERB:
 空白	kong4bai2	82/18	NOUN/VERB	NOUN:
-斗	dou4	67/31	VERB/NOUN	VERB:
+斗	dou4	67/31	VERB/NOUN	VERB:fight/struggle-against
 股市	gu3shi4	100	NOUN	NOUN:
 人间	ren2jian1	100	NOUN	NOUN:
 部落	bu4luo4	100	NOUN	NOUN:
@@ -5160,7 +5160,7 @@
 巴基斯坦	Ba1ji1si1tan3	100	NOUN	NOUN:
 兼职	jian1zhi2	95	NOUN	NOUN:
 核武器	he2wu3qi4	100	NOUN	NOUN:
-攻	#5:gong1	62/38	NOUN/VERB	NOUN:
+攻	#5:gong1	62/38	NOUN/VERB	#2:VERB:attack
 视角	shi4jiao3	100	NOUN	NOUN:
 大连	Da4lian2	100	NOUN	NOUN:
 毁	hui3	97	VERB	VERB:
@@ -6980,7 +6980,7 @@
 逾期	yu2qi1	58/23/12	ADV/VERB/NOUN	ADV:
 播种	bo1zhong3	68/29	VERB/NOUN	VERB:
 不服	#2:bu4fu2	98	VERB	VERB:
-违	#4:wei2	71/29	NOUN/VERB	NOUN:
+违	#4:wei2	71/29	NOUN/VERB	VERB:violate/disobey
 购置	gou4zhi4	89	VERB	VERB:
 遇见	#2:yu4jian4	100	VERB	VERB:
 延	#6:yan2	69/26	NOUN/VERB	NOUN:
@@ -7499,7 +7499,7 @@
 忙碌	mang2lu4	100	VERB	VERB:
 前列	qian2lie4	100	NOUN	NOUN:
 沉浸	chen2jin4	98	VERB	VERB:
-奋	#2:fen4	33/32/30	NOUN/ADV/VERB	NOUN:
+奋	#2:fen4	33/32/30	NOUN/ADV/VERB	VERB:exert-oneself/act-vigorously
 妙	miao4	49/40/11	VERB/NOUN/ADJ	VERB:
 毕	#6:bi4	84/14	VERB/NOUN	VERB:
 偶然性	ou3ran2xing4	64/33	NOUN/ADJ	NOUN:
@@ -8192,7 +8192,7 @@
 功效	gong1xiao4	100	NOUN	NOUN:
 去向	qu4xiang4	56/43	NOUN/VERB	NOUN:
 磁场	ci2chang3	99	NOUN	NOUN:
-岗	#2:gang3	96	NOUN	NOUN:
+岗	#2:gang3	96	NOUN	NOUN:hillock
 隆	#2:long2	79/21	NOUN/VERB	NOUN:
 残忍	can2ren3	70/18/12	VERB/NOUN/ADJ	VERB:
 新书	xin1shu1	53/18/11	NOUN/VERB/ADJ	NOUN:

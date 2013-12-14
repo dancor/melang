@@ -415,7 +415,7 @@
 目前	mu4qian2	NOUN:the-moment	NOUN 100<br>目 mu4 NOUN:eye/item NOUN/VERB 80/17<br>前 qian2 PRT:front PRT/ADJ/DET 59/20/12
 现代	xian4dai4	ADJ:modern	ADJ 93<br>现 xian4 ADV:just/at-the-time ADV/NOUN/VERB 48/26/20<br>代 #2:dai4 NOUN:generation/historical-period NOUN/VERB/NUM 60/19/18
 现	xian4	ADV:just/at-the-time	ADV/NOUN/VERB 48/26/20
-斗争	dou4zheng1	NOUN:fight	NOUN 96<br>斗 dou4 VERB: VERB/NOUN 67/31<br>争 zheng1 VERB:contend/dispute VERB/NOUN 71/28
+斗争	dou4zheng1	NOUN:fight	NOUN 96<br>斗 dou4 VERB:fight/struggle-against VERB/NOUN 67/31<br>争 zheng1 VERB:contend/dispute VERB/NOUN 71/28
 责任	ze2ren4	NOUN:responsibility/blame	NOUN 100<br>责 #2:ze2 NOUN: NOUN/VERB 74/26<br>任 ren4 VERB:assume-a-post/appoint VERB/NOUN 51/43
 话	#2:hua4	NOUN:speech	NOUN/PRT 60/38
 任何	ren4he2	PRON:any	DET 100<br>任 ren4 VERB:assume-a-post/appoint VERB/NOUN 51/43<br>何 #3:he2 DET:what?/which? DET/ADV/PRON/NOUN 43/27/15/14
