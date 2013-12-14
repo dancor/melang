@@ -684,7 +684,7 @@
 机	ji1	NOUN:machine	NOUN 97
 需求	xu1qiu2	#2:NOUN:requirement	NOUN 99<br>需 xu1 VERB:need/want VERB 91<br>求 qiu2 VERB:beg/request VERB 93
 很多	hen3duo1	ADJ:very-many	NUM 94<br>很 hen3 ADV:very ADV 100<br>多 duo1 ADJ:many NUM/VERB/ADV 53/26/13
-例如	li4ru2	ADV:e.g.	ADV 100<br>例 #4:li4 NOUN: NOUN 81<br>如 ru2 VERB:be-like/measure-up-to ADV/PREP 77/13
+例如	li4ru2	ADV:e.g.	ADV 100<br>例 #4:li4 NOUN:example/instance NOUN 81<br>如 ru2 VERB:be-like/measure-up-to ADV/PREP 77/13
 对象	dui4xiang4	NOUN:target	NOUN 100<br>对 dui4 #2:PREP:for PREP 95<br>象 #3:xiang4 NOUN:appearance/elephant PREP/NOUN 49/42
 数	shu4	NOUN:number/figure	NOUN/NUM 67/23
 明显	ming2xian3	ADJ:clear/obvious	VERB/ADV/ADJ 52/27/21<br>明 #2:ming2 ADJ:bright/next NOUN/VERB 45/38<br>显 xian3 ADJ:obvious/noticeable VERB 93
@@ -947,7 +947,7 @@
 觉得	jue2de5	VERB:feel/believe-(idea)	VERB 100<br>觉 #3:jue2 VERB: VERB/NOUN 71/29<br>得 #3:de5 PRT:(how?:) PRT/VERB 59/40
 以前	yi3qian2	ADV:before/formerly	PRT/NOUN 57/43<br>以 yi3 PREP:using PREP/PRT 71/24<br>前 qian2 PRT:front PRT/ADJ/DET 59/20/12
 余	#2:yu2	NOUN:surplus/remainder	NUM/NOUN 71/26
-比例	bi3li4	NOUN:proportion	NOUN 100<br>比 bi3 PREP:compared-to PREP 87<br>例 #4:li4 NOUN: NOUN 81
+比例	bi3li4	NOUN:proportion	NOUN 100<br>比 bi3 PREP:compared-to PREP 87<br>例 #4:li4 NOUN:example/instance NOUN 81
 依据	yi1ju4	#2:NOUN:base/foundation	NOUN/PREP 65/32<br>依 #2:yi1 PREP: PREP 87<br>据 ju4 PREP:according-to PREP 82
 双方	shuang1fang4	NOUN:both-sides	PRON 100<br>双 shuang1 NUM: NUM 97<br>方 fang1 NOUN:direction NOUN 98
 反	fan3	VERB:turn-over/oppose	VERB/ADJ 71/24
@@ -979,7 +979,7 @@
 发行	fa1xing2	VERB:issue/publish	VERB/NOUN 65/35<br>发 fa1 VERB:send/start VERB/NOUN 73/25<br>行 xing2 ADJ:OK NOUN/VERB 58/41
 产值	chan3zhi2	NOUN:production-value	NOUN 100<br>产 chan3 #2:VERB:produce NOUN/VERB/ADJ 45/31/24<br>值 zhi2 #2:NOUN:value NOUN/VERB 90/10
 信	xin4	NOUN:letter-(mail)	NOUN 91
-角度	jiao3du4	NOUN:angle-(geometry)	NOUN 100<br>角 #2:jiao3 NOUN: NOUN/VERB/PRT 70/13/12<br>度 du4 NOUN:degree NOUN/NUM 74/19
+角度	jiao3du4	NOUN:angle-(geometry)	NOUN 100<br>角 #2:jiao3 NOUN:angle/horn NOUN/VERB/PRT 70/13/12<br>度 du4 NOUN:degree NOUN/NUM 74/19
 深入	shen1ru4	VERB:go-deep-into	VERB/ADV/ADJ/NOUN 41/31/16/12<br>深 shen1 ADJ:deep/dark-color VERB/ADV/ADJ 35/34/23<br>入 ru4 VERB:enter VERB 94
 各个	ge4ge5	#2:PRON:each	DET 100<br>各 ge4 PRON:each DET 97<br>个 ge5 MEAS:(general) NUM 92
 事件	shi4jian4	NOUN:incident/event	NOUN 100<br>事 #3:shi4 NOUN:issue/matter/thing NOUN 98<br>件 jian4 MEAS:item/article NUM/NOUN 57/38

@@ -199,7 +199,7 @@ executable kilo-prep
     main-is:         Main/kilo-prep.hs
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
-    build-depends:
+    build-depends:   transformers
 
 flag extract-wiki-pages
     default: False

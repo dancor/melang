@@ -71,7 +71,7 @@
 改	gai3	#3:VERB:change	VERB/NOUN 59/39
 密切	mi4qie4	ADJ:close/intimate	VERB/ADV/ADJ 38/37/24<br>密 mi4 NOUN: NOUN/VERB/ADV 63/24/13<br>切 qie4 VERB:correspond/fit VERB/NOUN 68/32
 机械	ji1xie4	#2:NOUN:machine	NOUN 100<br>机 ji1 NOUN:machine NOUN 97<br>械 xie4 NOUN: NOUN 99
-特色	te4se4	#3:NOUN:characteristic	NOUN 98<br>特 te4 ADV:specially/for-a-special-purpose NOUN/ADV 69/25<br>色 se4 NOUN: NOUN 92
+特色	te4se4	#3:NOUN:characteristic	NOUN 98<br>特 te4 ADV:specially/for-a-special-purpose NOUN/ADV 69/25<br>色 se4 NOUN:color NOUN 92
 知	#2:zhi1	#2:VERB:know	VERB/NOUN 87/13
 宏观	hong2guan1	ADJ:macro-/macroscopic	ADJ 93<br>宏 #2:hong2 NOUN: NOUN 100<br>观 #2:guan1 NOUN:view/outlook NOUN 94
 除	chu2	#2:PREP:except/besides	PREP/VERB 88/11
@@ -249,7 +249,7 @@
 德国	De2guo2	NOUN:Germany	NOUN 100<br>德 de2 NOUN:morals/virtue NOUN 100<br>国 guo2 #2:NOUN:country NOUN 100
 如下	ru2xia4	VERB:is-as-follows.	VERB/ADJ 62/29<br>如 ru2 VERB:be-like/measure-up-to ADV/PREP 77/13<br>下 xia4 PRT:down PRT/VERB 72/17
 结论	jie2lun4	NOUN:conclusion/verdict	NOUN 97<br>结 #2:jie2 NOUN:knot NOUN/VERB 56/44<br>论 lun4 NOUN:theory NOUN/VERB 77/22
-条例	tiao2li4	NOUN:regulation/rule	NOUN 100<br>条 tiao2 MEAS:strip NUM/NOUN 81/19<br>例 #4:li4 NOUN: NOUN 81
+条例	tiao2li4	NOUN:regulation/rule	NOUN 100<br>条 tiao2 MEAS:strip NUM/NOUN 81/19<br>例 #4:li4 NOUN:example/instance NOUN 81
 支出	zhi1chu1	NOUN:expenditure/disbursement	NOUN 100<br>支 #3:zhi1 MEAS:stick/song/army-unit/watt NOUN/VERB/NUM 36/36/28<br>出 chu1 VERB:go-out VERB 98
 操作	cao1zuo4	VERB:operate-(a-machine)	NOUN/VERB 78/22<br>操 cao1 NOUN: NOUN/VERB 49/45<br>作 zuo4 VERB:do VERB 93
 病	#2:bing4	NOUN:disease/ailment	NOUN 94
@@ -758,12 +758,12 @@
 慢	man4	ADJ:slow\VERB:slow/postpone	VERB/ADV/ADJ 63/19/11
 进攻	jin4gong1	VERB:attack	VERB/NOUN 48/48<br>进 jin4 VERB:advance/enter VERB/NOUN 82/18<br>攻 #5:gong1 NOUN: NOUN/VERB 62/38
 多元	duo1yuan2	ADJ:multi-	ADJ/ADV/NOUN/VERB 38/26/20/16<br>多 duo1 ADJ:many NUM/VERB/ADV 53/26/13<br>元 yuan2 MEAS:dollar NUM/NOUN 90/10
-角色	jue2se4	NOUN:role	NOUN 100<br>角 #2:jiao3 NOUN: NOUN/VERB/PRT 70/13/12<br>色 se4 NOUN: NOUN 92
+角色	jue2se4	NOUN:role	NOUN 100<br>角 #2:jiao3 NOUN:angle/horn NOUN/VERB/PRT 70/13/12<br>色 se4 NOUN:color NOUN 92
 侵略	qin1lve4	NOUN:invasion\VERB:invade	NOUN/VERB 77/23<br>侵 #2:qin1 VERB:invade VERB/NOUN 52/41<br>略 lve4 ADV:sligthly\ADJ:brief\VERB:omit ADV/VERB 69/31
 挑战	tiao3zhan4	NOUN:challenge	NOUN 92<br>挑 tiao1 VERB:choose/select VERB/NOUN 60/40<br>战 #2:zhan4 #2:NOUN:war NOUN 95
 房屋	fang2wu1	NOUN:houses	NOUN 100<br>房 fang2 NOUN:house/room NOUN 100<br>屋 wu1 NOUN: NOUN 98
 总理	zong3li3	NOUN:prime-minister	NOUN 100<br>总 zong3 ADJ:total/general ADJ/ADV 74/22<br>理 #2:li3 NOUN:logic NOUN/VERB 82/17
-变革	bian4ge2	NOUN:transform	NOUN/VERB 82/18<br>变 bian4 VERB:change VERB/NOUN 87/13<br>革 #2:ge2 NOUN: NOUN/VERB 83/14
+变革	bian4ge2	NOUN:transformation	NOUN/VERB 82/18<br>变 bian4 VERB:change VERB/NOUN 87/13<br>革 #2:ge2 NOUN: NOUN/VERB 83/14
 失业	shi1ye4	NOUN:unemployment\VERB:lose-one's-job	NOUN/VERB 82/17<br>失 #3:shi1 VERB: VERB/NOUN 63/37<br>业 ye4 NOUN:line-of-business NOUN 100
 优化	you1hua4	VERB:optimize	VERB/NOUN 75/25<br>优 you1 NOUN: NOUN/ADJ 62/28<br>化 hua4 NOUN:change NOUN/VERB 59/35
 料	liao4	NOUN:material\VERB:expect	NOUN/VERB 84/16
