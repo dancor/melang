@@ -2170,7 +2170,7 @@
 人为	ren2wei2	66/16/11	ADJ/ADV/VERB	ADJ:
 教材	jiao4cai2	100	NOUN	NOUN:
 容	rong2	63/37	NOUN/VERB	NOUN:
-切	qie4	68/32	VERB/NOUN	VERB:
+切	qie4	68/32	VERB/NOUN	VERB:correspond/fit
 一面	yi2mian4	100	ADV	ADV:
 前进	qian2jin4	87/13	VERB/NOUN	VERB:
 星期	xing1qi1	100	NOUN	NOUN:
@@ -3168,7 +3168,7 @@
 延长	yan2chang2	90/10	VERB/NOUN	VERB:
 缓慢	huan3man4	84/12	VERB/ADV	VERB:
 最新	zui4xin1	90	ADJ	ADJ:
-损	sun3	60/40	NOUN/VERB	VERB:damage
+损	sun3	60/40	NOUN/VERB	#2:VERB:damage
 村庄	cun1zhuang1	100	NOUN	NOUN:
 民政	min2zheng4	99	NOUN	NOUN:
 构建	gou4jian4	100	VERB	VERB:

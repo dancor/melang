@@ -33,23 +33,25 @@ prepSubEntry wdDict word = "<br>" <> word <> " " <>
     case HMS.lookup word wdDict of
       Nothing -> "?"
       Just entry -> DT.intercalate " " [ePinyin entry, eGloss entry,
-        DT.replace "ADP" "PREP" (eSpPartsq entry), eSpPartFreqs entry]
+        DT.replace "ADP" "PREP" (eSpParts entry), eSpPartFreqs entry]
 
 prepEntry :: WdDict -> DictEntry -> DT.Text
 prepEntry wdDict entry =
     eWord entry <> "\t" <> ePinyin entry <> "\t" <> eGloss entry <> "\t" <>
-    DT.replace "ADP" "PREP" (eSpPartsq entry) <> " " <> eSpPartFreqs entry <>
-    if DT.length (eWord entry) == 1
+    DT.replace "ADP" "PREP" (eSpParts entry) <> " " <> eSpPartFreqs entry <>
+    if DT.length word == 1
       then ""
       else 
-        DT.concat . map (prepSubEntry wdDict . DT.singleton) $ DT.unpack entry
+        DT.concat . map (prepSubEntry wdDict . DT.singleton) $ DT.unpack word
+  where
+    word = eWord entry
 
 writeKiloDeck :: FilePath -> WdDict -> Dict -> IO ()
 writeKiloDeck f wdDict = DTI.writeFile f . DT.unlines . map (prepEntry wdDict)
 
 writeKiloDecks :: FilePath -> WdDict -> Dict -> IO ()
 writeKiloDecks dir wdDict = zipWithM_ (\n ->
-    writeKiloDeck wdDict (dir </> intToDeckName n)) [1..] . chunksOf 1000
+    writeKiloDeck (dir </> intToDeckName n) wdDict) [1..] . chunksOf 1000
 
 prefNum :: Int -> DT.Text
 prefNum n = DT.pack ('#' : show n ++ ":")
@@ -97,5 +99,5 @@ main = do
     let dict = deDupeGlosses . deDupePinyins $ map entryKillNums oldDict
         wdDict = dictToWdDict dict
     writeDict dict
-    writeKiloDecks kiloDeckDir $
+    writeKiloDecks kiloDeckDir wdDict $
         takeWhile (not . glossIsEmpty . eGloss) dict
