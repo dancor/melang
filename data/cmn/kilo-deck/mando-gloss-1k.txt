@@ -324,7 +324,7 @@
 小	xiao3	ADJ:small	ADJ/VERB 66/25
 资料	zi1liao4	NOUN:data/material	NOUN 100<br>资 zi1 NOUN:money/expenses NOUN 96<br>料 liao4 NOUN:material\VERB:expect NOUN/VERB 84/16
 区	qu1	NOUN:region	NOUN 99
-北京	Bei3jing1	NOUN:Beijing	NOUN 100<br>北 bei3 NOUN: NOUN 99<br>京 #2:jing1 NOUN:country-capital NOUN 100
+北京	Bei3jing1	NOUN:Beijing	NOUN 100<br>北 bei3 NOUN:north NOUN 99<br>京 #2:jing1 NOUN:country-capital NOUN 100
 具体	ju4ti3	ADJ:specific	ADJ/ADV/VERB 70/15/15<br>具 #2:ju4 MEAS:tool/corpse VERB/NOUN 82/11<br>体 ti3 NOUN:body NOUN 93
 至	zhi4	PREP:until/up-to	CONJ/VERB/PREP 54/21/19
 中心	zhong1xin1	#2:NOUN:center	NOUN 100<br>中 zhong1 PRT:middle PRT/NOUN 79/17<br>心 #2:xin1 NOUN:heart/mind NOUN 93
@@ -898,7 +898,7 @@
 无论	wu2lun4	CONJ:Regardless-of-	ADV 90<br>无 wu2 VERB:not-have VERB/ADJ 86/13<br>论 lun4 NOUN:theory NOUN/VERB 77/22
 此外	ci3wai4	#2:CONJ:moreover	ADV 100<br>此 ci3 #2:PRON:this PRON/DET 56/38<br>外 wai4 NOUN:outside NOUN/PRT 52/46
 增	zeng1	#3:VERB:increase	VERB/NOUN 79/19
-交流	jiao1liu2	VERB:exchange-(information)	NOUN/VERB 88/12<br>交 jiao1 VERB:hand-over/deliver VERB/NOUN 70/30<br>流 #2:liu2 NOUN: NOUN/VERB 56/41
+交流	jiao1liu2	VERB:exchange-(information)	NOUN/VERB 88/12<br>交 jiao1 VERB:hand-over/deliver VERB/NOUN 70/30<br>流 #2:liu2 NOUN:stream\VERB:flow NOUN/VERB 56/41
 共	gong4	ADV:together/altogether	ADV/NOUN 85/11
 突出	tu1chu1	VERB:highlight/stress	VERB/ADJ 81/19<br>突 tu1 NOUN: NOUN/VERB 55/40<br>出 chu1 VERB:go-out VERB 98
 学院	xue2yuan4	NOUN:college/institute	NOUN 100<br>学 xue2 VERB:study NOUN/VERB 61/39<br>院 yuan4 NOUN:courtyard NOUN 99
@@ -988,7 +988,7 @@
 文字	wen2zi4	NOUN:writing/characters	NOUN 100<br>文 wen2 NOUN:writing NOUN 95<br>字 #2:zi4 NOUN:written-character NOUN 100
 增强	zeng1qiang2	#2:VERB:strengthen	VERB 96<br>增 zeng1 #3:VERB:increase VERB/NOUN 79/19<br>强 qiang2 ADJ:strong/powerful VERB/ADJ/NOUN 65/21/11
 济	#3:ji4	VERB:aid	NOUN/VERB 89/11
-乡镇	xiang1zhen4	NOUN:villages-and-towns	NOUN 100<br>乡 #2:xiang1 NOUN: NOUN 99<br>镇 zhen4 NOUN: NOUN 100
+乡镇	xiang1zhen4	NOUN:villages-and-towns	NOUN 100<br>乡 #2:xiang1 NOUN:countryside/native-place NOUN 99<br>镇 zhen4 NOUN: NOUN 100
 约	yue1	ADV:approximately	ADV/NOUN 75/21
 专门	zhuan1men2	ADJ:specialized/technical	ADV/ADJ 55/45<br>专 zhuan1 NOUN:specialty NOUN/VERB/ADV 71/16/13<br>门 men2 NOUN:door/gate NOUN/NUM 74/25
 只要	zhi3yao4	CONJ:so-long-as/provided	CONJ 93<br>只 zhi3 ADV:only ADV 96<br>要 yao4 VERB:want VERB 99
