@@ -11,14 +11,13 @@ import Data.List
 import Data.List.Split
 import qualified Data.Map.Strict as Map
 import Data.Monoid
-import qualified Data.Set as Set
 import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
 import System.FilePath
 
 import Cmn.Dict
 
-type Misses = Set.Set DT.Text
+type Misses = [DT.Text]
 
 -- | Remove any prefix like "#1:", "#2:", ..
 killNum :: DT.Text -> DT.Text
@@ -36,10 +35,10 @@ intToDeckName n = "mando-gloss-" ++ show n ++ "k.txt"
 prepSubEntry :: WdDict -> DT.Text -> Writer Misses DT.Text
 prepSubEntry wdDict word = (("<br>" <> word <> " ") <>) <$>
     case HMS.lookup word wdDict of
-      Nothing -> tell (Set.singleton word) >> return "?"
+      Nothing -> tell [word] >> return "?"
       Just entry -> do
         let gloss = eGloss entry
-        when (":" `DT.isSuffixOf` gloss) $ tell (Set.singleton word)
+        when (":" `DT.isSuffixOf` gloss) $ tell [word]
         return $ DT.intercalate " " [ePinyin entry, gloss,
             DT.replace "ADP" "PREP" (eSpParts entry), eSpPartFreqs entry]
 
@@ -115,4 +114,4 @@ main = do
     writeDict dict
     ((), misses) <- runWriterT . writeKiloDecks kiloDeckDir wdDict $
         takeWhile (not . glossIsEmpty . eGloss) dict
-    DTI.putStr . DT.unlines $ Set.toList misses
+    DTI.putStr . DT.unlines . nub $ reverse misses
