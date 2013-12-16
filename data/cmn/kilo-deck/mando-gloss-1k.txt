@@ -490,7 +490,7 @@
 结合	jie2he2	VERB:combine	VERB/NOUN 87/13<br>结 #2:jie2 NOUN:knot NOUN/VERB 56/44<br>合 #2:he2 VERB:close/suit NOUN/VERB 58/41
 创造	chuang4zao4	VERB:create	VERB 91<br>创 chuang4 VERB: VERB/NOUN 88/12<br>造 zao4 #3:VERB:create VERB/NOUN 88/12
 因素	yin1su4	NOUN:factor	NOUN 100<br>因 yin1 PREP:because PREP 87<br>素 su4 NOUN:basic-element NOUN/ADV 89/11
-按照	an4zhao4	PREP:in-light-of	PREP 99<br>按 an4 PREP:in-accordance-with PREP 98<br>照 zhao4 PREP: PREP/NOUN/VERB 48/28/25
+按照	an4zhao4	PREP:in-light-of	PREP 99<br>按 an4 VERB:press/push-down\NOUN:note PREP 98<br>照 zhao4 PREP: PREP/NOUN/VERB 48/28/25
 全面	quan2mian4	ADJ:overall/all-round	ADV/ADJ/VERB 49/38/11<br>全 quan2 ADJ:complete/whole DET/ADV 86/10<br>面 mian4 NOUN:face NOUN 94
 措施	cuo4shi1	NOUN:measure/suitable-action	NOUN 100<br>措 #2:cuo4 VERB:arrange/manage VERB/NOUN 56/42<br>施 #2:shi1 VERB:apply/impose VERB/NOUN 90/10
 主	zhu3	NOUN:master	NOUN/ADJ 68/25
@@ -629,7 +629,7 @@
 件	jian4	MEAS:item/article	NUM/NOUN 57/38
 民	min2	#2:NOUN:people	NOUN 97
 人物	ren2wu4	NOUN:personage	NOUN 100<br>人 ren2 NOUN:person NOUN 99<br>物 wu4 #2:NOUN:thing NOUN 98
-按	an4	PREP:in-accordance-with	PREP 98
+按	an4	VERB:press/push-down\NOUN:note	PREP 98
 现代化	xian4dai4hua4	NOUN:modernization	NOUN 92<br>现 xian4 ADV:just/at-the-time ADV/NOUN/VERB 48/26/20<br>代 #2:dai4 NOUN:generation/historical-period NOUN/VERB/NUM 60/19/18<br>化 hua4 NOUN:change NOUN/VERB 59/35
 今天	jin1tian1	NOUN:today	NOUN 100<br>今 #2:jin1 NOUN:present-day NOUN 94<br>天 tian1 MEAS:day NUM/NOUN 68/30
 是否	shi4fou3	VERB:whether-or-not	VERB/ADV 51/49<br>是 shi4 VERB:is VERB 96<br>否 fou3 #2:VERB:negate/deny ADV/VERB 72/12
