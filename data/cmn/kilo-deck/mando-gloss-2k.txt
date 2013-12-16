@@ -41,7 +41,7 @@
 健康	jian4kang1	NOUN:health/physique	NOUN/VERB/ADJ/ADV 52/19/17/12<br>健 #6:jian4 NOUN:health NOUN 92<br>康 kang1 NOUN: NOUN 100
 那样	na4yang4	ADV:like-that/that-kind-of	ADV/VERB/ADJ 43/38/16<br>那 na4 PRON:that PRON/DET/ADV 45/44/11<br>样 yang4 #2:MEAS:kind/type NUM/ADJ/VERB/ADV/NOUN 28/27/21/12/10
 决	jue2	ADV:definitely-(won't)	ADV/NOUN/VERB 56/24/20
-容易	rong2yi4	ADV:easy/likely	ADV/VERB 62/37<br>容 rong2 NOUN: NOUN/VERB 63/37<br>易 #5:yi4 VERB: VERB/ADV/NOUN 46/30/24
+容易	rong2yi4	ADV:easy/likely	ADV/VERB 62/37<br>容 rong2 NOUN: NOUN/VERB 63/37<br>易 #5:yi4 ADJ:easy/amiable\VERB:change/exchange VERB/ADV/NOUN 46/30/24
 校	xiao4	NOUN:school/field-officer	NOUN 99
 最高	zui4gao1	ADJ:highest/supreme	ADJ 89<br>最 zui4 ADV:the-most ADV 98<br>高 gao1 ADJ:tall VERB/ADJ 50/36
 主张	zhu3zhang1	VERB:hold/advocate-(a-view)	VERB/NOUN 52/48<br>主 zhu3 NOUN:master NOUN/ADJ 68/25<br>张 #2:zhang1 MEAS:flat-objects/table/bed/paper NUM/NOUN 63/36
@@ -164,7 +164,7 @@
 感	gan3	NOUN:feeling/sense	NOUN/VERB 83/17
 倍	#2:bei4	MEAS:-times/-fold	NUM/NOUN 88/12
 固定	gu4ding4	ADJ:fixed/regular	ADJ/VERB 80/17<br>固 #3:gu4 VERB: VERB/NOUN/ADJ 38/30/17<br>定 ding4 #2:VERB:decide VERB 84
-训练	xun4lian4	#2:NOUN:training	NOUN 92<br>训 xun4 NOUN: NOUN/VERB 60/40<br>练 #2:lian4 VERB: VERB/NOUN 77/23
+训练	xun4lian4	#2:NOUN:training	NOUN 92<br>训 xun4 VERB:train\NOUN:model/example NOUN/VERB 60/40<br>练 #2:lian4 VERB: VERB/NOUN 77/23
 立	#3:li4	VERB:stand	VERB/NOUN 78/22
 感觉	gan3jue2	NOUN:feeling/perception	NOUN/VERB 50/50<br>感 gan3 NOUN:feeling/sense NOUN/VERB 83/17<br>觉 #3:jue2 VERB:feel/become-aware-of VERB/NOUN 71/29
 经历	jing1li4	VERB:experience	VERB/NOUN 63/37<br>经 jing1 PREP:as-a-result-of/through NOUN/PREP/VERB 48/39/10<br>历 #5:li4 NOUN: NOUN/DET 81/14
@@ -324,7 +324,7 @@
 审计	shen3ji4	NOUN:audit	NOUN 93<br>审 shen3 VERB:examine VERB/NOUN 55/45<br>计 #2:ji4 VERB:count/gauge VERB/NOUN 55/45
 究	jiu1	#4:VERB:investigate	VERB/NOUN 58/37
 房	fang2	NOUN:house/room	NOUN 100
-科研	ke1yan2	NOUN:scientific-research	NOUN 100<br>科 ke1 NOUN:branch-of-study NOUN 99<br>研 #2:yan2 NOUN: NOUN/VERB 62/38
+科研	ke1yan2	NOUN:scientific-research	NOUN 100<br>科 ke1 NOUN:branch-of-study NOUN 99<br>研 #2:yan2 VERB:study/grind NOUN/VERB 62/38
 途径	tu2jing4	NOUN:way/channel	NOUN 99<br>途 #3:tu2 NOUN: NOUN 85<br>径 #6:jing4 NOUN: NOUN 80
 总统	zong3tong3	NOUN:president	NOUN 100<br>总 zong3 ADJ:total/general ADJ/ADV 74/22<br>统 tong3 #6:NOUN:system NOUN/VERB 84/16
 压力	ya1li4	NOUN:pressure	NOUN 100<br>压 ya1 VERB: VERB/NOUN 56/40<br>力 li4 NOUN:power/force NOUN 96
@@ -819,3 +819,22 @@
 预测	yu4ce4	VERB:forecast	NOUN/VERB 54/46<br>预 #3:yu4 ADV:in-advance/beforehand VERB/NOUN 71/29<br>测 #4:ce4 VERB:survey/measure NOUN/VERB 60/40
 证据	zheng4ju4	NOUN:evidence	NOUN 100<br>证 #3:zheng4 NOUN:certificate NOUN 89<br>据 ju4 PREP:according-to PREP 82
 京	#2:jing1	NOUN:country-capital	NOUN 100
+情感	qing2gan3	NOUN:emotion	NOUN 100<br>情 qing2 NOUN:feelings/sentiment NOUN 98<br>感 gan3 NOUN:feeling/sense NOUN/VERB 83/17
+住房	zhu4fang2	NOUN:residence/domicile	NOUN 100<br>住 zhu4 VERB:reside VERB 97<br>房 fang2 NOUN:house/room NOUN 100
+纳税	na4shui4	VERB:pay-taxes	NOUN/VERB 55/42<br>纳 #2:na4 NOUN: NOUN/VERB 72/28<br>税 shui4 NOUN:tax/duty NOUN 100
+极为	ji2wei2	#2:ADV:extremely	ADV 100<br>极 #4:ji2 ADV:extremely ADV/NOUN 89/10<br>为 wei4 PREP:for\VERB:be/act-as PREP/VERB 60/40
+基于	ji1yu2	PREP:in-view-of	PREP/VERB 84/16<br>基 #2:ji1 #3:NOUN:base/foundation NOUN 97<br>于 yu2 PREP:by PREP/VERB 81/18
+突然	tu1ran2	ADV:suddenly	ADV 88<br>突 tu1 ADJ:sudden\VERB:dash-forward NOUN/VERB 55/40<br>然 ran2 #5:CONJ:but ADV/VERB/NOUN 57/31/11
+过渡	guo4du4	NOUN:transition	NOUN/VERB 57/35<br>过 guo4 PRT:in-the-past PRT/VERB 66/27<br>渡 #3:du4 VERB: VERB/NOUN 80/20
+消除	xiao1chu2	VERB:eliminate	VERB 100<br>消 #2:xiao1 NOUN: NOUN/VERB 65/31<br>除 chu2 #2:PREP:except/besides PREP/VERB 88/11
+成长	cheng2zhang3	VERB:grow-up	NOUN/VERB 55/45<br>成 cheng2 VERB:become VERB 92<br>长 chang2 ADJ:long NOUN/VERB/ADJ 52/31/13
+例	#4:li4	NOUN:example/instance	NOUN 81
+下午	xia4wu3	NOUN:afternoon	NOUN 100<br>下 xia4 PRT:down PRT/VERB 72/17<br>午 #2:wu3 NOUN: NOUN 90
+整顿	zheng3dun4	VERB:rectify/reorganize	NOUN/VERB 78/22<br>整 zheng3 PRON: DET/ADJ/NOUN/VERB/ADV 32/21/21/14/11<br>顿 dun4 NOUN:pause\MEAS:meal/scolding NOUN/NUM 83/17
+所有权	suo3you3quan2	NOUN:proprietary-rights	NOUN 100<br>所 suo3 PRT:place PRT/NOUN 86/11<br>有 you3 VERB:have/possess VERB 99<br>权 #2:quan2 NOUN:authority NOUN 100
+熟悉	shu2xi1	VERB:know-well	VERB 96<br>熟 shu2 ADJ:ripe VERB 89<br>悉 #6:xi1 VERB:know/learn ADV/VERB/NOUN 52/34/11
+教训	jiao4xun5	NOUN:lesson	NOUN 98<br>教 #2:jiao4 NOUN:teaching/religion NOUN/VERB 68/32<br>训 xun4 VERB:train\NOUN:model/example NOUN/VERB 60/40
+婚姻	hun1yin1	NOUN:marriage	NOUN 100<br>婚 hun1 #2:NOUN:marriage NOUN 100<br>姻 #3:yin1 #3:NOUN:marriage NOUN/VERB 51/45
+研	#2:yan2	VERB:study/grind	NOUN/VERB 62/38
+易	#5:yi4	ADJ:easy/amiable\VERB:change/exchange	VERB/ADV/NOUN 46/30/24
+家里	jia1li3	NOUN:(at)-home/family	NOUN 99<br>家 jia1 NOUN:household NOUN/NUM 83/17<br>里 li3 #2:PRT:inside PRT/NOUN 80/13

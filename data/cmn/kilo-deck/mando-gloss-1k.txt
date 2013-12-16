@@ -48,7 +48,7 @@
 二	er4	NUM:2	NUM 93
 以	yi3	PREP:using	PREP/PRT 71/24
 问题	wen4ti2	NOUN:question/problem	NOUN 100<br>问 wen4 VERB:ask VERB/NOUN 71/29<br>题 #2:ti2 NOUN:topic NOUN/VERB 74/26
-研究	yan2jiu1	NOUN:research	NOUN/VERB 85/15<br>研 #2:yan2 NOUN: NOUN/VERB 62/38<br>究 jiu1 #4:VERB:investigate VERB/NOUN 58/37
+研究	yan2jiu1	NOUN:research	NOUN/VERB 85/15<br>研 #2:yan2 VERB:study/grind NOUN/VERB 62/38<br>究 jiu1 #4:VERB:investigate VERB/NOUN 58/37
 并	bing4	#2:CONJ:and	CONJ/ADV 55/44
 但	dan4	CONJ:but	ADV 100
 三	san1	NUM:3	NUM 96
@@ -402,7 +402,7 @@
 财政	cai2zheng4	NOUN:financial-administration	NOUN 100<br>财 #2:cai2 NOUN: NOUN 100<br>政 #2:zheng4 #2:NOUN:government NOUN 100
 应当	ying1dang1	#2:VERB:should	VERB 100<br>应 ying1 VERB:promise VERB 99<br>当 dang1 PREP:at-a-time/place PREP/VERB 63/32
 书	shu1	NOUN:book	NOUN 99
-贸易	mao4yi4	NOUN:trade	NOUN 100<br>贸 mao4 NOUN: NOUN 91<br>易 #5:yi4 VERB: VERB/ADV/NOUN 46/30/24
+贸易	mao4yi4	NOUN:trade	NOUN 100<br>贸 mao4 NOUN: NOUN 91<br>易 #5:yi4 ADJ:easy/amiable\VERB:change/exchange VERB/ADV/NOUN 46/30/24
 学习	xue2xi2	#2:VERB:study	VERB/NOUN 57/43<br>学 xue2 VERB:study NOUN/VERB 61/39<br>习 xi2 VERB: VERB/NOUN 60/39
 目标	mu4biao1	NOUN:goal	NOUN 100<br>目 mu4 NOUN:eye/item NOUN/VERB 80/17<br>标 biao1 NOUN:mark/sign NOUN 89
 却	que4	#3:CONJ:but	ADV 100
@@ -753,7 +753,7 @@
 然后	ran2hou4	ADV:after-that	ADV 100<br>然 ran2 #5:CONJ:but ADV/VERB/NOUN 57/31/11<br>后 hou4 PRT:after PRT/NOUN 82/12
 广泛	guang3fan4	ADJ:extensive/wide-ranging	VERB/ADV/ADJ 48/33/19<br>广 guang3 ADJ:wide\VERB:broaden VERB/NOUN/ADV 41/28/22<br>泛 #3:fan4 VERB:flood/inundate VERB/NOUN/ADJ 66/20/15
 先进	xian1jin4	ADJ:advanced	ADJ/VERB 78/21<br>先 xian1 ADV:earlier ADV/NOUN 85/11<br>进 jin4 VERB:advance/enter VERB/NOUN 82/18
-培训	pei2xun4	NOUN:training	NOUN/VERB 88/12<br>培 pei2 NOUN: NOUN/VERB 59/38<br>训 xun4 NOUN: NOUN/VERB 60/40
+培训	pei2xun4	NOUN:training	NOUN/VERB 88/12<br>培 pei2 NOUN: NOUN/VERB 59/38<br>训 xun4 VERB:train\NOUN:model/example NOUN/VERB 60/40
 采用	cai3yong4	VERB:select-for-use	VERB 100<br>采 cai3 VERB: VERB 94<br>用 yong4 VERB:use VERB/PREP 58/38
 态度	tai4du5	NOUN:manner/bearing	NOUN 100<br>态 #2:tai4 NOUN:state/condition NOUN/ADJ/VERB 39/31/24<br>度 du4 NOUN:degree NOUN/NUM 74/19
 相关	xiang1guan1	ADJ:interrelated	ADJ/VERB 76/23<br>相 xiang1 ADV:mutually ADV/VERB 76/16<br>关 guan1 NOUN:barrier/check NOUN/VERB 63/29
@@ -796,7 +796,7 @@
 状态	zhuang4tai4	NOUN:state-of-affairs	NOUN 100<br>状 zhuang4 NOUN: NOUN 82<br>态 #2:tai4 NOUN:state/condition NOUN/ADJ/VERB 39/31/24
 批准	pi1zhun3	VERB:approve/sanction	VERB/NOUN 86/14<br>批 pi1 MEAS:batch/lot NUM/VERB 81/18<br>准 zhun3 #2:VERB:allow/permit VERB/NOUN 68/28
 发达	fa1da2	ADJ:developed/fluorishing	ADJ/VERB 61/37<br>发 fa1 VERB:send/start VERB/NOUN 73/25<br>达 da2 VERB:reach VERB 91
-交易	jiao1yi4	NOUN:deal/transaction	NOUN 95<br>交 jiao1 VERB:hand-over/deliver VERB/NOUN 70/30<br>易 #5:yi4 VERB: VERB/ADV/NOUN 46/30/24
+交易	jiao1yi4	NOUN:deal/transaction	NOUN 95<br>交 jiao1 VERB:hand-over/deliver VERB/NOUN 70/30<br>易 #5:yi4 ADJ:easy/amiable\VERB:change/exchange VERB/ADV/NOUN 46/30/24
 制造	zhi4zao4	VERB:manufacture/fabricate	NOUN/VERB 64/36<br>制 #2:zhi4 NOUN:-ism/system NOUN/VERB 81/15<br>造 zao4 #3:VERB:create VERB/NOUN 88/12
 保障	bao3zhang4	VERB:ensure/guarantee	NOUN/VERB 75/25<br>保 bao3 #2:NOUN:protection NOUN/VERB 55/45<br>障 zhang4 NOUN: NOUN/VERB 82/18
 进步	jin4bu4	VERB:progress/improve	NOUN/VERB 87/13<br>进 jin4 VERB:advance/enter VERB/NOUN 82/18<br>步 #3:bu4 MEAS:(foot)step NOUN/NUM/VERB 51/34/11
