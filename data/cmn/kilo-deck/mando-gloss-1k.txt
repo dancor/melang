@@ -89,7 +89,7 @@
 看	kan4	VERB:look	VERB 100
 元	yuan2	MEAS:dollar	NUM/NOUN 90/10
 主要	zhu3yao4	ADJ:main	ADJ/ADV 55/43<br>主 zhu3 NOUN:master NOUN/ADJ 68/25<br>要 yao4 VERB:want VERB 99
-组织	zu3zhi1	NOUN:organization	NOUN/VERB 88/11<br>组 zu3 MEAS:group/set NOUN/VERB/NUM 74/14/12<br>织 #4:zhi1 VERB: VERB 100
+组织	zu3zhi1	NOUN:organization	NOUN/VERB 88/11<br>组 zu3 MEAS:group/set NOUN/VERB/NUM 74/14/12<br>织 #4:zhi1 VERB:weave/knit VERB 100
 将	jiang1	ADV:(will)-soon	ADV/X 57/43
 万	wan4	NUM:10k	NUM 98
 建设	jian4she4	NOUN:construction	NOUN 90<br>建 #3:jian4 VERB:build VERB/NOUN 71/29<br>设 #2:she4 #3:VERB:establish VERB 94
@@ -235,7 +235,7 @@
 得	#3:de5	PRT:(how?:)	PRT/VERB 59/40
 提高	ti2gao1	VERB:raise	VERB/NOUN 88/12<br>提 ti2 VERB:carry/raise VERB/NOUN 87/13<br>高 gao1 ADJ:tall VERB/ADJ 50/36
 对于	dui4yu2	PREP:in-regard-to	PREP 98<br>对 dui4 #2:PREP:for PREP 95<br>于 yu2 PREP:by PREP/VERB 81/18
-法律	fa3lv4	NOUN:statute	NOUN 100<br>法 fa3 NOUN:law/method NOUN 99<br>律 #2:lv4 NOUN: NOUN 94
+法律	fa3lv4	NOUN:statute	NOUN 100<br>法 fa3 NOUN:law/method NOUN 99<br>律 #2:lv4 NOUN:statute\VERB:restrain/control NOUN 94
 内容	nei4rong2	NOUN:content	NOUN 100<br>内 nei4 PRT:inside PRT/NOUN 81/18<br>容 rong2 NOUN: NOUN/VERB 63/37
 也是	ye3shi4	ADV:also/similarly	ADV 95<br>也 ye3 ADV:also ADV 99<br>是 shi4 VERB:is VERB 96
 较	jiao4	ADV:clearly	ADV 95
@@ -652,7 +652,7 @@
 军事	jun1shi4	NOUN:military-affairs	NOUN 99<br>军 jun1 NOUN:army NOUN 100<br>事 #3:shi4 NOUN:issue/matter/thing NOUN 98
 新闻	xin1wen2	NOUN:news	NOUN 100<br>新 xin1 ADJ:new ADJ/VERB 68/23<br>闻 #2:wen2 VERB: VERB/NOUN 69/31
 没	mei2	#2:ADV:not	ADV/VERB 77/23
-规律	gui1lv4	NOUN:law	NOUN 100<br>规 gui1 #2:NOUN:regulation/rule NOUN 95<br>律 #2:lv4 NOUN: NOUN 94
+规律	gui1lv4	NOUN:law	NOUN 100<br>规 gui1 #2:NOUN:regulation/rule NOUN 95<br>律 #2:lv4 NOUN:statute\VERB:restrain/control NOUN 94
 军	jun1	NOUN:army	NOUN 100
 那些	na4xie1	PRON:those	DET 99<br>那 na4 PRON:that PRON/DET/ADV 45/44/11<br>些 xie1 MEAS:(indefinite-small-amount) NUM 95
 样	yang4	#2:MEAS:kind/type	NUM/ADJ/VERB/ADV/NOUN 28/27/21/12/10

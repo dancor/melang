@@ -71,7 +71,7 @@
 改	gai3	#3:VERB:change	VERB/NOUN 59/39
 密切	mi4qie4	ADJ:close/intimate	VERB/ADV/ADJ 38/37/24<br>密 mi4 ADJ:dense/thick NOUN/VERB/ADV 63/24/13<br>切 qie4 VERB:correspond/fit VERB/NOUN 68/32
 机械	ji1xie4	#2:NOUN:machine	NOUN 100<br>机 ji1 NOUN:machine NOUN 97<br>械 xie4 NOUN:weapon/instrument NOUN 99
-特色	te4se4	#3:NOUN:characteristic	NOUN 98<br>特 te4 ADV:specially/for-a-special-purpose NOUN/ADV 69/25<br>色 se4 NOUN:color NOUN 92
+特色	te4se4	#3:NOUN:characteristic	NOUN 98<br>特 te4 ADV:specially/for-a-special-purpose NOUN/ADV 69/25<br>色 se4 #2:NOUN:color NOUN 92
 知	#2:zhi1	#2:VERB:know	VERB/NOUN 87/13
 宏观	hong2guan1	ADJ:macro-/macroscopic	ADJ 93<br>宏 #2:hong2 ADJ:great/grand NOUN 100<br>观 #2:guan1 NOUN:view/outlook NOUN 94
 除	chu2	#2:PREP:except/besides	PREP/VERB 88/11
@@ -351,7 +351,7 @@
 敌人	di2ren2	NOUN:enemy	NOUN 100<br>敌 #2:di2 #2:NOUN:enemy NOUN/VERB 85/15<br>人 ren2 NOUN:person NOUN 99
 老	lao3	ADJ:old	ADJ 81
 找	zhao3	VERB:look-for/seek	VERB 100
-秘书	mi4shu1	NOUN:secretary	NOUN 100<br>秘 #2:mi4 ADJ:secret NOUN/ADJ/VERB 52/35/13<br>书 shu1 NOUN:book NOUN 99
+秘书	mi4shu1	NOUN:secretary	NOUN 100<br>秘 #2:mi4 #2:ADJ:secret NOUN/ADJ/VERB 52/35/13<br>书 shu1 NOUN:book NOUN 99
 早	zao3	ADJ:early	ADV/VERB 71/21
 依靠	yi1kao4	VERB:rely-on	VERB 97<br>依 #2:yi1 PREP:according-to\VERB:depend-on PREP 87<br>靠 kao4 PREP:by\VERB:depend PREP/VERB 58/42
 政权	zheng4quan2	NOUN:political-power	NOUN 100<br>政 #2:zheng4 #2:NOUN:government NOUN 100<br>权 #2:quan2 NOUN:authority NOUN 100
@@ -613,7 +613,7 @@
 并非	bing4fei1	ADV:really-not	ADV/VERB 60/40<br>并 bing4 #2:CONJ:and CONJ/ADV 55/44<br>非 fei1 ADV:not- ADJ/VERB/NOUN 62/19/10
 外部	wai4bu4	#2:NOUN:outside	NOUN 100<br>外 wai4 NOUN:outside NOUN/PRT 52/46<br>部 #2:bu4 NOUN:part NOUN/NUM 79/21
 反应	#2:fan3ying4	NOUN:reaction/response	NOUN/VERB 88/12<br>反 fan3 VERB:turn-over/oppose VERB/ADJ 71/24<br>应 ying1 VERB:promise VERB 99
-评估	ping2gu1	VERB:assess	NOUN/VERB 81/19<br>评 #2:ping2 VERB:comment/review NOUN/VERB 84/16<br>估 gu1 VERB:estimate VERB/NOUN 55/40
+评估	ping2gu1	VERB:assess	NOUN/VERB 81/19<br>评 #2:ping2 VERB:comment/review NOUN/VERB 84/16<br>估 gu1 #2:VERB:estimate VERB/NOUN 55/40
 观众	guan1zhong4	NOUN:audience	NOUN 100<br>观 #2:guan1 NOUN:view/outlook NOUN 94<br>众 #2:zhong4 NOUN:crowd\ADJ:numerous NOUN/VERB 58/24
 最近	zui4jin4	ADV:recently	NOUN 100<br>最 zui4 ADV:the-most ADV 98<br>近 #2:jin4 ADJ:near/close ADV 82
 常委	chang2-wei3	NOUN:standing-committee-member	NOUN 100<br>常 #2:chang2 ADV:frequently/often ADV/NOUN 84/14<br>委 wei3 VERB:entrust/appoint NOUN/VERB 83/17
@@ -758,7 +758,7 @@
 慢	man4	ADJ:slow\VERB:slow/postpone	VERB/ADV/ADJ 63/19/11
 进攻	jin4gong1	VERB:attack	VERB/NOUN 48/48<br>进 jin4 VERB:advance/enter VERB/NOUN 82/18<br>攻 #5:gong1 #2:VERB:attack NOUN/VERB 62/38
 多元	duo1yuan2	ADJ:multi-	ADJ/ADV/NOUN/VERB 38/26/20/16<br>多 duo1 ADJ:many NUM/VERB/ADV 53/26/13<br>元 yuan2 MEAS:dollar NUM/NOUN 90/10
-角色	jue2se4	NOUN:role	NOUN 100<br>角 #2:jiao3 NOUN:angle/horn NOUN/VERB/PRT 70/13/12<br>色 se4 NOUN:color NOUN 92
+角色	jue2se4	NOUN:role	NOUN 100<br>角 #2:jiao3 NOUN:angle/horn NOUN/VERB/PRT 70/13/12<br>色 se4 #2:NOUN:color NOUN 92
 侵略	qin1lve4	NOUN:invasion\VERB:invade	NOUN/VERB 77/23<br>侵 #2:qin1 VERB:invade VERB/NOUN 52/41<br>略 lve4 ADV:sligthly\ADJ:brief\VERB:omit ADV/VERB 69/31
 挑战	tiao3zhan4	NOUN:challenge	NOUN 92<br>挑 tiao1 VERB:choose/select VERB/NOUN 60/40<br>战 #2:zhan4 #2:NOUN:war NOUN 95
 房屋	fang2wu1	NOUN:houses	NOUN 100<br>房 fang2 NOUN:house/room NOUN 100<br>屋 wu1 #2:NOUN:house/room NOUN 98
@@ -838,3 +838,23 @@
 研	#2:yan2	VERB:study/grind	NOUN/VERB 62/38
 易	#5:yi4	ADJ:easy/amiable\VERB:change/exchange	VERB/ADV/NOUN 46/30/24
 家里	jia1li3	NOUN:(at)-home/family	NOUN 99<br>家 jia1 NOUN:household NOUN/NUM 83/17<br>里 li3 #2:PRT:inside PRT/NOUN 80/13
+软件	ruan3jian4	NOUN:software	NOUN 100<br>软 ruan3 ADJ: ADJ/NOUN/VERB 70/16/14<br>件 jian4 MEAS:item/article NUM/NOUN 57/38
+下面	xia4mian5	NOUN:underneath	NOUN 99<br>下 xia4 PRT:down PRT/VERB 72/17<br>面 mian4 NOUN:face NOUN 94
+织	#4:zhi1	VERB:weave/knit	VERB 100
+公平	gong1ping2	ADJ:fair/equitable	NOUN/VERB/ADV 53/30/13<br>公 #2:gong1 ADJ:public NOUN/ADJ 74/18<br>平 ping2 ADJ:flat/level NOUN/VERB 79/20
+不管	bu4guan3	CONJ:no-matter/regardless-of	CONJ/ADV 54/41<br>不 bu4 ADV:not ADV 98<br>管 #2:guan3 VERB:be-in-charge-of/bother-about VERB/NOUN 53/47
+源	#4:yuan2	NOUN:source	NOUN/VERB 79/20
+士	#8:shi4	#2:NOUN:scholar	NOUN 100
+享受	xiang3shou4	VERB:enjoy\NOUN:enjoyment	VERB/NOUN 89/11<br>享 #3:xiang3 VERB: VERB 100<br>受 shou4 #2:VERB:receive VERB 97
+阶层	jie1ceng2	NOUN:(social)-stratum	NOUN 98<br>阶 #2:jie1 NOUN: NOUN/NUM 74/17<br>层 #2:ceng2 MEAS:layer/floor NOUN/NUM 58/41
+秘密	mi4mi4	ADJ:secret\NOUN:secret	ADJ/NOUN/ADV/VERB 42/27/19/12<br>秘 #2:mi4 #2:ADJ:secret NOUN/ADJ/VERB 52/35/13<br>密 mi4 ADJ:dense/thick NOUN/VERB/ADV 63/24/13
+快速	kuai4su4	ADV:fast/high-speed	ADV/ADJ/VERB 46/41/12<br>快 kuai4 ADJ:fast/quick VERB/ADV 53/40<br>速 #2:su4 NOUN: NOUN/ADV 70/30
+纪律	ji4lv4	NOUN:discipline	NOUN 100<br>纪 #7:ji4 NOUN: NOUN 100<br>律 #2:lv4 NOUN:statute\VERB:restrain/control NOUN 94
+依赖	yi1lai4	VERB:depend-on	VERB/NOUN 80/20<br>依 #2:yi1 PREP:according-to\VERB:depend-on PREP 87<br>赖 lai4 #2:VERB:depend-on NOUN/VERB 67/33
+得以	de2yi3	VERB:be-able-to-(as-a-result)	VERB 100<br>得 #3:de5 PRT:(how?:) PRT/VERB 59/40<br>以 yi3 PREP:using PREP/PRT 71/24
+较为	jiao4wei2	ADV:rather/comparatively	ADV 100<br>较 jiao4 ADV:clearly ADV 95<br>为 wei4 PREP:for\VERB:be/act-as PREP/VERB 60/40
+诗歌	shi1ge1	NOUN:poems-and-songs	NOUN 100<br>诗 #4:shi1 NOUN:poetry NOUN 100<br>歌 ge1 NOUN:song NOUN 100
+估计	gu1ji4	VERB:estimate	VERB/NOUN 74/25<br>估 gu1 #2:VERB:estimate VERB/NOUN 55/40<br>计 #2:ji4 VERB:count/gauge VERB/NOUN 55/45
+工艺	gong1yi4	NOUN:crafts	NOUN 100<br>工 gong1 #2:NOUN:work NOUN 96<br>艺 #10:yi4 #3:NOUN:art NOUN 99
+色彩	se4cai3	NOUN:color	NOUN 100<br>色 se4 #2:NOUN:color NOUN 92<br>彩 #2:cai3 NOUN:color/prize NOUN/VERB 85/15
+当局	dang1ju2	NOUN:the-authorities	NOUN 100<br>当 dang1 PREP:at-a-time/place PREP/VERB 63/32<br>局 ju2 NOUN:bureau/branch NOUN 100
