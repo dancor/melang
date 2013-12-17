@@ -94,7 +94,7 @@
 万	wan4	NUM:10k	NUM 98
 建设	jian4she4	NOUN:construction	NOUN 90<br>建 #3:jian4 VERB:build VERB/NOUN 71/29<br>设 #2:she4 #3:VERB:establish VERB 94
 就是	jiu4shi4	#2:ADV:precisely	ADV 100<br>就 jiu4 ADV:precisely ADV 95<br>是 shi4 VERB:is VERB 96
-历史	li4shi3	NOUN:history	NOUN 100<br>历 #5:li4 NOUN: NOUN/DET 81/14<br>史 #2:shi3 #2:NOUN:history NOUN 100
+历史	li4shi3	NOUN:history	NOUN 100<br>历 #5:li4 NOUN:calendar\VERB:experience NOUN/DET 81/14<br>史 #2:shi3 #2:NOUN:history NOUN 100
 使	shi3	VERB:send	VERB 99
 能	neng2	#2:VERB:can	VERB 99
 或	huo4	CONJ:or	CONJ 97
@@ -289,7 +289,7 @@
 委员会	wei3yuan2hui4	NOUN:committee	NOUN 100<br>委 wei3 VERB:entrust/appoint NOUN/VERB 83/17<br>员 #2:yuan2 NOUN:-er/member NOUN 100<br>会 hui4 VERB:is-able VERB/NOUN 69/31
 则	ze2	ADV:in-that-case	ADV 97
 群众	qun2zhong4	#2:NOUN:the-people	NOUN 99<br>群 qun2 #2:NOUN:group/colony-(biology) NOUN 91<br>众 #2:zhong4 NOUN:crowd\ADJ:numerous NOUN/VERB 58/24
-艺术	yi4shu4	NOUN:art	NOUN 100<br>艺 #10:yi4 NOUN: NOUN 99<br>术 #2:shu4 #2:NOUN:art NOUN 100
+艺术	yi4shu4	NOUN:art	NOUN 100<br>艺 #10:yi4 #3:NOUN:art NOUN 99<br>术 #2:shu4 #2:NOUN:art NOUN 100
 积极	ji1ji2	ADV:energetic	ADV/ADJ/VERB 46/36/17<br>积 #4:ji1 VERB:accumulate\NOUN:multiplication-product VERB/NOUN 50/50<br>极 #4:ji2 ADV:extremely ADV/NOUN 89/10
 人口	ren2kou3	NOUN:population	NOUN 100<br>人 ren2 NOUN:person NOUN 99<br>口 kou3 NOUN:mouth/opening NOUN/PRT 65/15
 级	#2:ji2	MEAS:step/level	NUM/NOUN/ADJ 50/39/10
@@ -672,7 +672,7 @@
 理解	li3jie3	VERB:understand/comprehend	VERB/NOUN 61/39<br>理 #2:li3 NOUN:logic NOUN/VERB 82/17<br>解 jie3 VERB:untie/separate VERB/NOUN 66/34
 言	yan2	VERB:say/talk	VERB/NOUN 82/18
 有些	you3xie1	PRON:some	DET/ADV 71/21<br>有 you3 VERB:have/possess VERB 99<br>些 xie1 MEAS:(indefinite-small-amount) NUM 95
-适应	shi4ying4	VERB:adapt	VERB 96<br>适 #12:shi4 VERB: VERB/NOUN 76/21<br>应 ying1 VERB:promise VERB 99
+适应	shi4ying4	VERB:adapt	VERB 96<br>适 #12:shi4 ADJ:suitable\VERB:follow/pursue VERB/NOUN 76/21<br>应 ying1 VERB:promise VERB 99
 台湾	Tai2wan1	NOUN:Taiwan	NOUN 100<br>台 tai2 NOUN:platform NOUN/NUM 68/31<br>湾 wan1 NOUN: NOUN 100
 成功	cheng2gong1	VERB:succeed/be-a-success	VERB/NOUN 52/35<br>成 cheng2 VERB:become VERB 92<br>功 #4:gong1 NOUN: NOUN/VERB 90/10
 同志	tong2zhi4	NOUN:comrade	NOUN 100<br>同 tong2 PREP:with PREP/NOUN/DET 49/18/12<br>志 #6:zhi4 NOUN:annals NOUN 96
@@ -776,7 +776,7 @@
 优势	you1shi4	NOUN:superiority	NOUN 97<br>优 you1 #2:ADJ:excellent NOUN/ADJ 62/28<br>势 #9:shi4 NOUN:tendency/momentum NOUN/VERB 74/21
 人才	ren2cai2	NOUN:talented-person	NOUN 100<br>人 ren2 NOUN:person NOUN 99<br>才 cai2 ADV:later-than-expected ADV 98
 无法	wu2fa3	ADV:unable	ADV 100<br>无 wu2 VERB:not-have VERB/ADJ 86/13<br>法 fa3 NOUN:law/method NOUN 99
-程序	cheng2xu4	NOUN:procedure/sequence	NOUN 93<br>程 #2:cheng2 NOUN:order/procedure NOUN/ADJ 88/12<br>序 #2:xu4 NOUN: NOUN 100
+程序	cheng2xu4	NOUN:procedure/sequence	NOUN 93<br>程 #2:cheng2 NOUN:order/procedure NOUN/ADJ 88/12<br>序 #2:xu4 #2:NOUN:order/sequence NOUN 100
 队	#2:dui4	NOUN:line-of-people	NOUN 98
 丰富	feng1fu4	ADJ:rich/adundant	VERB/ADJ 84/12<br>丰 #3:feng1 VERB: VERB/NOUN 69/31<br>富 #4:fu4 VERB: VERB/NOUN 58/41
 生产力	sheng1chan3li4	NOUN:productivity	NOUN 100<br>生 sheng1 VERB:birth VERB/NOUN 48/44<br>产 chan3 #2:VERB:produce NOUN/VERB/ADJ 45/31/24<br>力 li4 NOUN:power/force NOUN 96
@@ -922,7 +922,7 @@
 当前	dang1qian2	NOUN:the-present/here-and-now	NOUN 100<br>当 dang1 PREP:at-a-time/place PREP/VERB 63/32<br>前 qian2 PRT:front PRT/ADJ/DET 59/20/12
 简单	jian3dan1	ADJ:simple/uncomplicated	VERB/ADJ 68/26<br>简 #3:jian3 VERB: VERB/NOUN 54/46<br>单 dan1 ADV:solely/alone ADV/NUM/NOUN/ADJ 32/26/23/11
 县	#2:xian4	NOUN:county	NOUN 100
-编辑	bian1ji2	VERB:edit/compile	VERB/NOUN 52/48<br>编 bian1 #2:VERB:edit/compile NOUN/VERB 49/47<br>辑 #6:ji2 NOUN: NOUN/NUM/VERB 54/23/20
+编辑	bian1ji2	VERB:edit/compile	VERB/NOUN 52/48<br>编 bian1 #2:VERB:edit/compile NOUN/VERB 49/47<br>辑 #6:ji2 MEAS:part/volume\VERB:edit/compile NOUN/NUM/VERB 54/23/20
 风险	feng1xian3	NOUN:risk/hazard	NOUN 100<br>风 feng1 NOUN:wind/style NOUN 98<br>险 #2:xian3 NOUN:risk NOUN/ADV/ADJ 79/11/10
 章	zhang1	MEAS:chapter	NUM/NOUN 76/22
 有人	you3ren2	PRON:some-people	PRON 99<br>有 you3 VERB:have/possess VERB 99<br>人 ren2 NOUN:person NOUN 99

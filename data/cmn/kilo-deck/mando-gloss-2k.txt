@@ -63,7 +63,7 @@
 份	fen4	MEAS:portion/newspaper/gift	NUM/NOUN 78/22
 平衡	ping2heng2	NOUN:balance/equilibrium	NOUN/VERB 62/36<br>平 ping2 ADJ:flat/level NOUN/VERB 79/20<br>衡 heng2 NOUN: NOUN/VERB 78/19
 篇	pian1	MEAS:sheet-of-paper/piece-of-writing	NUM 93
-适用	huo2yong4	VERB:apply-flexibly/have-multiple-uses	VERB/NOUN 80/14<br>适 #12:shi4 VERB: VERB/NOUN 76/21<br>用 yong4 VERB:use VERB/PREP 58/38
+适用	huo2yong4	VERB:apply-flexibly/have-multiple-uses	VERB/NOUN 80/14<br>适 #12:shi4 ADJ:suitable\VERB:follow/pursue VERB/NOUN 76/21<br>用 yong4 VERB:use VERB/PREP 58/38
 意	#3:yi4	NOUN:meaning/idea	NOUN/VERB 79/20
 列	lie4	VERB:line-up/arrange	VERB/NOUN 79/17
 交	jiao1	VERB:hand-over/deliver	VERB/NOUN 70/30
@@ -126,17 +126,17 @@
 落实	luo4shi2	VERB:decide-in-advance/implement	VERB/NOUN 84/16<br>落 luo4 VERB:fall/drop VERB 91<br>实 #3:shi2 ADJ:solid/true NOUN/ADV 50/34
 加快	jia1kuai4	VERB:speed-up/accelerate	VERB 97<br>加 #2:jia1 VERB:add VERB/NOUN 73/18<br>快 kuai4 ADJ:fast/quick VERB/ADV 53/40
 值得	zhi2de5	VERB:be-worth-it/be-of-value	VERB 100<br>值 zhi2 #2:NOUN:value NOUN/VERB 90/10<br>得 #3:de5 PRT:(how?:) PRT/VERB 59/40
-儿童	er2tong2	NOUN:children	NOUN 100<br>儿 #2:er2 #2:NOUN:child NOUN 80<br>童 #2:tong2 NOUN: NOUN 100
+儿童	er2tong2	NOUN:children	NOUN 100<br>儿 #2:er2 #2:NOUN:child NOUN 80<br>童 #2:tong2 #3:NOUN:child NOUN 100
 出发	chu1fa1	VERB:start-a-journey/depart	VERB/NOUN 78/22<br>出 chu1 VERB:go-out VERB 98<br>发 fa1 VERB:send/start VERB/NOUN 73/25
 素质	su4zhi4	NOUN:quality/character	NOUN 100<br>素 su4 NOUN:basic-element NOUN/ADV 89/11<br>质 #3:zhi4 #2:NOUN:quality/nature NOUN 87
 来源	lai2yuan2	NOUN:source/origin	NOUN 100<br>来 lai2 VERB:come VERB/PRT 52/46<br>源 #4:yuan2 NOUN:source NOUN/VERB 79/20
 站	#3:zhan4	NOUN:station/stop	NOUN/VERB 54/45
 同意	tong2yi4	VERB:agree	VERB/NOUN 90/10<br>同 tong2 PREP:with PREP/NOUN/DET 49/18/12<br>意 #3:yi4 NOUN:meaning/idea NOUN/VERB 79/20
-父亲	fu4qin5	NOUN:father	NOUN 100<br>父 #9:fu4 #3:NOUN:father NOUN 97<br>亲 qin1 VERB: VERB/NOUN 50/44
+父亲	fu4qin5	NOUN:father	NOUN 100<br>父 #9:fu4 #3:NOUN:father NOUN 97<br>亲 qin1 NOUN:relative\ADJ:intimate\VERB:kiss VERB/NOUN 50/44
 进口	jin4kou3	NOUN:entrance-(place)	NOUN/VERB 85/14<br>进 jin4 VERB:advance/enter VERB/NOUN 82/18<br>口 kou3 NOUN:mouth/opening NOUN/PRT 65/15
-逻辑	luo2ji5	#2:NOUN:logic	NOUN 100<br>逻 #2:luo2 ? NOUN/VERB/NUM 55/31/13<br>辑 #6:ji2 NOUN: NOUN/NUM/VERB 54/23/20
+逻辑	luo2ji5	#2:NOUN:logic	NOUN 100<br>逻 #2:luo2 ? NOUN/VERB/NUM 55/31/13<br>辑 #6:ji2 MEAS:part/volume\VERB:edit/compile NOUN/NUM/VERB 54/23/20
 相应	xiang1ying4	ADJ:corresponding/relevant	ADJ/ADV 63/35<br>相 xiang1 ADV:mutually ADV/VERB 76/16<br>应 ying1 VERB:promise VERB 99
-上升	shang4sheng1	VERB:rise/go-up	VERB/NOUN 88/12<br>上 shang4 PRT:up PRT/VERB 79/13<br>升 #3:sheng1 VERB: VERB/NOUN 67/33
+上升	shang4sheng1	VERB:rise/go-up	VERB/NOUN 88/12<br>上 shang4 PRT:up PRT/VERB 79/13<br>升 #3:sheng1 MEAS:liter\VERB:move-upward VERB/NOUN 67/33
 像	#4:xiang4	VERB:resemble/be-like	PREP/ADV/VERB 73/13/11
 外交	wai4jiao1	NOUN:diplomacy/foreign-affairs	NOUN 100<br>外 wai4 NOUN:outside NOUN/PRT 52/46<br>交 jiao1 VERB:hand-over/deliver VERB/NOUN 70/30
 电	dian4	#2:NOUN:electron	NOUN 99
@@ -164,26 +164,26 @@
 感	gan3	NOUN:feeling/sense	NOUN/VERB 83/17
 倍	#2:bei4	MEAS:-times/-fold	NUM/NOUN 88/12
 固定	gu4ding4	ADJ:fixed/regular	ADJ/VERB 80/17<br>固 #3:gu4 ADJ:solid VERB/NOUN/ADJ 38/30/17<br>定 ding4 #2:VERB:decide VERB 84
-训练	xun4lian4	#2:NOUN:training	NOUN 92<br>训 xun4 VERB:train\NOUN:model/example NOUN/VERB 60/40<br>练 #2:lian4 VERB: VERB/NOUN 77/23
+训练	xun4lian4	#2:NOUN:training	NOUN 92<br>训 xun4 VERB:train\NOUN:model/example NOUN/VERB 60/40<br>练 #2:lian4 VERB:practice\ADJ:experienced VERB/NOUN 77/23
 立	#3:li4	VERB:stand	VERB/NOUN 78/22
 感觉	gan3jue2	NOUN:feeling/perception	NOUN/VERB 50/50<br>感 gan3 NOUN:feeling/sense NOUN/VERB 83/17<br>觉 #3:jue2 VERB:feel/become-aware-of VERB/NOUN 71/29
-经历	jing1li4	VERB:experience	VERB/NOUN 63/37<br>经 jing1 PREP:as-a-result-of/through NOUN/PREP/VERB 48/39/10<br>历 #5:li4 NOUN: NOUN/DET 81/14
+经历	jing1li4	VERB:experience	VERB/NOUN 63/37<br>经 jing1 PREP:as-a-result-of/through NOUN/PREP/VERB 48/39/10<br>历 #5:li4 NOUN:calendar\VERB:experience NOUN/DET 81/14
 比重	bi3zhong4	#2:NOUN:proportion	NOUN 100<br>比 bi3 PREP:compared-to PREP 87<br>重 zhong4 ADJ:important/heavy VERB/ADV/NOUN 41/27/24
 法国	Fa3guo2	NOUN:France	NOUN 100<br>法 fa3 NOUN:law/method NOUN 99<br>国 guo2 #2:NOUN:country NOUN 100
 理想	li3xiang3	NOUN:ideal/dream	NOUN/VERB 76/19<br>理 #2:li3 NOUN:logic NOUN/VERB 82/17<br>想 xiang3 VERB:think VERB 100
 产权	chan3quan2	NOUN:property-rights	NOUN 100<br>产 chan3 #2:VERB:produce NOUN/VERB/ADJ 45/31/24<br>权 #2:quan2 NOUN:authority NOUN 100
 多少	duo1shao3	ADJ:how-much?	NUM/ADV 87/12<br>多 duo1 ADJ:many NUM/VERB/ADV 53/26/13<br>少 shao3 VERB:lack VERB/ADV 64/26
-冲突	chong1tu1	NOUN:conflict/clash	NOUN 97<br>冲 #2:chong1 VERB: VERB/NOUN 66/34<br>突 tu1 ADJ:sudden\VERB:dash-forward NOUN/VERB 55/40
+冲突	chong1tu1	NOUN:conflict/clash	NOUN 97<br>冲 #2:chong1 VERB:rush/charge VERB/NOUN 66/34<br>突 tu1 ADJ:sudden\VERB:dash-forward NOUN/VERB 55/40
 协议	xie2yi4	NOUN:agreement	NOUN 100<br>协 xie2 VERB:assist NOUN/VERB 86/14<br>议 #4:yi4 VERB:discuss/consult VERB/NOUN 54/46
 层	#2:ceng2	MEAS:layer/floor	NOUN/NUM 58/41
 加工	jia1gong1	NOUN:processing/machining	NOUN/VERB 88/12<br>加 #2:jia1 VERB:add VERB/NOUN 73/18<br>工 gong1 #2:NOUN:work NOUN 96
 所有制	suo3you3zhi4	NOUN:(system-of)-ownership	NOUN 100<br>所 suo3 PRT:place PRT/NOUN 86/11<br>有 you3 VERB:have/possess VERB 99<br>制 #2:zhi4 NOUN:-ism/system NOUN/VERB 81/15
-秩序	zhi4xu4	NOUN:order/sequence	NOUN 100<br>秩 #10:zhi4 #2:NOUN:order/sequence NOUN/ADJ 85/11<br>序 #2:xu4 NOUN: NOUN 100
+秩序	zhi4xu4	NOUN:order/sequence	NOUN 100<br>秩 #10:zhi4 #3:NOUN:order/sequence NOUN/ADJ 85/11<br>序 #2:xu4 #2:NOUN:order/sequence NOUN 100
 检查	jian3cha2	NOUN:check/examination	NOUN/VERB 86/14<br>检 jian3 VERB:check-up/inspect NOUN/VERB 81/19<br>查 cha2 #2:VERB:investigate VERB/NOUN 77/22
 尽	#2:jin3	VERB:give-priority-to	VERB/ADV 59/41
 情	qing2	NOUN:feelings/sentiment	NOUN 98
 钱	#2:qian2	NOUN:money	NOUN 100
-毕业	bi4ye4	VERB:graduate/finish-school	VERB 91<br>毕 #6:bi4 VERB: VERB/NOUN 84/14<br>业 ye4 NOUN:line-of-business NOUN 100
+毕业	bi4ye4	VERB:graduate/finish-school	VERB 91<br>毕 #6:bi4 VERB:finish\ADV:completely VERB/NOUN 84/14<br>业 ye4 NOUN:line-of-business NOUN 100
 统治	tong3zhi4	NOUN:rule/domination	NOUN/VERB 90/10<br>统 tong3 #6:NOUN:system NOUN/VERB 84/16<br>治 #4:zhi4 VERB:rule/govern NOUN/VERB 85/14
 投入	tou2ru4	VERB:put-into/invest	VERB/NOUN 70/30<br>投 #2:tou2 VERB:throw/fling VERB/NOUN 65/35<br>入 ru4 VERB:enter VERB 94
 有着	you3zhe5	#4:VERB:have/possess	VERB 87<br>有 you3 VERB:have/possess VERB 99<br>着 zhe5 PRT:-ing PRT 90
@@ -191,28 +191,28 @@
 不知	bu4zhi1	ADV:unknowingly	ADV/VERB 80/20<br>不 bu4 ADV:not ADV 98<br>知 #2:zhi1 #2:VERB:know VERB/NOUN 87/13
 公开	gong1kai1	#2:ADJ:public	ADV/ADJ/VERB 50/24/21<br>公 #2:gong1 ADJ:public NOUN/ADJ 74/18<br>开 kai1 VERB:open VERB 95
 案件	an4jian4	NOUN:law-case	NOUN 100<br>案 #2:an4 #2:NOUN:law-case NOUN 100<br>件 jian4 MEAS:item/article NUM/NOUN 57/38
-母亲	mu3qin1	NOUN:mother	NOUN 100<br>母 #3:mu3 #2:NOUN:mother NOUN/ADJ 89/11<br>亲 qin1 VERB: VERB/NOUN 50/44
+母亲	mu3qin1	NOUN:mother	NOUN 100<br>母 #3:mu3 #2:NOUN:mother NOUN/ADJ 89/11<br>亲 qin1 NOUN:relative\ADJ:intimate\VERB:kiss VERB/NOUN 50/44
 著名	zhu4ming2	ADJ:famous	ADJ/VERB 75/25<br>著 #14:zhu4 #2:NOUN:book NOUN 100<br>名 ming2 MEAS:name NUM/NOUN 68/29
-鼓励	gu3li4	VERB:encourage/urge	VERB/NOUN 85/15<br>鼓 #3:gu3 NOUN: NOUN/VERB 71/29<br>励 #6:li4 NOUN: NOUN/VERB 62/24
+鼓励	gu3li4	VERB:encourage/urge	VERB/NOUN 85/15<br>鼓 #3:gu3 NOUN:drum\VERB:rouse NOUN/VERB 71/29<br>励 #6:li4 VERB:encourage NOUN/VERB 62/24
 亚	ya4	ADJ:second/inferior	NOUN 99
 报道	bao4dao4	NOUN:news-reporting/story	NOUN/VERB 51/49<br>报 bao4 NOUN:newspaper NOUN/VERB 87/13<br>道 #2:dao4 NOUN:path NOUN/VERB 84/14
 记者	ji4zhe3	NOUN:reporter/journalist	NOUN 100<br>记 #5:ji4 VERB:remember/record VERB/NOUN 57/41<br>者 zhe3 NOUN:-er/-ist NOUN 100
-登记	deng1ji4	VERB:register	NOUN/VERB 63/37<br>登 deng1 VERB: VERB/NOUN 71/26<br>记 #5:ji4 VERB:remember/record VERB/NOUN 57/41
+登记	deng1ji4	VERB:register	NOUN/VERB 63/37<br>登 deng1 VERB:ascend VERB/NOUN 71/26<br>记 #5:ji4 VERB:remember/record VERB/NOUN 57/41
 税收	shui4shou1	NOUN:tax-revenue	NOUN 100<br>税 shui4 NOUN:tax/duty NOUN 100<br>收 shou1 VERB:receive VERB/NOUN 65/33
 那里	na4li5	PRON:that-place/there	PRON 100<br>那 na4 PRON:that PRON/DET/ADV 45/44/11<br>里 li3 #2:PRT:inside PRT/NOUN 80/13
 也许	ye3xu3	ADV:perhaps	ADV 100<br>也 ye3 ADV:also ADV 99<br>许 xu3 #2:VERB:promise VERB/NOUN 52/48
 谈	tan2	VERB:talk/chat	VERB 94
-文艺	wen2yi4	NOUN:art-and-literature	NOUN 100<br>文 wen2 NOUN:writing NOUN 95<br>艺 #10:yi4 NOUN: NOUN 99
+文艺	wen2yi4	NOUN:art-and-literature	NOUN 100<br>文 wen2 NOUN:writing NOUN 95<br>艺 #10:yi4 #3:NOUN:art NOUN 99
 联	lian2	NOUN:allies/joining	NOUN/VERB 81/12
 民间	min2jian1	ADJ:folk/nongovernmental	NOUN 100<br>民 min2 #2:NOUN:people NOUN 97<br>间 jian1 PRT:room PRT/NOUN 78/17
-适当	shi4dang4	ADJ:suitable/appropriate	VERB/ADJ/ADV 38/32/30<br>适 #12:shi4 VERB: VERB/NOUN 76/21<br>当 dang1 PREP:at-a-time/place PREP/VERB 63/32
+适当	shi4dang4	ADJ:suitable/appropriate	VERB/ADJ/ADV 38/32/30<br>适 #12:shi4 ADJ:suitable\VERB:follow/pursue VERB/NOUN 76/21<br>当 dang1 PREP:at-a-time/place PREP/VERB 63/32
 线	#3:xian4	NOUN:string/wire	NOUN 89
 一段	yi2duan4	NOUN:one-paragraph	NUM/ADJ/VERB 51/20/13<br>一 yi1 NUM:1 NUM 89<br>段 duan4 MEAS:section/paragraph NOUN/NUM 51/49
 支	#3:zhi1	MEAS:stick/song/army-unit/watt	NOUN/VERB/NUM 36/36/28
 学科	xue2ke1	#2:NOUN:branch-of-study	NOUN 100<br>学 xue2 VERB:study NOUN/VERB 61/39<br>科 ke1 NOUN:branch-of-study NOUN 99
 别	bie2	#2:AUXV:don't	ADV/DET 60/28
 针对	zhen1dui4	CONJ:in-connection-with/against	PREP 94<br>针 #2:zhen1 NOUN:pin/needle NOUN 94<br>对 dui4 #2:PREP:for PREP 95
-苏联	Su1lian2	NOUN:Soviet-Union	NOUN 100<br>苏 su1 NOUN: NOUN 100<br>联 lian2 NOUN:allies/joining NOUN/VERB 81/12
+苏联	Su1lian2	NOUN:Soviet-Union	NOUN 100<br>苏 su1 VERB:regain-consciousness NOUN 100<br>联 lian2 NOUN:allies/joining NOUN/VERB 81/12
 小组	xiao3zu3	#2:NOUN:group	NOUN 100<br>小 xiao3 ADJ:small ADJ/VERB 66/25<br>组 zu3 MEAS:group/set NOUN/VERB/NUM 74/14/12
 国外	guo2wai4	NOUN:overseas/abroad	NOUN 100<br>国 guo2 #2:NOUN:country NOUN 100<br>外 wai4 NOUN:outside NOUN/PRT 52/46
 单	dan1	ADV:solely/alone	ADV/NUM/NOUN/ADJ 32/26/23/11
@@ -230,13 +230,13 @@
 危机	wei1ji1	NOUN:crisis	NOUN 100<br>危 #3:wei1 NOUN:danger\VERB:endanger ADV/ADJ/VERB/NOUN 32/31/22/14<br>机 ji1 NOUN:machine NOUN 97
 探讨	tan4tao3	#2:VERB:explore/probe	VERB/NOUN 72/28<br>探 tan4 VERB:explore VERB/NOUN 73/27<br>讨 tao3 #2:VERB:discuss VERB 100
 团体	tuan2ti3	NOUN:organization/team	NOUN 100<br>团 tuan2 NOUN:regiment NOUN 96<br>体 ti3 NOUN:body NOUN 93
-允许	yun3xu3	VERB:allow/permit	VERB 100<br>允 yun3 VERB: VERB/NOUN 86/11<br>许 xu3 #2:VERB:promise VERB/NOUN 52/48
+允许	yun3xu3	VERB:allow/permit	VERB 100<br>允 yun3 #4:VERB:allow/permit VERB/NOUN 86/11<br>许 xu3 #2:VERB:promise VERB/NOUN 52/48
 质	#3:zhi4	#2:NOUN:quality/nature	NOUN 87
 显然	xian3ran2	ADV:obvious/noticeable	ADV 99<br>显 xian3 ADJ:obvious/noticeable VERB 93<br>然 ran2 #5:CONJ:but ADV/VERB/NOUN 57/31/11
-考察	kao3cha2	#3:VERB:investigate	NOUN/VERB 51/49<br>考 kao3 VERB:test VERB/NOUN 68/32<br>察 #2:cha2 VERB: VERB/NOUN 56/41
+考察	kao3cha2	#3:VERB:investigate	NOUN/VERB 51/49<br>考 kao3 VERB:test VERB/NOUN 68/32<br>察 #2:cha2 #2:VERB:observe/examine VERB/NOUN 56/41
 认	#2:ren4	#2:VERB:acknowledge/recognize	VERB/NOUN 82/18
 面临	mian4lin2	VERB:be-faced-with	VERB 100<br>面 mian4 NOUN:face NOUN 94<br>临 #3:lin2 VERB:face/arrive NOUN/VERB/ADJ 52/31/15
-死亡	si3wang2	#2:VERB:die	VERB/NOUN 65/35<br>死 si3 VERB:die VERB 91<br>亡 #2:wang2 VERB: VERB/NOUN 69/31
+死亡	si3wang2	#2:VERB:die	VERB/NOUN 65/35<br>死 si3 VERB:die VERB 91<br>亡 #2:wang2 #3:VERB:die VERB/NOUN 69/31
 战斗	zhan4dou4	NOUN:battle	NOUN/VERB 84/15<br>战 #2:zhan4 #2:NOUN:war NOUN 95<br>斗 dou4 VERB:fight/struggle-against VERB/NOUN 67/31
 一下	yi2xia4	ADV:in-a-short-while/all-at-once	ADV 100<br>一 yi1 NUM:1 NUM 89<br>下 xia4 PRT:down PRT/VERB 72/17
 今年	jin1nian2	NOUN:this-year	NOUN 100<br>今 #2:jin1 NOUN:present-day NOUN 94<br>年 nian2 MEAS:year NOUN/NUM 67/32
@@ -256,8 +256,8 @@
 协会	xie2hui4	NOUN:association/society	NOUN 100<br>协 xie2 VERB:assist NOUN/VERB 86/14<br>会 hui4 VERB:is-able VERB/NOUN 69/31
 结	#2:jie2	NOUN:knot	NOUN/VERB 56/44
 生物	sheng1wu4	NOUN:living-thing	NOUN 100<br>生 sheng1 VERB:birth VERB/NOUN 48/44<br>物 wu4 #2:NOUN:thing NOUN 98
-观察	guan1cha2	VERB:observe/examine	VERB/NOUN 54/46<br>观 #2:guan1 NOUN:view/outlook NOUN 94<br>察 #2:cha2 VERB: VERB/NOUN 56/41
-背景	bei4jing3	NOUN:background/backdrop	NOUN 100<br>背 #4:bei4 NOUN: NOUN/VERB 54/46<br>景 jing3 NOUN: NOUN 96
+观察	guan1cha2	VERB:observe/examine	VERB/NOUN 54/46<br>观 #2:guan1 NOUN:view/outlook NOUN 94<br>察 #2:cha2 #2:VERB:observe/examine VERB/NOUN 56/41
+背景	bei4jing3	NOUN:background/backdrop	NOUN 100<br>背 #4:bei4 NOUN:back-of-body-or-object\VERB:do-something-behind-one's-back NOUN/VERB 54/46<br>景 jing3 NOUN:view/scene NOUN 96
 总结	zong3jie2	VERB:summarize	VERB/NOUN 83/17<br>总 zong3 ADJ:total/general ADJ/ADV 74/22<br>结 #2:jie2 NOUN:knot NOUN/VERB 56/44
 传播	chuan2bo1	VERB:spread/disseminate	NOUN/VERB 62/38<br>传 chuan2 VERB:spread/transmit VERB/NOUN 54/45<br>播 #2:bo1 VERB:broadcast VERB/NOUN 81/19
 倾向	qing1xiang4	#2:NOUN:trend/tendency	NOUN/VERB 75/25<br>倾 #4:qing1 ? VERB/ADJ/NOUN 59/27/12<br>向 xiang4 PREP:towards PREP 96
@@ -712,7 +712,7 @@
 充满	chong1man3	VERB:fill-to-the-brim	VERB 100<br>充 chong1 VERB:fill/charge\ADJ:full/sufficient VERB/ADJ 85/12<br>满 man3 ADJ:full\VERB:reach-the-limit VERB/ADJ 60/30
 片	pian4	NOUN:flat-thin-piece\MEAS:slice/scene/mood/expanse	NOUN/NUM 87/11
 比如	bi3ru2	ADV:for-example	ADV 100<br>比 bi3 PREP:compared-to PREP 87<br>如 ru2 VERB:be-like/measure-up-to ADV/PREP 77/13
-许可	xu3ke3	VERB:permit/allow	NOUN/VERB 86/12<br>许 xu3 #2:VERB:promise VERB/NOUN 52/48<br>可 ke3 #3:VERB:can VERB 92
+许可	xu3ke3	#3:VERB:allow/permit	NOUN/VERB 86/12<br>许 xu3 #2:VERB:promise VERB/NOUN 52/48<br>可 ke3 #3:VERB:can VERB 92
 激烈	ji1lie4	ADJ:intense/fierce	VERB/ADJ 73/18<br>激 #5:ji1 VERB:stimulate\ADJ:fierce ADV/VERB/ADJ 47/22/21<br>烈 #2:lie4 #2:ADJ:strong/intense NOUN/VERB/ADJ 45/42/14
 一方	yi4fang1	NOUN:one-side/area	VERB/PRON 73/12<br>一 yi1 NUM:1 NUM 89<br>方 fang1 NOUN:direction NOUN 98
 强大	qiang2da4	ADJ:powerful	ADJ/VERB 57/40<br>强 qiang2 ADJ:strong/powerful VERB/ADJ/NOUN 65/21/11<br>大 da4 ADJ:big ADJ/VERB 57/32
