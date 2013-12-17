@@ -280,7 +280,7 @@
 只	zhi3	ADV:only	ADV 96
 个人	ge4ren2	NOUN:individual	NOUN 99<br>个 ge5 MEAS:(general) NUM 92<br>人 ren2 NOUN:person NOUN 99
 认识	ren4shi5	VERB:know/recognize\NOUN:knowledge	VERB/NOUN 55/45<br>认 #2:ren4 #2:VERB:acknowledge/recognize VERB/NOUN 82/18<br>识 #4:shi2 #2:NOUN:knowledge NOUN/VERB 78/21
-信息	xin4xi1	NOUN:information	NOUN 100<br>信 xin4 NOUN:letter-(mail) NOUN 91<br>息 #2:xi1 NOUN: NOUN/ADV/VERB 53/25/22
+信息	xin4xi1	NOUN:information	NOUN 100<br>信 xin4 NOUN:letter-(mail) NOUN 91<br>息 #2:xi1 NOUN:interest-(loan) NOUN/ADV/VERB 53/25/22
 该	gai1	PRON:said/given	DET/VERB 84/16
 所以	suo3yi3	#2:CONJ:therefore	ADV 97<br>所 suo3 PRT:place PRT/NOUN 86/11<br>以 yi3 PREP:using PREP/PRT 71/24
 亿	yi4	NUM:100M	NUM 96
@@ -308,7 +308,7 @@
 原则	yuan2ze2	NOUN:principle	NOUN 95<br>原 #3:yuan2 ADJ:primary/original ADJ/NOUN/ADV 37/36/27<br>则 ze2 ADV:in-that-case ADV 97
 资产	zi1chan3	#2:NOUN:property	NOUN 100<br>资 zi1 NOUN:money/expenses NOUN 96<br>产 chan3 #2:VERB:produce NOUN/VERB/ADJ 45/31/24
 行为	xing2wei2	#2:NOUN:action	NOUN 100<br>行 xing2 ADJ:OK NOUN/VERB 58/41<br>为 wei4 PREP:for\VERB:be/act-as PREP/VERB 60/40
-资源	zi1yuan2	NOUN:natural-resources	NOUN 100<br>资 zi1 NOUN:money/expenses NOUN 96<br>源 #4:yuan2 NOUN: NOUN/VERB 79/20
+资源	zi1yuan2	NOUN:natural-resources	NOUN 100<br>资 zi1 NOUN:money/expenses NOUN 96<br>源 #4:yuan2 NOUN:source NOUN/VERB 79/20
 变化	bian4hua4	#2:NOUN:change	NOUN 92<br>变 bian4 VERB:change VERB/NOUN 87/13<br>化 hua4 NOUN:change NOUN/VERB 59/35
 资金	zi1jin1	NOUN:fund	NOUN 100<br>资 zi1 NOUN:money/expenses NOUN 96<br>金 jin1 NOUN:gold NOUN/ADJ 90/10
 位	#2:wei4	MEAS:person	NUM/NOUN 77/14
@@ -430,7 +430,7 @@
 发现	fa1xian4	VERB:find	VERB 92<br>发 fa1 VERB:send/start VERB/NOUN 73/25<br>现 xian4 ADV:just/at-the-time ADV/NOUN/VERB 48/26/20
 之后	zhi1hou4	PRT:after/later	PRT/ADV 81/18<br>之 zhi1 #2:PRT:of PRT 82<br>后 hou4 PRT:after PRT/NOUN 82/12
 战争	zhan4zheng1	NOUN:war	NOUN 100<br>战 #2:zhan4 #2:NOUN:war NOUN 95<br>争 zheng1 VERB:contend/dispute VERB/NOUN 71/28
-报告	bao4gao4	NOUN:report	NOUN 91<br>报 bao4 NOUN:newspaper NOUN/VERB 87/13<br>告 gao4 VERB: VERB 100
+报告	bao4gao4	NOUN:report	NOUN 91<br>报 bao4 NOUN:newspaper NOUN/VERB 87/13<br>告 gao4 VERB:tell/inform VERB 100
 取得	qu3de2	VERB:gain	VERB 99<br>取 qu3 VERB:choose/take VERB 99<br>得 #3:de5 PRT:(how?:) PRT/VERB 59/40
 矛盾	mao2dun4	NOUN:contradiction	NOUN 93<br>矛 #2:mao2 VERB: VERB/NOUN 57/34<br>盾 #2:dun4 NOUN: NOUN/VERB 75/16
 职工	zhi2gong1	NOUN:workers	NOUN 100<br>职 #2:zhi2 NOUN:office/duty NOUN 93<br>工 gong1 #2:NOUN:work NOUN 96
@@ -615,7 +615,7 @@
 集体	ji2ti3	NOUN:team	NOUN 91<br>集 #5:ji2 NOUN:collection/anthology NOUN/VERB 68/27<br>体 ti3 NOUN:body NOUN 93
 主体	zhu3ti3	NOUN:main-part	NOUN 100<br>主 zhu3 NOUN:master NOUN/ADJ 68/25<br>体 ti3 NOUN:body NOUN 93
 委员	wei3yuan2	NOUN:committee-member	NOUN 100<br>委 wei3 VERB:entrust/appoint NOUN/VERB 83/17<br>员 #2:yuan2 NOUN:-er/member NOUN 100
-表示	biao3shi4	VERB:show	VERB 98<br>表 biao3 NOUN:table/list NOUN/VERB 75/25<br>示 #10:shi4 VERB: VERB/NOUN 82/18
+表示	biao3shi4	VERB:show	VERB 98<br>表 biao3 NOUN:table/list NOUN/VERB 75/25<br>示 #10:shi4 VERB:show/instruct VERB/NOUN 82/18
 然而	ran2er2	#4:CONJ:but	ADV 100<br>然 ran2 #5:CONJ:but ADV/VERB/NOUN 57/31/11<br>而 er2 CONJ:and-yet ADV/PRT/CONJ 58/30/11
 实	#3:shi2	ADJ:solid/true	NOUN/ADV 50/34
 怎么	zen3me5	ADV:how?	ADV/VERB 84/13<br>怎 zen3 ADV: ADV 100<br>么 me5 PRT:-(interrogative/adverb) PRT/NOUN 71/29
@@ -698,7 +698,7 @@
 工资	gong1zi1	NOUN:wages	NOUN 100<br>工 gong1 #2:NOUN:work NOUN 96<br>资 zi1 NOUN:money/expenses NOUN 96
 因而	yin1er2	ADV:consequently	ADV 100<br>因 yin1 PREP:because PREP 87<br>而 er2 CONJ:and-yet ADV/PRT/CONJ 58/30/11
 青年	qing1nian2	NOUN:youth	NOUN 100<br>青 #3:qing1 ADJ: ADJ/NOUN 59/39<br>年 nian2 MEAS:year NOUN/NUM 67/32
-普遍	pu3bian4	ADJ:universal/general	ADV/ADJ/VERB 46/36/18<br>普 pu3 NOUN: NOUN 94<br>遍 #4:bian4 VERB: VERB/NOUN/NUM 72/17/11
+普遍	pu3bian4	ADJ:universal/general	ADV/ADJ/VERB 46/36/18<br>普 pu3 ADJ:general/universal NOUN 94<br>遍 #4:bian4 VERB: VERB/NOUN/NUM 72/17/11
 西方	xi1fang1	NOUN:west	NOUN 100<br>西 xi1 #2:NOUN:west NOUN 99<br>方 fang1 NOUN:direction NOUN 98
 快	kuai4	ADJ:fast/quick	VERB/ADV 53/40
 犯罪	fan4zui4	NOUN:crime	NOUN 95<br>犯 fan4 VERB: VERB/NOUN 56/44<br>罪 #2:zui4 NOUN: NOUN 100
@@ -828,7 +828,7 @@
 构成	gou4cheng2	VERB:constitute/make-up	VERB/NOUN 86/14<br>构 gou4 VERB:construct/form NOUN/VERB 83/17<br>成 cheng2 VERB:become VERB 92
 在于	zai4yu2	VERB:be-determined-by/lie-in	VERB 100<br>在 zai4 PREP:at PREP 93<br>于 yu2 PREP:by PREP/VERB 81/18
 平均	ping2jun1	ADJ:average	ADJ/ADV 59/38<br>平 ping2 ADJ:flat/level NOUN/VERB 79/20<br>均 #2:jun1 ADV:evenly/missing-none ADV 97
-举行	ju3xing2	VERB:hold-a-meeting	VERB 99<br>举 ju3 VERB: VERB/NOUN 66/34<br>行 xing2 ADJ:OK NOUN/VERB 58/41
+举行	ju3xing2	VERB:hold-a-meeting	VERB 99<br>举 ju3 VERB:lift/raise\NOUN:act/deed VERB/NOUN 66/34<br>行 xing2 ADJ:OK NOUN/VERB 58/41
 生命	sheng1ming4	NOUN:life	NOUN 100<br>生 sheng1 VERB:birth VERB/NOUN 48/44<br>命 ming4 NOUN:life/command NOUN/VERB 74/26
 外国	wai4guo2	NOUN:foreign-country	NOUN 100<br>外 wai4 NOUN:outside NOUN/PRT 52/46<br>国 guo2 #2:NOUN:country NOUN 100
 满足	man3zu2	ADJ:contented/satisfied	VERB/NOUN 85/15<br>满 man3 ADJ:full\VERB:reach-the-limit VERB/ADJ 60/30<br>足 #2:zu2 VERB: VERB/NOUN 61/36
@@ -948,7 +948,7 @@
 以前	yi3qian2	ADV:before/formerly	PRT/NOUN 57/43<br>以 yi3 PREP:using PREP/PRT 71/24<br>前 qian2 PRT:front PRT/ADJ/DET 59/20/12
 余	#2:yu2	NOUN:surplus/remainder	NUM/NOUN 71/26
 比例	bi3li4	NOUN:proportion	NOUN 100<br>比 bi3 PREP:compared-to PREP 87<br>例 #4:li4 NOUN:example/instance NOUN 81
-依据	yi1ju4	#2:NOUN:base/foundation	NOUN/PREP 65/32<br>依 #2:yi1 PREP: PREP 87<br>据 ju4 PREP:according-to PREP 82
+依据	yi1ju4	#2:NOUN:base/foundation	NOUN/PREP 65/32<br>依 #2:yi1 PREP:according-to\VERB:depend-on PREP 87<br>据 ju4 PREP:according-to PREP 82
 双方	shuang1fang4	NOUN:both-sides	PRON 100<br>双 shuang1 NUM: NUM 97<br>方 fang1 NOUN:direction NOUN 98
 反	fan3	VERB:turn-over/oppose	VERB/ADJ 71/24
 合	#2:he2	VERB:close/suit	NOUN/VERB 58/41
