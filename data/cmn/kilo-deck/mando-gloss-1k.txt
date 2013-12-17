@@ -603,7 +603,7 @@
 度	du4	NOUN:degree	NOUN/NUM 74/19
 观点	guan1dian3	NOUN:viewpoint	NOUN 100<br>观 #2:guan1 NOUN:view/outlook NOUN 94<br>点 dian3 NOUN:dot NOUN/NUM 62/31
 希望	xi1wang4	VERB:hope	VERB/NOUN 79/21<br>希 #4:xi1 NOUN: NOUN/VERB 84/16<br>望 wang4 VERB: VERB/NOUN 64/36
-困难	kun4nan5	NOUN:difficulty/dire-straits	NOUN/VERB 72/26<br>困 kun4 VERB: VERB/NOUN 55/45<br>难 nan2 ADJ:hard/difficult ADV/VERB/NOUN 63/25/11
+困难	kun4nan5	NOUN:difficulty/dire-straits	NOUN/VERB 72/26<br>困 kun4 ADJ:sleepy VERB/NOUN 55/45<br>难 nan2 ADJ:hard/difficult ADV/VERB/NOUN 63/25/11
 引起	yin3qi3	VERB:give-rise-to	VERB 100<br>引 yin3 #3:VERB:lead/guide VERB/NOUN 87/13<br>起 qi3 VERB:rise VERB/PRT 70/24
 集团	ji2tuan2	NOUN:group	NOUN 100<br>集 #5:ji2 NOUN:collection/anthology NOUN/VERB 68/27<br>团 tuan2 NOUN:regiment NOUN 96
 报	bao4	NOUN:newspaper	NOUN/VERB 87/13
@@ -675,7 +675,7 @@
 适应	shi4ying4	VERB:adapt	VERB 96<br>适 #12:shi4 VERB: VERB/NOUN 76/21<br>应 ying1 VERB:promise VERB 99
 台湾	Tai2wan1	NOUN:Taiwan	NOUN 100<br>台 tai2 NOUN:platform NOUN/NUM 68/31<br>湾 wan1 NOUN: NOUN 100
 成功	cheng2gong1	VERB:succeed/be-a-success	VERB/NOUN 52/35<br>成 cheng2 VERB:become VERB 92<br>功 #4:gong1 NOUN: NOUN/VERB 90/10
-同志	tong2zhi4	NOUN:comrade	NOUN 100<br>同 tong2 PREP:with PREP/NOUN/DET 49/18/12<br>志 #6:zhi4 NOUN: NOUN 96
+同志	tong2zhi4	NOUN:comrade	NOUN 100<br>同 tong2 PREP:with PREP/NOUN/DET 49/18/12<br>志 #6:zhi4 NOUN:annals NOUN 96
 式	#4:shi4	NOUN:pattern/formula	NOUN/ADJ 56/41
 状况	zhuang4kuang4	NOUN:status	NOUN 100<br>状 zhuang4 NOUN: NOUN 82<br>况 kuang4 NOUN:condition/situation NOUN 100
 卫生	wei4sheng1	NOUN:hygiene	NOUN 100<br>卫 #4:wei4 NOUN: NOUN 100<br>生 sheng1 VERB:birth VERB/NOUN 48/44
@@ -959,7 +959,7 @@
 逐渐	zhu2jian4	ADV:gradually	ADV 99<br>逐 zhu2 VERB: VERB/NOUN 60/35<br>渐 #5:jian4 ADV: ADV 93
 学者	xue2zhe3	NOUN:scholar	NOUN 100<br>学 xue2 VERB:study NOUN/VERB 61/39<br>者 zhe3 NOUN:-er/-ist NOUN 100
 深	shen1	ADJ:deep/dark-color	VERB/ADV/ADJ 35/34/23
-掌握	zhang3wo4	VERB:grasp/know-well	VERB 97<br>掌 #2:zhang3 VERB: VERB/NOUN 50/50<br>握 wo4 VERB: VERB 100
+掌握	zhang3wo4	VERB:grasp/know-well	VERB 97<br>掌 #2:zhang3 VERB: VERB/NOUN 50/50<br>握 wo4 #2:VERB:hold/grasp VERB 100
 事情	shi4qing5	#2:NOUN:issue/matter/thing	NOUN 100<br>事 #3:shi4 NOUN:issue/matter/thing NOUN 98<br>情 qing2 NOUN:feelings/sentiment NOUN 98
 观	#2:guan1	NOUN:view/outlook	NOUN 94
 通知	tong1zhi1	NOUN:notice/circular	NOUN/VERB 68/32<br>通 tong1 VERB:communicate/connect VERB/NOUN 68/30<br>知 #2:zhi1 #2:VERB:know VERB/NOUN 87/13
@@ -969,7 +969,7 @@
 另外	ling4wai4	ADJ:additional/another	ADV/DET 77/21<br>另 ling4 PRON:other/another DET/ADV 75/24<br>外 wai4 NOUN:outside NOUN/PRT 52/46
 面积	mian4ji1	NOUN:area-(geometry)	NOUN 99<br>面 mian4 NOUN:face NOUN 94<br>积 #4:ji1 VERB:accumulate\NOUN:multiplication-product VERB/NOUN 50/50
 路	lu4	#2:NOUN:road/way	NOUN 97
-给予	ji3yu3	#2:VERB:give	VERB 100<br>给 gei3 VERB:give VERB/PREP 53/46<br>予 #3:yu3 VERB: VERB 94
+给予	ji3yu3	#2:VERB:give	VERB 100<br>给 gei3 VERB:give VERB/PREP 53/46<br>予 #3:yu3 #3:VERB:give VERB 94
 趋势	qu1shi4	NOUN:trend/tendency	NOUN 100<br>趋 #2:qu1 VERB: VERB 100<br>势 #9:shi4 NOUN:tendency/momentum NOUN/VERB 74/21
 怎样	zen3yang4	#2:ADV:how?	ADV/VERB/ADJ 64/22/13<br>怎 zen3 ADV: ADV 100<br>样 yang4 #2:MEAS:kind/type NUM/ADJ/VERB/ADV/NOUN 28/27/21/12/10
 申请	shen1qing3	NOUN:application-(paperwork)	NOUN/VERB 62/38<br>申 #3:shen1 NOUN: NOUN/VERB 50/50<br>请 qing3 VERB:request/ask VERB 99
