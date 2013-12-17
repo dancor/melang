@@ -375,7 +375,7 @@
 民主	min2zhu3	NOUN:democracy	NOUN 93<br>民 min2 #2:NOUN:people NOUN 97<br>主 zhu3 NOUN:master NOUN/ADJ 68/25
 产	chan3	#2:VERB:produce	NOUN/VERB/ADJ 45/31/24
 再	#2:zai4	#2:ADV:again	ADV 98
-完成	wan2cheng2	VERB:accomplish	VERB 96<br>完 wan2 VERB: VERB 99<br>成 cheng2 VERB:become VERB 92
+完成	wan2cheng2	VERB:accomplish	VERB 96<br>完 wan2 VERB:finish\ADJ:intact VERB 99<br>成 cheng2 VERB:become VERB 92
 参加	can1jia1	VERB:take-part-in	VERB 99<br>参 can1 VERB:participate VERB/NOUN 69/31<br>加 #2:jia1 VERB:add VERB/NOUN 73/18
 保护	bao3hu4	NOUN:protection	NOUN/VERB 69/31<br>保 bao3 #2:NOUN:protection NOUN/VERB 55/45<br>护 #2:hu4 NOUN: NOUN/VERB 62/30
 以后	yi3hou4	#2:PRT:after	PRT/ADV 75/17<br>以 yi3 PREP:using PREP/PRT 71/24<br>后 hou4 PRT:after PRT/NOUN 82/12
@@ -399,11 +399,11 @@
 控制	kong4zhi4	VERB:control	VERB/NOUN 55/45<br>控 kong4 #2:VERB:control NOUN/ADJ/VERB 41/30/29<br>制 #2:zhi4 NOUN:-ism/system NOUN/VERB 81/15
 经验	jing1yan4	NOUN:experience	NOUN 100<br>经 jing1 PREP:as-a-result-of/through NOUN/PREP/VERB 48/39/10<br>验 yan4 VERB:examine/check NOUN/VERB 56/44
 收入	shou1ru4	NOUN:income	NOUN 99<br>收 shou1 VERB:receive VERB/NOUN 65/33<br>入 ru4 VERB:enter VERB 94
-财政	cai2zheng4	NOUN:financial-administration	NOUN 100<br>财 #2:cai2 NOUN: NOUN 100<br>政 #2:zheng4 #2:NOUN:government NOUN 100
+财政	cai2zheng4	NOUN:financial-administration	NOUN 100<br>财 #2:cai2 NOUN:wealth NOUN 100<br>政 #2:zheng4 #2:NOUN:government NOUN 100
 应当	ying1dang1	#2:VERB:should	VERB 100<br>应 ying1 VERB:promise VERB 99<br>当 dang1 PREP:at-a-time/place PREP/VERB 63/32
 书	shu1	NOUN:book	NOUN 99
 贸易	mao4yi4	NOUN:trade	NOUN 100<br>贸 mao4 NOUN: NOUN 91<br>易 #5:yi4 ADJ:easy/amiable\VERB:change/exchange VERB/ADV/NOUN 46/30/24
-学习	xue2xi2	#2:VERB:study	VERB/NOUN 57/43<br>学 xue2 VERB:study NOUN/VERB 61/39<br>习 xi2 VERB: VERB/NOUN 60/39
+学习	xue2xi2	#2:VERB:study	VERB/NOUN 57/43<br>学 xue2 VERB:study NOUN/VERB 61/39<br>习 xi2 VERB:practice/review\NOUN:habit/usual-practice VERB/NOUN 60/39
 目标	mu4biao1	NOUN:goal	NOUN 100<br>目 mu4 NOUN:eye/item NOUN/VERB 80/17<br>标 biao1 NOUN:mark/sign NOUN 89
 却	que4	#3:CONJ:but	ADV 100
 世纪	shi4ji4	NOUN:century	NOUN 100<br>世 #7:shi4 NOUN:world/lifetime NOUN 96<br>纪 #7:ji4 NOUN: NOUN 100
@@ -421,7 +421,7 @@
 任何	ren4he2	PRON:any	DET 100<br>任 ren4 VERB:assume-a-post/appoint VERB/NOUN 51/43<br>何 #3:he2 DET:what?/which? DET/ADV/PRON/NOUN 43/27/15/14
 实践	shi2jian4	NOUN:practice/use	NOUN 95<br>实 #3:shi2 ADJ:solid/true NOUN/ADV 50/34<br>践 #4:jian4 NOUN: NOUN/VERB 67/32
 上海	Shang4hai3	NOUN:Shanghai	NOUN 100<br>上 shang4 PRT:up PRT/VERB 79/13<br>海 hai3 NOUN:sea NOUN 99
-完全	wan2quan2	ADV:completely	ADV 88<br>完 wan2 VERB: VERB 99<br>全 quan2 ADJ:complete/whole DET/ADV 86/10
+完全	wan2quan2	ADV:completely	ADV 88<br>完 wan2 VERB:finish\ADJ:intact VERB 99<br>全 quan2 ADJ:complete/whole DET/ADV 86/10
 工程	gong1cheng2	NOUN:engineering	NOUN 100<br>工 gong1 #2:NOUN:work NOUN 96<br>程 #2:cheng2 NOUN:order/procedure NOUN/ADJ 88/12
 些	xie1	MEAS:(indefinite-small-amount)	NUM 95
 地位	di4wei4	NOUN:position/status	NOUN 100<br>地 #2:de5 PRT:-ly PRT/NOUN 76/24<br>位 #2:wei4 MEAS:person NUM/NOUN 77/14
@@ -735,7 +735,7 @@
 区域	qu1yu4	#2:NOUN:region	NOUN 97<br>区 qu1 NOUN:region NOUN 99<br>域 #4:yu4 NOUN: NOUN 100
 展	zhan3	NOUN:-exhibition	NOUN/VERB 89/11
 学术	xue2shu4	NOUN:learning	NOUN 100<br>学 xue2 VERB:study NOUN/VERB 61/39<br>术 #2:shu4 #2:NOUN:art NOUN 100
-完善	wan2shan4	ADJ:perfect/consummate	VERB 87<br>完 wan2 VERB: VERB 99<br>善 shan4 NOUN: NOUN/VERB 63/25
+完善	wan2shan4	ADJ:perfect/consummate	VERB 87<br>完 wan2 VERB:finish\ADJ:intact VERB 99<br>善 shan4 NOUN: NOUN/VERB 63/25
 概念	gai4nian4	#2:NOUN:idea	NOUN 100<br>概 #2:gai4 VERB: VERB/NOUN 67/22<br>念 nian4 VERB: VERB 100
 符合	fu2he2	VERB:conform	VERB 99<br>符 #6:fu2 NOUN: NOUN/VERB 56/44<br>合 #2:he2 VERB:close/suit NOUN/VERB 58/41
 厂	#2:chang3	NOUN:factory	NOUN 99
@@ -780,10 +780,10 @@
 队	#2:dui4	NOUN:line-of-people	NOUN 98
 丰富	feng1fu4	ADJ:rich/adundant	VERB/ADJ 84/12<br>丰 #3:feng1 VERB: VERB/NOUN 69/31<br>富 #4:fu4 VERB: VERB/NOUN 58/41
 生产力	sheng1chan3li4	NOUN:productivity	NOUN 100<br>生 sheng1 VERB:birth VERB/NOUN 48/44<br>产 chan3 #2:VERB:produce NOUN/VERB/ADJ 45/31/24<br>力 li4 NOUN:power/force NOUN 96
-粮食	liang2shi5	NOUN:grain-food	NOUN 100<br>粮 liang2 NOUN: NOUN 98<br>食 #5:shi2 NOUN: NOUN/VERB 54/46
+粮食	liang2shi5	NOUN:grain-food	NOUN 100<br>粮 liang2 NOUN: NOUN 98<br>食 #5:shi2 NOUN:food\VERB:eat\ADJ:edible NOUN/VERB 54/46
 多数	duo1shu4	NOUN:majority	NUM/NOUN 63/37<br>多 duo1 ADJ:many NUM/VERB/ADV 53/26/13<br>数 shu4 NOUN:number/figure NOUN/NUM 67/23
 参与	can1yu4	VERB:participate-in	VERB 91<br>参 can1 VERB:participate VERB/NOUN 69/31<br>与 yu3 PREP:with/to CONJ/PREP 67/33
-复杂	fu4za2	ADJ:complicated/complex	VERB/ADJ 69/30<br>复 #3:fu4 NOUN: NOUN/VERB 48/46<br>杂 za2 NOUN: NOUN/VERB 52/48
+复杂	fu4za2	ADJ:complicated/complex	VERB/ADJ 69/30<br>复 #3:fu4 NOUN: NOUN/VERB 48/46<br>杂 za2 ADJ:miscellaneous\VERB:mix NOUN/VERB 52/48
 义	#2:yi4	NOUN:righteousness/meaning	NOUN 95
 成果	cheng2guo3	NOUN:achievement	NOUN 100<br>成 cheng2 VERB:become VERB 92<br>果 guo3 NOUN:fruit/result NOUN 100
 超过	chao1guo4	VERB:exceed	VERB 97<br>超 chao1 ADJ: ADJ/VERB 47/43<br>过 guo4 PRT:in-the-past PRT/VERB 66/27
