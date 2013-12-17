@@ -540,7 +540,7 @@
 讨论	tao3lun4	VERB:discuss	VERB/NOUN 64/36<br>讨 tao3 #2:VERB:discuss VERB 100<br>论 lun4 NOUN:theory NOUN/VERB 77/22
 从而	cong2er2	CONJ:thus	ADV 100<br>从 cong2 PREP:from PREP 98<br>而 er2 CONJ:and-yet ADV/PRT/CONJ 58/30/11
 努力	nu3li4	VERB:try-hard/make-great-effort	ADV/NOUN/VERB 44/40/16<br>努 nu3 NOUN: NOUN 97<br>力 li4 NOUN:power/force NOUN 96
-有效	you3xiao4	ADJ:effective/valid	VERB/ADJ/ADV 48/40/12<br>有 you3 VERB:have/possess VERB 99<br>效 #2:xiao4 NOUN: NOUN/VERB 87/13
+有效	you3xiao4	ADJ:effective/valid	VERB/ADJ/ADV 48/40/12<br>有 you3 VERB:have/possess VERB 99<br>效 #2:xiao4 NOUN:effect\VERB:imitate NOUN/VERB 87/13
 文	wen2	NOUN:writing	NOUN 95
 过去	guo4qu4	NOUN:the-past	NOUN/VERB 78/22<br>过 guo4 PRT:in-the-past PRT/VERB 66/27<br>去 qu4 VERB:go VERB/PRT 86/12
 综合	zong1he2	ADJ:synthetic/composite	ADJ/VERB 81/16<br>综 #2:zong1 VERB: VERB/NOUN 86/10<br>合 #2:he2 VERB:close/suit NOUN/VERB 58/41
@@ -560,7 +560,7 @@
 经过	jing1guo4	#2:PREP:as-a-result-of/through	PREP/VERB 81/16<br>经 jing1 PREP:as-a-result-of/through NOUN/PREP/VERB 48/39/10<br>过 guo4 PRT:in-the-past PRT/VERB 66/27
 干部	gan4bu4	NOUN:cadre	NOUN 100<br>干 gan4 VERB:do/work\NOUN:trunk/main-part VERB/NOUN 68/32<br>部 #2:bu4 NOUN:part NOUN/NUM 79/21
 事实	shi4shi2	NOUN:fact	NOUN 100<br>事 #3:shi4 NOUN:issue/matter/thing NOUN 98<br>实 #3:shi2 ADJ:solid/true NOUN/ADV 50/34
-效益	xiao4yi4	NOUN:beneficial-result	NOUN 100<br>效 #2:xiao4 NOUN: NOUN/VERB 87/13<br>益 #7:yi4 NOUN:benefit\ADV:increasingly NOUN/ADV 61/33
+效益	xiao4yi4	NOUN:beneficial-result	NOUN 100<br>效 #2:xiao4 NOUN:effect\VERB:imitate NOUN/VERB 87/13<br>益 #7:yi4 NOUN:benefit\ADV:increasingly NOUN/ADV 61/33
 作品	zuo4pin3	NOUN:works-of-literature/art	NOUN 100<br>作 zuo4 VERB:do VERB 93<br>品 pin3 NOUN:article/product NOUN 92
 出来	chu1lai5	VERB:come-out	VERB 100<br>出 chu1 VERB:go-out VERB 98<br>来 lai2 VERB:come VERB/PRT 52/46
 教学	jiao4xue2	NOUN:teaching	NOUN 99<br>教 #2:jiao4 NOUN:teaching/religion NOUN/VERB 68/32<br>学 xue2 VERB:study NOUN/VERB 61/39
@@ -911,7 +911,7 @@
 感到	gan3dao4	VERB:feel-(a-feeling)	VERB 100<br>感 gan3 NOUN:feeling/sense NOUN/VERB 83/17<br>到 dao4 VERB:arrive VERB 89
 水	shui3	NOUN:water	NOUN 100
 胜利	sheng4li4	NOUN:victory	NOUN 93<br>胜 #2:sheng4 NOUN: NOUN/VERB 53/47<br>利 #2:li4 #2:NOUN:profit NOUN/VERB 77/20
-效果	xiao4guo3	NOUN:effect/result	NOUN 100<br>效 #2:xiao4 NOUN: NOUN/VERB 87/13<br>果 guo3 NOUN:fruit/result NOUN 100
+效果	xiao4guo3	NOUN:effect/result	NOUN 100<br>效 #2:xiao4 NOUN:effect\VERB:imitate NOUN/VERB 87/13<br>果 guo3 NOUN:fruit/result NOUN 100
 道路	dao4lu4	NOUN:road/way	NOUN 100<br>道 #2:dao4 NOUN:path NOUN/VERB 84/14<br>路 lu4 #2:NOUN:road/way NOUN 97
 计	#2:ji4	VERB:count/gauge	VERB/NOUN 55/45
 金	jin1	NOUN:gold	NOUN/ADJ 90/10
@@ -933,7 +933,7 @@
 严格	yan2ge2	ADJ:strict/rigorous	ADV/VERB/ADJ 54/34/12<br>严 #3:yan2 VERB: VERB/NOUN 53/47<br>格 ge2 NOUN:grid NOUN 91
 表明	biao3ming2	VERB:make-known/indicate	VERB 100<br>表 biao3 NOUN:table/list NOUN/VERB 75/25<br>明 #2:ming2 ADJ:bright/next NOUN/VERB 45/38
 商	shang1	#2:NOUN:commerce	NOUN 96
-下降	xia4jiang4	VERB:descend/go-down	VERB/NOUN 88/12<br>下 xia4 PRT:down PRT/VERB 72/17<br>降 jiang4 VERB: VERB 93
+下降	xia4jiang4	VERB:descend/go-down	VERB/NOUN 88/12<br>下 xia4 PRT:down PRT/VERB 72/17<br>降 jiang4 VERB:fall/drop VERB 93
 属于	shu3yu2	VERB:belong-to/be-part-of	VERB 100<br>属 shu3 #2:VERB:belong-to/be-part-of VERB 94<br>于 yu2 PREP:by PREP/VERB 81/18
 除了	chu2le5	PREP:except/besides	PREP 100<br>除 chu2 #2:PREP:except/besides PREP/VERB 88/11<br>了 le5 PRT:(completed/relevant) PRT 98
 加以	jia1yi3	VERB:needs/(way-to-do-preceeding-need:)	VERB 100<br>加 #2:jia1 VERB:add VERB/NOUN 73/18<br>以 yi3 PREP:using PREP/PRT 71/24
@@ -988,7 +988,7 @@
 文字	wen2zi4	NOUN:writing/characters	NOUN 100<br>文 wen2 NOUN:writing NOUN 95<br>字 #2:zi4 NOUN:written-character NOUN 100
 增强	zeng1qiang2	#2:VERB:strengthen	VERB 96<br>增 zeng1 #3:VERB:increase VERB/NOUN 79/19<br>强 qiang2 ADJ:strong/powerful VERB/ADJ/NOUN 65/21/11
 济	#3:ji4	VERB:aid	NOUN/VERB 89/11
-乡镇	xiang1zhen4	NOUN:villages-and-towns	NOUN 100<br>乡 #2:xiang1 NOUN:countryside/native-place NOUN 99<br>镇 zhen4 NOUN: NOUN 100
+乡镇	xiang1zhen4	NOUN:villages-and-towns	NOUN 100<br>乡 #2:xiang1 NOUN:countryside/native-place NOUN 99<br>镇 zhen4 NOUN:town NOUN 100
 约	yue1	ADV:approximately	ADV/NOUN 75/21
 专门	zhuan1men2	ADJ:specialized/technical	ADV/ADJ 55/45<br>专 zhuan1 NOUN:specialty NOUN/VERB/ADV 71/16/13<br>门 men2 NOUN:door/gate NOUN/NUM 74/25
 只要	zhi3yao4	CONJ:so-long-as/provided	CONJ 93<br>只 zhi3 ADV:only ADV 96<br>要 yao4 VERB:want VERB 99
