@@ -1972,7 +1972,7 @@
 期限	qi1xian4	100	NOUN	NOUN:
 注重	zhu4zhong4	99	VERB	VERB:
 植物	#2:zhi2wu4	100	NOUN	NOUN:
-影	ying3	100	NOUN	NOUN:
+影	ying3	100	NOUN	NOUN:shadow/movie
 浙江	Zhe4jiang1	100	NOUN	NOUN:
 物理	wu4li3	100	NOUN	NOUN:
 整理	zheng3li3	83/17	VERB/NOUN	VERB:
@@ -2150,7 +2150,7 @@
 联盟	lian2meng2	100	NOUN	NOUN:
 收集	shou1ji2	75/25	VERB/NOUN	VERB:
 富	#4:fu4	58/41	VERB/NOUN	VERB:
-足	#2:zu2	61/36	VERB/NOUN	VERB:
+足	#2:zu2	61/36	VERB/NOUN	ADJ:sufficient/NOUN:foot
 奖励	jiang3li4	95	NOUN	NOUN:
 丈夫	zhang4fu5	100	NOUN	NOUN:
 其余	qi2yu2	92	DET	PRON:
@@ -2590,7 +2590,7 @@
 设想	she4xiang3	56/44	VERB/NOUN	VERB:
 笔者	bi3zhe3	100	NOUN	NOUN:
 限于	xian4yu2	100	VERB	VERB:
-严	#3:yan2	53/47	VERB/NOUN	VERB:
+严	#3:yan2	53/47	VERB/NOUN	#2:ADJ:strict/rigorous
 施工	shi1gong1	91	NOUN	NOUN:
 证书	zheng4shu1	100	NOUN	NOUN:
 江泽民	Jiang1Ze2min2	100	NOUN	NOUN:
@@ -2950,7 +2950,7 @@
 体会	ti3hui4	64/36	VERB/NOUN	VERB:
 财	#2:cai2	100	NOUN	NOUN:wealth
 普	pu3	94	NOUN	ADJ:general/universal
-缺	que1	86/12	VERB/NOUN	VERB:
+缺	que1	86/12	VERB/NOUN	VERB:be-short-of/lack
 走出	zou3chu1	100	VERB	VERB:
 税率	shui4lv4	100	NOUN	NOUN:
 外来	wai4lai2	100	ADJ	ADJ:
@@ -3018,7 +3018,7 @@
 出租	chu1zu1	95	NOUN	NOUN:
 江苏	Jiang1su1	100	NOUN	NOUN:
 店	#2:dian4	99	NOUN	NOUN:
-善	shan4	63/25	NOUN/VERB	NOUN:
+善	shan4	63/25	NOUN/VERB	ADJ:good-and-honest\VERB:be-good-at
 界限	jie4xian4	100	NOUN	NOUN:
 亲自	qin1zi4	100	ADV	ADV:
 艰难	jian1nan2	49/26/24	VERB/ADJ/NOUN	VERB:
@@ -3045,7 +3045,7 @@
 取代	qu3dai4	100	VERB	VERB:
 疑问	yi2wen4	90	NOUN	NOUN:
 归纳	gui1na4	70/30	VERB/NOUN	VERB:
-劳	lao2	100	NOUN	NOUN:
+劳	lao2	100	NOUN	#2:NOUN:labor/work
 句子	ju4zi5	94	NOUN	NOUN:
 白	bai2	37/35/28	ADJ/VERB/NOUN	ADJ:white
 参谋	can1mou2	100	NOUN	NOUN:
@@ -3154,7 +3154,7 @@
 命题	ming4ti2	82	NOUN	NOUN:
 戏曲	xi4qu3	96	NOUN	NOUN:
 模拟	mo2ni3	65/23/12	NOUN/VERB/ADJ	NOUN:
-趋	#2:qu1	100	VERB	VERB:
+趋	#2:qu1	100	VERB	VERB:tend-towards/hasten
 新建	xin1jian4	84/13	VERB/ADJ	VERB:
 模	mo2	85	NOUN	#2:NOUN:pattern
 奠定	dian4ding4	100	VERB	VERB:
@@ -3450,7 +3450,7 @@
 便利	bian4li4	70/29	NOUN/VERB	NOUN:
 争夺	zheng1duo2	59/41	VERB/NOUN	VERB:
 拨款	bo1kuan3	82/18	NOUN/VERB	NOUN:
-双	shuang1	97	NUM	NUM:
+双	shuang1	97	NUM	MEAS:pair\ADJ:double/twin
 光荣	guang1rong2	41/36/23	ADJ/VERB/NOUN	ADJ:
 书店	shu1dian4	100	NOUN	NOUN:
 实证	shi2zheng4	84	NOUN	NOUN:
@@ -3645,7 +3645,7 @@
 缓解	huan3jie3	95	VERB	VERB:
 控股	kong4gu3	80/13	NOUN/VERB	NOUN:
 兴起	xing1qi3	65/35	VERB/NOUN	VERB:
-胜	#2:sheng4	53/47	NOUN/VERB	NOUN:
+胜	#2:sheng4	53/47	NOUN/VERB	NOUN:victory\ADJ:superb\VERB:defeat
 痕迹	hen2ji4	100	NOUN	NOUN:
 抗议	kang4yi4	58/42	NOUN/VERB	NOUN:
 正规	zheng4gui1	84/16	ADJ/VERB	ADJ:
@@ -3918,7 +3918,7 @@
 发射	fa1she4	63/37	VERB/NOUN	VERB:
 喜剧	xi3ju4	100	NOUN	NOUN:
 热点	re4dian3	100	NOUN	NOUN:
-游	#3:you2	80/20	NOUN/VERB	NOUN:
+游	#3:you2	80/20	NOUN/VERB	VERB:tour/travel
 倾斜	qing1xie2	70/30	VERB/NOUN	VERB:
 惯例	guan4li4	100	NOUN	NOUN:
 架	#2:jia4	56/44	NOUN/NUM	NOUN:
@@ -4152,7 +4152,7 @@
 登	deng1	71/26	VERB/NOUN	VERB:ascend
 反思	fan3si1	52/32/16	NOUN/VERB/ADJ	NOUN:
 波兰	Bo1lan2	100	NOUN	NOUN:
-简	#3:jian3	54/46	VERB/NOUN	VERB:
+简	#3:jian3	54/46	VERB/NOUN	ADJ;simple/brief\NOUN:letter-(mail)
 扎实	zha1shi5	57/32	VERB/NOUN	VERB:
 扎	zha1	80/20	NOUN/VERB	NOUN:
 贪污	tan1wu1	55/45	NOUN/VERB	NOUN:
@@ -4207,7 +4207,7 @@
 网点	wang3dian3	100	NOUN	NOUN:
 学问	xue2wen4	100	NOUN	NOUN:
 电视剧	dian4shi4ju4	100	NOUN	NOUN:
-逐	zhu2	60/35	VERB/NOUN	VERB:
+逐	zhu2	60/35	VERB/NOUN	VERB:drive-out/pursue\ADV:one-by-one
 传媒	chuan2mei2	100	NOUN	NOUN:
 统筹	tong3chou2	61/39	NOUN/VERB	NOUN:
 埃及	Ai1ji2	100	NOUN	NOUN:
@@ -4337,7 +4337,7 @@
 埃	ai1	100	NOUN	NOUN:
 侧面	ce4mian4	100	NOUN	NOUN:
 枪	qiang1	98	NOUN	NOUN:
-怎	zen3	100	ADV	ADV:
+怎	zen3	100	ADV	ADV:how/why
 盖	gai4	82/17	VERB/NOUN	VERB:
 一手	yi4shou3	56/44	NOUN/ADV	NOUN:
 全力	#3:quan2li4	71/16/13	ADV/NOUN/ADJ	ADV:
@@ -4912,7 +4912,7 @@
 老婆	lao3po2	100	NOUN	NOUN:
 商会	shang1hui4	100	NOUN	NOUN:
 觉醒	jue2xing3	61/39	NOUN/VERB	NOUN:
-渐	#5:jian4	93	ADV	ADV:
+渐	#5:jian4	93	ADV	#2:ADV:gradually
 不曾	bu4ceng2	99	ADV	ADV:
 奇迹	qi2ji4	99	NOUN	NOUN:
 可贵	ke3gui4	66/25	VERB/ADJ	VERB:
@@ -5210,7 +5210,7 @@
 夺	duo2	95	VERB	VERB:
 树木	#2:shu4mu4	99	NOUN	NOUN:
 严谨	yan2jin3	85/15	VERB/ADJ	VERB:
-宗	zong1	69/20/11	NOUN/NUM/VERB	NOUN:
+宗	zong1	69/20/11	NOUN/NUM/VERB	NOUN:ancenstor/faction\MEAS:goods/money/worry
 回升	hui2sheng1	90/10	VERB/NOUN	VERB:
 临	#3:lin2	52/31/15	NOUN/VERB/ADJ	VERB:face/arrive
 监理	jian1li3	100	NOUN	NOUN:
@@ -5336,7 +5336,7 @@
 拘留	ju1liu2	53/47	VERB/NOUN	VERB:
 填写	tian2xie3	99	VERB	VERB:
 传记	zhuan4ji4	98	NOUN	NOUN:
-旅	lv3	95	NOUN	NOUN:
+旅	lv3	95	NOUN	NOUN:trip/troops
 专员	zhuan1yuan2	100	NOUN	NOUN:
 乔	qiao2	100	NOUN	NOUN:
 近似	jin4si4	68	VERB	VERB:
@@ -5713,7 +5713,7 @@
 阶级性	jie1ji2xing4	100	NOUN	NOUN:
 示威	shi4wei1	93	NOUN	NOUN:
 犹太人	You2tai4ren2	100	NOUN	NOUN:
-乏	#2:fa2	100	VERB	VERB:
+乏	#2:fa2	100	VERB	ADJ:tired/weary
 堡	#2:bao3	100	NOUN	NOUN:
 素材	su4cai2	100	NOUN	NOUN:
 好不	hao3bu4	97	ADV	ADV:
@@ -6353,7 +6353,7 @@
 航	hang2	98	NOUN	NOUN:
 软弱	ruan3ruo4	51/32	VERB/NOUN	VERB:
 调拨	diao4bo1	90	NOUN	NOUN:
-谓	#6:wei4	95	VERB	VERB:
+谓	#6:wei4	95	VERB	VERB:say/be-called\NOUN:meaning/sense
 语音	yu3yin1	100	NOUN	NOUN:
 谢	#2:xie4	86/14	NOUN/VERB	NOUN:
 跃	#3:yue4	71/22	VERB/ADV	VERB:
@@ -7914,12 +7914,12 @@
 老挝	Lao3wo1	100	NOUN	NOUN:
 渐进	jian4jin4	74/15/11	VERB/ADJ/NOUN	VERB:
 当务之急	dang1wu4zhi1ji2	100	NOUN	NOUN:
-汽	#4:qi4	100	NOUN	NOUN:
+汽	#4:qi4	100	NOUN	NOUN:steam/vapor
 军团	jun1tuan2	100	NOUN	NOUN:
 乐于	le4yu2	100	VERB	VERB:
 挪用	nuo2yong4	100	VERB	VERB:
 红利	hong2li4	98	NOUN	NOUN:
-掌	#2:zhang3	50/50	VERB/NOUN	VERB:
+掌	#2:zhang3	50/50	VERB/NOUN	VERB:strike-with-the-palm\NOUN:palm-(of-the-hand)
 一例	yi2li4	44/28/15	VERB/NOUN/NUM	VERB:
 收缴	shou1jiao3	91	VERB	VERB:
 刀	dao1	93	NOUN	NOUN:
