@@ -900,3 +900,21 @@
 中小	zhong1xiao3	ADJ:middle-sized-and-small	ADJ/NOUN 87/10<br>中 zhong1 PRT:middle PRT/NOUN 79/17<br>小 xiao3 ADJ:small ADJ/VERB 66/25
 减	#2:jian3	VERB:subtract/reduce	VERB/NOUN 86/14
 革	#2:ge2	NOUN:leather/hide	NOUN/VERB 83/14
+检察	#2:jian3cha2	NOUN:(legal)-prosecution	NOUN 100<br>检 jian3 VERB:check-up/inspect NOUN/VERB 81/19<br>察 #2:cha2 #2:VERB:observe/examine VERB/NOUN 56/41
+买	mai3	#3:VERB:purchase/buy	VERB 97
+存款	cun2kuan3	NOUN:deposit/bank-savings	NOUN 100<br>存 cun2 #2:VERB:exist VERB/NOUN 80/20<br>款 kuan3 NOUN:sum-of-money/fund NOUN/NUM 70/26
+工业化	gong1ye4hua4	NOUN:industrialization	NOUN/VERB 80/17<br>工 gong1 #2:NOUN:work NOUN 96<br>业 ye4 NOUN:line-of-business NOUN 100<br>化 hua4 NOUN:change NOUN/VERB 59/35
+个性	ge4xing4	NOUN:personality/individual-character	NOUN 100<br>个 ge5 MEAS:(general) NUM 92<br>性 xing4 NOUN:disposition NOUN/ADJ 65/34
+转换	zhuan3huan4	#2:VERB:change/transform	VERB/NOUN 68/29<br>转 zhuan3 VERB:turn VERB 95<br>换 huan4 VERB:change/swap VERB 98
+象征	xiang4zheng1	NOUN:symbol/token\VERB:symbolize	NOUN/VERB 60/35<br>象 #3:xiang4 NOUN:appearance/elephant PREP/NOUN 49/42<br>征 #2:zheng1 VERB:go-on-a-journey NOUN/VERB 55/45
+送	song4	VERB:deliver/present	VERB 99
+深圳	Shen1zhen4	NOUN:Shenzhen	NOUN 100<br>深 shen1 ADJ:deep/dark-color VERB/ADV/ADJ 35/34/23<br>圳 #4:zhen4 NOUN:irrigation-ditch-(toponym) NOUN/VERB 81/15
+税务	shui4wu4	NOUN:taxation/tax-administration	NOUN 100<br>税 shui4 NOUN:tax/duty NOUN 100<br>务 #2:wu4 NOUN:affair/business NOUN 94
+通讯	tong1xun4	NOUN:communication/newsletter	NOUN 98<br>通 tong1 VERB:communicate/connect VERB/NOUN 68/30<br>讯 #2:xun4 NOUN:message/dispatch\VERB:interrogate NOUN/VERB 85/15
+拿	na2	VERB:take/hold	VERB 94
+依照	yi1zhao4	PREP:according-to/in-light-of	PREP 99<br>依 #2:yi1 PREP:according-to\VERB:depend-on PREP 87<br>照 zhao4 PREP:towards/according-to\NOUN:photograph\VERB:shine PREP/NOUN/VERB 48/28/25
+请求	qing3qiu2	#2:VERB:request/ask	VERB/NOUN 78/22<br>请 qing3 VERB:request/ask VERB 99<br>求 qiu2 VERB:beg/request VERB 93
+医学	yi1xue2	NOUN:medical-science	NOUN 100<br>医 #4:yi1 NOUN:medical-doctor/medicine\VERB:cure/treat NOUN 99<br>学 xue2 VERB:study NOUN/VERB 61/39
+行使	xing2shi3	VERB:exercise/perform	VERB 100<br>行 xing2 ADJ:OK NOUN/VERB 58/41<br>使 shi3 VERB:send VERB 99
+活力	huo2li4	NOUN:vitality/vigor	NOUN 100<br>活 huo2 VERB:live VERB/ADJ 59/35<br>力 li4 NOUN:power/force NOUN 96
+领	ling3	NOUN:neck/collar\VERB:receive/lead\MEAS:mat/dress	VERB/NOUN 58/42
