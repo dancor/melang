@@ -908,7 +908,7 @@
 转换	zhuan3huan4	#2:VERB:change/transform	VERB/NOUN 68/29<br>转 zhuan3 VERB:turn VERB 95<br>换 huan4 VERB:change/swap VERB 98
 象征	xiang4zheng1	NOUN:symbol/token\VERB:symbolize	NOUN/VERB 60/35<br>象 #3:xiang4 NOUN:appearance/elephant PREP/NOUN 49/42<br>征 #2:zheng1 VERB:go-on-a-journey NOUN/VERB 55/45
 送	song4	VERB:deliver/present	VERB 99
-深圳	Shen1zhen4	NOUN:Shenzhen	NOUN 100<br>深 shen1 ADJ:deep/dark-color VERB/ADV/ADJ 35/34/23<br>圳 #4:zhen4 NOUN:irrigation-ditch-(toponym) NOUN/VERB 81/15
+深圳	Shen1zhen4	NOUN:Shenzhen	NOUN 100<br>深 shen1 ADJ:deep/dark-color VERB/ADV/ADJ 35/34/23<br>圳 #4:zhen4 NOUN:irrigation-ditch-(topolect) NOUN/VERB 81/15
 税务	shui4wu4	NOUN:taxation/tax-administration	NOUN 100<br>税 shui4 NOUN:tax/duty NOUN 100<br>务 #2:wu4 NOUN:affair/business NOUN 94
 通讯	tong1xun4	NOUN:communication/newsletter	NOUN 98<br>通 tong1 VERB:communicate/connect VERB/NOUN 68/30<br>讯 #2:xun4 NOUN:message/dispatch\VERB:interrogate NOUN/VERB 85/15
 拿	na2	VERB:take/hold	VERB 94
@@ -918,3 +918,23 @@
 行使	xing2shi3	VERB:exercise/perform	VERB 100<br>行 xing2 ADJ:OK NOUN/VERB 58/41<br>使 shi3 VERB:send VERB 99
 活力	huo2li4	NOUN:vitality/vigor	NOUN 100<br>活 huo2 VERB:live VERB/ADJ 59/35<br>力 li4 NOUN:power/force NOUN 96
 领	ling3	NOUN:neck/collar\VERB:receive/lead\MEAS:mat/dress	VERB/NOUN 58/42
+周	#2:zhou1	MEAS:week\NOUN:cycle/circumference	NOUN/NUM 64/36
+超越	chao1yue4	VERB:transcend/surpass	VERB/NOUN 89/11<br>超 chao1 #2:VERB:exceed/surpass ADJ/VERB 47/43<br>越 #2:yue4 ADV:exceedingly ADV 95
+通信	tong1xin4	VERB:write-each-other/correspond	NOUN 100<br>通 tong1 VERB:communicate/connect VERB/NOUN 68/30<br>信 xin4 NOUN:letter-(mail) NOUN 91
+腐败	fu3bai4	ADJ:corrupt	NOUN/VERB 88/11<br>腐 #3:fu3 ADJ:rotten/NOUN:bean-curd NOUN 96<br>败 bai4 VERB:defeat VERB/NOUN 84/16
+气候	qi4hou4	NOUN:climate/situation	NOUN 100<br>气 #2:qi4 NOUN:air/gas NOUN 92<br>候 #2:hou4 NOUN:time\VERB:await/inquire-after VERB/NOUN 45/44
+概括	gai4kuo4	VERB:summarize/generalize	VERB/NOUN 76/24<br>概 #2:gai4 ADJ:general/approximate VERB/NOUN 67/22<br>括 kuo4 VERB:include/draw-together VERB/NOUN 86/11
+危害	wei1hai4	VERB:harm/endanger	NOUN/VERB 78/22<br>危 #3:wei1 NOUN:danger\VERB:endanger ADV/ADJ/VERB/NOUN 32/31/22/14<br>害 hai4 NOUN:harm\ADJ:harmful\VERB:harm VERB/NOUN 68/32
+节目	jie2mu4	NOUN:programme/item-on-a-programme	NOUN 100<br>节 jie2 MEAS:segment/division NUM/NOUN 61/39<br>目 mu4 NOUN:eye/item NOUN/VERB 80/17
+势	#9:shi4	NOUN:tendency/momentum	NOUN/VERB 74/21
+色	se4	#2:NOUN:color	NOUN 92
+制订	#2:zhi4ding4	VERB:formulate/work-out	VERB 94<br>制 #2:zhi4 NOUN:-ism/system NOUN/VERB 81/15<br>订 #2:ding4 VERB:conclude/draw-up VERB 98
+纺织	fang3zhi1	NOUN:spinning-and-weaving-(textiles)	NOUN 100<br>纺 #2:fang3 VERB:spin-(into-yarn) NOUN/VERB 86/14<br>织 #4:zhi1 VERB:weave/knit VERB 100
+海外	hai3wai4	#2:NOUN:overseas/abroad	NOUN 100<br>海 hai3 NOUN:sea NOUN 99<br>外 wai4 NOUN:outside NOUN/PRT 52/46
+紧	#3:jin3	ADJ:tight	ADV/VERB 57/38
+出席	chu1xi2	VERB:attend/be-present	VERB 99<br>出 chu1 VERB:go-out VERB 98<br>席 #2:xi2 NOUN:mat/seat NOUN 94
+装备	zhuang1bei4	NOUN:equipment\VERB:equip	NOUN 96<br>装 zhuang1 NOUN:clothing/outfit\VERB:feign/play VERB/NOUN 69/31<br>备 #3:bei4 VERB:be-equipped-with\NOUN:equipment VERB/NOUN/ADJ 65/16/14
+原理	yuan2li3	NOUN:principle/tenet	NOUN 98<br>原 #3:yuan2 ADJ:primary/original ADJ/NOUN/ADV 37/36/27<br>理 #2:li3 NOUN:logic NOUN/VERB 82/17
+旧	#2:jiu4	ADJ:old/used	ADJ 91
+干	gan4	VERB:do/work\NOUN:trunk/main-part	VERB/NOUN 68/32
+上市	shang4shi4	VERB:appear-on-the-market/be-in-season	VERB/NOUN 62/34<br>上 shang4 PRT:up PRT/VERB 79/13<br>市 #2:shi4 NOUN:city NOUN 100
