@@ -938,3 +938,23 @@
 旧	#2:jiu4	ADJ:old/used	ADJ 91
 干	gan4	VERB:do/work\NOUN:trunk/main-part	VERB/NOUN 68/32
 上市	shang4shi4	VERB:appear-on-the-market/be-in-season	VERB/NOUN 62/34<br>上 shang4 PRT:up PRT/VERB 79/13<br>市 #2:shi4 NOUN:city NOUN 100
+他人	ta1ren2	PRON:another-person/others	PRON/NOUN 59/41<br>他 ta1 PRON:he PRON 100<br>人 ren2 NOUN:person NOUN 99
+外贸	wai4mao4	NOUN:foreign-trade	NOUN 100<br>外 wai4 NOUN:outside NOUN/PRT 52/46<br>贸 mao4 #2:NOUN:trade NOUN 91
+紧密	jin3mi4	ADJ:inseparable/close	ADV/VERB 66/34<br>紧 #3:jin3 ADJ:tight ADV/VERB 57/38<br>密 mi4 ADJ:dense/thick NOUN/VERB/ADV 63/24/13
+一代	yi2dai4	NOUN:a-generation	NOUN/NUM/ADJ 46/23/16<br>一 yi1 NUM:1 NUM 89<br>代 #2:dai4 NOUN:generation/historical-period NOUN/VERB/NUM 60/19/18
+对待	dui4dai4	VERB:treat/handle	VERB 97<br>对 dui4 #2:PREP:for PREP 95<br>待 #3:dai4 #2:VERB:treat/handle VERB 86
+阅读	yue4du2	#2:VERB:read	VERB/NOUN 63/37<br>阅 #4:yue4 VERB:read/review NOUN/VERB 58/41<br>读 du2 VERB:read VERB/NOUN 76/24
+附近	fu4jin4	NOUN:vicinity/neighborhood	NOUN 98<br>附 #6:fu4 VERB:attach VERB/NOUN 68/19<br>近 #2:jin4 ADJ:near/close ADV 82
+禁止	jin4zhi3	VERB:prohibit/ban	VERB 97<br>禁 #3:jin4 NOUN:prohibit/ban NOUN/VERB 59/41<br>止 #4:zhi3 ADV:only/VERB:stop PRT/VERB/ADJ 46/33/18
+愿	#2:yuan4	VERB:be-willing	VERB 95
+开拓	kai1tuo4	VERB:open-up	VERB/NOUN 76/24<br>开 kai1 VERB:open VERB 95<br>拓 tuo4 VERB:develop/open-up VERB/NOUN 87/13
+退休	tui4xiu1	VERB:retire	VERB/NOUN 52/47<br>退 tui4 VERB:retreat/withdraw-from VERB/NOUN 75/25<br>休 #2:xiu1 VERB:rest VERB/NOUN 82/18
+息	#2:xi1	NOUN:interest-(loan)	NOUN/ADV/VERB 53/25/22
+内涵	nei4han2	NOUN:connotation	NOUN 100<br>内 nei4 PRT:inside PRT/NOUN 81/18<br>涵 #3:han2 VERB:contain/NOUN:culvert VERB/NOUN/ADJ 39/38/21
+沿海	yan2hai3	NOUN:(along)-the-coast	NOUN 100<br>沿 #4:yan2 PREP:along\VERB:follow VERB/PREP 79/14<br>海 hai3 NOUN:sea NOUN 99
+尚	#2:shang4	#2:ADV:still/yet	ADV 95
+媒体	mei2ti3	NOUN:media/medium	NOUN 100<br>媒 #5:mei2 NOUN:intermediary/matchmaker NOUN 98<br>体 ti3 NOUN:body NOUN 93
+写作	xie3zuo4	#2:VERB:write	NOUN/VERB 78/22<br>写 xie3 VERB:write VERB 99<br>作 zuo4 VERB:do VERB 93
+摆脱	bai3tuo1	VERB:get-rid-of	VERB 100<br>摆 #2:bai3 #3:VERB:put/place VERB 100<br>脱 #3:tuo1 VERB:cut-off/escape VERB 99
+动作	dong4zuo4	NOUN:movement/action	NOUN 100<br>动 dong4 VERB:move VERB/NOUN 69/31<br>作 zuo4 VERB:do VERB 93
+怀疑	huai2yi2	VERB:suspect\NOUN:suspicion	VERB/NOUN 73/27<br>怀 huai2 NOUN:bosom/mind\VERB:cherish/think-of VERB/NOUN 82/18<br>疑 #3:yi2 VERB:doubt VERB/NOUN 88/11
