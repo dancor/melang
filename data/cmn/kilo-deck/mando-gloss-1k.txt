@@ -485,7 +485,7 @@
 如何	ru2he2	ADV:how/how-about-it	ADV 92<br>如 ru2 VERB:be-like/measure-up-to ADV/PREP 77/13<br>何 #3:he2 DET:what?/which? DET/ADV/PRON/NOUN 43/27/15/14
 自由	zi4you2	NOUN:freedom	NOUN/ADJ/ADV 62/18/15<br>自 zi4 PRON:self VERB/PREP/ADV 38/36/13<br>由 you2 PREP:by/from PREP 98
 继续	ji4xu4	VERB:continue	VERB 98<br>继 #8:ji4 VERB:continue/follow PREP/VERB 66/33<br>续 xu4 #2:VERB:continue VERB/ADJ 68/24
-哲学	zhe2xue2	NOUN:philosophy	NOUN 99<br>哲 #2:zhe2 ? NOUN 99<br>学 xue2 VERB:study NOUN/VERB 61/39
+哲学	zhe2xue2	NOUN:philosophy	NOUN 99<br>哲 #2:zhe2 ADJ:wise\NOUN:wise-man/sage NOUN 99<br>学 xue2 VERB:study NOUN/VERB 61/39
 注意	zhu4yi4	VERB:take-note-of	VERB/NOUN 81/19<br>注 #4:zhu4 VERB:concentrate VERB/NOUN/NUM 49/34/12<br>意 #3:yi4 NOUN:meaning/idea NOUN/VERB 79/20
 结合	jie2he2	VERB:combine	VERB/NOUN 87/13<br>结 #2:jie2 NOUN:knot NOUN/VERB 56/44<br>合 #2:he2 VERB:close/suit NOUN/VERB 58/41
 创造	chuang4zao4	VERB:create	VERB 91<br>创 chuang4 VERB:initiate/achieve-(for-the-1st-time) VERB/NOUN 88/12<br>造 zao4 #3:VERB:create VERB/NOUN 88/12

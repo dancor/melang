@@ -38,7 +38,7 @@ prepSubEntry wdDict word = (("<br>" <> word <> " ") <>) <$>
       Nothing -> tell [word] >> return "?"
       Just entry -> do
         let gloss = eGloss entry
-        when (":" `DT.isSuffixOf` gloss) $ tell [word]
+        when (glossIsEmpty gloss) $ tell [word]
         return $ DT.intercalate " " [ePinyin entry, gloss,
             DT.replace "ADP" "PREP" (eSpParts entry), eSpPartFreqs entry]
 

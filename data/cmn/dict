@@ -5553,7 +5553,7 @@
 新人	xin1ren2	100	NOUN	NOUN:
 参议	can1yi4	64/35	VERB/NOUN	VERB:
 秀	xiu4	100	NOUN	ADJ:beautiful
-偿	#3:chang2	63/35	NOUN/VERB	VERB:repay/compensate
+偿	#3:chang2	63/35	NOUN/VERB	#2:VERB:compensate
 解剖	jie3pou1	59/40	VERB/NOUN	VERB:
 重重	chong2chong2	53/46	ADJ/VERB	ADJ:
 恶	e4	53/32/15	NOUN/VERB/ADJ	NOUN:
@@ -10087,7 +10087,7 @@
 本色	ben3se4	97	NOUN	?
 见地	jian4di4	52/48	VERB/NOUN	?
 马鞍山	Ma3an1shan1	99	NOUN	?
-倾	#4:qing1	59/27/12	VERB/ADJ/NOUN	?
+倾	#4:qing1	59/27/12	VERB/ADJ/NOUN	VERB:pour-out/incline
 偏远	pian1yuan3	76/21	ADJ/VERB	?
 不锈钢	bu4xiu4gang1	98	NOUN	?
 摄制	#2:she4zhi4	89/11	NOUN/VERB	?
@@ -10488,7 +10488,7 @@
 聚焦	ju4jiao1	77/20	VERB/NOUN	?
 贵重	gui4zhong4	75/20	ADJ/VERB	?
 拆	chai1	81/19	VERB/NOUN	?
-朋	peng2	86	NOUN	?
+朋	peng2	86	NOUN	#3:NOUN:friend
 伸手	shen1shou3	99	VERB	?
 转达	zhuan3da2	100	VERB	?
 雨量	yu3liang4	97	NOUN	?
@@ -11077,7 +11077,7 @@
 折衷	zhe2zhong1	62/24/11	ADJ/VERB/NOUN	?
 专业课	?	76/12	NOUN/VERB	?
 真主	Zhen1zhu3	35/30/17/10	NOUN/VERB/ADJ/ADV	?
-厘	#4:li2	47/46	NOUN/NUM	?
+厘	#4:li2	47/46	NOUN/NUM	PRT:centi-
 体面	ti3mian4	54/30/16	VERB/ADJ/NOUN	?
 惜	#10:xi1	95	VERB	?
 东山	Dong1shan1	99	NOUN	?
@@ -11417,7 +11417,7 @@
 光照	guang1zhao4	79/11	NOUN/VERB	?
 州长	zhou1zhang3	100	NOUN	?
 倾注	qing1zhu4	93	VERB	?
-艰	#6:jian1	69/19/10	VERB/ADJ/NOUN	?
+艰	#6:jian1	69/19/10	VERB/ADJ/NOUN	ADJ:difficult
 董仲舒	Dong3Zhong4shu1	84	NOUN	?
 抗辩	kang4bian4	64/34	NOUN/VERB	?
 乏力	?	79/21	VERB/NOUN	?
@@ -11860,7 +11860,7 @@
 布拉格	Bu4la1ge2	100	NOUN	?
 票房	piao4fang2	100	NOUN	?
 乒乓球	ping1pang1qiu2	100	NOUN	?
-赔	#2:pei2	100	VERB	?
+赔	#2:pei2	100	VERB	#3:VERB:compensate
 禅宗	Chan2zong1	74/22	NOUN/VERB	?
 劫持	jie2chi2	100	VERB	?
 接踵	jie1zhong3	95	VERB	?
@@ -11943,7 +11943,7 @@
 不堪设想	?	99	VERB	?
 格格	ge2ge5	56/36	NOUN/VERB	?
 往日	wang3ri4	97	NOUN	?
-哲	#2:zhe2	99	NOUN	?
+哲	#2:zhe2	99	NOUN	ADJ:wise\NOUN:wise-man/sage
 留情	liu2qing2	100	VERB	?
 地板	di4ban3	100	NOUN	?
 戒律	jie4lv4	81/17	NOUN/VERB	?
@@ -12448,7 +12448,7 @@
 幸免	xing4mian3	99	VERB	?
 照样	zhao4yang4	100	ADV	?
 预订	#2:yu4ding4	91	VERB	?
-渠	Qu2|ju4|qu2	88	NOUN	?
+渠	qu2	88	NOUN	NOUN:canal/channel
 对白	dui4bai2	93	NOUN	?
 搭	da1	96	VERB	?
 主治	?	97	NOUN	?
@@ -12648,7 +12648,7 @@
 南昌	Nan2chang1	100	NOUN	?
 特使	te4shi3	100	NOUN	?
 责成	ze2cheng2	97	VERB	?
-巩	gong3	80/18	NOUN/VERB	?
+巩	gong3	80/18	NOUN/VERB	VERB:consolidate/make-firm
 违章	wei2zhang1	62/29	NOUN/ADV	?
 大人物	?	96	NOUN	?
 菩萨	Pu2sa4	100	NOUN	?
@@ -13635,7 +13635,7 @@
 热能	re4neng2	75/21	NOUN/VERB	?
 答卷	da2juan4	94	NOUN	?
 会所	hui4suo3	61/38	NOUN/VERB	?
-逻	#2:luo2	55/31/13	NOUN/VERB/NUM	?
+逻	#2:luo2	55/31/13	NOUN/VERB/NUM	VERB:patrol
 撑	#2:cheng1	95	VERB	?
 晶体	jing1ti3	100	NOUN	?
 外省	?	77/23	NOUN/ADJ	?
@@ -14701,7 +14701,7 @@
 大腿	da4tui3	98	NOUN	?
 行商	hang2shang1	95	NOUN	?
 成名	cheng2ming2	89	VERB	?
-剥	bao1|bo1	96	VERB	?
+剥	#5:bo1	96	VERB	VERB:peel/shell
 封建主	feng1jian4zhu3	80/15	NOUN/VERB	?
 退路	tui4lu4	99	NOUN	?
 呼伦贝尔	Hu1lun2bei4er3	99	NOUN	?
@@ -14835,7 +14835,7 @@
 个儿	ge4r5	55/41	NOUN/NUM	?
 转眼	zhuan3yan3	55/29/14	ADV/NOUN/VERB	?
 感应	gan3ying4	90	NOUN	?
-赂	#5:lu4	72/24	NOUN/VERB	?
+赂	#5:lu4	72/24	NOUN/VERB	NOUN:bribe\VERB:bribe
 耐久	nai4jiu3	46/34/19	NOUN/ADJ/VERB	?
 琐事	suo3shi4	95	NOUN	?
 旅费	lv3fei4	91	NOUN	?
@@ -16830,7 +16830,7 @@
 芳	#2:fang1	100	NOUN	?
 汇演	hui4yan3	100	NOUN	?
 双月刊	shuang1yue4kan1	91	VERB	?
-垄	long3	88/11	VERB/NOUN	?
+垄	long3	88/11	VERB/NOUN	NOUN:ridge-in-a-field
 失意	#2:shi1yi4	66/33	NOUN/VERB	?
 就餐	jiu4can1	70/27	NOUN/VERB	?
 抢先	qiang3xian1	67/28	VERB/ADV	?
@@ -18530,7 +18530,7 @@
 庙会	miao4hui4	86/13	NOUN/VERB	?
 见报	jian4bao4	57/28	VERB/PRT	?
 恳请	ken3qing3	85/11	VERB/NOUN	?
-奴	nu2	96	NOUN	?
+奴	nu2	96	NOUN	#2:NOUN:slave
 痛切	?	85/14	VERB/NOUN	?
 罗湖	Luo2hu2	100	NOUN	?
 典当	dian3dang4	55/24/15	NOUN/ADJ/VERB	?
@@ -25699,7 +25699,7 @@
 油泵	you2beng4	100	NOUN	?
 急电	?	65/32	NOUN/VERB	?
 复学	fu4xue2	58/42	VERB/NOUN	?
-钵	#5:bo1	75/23	VERB/NOUN	?
+钵	#6:bo1	75/23	VERB/NOUN	?
 合集	he2ji2	67/19	NOUN/VERB	?
 审订	#2:shen3ding4	54/46	VERB/NOUN	?
 北辰	Bei3chen2	100	NOUN	?
@@ -39857,7 +39857,7 @@
 篛	#3:ruo4	41/33/26	VERB/NOUN/NUM	?
 红血球	hong2xue4qiu2	100	NOUN	?
 茅于轼	?	100	NOUN	?
-衢	qu2	100	NOUN	?
+衢	#2:qu2	100	NOUN	?
 衬砌	?	100	NOUN	?
 长庚	Chang2geng1	100	NOUN	?
 元月	Yuan2yue4	100	NOUN	?
@@ -43063,7 +43063,7 @@
 李思	?	100	NOUN	?
 水獭	shui3ta3	100	NOUN	?
 狼藉	lang2ji2	100	VERB	?
-璩	#2:qu2	100	NOUN	?
+璩	#3:qu2	100	NOUN	?
 糟践	zao1jian5	77/23	VERB/NOUN	?
 羝	#4:di1	57/43	NOUN/VERB	?
 至言	?	100	NOUN	?
@@ -44279,7 +44279,7 @@
 焉耆	Yan1qi2	100	NOUN	?
 痛风	tong4feng1	100	NOUN	?
 皮带轮	?	100	NOUN	?
-砵	#6:bo1	67/33	NOUN/VERB	?
+砵	#7:bo1	67/33	NOUN/VERB	?
 秦德	?	100	NOUN	?
 穿堂	?	65/35	NOUN/VERB	?
 箩筐	luo2kuang1	75/25	NOUN/VERB	?
@@ -48453,7 +48453,7 @@
 陈默	?	100	NOUN	?
 靳云鹏	?	100	NOUN	?
 韩振华	?	100	NOUN	?
-饽	#7:bo1	58/42	NOUN/VERB	?
+饽	#8:bo1	58/42	NOUN/VERB	?
 马慕瑞	?	100	NOUN	?
 骚人	?	100	NOUN	?
 鳍	#28:qi2	100	NOUN	?
@@ -51690,7 +51690,7 @@
 菡	#13:han4	100	NOUN	?
 萎谢	?	100	VERB	?
 董一博	?	100	NOUN	?
-蘧	#3:qu2	100	NOUN	?
+蘧	#4:qu2	100	NOUN	?
 表链	?	100	NOUN	?
 袁义	?	100	NOUN	?
 裾	#12:ju1	100	NOUN	?
@@ -53871,7 +53871,7 @@
 萧功秦	?	100	NOUN	?
 蓑	#7:suo1	100	NOUN	?
 蔡运龙	?	100	NOUN	?
-蕖	#4:qu2	100	NOUN	?
+蕖	#5:qu2	100	NOUN	?
 薬	#5:yao4	100	NOUN	?
 豆乳	?	100	NOUN	?
 贾伦德	?	100	NOUN	?
@@ -54138,7 +54138,7 @@
 刘希文	?	100	NOUN	?
 刘建飞	?	100	NOUN	?
 刘桂兰	?	100	NOUN	?
-劬	#5:qu2	100	NOUN	?
+劬	#6:qu2	100	NOUN	?
 千种	?	100	NUM	?
 卢海	?	100	NOUN	?
 受粉	?	100	NOUN	?
