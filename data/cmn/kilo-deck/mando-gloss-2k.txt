@@ -858,3 +858,45 @@
 工艺	gong1yi4	NOUN:crafts	NOUN 100<br>工 gong1 #2:NOUN:work NOUN 96<br>艺 #10:yi4 #3:NOUN:art NOUN 99
 色彩	se4cai3	NOUN:color	NOUN 100<br>色 se4 #2:NOUN:color NOUN 92<br>彩 #2:cai3 NOUN:color/prize NOUN/VERB 85/15
 当局	dang1ju2	NOUN:the-authorities	NOUN 100<br>当 dang1 PREP:at-a-time/place PREP/VERB 63/32<br>局 ju2 NOUN:bureau/branch NOUN 100
+亦	#6:yi4	#2:ADV:also	ADV 98
+零售	ling2shou4	VERB:(sell)-retail	NOUN 100<br>零 ling2 NUM:zero NUM/NOUN 58/42<br>售 #2:shou4 VERB:sell/carry-out-a-plan VERB/NOUN 72/28
+客户	ke4hu4	NOUN:customer	NOUN 100<br>客 #3:ke4 NOUN:guest/customer NOUN 97<br>户 hu4 #2:NOUN:household NOUN/NUM 63/36
+独特	du2te4	ADJ:unique/distinctive	ADJ/VERB 51/48<br>独 #2:du2 ADJ:alone/sole NOUN/VERB/ADV 48/27/16<br>特 te4 ADV:specially/for-a-special-purpose NOUN/ADV 69/25
+职责	zhi2ze2	NOUN:responsibility/duty	NOUN 100<br>职 #2:zhi2 NOUN:office/duty NOUN 93<br>责 #2:ze2 NOUN:responsibility/duty\VERB:demand/require NOUN/VERB 74/26
+身	#2:shen1	#2:NOUN:body	NOUN/VERB 82/18
+种植	zhong4zhi2	VERB:plant/grow	NOUN/VERB 58/42<br>种 zhong3 MEAS:kind/type NUM 94<br>植 #5:zhi2 #2:VERB:plant/grow VERB/NOUN 79/21
+日常	ri4chang2	ADJ:day-to-day/everyday	ADJ 96<br>日 ri4 NOUN:sun NOUN 90<br>常 #2:chang2 ADV:frequently/often ADV/NOUN 84/14
+天津	Tian1jin1	NOUN:Tianjin	NOUN 100<br>天 tian1 MEAS:day NUM/NOUN 68/30<br>津 #4:jin1 NOUN:ferry-crossing/salvia NOUN 100
+执法	zhi2fa3	VERB:enforce-the-law	NOUN/ADJ 84/10<br>执 #4:zhi2 VERB:hold/carry-out NOUN/VERB 57/41<br>法 fa3 NOUN:law/method NOUN 99
+发动	fa1dong4	VERB:launch/start	VERB 100<br>发 fa1 VERB:send/start VERB/NOUN 73/25<br>动 dong4 VERB:move VERB/NOUN 69/31
+效	#2:xiao4	NOUN:effect\VERB:imitate	NOUN/VERB 87/13
+协定	xie2ding4	NOUN:agreement/accord	NOUN 100<br>协 xie2 VERB:assist NOUN/VERB 86/14<br>定 ding4 #2:VERB:decide VERB 84
+北	bei3	NOUN:north	NOUN 99
+近代	jin4dai4	NOUN:modern-times	NOUN 100<br>近 #2:jin4 ADJ:near/close ADV 82<br>代 #2:dai4 NOUN:generation/historical-period NOUN/VERB/NUM 60/19/18
+森林	sen1lin2	NOUN:forest	NOUN 100<br>森 sen1 ADJ:full-of-trees/gloomy NOUN 98<br>林 lin2 #2:NOUN:forest NOUN 99
+上来	shang4lai2	VERB:come-up	VERB 100<br>上 shang4 PRT:up PRT/VERB 79/13<br>来 lai2 VERB:come VERB/PRT 52/46
+资格	zi1ge2	NOUN:qualifications	NOUN 100<br>资 zi1 NOUN:money/expenses NOUN 96<br>格 ge2 NOUN:grid NOUN 91
+乡村	xiang1cun1	NOUN:village/countryside	NOUN 100<br>乡 #2:xiang1 NOUN:countryside/native-place NOUN 99<br>村 cun1 NOUN:village NOUN 100
+试点	shi4dian3	NOUN:experiment-place	NOUN 99<br>试 #11:shi4 NOUN:examination\VERB:try/test NOUN/VERB 70/29<br>点 dian3 NOUN:dot NOUN/NUM 62/31
+民事	min2shi4	NOUN:civil-matters	NOUN 99<br>民 min2 #2:NOUN:people NOUN 97<br>事 #3:shi4 NOUN:issue/matter/thing NOUN 98
+奴隶	nu2li4	NOUN:slave	NOUN 96<br>奴 nu2 ? NOUN 96<br>隶 #8:li4 VERB:be-subordinate-to NOUN 89
+利率	li4lv4	NOUN:interest-rate	NOUN 100<br>利 #2:li4 #2:NOUN:profit NOUN/VERB 77/20<br>率 lv4 NOUN:-rate NOUN 99
+爱	ai4	NOUN:love\VERB:love	NOUN/VERB 52/48
+约束	yue1shu4	NOUN:constraint\VERB:restrict	NOUN/VERB 87/13<br>约 yue1 ADV:approximately ADV/NOUN 75/21<br>束 #5:shu4 MEAS:bundle/sheaf\VERB:bind/tie NOUN/VERB 56/37
+全民	quan2min2	NOUN:the-whole-people	NOUN 99<br>全 quan2 ADJ:complete/whole DET/ADV 86/10<br>民 min2 #2:NOUN:people NOUN 97
+艰苦	jian1ku3	ADJ:arduous/difficult	VERB/ADV/ADJ 34/32/32<br>艰 #6:jian1 ? VERB/ADJ/NOUN 69/19/10<br>苦 ku3 NOUN:hardship\ADJ:bitter\VERB:suffer\ADV:painstakingly NOUN/VERB/ADV 41/37/19
+表演	biao3yan3	NOUN:performance/exhibition\VERB:perform/act	NOUN/VERB 83/17<br>表 biao3 NOUN:table/list NOUN/VERB 75/25<br>演 yan3 VERB:perform/play VERB/NOUN 64/36
+跟	gen1	PREP:with\VERB:follow\NOUN:heel	PREP 88
+克服	ke4fu2	VERB:overcome/conquer	VERB 100<br>克 ke4 MEAS:gram NOUN 93<br>服 fu2 NOUN:clothes\VERB:serve NOUN/VERB 76/24
+人民币	ren2min2bi4	NOUN:RMB	NOUN 100<br>人 ren2 NOUN:person NOUN 99<br>民 min2 #2:NOUN:people NOUN 97<br>币 #2:bi4 NOUN:currency/money NOUN 95
+公元	gong1yuan2	NOUN:A.D.	ADJ 100<br>公 #2:gong1 ADJ:public NOUN/ADJ 74/18<br>元 yuan2 MEAS:dollar NUM/NOUN 90/10
+作战	zuo4zhan4	VERB:fight/war	NOUN/VERB 75/25<br>作 zuo4 VERB:do VERB 93<br>战 #2:zhan4 #2:NOUN:war NOUN 95
+可靠	ke3kao4	ADJ:reliable	VERB/ADJ 61/39<br>可 ke3 #3:VERB:can VERB 92<br>靠 kao4 PREP:by\VERB:depend PREP/VERB 58/42
+赔偿	pei2chang2	VERB:compensate	NOUN/VERB 75/25<br>赔 #2:pei2 ? VERB 100<br>偿 #3:chang2 VERB:repay/compensate NOUN/VERB 63/35
+公斤	gong1jin1	MEAS:kilogram	NUM/NOUN 76/24<br>公 #2:gong1 ADJ:public NOUN/ADJ 74/18<br>斤 #3:jin1 MEAS:half-kilogram NUM 100
+一旦	yi2dan4	CONJ:once/now-that	CONJ 98<br>一 yi1 NUM:1 NUM 89<br>旦 #3:dan4 NOUN:dawn/Beijing-opera-female-role NOUN 100
+益	#7:yi4	NOUN:benefit\ADV:increasingly	NOUN/ADV 61/33
+主观	zhu3guan1	ADJ:subjective	ADJ/ADV 88/12<br>主 zhu3 NOUN:master NOUN/ADJ 68/25<br>观 #2:guan1 NOUN:view/outlook NOUN 94
+中小	zhong1xiao3	ADJ:middle-sized-and-small	ADJ/NOUN 87/10<br>中 zhong1 PRT:middle PRT/NOUN 79/17<br>小 xiao3 ADJ:small ADJ/VERB 66/25
+减	#2:jian3	VERB:subtract/reduce	VERB/NOUN 86/14
+革	#2:ge2	NOUN:leather/hide	NOUN/VERB 83/14
