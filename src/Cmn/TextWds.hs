@@ -60,7 +60,8 @@ textWdsHtml dict maxWdLen text =
     "<meta http-equiv=\"Content-Type\" " <>
     "content=\"text/html; charset=UTF-8\" />" <>
     "<title>Text Words</title></head>" <>
-    "<body style=\"background:black;color:white;font-size:x-large\">" <>
+    "<body style=\"background:black;color:white;" <>
+    "font-family:AR PL UMing CN;font-size:24px\">" <>
     DT.unlines (map doWd $ textWds dict maxWdLen text) <>
     "</body></html>"
   where

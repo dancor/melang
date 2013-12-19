@@ -2,7 +2,6 @@ import Control.Applicative
 import Control.DeepSeq
 import Control.Monad
 import Data.List
-import qualified Data.Text as DT
 import qualified Data.Text.IO as DTI
 import System.Environment
 
