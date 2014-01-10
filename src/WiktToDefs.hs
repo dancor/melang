@@ -8,13 +8,16 @@ import qualified Data.ByteString as BS
 import qualified Data.ByteString.Char8 as BSC
 import Data.Char
 import Data.List
+import Data.List.Split
 import Data.Maybe
+import Data.Monoid
+import qualified Data.Set as Set
 import qualified Data.Text as DT
-import qualified Data.Text.Encoding as DTE
 import System.Environment
+import System.FilePath
 import Text.HTML.TagSoup
 
-import BSUtil
+import Util.BS
 
 type Str = BS.ByteString
 
@@ -43,6 +46,17 @@ goodPartsOfSpeech = map (BSC.pack . filter isLetter)
     , "Verb"
     ]
 
+spPartAbbr :: Str -> Str
+spPartAbbr "Adjective" = "ADJ"
+spPartAbbr "Adverb" = "ADV"
+spPartAbbr "Conjunction" = "CONJ"
+spPartAbbr "Noun" = "NOUN"
+spPartAbbr "Preposition" = "ADP"
+spPartAbbr "Postposition" = "ADP"
+spPartAbbr "Pronoun" = "PRON"
+spPartAbbr "Verb" = "VERB"
+spPartAbbr x = x
+
 dropUntil :: (a -> Bool) -> [a] -> [a]
 dropUntil f = dropWhile (not . f)
 
@@ -53,15 +67,100 @@ findLangHeading targetLanguageTag = drop 1 . dropUntil (\ l ->
         targetLanguageTag) l
     )
 
-processPage :: Str -> [Str] -> Maybe (Str, [Str])
-processPage targetLanguageTag ls =
-    if null content || all isAlpha (BSC.unpack title)
-        then Nothing
-        else Just (title, content)
+processBlock :: [Str] -> Str
+processBlock =
+    BS.intercalate "; " .
+    map head . group .
+    map (BSC.pack . processLine . BSC.unpack) .
+    map (BS.drop 2) . filter ("# " `BSC.isPrefixOf`) .
+    -- The detail of all the sub-sub-headings is too much detail for us.
+    takeWhile (not . ("====" `BSC.isPrefixOf`))
+  where
+    processLine ('[':'[':rest) = toBracketEnd "" rest
+    processLine ('{':'{':rest) = toBraceEnd "" rest
+    processLine ('\'':'\'':rest) = processLine $ dropWhile (== '\'') rest
+    processLine (c:rest) = c : processLine rest
+    processLine "" = ""
+
+    toBracketEnd acc (']':']':rest) = bracketMod acc ++ processLine rest
+    toBracketEnd acc (c:rest) = toBracketEnd (acc ++ [c]) rest
+    -- Shouldn't happen:
+    toBracketEnd _ "" = ""
+
+    toBraceEnd acc ('}':'}':rest) = braceMod acc ++ processLine rest
+    toBraceEnd acc (c:rest) = toBraceEnd (acc ++ [c]) rest
+    -- Shouldn't happen:
+    toBraceEnd _ "" = ""
+
+    bracketMod = last . splitWhen (== '|')
+
+    braceMod x = processLine $ case mainPart of
+        "," -> ","
+        "a" -> "(" ++ parts !! 1 ++ ")"
+        "alternative spelling of" -> usualIncl (parts !! 1)
+        "apocopic form of" -> usualIncl (parts !! 1)
+        "attention" -> ""
+        "context" -> "(" ++ parts !! 1 ++ ")"
+        "es-demonstrative-accent-usage" -> "(The unaccented form can " ++
+            "function as a pronoun if there is no ambiguity as to it " ++
+            "being a pronoun in its context.)"
+        "es-verb form of" -> "(verb form of " ++ last parts ++ ")"
+        "es-verb form of " -> "(verb form of " ++ last parts ++ ")"
+        "feminine of" -> usualIncl (parts !! 1)
+        "feminine plural of" -> usualIncl (parts !! 1)
+        "form of" -> usualIncl $
+            last (filter (not . ("lang=" `isPrefixOf`)) parts)
+        "gloss" -> theUsual
+        "inflection of" -> usualIncl (parts !! 1)
+        "label" -> "(" ++ last parts ++ ")"
+        "l/en" -> last parts
+        "l" -> last parts
+        "m" -> "(masculine)"
+        "masculine plural of" -> usualIncl (parts !! 1)
+        "neuter of" -> usualIncl (parts !! 1)
+        "non-gloss definition" -> rest
+        "obsolete spelling of" -> usualIncl (parts !! 1)
+        "past participle of" -> usualIncl (parts !! 1)
+        "plural of" -> usualIncl (parts !! 1)
+        "qualifier" -> theUsual
+        "rfex" -> ""
+        "rfgloss" -> ""
+        "sense" -> rest
+        "term" -> parts !! 1
+        _ -> "<?<" ++ x ++ ">?>"
+      where
+        parts = splitWhen (== '|') x
+        mainPart = head parts
+        rest = intercalate "|" $ tail parts
+        theUsual = "(" ++ rest ++ ")"
+        usualIncl y = "(" ++ mainPart ++ " " ++ y ++ ")"
+
+processContent :: [Str] -> [Str]
+processContent =
+    map (\(subHead, block) -> spPartAbbr subHead <> ":" <> block) .
+    filterGoodBlocks . contentBlocks . dropWhile (not . isSubHead)
+  where
+    isSubHead x = "===" `BSC.isPrefixOf` x && not ("====" `BSC.isPrefixOf` x)
+    extractSubHead x = BS.drop 3 $ BS.take (BS.length x - 3) x
+    contentBlocks [] = []
+    contentBlocks (subHead:rest) =
+        (extractSubHead subHead, processBlock block) :
+        contentBlocks rest'
+      where
+        (block, rest') = break isSubHead rest
+    filterGoodBlocks = filter ((`elem` goodPartsOfSpeech) . fst)
+
+processPage :: Set.Set Str -> Str -> [Str] -> Maybe (Str, [Str])
+processPage wantedWordSet targetLanguageTag ls =
+    if not (null content) && title `Set.member` wantedWordSet
+      -- && not (all isAlpha $ BSC.unpack title)
+        then Just (title, content)
+        else Nothing
   where
     title = BSC.takeWhile (/= '<') . BSC.drop (BSC.length titleLinePrefix) $
         head ls
     content =
+        processContent .
         takeWhile (not . (BSC.isPrefixOf "----")) $
         findLangHeading targetLanguageTag ls
 
@@ -84,54 +183,6 @@ takeBetween leftPart rightPart =
     fst . BS.breakSubstring rightPart . BS.drop (BS.length leftPart) .
     snd . BS.breakSubstring leftPart
 
-{-
-pageGetGood :: (Str, [Str]) -> Dict
-pageGetGood (title, content) =
-  if null goodParts
-    then []
-    else [(DTE.decodeUtf8 title, goodParts)]
-  where
-  contentParts = partitions (BSC.isPrefixOf "==") content
-  procPart (x:xs) =
-    if heading `elem` goodPartsOfSpeech
-      then
-        Just (DTE.decodeUtf8 $ BSC.pack heading, cleanDictEntry xs)
-      else Nothing
-    where
-    heading = filter isLetter (BSC.unpack x)
-  cleanDictEntry =
-    catMaybes .
-    map cleanPinyin .
-    filter (not . BS.null)
-  cleanPinyin l =
-    if BS.isPrefixOf "{{" l
-      then
-        if BS.isPrefixOf "{{cmn-" l
-          -- then Just . DTE.decodeUtf8 $ takeBetween "|pint=" "|" l
-          then Just . DTE.decodeUtf8 $ takeBetween "|pin=" "|" l
-          else Nothing
-      else
-        if BS.isPrefixOf "#" l || BS.isPrefixOf "*" l
-          then Just $ DTE.decodeUtf8 l
-          else Nothing
-{-
-        if BS.isPrefixOf "[[Category:" l
-          then Nothing
-          else Just $ DTE.decodeUtf8 l
--}
-  goodParts = catMaybes $ map procPart contentParts
--}
-
-{-
-loadFreqInfo :: IO [(DT.Text, Int)]
-loadFreqInfo = do
-  let
-    f :: [DT.Text] -> (DT.Text, Int)
-    f [w, n] = (w, read $ DT.unpack n)
-  map (f . DT.words) . DT.lines <$>
-    DTI.readFile "/home/danl/p/l/melang/out/gbRec/freq"
--}
-
 type Dict = [(DictWord, [(POS, RestOfEntry)])]
 type DictWord = DT.Text
 type POS = DT.Text
@@ -144,71 +195,38 @@ choosePartOfSpeech partOfSpeech =
     map (\ (title, parts) ->
         (title, filter ((== partOfSpeech) . fst) parts))
 
-{-
-loadDict :: IO Dict
-loadDict = do
-    concatMap pageGetGood <$> decodeFile "wiktionaryMandarin.bin"
--}
-
 csvLine :: [DT.Text] -> DT.Text
 csvLine = DT.intercalate "," .
     map (\ a -> "\"" `DT.append` DT.replace "\"" "\"\"" a `DT.append` "\"")
 
-procLines :: Str -> [Str] -> [Str]
-procLines targetLanguageTag =
+procLines :: Set.Set Str -> Str -> [Str] -> [Str]
+procLines wantedWordSet targetLanguageTag =
     map showPageSimple .
-    catMaybes . map (processPage targetLanguageTag) .
+    catMaybes . map (processPage wantedWordSet targetLanguageTag) .
     partitions (BSC.isPrefixOf titleLinePrefix)
 
-main :: IO ()
-main = do
+data DictEntry
+    = Entry
+    { eDef :: Str
+    , eStats :: Str
+    }
+
+doDefs :: IO ()
+doDefs = do
+    -- Usage e.g.:
+    -- bzless enwiktionary-xxx-pages-articles.xml.bz2 | wikt-to-defs spa
     [lang] <- getArgs
-    let targetLanguageTag = BSC.pack . ("==" ++) . (++ "==") $
+    let targetLanguageTag = BSC.pack $
             case lang of
-                "cmn" -> "Mandarin"
-                "spa" -> "Spanish"
+                "cmn" -> "==Mandarin=="
+                "spa" -> "==Spanish=="
                 a -> a
-    bsInteractLErr $ map Right . procLines targetLanguageTag
-{-
-{-
-  let
-  --encodeFile "wiktionaryMandarin.bin" $ map showPage pages
-  encodeFile "wiktionaryMandarin.bin" pages
-  -}
+    dict <-
+        HMS.map (\[def, stats] -> Entry def stats) .
+        HMS.fromList . map (uncons . BS.split 9) . BSC.lines <$>
+        BS.readFile ("/home/danl/p/l/melang/data" </> lang </> "dict")
+    let wantedWordSet = Set.fromList $ map head dict
+    bsInteractLErr $ map Right . procLines wantedWordSet targetLanguageTag
 
-  dict <- loadDict
-
-  freqInfo <- M.fromList <$> loadFreqInfo
-
-  let
-    topOf :: [(DictWord, a)] -> [(DictWord, a)]
-    topOf wdsAndInfo =
-      map fst . reverse . sortBy (comparing snd) $
-      map (\ (wd, x) -> ((wd, x), M.lookup wd freqInfo)) wdsAndInfo
-    topOfPartOfSpeech partOfSpeech dict =
-      topOf $
-      choosePartOfSpeech partOfSpeech dict
-
-  forM_ goodPartsOfSpeech $ \ partOfSpeech -> do
-    let
-      fHm (wd, (pronounce:entry)) =
-        Just $ csvLine [wd, pronounce,
-          DT.dropWhileEnd isSpace $ DT.unlines entry]
-      fHm (wd, []) = Nothing
-      result =
-        catMaybes . map fHm .
-{-
-        zipWith (\ n (wd, entry) -> DT.unlines
-          (({-DT.pack (show n ++ ": ") `DT.append` -}wd) : entry)) [1..] .
-        --take 100000 $
--}
-        -- for some wack prepositions:
-        filter (not . (DT.isInfixOf ".") . fst) $
-        topOfPartOfSpeech (DT.pack partOfSpeech) dict
-    DTI.writeFile ("out/wikt/" ++ partOfSpeech ++ ".csv") $ DT.unlines result
-    putStrLn $ partOfSpeech ++ ": " ++ show (length result)
-  --print $ length $ choosePartOfSpeech "Verb" dict
-  --print $ length $ choosePartOfSpeech "Noun" dict
-
-  --DTI.putStr . DT.unlines . map showPage $ goodPages
--}
+main :: IO ()
+main = doDefs

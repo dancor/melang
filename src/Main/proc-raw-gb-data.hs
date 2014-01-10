@@ -195,6 +195,7 @@ main = do
         lang = case dataSetName of
           "chi-sim" -> Chi
           "eng" -> Eng
+          "spa" -> Eng
           _ -> error "unknown data-set"
         myFiles = rawFiles dataSetName
     (bigSortIn, _, _, bigSortProc) <- runInteractiveProcess "sort"
