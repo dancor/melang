@@ -103,7 +103,7 @@ flag wikt-to-defs
 executable wikt-to-defs
     if !flag(wikt-to-defs)
         buildable: False
-    main-is:         WiktToDefs.hs
+    main-is:         Main/wikt-to-defs.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
     build-depends:   base >= 4
@@ -200,31 +200,6 @@ executable kilo-prep
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
     build-depends:   transformers
-
-flag extract-wiki-pages
-    default: False
-
-executable extract-wiki-pages
-    if !flag(extract-wiki-pages)
-        buildable: False
-    main-is:         Main/extract-wiki-pages.hs
-    hs-source-dirs:  src
-    ghc-options:     -O2 -Wall
-    build-depends:
-        dlist
-      , hexpat
-
-flag wikt2
-    default: False
-
-executable wikt2
-    if !flag(wikt2)
-        buildable: False
-    main-is:         Main/wikt2.hs
-    hs-source-dirs:  src
-    ghc-options:     -O2 -Wall
-    build-depends:
-        directory
 
 flag proc-lcmc
     default: False

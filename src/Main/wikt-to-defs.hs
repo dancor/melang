@@ -1,18 +1,17 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE BangPatterns #-}
 
 module Main where
 
 import Control.Applicative
-import Control.Arrow
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Char8 as BSC
 import Data.Char
+import Data.Function
+import qualified Data.HashMap.Strict as HMS
 import Data.List
 import Data.List.Split
-import Data.Maybe
 import Data.Monoid
-import qualified Data.Set as Set
-import qualified Data.Text as DT
 import System.Environment
 import System.FilePath
 import Text.HTML.TagSoup
@@ -96,50 +95,67 @@ processBlock =
 
     braceMod x = processLine $ case mainPart of
         "," -> ","
-        "a" -> "(" ++ parts !! 1 ++ ")"
-        "alternative spelling of" -> usualIncl (parts !! 1)
-        "apocopic form of" -> usualIncl (parts !! 1)
+        "a" -> argsParen
+        "alternative spelling of" -> mainParen
+        "apocopic form of" -> mainParen
         "attention" -> ""
-        "context" -> "(" ++ parts !! 1 ++ ")"
+        "comparative of" -> mainParen
+        "context" -> argsParen
+        "conjugation of" -> mainParen
+        "cx" -> argsParen
+        "es-compond of" -> customParen "compound of"
         "es-demonstrative-accent-usage" -> "(The unaccented form can " ++
             "function as a pronoun if there is no ambiguity as to it " ++
             "being a pronoun in its context.)"
-        "es-verb form of" -> "(verb form of " ++ last parts ++ ")"
-        "es-verb form of " -> "(verb form of " ++ last parts ++ ")"
-        "feminine of" -> usualIncl (parts !! 1)
-        "feminine plural of" -> usualIncl (parts !! 1)
-        "form of" -> usualIncl $
-            last (filter (not . ("lang=" `isPrefixOf`)) parts)
-        "gloss" -> theUsual
-        "inflection of" -> usualIncl (parts !! 1)
-        "label" -> "(" ++ last parts ++ ")"
-        "l/en" -> last parts
-        "l" -> last parts
+        "es-verb form of" -> customParen "verb form of"
+        "es-verb form of " -> customParen "verb form of"
+        "f" -> "(feminine)"
+        "feminine of" -> mainParen
+        "feminine plural of" -> mainParen
+        "form of" -> mainParen
+        "gloss" -> argsParen
+        "gloss-stub" -> ""
+        "inflection of" -> mainParen
+        "label" -> argsParen
+        "l/en" -> argsStr
+        "l" -> argsStr
         "m" -> "(masculine)"
-        "masculine plural of" -> usualIncl (parts !! 1)
-        "neuter of" -> usualIncl (parts !! 1)
-        "non-gloss definition" -> rest
-        "obsolete spelling of" -> usualIncl (parts !! 1)
-        "past participle of" -> usualIncl (parts !! 1)
-        "plural of" -> usualIncl (parts !! 1)
-        "qualifier" -> theUsual
+        "masculine plural of" -> mainParen
+        "misspelling of" -> mainParen
+        "neuter of" -> mainParen
+        "n-g" -> argsStr
+        "non-gloss definition" -> argsStr
+        "obsolete spelling of" -> mainParen
+        "past participle of" -> mainParen
+        "plural of" -> mainParen
+        "present participle of" -> mainParen
+        "qualifier" -> argsParen
+        "reflexive of" -> mainParen
         "rfex" -> ""
         "rfgloss" -> ""
-        "sense" -> rest
-        "term" -> parts !! 1
+        "sense" -> argsStr
+        "taxlink" -> argsParen
+        "term" -> argsStr
         _ -> "<?<" ++ x ++ ">?>"
       where
-        parts = splitWhen (== '|') x
-        mainPart = head parts
-        rest = intercalate "|" $ tail parts
-        theUsual = "(" ++ rest ++ ")"
-        usualIncl y = "(" ++ mainPart ++ " " ++ y ++ ")"
+        (mainPart:restParts) = splitWhen (== '|') x
+        isBadPart part =
+            part `elem` ["", "en", "es", "su", "f", "s"] ||
+            "=" `isInfixOf` part
+        goodParts = filter (not . isBadPart) restParts
+        argsStr = intercalate ", " goodParts
+        argsParen = "(" ++ argsStr ++ ")"
+        mainParen = customParen mainPart
+        customParen y = "(" ++ y ++ ": " ++ argsStr ++ ")"
 
-processContent :: [Str] -> [Str]
-processContent =
-    map (\(subHead, block) -> spPartAbbr subHead <> ":" <> block) .
-    filterGoodBlocks . contentBlocks . dropWhile (not . isSubHead)
+processContent :: [Str] -> Str
+processContent content = newDef
   where
+    newDef =
+        BS.intercalate "; " .
+        map (\(subHead, block) -> spPartAbbr subHead <> ":" <> block) .
+        filterGoodBlocks . contentBlocks $ dropWhile (not . isSubHead)
+        content
     isSubHead x = "===" `BSC.isPrefixOf` x && not ("====" `BSC.isPrefixOf` x)
     extractSubHead x = BS.drop 3 $ BS.take (BS.length x - 3) x
     contentBlocks [] = []
@@ -150,12 +166,12 @@ processContent =
         (block, rest') = break isSubHead rest
     filterGoodBlocks = filter ((`elem` goodPartsOfSpeech) . fst)
 
-processPage :: Set.Set Str -> Str -> [Str] -> Maybe (Str, [Str])
-processPage wantedWordSet targetLanguageTag ls =
-    if not (null content) && title `Set.member` wantedWordSet
+processPage :: Str -> Dict -> [Str] -> Dict
+processPage targetLanguageTag !dict ls =
+    if not (BS.null content) && title `HMS.member` dict
       -- && not (all isAlpha $ BSC.unpack title)
-        then Just (title, content)
-        else Nothing
+        then HMS.adjust (\e -> e {eDef = content}) title dict
+        else dict
   where
     title = BSC.takeWhile (/= '<') . BSC.drop (BSC.length titleLinePrefix) $
         head ls
@@ -164,69 +180,38 @@ processPage wantedWordSet targetLanguageTag ls =
         takeWhile (not . (BSC.isPrefixOf "----")) $
         findLangHeading targetLanguageTag ls
 
-showPage :: (Str, [(Str, [Str])]) -> Str
-showPage (title, parts) =
-    BSC.unlines ("%$#@!":title:content)
-  where
-    content =
-        concatMap (\ (heading, xs) -> (heading `BSC.append` ":"): xs) parts
-
-showPageSimple :: (Str, [Str]) -> Str
-showPageSimple (title, content) =
-    BSC.unlines ("%$#@!":title:content)
-
-takeBetween :: BS.ByteString
-            -> BS.ByteString
-            -> BS.ByteString
-            -> BS.ByteString
-takeBetween leftPart rightPart =
-    fst . BS.breakSubstring rightPart . BS.drop (BS.length leftPart) .
-    snd . BS.breakSubstring leftPart
-
-type Dict = [(DictWord, [(POS, RestOfEntry)])]
-type DictWord = DT.Text
-type POS = DT.Text
-type RestOfEntry = [DT.Text]
-
-choosePartOfSpeech :: DT.Text -> Dict -> [(DictWord, RestOfEntry)]
-choosePartOfSpeech partOfSpeech =
-    map (second (snd . head)) .
-    filter (not . null . snd) .
-    map (\ (title, parts) ->
-        (title, filter ((== partOfSpeech) . fst) parts))
-
-csvLine :: [DT.Text] -> DT.Text
-csvLine = DT.intercalate "," .
-    map (\ a -> "\"" `DT.append` DT.replace "\"" "\"\"" a `DT.append` "\"")
-
-procLines :: Set.Set Str -> Str -> [Str] -> [Str]
-procLines wantedWordSet targetLanguageTag =
-    map showPageSimple .
-    catMaybes . map (processPage wantedWordSet targetLanguageTag) .
+procLines :: Str -> Dict -> [Str] -> Dict
+procLines targetLanguageTag dict =
+    foldl' (processPage targetLanguageTag) dict .
     partitions (BSC.isPrefixOf titleLinePrefix)
+
+type Dict = HMS.HashMap Str DictEntry
 
 data DictEntry
     = Entry
     { eDef :: Str
     , eStats :: Str
+    , eN :: Int
     }
 
 doDefs :: IO ()
 doDefs = do
     -- Usage e.g.:
-    -- bzless enwiktionary-xxx-pages-articles.xml.bz2 | wikt-to-defs spa
+    -- bzless enwiktionary-pages-articles.xml.bz2 | wikt-to-defs spa > out
     [lang] <- getArgs
     let targetLanguageTag = BSC.pack $
             case lang of
                 "cmn" -> "==Mandarin=="
                 "spa" -> "==Spanish=="
                 a -> a
-    dict <-
-        HMS.map (\[def, stats] -> Entry def stats) .
-        HMS.fromList . map (uncons . BS.split 9) . BSC.lines <$>
+    dict <- HMS.fromList .
+        zipWith (\n [word, def, stats] -> (word, Entry def stats n)) [1..] .
+        map (BS.split 9) . BSC.lines <$>
         BS.readFile ("/home/danl/p/l/melang/data" </> lang </> "dict")
-    let wantedWordSet = Set.fromList $ map head dict
-    bsInteractLErr $ map Right . procLines wantedWordSet targetLanguageTag
+    bsInteractLErr $ map Right .
+        map (\(word, e) -> BS.intercalate "\t" [word, eDef e, eStats e]) .
+        sortBy (compare `on` (eN . snd)) . HMS.toList .
+        procLines targetLanguageTag dict
 
 main :: IO ()
 main = doDefs
