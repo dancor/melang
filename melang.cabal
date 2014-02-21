@@ -97,6 +97,19 @@ executable goog-merge
     build-depends:   base >= 4
                    , bytestring
 
+flag wikt-pull-lang
+    default: False
+
+executable wikt-pull-lang
+    if !flag(wikt-pull-lang)
+        buildable: False
+    main-is:         Main/wikt-pull-lang.hs
+    hs-source-dirs:  src
+    ghc-options:     -Wall
+    build-depends:   base >= 4
+                   , bytestring
+                   , tagsoup
+
 flag wikt-to-defs
     default: False
 

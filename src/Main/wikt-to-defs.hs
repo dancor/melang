@@ -11,6 +11,7 @@ import Data.Function
 import qualified Data.HashMap.Strict as HMS
 import Data.List
 import Data.List.Split
+import Data.Maybe
 import Data.Monoid
 import System.Environment
 import System.FilePath
@@ -20,15 +21,25 @@ import Util.BS
 
 type Str = BS.ByteString
 
-titleLinePrefix :: Str
-titleLinePrefix = "    <title>"
+type Dict = HMS.HashMap Str DictEntry
+
+type Def = Either Str [(Str, [Str])]
+
+data DictEntry
+    = Entry
+    { eDef :: Def
+    , eStats :: Str
+    , eN :: Int
+    }
 
 goodPartsOfSpeech :: [Str]
 goodPartsOfSpeech = map (BSC.pack . filter isLetter)
     [ "Adjective"
     , "Adverb"
-    -- , "Article"
+    , "Article"
+    , "Cardinal numeral"
     , "Conjunction"
+    , "Contraction"
     -- , "Idiom"
     -- , "Interjection"
     -- , "Measure word" -- this actually gives the MW for a noun def
@@ -48,7 +59,10 @@ goodPartsOfSpeech = map (BSC.pack . filter isLetter)
 spPartAbbr :: Str -> Str
 spPartAbbr "Adjective" = "ADJ"
 spPartAbbr "Adverb" = "ADV"
+spPartAbbr "Article" = "DET"
+spPartAbbr "Cardinal numeral" = "NUM"
 spPartAbbr "Conjunction" = "CONJ"
+spPartAbbr "Contraction" = "ABBR"
 spPartAbbr "Noun" = "NOUN"
 spPartAbbr "Preposition" = "ADP"
 spPartAbbr "Postposition" = "ADP"
@@ -56,24 +70,14 @@ spPartAbbr "Pronoun" = "PRON"
 spPartAbbr "Verb" = "VERB"
 spPartAbbr x = x
 
-dropUntil :: (a -> Bool) -> [a] -> [a]
-dropUntil f = dropWhile (not . f)
-
-findLangHeading :: Str -> [Str] -> [Str]
-findLangHeading targetLanguageTag = drop 1 . dropUntil (\ l ->
-    BSC.isPrefixOf targetLanguageTag l ||
-    BSC.isPrefixOf ("      <text xml:space=\"preserve\">" `BSC.append`
-        targetLanguageTag) l
-    )
-
-processBlock :: [Str] -> Str
-processBlock =
+processBlock :: Str -> [Str] -> Str
+processBlock subSubHeadingPrefix =
     BS.intercalate "; " .
     map head . group .
     map (BSC.pack . processLine . BSC.unpack) .
     map (BS.drop 2) . filter ("# " `BSC.isPrefixOf`) .
     -- The detail of all the sub-sub-headings is too much detail for us.
-    takeWhile (not . ("====" `BSC.isPrefixOf`))
+    takeWhile (not . (subSubHeadingPrefix `BSC.isPrefixOf`))
   where
     processLine ('[':'[':rest) = toBracketEnd "" rest
     processLine ('{':'{':rest) = toBraceEnd "" rest
@@ -148,70 +152,143 @@ processBlock =
         mainParen = customParen mainPart
         customParen y = "(" ++ y ++ ": " ++ argsStr ++ ")"
 
+testStr :: [Str]
+testStr =
+    [ "===Etymology 1==="
+    , "From {{etyl|la|es}} {{term|ille|lang=la}}."
+    , "====Article===="
+    , "'''el''' (plural: [[los]]; feminine: [[la]]; plural feminine: [[las]]; neuter: [[lo]])"
+    , "# Masculine singular definite article; [[the]]."
+    ]
+
 processContent :: [Str] -> Str
 processContent content = newDef
   where
     newDef =
         BS.intercalate "; " .
-        map (\(subHead, block) -> spPartAbbr subHead <> ":" <> block) .
-        filterGoodBlocks . contentBlocks $ dropWhile (not . isSubHead)
+        map (\(subHead, block) ->
+            spPartAbbr subHead <> ":" <> block) .
+        filterGoodBlocks . procHeadings $ dropWhile (not . isHeading)
         content
-    isSubHead x = "===" `BSC.isPrefixOf` x && not ("====" `BSC.isPrefixOf` x)
-    extractSubHead x = BS.drop 3 $ BS.take (BS.length x - 3) x
-    contentBlocks [] = []
-    contentBlocks (subHead:rest) =
-        (extractSubHead subHead, processBlock block) :
-        contentBlocks rest'
-      where
-        (block, rest') = break isSubHead rest
     filterGoodBlocks = filter ((`elem` goodPartsOfSpeech) . fst)
+    isHeading x = "===" `BSC.isPrefixOf` x
+    isHeading4Plus x = "====" `BSC.isPrefixOf` x
+    isHeading5Plus x = "=====" `BSC.isPrefixOf` x
+    extractHeading n x = BS.drop n $ BS.take (BS.length x - n) x
 
-processPage :: Str -> Dict -> [Str] -> Dict
-processPage targetLanguageTag !dict ls =
+    procHeadings [] = []
+    procHeadings (heading:rest) =
+        if "===Etymology" `BSC.isPrefixOf` heading
+          then proc4Headings rest'
+          else
+            if isHeading4Plus heading
+              then procHeadings rest'
+              else
+                (extractHeading 3 heading, processBlock "====" block) :
+                procHeadings rest'
+      where
+        (block, rest') = break isHeading rest
+
+    proc4Headings [] = []
+    proc4Headings x@(heading:rest) =
+        if isHeading5Plus heading
+          then proc4Headings rest'
+          else
+            if isHeading4Plus heading
+              then
+                (extractHeading 4 heading, processBlock "=====" block) :
+                proc4Headings rest'
+              -- else: It's a === heading, so leave proc4Headings.
+              else procHeadings x
+      where
+        (block, rest') = break isHeading rest
+
+processPage :: Dict -> [Str] -> Dict
+processPage !dict [] = dict
+processPage !dict (magicTitle:ls) =
     if not (BS.null content) && title `HMS.member` dict
       -- && not (all isAlpha $ BSC.unpack title)
-        then HMS.adjust (\e -> e {eDef = content}) title dict
+        then HMS.adjust (\e -> e {eDef = readDef content}) title dict
         else dict
   where
-    title = BSC.takeWhile (/= '<') . BSC.drop (BSC.length titleLinePrefix) $
-        head ls
-    content =
-        processContent .
-        takeWhile (not . (BSC.isPrefixOf "----")) $
-        findLangHeading targetLanguageTag ls
+    title = BSC.drop 1 magicTitle
+    content = processContent ls
 
-procLines :: Str -> Dict -> [Str] -> Dict
-procLines targetLanguageTag dict =
-    foldl' (processPage targetLanguageTag) dict .
-    partitions (BSC.isPrefixOf titleLinePrefix)
+procLines :: Dict -> [Str] -> Dict
+procLines dict =
+    foldl' processPage dict .
+    partitions ("^" `BSC.isPrefixOf`)
 
-type Dict = HMS.HashMap Str DictEntry
+-- break to a Maybe can be more natural.
+breakSubstr :: Str -> Str -> Maybe (Str, Str)
+breakSubstr needle haystack =
+  let (pre, needlePost) = BS.breakSubstring needle haystack
+      post = BS.drop (BS.length needle) needlePost
+  in if BS.null needlePost then Nothing else Just (pre, post)
 
-data DictEntry
-    = Entry
-    { eDef :: Str
-    , eStats :: Str
-    , eN :: Int
-    }
+breaksSubstr :: Str -> Str -> [Str]
+breaksSubstr needle haystack =
+    if BS.null needlePost then [haystack] else pre : breaksSubstr needle post
+  where
+    (pre, needlePost) = BS.breakSubstring needle haystack
+    post = BS.drop (BS.length needle) needlePost
 
-doDefs :: IO ()
-doDefs = do
+doDeref :: Dict -> Str -> Str -> Str -> Str
+doDeref dict spPart needle s =
+  case breakSubstr needle s of
+    Nothing -> s
+    Just (pre, post) ->
+        if ":" `BS.isInfixOf` ref
+          -- Already has a refDef.
+          then pre <> needle <> ref <> derefVerb dict rest
+          else
+            pre <> needle <> ref <> ": " <> refDef <> derefVerb dict rest
+      where
+        (ref, rest) = BSC.break (== ')') post
+        refDef = maybe "???" (modDef . eDef) (HMS.lookup ref dict)
+        modDef (Left x) = x
+        modDef (Right x) = maybe "???" head $ lookup spPart x
+
+derefVerb :: Dict -> Str -> Str
+derefVerb dict =
+    doDeref dict "VERB" "(verb form of: " .
+    doDeref dict "NOUN" "(plural of: "
+
+readDef :: Str -> Def
+readDef s =
+    if startsSpPart s
+      then
+        Right . map headPullSpPart . partitions startsSpPart $
+        breaksSubstr "; " s
+      else Left s
+  where
+    startsSpPart x = ":" `BS.isPrefixOf` BSC.dropWhile isUpper x
+    breakSpPart = fromJust . breakSubstr ":"
+    headPullSpPart (x:xs) = (spPart, def1:xs)
+      where (spPart, def1) = breakSpPart x
+    headPullSpPart _ = error "headPullSpPart: empty list"
+
+showDef :: Def -> Str
+showDef (Left s) = s
+showDef (Right xs) = BS.intercalate "; "
+    [spPart <> ":" <> BS.intercalate "; " def | (spPart, def) <- xs]
+
+onEachDefLine :: (Str -> Str) -> Def -> Def
+onEachDefLine f (Left x) = Left $ f x
+onEachDefLine f (Right xs) = Right [(spPart, map f ls) | (spPart, ls) <- xs]
+
+main :: IO ()
+main = do
     -- Usage e.g.:
-    -- bzless enwiktionary-pages-articles.xml.bz2 | wikt-to-defs spa > out
+    -- /usr/bin/time < ~/data/wikt/spa ./wikt-to-defs spa > out
     [lang] <- getArgs
-    let targetLanguageTag = BSC.pack $
-            case lang of
-                "cmn" -> "==Mandarin=="
-                "spa" -> "==Spanish=="
-                a -> a
     dict <- HMS.fromList .
-        zipWith (\n [word, def, stats] -> (word, Entry def stats n)) [1..] .
+        zipWith (\n [word, def, stats] ->
+            (word, Entry (readDef def) stats n)) [1..] .
         map (BS.split 9) . BSC.lines <$>
         BS.readFile ("/home/danl/p/l/melang/data" </> lang </> "dict")
     bsInteractLErr $ map Right .
-        map (\(word, e) -> BS.intercalate "\t" [word, eDef e, eStats e]) .
+        map (\(word, e) -> BS.intercalate "\t" [word,
+            showDef . onEachDefLine (derefVerb dict) $ eDef e, eStats e]) .
         sortBy (compare `on` (eN . snd)) . HMS.toList .
-        procLines targetLanguageTag dict
-
-main :: IO ()
-main = doDefs
+        procLines dict
