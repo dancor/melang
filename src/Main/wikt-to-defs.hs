@@ -23,7 +23,9 @@ type Str = BS.ByteString
 
 type Dict = HMS.HashMap Str DictEntry
 
-type Def = Either Str [(Str, [Str])]
+type Def = Either Str [(SpPart, [Str])]
+
+type SpPart = Str
 
 data DictEntry
     = Entry
@@ -233,26 +235,26 @@ breaksSubstr needle haystack =
     (pre, needlePost) = BS.breakSubstring needle haystack
     post = BS.drop (BS.length needle) needlePost
 
-doDeref :: Dict -> Str -> Str -> Str -> Str
+doDeref :: Dict -> SpPart -> Str -> Str -> Str
 doDeref dict spPart needle s =
   case breakSubstr needle s of
     Nothing -> s
     Just (pre, post) ->
-        if ":" `BS.isInfixOf` ref
-          -- Already has a refDef.
-          then pre <> needle <> ref <> derefVerb dict rest
-          else
-            pre <> needle <> ref <> ": " <> refDef <> derefVerb dict rest
+        pre <> needle <> ref <> ": " <> refDef <> derefVerb dict spPart rest
       where
-        (ref, rest) = BSC.break (== ')') post
+        (refWithPossibleOldDef, rest) = BSC.break (== ')') post
+        ref = BSC.takeWhile (/= ':') refWithPossibleOldDef
         refDef = maybe "???" (modDef . eDef) (HMS.lookup ref dict)
         modDef (Left x) = x
         modDef (Right x) = maybe "???" head $ lookup spPart x
 
-derefVerb :: Dict -> Str -> Str
-derefVerb dict =
-    doDeref dict "VERB" "(verb form of: " .
-    doDeref dict "NOUN" "(plural of: "
+derefVerb :: Dict -> SpPart -> Str -> Str
+derefVerb dict spPart =
+    doDeref dict spPart "(apocopic form of: " .
+    doDeref dict spPart "(form of: "          .
+    doDeref dict spPart "(feminine of: "      .
+    doDeref dict spPart "(plural of: "        .
+    doDeref dict spPart "(verb form of: "
 
 readDef :: Str -> Def
 readDef s =
@@ -273,9 +275,10 @@ showDef (Left s) = s
 showDef (Right xs) = BS.intercalate "; "
     [spPart <> ":" <> BS.intercalate "; " def | (spPart, def) <- xs]
 
-onEachDefLine :: (Str -> Str) -> Def -> Def
-onEachDefLine f (Left x) = Left $ f x
-onEachDefLine f (Right xs) = Right [(spPart, map f ls) | (spPart, ls) <- xs]
+onEachDefLine :: (SpPart -> Str -> Str) -> Def -> Def
+onEachDefLine f (Left x) = Left $ f "??" x
+onEachDefLine f (Right xs) =
+    Right [(spPart, map (f spPart) ls) | (spPart, ls) <- xs]
 
 main :: IO ()
 main = do
