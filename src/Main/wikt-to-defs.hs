@@ -253,6 +253,7 @@ derefVerb dict spPart =
     doDeref dict spPart "(apocopic form of: " .
     doDeref dict spPart "(form of: "          .
     doDeref dict spPart "(feminine of: "      .
+    doDeref dict spPart "(masculine plural of: " .
     doDeref dict spPart "(plural of: "        .
     doDeref dict spPart "(verb form of: "
 
