@@ -34,8 +34,11 @@ data DictEntry
     , eN :: Int
     }
 
-goodPartsOfSpeech :: [Str]
-goodPartsOfSpeech = map (BSC.pack . filter isLetter)
+type Lang = String
+
+goodPartsOfSpeech :: Lang -> [Str]
+--goodPartsOfSpeech
+goodPartsOfSpeech _ = map (BSC.pack . filter isLetter)
     [ "Adjective"
     , "Adverb"
     , "Article"
@@ -163,16 +166,17 @@ testStr =
     , "# Masculine singular definite article; [[the]]."
     ]
 
-processContent :: [Str] -> Str
-processContent content = newDef
+processContent :: Lang -> [Str] -> Str
+processContent lang content = newDef
   where
+    goodSpParts = goodPartsOfSpeech lang
     newDef =
         BS.intercalate "; " .
         map (\(subHead, block) ->
             spPartAbbr subHead <> ":" <> block) .
         filterGoodBlocks . procHeadings $ dropWhile (not . isHeading)
         content
-    filterGoodBlocks = filter ((`elem` goodPartsOfSpeech) . fst)
+    filterGoodBlocks = filter ((`elem` goodSpParts) . fst)
     isHeading x = "===" `BSC.isPrefixOf` x
     isHeading4Plus x = "====" `BSC.isPrefixOf` x
     isHeading5Plus x = "=====" `BSC.isPrefixOf` x
@@ -205,20 +209,20 @@ processContent content = newDef
       where
         (block, rest') = break isHeading rest
 
-processPage :: Dict -> [Str] -> Dict
-processPage !dict [] = dict
-processPage !dict (magicTitle:ls) =
+processPage :: Lang -> Dict -> [Str] -> Dict
+processPage _ !dict [] = dict
+processPage lang !dict (magicTitle:ls) =
     if not (BS.null content) && title `HMS.member` dict
       -- && not (all isAlpha $ BSC.unpack title)
         then HMS.adjust (\e -> e {eDef = readDef content}) title dict
         else dict
   where
     title = BSC.drop 1 magicTitle
-    content = processContent ls
+    content = processContent lang ls
 
-procLines :: Dict -> [Str] -> Dict
-procLines dict =
-    foldl' processPage dict .
+procLines :: Lang -> Dict -> [Str] -> Dict
+procLines lang dict =
+    foldl' (processPage lang) dict .
     partitions ("^" `BSC.isPrefixOf`)
 
 -- break to a Maybe can be more natural.
@@ -250,11 +254,13 @@ doDeref dict spPart needle s =
 
 derefVerb :: Dict -> SpPart -> Str -> Str
 derefVerb dict spPart =
-    doDeref dict spPart "(apocopic form of: " .
-    doDeref dict spPart "(form of: "          .
-    doDeref dict spPart "(feminine of: "      .
-    doDeref dict spPart "(masculine plural of: " .
-    doDeref dict spPart "(plural of: "        .
+    doDeref dict spPart "(apocopic form of: "     .
+    doDeref dict spPart "(feminine of: "          .
+    doDeref dict spPart "(feminine plural of: "   .
+    doDeref dict spPart "(form of: "              .
+    doDeref dict spPart "(masculine plural of: "  .
+    doDeref dict spPart "(obsolete spelling of: " .
+    doDeref dict spPart "(plural of: "            .
     doDeref dict spPart "(verb form of: "
 
 readDef :: Str -> Def
@@ -283,9 +289,13 @@ onEachDefLine f (Right xs) =
 
 main :: IO ()
 main = do
-    -- Usage e.g.:
-    -- /usr/bin/time < ~/data/wikt/spa ./wikt-to-defs spa > out
-    [lang] <- getArgs
+    args <- getArgs
+    lang <- case args of
+      [arg] -> return arg
+      _ -> error $ concat
+        [ "usage e.g.: "
+        , "/usr/bin/time < ~/data/wikt/spa ./wikt-to-defs spa > out"
+        ]
     dict <- HMS.fromList .
         zipWith (\n [word, def, stats] ->
             (word, Entry (readDef def) stats n)) [1..] .
@@ -295,4 +305,4 @@ main = do
         map (\(word, e) -> BS.intercalate "\t" [word,
             showDef . onEachDefLine (derefVerb dict) $ eDef e, eStats e]) .
         sortBy (compare `on` (eN . snd)) . HMS.toList .
-        procLines dict
+        procLines lang dict
