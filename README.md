@@ -30,17 +30,21 @@
     - Not sure about difficulty of separating
       Simplified versus Traditional Mandarin.
     - Integrating "Translingual" Chinese info could also be hard.
+    - Projects for parsing wiktionary all seem a bit wack.
+    - Coverage not great? For Mandarin Goog top-10k:
+      - 4k have no wiktionary entry (at least one Goog word isn't a real word.)
+      - 1k have wiktionary entries with seemingly no part of speech or
+        good definiton.
 
 # Todo
-- Parse wiktionary. (Projects exist for this, everything seems a bit wack.)
-  - For Goog top-10k:
-    - 4k have no wiktionary entry (at least one Goog word isn't a real word.)
-    - 1k have wiktionary entries with seemingly no part of speech or
-      good definiton.
+- Pull definitions from Mandarin wiktionary.
+- Scoring best Tatoeba sentences.
+- Interactive practice inputting Mandarin translations in fixed-form sentences?
+  As website?
+- Texts reading plan.
 - See how CEDICT looks lately.
 - Try to pull sentences out of zhwiki.
 - Automated/fake/non-hand-checked glosses for top-10k Mandarin words.
-  - Interested in how ~1k words compare to ~2k.
 
 # Maybe Ever
 - Compare Goog and LCMC most-common-part-of-speech info, and also across
