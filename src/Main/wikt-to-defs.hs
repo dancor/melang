@@ -29,7 +29,8 @@ type SpPart = Str
 
 data DictEntry
     = Entry
-    { eDef :: Def
+    { eWd :: Str
+    , eDef :: Def
     , eStats :: Str
     , eN :: Int
     }
@@ -209,15 +210,21 @@ processContent lang content = newDef
       where
         (block, rest') = break isHeading rest
 
+-- If a wiktionary entry is a case-sensitive match for a dictionary word,
+-- always add the wiktionary definition to the dictionary.
+-- Only add a case-insensitive match when the dictionary has no definition.
 processPage :: Lang -> Dict -> [Str] -> Dict
 processPage _ !dict [] = dict
 processPage lang !dict (magicTitle:ls) =
-    if not (BS.null content) && title `HMS.member` dict
-      -- && not (all isAlpha $ BSC.unpack title)
-        then HMS.adjust (\e -> e {eDef = readDef content}) title dict
+    if BS.null content then dict else
+    case HMS.lookup key dict of
+      Nothing -> dict
+      Just e -> if eDef e == Left "???" || eWd e == title
+        then HMS.insert key (e {eDef = readDef content}) dict
         else dict
   where
     title = BSC.drop 1 magicTitle
+    key = BSC.map toLower title
     content = processContent lang ls
 
 procLines :: Lang -> Dict -> [Str] -> Dict
@@ -248,7 +255,8 @@ doDeref dict spPart needle s =
       where
         (refWithPossibleOldDef, rest) = BSC.break (== ')') post
         ref = BSC.takeWhile (/= ':') refWithPossibleOldDef
-        refDef = maybe "???" (modDef . eDef) (HMS.lookup ref dict)
+        refDef =
+            maybe "???" (modDef . eDef) (HMS.lookup (BSC.map toLower ref) dict)
         modDef (Left x) = x
         modDef (Right x) = maybe "???" head $ lookup spPart x
 
@@ -298,11 +306,11 @@ main = do
         ]
     dict <- HMS.fromList .
         zipWith (\n [word, def, stats] ->
-            (word, Entry (readDef def) stats n)) [1..] .
+            (BSC.map toLower word, Entry word (readDef def) stats n)) [1..] .
         map (BS.split 9) . BSC.lines <$>
         BS.readFile ("/home/danl/p/l/melang/data" </> lang </> "dict")
     bsInteractLErr $ map Right .
-        map (\(word, e) -> BS.intercalate "\t" [word,
+        map (\e -> BS.intercalate "\t" [eWd e,
             showDef . onEachDefLine (derefVerb dict) $ eDef e, eStats e]) .
-        sortBy (compare `on` (eN . snd)) . HMS.toList .
+        sortBy (compare `on` eN) . HMS.elems .
         procLines lang dict

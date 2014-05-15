@@ -35,6 +35,8 @@
 
 import Control.Applicative
 import Control.Arrow
+import Control.Concurrent
+import Control.Monad
 import Data.Char
 import Data.Conduit
 import qualified Data.Conduit.Binary as CB
@@ -52,8 +54,6 @@ import System.Environment
 import System.FilePath
 import System.IO
 import System.Process
-
-import Util.SciSigFig
 
 data RawLine
     = RawLine
@@ -114,8 +114,8 @@ rawFiles dataSetName =
       , "/home/danl/data/goog-ngrams/20120701/1grams" </> dataSetName </>
         "googlebooks-" ++ dataSetName ++ "-all-1gram-20120701-" ++ x ++ ".gz"
       )
-    | x <- map (:[]) ['a'..'z']
-    -- | x <- map (:[]) ['a']
+    -- | x <- map (:[]) ['a'..'z']
+    | x <- map (:[]) ['r']
     ]
 
 sumSameWordSpPart :: Monad m => Conduit RawLine m RawLine
@@ -165,17 +165,33 @@ colsToRawLine [word, spPart, occurs] =
     RawLine word spPart (read $ DT.unpack occurs)
 colsToRawLine x = error $ "Bad raw line: " ++ show x
 
+doErr :: Handle -> IO ThreadId
+doErr = forkIO . go
+  where
+    go h = do
+        eof <- hIsEOF h
+        unless eof $ do
+            l <- hGetLine h
+            hPutStrLn stderr l
+            go h
+    
+
 doFile :: Lang -> Handle -> (String, FilePath) -> IO Integer
 doFile lang bigSortIn (_name, fp) = do
-    (_, zOut, _, _) <- runInteractiveProcess "zcat" [fp] Nothing (Just [])
-    (sortIn, sortOut, _, _) <- runInteractiveProcess "sort"
+    --(_, zOut, _, _) <- runInteractiveProcess "zcat" [fp] Nothing (Just [])
+    (zIn, zOut, zErr, _) <- runInteractiveProcess "zgrep" ["-i", "^r", fp] Nothing (Just [])
+    hClose zIn
+    (sortIn, sortOut, sortErr, _) <- runInteractiveProcess "sort"
         ["-f", "-t", "\t", "-k", "1,1"] Nothing (Just [])
-    runResourceT $ CB.sourceHandle zOut $$ CT.decode CT.utf8 =$ CT.lines
-        =$ CL.mapMaybe (readRawLine lang)
-        =$ sumSameWordSpPart
-        =$ CL.map ((<> "\n") . showCols . rawLineCols)
-        =$ CT.encode CT.utf8 =$ CB.sinkHandle sortIn
-    hClose sortIn
+    _ <- doErr zErr
+    _ <- doErr sortErr
+    _ <- forkIO $ do
+        runResourceT $ CB.sourceHandle zOut $$ CT.decode CT.utf8 =$ CT.lines
+            =$ CL.mapMaybe (readRawLine lang)
+            =$ sumSameWordSpPart
+            =$ CL.map ((<> "\n") . showCols . rawLineCols)
+            =$ CT.encode CT.utf8 =$ CB.sinkHandle sortIn
+        hClose sortIn
     (totOccurs, ()) <- runResourceT $ CB.sourceHandle sortOut
         $$ CT.decode CT.utf8 =$ CT.lines
         =$ CL.map (colsToRawLine . readCols)
@@ -198,8 +214,11 @@ main = do
           "spa" -> Eng
           _ -> error "unknown data-set"
         myFiles = rawFiles dataSetName
-    (bigSortIn, _, _, bigSortProc) <- runInteractiveProcess "sort"
-        ["-t", "\t", "-k", "2,2nr", "-o", "out"] Nothing (Just [])
+    (bigSortIn, bigSortOut, bigSortErr, bigSortProc) <-
+        runInteractiveProcess "sort"
+        ["-t", "\t", "-k", "2,2nr", "-o", "word-list"] Nothing (Just [])
+    _ <- doErr bigSortOut
+    _ <- doErr bigSortErr
     totOccurs <- sum <$> mapM (doFile lang bigSortIn) myFiles
     hClose bigSortIn
     _ <- waitForProcess bigSortProc

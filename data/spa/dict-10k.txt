@@ -49,7 +49,7 @@ años	NOUN:(plural of: año: year)	NOUN 100
 puede	VERB:(verb form of: poder: to be able, can)	VERB 100
 así	ADV:like this; like that; as such; thus; so; VERB:(verb form of: asir: (transitive) to grab)	ADV 100
 hasta	ADP:until; up to, to the point of, as much as; even	ADP 97
-Estado	???	NOUN 93
+Estado	NOUN:state; VERB:(verb form of: estar: To be (have a (transient) location in space). Compare ser, quedar.); been.	NOUN 93
 había	VERB:(verb form of: haber: (auxiliary verb taking past participle to build perfect tense) to have); (verb form of: haber: (auxiliary verb taking past participle to build perfect tense) to have).; (Impersonal form) (verb form of: haber: (auxiliary verb taking past participle to build perfect tense) to have), there was, there were.	VERB 100
 muy	ADV:very	ADV 100
 todos	ADJ:plural of todo; all, all of	DET/PRON 75/25
@@ -62,7 +62,7 @@ porque	CONJ:because	CONJ 100
 otros	NOUN:(plural of: otro: ???) - others	DET/PRON 68/32
 general	ADJ:general; NOUN:(military ranks) general	ADJ/NOUN 85/15
 cada	???	DET 100
-Nacional	???	ADJ 100
+Nacional	ADJ:national (of or pertaining to a nation); national (native to a nation); NOUN:A member of the national militia.	ADJ 100
 vida	NOUN:life; lifestyle; livelihood; living; liveliness; life span; lifetime; a term of endearment; darling, sweetheart	NOUN 100
 vez	NOUN:time, instance	NOUN 100
 mi	ADJ:(before the noun) (apocopic form of: mío: (predicative or after the noun) mine, my.), my; NOUN:mu; the Greek letter Μ, μ	DET 100
@@ -122,7 +122,7 @@ hacia	ADP:toward, towards	ADP 100
 estas	ADJ:(demonstrative) (feminine plural of: este: this) these; PRON:(demonstrative) (alternative spelling of: éstas) These ones.	DET 100
 tres	three	DET/PRON 85/15
 hace	VERB:(verb form of: hacer: do, make); ADV:ago, has been (Note: unlike in English, hace precedes the number.)	VERB 100
-I	???	NOUN/ADJ/VERB 64/17/15
+I	NOUN:Name of the letter I.; CONJ:(archaic) and	NOUN/ADJ/VERB 64/17/15
 derecho	ADJ:right (direction), right-hand; straight, upright; correct, appropriate, right (correct); NOUN:right (direction, entitlement); law; path, road; right side; duties, taxes, fees, charges	NOUN 100
 ellos	PRON:they (masculine)	PRON 100
 les	PRON:(form of: dative form, ellos: ???); to them; (form of: dative form, ustedes: ???); for them; (form of: dative form, los: ???); to you guys; (form of: dative form, las: ???); for you guys	PRON 100
@@ -154,7 +154,7 @@ relación	NOUN:relation; relationship	NOUN 100
 entonces	CONJ:then; at that time; next.; therefore, so	ADV 100
 nueva	ADJ:(feminine of: nuevo: new); NOUN:news, novelty	ADJ 100
 nuevo	ADJ:new	ADJ 100
-Estados	???	NOUN 100
+Estados	NOUN:(plural of: estado: ???)	NOUN 100
 dentro	ADV:inside (for space); indoors; within, in (for time)	ADV 99
 ante	ADP:in front of, before; NOUN:suede	ADP 100
 siglo	NOUN:century; a significant period of time; an age	NOUN 100
@@ -183,7 +183,7 @@ eso	PRON:(demonstrative) (neuter of: ése); that	PRON 98
 bajo	ADJ:short, in both literal and figurative senses; low; (music) bass; mean, low, despicable; ADV:low; NOUN:(music) bass (sound, voice or instrument); ADP:under, in both literal and figurative senses; VERB:(verb form of: bajar: to go down)	ADP/ADJ 84/13
 in	???	ADJ/NOUN/VERB 49/29/22
 tienen	VERB:(verb form of: tener: (transitive) To have, possess an object.)	VERB 100
-Presidente	???	NOUN 100
+Presidente	NOUN:President	NOUN 100
 producción	NOUN:production	NOUN 100
 mucho	ADJ:a lot of; many; much; ADV:much, a lot; long, a long time; PRON:a lot, many	ADV/DET 73/21
 personas	NOUN:(plural of: persona: person)	NOUN 100
@@ -242,7 +242,7 @@ te	NOUN:Name of the letter t.; PRON:you (familiar objective case form)	PRON 100
 aún	ADV:still, yet	ADV 100
 dicho	ADJ:mentioned, said; NOUN:saying, expression; remark; proverb; marriage vow; VERB:(verb form of: decir: to say)	VERB 100
 partir	VERB:to divide, to split; to go away, to leave, to depart; (reflexive, partirse) to crack up, have a laugh	VERB/NOUN 79/20
-Universidad	???	NOUN 100
+Universidad	NOUN:university	NOUN 100
 público	ADJ:public; NOUN:audience; public	ADJ/NOUN 74/26
 cualquier	ADJ:(before noun) (apocopic form of: cualquiera: any, whatever, whichever); any; whatever; whichever	DET 100
 político	ADJ:political; in-law; NOUN:politician	ADJ 100
@@ -261,7 +261,7 @@ mujer	NOUN:woman; wife	NOUN 100
 dice	VERB:(verb form of: decir: to say)	VERB 100
 tenía	VERB:(verb form of: tener: (transitive) To have, possess an object.)	VERB 100
 unos	ADJ:some, a few ((plural of: uno: ???)); (with a specific time) about, approximately; PRON:some, a few ((plural of: uno: one))	DET/PRON 87/13
-Unidos	???	NOUN 94
+Unidos	ADJ:(masculine plural of: unido: united)	NOUN 94
 haber	VERB:(auxiliary verb taking past participle to build perfect tense) to have; (rare, or, dated, or, idiomatic) to hold; to possess; (impersonal, in third person only) to exist; “there is”, “there are” (hay); “there was”, “there were” (había); (with “de” + infinitive) to have to do.; NOUN:asset	VERB 99
 mercado	NOUN:market	NOUN 100
 capital	ADJ:capital (important); NOUN:capital (finance); capital (city)	NOUN/ADJ 87/13
@@ -284,8 +284,8 @@ parece	VERB:(verb form of: parecer: to seem)	VERB 100
 lado	NOUN:side; face	NOUN 100
 centro	NOUN:center; middle; core, heart; city center, downtown; VERB:(verb form of: centrar: to center)	NOUN 100
 estudios	NOUN:(plural of: estudio: study)	NOUN 100
-República	???	NOUN 100
-c	???	NOUN 91
+República	NOUN:republic	NOUN 100
+c	NOUN:(chess) knight	NOUN 91
 problema	NOUN:problem	NOUN 100
 economía	NOUN:economy; economics	NOUN 100
 mediante	ADP:by means of, through, using	ADP 100
@@ -312,7 +312,7 @@ pública	ADJ:(feminine of: público: public)	ADJ 100
 partido	ADJ:broken; NOUN:(politics) party; (sports) game, match (chiefly for soccer); (hair) hair parting or part; VERB:(verb form of: partir: to divide, to split)	NOUN 100
 actividad	NOUN:activity	NOUN 100
 propia	ADJ:(feminine of: propio: own (belonging to))	ADJ/DET 57/43
-Buenos	???	ADJ 100
+Buenos	ADJ:good, (masculine plural of: bueno: good)	ADJ 100
 efecto	NOUN:effect	NOUN 100
 libertad	NOUN:freedom; VERB:(verb form of: libertar: to liberate or set free)	NOUN 100
 cuatro	NOUN:A four-stringed guitar with the first string a fifth below, instead of a fourth above, the second.	DET/PRON/NOUN 78/12/10
@@ -382,7 +382,7 @@ autor	NOUN:author	NOUN 100
 mayoría	NOUN:majority	NOUN 100
 importancia	NOUN:importance	NOUN 100
 formas	NOUN:(plural of: forma: shape); VERB:(verb form of: formar: to form)	NOUN 100
-Constitución	???	NOUN 100
+Constitución	NOUN:constitution	NOUN 100
 región	NOUN:region	NOUN 100
 seguridad	NOUN:safety; security; self-confidence	NOUN 100
 dijo	VERB:(verb form of: decir: to say)	VERB 100
@@ -393,11 +393,11 @@ necesario	ADJ:necessary	ADJ 100
 elementos	NOUN:(plural of: elemento: element)	NOUN 100
 capacidad	NOUN:capacity	NOUN 100
 siendo	VERB:(verb form of: ser: to be (essentially or identified as).); being.	VERB 100
-Iglesia	???	NOUN 100
+Iglesia	NOUN:church	NOUN 100
 comunidad	NOUN:community	NOUN 100
 productos	NOUN:(plural of: producto: product)	NOUN 100
 Francisco	???	NOUN 100
-Comisión	???	NOUN 100
+Comisión	NOUN:committee	NOUN 100
 dirección	NOUN:address; direction; management, or running of a business or organisation.	NOUN 100
 civil	ADJ:civil (all senses)	ADJ 100
 justicia	NOUN:justice; the law	NOUN 100
@@ -412,7 +412,7 @@ podría	VERB:(verb form of: poder: to be able, can)	VERB 100
 solo	ADJ:sole, only, unique, single; lonely, lonesome; alone, by oneself; ADV:only, solely, just	ADJ 92
 texto	NOUN:text	NOUN 99
 nuestros	PRON:(form of: plural form, nuestro: ???) Ours.; ADJ:(form of: plural form, nuestro: ???) Ours, our, to us.	DET 100
-Aires	???	NOUN 100
+Aires	NOUN:airs; an affected manner intended to impress others.; (plural of: aire: air)	NOUN 100
 partes	NOUN:(plural of: parte: part, section, portion); VERB:(verb form of: partir: to divide, to split)	NOUN 100
 varios	ADJ:various, several.	DET/PRON 89/11
 trabajadores	ADJ:(plural of: trabajador: hard-working); NOUN:(form of: Plural form, trabajador: ???)	NOUN 100
@@ -447,7 +447,7 @@ final	ADJ:final; NOUN:An end; A final (sports)	NOUN/ADJ 53/47
 cultural	ADJ:cultural	ADJ 100
 Santa	ADJ:Saint (title)	NOUN 92
 nuevos	ADJ:(masculine plural of: nuevo: new)	ADJ 100
-Consejo	???	NOUN 100
+Consejo	NOUN:counsel; advice	NOUN 100
 J.	???	NOUN 98
 período	NOUN:period (time); A woman’s period (menstrual cycle)	NOUN 98
 Chile	Chile	NOUN 99
@@ -478,7 +478,7 @@ fondo	NOUN:bottom; back; fund, funding; opposite side or extreme (of a house, st
 existencia	NOUN:existence; (in the plural) stock; inventory	NOUN 100
 zona	NOUN:zone, district, area	NOUN 100
 noche	NOUN:night (time)	NOUN 100
-Congreso	???	NOUN 100
+Congreso	NOUN:assembly, conference, meeting; congress	NOUN 100
 formación	NOUN:formation; training, education; alignment (ordered group of people)	NOUN 100
 origen	NOUN:origin	NOUN 100
 sur	NOUN:south	NOUN 100
@@ -530,10 +530,10 @@ paso	ADJ:dry (said of fruit); NOUN:A step or pace walking.; A step in a set of i
 principal	ADJ:main, most important; essential; NOUN:chief, boss	ADJ 92
 principales	NOUN:(plural of: principal: chief, boss)	ADJ 100
 alto	ADJ:high; tall; loud; NOUN:stop; (traffic) stop (signal); (traffic) red light	ADJ 100
-Federal	???	NOUN/ADJ 68/32
+Federal	ADJ:federal	NOUN/ADJ 68/32
 buena	ADJ:(feminine of: bueno: good)	ADJ 100
 lucha	NOUN:fight; struggle; VERB:(verb form of: luchar: to fight)	NOUN 98
-Banco	???	NOUN 100
+Banco	NOUN:bank; bench; school of fish	NOUN 100
 meses	NOUN:(plural of: mes: month)	NOUN 100
 octubre	NOUN:October	NUM/NOUN 71/16
 humanos	ADJ:(masculine plural of: humano: human)	ADJ 92
@@ -541,7 +541,7 @@ junto	ADJ:together; joined; next to; ADV:together; altogether, totally; next to;
 usted	PRON:second person formal; you (singular); (Colombia, chiefly, Bogotá) second person informal; you (singular)	PRON 100
 dicha	ADJ:(feminine of: dicho: mentioned, said); NOUN:luck; bliss; VERB:(verb form of: decir: to say)	ADJ/NOUN 78/20
 popular	ADJ:popular	ADJ/NOUN 74/25
-Instituto	???	NOUN 100
+Instituto	NOUN:institute	NOUN 100
 apoyo	NOUN:support; VERB:(verb form of: apoyar: to support)	NOUN 100
 importantes	ADJ:(plural of: importante: important)	ADJ 100
 libre	ADJ:free, clear, at liberty; VERB:(verb form of: librar: to save, to rescue, to deliver, to preserve)	ADJ 100
@@ -584,23 +584,23 @@ propiedad	NOUN:property, belongings, estate, ownership; propriety	NOUN 100
 nacionales	ADJ:(form of: plural, nacional: ???); NOUN:(plural of: nacional: ???)</text>	ADJ 100
 posibilidad	NOUN:possibility	NOUN 100
 rey	NOUN:king; (chess) king	NOUN 100
-Revista	???	NOUN 99
+Revista	NOUN:magazine; VERB:(verb form of: revistar: ???)	NOUN 99
 cambios	NOUN:(plural of: cambio: change)	NOUN 100
 ciento	hundred; one hundred	NOUN 94
 creación	NOUN:creation; invention	NOUN 100
 características	ADJ:(feminine plural of: característico: characteristic, typical); NOUN:(plural of: característica: characteristic, feature)	NOUN 100
 debido	VERB:(verb form of: deber: (transitive) to owe); ADJ:owed; due	VERB/ADJ 69/24
-Costa	???	NOUN 99
+Costa	NOUN:coast, shore; expense, costs in certain expressions.	NOUN 99
 ideas	NOUN:(plural of: idea: idea); VERB:(verb form of: idear: to devise)	NOUN 100
 natural	ADJ:natural	ADJ 91
 ojos	NOUN:(anatomy) eyes; (plural of: ojo: eye)	NOUN 100
 medidas	NOUN:(plural of: medida: measure)	NOUN 100
 reforma	VERB:(verb form of: reformar: to reform)	NOUN 100
 plazo	NOUN:period, term (time limit); installment, payment	NOUN 100
-Ministerio	???	NOUN 100
+Ministerio	NOUN:ministry	NOUN 100
 literatura	NOUN:literature	NOUN 100
 mundial	ADJ:related to all the parts of the world; global.; NOUN:FIFA World Cup (short form of Copa mundial, and Campeonato mundial)	ADJ 100
-Latina	???	NOUN 92
+Latina	VERB:(verb form of: latinar: ???)	NOUN 92
 u	NOUN:Name of the letter U.; CONJ:or	CONJ 100
 resulta	VERB:(verb form of: resultar: to result)	VERB 100
 muestra	NOUN:sample.; specimen.; sign; VERB:(verb form of: mostrar: (transitive) to show)	VERB/NOUN 58/42
@@ -688,12 +688,12 @@ Venezuela	Venezuela	NOUN 100
 García	???	NOUN 100
 funciones	VERB:(verb form of: funcionar: to work, to function)	NOUN 99
 demanda	NOUN:demand; VERB:(verb form of: demandar: to demand, to claim)	NOUN 100
-Decreto	???	NOUN 95
+Decreto	NOUN:decree; VERB:(verb form of: decretar: to decree)	NOUN 95
 Art.	???	NOUN/ADV 51/48
 diversos	ADJ:(masculine plural of: diverso: diverse)	DET 100
 ejército	NOUN:army	NOUN 100
 contenido	NOUN:content; VERB:(verb form of: contener: to contain)	NOUN 93
-Puerto	???	NOUN 100
+Puerto	NOUN:port, harbour	NOUN 100
 ciencia	NOUN:science; erudition, knowledge	NOUN 100
 generales	ADJ:(form of: plural, general: ???); NOUN:(plural of: general: (military ranks) general)	ADJ/NOUN 89/11
 solamente	ADV:only, alone, merely	ADV 93
@@ -701,7 +701,7 @@ quiere	VERB:(verb form of: querer: to desire)	VERB 100
 local	ADJ:local; NOUN:premises, rooms	ADJ/NOUN 78/22
 presenta	VERB:(verb form of: presentar: to present, to submit)	VERB 100
 difícil	ADJ:difficult	ADJ 100
-Unión	???	NOUN 100
+Unión	NOUN:union	NOUN 100
 refiere	VERB:(verb form of: referir: to report)	VERB 100
 discurso	NOUN:discourse; speech	NOUN 99
 inversión	NOUN:investment; inversion	NOUN 100
@@ -728,9 +728,9 @@ título	NOUN:title	NOUN 100
 opinión	NOUN:opinion	NOUN 100
 jefe	NOUN:chief; president; head; leader of a business, political party, or other organization; boss; supervisor; manager; (military ranks) colonel; major; rank between captain and general	NOUN 100
 visto	ADJ:seen; obvious, clear; exposed, bare; known about, talked about, seen around; VERB:(verb form of: ver: to see); VERB:(verb form of: vestir: to dress, to clothe, to attire)	VERB 91
-Departamento	???	NOUN 100
+Departamento	NOUN:department; apartment, flat	NOUN 100
 tenido	VERB:(verb form of: tener: (transitive) To have, possess an object.)	VERB 100
-Código	???	NOUN 100
+Código	NOUN:code	NOUN 100
 crítica	ADJ:(feminine of: crítico: critical); NOUN:criticism; NOUN:(feminine of: crítico: critic)	NOUN/ADJ 72/28
 partidos	ADJ:(masculine plural of: partido: broken); NOUN:(plural of: partido: (politics) party)	NOUN 100
 cit	???	NOUN 98
@@ -747,7 +747,7 @@ conocer	VERB:to know (a person), to be familiar with.; (in the future tense) to 
 indígenas	ADJ:(form of: plural, indígena: ???); NOUN:(plural of: indígena: indigenous person, native)	ADJ/NOUN 57/43
 existen	VERB:(verb form of: existir: to exist); (uds.) (verb form of: existir: to exist)	VERB 100
 industrial	ADJ:industrial	ADJ 98
-Corte	???	NOUN 95
+Corte	NOUN:cut, haircut; embarrassment; court; VERB:(verb form of: cortar: to cut)	NOUN 95
 fuerte	ADJ:strong; loud; NOUN:fort, stronghold; strong point, forte, strength; (colloquial, Chile) booze	ADJ 96
 ambiente	NOUN:atmosphere; environment; room; VERB:(verb form of: ambientar: to provide an ambiance)	NOUN 100
 fines	NOUN:(plural of: fine: ???); VERB:(verb form of: finir: ???)	NOUN 100
@@ -766,9 +766,9 @@ responsabilidad	NOUN:responsibility	NOUN 100
 lengua	NOUN:tongue; language	NOUN 99
 realizar	VERB:to carry out; to make real, to realize; to produce	VERB 100
 hubiera	VERB:(verb form of: haber: (auxiliary verb taking past participle to build perfect tense) to have)	VERB 100
-Véase	???	VERB/NOUN 65/34
+Véase	VERB:Singular passive reflexive imperative form of ver. (impersonal imperative)	VERB/NOUN 65/34
 condición	NOUN:condition	NOUN 100
-Tribunal	???	NOUN 99
+Tribunal	NOUN:tribunal	NOUN 99
 calle	NOUN:street; a lane in a pool or racetrack (but not a highway); VERB:(verb form of: callar: to calm)	NOUN 100
 empleo	NOUN:job, employment; VERB:(verb form of: emplear: to hire)	NOUN 100
 histórico	ADJ:historic	ADJ/NOUN 86/14
@@ -787,7 +787,7 @@ humana	ADJ:(feminine of: humano: human); NOUN:(female) human	ADJ 100
 aparece	VERB:(verb form of: aparecer: to appear)	VERB 100
 consumo	NOUN:consumption; VERB:(verb form of: consumir: to consume); VERB:(verb form of: consumar: to consummate (bring something to completion))	NOUN 100
 internacionales	ADJ:(form of: plural, internacional: ???)	ADJ 100
-Secretario	???	NOUN 100
+Secretario	NOUN:secretary	NOUN 100
 jóvenes	ADJ:(plural of: joven: young, youthful); NOUN:young people ((plural of: joven: youth, young person)).	NOUN/ADJ 74/26
 niño	NOUN:boy, child	NOUN 100
 informe	NOUN:report; ADJ:shapeless, formless; misshapen; VERB:(verb form of: informar: (transitive) to inform)	NOUN/VERB 87/13
@@ -835,9 +835,9 @@ novela	NOUN:novel; VERB:(verb form of: novelar: to novelize)	NOUN 100
 constituye	VERB:(verb form of: constituir: to constitute)	VERB 100
 Cuba	Cuba	NOUN 100
 integración	NOUN:integration	NOUN 100
-Asimismo	???	ADV 100
+Asimismo	ADV:likewise	ADV 100
 comercial	ADJ:commercial.; NOUN:commercial	ADJ/NOUN 85/14
-Ciencias	???	NOUN 100
+Ciencias	NOUN:(plural of: ciencia: science)	NOUN 100
 pago	NOUN:pay, payment; VERB:(verb form of: pagar: to pay); NOUN:farm	NOUN 100
 clases	NOUN:(plural of: clase: class); tuition	NOUN 100
 ayuda	NOUN:help, aid, assistance; NOUN:helper; VERB:(verb form of: ayudar: to help); (verb form of: ayudar: to help), he/she/it helps.	NOUN 100
@@ -845,7 +845,7 @@ edición	NOUN:edition	NOUN 100
 diario	ADJ:daily; NOUN:diary; daily, journal	NOUN/ADJ 84/16
 adelante	ADV:forward; VERB:(verb form of: adelantar: to advance)	ADV 99
 iba	VERB:(verb form of: ir: to go)	VERB 100
-Ejecutivo	???	NOUN/ADJ 81/19
+Ejecutivo	ADJ:executive; NOUN:executive	NOUN/ADJ 81/19
 violencia	NOUN:violence	NOUN 100
 aspecto	NOUN:appearance, look; aspect	NOUN 100
 E.	???	NOUN 92
@@ -871,7 +871,7 @@ distintas	ADJ:(feminine plural of: distinto: distinct, different)	DET/ADJ 69/31
 baja	ADJ:(feminine of: bajo: short, in both literal and figurative senses); NOUN:A casualty, loss.; drop, fall, reduction; sick leave (absence for illness); withdrawal, retirement; VERB:(verb form of: bajar: to go down)	ADJ 100
 económicas	ADJ:(inflection of: económico, p)	ADJ 94
 IV	???	NOUN 97
-Editorial	???	NOUN/ADJ 82/17
+Editorial	ADJ:editorial; NOUN:editorial; publisher	NOUN/ADJ 82/17
 gracias	NOUN:expression of thanks; (plural of: gracia: grace)	ADJ/NOUN 65/34
 propósito	NOUN:purpose	NOUN 97
 resolución	NOUN:resolution	NOUN 100
@@ -884,7 +884,7 @@ naciones	NOUN:(plural of: nación: nation)	NOUN 100
 fiscal	ADJ:fiscal; prosecuting; NOUN:(legal) prosecutor	ADJ/NOUN 60/40
 materiales	ADJ:(form of: plural, material: ???); NOUN:(plural of: material: material)	NOUN 100
 militares	VERB:(verb form of: militar: to participate actively in a political organization, especially in the military)	ADJ/NOUN 64/36
-Junta	???	NOUN 96
+Junta	ADJ:(feminine of: junto: together); NOUN:council; joint, gasket; meeting (A gathering for a purpose); contact, acquaintances; VERB:(verb form of: juntar: (transitive) to combine, to unite)	NOUN 96
 identidad	NOUN:identity	NOUN 100
 música	NOUN:music	NOUN 99
 hubo	VERB:(verb form of: haber: (auxiliary verb taking past participle to build perfect tense) to have)	VERB 100
@@ -908,13 +908,13 @@ evitar	VERB:to avoid	VERB 100
 doctor	NOUN:doctor (Ph.D.); physician	NOUN 100
 especie	NOUN:species; type, sort, kind	NOUN 100
 diferencias	VERB:(verb form of: diferenciar: to differentiate)	NOUN 100
-Lima	???	NOUN 100
+Lima	NOUN:lime (fruit); NOUN:file (tool to smoothen a surface); VERB:(verb form of: limar: to file (with a file or rasp))	NOUN 100
 Francia	France	NOUN 100
 legal	ADJ:legal	ADJ/NOUN 88/11
 prueba	NOUN:proof; evidence; an examination, test, or quiz; a trial; an ordeal; VERB:(verb form of: probar: to prove)	NOUN 100
 quién	PRON:who?, whom?; (with “de”) whose?	PRON 100
 perspectiva	NOUN:perspective	NOUN 100
-Cruz	???	NOUN 99
+Cruz	NOUN:cross	NOUN 99
 t	???	NOUN 91
 reales	ADJ:(plural of: real: real)	ADJ/NOUN 75/25
 municipal	ADJ:municipal	ADJ/NOUN 56/44
@@ -944,7 +944,7 @@ vivir	NOUN:life; lifestyle; VERB:(intransitive) To live; to be alive.; (intransi
 institución	NOUN:institution	NOUN 100
 tengo	VERB:(verb form of: tener: (transitive) To have, possess an object.)	VERB 100
 motivo	VERB:(verb form of: motivar: to motivate); NOUN:reason, ground, motive	NOUN 100
-Santo	???	NOUN 96
+Santo	ADJ:holy, godly; NOUN:saint	NOUN 96
 enseñanza	NOUN:teaching	NOUN 99
 esfuerzo	NOUN:effort; VERB:(verb form of: esforzar: ???)	NOUN 100
 gobernador	NOUN:governor	NOUN 100
@@ -955,11 +955,11 @@ conflicto	NOUN:conflict	NOUN 100
 blanco	ADJ:white; NOUN:white; target	ADJ/NOUN 58/42
 textos	NOUN:(plural of: texto: text)	NOUN 100
 González	???	NOUN 100
-Cámara	???	NOUN 100
+Cámara	NOUN:room; chamber; legislature; camera; inner tube; NOUN:(cinematography) cameraman, camera operator (somebody who operates a movie camera or television camera)	NOUN 100
 gastos	NOUN:(plural of: gasto: cost)	NOUN 100
 llevar	VERB:(transitive) to take, carry, take away, carry away (implies to move something further from who speaks); (transitive) to lead away; to carry away (implies moving someone further from the speaker); (transitive) to have spent time; (transitive) to wear (short form of llevar puesto); (transitive) to include (have as a component, part, accesory or ingredient)	VERB 100
 debía	VERB:(verb form of: deber: (transitive) to owe)	VERB 100
-VI	???	NOUN/VERB 69/31
+VI	VERB:(verb form of: ver: to see)	NOUN/VERB 69/31
 obtener	VERB:to obtain	VERB 100
 procedimiento	NOUN:procedure; method; proceedings	NOUN 99
 serán	VERB:(verb form of: ser: to be (essentially or identified as).)	VERB 100
@@ -986,7 +986,7 @@ suelo	NOUN:ground, floor, soil; VERB:(verb form of: solar: to pave.); VERB:(verb
 Brasil	Brazil	NOUN 100
 riesgo	NOUN:chance; risk; the possibility of harm or an unfavorable outcome from random chance.	NOUN 98
 tarea	NOUN:task; homework	NOUN 100
-Jorge	???	NOUN 99
+Jorge	NOUN:cockchafer	NOUN 99
 peso	NOUN:weight; peso (unit of currency); VERB:(verb form of: pesar: To weigh.)	NOUN 100
 centros	NOUN:(plural of: centro: center)	NOUN 99
 propuesta	NOUN:proposal	NOUN 90
@@ -1028,7 +1028,7 @@ propias	ADJ:(plural of: propio: own (belonging to))	ADJ/DET 85/15
 viene	VERB:(verb form of: venir: to come)	VERB 100
 mexicano	NOUN:Mexican; ADJ:Mexican	ADJ/NOUN 62/38
 decisiones	NOUN:(plural of: decisión: decision)	NOUN 99
-Distrito	???	NOUN 99
+Distrito	NOUN:district	NOUN 99
 considera	VERB:(verb form of: considerar: to consider)	VERB 100
 encontrar	VERB:to meet; (transitive) to find, encounter, come across; (intransitive, or, reflexive) to meet, bump into; (transitive) to think, consider; (reflexive) to be located; (reflexive) to feel, be	VERB 100
 bases	VERB:(verb form of: basar: to base)	NOUN 100
@@ -1051,7 +1051,7 @@ oficiales	ADJ:(form of: plural, oficial: ???); NOUN:(plural of: oficial: officer
 directamente	ADV:directly	ADV 100
 operaciones	NOUN:(plural of: operación: (computing, mathematics) operation)	NOUN 100
 do	ADV:where; NOUN:do (musical note); PRON:where	ADJ/NOUN 55/38
-Facultad	???	NOUN 100
+Facultad	NOUN:school, college, department; power, authority, right; ability, gift; strength; VERB:(verb form of: facultar: to empower)	NOUN 100
 elemento	NOUN:element	NOUN 99
 correspondiente	ADJ:respective; corresponding	ADJ 98
 V.	???	NOUN/ADV 74/11
@@ -1061,7 +1061,7 @@ Dr.	???	NOUN 100
 principalmente	ADV:mainly; principally	ADV 97
 sola	ADJ:(feminine of: solo: sole, only, unique, single)	ADJ 100
 registro	NOUN:A registration, record.; A roll, register, logbook, log; VERB:(verb form of: registrar: to register, to record.)	NOUN 98
-León	???	NOUN 100
+León	NOUN:lion; antlion; (figurative) A brave person.; (Central America, Colombia, Peru, Venezuela) cougar, puma, mountain lion	NOUN 100
 familias	NOUN:(plural of: familia: family (nuclear family))	NOUN 99
 dan	VERB:(verb form of: dar: (transitive) to give)	VERB 99
 torno	NOUN:a lathe; VERB:(verb form of: tornar: (transitive) to return)	NOUN 98
@@ -1079,7 +1079,7 @@ equipo	NOUN:team; equipment; VERB:(verb form of: equipar: To equip.)	NOUN 100
 deberá	VERB:(verb form of: deber: (transitive) to owe)	VERB 100
 for	???	ADJ/NOUN 76/22
 señala	VERB:(verb form of: señalar: to signal)	VERB 100
-Domingo	???	NUM 100
+Domingo	NOUN:Sunday	NUM 100
 estoy	VERB:(verb form of: estar: To be (have a (transient) location in space). Compare ser, quedar.); am.	VERB 100
 llega	VERB:(verb form of: llegar: to arrive, get (to))	VERB 100
 promedio	NOUN:average; VERB:(verb form of: promediar: to bisect)	NOUN/ADJ 72/24
@@ -1090,9 +1090,9 @@ conforme	ADJ:in agreement; similar; in accordance, or deserved; content, or sati
 XIX	???	NOUN/ADJ 77/22
 volumen	NOUN:volume	NOUN 93
 disposiciones	NOUN:(plural of: disposición: disposal)</text>	NOUN 100
-Valle	???	NOUN 99
+Valle	NOUN:valley; VERB:(verb form of: vallar: ???)	NOUN 99
 plaza	NOUN:plaza, town square; fortified town	NOUN 100
-Rica	???	NOUN/ADJ 76/24
+Rica	ADJ:(feminine of: rico: ???)	NOUN/ADJ 76/24
 seguro	ADJ:secure, safe (free from danger); certain, sure (correct); certain (firm); self-confident; NOUN:insurance (business)	ADJ/NOUN 63/32
 primeras	NOUN:(plural of: primera: lowest gear in an motor vehicle); ADJ:(feminine plural of: primera: (feminine of: primero: first))	ADJ 100
 sé	VERB:(verb form of: saber: to know (a fact)); VERB:(verb form of: ser: to be (essentially or identified as).)	VERB 100
@@ -1100,10 +1100,10 @@ directa	ADJ:(feminine of: directo: direct); NOUN:high gear	ADJ 98
 transporte	NOUN:transport; VERB:(verb form of: transportar: to transport)	NOUN 100
 oposición	NOUN:opposition; (Spain) public exam	NOUN 100
 venta	NOUN:sale	NOUN 98
-Colegio	???	NOUN 100
+Colegio	NOUN:school	NOUN 100
 bueno	ADJ:good; fine	ADJ/X 80/20
 tercer	ADJ:(before the noun) (apocopic form of: tercero: third) third.	ADJ 100
-Asociación	???	NOUN 100
+Asociación	NOUN:association	NOUN 100
 profesional	ADJ:professional.; NOUN:professional.	ADJ/NOUN 82/18
 pregunta	VERB:(verb form of: preguntar: to ask); NOUN:question.	NOUN/VERB 66/34
 tecnología	NOUN:technology	NOUN 100
@@ -1125,7 +1125,7 @@ pág	???	NOUN 96
 on	???	VERB/NOUN/ADJ 43/34/23
 quizá	ADV:perhaps, maybe	ADV 100
 ciertos	ADJ:(masculine plural of: cierto: (of a person) Certain, sure.)	DET 95
-Sala	???	NOUN 97
+Sala	NOUN:room; large hall; VERB:(verb form of: salar: to salt)	NOUN 97
 municipio	NOUN:municipality	NOUN 99
 labor	NOUN:job; work; labor	NOUN 99
 tercera	ADJ:(feminine of: tercero: third); NOUN:(music) a third (interval)	ADJ/NOUN 68/32
@@ -1146,7 +1146,7 @@ entender	VERB:to understand	VERB 94
 terreno	NOUN:land	NOUN 100
 igualmente	ADV:equally; likewise	ADV 100
 ciudadanos	ADJ:(masculine plural of: ciudadano: living in a city); NOUN:(plural of: ciudadano: citizen)	NOUN 94
-Secretaría	???	NOUN 100
+Secretaría	NOUN:secretariat; VERB:(verb form of: secretar: to secrete)	NOUN 100
 suficiente	ADJ:sufficient	ADJ 100
 alguien	PRON:someone, somebody; anyone, anybody	PRON 100
 viejo	NOUN:an old person; an old item; (Mexico) a certain guy or man, specially adult or almost; (Mexico) sweetheart, honey (substitute for a male name); (Mexico) a male sexual companion or partner, occasional or stable, husband; (Chile, Argentina, slang) dad; ADJ:old	ADJ/NOUN 62/38
@@ -1177,7 +1177,7 @@ personajes	NOUN:(plural of: personaje: personage)	NOUN 99
 soy	VERB:(verb form of: ser: to be (essentially or identified as).)	VERB 100
 tú	PRON:Singular informal pronoun.  you.	PRON 100
 consecuencias	NOUN:(plural of: consecuencia: consequence)	NOUN 100
-Asamblea	???	NOUN 100
+Asamblea	NOUN:assembly, meeting	NOUN 100
 puedan	VERB:(verb form of: poder: to be able, can)	VERB 100
 pena	NOUN:punishment; pain, sadness; trouble; (Latin America) embarrassment; pity; VERB:(verb form of: penar: to punish)	NOUN 100
 impuesto	NOUN:tax; VERB:(verb form of: imponer: To impose, impress.)	NOUN/VERB/ADJ 74/14/12
@@ -1229,7 +1229,7 @@ cumplir	VERB:to fulfil / fulfill; to complete	VERB 100
 conducta	NOUN:behaviour, conduct.	NOUN 100
 Martínez	???	NOUN 100
 dichos	ADJ:(plural of: dicho: mentioned, said); NOUN:(plural of: dicho: saying, expression)	ADJ 87
-Villa	???	NOUN 99
+Villa	NOUN:small town; villa; settlement with a minimum of five thousand inhabitants (bigger than a town but smaller that a city) that has asked for the title officially. Previously, this title was grated by the king.	NOUN 99
 exportaciones	???	NOUN 100
 negro	NOUN:the black colour; the black ethnicity; ADJ:black (color); dirty; sad; clandestine; (Spain) angry	ADJ/NOUN 52/48
 individuos	NOUN:(plural of: individuo: individual)</text>	NOUN 98
@@ -1246,7 +1246,7 @@ Bogotá	???	NOUN 100
 isla	NOUN:island	NOUN 100
 siglos	NOUN:(plural of: siglo: century)	NOUN 99
 quedó	VERB:(verb form of: quedar: (intransitive) to be)	VERB 100
-Comité	???	NOUN 99
+Comité	NOUN:committee	NOUN 99
 ocasión	NOUN:occasion	NOUN 100
 operación	NOUN:(computing, mathematics) operation	NOUN 100
 distancia	NOUN:distance; VERB:(verb form of: distanciar: to separate)	NOUN 100
@@ -1262,7 +1262,7 @@ dificultades	NOUN:(plural of: dificultad: difficulty)	NOUN 100
 norma	NOUN:rule, norm, standard, touchstone; VERB:(verb form of: normar: to norm)	NOUN 99
 global	ADJ:global (worldwide)	ADJ/NOUN 85/14
 doble	ADJ:double; VERB:(verb form of: doblar: to double)	ADJ 100
-Rico	???	ADJ 100
+Rico	ADJ:rich; luxurious; tasty	ADJ 100
 definición	NOUN:definition; (plural): rules, statutes	NOUN 100
 anual	ADJ:yearly, annual	ADJ/NOUN 89/11
 treinta	thirty	DET/NOUN/ADJ 44/27/23
@@ -1360,7 +1360,7 @@ instrumento	NOUN:instrument; VERB:(verb form of: instrumentar: to orchestrate)	N
 presentan	VERB:(verb form of: presentar: to present, to submit); (uds.) (verb form of: presentar: to present, to submit)	VERB 100
 progreso	NOUN:progress; VERB:(verb form of: progresar: to progress)	NOUN 100
 establecimiento	NOUN:establishment	NOUN 100
-Fundación	???	NOUN 100
+Fundación	NOUN:foundation	NOUN 100
 beneficios	NOUN:(plural of: beneficio: benefit)	NOUN 100
 Rafael	???	NOUN 100
 larga	ADJ:(feminine of: largo: long); VERB:(verb form of: largar: To chase away.)	ADJ/NOUN 89/10
@@ -1370,14 +1370,14 @@ simplemente	ADV:simply	ADV 100
 New	???	NOUN 97
 pérdida	NOUN:loss; leak	NOUN 99
 vamos	VERB:(verb form of: ir: to go); (verb form of: ir: to go); Let us go, let's go; (as encouragement) Come on!	VERB 100
-Archivo	???	NOUN 99
+Archivo	NOUN:file; archive; VERB:(verb form of: archivar: to file or archive)	NOUN 99
 esperanza	NOUN:hope; VERB:(verb form of: esperanzar: ???)	NOUN 100
 finales	ADJ:(plural of: final: final)	NOUN/ADJ 73/27
 escribir	VERB:to write; to spell; (reflexive) to correspond	VERB 100
 agrícola	ADJ:agricultural	ADJ/NOUN 80/19
 comerciales	ADJ:(form of: plural, comercial: ???)	ADJ 97
 acuerdos	NOUN:(plural of: acuerdo: agreement)	NOUN 98
-Reyes	???	NOUN 99
+Reyes	NOUN:(plural of: rey: king)	NOUN 99
 contacto	NOUN:contact; VERB:(verb form of: contactar: to contact)	NOUN 100
 des	VERB:(verb form of: dar: (transitive) to give)	ADJ/NOUN 58/39
 debate	NOUN:debate, discussion; VERB:(verb form of: debatir: (transitive) to debate)	NOUN 95
@@ -1393,7 +1393,7 @@ incremento	NOUN:increment; accrual; VERB:(verb form of: incrementar: to incremen
 estructuras	NOUN:(plural of: estructura: structure); VERB:(verb form of: estructurar: to structure)	NOUN 100
 resistencia	NOUN:resistance	NOUN 100
 señora	NOUN:lady; wife or spouse	NOUN 100
-Biblioteca	???	NOUN 100
+Biblioteca	NOUN:library; bookcase	NOUN 100
 reducción	NOUN:reduction	NOUN 100
 física	NOUN:physics (branch of science); female physicist	ADJ/NOUN 65/35
 encima	ADV:on top; on oneself; over oneself; additionally; nevertheless, still; to top it off, on top of that	NOUN/ADJ 68/21
@@ -1504,14 +1504,14 @@ diálogo	NOUN:dialogue	NOUN 100
 métodos	NOUN:(plural of: método: method)	NOUN 99
 posibles	ADJ:(form of: plural, posible: ???)	ADJ 100
 cine	NOUN:cinema, moviehouse	NOUN 99
-Reglamento	???	NOUN 100
+Reglamento	VERB:(verb form of: reglamentar: to establish rules for)	NOUN 100
 bancos	NOUN:(plural of: banco: ???)	NOUN 100
 par	ADJ:even; NOUN:pair; (physics) two equal non-collinear forces	NOUN 86
 Gómez	???	NOUN 100
 supone	VERB:(verb form of: suponer: to suppose, assume, or guess)	VERB 100
 vol	???	NOUN 91
 reformas	VERB:(verb form of: reformar: to reform)	NOUN 100
-Convenio	???	NOUN 99
+Convenio	NOUN:agreement, covenant	NOUN 99
 creciente	ADJ:crescent, of a waxing moon; increasing	ADJ 91
 impuestos	NOUN:(plural of: impuesto: tax)	NOUN 94
 urbano	ADJ:urban; urbane	ADJ/NOUN 71/29
@@ -1593,13 +1593,13 @@ grave	ADJ:serious, grave; bass (sound); solemn; (grammar) stressed in the penult
 dicen	VERB:(verb form of: decir: to say)	VERB 100
 completo	ADJ:full, complete; completed; NOUN:(Chile) hot dog; VERB:(verb form of: completar: to complete)	ADJ 91
 excepción	NOUN:exception	NOUN 100
-Federación	???	NOUN 100
+Federación	NOUN:federation	NOUN 100
 preciso	ADJ:precise; necessary; VERB:(verb form of: precisar: to state or specify)	ADJ 100
 encontramos	VERB:(verb form of: encontrar: to meet)	VERB 100
 instancia	NOUN:request; institution	NOUN 99
-Artes	???	NOUN 98
+Artes	NOUN:(plural of: arte: art)	NOUN 98
 margen	NOUN:margin, edge; river bank	NOUN 99
-Ramón	???	NOUN 100
+Ramón	NOUN:hackberry (tree or shrub)	NOUN 100
 pequeñas	ADJ:(plural of: pequeña: (feminine of: pequeño: small))	ADJ 100
 Sr.	???	NOUN 96
 oficina	NOUN:office; workshop; laboratory	NOUN 100
@@ -1611,9 +1611,9 @@ interesante	ADJ:interesting	ADJ 100
 industriales	ADJ:(form of: plural, industrial: ???)</text>	ADJ/NOUN 90/10
 justo	ADV:right; exactly; tightly; ADJ:just; VERB:(verb form of: justar: ???)	ADJ/ADV 78/22
 probablemente	ADV:probably	ADV 100
-Presidencia	???	NOUN 100
+Presidencia	NOUN:presidency	NOUN 100
 puedo	VERB:(verb form of: poder: to be able, can)	VERB 100
-Conferencia	???	NOUN 100
+Conferencia	NOUN:lecture; meeting, conference	NOUN 100
 colonia	NOUN:colony; (Mexico) neighbourhood	NOUN 95
 página	NOUN:page	NOUN 99
 financieros	ADJ:(masculine plural of: financiero: financial)	ADJ 90
@@ -1636,7 +1636,7 @@ colección	NOUN:collection	NOUN 100
 hija	NOUN:daughter; (feminine of: hijo: son)	NOUN 100
 equilibrio	NOUN:balance, equilibrium	NOUN 100
 frontera	NOUN:border; frontier; demarcation	NOUN 99
-Católica	???	NOUN/ADJ 56/44
+Católica	ADJ:(feminine of: católico: Catholic)	NOUN/ADJ 56/44
 pocas	ADJ:(feminine plural of: poca: (feminine of: poco: little, not much))	DET 100
 ejemplos	NOUN:(plural of: ejemplo: example)	NOUN 99
 enorme	ADJ:enormous	ADJ 100
@@ -1648,7 +1648,7 @@ financiera	NOUN:finance company, financier company	ADJ/NOUN 81/19
 dichas	ADJ:(feminine plural of: dicho: mentioned, said)	ADJ/NOUN 86/13
 haga	VERB:(verb form of: hacer: do, make)	VERB 100
 recibir	VERB:to receive, get; (reflexive) to graduate	VERB 100
-Castro	???	NOUN 100
+Castro	NOUN:fort, fortified settlement; VERB:(verb form of: castrar: to castrate)	NOUN 100
 muerto	ADJ:dead; NOUN:A dead person; VERB:(verb form of: morir: to die) 	ADJ/VERB/NOUN 48/33/19
 administrativa	???	ADJ/NOUN 84/16
 literaria	ADJ:(feminine of: literario: literary)	ADJ 93
@@ -1661,7 +1661,7 @@ patrimonio	NOUN:heritage	NOUN 100
 productores	NOUN:(plural of: productor: producer)</text>	NOUN 92
 inicio	NOUN:start, initiation; VERB:(verb form of: iniciar: to begin)	NOUN 99
 pese	VERB:(verb form of: pesar: To weigh.)	VERB 96
-Academia	???	NOUN 100
+Academia	NOUN:academy	NOUN 100
 Alemania	Germany	NOUN 100
 construir	VERB:to build; to construct	VERB 100
 obreros	NOUN:(plural of: obrero: worker.)	NOUN 100
@@ -1674,7 +1674,7 @@ dimensión	NOUN:dimension	NOUN 100
 reconocer	VERB:To recognize.; To acknowledge.	VERB 100
 igualdad	NOUN:equality	NOUN 100
 pruebas	VERB:(verb form of: probar: to prove)	NOUN 100
-Sierra	???	NOUN 99
+Sierra	NOUN:saw (tool); mountain range; (Chile) snoek (Thyrsites atun); swordfish; VERB:(verb form of: serrar: ???)	NOUN 99
 estrategias	NOUN:(plural of: estrategia: strategy)	NOUN 99
 occidental	ADJ:western	ADJ/NOUN 79/21
 completa	ADJ:(feminine of: completo: full, complete); VERB:(verb form of: completar: to complete)	ADJ 90
@@ -1708,9 +1708,9 @@ agraria	ADJ:(feminine of: agrario: agricultural)	ADJ/NOUN 74/26
 caminos	NOUN:(plural of: camino: way)	NOUN 99
 presentar	VERB:to present, to submit	VERB 100
 científico	ADJ:scientific; NOUN:scientist	ADJ/NOUN 82/18
-Palacio	???	NOUN 99
+Palacio	NOUN:palace; mansion	NOUN 99
 XVI	???	NOUN/NUM/ADJ 45/36/19
-Museo	???	NOUN 100
+Museo	NOUN:museum	NOUN 100
 cuidado	NOUN:care; VERB:(verb form of: cuidar: to take care of)	NOUN/ADJ 87/11
 Vicente	???	NOUN 91
 responsable	ADJ:responsible; answerable	ADJ/NOUN 70/30
@@ -1719,7 +1719,7 @@ error	NOUN:error	NOUN 99
 d'	???	ADV/VERB/NOUN/ADP 34/33/17/14
 personalidad	NOUN:personality	NOUN 100
 organismo	NOUN:organism, creature; human body; organization, committee, body; corporate body	NOUN 100
-Alianza	???	NOUN 100
+Alianza	NOUN:alliance; wedding ring; political coalition	NOUN 100
 contiene	VERB:(verb form of: contener: to contain)	VERB 99
 pan	NOUN:bread	NOUN 97
 producir	VERB:to produce	VERB 100
@@ -1773,9 +1773,9 @@ ti	PRON:you, thee (declined form of tú used as the object of a preposition)	PRO
 tantos	ADJ:(plural of: tanto: so much, as much); NOUN:score; (plural of: tanto: copy)	DET 100
 mando	NOUN:command; remote control; VERB:(verb form of: mandar: to send)	NOUN/VERB 89/11
 anteriormente	ADV:previously	ADV 100
-Audiencia	???	NOUN 100
+Audiencia	NOUN:audience.	NOUN 100
 preguntas	VERB:(verb form of: preguntar: to ask)	NOUN 98
-Rosa	???	NOUN 91
+Rosa	NOUN:a rose; colour pink	NOUN 91
 actuales	ADJ:(form of: plural, actual: ???)	ADJ 100
 escena	NOUN:scene; stage	NOUN 99
 maestros	NOUN:(masculine plural of: maestro: teacher (male))	NOUN 97
@@ -1824,11 +1824,11 @@ relativa	???	ADJ 92
 ideal	ADJ:ideal; NOUN:ideal	ADJ/NOUN 59/41
 dinámica	ADJ:(feminine of: dinámico: dynamic); NOUN:dynamic, dynamics	NOUN/ADJ 73/27
 escribe	VERB:(verb form of: escribir: to write)	VERB 99
-Unidas	???	NOUN/ADJ 81/19
+Unidas	ADJ:(feminine plural of: unido: united)	NOUN/ADJ 81/19
 necesarios	ADJ:(masculine plural of: necesario: necessary)	ADJ 97
 nueve	NOUN:The digit or figure 9.	DET/NOUN 64/27
 utilizar	VERB:(transitive) to use; to make use of; to utilize	VERB 100
-Bolívar	???	NOUN 100
+Bolívar	NOUN:bolívar.	NOUN 100
 posiciones	VERB:(verb form of: posicionar: to position)	NOUN 99
 parecer	VERB:to seem; to believe (pronominal use); to think (pronominal use); to strike (seem, appear, make an impression); NOUN:appearance, seem	VERB/NOUN 72/27
 explicar	VERB:to explain	VERB 100
@@ -1849,7 +1849,7 @@ socialista	ADJ:socialist; NOUN:socialist	ADJ/NOUN 80/20
 selección	NOUN:selection; choice	NOUN 100
 aprendizaje	NOUN:(uncountable) learning; (countable) apprenticeship	NOUN 100
 co	NOUN:(Aragon, colloquial) dude, friend; PRON:(misspelling of: có)	NOUN/ADJ 76/22
-Castillo	???	NOUN 100
+Castillo	NOUN:castle	NOUN 100
 plena	ADJ:(feminine of: pleno: broad, full)	ADJ 91
 Londres	London	NOUN 100
 cambiar	VERB:to change, to modify.; to exchange	VERB 100
@@ -1859,7 +1859,7 @@ ensayo	NOUN:essay; test or trial; try, attempt; rehearsal; VERB:(verb form of: e
 dieron	VERB:(verb form of: dar: (transitive) to give)	VERB 100
 analizar	VERB:to analyze	VERB 100
 comprensión	NOUN:comprehension	NOUN 100
-Ediciones	???	NOUN 100
+Ediciones	NOUN:(plural of: edición: edition)	NOUN 100
 ritmo	NOUN:rhythm	NOUN 100
 colaboración	NOUN:collaboration	NOUN 100
 ambiental	ADJ:environmental	ADJ/NOUN 87/13
@@ -1947,9 +1947,9 @@ difusión	NOUN:spreading	NOUN 100
 ninguno	ADJ:no; none; PRON:nobody; no-one; none; neither	PRON 100
 vuelta	NOUN:turn; return; walk; tour, trip; VERB:(past participle of: volver)	NOUN 100
 pleno	ADJ:broad, full; plenary	ADJ/NOUN 66/34
-Indias	???	NOUN 94
+Indias	ADJ:(feminine plural of: indio: Indian (from India)); NOUN:(feminine plural of: indio: a native of India)	NOUN 94
 sexual	ADJ:sexual	ADJ 95
-Torres	???	NOUN 99
+Torres	NOUN:(form of: plural form, torre: ???)	NOUN 99
 minutos	NOUN:(plural of: minuto: minute (60 seconds))	NOUN 100
 cm	???	NOUN 99
 territorial	ADJ:territorial	ADJ/NOUN 88/12
@@ -1973,14 +1973,14 @@ noticia	NOUN:message; communication	NOUN 100
 testimonio	NOUN:testimony.; VERB:(verb form of: testimoniar: to give testimony)	NOUN 99
 votos	NOUN:(plural of: voto: vote)	NOUN 100
 directo	ADJ:direct	ADJ 100
-Corona	???	NOUN 96
+Corona	NOUN:crown; (of a star) corona; VERB:(verb form of: coronar: to crown)	NOUN 96
 reducir	VERB:to reduce	VERB 100
 numerosos	ADJ:(masculine plural of: numeroso: numerous)	ADJ 100
 moderno	ADJ:modern	ADJ 93
 fuertes	ADJ:(plural of: fuerte: strong)	ADJ 100
 evidencia	NOUN:evidence; VERB:(verb form of: evidenciar: to demonstrate)	NOUN/VERB 78/17
 necesarias	ADJ:(feminine plural of: necesario: necessary)	ADJ 99
-Caribe	???	NOUN 98
+Caribe	ADJ:Caribbean; hot, &quot;sol caribe&quot; (&quot;hot sun&quot;); piranha fish	NOUN 98
 universidades	NOUN:plural of universidad	NOUN 99
 entrevista	NOUN:An interview.; VERB:(verb form of: entrevistar: to interview)	NOUN 92
 trabajador	ADJ:hard-working; NOUN:worker	NOUN 96
@@ -1993,7 +1993,7 @@ agrícolas	ADJ:(form of: plural, agrícola: ???)	ADJ 89
 escritos	NOUN:(plural of: escrito: writ); ADJ:(masculine plural of: escrito: written); VERB:(verb form of: escribir: to write)	NOUN/ADJ 50/48
 crítico	ADJ:critical; NOUN:critic	ADJ/NOUN 60/39
 estabilidad	NOUN:stability	NOUN 100
-Convención	???	NOUN 100
+Convención	NOUN:convention	NOUN 100
 escenario	NOUN:stage.; scenario.	NOUN 100
 ministros	NOUN:(plural of: ministro: minister)	NOUN 100
 considerado	VERB:(verb form of: considerar: to consider)	VERB/ADJ 67/33
@@ -2004,7 +2004,7 @@ educativo	ADJ:educational	ADJ 91
 diputado	NOUN:deputy; a representative in a legislative chamber	NOUN/ADJ 78/19
 continente	NOUN:continent	NOUN 97
 activa	VERB:(verb form of: activar: to activate)	ADJ 100
-Santos	???	NOUN 94
+Santos	ADJ:(plural of: santo: ???)	NOUN 94
 actuar	VERB:to act, to perform; to actuate	VERB 98
 forman	VERB:(verb form of: formar: to form); (uds.) (verb form of: formar: to form)	VERB 100
 premio	NOUN:prize; premium; VERB:(verb form of: premiar: to award (give a prize))	NOUN 98
@@ -2044,7 +2044,7 @@ escritores	NOUN:(plural of: escritor: writer)	NOUN 97
 realizó	VERB:(verb form of: realizar: to carry out)	VERB 100
 fray	NOUN:friar	NOUN/ADJ 71/28
 ocupa	VERB:(verb form of: ocupar: to occupy)	VERB 100
-Oriente	???	NOUN 86
+Oriente	NOUN:east; VERB:(verb form of: orientar: to orient)	NOUN 86
 doce	twelve	DET 100
 marca	NOUN:brand; mark; VERB:(verb form of: marcar: to mark)	NOUN/VERB 63/33
 asi	ADV:(misspelling of: así); (obsolete spelling of: así: like this)	VERB/NOUN 59/28
@@ -2082,7 +2082,7 @@ recuperación	NOUN:recovery; retrieval	NOUN 100
 masa	NOUN:dough; (physics) mass; VERB:(verb form of: masar: ???)	NOUN 99
 capitales	ADJ:(plural of: capital: capital (important)); NOUN:(plural of: capital: capital (finance))	NOUN 94
 antiguos	ADJ:(masculine plural of: antiguo: old)	ADJ/NOUN 79/21
-Supremo	???	NOUN/ADJ 70/29
+Supremo	ADJ:supreme	NOUN/ADJ 70/29
 francesa	ADJ:feminine of francés; NOUN:feminine of francés; Frenchwoman	ADJ/NOUN 74/26
 sesenta	sixty	NOUN/DET 67/29
 alternativa	ADJ:(feminine of: alternativo: alternative); NOUN:An alternative, option; alternation	NOUN 94
@@ -2108,12 +2108,12 @@ reacción	NOUN:reaction; recoil; reactionary political faction or movement	NOUN 
 servir	VERB:to serve	VERB 99
 arquitectura	NOUN:architecture	NOUN 100
 crea	VERB:third-person singular indicative present of crear; third-person singular imperative of crear; VERB:(verb form of: creer: (transitive) To believe)	VERB 98
-Granada	???	NOUN 99
+Granada	NOUN:pomegranate; hand grenade	NOUN 99
 sentimientos	NOUN:(plural of: sentimiento: feeling)	NOUN 99
 ocupación	NOUN:occupation (all senses)	NOUN 100
 Guillermo	???	NOUN 100
 piel	NOUN:skin; fur	NOUN 100
-Franco	???	NOUN/ADJ 85/14
+Franco	NOUN:franc (former currency of France and other cvoutries); ADJ:frank, candid; generous, liberal, openhanded; free, unimpeded, unencumbered; exempt, free; Frankish	NOUN/ADJ 85/14
 finalidad	NOUN:purpose	NOUN 100
 cristiana	???	ADJ/NOUN 88/12
 créditos	NOUN:(plural of: crédito: credit)	NOUN 100
@@ -2124,14 +2124,14 @@ industrias	NOUN:(plural of: industria: industry)	NOUN 99
 reconoce	VERB:(verb form of: reconocer: To recognize.)	VERB 99
 preparación	NOUN:preparation	NOUN 100
 fundamento	NOUN:foundation (lowest and supporting part or member of a wall); cornerstone; VERB:(verb form of: fundamentar: to build the basis for)	NOUN 100
-Cortes	???	NOUN 95
+Cortes	NOUN:(plural of: corte: ???); NOUN:(form of: plural form, corte: ???); VERB:(verb form of: cortar: to cut)	NOUN 95
 solicitud	NOUN:application; solicitation; survey	NOUN 100
 utilidad	NOUN:utility; (in the plural) profits	NOUN 100
 diversidad	NOUN:diversity	NOUN 100
 recibió	VERB:(verb form of: recibir: to receive, get)	VERB 100
 transición	NOUN:transition	NOUN 100
 absoluto	ADJ:absolute.	ADJ/NOUN 61/39
-Autónoma	???	NOUN/ADJ 74/25
+Autónoma	ADJ:(feminine of: autónomo: autonomous)	NOUN/ADJ 74/25
 poblaciones	NOUN:(plural of: población: population)	NOUN 100
 presentado	ADJ:presented; VERB:(verb form of: presentar: to present, to submit)	VERB/ADJ 52/48
 identificación	NOUN:identification.	NOUN 100
@@ -2155,7 +2155,7 @@ per	???	NOUN 100
 digo	VERB:(verb form of: decir: to say); I say, I tell; I mean; used to explain or correct a previous utterance	VERB 100
 empezó	VERB:(verb form of: empezar: to start, to begin)	VERB 100
 Roberto	???	NOUN 100
-Fomento	???	NOUN 100
+Fomento	VERB:(verb form of: fomentar: to foment (excite))	NOUN 100
 empresarios	NOUN:(plural of: empresario: contractor)</text>	NOUN 100
 auto	NOUN:car; writ; A short dramatic play with biblical or allegorical characters.; NOUN:(legal, formal) Order, or writ, or resolution	NOUN 93
 afirmar	VERB:to state, assert	VERB 99
@@ -2170,10 +2170,10 @@ consulta	NOUN:query, question; consultation; surgery (doctor's consulting room);
 cuadros	NOUN:(plural of: cuadro: square)	NOUN 99
 señalado	VERB:(verb form of: señalar: to signal)	VERB/ADJ 58/41
 produjo	VERB:(verb form of: producir: to produce)	VERB 100
-Tomás	???	NOUN 99
+Tomás	VERB:(verb form of: tomar: To take)	NOUN 99
 Mario	???	NOUN 100
 piezas	NOUN:(plural of: pieza: piece, part)	NOUN 100
-Exteriores	???	ADJ 93
+Exteriores	ADJ:(form of: plural, exterior: ???); NOUN:(plural of: exterior: outside)</text>	ADJ 93
 John	???	NOUN 100
 vías	NOUN:(plural of: vía: way)	NOUN 100
 hacían	VERB:(verb form of: hacer: do, make)	VERB 100
@@ -2208,7 +2208,7 @@ posee	VERB:(verb form of: poseer: to possess, to own, to hold, to have)	VERB 100
 europeos	ADJ:(masculine plural of: europeo: European)	ADJ/NOUN 66/34
 dictadura	NOUN:dictatorship	NOUN 99
 llevado	VERB:(verb form of: llevar: (transitive) to take, carry, take away, carry away (implies to move something further from who speaks))	VERB/ADJ 81/19
-Orgánica	???	ADJ/NOUN 90/10
+Orgánica	ADJ:(feminine of: orgánico: organic)	ADJ/NOUN 90/10
 logró	VERB:(verb form of: lograr: (transitive) to get)	VERB 100
 islas	NOUN:(plural of: isla: island)	NOUN 100
 tendría	VERB:(verb form of: tener: (transitive) To have, possess an object.)	VERB 100
@@ -2283,7 +2283,7 @@ referencias	NOUN:(plural of: referencia: reference)</text>	NOUN 100
 soledad	NOUN:solitude	NOUN 100
 marido	NOUN:husband; VERB:(verb form of: maridar: ???)	NOUN 100
 obrero	NOUN:worker.	ADJ/NOUN 52/48
-Virgen	???	NOUN/VERB 87/11
+Virgen	NOUN:virgin	NOUN/VERB 87/11
 surge	VERB:(verb form of: surgir: (intransitive) to emerge)	VERB 91
 previa	ADJ:(feminine of: previo: previous)	ADJ 98
 seguramente	ADV:surely, certainly; probably, perhaps	ADV 100
@@ -2299,7 +2299,7 @@ físico	ADJ:physical; NOUN:physique (natural constitution, or physical structure
 darle	VERB:<?<es-compound of|d|ar||le|mood=inf>?>	VERB 100
 brazos	NOUN:(plural of: brazo: arm)	NOUN 100
 residencia	NOUN:residence	NOUN 99
-Quito	???	NOUN 98
+Quito	VERB:(verb form of: quitar: (transitive) To remove)	NOUN 98
 pacto	NOUN:pact; VERB:(verb form of: pactar: to agree upon)	NOUN 100
 opiniones	NOUN:(plural of: opinión: opinion)	NOUN 100
 utiliza	VERB:(verb form of: utilizar: (transitive) to use)	VERB 100
@@ -2335,7 +2335,7 @@ temor	NOUN:fear	NOUN 100
 convertido	ADJ:converted.; VERB:(verb form of: convertir: (transitive) to convert)	VERB/ADJ 79/21
 alemán	NOUN:German (inhabitant of Germany or person from German descent).; ADJ:German (relating to Germany or to the German language).	ADJ/NOUN 53/46
 consideraciones	NOUN:(plural of: consideración: consideration)</text>	NOUN 100
-Marcos	???	NOUN 98
+Marcos	NOUN:(plural of: marco: frame)	NOUN 98
 secreto	ADJ:secret; NOUN:a secret; secrecy; VERB:(verb form of: secretar: to secrete)	NOUN 100
 letra	NOUN:A letter (symbol); handwriting; lyrics	NOUN 99
 haberse	VERB:<?<es-compound of|hab|er|haber|se|mood=inf>?>	VERB 100
@@ -2355,7 +2355,7 @@ latinoamericana	ADJ:(feminine of: latinoamericano: Latin American); NOUN:(femini
 producen	VERB:(verb form of: producir: to produce)	VERB 100
 ó	CONJ:(obsolete spelling of: o: or)	VERB/NOUN/NUM/ADJ 35/31/22/11
 amenaza	NOUN:threat; VERB:(verb form of: amenazar: (transitive) to threaten)	NOUN/VERB 81/19
-Moreno	???	NOUN 98
+Moreno	ADJ:dark colored; dark-skinned, tan; dark-haired; NOUN:a dark-skinned or tan person; a person with dark-hair	NOUN 98
 salió	VERB:(verb form of: salir: to go out)	VERB 100
 hará	VERB:(verb form of: hacer: do, make)	VERB 100
 expediente	NOUN:dossier	NOUN/ADV 87/11
@@ -2379,10 +2379,10 @@ máxima	NOUN:maxim; maximum	ADJ/NOUN 85/15
 conviene	VERB:(verb form of: convenir: to be convenient, to suit)	VERB 98
 liberales	ADJ:(form of: plural, liberal: ???)	ADJ/NOUN 50/50
 regular	ADJ:regular, steady, even.; fair, fairly good, average; common, ordinary, middling, so-so; (grammar) regular; VERB:to regulate; to control; to adjust; to put in order	ADJ/VERB 63/31
-Cuenca	???	NOUN 99
+Cuenca	NOUN:(anatomy) eye socket; watershed, catchment basin; valley	NOUN 99
 ahorro	NOUN:saving; VERB:(verb form of: ahorrar: (transitive) to save (to store for future use))	NOUN 99
 colores	VERB:(verb form of: colorar: ???)	NOUN 100
-Armadas	???	ADJ/NOUN 75/25
+Armadas	ADJ:(feminine plural of: armado: armed); VERB:(verb form of: armar: to arm (supply with weapons))	ADJ/NOUN 75/25
 llamar	VERB:to summon; to refer to; to appeal; to attract; (reflexive) to be called; (reflexive, Spain, colloquial) to cost	VERB 100
 considerando	VERB:(verb form of: considerar: to consider)	VERB 97
 responsables	ADJ:(form of: plural, responsable: ???)	NOUN/ADJ 70/30
@@ -2413,7 +2413,7 @@ laborales	ADJ:(form of: plural, laboral: ???)	ADJ 94
 define	VERB:(verb form of: definir: to define)	VERB 100
 seguros	ADJ:(masculine plural of: seguro: secure, safe (free from danger))	ADJ/NOUN 57/43
 rojo	ADJ:Having the colour red.; NOUN:The colour red.; (Costa Rica) A 1000 colón bill.	ADJ/NOUN 67/33
-Ayuntamiento	???	NOUN 99
+Ayuntamiento	NOUN:a corporation or body of magistrates in cities and towns, corresponding to mayor and aldermen.	NOUN 99
 esclavos	NOUN:(plural of: esclavo: slave)	NOUN 97
 jueces	NOUN:(plural of: juez: judge), judges	NOUN 96
 from	???	NOUN/ADJ 58/41
@@ -2426,7 +2426,7 @@ artista	NOUN:artist; NOUN:an actor or an actress	NOUN 96
 delitos	NOUN:(plural of: delito: crime)	NOUN 100
 quedado	VERB:(verb form of: quedar: (intransitive) to be)	VERB 100
 fiscales	ADJ:(form of: plural, fiscal: ???); NOUN:(plural of: fiscal: (legal) prosecutor)	ADJ/NOUN 76/24
-Rojas	???	NOUN/ADJ 79/21
+Rojas	ADJ:(feminine plural of: rojo: Having the colour red.)	NOUN/ADJ 79/21
 limitaciones	NOUN:(plural of: limitación: limitation)</text>	NOUN 100
 indispensable	ADJ:indispensable	ADJ 100
 números	NOUN:(plural of: número: number (counting))	NOUN 97
@@ -2450,7 +2450,7 @@ lenguas	NOUN:(plural of: lengua: tongue)	NOUN 100
 ejercer	VERB:to exercise (enforce)	VERB 100
 negociaciones	NOUN:(plural of: negociación: negotiation)	NOUN 100
 clasificación	NOUN:classification	NOUN 100
-Papa	???	NOUN 98
+Papa	NOUN:pope; NOUN:(Latin America) potato	NOUN 98
 continuidad	NOUN:continuity	NOUN 100
 Paraguay	Paraguay	NOUN 100
 garantías	NOUN:(plural of: garantía: guarantee)</text>	NOUN 100
@@ -2481,7 +2481,7 @@ expresiones	NOUN:(plural of: expresión: expression)	NOUN 100
 socio	NOUN:partner; member; (colloquial) buddy, mate	ADJ/NOUN 53/47
 basta	VERB:(verb form of: bastar: (intransitive) to be enough)	VERB 100
 redes	NOUN:(plural of: red: web, mesh)	NOUN 100
-Occidente	???	NOUN 94
+Occidente	NOUN:west, occident	NOUN 94
 cristianos	ADJ:(masculine plural of: cristiano: Christian (of the Christian religion)); NOUN:(plural of: cristiano: Christian (member of the Christian religion))	NOUN/ADJ 66/34
 numerosas	ADJ:(feminine plural of: numeroso: numerous)	ADJ 100
 copia	NOUN:abundance; copy; VERB:(verb form of: copiar: to copy)	NOUN 96
@@ -2489,7 +2489,7 @@ llevaba	VERB:(verb form of: llevar: (transitive) to take, carry, take away, carr
 norteamericano	NOUN:Born in, belonging or relative to the United States; North American; ADJ:Born in, belonging or relative to the United States; North American	ADJ/NOUN 88/12
 intensidad	NOUN:intensity	NOUN 100
 acta	NOUN:certificate; minutes; election results	NOUN 98
-Marina	???	NOUN 92
+Marina	ADJ:(feminine of: marino: marine, nautical); NOUN:navy; VERB:(verb form of: marinar: ???)	NOUN 92
 dirigida	VERB:(past participle of: dirigir)	ADJ 94
 detalle	NOUN:detail; nice thought; gesture, beau geste, attention; VERB:(verb form of: detallar: to detail)	NOUN/VERB 81/15
 murió	VERB:(verb form of: morir: to die)	VERB 100
@@ -2504,7 +2504,7 @@ gas	NOUN:gas	NOUN 100
 poetas	NOUN:(plural of: poeta: A poet)	NOUN 98
 privados	ADJ:(masculine plural of: privado: private)	ADJ 94
 núcleo	NOUN:nucleus	NOUN 99
-Juzgado	???	NOUN 87
+Juzgado	NOUN:a court of law with a judge; a place for adjudicated individuals; VERB:(verb form of: juzgar: (transitive) to judge)	NOUN 87
 detalles	NOUN:(plural of: detalle: detail); VERB:(verb form of: detallar: to detail)	NOUN 100
 pasión	NOUN:passion; inertia, idleness (the opposite of action)	NOUN 100
 caballo	NOUN:horse; (chess) knight	NOUN 98
@@ -2522,7 +2522,7 @@ pieza	NOUN:piece, part; room	NOUN 99
 fronteras	NOUN:(plural of: frontera: border)	NOUN 100
 combate	NOUN:combat; VERB:(verb form of: combatir: to combat or fight)	NOUN 95
 variedad	NOUN:variety; breed	NOUN 100
-Torre	???	NOUN 100
+Torre	NOUN:tower; (chess) rook; skyscraper	NOUN 100
 suelen	VERB:(verb form of: solar: to pave.); (verb form of: soler: ???)	VERB 100
 impulso	NOUN:drive, urge; (sciences) impulse, pulse; VERB:(verb form of: impulsar: to impel, to drive, to force.)	NOUN 98
 correspondencia	NOUN:correspondence	NOUN 100
@@ -2561,10 +2561,10 @@ noventa	???	NOUN 85
 monte	NOUN:mountain, mount; underbrush; VERB:(verb form of: montar: to mount)	NOUN 99
 pertenece	VERB:(verb form of: pertenecer: to belong)	VERB 99
 recientemente	ADV:recently	ADV 100
-Guerrero	???	NOUN 96
+Guerrero	ADJ:bellicose, warlike; NOUN:warrior	NOUN 96
 productiva	ADJ:(feminine of: productivo: fruitful, productive)	ADJ 96
 armada	ADJ:(feminine of: armado: armed); NOUN:navy; fleet; VERB:(verb form of: armar: to arm (supply with weapons))	ADJ/NOUN 50/49
-Imprenta	???	NOUN 98
+Imprenta	NOUN:printing (the technology); printing press; printer (a factory where printing is done)	NOUN 98
 indicadores	NOUN:(plural of: indicador: indicator)</text>	NOUN 98
 vital	ADJ:vital	ADJ 97
 internos	ADJ:(masculine plural of: interno: internal); NOUN:(plural of: interno: patient)	ADJ 94
@@ -2584,7 +2584,7 @@ seguido	ADJ:consecutive.; VERB:(verb form of: seguir: to follow)	ADJ/VERB 56/44
 halla	VERB:(verb form of: hallar: to find)	VERB 100
 regreso	NOUN:return; VERB:(verb form of: regresar: to return)	NOUN 98
 circunstancia	NOUN:circumstance	NOUN 100
-Cabildo	???	NOUN 100
+Cabildo	NOUN:Body of churchmen that forms the chapter of a cathedral or collegiate church.; A town council or other governing body at a local level.; An assembly or meeting held by such a governing body.; The place where such an assembly is held; cabildo.	NOUN 100
 iglesias	NOUN:(plural of: iglesia: ???)	NOUN 97
 indio	ADJ:Indian (from India); Indian, Native American; NOUN:a native of India; a Native American; NOUN:indium	NOUN/ADJ 76/23
 recientes	ADJ:(form of: plural, reciente: ???)	ADJ 99
@@ -2609,7 +2609,7 @@ asumir	VERB:(said of a duty or position) to assume, take on	VERB 100
 consideran	VERB:(verb form of: considerar: to consider); (uds.) (verb form of: considerar: to consider)	VERB 100
 or	???	ADJ/NOUN 71/28
 pasando	VERB:(verb form of: pasar: to pass)	VERB 100
-Senado	???	NOUN 100
+Senado	NOUN:senate	NOUN 100
 dominante	ADJ:dominant; prevailing; ruling	ADJ 95
 verano	NOUN:summer	NOUN 100
 clientes	NOUN:(plural of: cliente: client)	NOUN 97
@@ -2619,7 +2619,7 @@ viejos	ADJ:(plural of: viejo: old)	ADJ/NOUN 77/23
 teorías	NOUN:(plural of: teoría: theory)	NOUN 100
 delante	ADV:in front of, forwards	ADV 100
 destrucción	NOUN:destruction	NOUN 100
-Anexo	???	NOUN/ADJ 69/26
+Anexo	ADJ:attached; enclosed; NOUN:annex, appendix; contiguous building, extension of a building; VERB:(verb form of: anexar: to annex, to attach)	NOUN/ADJ 69/26
 electorales	ADJ:(form of: plural, electoral: ???)	ADJ/NOUN 88/12
 alcanza	VERB:(verb form of: alcanzar: (transitive) to reach)	VERB 100
 positivo	ADJ:positive	ADJ 97
@@ -2642,7 +2642,7 @@ panorama	NOUN:panorama	NOUN 100
 pesca	NOUN:fishing; VERB:(verb form of: pescar: to fish)	NOUN 99
 sostiene	VERB:(verb form of: sostener: to hold, sustain)	VERB 98
 mostrar	VERB:(transitive) to show	VERB 100
-Secretaria	???	NOUN 99
+Secretaria	NOUN:secretary (female).	NOUN 99
 hogares	NOUN:(plural of: hogar: home)	NOUN 98
 Gutiérrez	???	NOUN 100
 adquisición	NOUN:procurement; acquisition	NOUN 100
@@ -2677,7 +2677,7 @@ determinadas	ADJ:(feminine plural of: determinado: specific, particular, certain
 generar	VERB:To create; To generate	VERB 100
 empieza	VERB:(verb form of: empezar: to start, to begin)	VERB 100
 guardia	NOUN:custodian, warden (male); NOUN:watch, guard duty, sentry duty; custody	NOUN 100
-Seminario	???	NOUN 99
+Seminario	NOUN:seminar	NOUN 99
 estructural	ADJ:structural	ADJ 95
 domicilio	NOUN:residence; domicile; address; VERB:(verb form of: domiciliar: ???)	NOUN 99
 ocurrió	VERB:(verb form of: ocurrir: to happen, to occur)	VERB 100
@@ -2693,7 +2693,7 @@ abrir	NOUN:opening; VERB:(transitive) to open; (transitive) to unlock; (transiti
 vigor	NOUN:vigor	NOUN 100
 geografía	NOUN:geography	NOUN 100
 rápido	ADJ:rapid, quick; ADV:rapidly, quickly	ADJ 99
-Parlamento	???	NOUN 100
+Parlamento	NOUN:parliament.; VERB:(verb form of: parlamentar: to parley)	NOUN 100
 usar	VERB:(transitive) To use; (transitive) To wear; (transitive) To consume; (reflexive) To be used; (reflexive) To be fashionable	VERB 100
 historias	NOUN:(plural of: historia: history)	NOUN 100
 gentes	???	NOUN 100
@@ -2701,7 +2701,7 @@ ordenamiento	???	NOUN 100
 corrupción	NOUN:corruption; taint	NOUN 100
 extraño	ADJ:strange, rare, bizarre; foreign; suspicious; not belonging to, not possessed by, not property of; NOUN:foreigner; VERB:(verb form of: extrañar: to miss (someone))	ADJ 99
 leche	NOUN:(food) milk; VERB:(verb form of: lechar: ???)	NOUN 99
-Puebla	???	NOUN 98
+Puebla	VERB:(verb form of: poblar: to populate)	NOUN 98
 censo	NOUN:census; VERB:(verb form of: censar: ???)	NOUN 99
 discursos	NOUN:(plural of: discurso: discourse)	NOUN 98
 realizadas	VERB:(verb form of: realizar: to carry out)	ADJ 97
@@ -2715,8 +2715,8 @@ ropa	NOUN:clothing, clothes	NOUN 100
 podríamos	VERB:(verb form of: poder: to be able, can)	VERB 100
 naturalmente	ADV:naturally, of course	ADV 99
 Ortega	???	NOUN 100
-Estatuto	???	NOUN 100
-Antropología	???	NOUN 100
+Estatuto	NOUN:statute	NOUN 100
+Antropología	NOUN:anthropology	NOUN 100
 sesiones	VERB:(verb form of: sesionar: to be in session)</text>	NOUN 100
 cadena	NOUN:chain; A network, as of radio stations, etc.; necklace	NOUN 100
 sueños	NOUN:(plural of: sueño: sleepiness)	NOUN 99
@@ -2749,7 +2749,7 @@ históricas	ADJ:(feminine plural of: histórico: historic)</text>	ADJ 95
 líder	NOUN:leader (of a group of people, a sports team etc.)	NOUN 100
 consciente	ADJ:conscious	ADJ/ADV 88/11
 cura	NOUN:cure; VERB:(verb form of: curar: to cure); (verb form of: curar: to cure), it cures; NOUN:priest	NOUN 86
-Boletín	???	NOUN 99
+Boletín	NOUN:bulletin	NOUN 99
 modernidad	NOUN:modernity, modern day	NOUN 100
 fácilmente	ADV:easily	ADV 100
 banca	NOUN:small bench; seat (in an elective body); financial system	NOUN 99
@@ -2770,7 +2770,7 @@ genera	VERB:(verb form of: generar: To create)	VERB 96
 publicidad	NOUN:advertisement; publicity	NOUN 100
 papeles	NOUN:(plural of: papel: paper)	NOUN 99
 maneras	NOUN:(plural of: manera: way)	NOUN 100
-Legislativo	???	NOUN/ADJ 57/43
+Legislativo	ADJ:legislative	NOUN/ADJ 57/43
 círculo	NOUN:circle	NOUN 97
 racional	ADJ:reasonable; rational	ADJ 97
 mm	???	NOUN 98
@@ -2801,7 +2801,7 @@ prestigio	NOUN:prestige	NOUN 99
 encargado	NOUN:person in charge.; chief executive.; representative.; VERB:(verb form of: encargar: (transitive) to entrust)	NOUN/ADJ/VERB 49/39/12
 iguales	VERB:(verb form of: igualar: to make equal)	ADJ 99
 fui	VERB:(verb form of: ir: to go); (verb form of: ser: to be (essentially or identified as).)	VERB 96
-Gráfico	???	ADJ/NOUN 68/32
+Gráfico	ADJ:graphic	ADJ/NOUN 68/32
 ayudar	VERB:to help	VERB 100
 expresar	VERB:to express; to specify	VERB 100
 frío	ADJ:cold; NOUN:cold, coldness; VERB:(verb form of: freír: to fry)	NOUN/ADJ 76/24
@@ -2818,13 +2818,13 @@ significación	???	NOUN 100
 estética	NOUN:aesthetic; aesthetics; (Mexico) hair salon, beauty shop; ADJ:(feminine of: estético: aesthetic)	NOUN/ADJ 58/41
 demuestra	VERB:(verb form of: demostrar: to show, to demonstrate)	VERB 100
 convento	NOUN:convent, monastery	NOUN 99
-Rosario	???	NOUN 99
+Rosario	NOUN:rosary	NOUN 99
 desempeño	NOUN:performance; VERB:(verb form of: desempeñar: to play)	NOUN 98
 símbolo	NOUN:symbol	NOUN 99
 aporte	VERB:(verb form of: aportar: to provide); NOUN:contribution	NOUN/VERB 90/10
 rentas	NOUN:(plural of: renta: income); VERB:(verb form of: rentar: to rent)	NOUN 100
 comerciantes	NOUN:(plural of: comerciante: shopkeeper)</text>	NOUN 97
-CE	???	NOUN/ADJ 79/12
+CE	NOUN:Name of the letter c.	NOUN/ADJ 79/12
 oficinas	NOUN:(plural of: oficina: office)	NOUN 100
 favorable	ADJ:favorable	ADJ 100
 termina	VERB:(verb form of: terminar: To finish)	VERB 99
@@ -2861,17 +2861,17 @@ lleno	ADJ:full; VERB:(verb form of: llenar: to fill something up)	ADJ/NOUN 79/20
 definitivamente	ADV:definitely	ADV 100
 considerarse	VERB:(reflexive) to judge, to estimate	VERB 100
 respectivos	???	ADJ/NOUN 57/43
-Romero	???	NOUN 100
+Romero	NOUN:rosemary	NOUN 100
 adultos	ADJ:(masculine plural of: adulto: adult); NOUN:(plural of: adulto: adult)	NOUN/ADJ 88/12
 expectativas	NOUN:(plural of: expectativa: expectation)</text>	NOUN 100
 hectáreas	NOUN:(plural of: hectárea: hectare)</text>	NOUN 98
-Herrera	???	NOUN 100
+Herrera	NOUN:(feminine of: herrero: ???)	NOUN 100
 hermana	NOUN:(feminine of: hermano: brother), sister; VERB:(verb form of: hermanar: to untie)	NOUN 100
 secundaria	ADJ:<?<feminine of |lang=es|secundario>?>; NOUN:secondary school, high school	ADJ/NOUN 51/48
 variación	NOUN:variation	NOUN 100
 capítulos	NOUN:(plural of: capítulo: chapter)	NOUN 99
 demostrar	VERB:to show, to demonstrate; to prove	VERB 100
-Bello	???	NOUN/ADJ 77/23
+Bello	ADJ:beautiful	NOUN/ADJ 77/23
 Vargas	???	NOUN 100
 elevado	ADJ:high, elevated; VERB:(verb form of: elevar: to elevate)	ADJ/VERB 88/12
 magnitud	NOUN:magnitude	NOUN 100
@@ -2882,7 +2882,7 @@ Gabriel	???	NOUN 100
 mandato	NOUN:mandate	NOUN 100
 vos	PRON:(archaic) An elevated form of you, either singular or plural.; (parts of, _, Latin America) a form of you, singular.	NOUN/ADJ/VERB 54/26/20
 énfasis	NOUN:emphasis	NOUN 100
-Estadística	???	NOUN/ADJ 75/25
+Estadística	ADJ:(feminine of: estadístico: statistic); NOUN:statistics (the mathematical science); statistic; (female) statistician	NOUN/ADJ 75/25
 específicas	ADJ:(feminine plural of: específico: specific)	ADJ 99
 daños	NOUN:(plural of: daño: damage)</text>	NOUN 99
 columna	NOUN:A column; in architecture, a circular support.	NOUN 99
@@ -2893,9 +2893,9 @@ pedir	VERB:to ask for something; to request someone else to do something; to ord
 específica	ADJ:(feminine of: específico: specific)	ADJ 99
 previamente	ADV:previously	ADV 100
 felicidad	NOUN:felicity, happiness	NOUN 100
-Ramos	???	NOUN 98
+Ramos	NOUN:(plural of: ramo: bouquet)	NOUN 98
 hubieran	VERB:(verb form of: haber: (auxiliary verb taking past participle to build perfect tense) to have)	VERB 99
-Vega	???	NOUN 100
+Vega	NOUN:meadow; fertile lowland; grassy plain; valley (the fertile lowlands surrounding a river); alluvial plain	NOUN 100
 turismo	NOUN:tourism	NOUN 98
 reducido	ADJ:reduced; VERB:(verb form of: reducir: to reduce)	ADJ/VERB 68/32
 estación	NOUN:station; season (of the year)	NOUN 100
@@ -2956,7 +2956,7 @@ barrios	NOUN:(plural of: barrio: neighbourhood)	NOUN 100
 seguía	VERB:(verb form of: seguir: to follow)	VERB 100
 llamados	ADJ:(masculine plural of: llamado: called); NOUN:(plural of: llamado: call)	ADJ 99
 exactamente	ADV:exactly	ADV 96
-Toledo	???	NOUN 100
+Toledo	NOUN:(slang) toilet	NOUN 100
 fábrica	NOUN:factory	NOUN 99
 tecnologías	NOUN:(plural of: tecnología: technology)</text>	NOUN 100
 académico	ADJ:academic; scholastic; NOUN:academician, academic	ADJ/NOUN 77/23
@@ -2964,7 +2964,7 @@ tradiciones	NOUN:(plural of: tradición: tradition)	NOUN 100
 consolidación	NOUN:consolidation	NOUN 100
 responsabilidades	NOUN:(plural of: responsabilidad: responsibility)</text>	NOUN 100
 vidas	NOUN:(form of: Plural form, vida: ???)	NOUN 100
-Cerro	???	NOUN 99
+Cerro	NOUN:hill	NOUN 99
 dirigido	ADJ:directed; VERB:(verb form of: dirigir: to direct)	ADJ/VERB 76/23
 opciones	NOUN:(plural of: opción: option)	NOUN 100
 aquél	PRON:(demonstrative) that one (far from speaker and listener); (demonstrative) the former; (demonstrative) anyone/anything	NOUN/VERB/ADJ 50/33/11
@@ -3029,7 +3029,7 @@ singular	ADJ:singular; NOUN:singular	ADJ 99
 Él	???	PRON 100
 prisión	NOUN:prison	NOUN 100
 Guadalajara	???	NOUN 100
-CAPITULO	???	NOUN 98
+CAPITULO	VERB:(verb form of: capitular: to capitulate)	NOUN 98
 basada	VERB:(verb form of: basar: to base)	ADJ 99
 ejemplares	NOUN:(plural of: ejemplar: exemplar, example)	NOUN 92
 usos	NOUN:(plural of: uso: use)	NOUN 98
@@ -3046,7 +3046,7 @@ XXI	???	NOUN/ADJ 88/12
 diarios	ADJ:(masculine plural of: diario: daily); NOUN:(plural of: diario: diary)	NOUN/ADJ 65/35
 príncipe	NOUN:prince; sovereign, ruler; ADJ:first edition	NOUN 95
 Arturo	???	NOUN 100
-Memorias	???	NOUN 100
+Memorias	NOUN:(plural of: memoria: memory) - memories	NOUN 100
 sucesos	NOUN:(plural of: suceso: event, happening)	NOUN 99
 Alfredo	???	NOUN 100
 departamentos	NOUN:(plural of: departamento: ???)	NOUN 99
@@ -3063,7 +3063,7 @@ despacho	NOUN:office; dispatch; VERB:(verb form of: despachar: to complete)	NOUN
 quedaron	VERB:(verb form of: quedar: (intransitive) to be); (uds.) (verb form of: quedar: (intransitive) to be)	VERB 100
 deberían	VERB:(verb form of: deber: (transitive) to owe)	VERB 100
 estaría	VERB:(verb form of: estar: To be (have a (transient) location in space). Compare ser, quedar.)	VERB 99
-César	???	NOUN 100
+César	NOUN:caesar (roman emperor).	NOUN 100
 sindicato	NOUN:trade union; labor union; syndicate	NOUN 99
 juntas	ADJ:(feminine plural of: junto: together); NOUN:(plural of: junta: ???); VERB:(verb form of: juntar: (transitive) to combine, to unite)	NOUN/ADJ 75/24
 gesto	NOUN:gesture; expression; VERB:(verb form of: gestar: to gestate)	NOUN 99
@@ -3072,7 +3072,7 @@ muestras	VERB:(verb form of: mostrar: (transitive) to show)	NOUN 99
 concesión	NOUN:concession; dealership, vendor	NOUN 100
 psicología	NOUN:psychology	NOUN 100
 sensibilidad	NOUN:sensibility; sensitivity	NOUN 100
-dioses	NOUN:(plural of: dios: ???)	NOUN 100
+dioses	NOUN:(plural of: dios: God)	NOUN 100
 usuarios	NOUN:(plural of: usuario: user)	NOUN 96
 nace	VERB:(verb form of: nacer: to be born)	VERB 94
 propietario	ADJ:owning; proprietary; NOUN:owner; landlord	NOUN 91
@@ -3099,7 +3099,7 @@ emergencia	NOUN:emergency; emergence	NOUN 100
 ofrecen	VERB:(verb form of: ofrecer: to offer)	VERB 100
 pudieron	VERB:(verb form of: poder: to be able, can)	VERB 100
 contraste	NOUN:contrast; VERB:(verb form of: contrastar: to resist)	NOUN 95
-K	???	NOUN/X/ADJ 45/26/21
+K	CONJ:(slang) <?<abbreviation of|que|lang=es>?>; PRON:(slang) <?<abbreviation of|que|lang=es>?>	NOUN/X/ADJ 45/26/21
 pidió	VERB:(verb form of: pedir: to ask for something)	VERB 100
 facilitar	VERB:to make easier; facilitate	VERB 100
 intenta	VERB:(verb form of: intentar: to try)	VERB 100
@@ -3109,7 +3109,7 @@ revela	VERB:(verb form of: revelar: to reveal)	VERB 100
 ubicación	NOUN:position; location	NOUN 100
 enfrentar	VERB:to confront	VERB 100
 compañero	NOUN:comrade.; friend, buddy..; fellow, companion.; colleague.	NOUN 100
-Rio	???	NOUN 96
+Rio	VERB:(verb form of: reír: to laugh); NOUN:(misspelling of: río) (Note the small accent on the correct spelling.)	NOUN 96
 dura	ADJ:(feminine of: duro: hard): hard, solid; strict, severe; VERB:(verb form of: durar: to last)	ADJ 100
 toneladas	NOUN:(plural of: tonelada: ton)	NOUN 97
 Emilio	???	NOUN 100
@@ -3126,12 +3126,12 @@ obtuvo	VERB:(verb form of: obtener: to obtain)	VERB 100
 Ángel	???	NOUN/VERB/ADJ 54/25/13
 cálculo	NOUN:calculation, estimation; (mathematics) arithmetic; (mathematics) calculus; (medicine) stone	NOUN 100
 ricos	ADJ:(plural of: rico: ???)	ADJ/NOUN 62/38
-Actas	???	NOUN 100
+Actas	NOUN:(plural of: acta: certificate)	NOUN 100
 publicada	VERB:(verb form of: publicar: to publish)	ADJ/VERB 80/16
 iniciar	VERB:to begin; initiate	VERB 100
 verdaderamente	ADV:truthfully	ADV 96
 derivados	NOUN:(plural of: derivado: derivative); VERB:(verb form of: derivar: to derive)	ADJ/NOUN 59/41
-Península	???	NOUN 100
+Península	NOUN:peninsula	NOUN 100
 escuchar	VERB:to listen to	VERB 99
 entusiasmo	NOUN:enthusiasm; VERB:(verb form of: entusiasmar: to excite)	NOUN 100
 alcanzado	VERB:(verb form of: alcanzar: (transitive) to reach)	VERB 100
@@ -3192,7 +3192,7 @@ posiblemente	ADV:possibly	ADV 100
 protagonista	NOUN:protagonist, star	NOUN 94
 inciso	???	NOUN/ADJ 80/15
 ganar	VERB:(transitive) to gain; (transitive) to earn; (sports) to win; (transitive) to defeat, to beat; (transitive) to reach; to attain; (reflexive, Chile) to position oneself, to situate oneself	VERB 100
-Hidalgo	???	NOUN 99
+Hidalgo	ADJ:noble; NOUN:noble, nobleman	NOUN 99
 expuesto	ADJ:exposed; VERB:(past participle of: exponer)	ADJ/VERB 77/22
 pecho	NOUN:thorax; chest; the front of the thorax; breast (of a woman); (figuratively)  breast, heart; seat of the emotions, feelings, etc.; (figuratively) valor, strength, fortitude	NOUN 99
 puro	ADJ:pure, clear; NOUN:cigar, puro	ADJ/NOUN 80/20
@@ -3232,13 +3232,13 @@ variaciones	NOUN:(plural of: variación: variation)</text>	NOUN 100
 apareció	VERB:(verb form of: aparecer: to appear)	VERB 100
 adicional	ADJ:additional	ADJ 96
 compleja	ADJ:(feminine of: complejo: complex)	ADJ 93
-Diccionario	???	NOUN 99
+Diccionario	NOUN:dictionary	NOUN 99
 fechas	NOUN:(plural of: fecha: date (time)); VERB:(verb form of: fechar: )	NOUN 99
 señaló	VERB:(verb form of: señalar: to signal)	VERB 100
 Raúl	???	NOUN 100
 embajador	NOUN:ambassador	NOUN 99
 institucionales	ADJ:(form of: plural, institucional: ???)</text>	ADJ 98
-Internet	???	NOUN 98
+Internet	NOUN:internet	NOUN 98
 Ibid	???	NOUN 98
 renovación	NOUN:renovation, renewal	NOUN 100
 depósito	NOUN:deposit; store, stock, depot; tank; sediment, dregs	NOUN 99
@@ -3256,7 +3256,7 @@ aumenta	VERB:(verb form of: aumentar: to increase)	VERB 100
 PIB	NOUN:Producto Interno Bruto; gross domestic product, GDP	NOUN 99
 vaya	VERB:(verb form of: ir: to go)	VERB 97
 administrativos	ADJ:(masculine plural of: administrativo: administrative)	ADJ 91
-Club	???	NOUN 99
+Club	NOUN:club (association)	NOUN 99
 siento	VERB:(verb form of: sentar: to seat); VERB:(verb form of: sentir: (transitive) to feel)	VERB 94
 ojo	NOUN:eye	NOUN 98
 apoyar	VERB:to support	VERB 100
@@ -3354,7 +3354,7 @@ constituido	VERB:(verb form of: constituir: to constitute)	ADJ/VERB 65/35
 abandonar	VERB:to abandon; to leave	VERB 100
 arena	NOUN:sand, gravel; bullfight arena; boxing ring	NOUN 99
 ficción	NOUN:fiction	NOUN 100
-Salas	???	NOUN 99
+Salas	VERB:(verb form of: salar: to salt)	NOUN 99
 antiguas	VERB:(verb form of: antiguar: ???)	ADJ/NOUN/DET 62/27/11
 requieren	VERB:(verb form of: requerir: To require, need)	VERB 100
 mantuvo	VERB:(verb form of: mantener: To maintain)	VERB 100
@@ -3426,7 +3426,7 @@ pérdidas	NOUN:(plural of: pérdida: loss)	NOUN 100
 fija	ADJ:(feminine of: fijo: fixed); VERB:(verb form of: fijar: to fix, to fasten, to set, to establish, to determine)	VERB/ADJ/NOUN 61/23/16
 fotografía	NOUN:photograph; photography; VERB:(verb form of: fotografiar: to photograph, to take a photograph.)	NOUN 98
 inmigrantes	ADJ:(form of: plural, inmigrante: ???); NOUN:(plural of: inmigrante: immigrant)	NOUN/ADJ 89/11
-XI	???	NOUN 97
+XI	NOUN:xi; the Greek letter Ξ, ξ	NOUN 97
 autos	NOUN:(plural of: auto: car)	NOUN 99
 supo	VERB:(verb form of: saber: to know (a fact))	VERB 100
 flor	NOUN:A flower; A bloom; (figuratively) The best. The finest. The pick; flattery	NOUN 98
@@ -3454,11 +3454,11 @@ frecuentes	VERB:(verb form of: frecuentar: to frequent)	ADJ 99
 distinguir	VERB:to distinguish	VERB 100
 registros	NOUN:(plural of: registro: A registration, record.)	NOUN 100
 recepción	NOUN:reception	NOUN 100
-Vasco	???	NOUN/ADJ 58/42
+Vasco	ADJ:Basque; NOUN:a Basque person	NOUN/ADJ 58/42
 XII	???	NOUN 98
 debo	VERB:(verb form of: deber: (transitive) to owe)	VERB 100
 índole	NOUN:type	NOUN 94
-Sonora	???	NOUN/ADJ 84/15
+Sonora	ADJ:(feminine of: sonoro: sound, sonorous)	NOUN/ADJ 84/15
 noble	ADJ:noble	ADJ 97
 monarquía	NOUN:monarchy	NOUN 100
 legitimidad	NOUN:legitimacy	NOUN 100
@@ -3473,7 +3473,7 @@ querer	VERB:to desire; to want; to love; to be fond of; (as an indication of a r
 simples	ADJ:(form of: plural form, simple: ???)	ADJ 99
 intentos	NOUN:(plural of: intento: attempt)	NOUN 97
 confusión	NOUN:confusion	NOUN 100
-Editores	???	NOUN 100
+Editores	NOUN:(plural of: editor: editor)	NOUN 100
 drogas	VERB:(verb form of: drogar: ???)	NOUN 100
 relativas	ADJ:(feminine plural of: relativo: relative, comparative)	ADJ 99
 socialistas	ADJ:(form of: plural, socialista: ???); NOUN:(plural of: socialista: socialist)</text>	ADJ/NOUN 51/49
@@ -3525,7 +3525,7 @@ fabricación	NOUN:manufacturing (create goods from materials)	NOUN 100
 Alvarez	???	NOUN 100
 italiano	ADJ:Italian (from or native to Italy); Italian (pertaining to Italy); NOUN:an Italian; (Chile) hot dog	ADJ/NOUN 57/43
 toca	VERB:(verb form of: tocar: to touch)	VERB 94
-Constituyente	???	NOUN/ADJ 69/29
+Constituyente	ADJ:constituent; NOUN:constituent	NOUN/ADJ 69/29
 habido	VERB:(verb form of: haber: (auxiliary verb taking past participle to build perfect tense) to have)	VERB 100
 famoso	ADJ:famous	ADJ 100
 campesina	ADJ:(feminine of: campesino: rural); NOUN:(feminine of: campesino: farmer)	ADJ/NOUN 77/23
@@ -3558,7 +3558,7 @@ chileno	ADJ:Chilean; NOUN:Chilean	ADJ/NOUN 78/22
 limitado	VERB:(verb form of: limitar: (transitive) to limit)	ADJ/VERB 80/18
 encontraban	VERB:(verb form of: encontrar: to meet)	VERB 100
 proceder	VERB:to proceed; (with preposition de) to come from	VERB/NOUN 84/16
-Salinas	???	NOUN 97
+Salinas	NOUN:saltworks	NOUN 97
 Juana	???	NOUN 99
 reconstrucción	NOUN:reconstruction	NOUN 100
 circular	ADJ:circular; NOUN:circular (advertisement); VERB:to circulate	VERB/NOUN 78/22
@@ -3583,7 +3583,7 @@ acompañado	VERB:(verb form of: acompañar: to accompany)	ADJ/VERB 85/15
 motor	NOUN:engine	NOUN 100
 historiadores	NOUN:(plural of: historiador: historian)</text>	NOUN 98
 cierre	NOUN:shutting, closing; shutting device, fastener; buckle, clasp; shutter, blind; zipper; VERB:(verb form of: cerrar: to close)	NOUN 94
-Corporación	???	NOUN 100
+Corporación	NOUN:council.; guild.	NOUN 100
 Gustavo	???	NOUN 100
 expresamente	ADV:expressly	ADV 100
 planos	ADJ:(masculine plural of: plano: plane, level); NOUN:(plural of: plano: (geometry) plane (flat surface extending infinitely in all directions))	NOUN 96
@@ -3591,15 +3591,15 @@ ma	???	NOUN/ADJ 86/10
 Asia	Asia	NOUN 100
 bloque	NOUN:bloc; block (street block or a piece of something)	NOUN 99
 seguimiento	NOUN:monitoring	NOUN 99
-Cortés	???	NOUN 92
+Cortés	ADJ:polite, with courtesy	NOUN 92
 parecido	ADJ:similar; NOUN:resemblance; VERB:(verb form of: parecer: to seem)	ADJ/NOUN 82/18
-Dolores	???	NOUN 98
+Dolores	NOUN:(plural of: dolor: pain)	NOUN 98
 construcciones	NOUN:(plural of: construcción: construction)	NOUN 100
 olvido	NOUN:oblivion; forgetting, ending of memory; Idea meaning an abstract place to put what is wanted to be forgotten; VERB:(verb form of: olvidar: to forget)	NOUN 92
 XV	???	NUM/NOUN 74/25
 creador	NOUN:creator	NOUN/ADJ 74/26
 mercantil	ADJ:mercantile	ADJ/NOUN 68/32
-Directiva	???	ADJ/NOUN 54/46
+Directiva	ADJ:(feminine of: directivo: directing, executive, director (attributive) (related to the managing of a department or company)); NOUN:board of directors; (feminine of: directivo: director, executive), female director or executive	ADJ/NOUN 54/46
 entendimiento	NOUN:understanding	NOUN 100
 terrible	ADJ:terrible 	ADJ 100
 espectáculo	NOUN:spectacle	NOUN 99
@@ -3630,10 +3630,10 @@ cumplido	ADJ:polite, thoughtful; NOUN:compliment; VERB:(verb form of: cumplir: t
 Cárdenas	???	NOUN 100
 ampliar	VERB:to extend, expand, enlarge	VERB 100
 minería	NOUN:mining	NOUN 100
-Palma	???	NOUN 100
+Palma	NOUN:palm (hand).; palm (tree).; VERB:(verb form of: palmar: ???)	NOUN 100
 verso	ADJ:(mathematics) versed; NOUN:verse, poem; verse, line (of a poem); verso, reverse, back, overleaf (of a page); (printing) verso, left-hand page; (artillery): small culverin (kind of cannon); (colloquial) lie, story, porky; VERB:(verb form of: versar: to concern)	NOUN/ADJ 87/11
 rato	NOUN:a while, a short period of time.; NOUN:male rat; mouse	NOUN 98
-Andes	???	NOUN 99
+Andes	VERB:(verb form of: andar: to walk, to go)	NOUN 99
 oficios	NOUN:(plural of: oficio: profession, occupation)	NOUN 99
 proyección	NOUN:projection; planning; slide, transparency; toss, throw	NOUN 100
 Dominicana	???	NOUN/ADJ 77/23
@@ -3649,7 +3649,7 @@ largos	ADJ:(masculine plural of: largo: long)	ADJ 98
 montes	VERB:(verb form of: montar: to mount)	NOUN 99
 setiembre	NOUN:(proscribed) (alternative spelling of: septiembre)	NUM/NOUN 69/19
 vestido	ADJ:dressed; NOUN:dress; VERB:(verb form of: vestir: to dress, to clothe, to attire)	NOUN/ADJ 81/17
-Chihuahua	???	NOUN 100
+Chihuahua	NOUN:Chihuahua (breed of dog)	NOUN 100
 educativos	ADJ:(masculine plural of: educativo: educational)	ADJ/NOUN 88/12
 pecado	NOUN:sin; VERB:(verb form of: pecar: to sin)	NOUN 92
 ingeniería	NOUN:engineering	NOUN 100
@@ -3658,7 +3658,7 @@ sacerdotes	NOUN:(plural of: sacerdote: priest)	NOUN 94
 emisión	NOUN:emission	NOUN 100
 roca	NOUN:rock.	NOUN 99
 ejercicios	NOUN:(plural of: ejercicio: exercise)	NOUN 99
-haciendas	NOUN:(plural of: hacienda: ???); VERB:(verb form of: hacendar: ???)	NOUN 99
+haciendas	NOUN:(plural of: hacienda: treasury, tax office (governmental organization administrating finances)); VERB:(verb form of: hacendar: ???)	NOUN 99
 vivido	VERB:(verb form of: vivir: (intransitive) To live)	VERB/ADJ 79/21
 conocía	VERB:(verb form of: conocer: to know (a person), to be familiar with.)	VERB 100
 altamente	ADV:highly	ADV 99
@@ -3679,7 +3679,7 @@ riego	NOUN:irrigation; VERB:(verb form of: regar: to irrigate)	NOUN 100
 periodistas	NOUN:(plural of: periodista: journalist)	NOUN 98
 jurídicos	ADJ:(masculine plural of: jurídico: legal)</text>	ADJ 96
 consideraba	VERB:(verb form of: considerar: to consider)	VERB 100
-Rosas	???	NOUN 97
+Rosas	NOUN:(plural of: rosa: ???)	NOUN 97
 convicción	NOUN:conviction	NOUN 100
 alumno	NOUN:pupil or student.	NOUN 97
 vínculos	NOUN:(plural of: vínculo: tie, bond (strong connection between people or groups of people))</text>	NOUN 99
@@ -3713,7 +3713,7 @@ afuera	ADV:out, outside	ADV/ADJ 68/20
 peruana	ADJ:(feminine of: peruano: Peruvian (from or native to Peru)); NOUN:(feminine of: peruano: a Peruvian)	ADJ 100
 acceder	VERB:To accede, to agree, to concur.; to access	VERB 100
 Santander	???	NOUN 99
-Cuadernos	???	NOUN 99
+Cuadernos	NOUN:(plural of: cuaderno: notebook)	NOUN 99
 exclusión	NOUN:exclusion	NOUN 100
 asignación	NOUN:allowance, salary	NOUN 100
 cuánto	ADV:how much; how many; ADJ:how much; how many; PRON:(interrogative) how much?, how many?	PRON/DET/NOUN/ADV 34/27/25/11
@@ -3740,7 +3740,7 @@ castigo	NOUN:punishment.; VERB:(verb form of: castigar: to punish, to castigate)
 ingleses	ADJ:(masculine plural of: inglés: English); NOUN:(plural of: inglés: Englishman)	NOUN/ADJ 64/36
 extrema	ADJ:(feminine of: extremo: extreme); VERB:(verb form of: extremar: to go to extremes)	ADJ 93
 consumidores	NOUN:(plural of: consumidor: A consumer)	NOUN 94
-Gil	???	NOUN 100
+Gil	ADJ:(Argentina, Chile, Uruguay) naïve, innocent, dumb, dummy	NOUN 100
 proporciona	VERB:(verb form of: proporcionar: to provide, supply)	VERB 99
 enfermo	ADJ:sick, ill; VERB:(verb form of: enfermar: to make ill)	NOUN/ADJ 51/48
 Bernardo	???	NOUN 100
@@ -3766,7 +3766,7 @@ obstáculos	NOUN:(plural of: obstáculo: obstacle)</text>	NOUN 99
 minerales	ADJ:(form of: plural, mineral: ???); NOUN:(plural of: mineral: mineral)	NOUN/ADJ 85/15
 traslado	NOUN:move, removal; transfer; copy; VERB:(verb form of: trasladar: to move)	NOUN 97
 com	???	NOUN/ADJ 82/12
-Asunción	???	NOUN 100
+Asunción	NOUN:the Assumption; assumption, succession to the throne	NOUN 100
 extraordinaria	ADJ:(feminine of: extraordinario: extraordinary)	ADJ 96
 capa	NOUN:cloak; layer; cape	NOUN 98
 invasión	NOUN:invasion; trespass	NOUN 100
@@ -3807,7 +3807,7 @@ urbanas	ADJ:(feminine plural of: urbana: (feminine of: urbano: urban))	ADJ 94
 llamaba	VERB:(verb form of: llamar: to summon)	VERB 100
 llamadas	NOUN:(plural of: llamada: call)	NOUN/ADJ 55/45
 consideramos	VERB:(verb form of: considerar: to consider)	VERB 100
-Simón	???	NOUN 100
+Simón	NOUN:hackney cab	NOUN 100
 narración	NOUN:narration, story	NOUN 100
 directores	NOUN:(plural of: director: director)	NOUN 97
 originales	???	ADJ 98
@@ -3815,9 +3815,9 @@ otorga	VERB:(verb form of: otorgar: to grant)	VERB 99
 articulación	NOUN:articulation	NOUN 100
 Guzmán	???	NOUN 100
 forestal	ADJ:forest	ADJ/NOUN 65/34
-Vid	???	NOUN 96
+Vid	NOUN:vine, grapevine	NOUN 96
 parcialmente	ADV:partially	ADV 100
-Ilustración	???	NOUN 100
+Ilustración	NOUN:illustration	NOUN 100
 penas	VERB:(verb form of: penar: to punish)	NOUN 100
 tos	NOUN:a cough	NOUN/ADJ/DET 74/14/12
 colonización	NOUN:colonization	NOUN 100
@@ -3842,16 +3842,16 @@ permanencia	NOUN:permanence	NOUN 100
 docentes	ADJ:(form of: plural, docente: ???); NOUN:(plural of: docente: lecturer)	NOUN/ADJ 75/25
 XIII	???	NOUN 97
 correcta	ADJ:(feminine of: correcto: correct, right)	ADJ 97
-Mora	???	NOUN 95
+Mora	NOUN:A mulberry, a mulberry fruit.; NOUN:(ethnicity) (feminine of: moro: ???); VERB:(verb form of: morar: to reside); NOUN:default (failure to meet an obligation on time); (phonology) mora (unit of syllable weight)	NOUN 95
 introducir	VERB:to insert.; to bring in.	VERB 100
 estrictamente	ADV:strictly	ADV 97
 denominación	NOUN:denomination	NOUN 100
-Bellas	???	NOUN/ADJ 75/25
+Bellas	ADJ:(feminine plural of: bello: ???)	NOUN/ADJ 75/25
 remedio	NOUN:remedy, solution; medicine; amendment (alteration or change for the better); VERB:(verb form of: remediar: to remedy)	NOUN/ADJ 90/10
 productor	NOUN:producer	NOUN 92
-Calderón	???	NOUN 100
+Calderón	NOUN:(cetaceans) pilot whale; (music) fermata; (typography) ¶ symbol	NOUN 100
 montañas	NOUN:(plural of: montaña: mountain)	NOUN 100
-Soviética	???	NOUN/ADJ 70/30
+Soviética	ADJ:(feminine of: soviético: soviet)	NOUN/ADJ 70/30
 planeación	???	NOUN 100
 testamento	NOUN:will, testament	NOUN 100
 trató	VERB:(verb form of: tratar: to treat)	VERB 100
@@ -3879,7 +3879,7 @@ asume	VERB:(verb form of: asumir: (said of a duty or position) to assume, take o
 aplicable	ADJ:applicable	ADJ 99
 multitud	NOUN:multitude; crowd	NOUN 100
 moda	NOUN:fashion; fad; (statistics) mode	NOUN 100
-Laguna	???	NOUN 98
+Laguna	NOUN:lagoon	NOUN 98
 reciben	VERB:(verb form of: recibir: to receive, get)	VERB 100
 gravedad	NOUN:seriousness; (physics) gravity	NOUN 100
 dibujo	NOUN:drawing; tread (grooves in tire); VERB:(verb form of: dibujar: (transitive) to sketch, to draw)	NOUN 99
@@ -3887,7 +3887,7 @@ tienden	VERB:(verb form of: tender: (transitive) to spread, to stretch out)	VERB
 cambiado	ADJ:changed; VERB:(verb form of: cambiar: to change, to modify.)	VERB 94
 vicepresidente	NOUN:vice president	NOUN 97
 divisas	VERB:(verb form of: divisar: to perceive)	NOUN 98
-Libertador	???	NOUN 98
+Libertador	ADJ:liberating; that which liberates or frees.; NOUN:liberator	NOUN 98
 fragmentos	NOUN:(plural of: fragmento: fragment)	NOUN 99
 Robert	???	NOUN 100
 concretos	ADJ:(masculine plural of: concreto: concrete); NOUN:(plural of: concreto: (Latin America) concrete)	ADJ 99
@@ -3933,7 +3933,7 @@ dará	VERB:(verb form of: dar: (transitive) to give)	VERB 100
 ordenó	VERB:(verb form of: ordenar: to order)	VERB 100
 constantes	???	ADJ/NOUN 82/18
 fría	ADJ:(feminine of: frío: cold)	ADJ/NOUN 65/34
-Fax	???	NOUN 98
+Fax	NOUN:fax	NOUN 98
 jugar	VERB:to play	VERB 100
 Zaragoza	???	NOUN 100
 D.F.	???	NOUN 87
@@ -4025,7 +4025,7 @@ leyenda	NOUN:legend, saga, traditional story; life of a saint; legend, idol (fam
 trae	VERB:(verb form of: traer: to bring)	VERB 99
 hiciera	VERB:(verb form of: hacer: do, make)	VERB 100
 imposibilidad	NOUN:impossibility	NOUN 100
-Gobernación	???	NOUN 100
+Gobernación	NOUN:government, governance	NOUN 100
 che	NOUN:(obsolete) Name of the letter ch.; NOUN:(colloquial, Chile) Argentinian person	NOUN/ADJ 69/24
 proponer	VERB:to propose	VERB 100
 conservador	ADJ:conservative; NOUN:conserver	ADJ/NOUN 76/24
@@ -4121,7 +4121,7 @@ privilegios	NOUN:(plural of: privilegio: privilege)</text>	NOUN 100
 cayó	VERB:(verb form of: caer: to fall)	VERB 100
 desigualdad	NOUN:inequality	NOUN 100
 dejaba	VERB:(verb form of: dejar: (transitive) to leave)	VERB 100
-Confederación	???	NOUN 100
+Confederación	NOUN:confederation, confederacy.	NOUN 100
 integran	VERB:(verb form of: integrar: to make up)	VERB 100
 campañas	NOUN:(plural of: campaña: campaign)</text>	NOUN 100
 arzobispo	NOUN:archbishop	NOUN 97
@@ -4144,7 +4144,7 @@ intervenir	VERB:to intervene	VERB 100
 enviado	NOUN:delegate, envoy, emissary; VERB:(verb form of: enviar: to send.)	VERB/ADJ/NOUN 52/33/14
 é	???	NOUN/NUM/ADJ 55/22/11
 sintió	VERB:(verb form of: sentir: (transitive) to feel)	VERB 100
-Protocolo	???	NOUN 99
+Protocolo	NOUN:protocol; conduct or etiquette rules	NOUN 99
 verdaderos	ADJ:(masculine plural of: verdadero: true, real)	ADJ/NOUN 76/24
 Adolfo	???	NOUN 100
 prioridad	NOUN:priority; (road transport) right of way	NOUN 100
@@ -4176,8 +4176,8 @@ disminuir	VERB:to decrease	VERB 100
 desconocido	ADJ:unknown; NOUN:unknown; NOUN:stranger (unknown person); VERB:(verb form of: desconocer: to not be familiar with)	ADJ/NOUN 82/15
 combatir	VERB:to combat or fight	VERB 100
 Sergio	???	NOUN 100
-Mercedes	???	NOUN 95
-Metropolitana	???	NOUN/ADJ 64/36
+Mercedes	NOUN:(plural of: merced: mercy)	NOUN 95
+Metropolitana	ADJ:metropolitan	NOUN/ADJ 64/36
 inglesa	NOUN:Englishwoman; ADJ:(feminine of: inglés: English)	ADJ/NOUN 87/13
 coyuntura	NOUN:situation	NOUN 99
 perfecta	ADJ:(feminine of: perfecto: perfect)	ADJ 98
@@ -4190,7 +4190,7 @@ perfecto	ADJ:perfect	ADJ/NOUN 85/14
 ai	???	NOUN/ADJ 53/33
 cátedra	???	NOUN 100
 claves	VERB:(verb form of: clavar: to nail)	ADJ/NOUN 86/14
-Peña	???	NOUN 99
+Peña	NOUN:A rock, stone, cliff or outcropping.; A group of regulars, circle of friends.; (Chile) a left wing cultural center featuring music, dance, education, and activism	NOUN 99
 playa	NOUN:beach	NOUN 100
 síntomas	NOUN:(plural of: síntoma: symptom.)	NOUN 100
 sindicales	ADJ:(form of: plural, sindical: ???)</text>	ADJ 100
@@ -4232,7 +4232,7 @@ certeza	NOUN:certainty	NOUN 100
 cerrado	ADJ:shut, closed.; VERB:(verb form of: cerrar: to close)	ADJ/VERB 78/18
 citar	VERB:to cite; to summon	VERB 100
 conversaciones	NOUN:(plural of: conversación: conversation)	NOUN 100
-Majestad	???	NOUN 98
+Majestad	NOUN:majesty	NOUN 98
 logros	NOUN:(plural of: logro: attainment, success)</text>	NOUN 100
 definitivo	ADJ:definitive; conclusive	ADJ 99
 dispuestos	ADJ:(masculine plural of: dispuesto: willing, ready)	ADJ 99
@@ -4249,7 +4249,7 @@ pobladores	NOUN:(plural of: poblador: settler, colonist)</text>	NOUN 99
 millón	NOUN:million (10&lt;sup&gt;6&lt;/sup&gt;)	NOUN 99
 solar	NOUN:house (of a family), noble lineage; (Cuba) tenement house; ground, land; VERB:to pave.; to sole a shoe; ADJ:solar	ADJ/NOUN 54/44
 temática	NOUN:subject, topic	NOUN/ADJ 71/29
-Delgado	???	NOUN/ADJ 74/24
+Delgado	ADJ:thin, skinny	NOUN/ADJ 74/24
 movilidad	NOUN:mobility	NOUN 100
 cerebro	NOUN:(anatomy) brain; nerd	NOUN 98
 K.	???	NOUN 96
@@ -4272,7 +4272,7 @@ brillante	ADJ:bright, brilliant, lustrous; excellent	ADJ 99
 cristianismo	NOUN:Christianity; baptism	NOUN 100
 contó	VERB:(verb form of: contar: to count)	VERB 100
 construido	ADJ:constructed.; VERB:(verb form of: construir: to build)	ADJ/VERB 52/47
-Marta	???	NOUN 100
+Marta	NOUN:marten	NOUN 100
 diría	VERB:(verb form of: decir: to say)	VERB 100
 estudiado	ADJ:studied, learned; VERB:(verb form of: estudiar: to study.)	VERB/ADJ 66/33
 habíamos	VERB:(verb form of: haber: (auxiliary verb taking past participle to build perfect tense) to have)	VERB 100
@@ -4295,7 +4295,7 @@ permanentes	???	ADJ 94
 escolares	ADJ:(form of: plural, escolar: ???)</text>	ADJ/NOUN 74/26
 protagonistas	NOUN:(plural of: protagonista: protagonist, star)	NOUN 96
 matriz	NOUN:matrix; womb, uterus	NOUN/ADJ 86/14
-Foro	???	NOUN 99
+Foro	NOUN:forum	NOUN 99
 provoca	VERB:(verb form of: provocar: to cause or provoke)	VERB 99
 nobleza	NOUN:nobility	NOUN 100
 plantear	VERB:to suggest	VERB 100
@@ -4330,7 +4330,7 @@ alemanes	ADJ:(plural of: alemán: German (relating to Germany or to the German l
 versiones	NOUN:(plural of: versión: version); VERB:(verb form of: versionar: ???)	NOUN 97
 tributaria	???	ADJ/NOUN 77/23
 provinciales	NOUN:(plural of: provincial: ???)	ADJ/NOUN 74/26
-Toro	???	NOUN 99
+Toro	NOUN:bull; NOUN:(geometry, architecture) torus	NOUN 99
 inmigración	NOUN:immigration	NOUN 100
 puramente	???	ADV 96
 nulidad	???	NOUN 100
@@ -4471,14 +4471,14 @@ imperialismo	NOUN:imperialism	NOUN 99
 desgracia	NOUN:accident, disaster; misfortune; disgrace; bad luck; VERB:(verb form of: desgraciar: ???)	NOUN 98
 Elena	???	NOUN 100
 filósofo	NOUN:philosopher	NOUN 98
-Navarro	???	NOUN 94
+Navarro	ADJ:Navarrese; NOUN:Navarrese	NOUN 94
 muros	NOUN:(plural of: muro: wall)	NOUN 99
 matar	VERB:to put out; to kill; to butcher; to dull; to round off; to ruin	VERB 99
 utilizada	VERB:(verb form of: utilizar: (transitive) to use)	ADJ/VERB 68/32
 supervivencia	NOUN:survival	NOUN 100
 teatral	ADJ:theatrical	ADJ 95
 agropecuario	ADJ:Of or relating to agriculture and cattle raising.	ADJ/NOUN 69/31
-Margarita	???	NOUN 99
+Margarita	NOUN:daisy; margarita (cocktail)	NOUN 99
 mediano	ADJ:medium; average; mediocre	NOUN/ADJ 62/35
 preocupaciones	NOUN:(plural of: preocupación: worry)	NOUN 100
 hijas	NOUN:(plural of: hija: daughter)	NOUN 96
@@ -4488,7 +4488,7 @@ nacionalista	NOUN:nationalist; ADJ:nationalist	ADJ/NOUN 79/21
 apunta	VERB:(verb form of: apuntar: to point, to aim)	VERB 100
 probabilidad	NOUN:probability; likelihood; chance	NOUN 100
 Ud.	???	NOUN 96
-Bravo	???	NOUN 90
+Bravo	ADJ:angry, furious; bold, courageous; good, excellent; agitated (sea)	NOUN 90
 lecturas	NOUN:(plural of: lectura: reading)	NOUN 100
 hábitos	NOUN:(plural of: hábito: habit (of a monk))	NOUN 99
 tradicionalmente	ADV:traditionally	ADV 97
@@ -4574,7 +4574,7 @@ adquirido	VERB:(verb form of: adquirir: (transitive) to acquire)	VERB/ADJ 72/28
 mitos	???	NOUN 99
 normales	ADJ:(plural of: normal: normal, standard, regular)	ADJ 92
 metal	NOUN:metal	NOUN 100
-Alba	???	NOUN 98
+Alba	ADJ:(feminine of: albo: ???); NOUN:dawn	NOUN 98
 integrar	VERB:to make up; compose	VERB 100
 préstamo	NOUN:loan	NOUN 97
 desarrollan	VERB:(verb form of: desarrollar: (transitive, and, reflexive) to develop); (uds.) (verb form of: desarrollar: (transitive, and, reflexive) to develop)	VERB 100
@@ -4619,7 +4619,7 @@ alimento	NOUN:food; nourishment; (in the plural) alimony, maintenance; VERB:(ver
 canciones	NOUN:(plural of: canción: song)	NOUN 100
 aceptado	VERB:(verb form of: aceptar: to accept)	VERB/ADJ 67/30
 conducir	VERB:to drive; to conduct	VERB 100
-Magdalena	???	NOUN 100
+Magdalena	NOUN:madeleine (cake); cupcake	NOUN 100
 fieles	ADJ:(form of: plural, fiel: ???)	NOUN/ADJ 87/13
 venían	VERB:(verb form of: venir: to come)	VERB 100
 dans	???	NOUN/VERB/ADJ 38/36/26
@@ -4667,7 +4667,7 @@ cardenal	NOUN:(religion) cardinal; NOUN:bruise	NOUN 95
 continental	ADJ:continental	ADJ/NOUN 78/22
 intervenciones	NOUN:(plural of: intervención: intervention)</text>	NOUN 100
 direcciones	NOUN:(plural of: dirección: address)	NOUN 100
-Bahía	???	NOUN 100
+Bahía	NOUN:bay (geographical feature)	NOUN 100
 surgimiento	NOUN:emergence, rise	NOUN 100
 compras	VERB:(verb form of: comprar: to buy)	NOUN 99
 fortaleza	NOUN:fortitude; strength; firmness; fortress	NOUN 100
@@ -4715,7 +4715,7 @@ Research	???	NOUN/ADJ 80/20
 siguieron	VERB:(verb form of: seguir: to follow)	VERB 100
 Velasco	???	NOUN 100
 sometido	ADJ:submissive, subordinate; VERB:(verb form of: someter: to subdue, to quell, to conquer)	ADJ/VERB 61/38
-Golfo	???	NOUN 100
+Golfo	NOUN:gulf; ADJ:dishonest; nasty; promiscuous; NOUN:sluggard; slut	NOUN 100
 discusiones	NOUN:(plural of: discusión: argument)	NOUN 100
 correcto	ADJ:correct, right; well-behaved	ADJ/NOUN 89/11
 juzgar	VERB:(transitive) to judge; (transitive) to try (a case); (transitive) to consider; (transitive) to pass judgment	VERB 100
@@ -4735,7 +4735,7 @@ verá	VERB:(verb form of: ver: to see)	VERB 100
 History	???	NOUN 94
 tercio	ADJ:third; VERB:(verb form of: terciar: to divide into thirds)	NOUN 99
 visual	ADJ:visual	ADJ 91
-Atlántico	???	NOUN 93
+Atlántico	ADJ:Atlantic	NOUN 93
 escaso	ADJ:rare; insufficient, scarce; scanty	ADJ 97
 tristeza	NOUN:sadness	NOUN 100
 contempla	VERB:(verb form of: contemplar: to contemplate)	VERB 100
@@ -4753,10 +4753,10 @@ implementación	NOUN:implementation	NOUN 100
 extracción	NOUN:extraction; extraction, lineage	NOUN 100
 decisivo	ADJ:decisive	ADJ 99
 chico	ADJ:small; NOUN:boy; kid	NOUN/ADJ 65/35
-Serrano	???	NOUN 95
+Serrano	ADJ:mountain, mountainous; NOUN:sea bass; (mollusc) Iberus gualterianus; serrano (serrano chili); NOUN:mountaineer	NOUN 95
 estábamos	VERB:(verb form of: estar: To be (have a (transient) location in space). Compare ser, quedar.)	VERB 100
-Charles	???	NOUN 100
-Sarmiento	???	NOUN 99
+Charles	VERB:(verb form of: charlar: to chat)	NOUN 100
+Sarmiento	VERB:(verb form of: sarmentar: ???)	NOUN 99
 dedica	VERB:(verb form of: dedicar: To dedicate)	VERB 100
 poblado	ADJ:having people, populous, populated; NOUN:settlement (village); VERB:(verb form of: poblar: to populate)	NOUN/ADJ 59/38
 accidentes	NOUN:(plural of: accidente: accident)	NOUN 99
@@ -4776,7 +4776,7 @@ sic	???	ADV/ADJ 72/19
 ecuación	NOUN:equation	NOUN 100
 pasivo	ADJ:passive; (slang, gay sexuality) bottom; NOUN:(accounting) any debt or material obligation of an enterprise or individual.	ADJ/NOUN 65/35
 mueve	VERB:(verb form of: mover: to move)	VERB 100
-Procurador	???	NOUN 98
+Procurador	NOUN:procurator, attorney, agent	NOUN 98
 monasterio	NOUN:monastery	NOUN 99
 radicales	ADJ:(plural of: radical: radical); NOUN:(plural of: radical: radical)	ADJ/NOUN 66/34
 planteado	VERB:(verb form of: plantear: to suggest)	VERB/ADJ 55/43
@@ -4804,7 +4804,7 @@ Latinoamérica	???	NOUN 100
 fundado	VERB:(verb form of: fundar: to found)	ADJ/VERB 68/28
 radica	VERB:(verb form of: radicar: to be located at/on)	ADJ/VERB 63/35
 espada	NOUN:sword; spade (playing card); (fencing) épée	NOUN 97
-Evangelio	???	NOUN 99
+Evangelio	NOUN:gospel	NOUN 99
 bonos	NOUN:(plural of: bono: bond (bank))	NOUN 99
 contener	VERB:to contain; to hold; to restrain, check; to control	VERB 100
 contabilidad	NOUN:accountancy	NOUN 100
@@ -4871,7 +4871,7 @@ escenas	NOUN:(plural of: escena: scene)	NOUN 100
 únicos	ADJ:(masculine plural of: único: unique)	NOUN/ADJ 56/44
 tablas	NOUN:tables (plural of: tabla: board, plank)	NOUN 99
 Morelos	???	NOUN 100
-Veamos	???	VERB 100
+Veamos	VERB:(verb form of: ver: to see)	VERB 100
 marcada	ADJ:(feminine of: marcado: marked, pronounced)	ADJ 99
 niega	VERB:(verb form of: negar: to deny)	VERB 99
 empeño	NOUN:insistence, effort; obligation; persistence; eagerness; pawn; (Honduras, Mexico) pawnshop; deposit, container deposit (can or bottle deposit); patron; VERB:(verb form of: empeñar: to pawn (to sell something to a pawn shop))	NOUN 98
@@ -4887,7 +4887,7 @@ temporales	ADJ:(form of: plural, temporal: ???); NOUN:(plural of: temporal: stor
 dialéctica	ADJ:(feminine of: dialéctico: dialectic</text>)</text>	NOUN/ADJ 62/37
 urgente	ADJ:urgent	ADJ/ADV 67/32
 bibliotecas	NOUN:(plural of: biblioteca: ???)	NOUN 99
-Gaceta	???	NOUN 100
+Gaceta	NOUN:gazette; newspaper; NOUN:a kind of container used in cooking	NOUN 100
 Paris	???	NOUN 100
 comprendido	VERB:(verb form of: comprender: to understand, to comprehend)	ADJ/VERB 64/34
 resuelve	VERB:(verb form of: resolver: to solve)	VERB 100
@@ -4932,7 +4932,7 @@ transcurso	NOUN:course, passing	NOUN 99
 privatización	???	NOUN 100
 enseguida	ADV:immediately	ADJ/VERB/NOUN/ADV 40/25/20/15
 leguas	NOUN:(plural of: legua: league (distance))</text>	NOUN 100
-Autónomas	???	NOUN/ADJ 61/39
+Autónomas	ADJ:(feminine plural of: autónomo: autonomous)	NOUN/ADJ 61/39
 conoció	VERB:(verb form of: conocer: to know (a person), to be familiar with.)	VERB 100
 azar	NOUN:luck, chance; misfortune, accident; obstacle, hazard; (games) losing card, losing throw; cushion side of a billiard pocket	NOUN 97
 verdes	ADJ:(form of: Plural form, verde: ???)	ADJ/NOUN 80/20
@@ -4945,7 +4945,7 @@ certificado	ADJ:certified.; NOUN:document of certification.; VERB:(verb form of:
 ajena	ADJ:(feminine of: ajeno: of others, belonging to someone else)	ADJ/VERB 82/16
 Io	???	NOUN 90
 hubiere	VERB:(verb form of: haber: (auxiliary verb taking past participle to build perfect tense) to have)	VERB 95
-Arroyo	???	NOUN 99
+Arroyo	NOUN:stream, brook, creek (whether it flows year-round or only seasonally)	NOUN 99
 oportuno	ADJ:opportune; suitable, appropriate	ADJ 97
 otorgar	VERB:to grant; to award	VERB 100
 aplicada	ADJ:(feminine of: aplicado: applied)	ADJ/VERB/NOUN 75/15/10
@@ -4958,13 +4958,13 @@ fusión	NOUN:fusion	NOUN 100
 disolución	NOUN:(chemistry) solution	NOUN 100
 grandeza	NOUN:grandeur	NOUN 100
 gobernadores	NOUN:(plural of: gobernador: governor), governors</text>	NOUN 98
-Apéndice	???	NOUN 95
+Apéndice	NOUN:appendix (text added to the end of a book); (anatomy) appendix	NOUN 95
 alcaldes	NOUN:(plural of: alcalde: mayor)	NOUN 98
 falsa	VERB:(verb form of: falsar: ???)	ADJ 96
 defensor	ADJ:defending; NOUN:defender; advocate	NOUN 93
 masiva	ADJ:(feminine of: masivo: massive)	ADJ 98
 maestra	NOUN:teacher (female).; mistress.; (master) craftswoman.	NOUN/ADJ 73/26
-Directorio	???	NOUN 99
+Directorio	NOUN:directory; directive	NOUN 99
 inteligente	ADJ:intelligent, clever; NOUN:smartphone	ADJ 100
 atribuye	VERB:(verb form of: atribuir: to assign)	VERB 100
 fotografías	VERB:(verb form of: fotografiar: to photograph, to take a photograph.)	NOUN 100
@@ -4982,7 +4982,7 @@ UE	???	NOUN/ADJ 82/14
 manuscrito	NOUN:manuscript	NOUN 98
 variantes	???	NOUN 99
 espero	VERB:(form of: first-person present singular, esperar: ???)	VERB 89
-Centenario	???	NOUN 91
+Centenario	ADJ:centenary, centennial; hundred-year-old; NOUN:centenary, centennial	NOUN 91
 señalados	???	ADJ 98
 estratégica	ADJ:(feminine of: estratégico: strategic)</text>	ADJ 92
 formada	???	ADJ 97
@@ -4996,7 +4996,7 @@ apoya	VERB:(verb form of: apoyar: to support)	VERB 100
 futuras	ADJ:(feminine plural of: futuro: future)	ADJ/NOUN/DET 71/18/11
 Medellín	???	NOUN 100
 buque	NOUN:ship, vessel	NOUN 99
-Coordinador	???	NOUN 96
+Coordinador	ADJ:coordinating; NOUN:coordinator	NOUN 96
 cercana	ADJ:(feminine of: cercano: near, nearby, close)	ADJ 99
 data	NOUN:date (point of time at which a transaction or event takes place); VERB:(verb form of: datar: to date, to assign a date to.)	VERB/NOUN 84/16
 estrecho	ADJ:narrow; tight; (of a relative) close, kin; (of a relationship) close, intimate, strong; NOUN:strait; VERB:(verb form of: estrechar: to narrow (make narrower))	ADJ/NOUN 53/46
@@ -5034,7 +5034,7 @@ res	NOUN:head of quadrupedal cattle or game; (Latin America) bovine animal; beef
 geográfico	ADJ:geographic	ADJ/NOUN 84/16
 progresiva	ADJ:(feminine of: progresivo: progressive)	ADJ 98
 preliminar	ADJ:preliminary	ADJ/NOUN 86/13
-Renacimiento	???	NOUN 99
+Renacimiento	NOUN:revival	NOUN 99
 salen	VERB:(verb form of: salir: to go out); VERB:(verb form of: salar: to salt); (uds.) (verb form of: salar: to salt)	VERB 100
 diablo	NOUN:devil	NOUN 98
 gama	NOUN:range; (female) fallow deer	NOUN 100
@@ -5081,7 +5081,7 @@ deporte	NOUN:sport; VERB:(verb form of: deportar: to deport)	NOUN 95
 blancas	ADJ: (feminine plural of: blanco: white)	ADJ 94
 opuesto	ADJ:opposed; opposite; contrary; VERB:(verb form of: oponer: (transitive) to pit (one thing against another))	ADJ/VERB 75/16
 ponía	VERB:(verb form of: poner: (transitive, reflexive, or, non-reflexive) to put)	VERB 100
-Palacios	???	NOUN 99
+Palacios	NOUN:(plural of: palacio: ???)	NOUN 99
 descrito	VERB:(verb form of: describir: to describe)	ADJ/VERB 50/47
 reflejan	VERB:(verb form of: reflejar: to reflect); (uds.) (verb form of: reflejar: to reflect)	VERB 100
 ordinaria	ADJ:(feminine of: ordinario: ordinary)	ADJ/NOUN 86/14
@@ -5098,13 +5098,13 @@ imaginario	ADJ:imaginary	ADJ/NOUN 51/49
 Joseph	???	NOUN 99
 mostrado	VERB:(verb form of: mostrar: (transitive) to show)	VERB 90
 llegue	VERB:(verb form of: llegar: to arrive, get (to))	VERB 100
-Armando	???	NOUN 93
+Armando	VERB:(verb form of: armar: to arm (supply with weapons))	NOUN 93
 sabio	ADJ:learned; prudent; wise; NOUN:learned person; wise person	ADJ/NOUN 53/47
 pendientes	ADJ:(form of: plural, pendiente: ???); NOUN:(plural of: pendiente: pendant (hanging piece of jewllery))	ADJ/NOUN 78/22
 muchachos	NOUN:(plural of: muchacho: boy)	NOUN 96
 vapor	NOUN:steam, vapor (water vapor)	NOUN 100
 partidas	ADJ:(feminine plural of: partido: broken)	NOUN 98
-Bautista	???	NOUN 98
+Bautista	NOUN:baptist (person who baptizes)	NOUN 98
 coste	NOUN:cost	NOUN 97
 vivimos	VERB:(verb form of: vivir: (intransitive) To live)	VERB 100
 ventanas	NOUN:(plural of: ventana: window)	NOUN 100
@@ -5113,7 +5113,7 @@ inicios	NOUN:(plural of: inicio: start, initiation)	NOUN 100
 ganancia	NOUN:profit; gain; earnings	NOUN 99
 avión	NOUN:aeroplane, airplane, plane; NOUN:martin, swallow	NOUN 100
 aliados	ADJ:(masculine plural of: aliado: allied)	NOUN 90
-Caro	???	NOUN/ADV/ADJ 61/26/13
+Caro	ADJ:dear; expensive; ADV:costly	NOUN/ADV/ADJ 61/26/13
 republicana	ADJ:(feminine of: republicano: republican)	ADJ/NOUN 74/26
 Murcia	???	NOUN 100
 tejidos	NOUN:(plural of: tejido: fabric)	NOUN 98
@@ -5160,7 +5160,7 @@ pastoral	ADJ:pastoral; NOUN:pastoral	ADJ/NOUN 52/48
 cadenas	NOUN:(plural of: cadena: chain)	NOUN 100
 cooperativa	NOUN:cooperative; ADJ:(feminine of: cooperativo: cooperative.)	NOUN/ADJ 80/20
 its	???	NOUN/ADJ 68/32
-Pilar	???	NOUN 99
+Pilar	NOUN:pillar, pier; (rugby) The player who is next to the hooker in a scrum.; VERB:to pound	NOUN 99
 gramática	ADJ:(feminine of: gramático: grammatical); NOUN:grammar (rules for speaking and writing a language)	NOUN/ADJ 89/11
 pensión	NOUN:guesthouse; pension	NOUN 100
 peligros	NOUN:(plural of: peligro: peril, danger)	NOUN 100
@@ -5188,9 +5188,9 @@ riquezas	NOUN:(plural of: riqueza: wealth)	NOUN 100
 infinito	ADJ:infinite; boundless, unlimited, unbounded, immeasurable; endless, countless; NOUN:infinity	ADJ/NOUN 62/38
 armados	ADJ:(masculine plural of: armado: armed); VERB:(verb form of: armar: to arm (supply with weapons))	ADJ/NOUN 89/10
 sorprendente	ADJ:surprising	ADJ 100
-Lucas	???	NOUN 97
+Lucas	NOUN:(plural of: luca: ???)	NOUN 97
 afirmó	VERB:(verb form of: afirmar: to state, assert)	VERB 100
-Huerta	???	NOUN 99
+Huerta	NOUN:garden, vegetable garden; orchard, cultivated land	NOUN 99
 fuimos	VERB:(verb form of: ir: to go); (verb form of: ser: to be (essentially or identified as).)	VERB 99
 implantación	NOUN:implantation (the action or the result of implanting.)	NOUN 100
 breves	???	ADJ 98
@@ -5209,7 +5209,7 @@ comités	NOUN:(plural of: comité: ???)	NOUN 100
 Méndez	???	NOUN 100
 Oh	???	X/NOUN 79/16
 corrección	NOUN:correction; correctness	NOUN 100
-Inca	???	NOUN/ADJ 85/14
+Inca	NOUN:Inca	NOUN/ADJ 85/14
 coloca	VERB:(verb form of: colocar: to place)	VERB 99
 sienten	VERB:(verb form of: sentar: to seat); VERB:(verb form of: sentir: (transitive) to feel)	VERB 100
 adecuadamente	ADV:adequately	ADV 100
@@ -5225,7 +5225,7 @@ claros	ADJ:(masculine plural of: claro: light, bright)	ADJ/NOUN 89/10
 identifica	VERB:(verb form of: identificar: to identify)	VERB 98
 incapaz	ADJ:incapable, unable	ADJ 89
 trajo	VERB:(verb form of: traer: to bring)	VERB 99
-Liga	???	NOUN 100
+Liga	NOUN:(politics, general) league; band; suspender (UK), garter (US); (metallurgy) alloy, mixture; mistletoe; elastic band; VERB:(verb form of: ligar: To flirt)	NOUN 100
 pluma	NOUN:feather; pen (for writing)	NOUN 99
 consigue	VERB:(verb form of: conseguir: to achieve)	VERB 100
 fantasía	NOUN:fantasy; costume jewellery	NOUN 100
@@ -5253,12 +5253,12 @@ consideradas	VERB:(verb form of: considerar: to consider)	ADJ/VERB 54/45
 chilenos	ADJ:(masculine plural of: chileno: Chilean); NOUN:(plural of: chileno: Chilean)	ADJ/NOUN 52/48
 reunir	VERB:to gather, to bring together, assemble, collect, get together; to join, unite; to reunite	VERB 100
 físicos	ADJ:(masculine plural of: físico: physical); NOUN:(plural of: físico: physique (natural constitution, or physical structure, of a person))	ADJ/NOUN 78/22
-Inquisición	???	NOUN 100
+Inquisición	NOUN:inquiry, investigation; Inquisition	NOUN 100
 mejoras	NOUN:(plural of: mejora: improvement, amelioration); VERB:(verb form of: mejorar: to make better)	NOUN 99
 nombrar	VERB:to name	VERB 99
 ordena	VERB:(verb form of: ordenar: to order)	VERB 98
 nacer	VERB:to be born	VERB 97
-Concejo	???	NOUN 100
+Concejo	NOUN:council	NOUN 100
 considerablemente	ADV:considerably	ADV 100
 eterna	ADJ:(feminine of: eterno: eternal)	ADJ 95
 incumplimiento	???	NOUN 99
@@ -5272,7 +5272,7 @@ amado	???	NOUN/ADJ/VERB 55/31/15
 caballeros	NOUN:(plural of: caballero: gentleman)	NOUN 99
 cientos	NOUN:(plural of: ciento: hundred; one hundred); hundreds	PRON 100
 sed	NOUN:thirst; VERB:(verb form of: ser: to be (essentially or identified as).)	NOUN 100
-Arqueología	???	NOUN 100
+Arqueología	NOUN:archaeology	NOUN 100
 dibujos	NOUN:(plural of: dibujo: drawing)	NOUN 99
 viuda	NOUN:widow 	NOUN/ADJ 76/23
 emociones	NOUN:(plural of: emoción: emotion); VERB:(verb form of: emocionar: to touch or move emotionally)	NOUN 100
@@ -5281,7 +5281,7 @@ aceptó	VERB:(verb form of: aceptar: to accept)	VERB 100
 Mercosur	???	NOUN 99
 dependientes	ADJ:(form of: plural, dependiente: ???); NOUN:(plural of: dependiente: employee that attends to customers)</text>	ADJ/NOUN 78/19
 ausente	ADJ:absent; VERB:(verb form of: ausentar: ???)	ADJ 86
-Legislatura	???	NOUN 98
+Legislatura	NOUN:legislature	NOUN 98
 caído	ADJ:fallen.; VERB:(verb form of: caer: to fall)	VERB/ADJ 76/19
 registra	VERB:(verb form of: registrar: to register, to record.)	VERB 100
 peces	NOUN:(plural of: pez: pitch, tar)	NOUN 99
@@ -5339,7 +5339,7 @@ concertación	NOUN:agreement, compromise	NOUN 100
 enfoques	VERB:(verb form of: enfocar: to focus)	NOUN 99
 flexibilidad	NOUN:flexibility	NOUN 100
 aprobó	VERB:(verb form of: aprobar: to approve)	VERB 100
-Rubio	???	NOUN/ADJ 81/19
+Rubio	ADJ:blond; NOUN:a blond (or blonde) person; gurnard (fish)	NOUN/ADJ 81/19
 juega	VERB:(verb form of: jugar: to play)	VERB 99
 buscaba	VERB:(verb form of: buscar: To seek, to search for, to look for.)	VERB 100
 emocional	ADJ:emotional	ADJ 97
@@ -5390,7 +5390,7 @@ milagro	NOUN:miracle	NOUN 100
 madurez	NOUN:maturity	NOUN 100
 altar	NOUN:altar; Stone that separates the firebox from the hearth in reverberatory furnaces	NOUN 99
 estadounidenses	ADJ:(form of: plural, estadounidense: ???)	ADJ/NOUN 65/35
-Concilio	???	NOUN 98
+Concilio	VERB:(verb form of: conciliar: to conciliate, to make calm); NOUN:an assembly or coterie that deals in something and its bylaws, especially a religious body	NOUN 98
 alza	NOUN:rise; VERB:(verb form of: alzar: (transitive) to lift, raise)	NOUN 100
 generan	VERB:(verb form of: generar: To create); (uds.) (verb form of: generar: To create)	VERB 100
 Julián	???	NOUN 99
@@ -5406,7 +5406,7 @@ concede	VERB:(verb form of: conceder: to grant, to concede, to admit, to bestow)
 ilustre	ADJ:illustrious; VERB:(verb form of: ilustrar: to illustrate)	ADJ/NOUN 72/27
 secundario	ADJ:secondary	ADJ 90
 status	???	NOUN 100
-Mancha	???	NOUN 94
+Mancha	NOUN:spot; stain; blemish; VERB:(verb form of: manchar: (transitive) to spot, stain, mark)	NOUN 94
 estricto	ADJ:strict	ADJ/NOUN 86/14
 cambió	VERB:(verb form of: cambiar: to change, to modify.)	VERB 100
 bajar	VERB:to go down; to descend; to download	VERB 100
@@ -5423,10 +5423,10 @@ apellido	NOUN:surname; VERB:(verb form of: apellidar: ???)	NOUN 99
 cariño	NOUN:affection; caress; (used in the second person) dear, darling, honey	NOUN 100
 legítimo	ADJ:legitimate; real, true	ADJ 94
 indudablemente	ADV:indubitably, undoubtedly	ADV 99
-Allende	???	NOUN 87
+Allende	ADV:beyond	NOUN 87
 socialmente	ADV:socially.	ADV 100
 abandonado	ADJ:abandoned; dirty; VERB:(verb form of: abandonar: to abandon)	VERB/ADJ 60/36
-Pardo	???	NOUN/ADJ 87/12
+Pardo	ADJ:Having the color brown.; (of weather) dull, overcast; (of a voice) gruff, hoarse; NOUN:(poetic, literary) leopard	NOUN/ADJ 87/12
 quedarse	VERB:	VERB 100
 escapar	VERB:to escape	VERB 100
 elevación	NOUN:elevation; lifting, raising	NOUN 100
@@ -5461,7 +5461,7 @@ acusado	ADJ:accused; VERB:(verb form of: acusar: to accuse, to charge, to indict
 inestabilidad	NOUN:instability	NOUN 100
 Cabrera	???	NOUN 100
 State	???	NOUN/ADJ 89/11
-Prado	???	NOUN 99
+Prado	NOUN:meadow	NOUN 99
 trece	thirteen	DET/NOUN 70/22
 detención	NOUN:arrest; detention; stopping, halt	NOUN 100
 fuesen	VERB:(verb form of: ir: to go); (verb form of: ser: to be (essentially or identified as).)	VERB 100
@@ -5489,7 +5489,7 @@ pagado	ADJ:paid; VERB:(verb form of: pagar: to pay)	VERB/ADJ 47/47
 subir	VERB:to go up or come up; to raise; to climb; (computing) to upload	VERB 100
 receptor	ADJ:receiving; NOUN:receiver, receptor, recipient	NOUN/ADJ 77/23
 comenta	VERB:(verb form of: comentar: to comment (make a comment))	VERB 99
-Salta	???	NOUN/VERB/ADJ 67/22/11
+Salta	VERB:(verb form of: saltar: to jump)	NOUN/VERB/ADJ 67/22/11
 favorecer	VERB:to suit; to prefer; to favor / favour	VERB 100
 formó	VERB:(verb form of: formar: to form)	VERB 100
 secretos	NOUN:(plural of: secreto: a secret)	NOUN/ADJ 61/39
@@ -5500,7 +5500,7 @@ reloj	NOUN:clock; watch, wristwatch	NOUN 100
 participaron	VERB:(verb form of: participar: to take part, to participate); (uds.) (verb form of: participar: to take part, to participate)	VERB 99
 señalando	VERB:(verb form of: señalar: to signal)	VERB 100
 significaba	VERB:(verb form of: significar: to signify)	VERB 100
-Apuntes	???	NOUN 99
+Apuntes	VERB:(verb form of: apuntar: to point, to aim)	NOUN 99
 negociar	VERB:to negotiate	VERB 100
 financiar	VERB:to finance	VERB 99
 determinan	VERB:(verb form of: determinar: to determine); (uds.) (verb form of: determinar: to determine)	VERB 100
@@ -5546,7 +5546,7 @@ británico	ADJ:British (from or native to Britain, in both the historical and mo
 participó	VERB:(verb form of: participar: to take part, to participate)	VERB 100
 prioridades	NOUN:(plural of: prioridad: priority)	NOUN 100
 usando	VERB:(verb form of: usar: (transitive) To use)	VERB 99
-Florida	???	NOUN 94
+Florida	ADJ:feminine of florido	NOUN 94
 experimentado	VERB:(past participle of: experimentar)	VERB/ADJ 66/30
 referidos	VERB:(verb form of: referir: to report)	ADJ 93
 levantamiento	NOUN:lifting, raising; uprising	NOUN 99
@@ -5559,7 +5559,7 @@ solos	ADJ:(masculine plural of: solo: sole, only, unique, single)	ADJ/ADV/NOUN/V
 entrado	VERB:(verb form of: entrar: to enter, to go into, to start)	VERB/ADJ 83/17
 chicos	NOUN:(plural of: chico: boy)	NOUN 100
 primo	NOUN:cousin; ADJ:first; (mathematics) prime; NOUN:(mathematics) prime number&lt;!--citation above contain a nominal use too--&gt;; VERB:(verb form of: primar: to predominate)	NOUN 92
-NUMERO	???	NOUN 96
+NUMERO	VERB:(verb form of: numerar: to number)	NOUN 96
 quiebra	NOUN:crack; bankruptcy; ravine; VERB:(verb form of: quebrar: (transitive) to break)	NOUN/VERB 89/11
 estratos	NOUN:(plural of: estrato: layer)</text>	NOUN 99
 explicó	VERB:(verb form of: explicar: to explain)	VERB 100
@@ -5639,7 +5639,7 @@ policial	ADJ:Related to the police.; NOUN:police officer; whodunit	ADJ 92
 fauna	NOUN:fauna	NOUN 99
 institutos	NOUN:(plural of: instituto: ???)	NOUN 99
 tecnológicos	ADJ:(masculine plural of: tecnológico: technological)</text>	ADJ 96
-Mateo	???	NOUN 100
+Mateo	ADJ:(colloquial, Chile) geeky; NOUN:(colloquial, Chile) swot, geek, nerd; VERB:(verb form of: matear: ???)	NOUN 100
 gestiones	NOUN:(plural of: gestión: process); VERB:(verb form of: gestionar: to prosecute)	NOUN 100
 quinientos	???	NOUN/DET/ADJ 63/23/14
 simpatía	NOUN:sympathy	NOUN 100
@@ -5661,7 +5661,7 @@ abusos	NOUN:(plural of: abuso: abuse)	NOUN 99
 dramática	ADJ:(feminine of: dramático: dramatic)	ADJ 98
 temporada	NOUN:season, period, span of time.	NOUN 100
 estrechamente	ADV:narrowly; tightly	ADV 100
-Municipalidad	???	NOUN 100
+Municipalidad	NOUN:municipality	NOUN 100
 sufrió	VERB:(verb form of: sufrir: to suffer)	VERB 100
 suministro	VERB:(verb form of: suministrar: to provide); NOUN:provision, supply	NOUN 99
 regresó	VERB:(verb form of: regresar: to return)	VERB 100
@@ -5670,7 +5670,7 @@ controversia	NOUN:controversy	NOUN 99
 funda	NOUN:(Dominican Republic, slang) small bag; wrapping; VERB:(verb form of: fundar: to found); (verb form of: fundir: to smelt)	VERB/NOUN 82/15
 cristal	NOUN:crystal; glass, glassware	NOUN 93
 abundantes	ADJ:(form of: plural, abundante: ???); a great many	ADJ 99
-Madero	???	NOUN 100
+Madero	NOUN:a piece of wood; (Spain, derogatory) police officer, compare pig; (Spain, derogatory) a clumsy person	NOUN 100
 decisiva	ADJ:(feminine of: decisivo: decisive)	ADJ 90
 extinción	NOUN:extinction	NOUN 100
 oscura	ADJ:(feminine of: oscuro: dark)	ADJ 98
@@ -5680,8 +5680,8 @@ Col.	???	NOUN 90
 barreras	???	NOUN 100
 espaldas	NOUN:(plural of: espalda: back)	NOUN 98
 inmueble	NOUN:property, estate, building	NOUN/ADJ 71/29
-Indice	???	NOUN 96
-Prieto	???	NOUN 97
+Indice	VERB:(verb form of: indizar: ???)	NOUN 96
+Prieto	ADJ:	NOUN 97
 ordenar	VERB:to order; to sort; to enjoin	VERB 99
 márgenes	NOUN:(plural of: margen: margin, edge)	NOUN 100
 Ibidem	???	NOUN 95
@@ -5698,7 +5698,7 @@ premios	NOUN:(plural of: premio: prize)	NOUN 97
 demuestran	VERB:(verb form of: demostrar: to show, to demonstrate)	VERB 100
 disco	NOUN:club, discotheque; NOUN:disc; phonograph record or disc; rotary dial; (sports) discus; VERB:(verb form of: discar: ???)	NOUN 97
 elevados	VERB:(verb form of: elevar: to elevate)	ADJ 98
-Castellanos	???	NOUN/ADJ 81/19
+Castellanos	ADJ:(masculine plural of: castellano: Castilian)	NOUN/ADJ 81/19
 utilizadas	VERB:(verb form of: utilizar: (transitive) to use)	ADJ/VERB 72/27
 mundiales	ADJ:(form of: plural, mundial: ???)	ADJ 92
 amplias	ADJ:(feminine plural of: amplio: large, spacious)	ADJ 100
@@ -5795,7 +5795,7 @@ Carranza	???	NOUN 100
 formato	NOUN:format	NOUN 94
 anunció	VERB:(verb form of: anunciar: to announce)	VERB 100
 jueves	NOUN:Thursday	NUM 100
-Almirante	???	NOUN 93
+Almirante	NOUN:admiral	NOUN 93
 dinamismo	???	NOUN 100
 servidores	NOUN:(plural of: servidor: server)	NOUN 99
 alturas	NOUN:(plural of: altura: height)	NOUN 98
@@ -5844,7 +5844,7 @@ explícita	ADJ:(feminine of: explícito: explicit)	ADJ 96
 deficiencias	NOUN:(plural of: deficiencia: deficiency)</text>	NOUN 99
 censos	NOUN:(plural of: censo: census)	NOUN 97
 avanzado	ADJ:advanced; VERB:(verb form of: avanzar: to advance)	ADJ/VERB 51/44
-Honorable	???	NOUN/ADJ 64/36
+Honorable	ADJ:honorable	NOUN/ADJ 64/36
 caracterizado	VERB:(verb form of: caracterizar: to characterize.); ADJ:characterized	ADJ/VERB 53/47
 varón	NOUN:person of male sex	NOUN 92
 cuero	NOUN:leather; animal skin, hide; (Dominican Republic, slang) prostitute	NOUN 99
@@ -5907,7 +5907,7 @@ trabajado	VERB:(verb form of: trabajar: to work, labour)	VERB/ADJ 83/15
 confesión	NOUN:confession	NOUN 100
 caracterizan	VERB:(verb form of: caracterizar: to characterize.)	VERB 100
 quedará	VERB:(verb form of: quedar: (intransitive) to be)	VERB 100
-Carrillo	???	NOUN 100
+Carrillo	NOUN:(anatomy) cheek, jowl	NOUN 100
 dispersión	NOUN:dispersion	NOUN 100
 formalmente	ADV:formally	ADV 99
 manteniendo	VERB:(verb form of: mantener: To maintain)	VERB 100
@@ -5997,7 +5997,7 @@ parejas	ADJ:(feminine plural of: parejo: level); NOUN:(plural of: pareja: couple
 quejas	VERB:(verb form of: quejar: (reflexive) to complain)	NOUN 99
 SEÑOR	???	NOUN 100
 echar	VERB:to throw; to pour; to let out; to dump; to emit; to kick out	VERB 100
-Machado	???	NOUN 100
+Machado	VERB:(verb form of: machar: ???)	NOUN 100
 comunicado	NOUN:communiqué; VERB:(verb form of: comunicar: communicate)	NOUN/VERB 68/32
 acusación	NOUN:accusation	NOUN 100
 mensuales	ADJ:(form of: plural, mensual: ???)	ADJ 93
@@ -6030,22 +6030,22 @@ miraba	VERB:(verb form of: mirar: (transitive) to look at (something))	VERB 100
 múltiple	ADJ:multiple.	ADJ/NOUN 82/17
 repente	NOUN:attack, upsurge; sudden movement	NOUN 99
 anda	VERB:(verb form of: andar: to walk, to go)	VERB/NOUN 85/14
-Sor	???	NOUN/ADJ 84/15
+Sor	NOUN:(religion) sister	NOUN/ADJ 84/15
 tributos	???	NOUN 100
 arrendamiento	???	NOUN 100
 burocracia	NOUN:(politics) bureaucracy	NOUN 100
 humilde	ADJ:humble	ADJ 97
 huevos	NOUN:(plural of: huevo: egg); (slang, idiomatic, vulgar) guts, balls (courage, bravery)	NOUN 100
 fundar	VERB:to found	VERB 100
-Recordemos	???	VERB 97
+Recordemos	VERB:(verb form of: recordar: to remember)	VERB 97
 aspiración	NOUN:aspiration, suction	NOUN 100
 recopilación	NOUN:accumulation; compendium	NOUN 100
 disminuye	VERB:(verb form of: disminuir: to decrease)	VERB 100
-Nieto	???	NOUN 98
+Nieto	NOUN:grandchild; grandson	NOUN 98
 Octavio	???	NOUN 92
 solucionar	VERB:to solve; to implement a solution	VERB 100
 penales	ADJ:(form of: plural, penal: ???)	ADJ/NOUN 71/29
-Colorado	???	NOUN/ADJ 85/15
+Colorado	ADJ:coloured; red; VERB:(verb form of: colorar: ???)	NOUN/ADJ 85/15
 captar	VERB:to capture, perceive, register, understand	VERB 100
 complejas	ADJ:(feminine plural of: complejo: complex)</text>	ADJ 99
 judío	ADJ:Jewish; NOUN:Jew; Jewish person	ADJ/NOUN 60/39
@@ -6210,7 +6210,7 @@ Samuel	???	NOUN 100
 apropiación	???	NOUN 100
 gustaría	VERB:(verb form of: gustar: (intransitive) to like)	VERB 100
 Gral.	???	NOUN 98
-Lagos	???	NOUN 99
+Lagos	NOUN:(plural of: lago: lake)	NOUN 99
 afrontar	VERB:to confront; to defy; to face	VERB 100
 observan	VERB:(verb form of: observar: to observe); (uds.) (verb form of: observar: to observe)	VERB 100
 time	VERB:(verb form of: timar: ???)	NOUN/ADJ 75/23
@@ -6227,7 +6227,7 @@ carro	NOUN:A cart; (Latin America) An automobile; (Latin America) A train car; (
 eclesiástica	ADJ:(feminine of: eclesiástico: ecclesiastic)	ADJ/NOUN 86/14
 vinieron	VERB:(verb form of: venir: to come)	VERB 100
 incorpora	VERB:(verb form of: incorporar: to incorporate)	VERB 100
-Sanidad	???	NOUN 100
+Sanidad	NOUN:health	NOUN 100
 entendida	???	ADJ/VERB 66/33
 recorrer	VERB:to tour; to travel	VERB 100
 comando	NOUN:commando; VERB:(verb form of: comandar: to lead)	NOUN 94
@@ -6273,7 +6273,7 @@ venganza	NOUN:vengeance	NOUN 99
 rituales	ADJ:(form of: plural, ritual: ???); NOUN:(plural of: ritual: rite)	NOUN/ADJ 73/27
 divide	VERB:(verb form of: dividir: to divide)	VERB 99
 directora	NOUN:head (headmistress); (female) director	NOUN 91
-pacífica	ADJ:(feminine of: pacífico: ???)	ADJ 95
+pacífica	ADJ:(feminine of: pacífico: Pacific; Pacific Ocean)	ADJ 95
 aguda	ADJ:(feminine of: agudo: sharp); (In Spanish orthography: of a word) whose stress is on the last syllable: oxytone	ADJ 98
 viajar	VERB:to travel, to journey	VERB 100
 agradable	ADJ:agreeable, pleasant	ADJ 100
@@ -6317,7 +6317,7 @@ intentado	VERB:(verb form of: intentar: to try)	VERB 92
 JOSE	???	NOUN 98
 heridas	NOUN:(plural of: herida: wound)	NOUN 93
 ecología	NOUN:ecology (branch of biology)	NOUN 100
-Espinosa	???	NOUN 94
+Espinosa	ADJ:(feminine of: espinoso: spiny, thorny)	NOUN 94
 periodos	NOUN:(plural of: periodo: period)	NOUN 97
 indispensables	???	ADJ 100
 estándar	ADJ:standard; NOUN:standard	ADJ/NOUN/VERB 54/35/11
@@ -6380,7 +6380,7 @@ varía	VERB:(verb form of: variar: to alter, vary, change.); (verb form of: vari
 contenidas	VERB:(verb form of: contener: to contain)	ADJ 100
 bronce	NOUN:bronze	NOUN 100
 parlamentario	ADJ:parliamentary; NOUN:parliamentarian (member of a parliament)	ADJ/NOUN 68/32
-Zapata	???	NOUN 100
+Zapata	NOUN:(automotive) brake shoe; washer	NOUN 100
 manifestado	VERB:(verb form of: manifestar: to manifest, reveal, display, show)	VERB/ADJ 79/20
 decimos	VERB:(verb form of: decir: to say)	VERB 100
 escalera	NOUN:stairs; ladder; (poker) straight	NOUN 98
@@ -6454,7 +6454,7 @@ poseía	VERB:(verb form of: poseer: to possess, to own, to hold, to have)	VERB 9
 magistrado	NOUN:judge	NOUN 95
 directivo	ADJ:directing, executive, director (attributive) (related to the managing of a department or company); NOUN:director, executive	NOUN/ADJ 63/36
 roles	???	NOUN 98
-Lucía	???	NOUN/VERB 83/15
+Lucía	VERB:(verb form of: lucir: to shine)	NOUN/VERB 83/15
 tuvimos	VERB:(verb form of: tener: (transitive) To have, possess an object.)	VERB 100
 Inés	???	NOUN 100
 Unamuno	???	NOUN 100
@@ -6519,7 +6519,7 @@ informado	ADJ:informed; VERB:(verb form of: informar: (transitive) to inform)	AD
 secreta	VERB:(verb form of: secretar: to secrete)	ADJ 94
 extender	VERB:to extend	VERB 100
 amanecer	NOUN:dawn; VERB:(intransitive, impersonal) to dawn; to awake; (reflexive) to waken; (reflexive, Latin America) to stay awake all night; to wake up	NOUN 97
-Arenas	???	NOUN 98
+Arenas	NOUN:(plural of: arena: sand, gravel)	NOUN 98
 pais	???	NOUN 99
 minorías	NOUN:(plural of: minoría: minority (subgroup that does not form a numerical majority))	NOUN 100
 llave	NOUN:key; spanner, wrench; valve, faucet; curly bracket	NOUN 94
@@ -6580,7 +6580,7 @@ refiero	VERB:(verb form of: referir: to report)	VERB 100
 semejanza	NOUN:similarity	NOUN 94
 permitieron	VERB:(verb form of: permitir: to allow, to permit); (uds.) (verb form of: permitir: to allow, to permit)	VERB 100
 dictador	NOUN:A dictator	NOUN 96
-Monseñor	???	NOUN 97
+Monseñor	NOUN:Monsignor	NOUN 97
 sp	???	ADJ/NOUN 62/36
 comparten	VERB:(verb form of: compartir: to share); (uds.) (verb form of: compartir: to share)	VERB 100
 registrados	???	ADJ 93
@@ -6636,7 +6636,7 @@ yacimientos	NOUN:(plural of: yacimiento: deposit)</text>	NOUN 99
 miras	VERB:(verb form of: mirar: (transitive) to look at (something))	NOUN 91
 nacionalistas	NOUN:(plural of: nacionalista: nationalist); ADJ:(form of: plural, nacionalista: ???)	ADJ/NOUN 52/48
 vocabulario	NOUN:vocabulary	NOUN 99
-Vil	???	ADJ/NOUN 76/24
+Vil	ADJ:mean	ADJ/NOUN 76/24
 británica	ADJ:(feminine of: británico: British (from or native to Britain, in both the historical and modern senses)); NOUN:(feminine of: británico: A Briton)	ADJ/NOUN 78/22
 orillas	VERB:(verb form of: orillar: ???)	NOUN 97
 aparecieron	VERB:(verb form of: aparecer: to appear)	VERB 100
@@ -6714,7 +6714,7 @@ creciendo	VERB:(verb form of: crecer: to grow)	VERB 100
 realice	VERB:(verb form of: realizar: to carry out)	VERB 99
 detectar	VERB:to detect	VERB 100
 ofensiva	ADJ:(feminine of: ofensivo: offensive)	NOUN/ADJ 86/14
-Anuario	???	NOUN 100
+Anuario	NOUN:yearbook	NOUN 100
 hidrocarburos	NOUN:(plural of: hidrocarburo: (organic chemistry) hydrocarbon)</text>	NOUN 99
 opone	VERB:(verb form of: oponer: (transitive) to pit (one thing against another))	VERB 100
 referimos	VERB:(verb form of: referir: to report)	VERB 100
@@ -6737,7 +6737,7 @@ pidiendo	VERB:(verb form of: pedir: to ask for something)	VERB 100
 hicimos	VERB:(verb form of: hacer: do, make)	VERB 100
 competentes	ADJ:(form of: plural, competente: ???)	ADJ/NOUN 89/10
 Tel	???	NOUN/VERB 83/15
-Festival	???	NOUN 98
+Festival	NOUN:festival	NOUN 98
 explícitamente	ADV:explicitly, specifically, expressly	ADV 100
 limpia	ADJ:(feminine of: limpio: clean); NOUN:a cleansing, a cleaning; VERB:(verb form of: limpiar: to clean.)	ADJ/NOUN 79/15
 dominios	NOUN:(plural of: dominio: rule, dominion)</text>	NOUN 99
@@ -6745,8 +6745,8 @@ periferia	NOUN:periphery	NOUN 97
 villas	???	NOUN 98
 botella	NOUN:bottle	NOUN 99
 obtienen	VERB:(verb form of: obtener: to obtain)	VERB 100
-Pascual	???	NOUN/ADJ 89/10
-Regimiento	???	NOUN 99
+Pascual	ADJ:paschal	NOUN/ADJ 89/10
+Regimiento	NOUN:regiment	NOUN 99
 saca	NOUN:removal, extraction; exportation; certified or notarized copy of a document; large sack, bag; VERB:(verb form of: sacar: (transitive) to put out)	VERB 91
 evidentes	ADJ:(form of: plural, evidente: ???)	ADJ 100
 acercarse	VERB:(reflexive) to get close, to approach	VERB 100
@@ -6787,7 +6787,7 @@ merecen	VERB:(verb form of: merecer: to deserve)	VERB 100
 emitir	VERB:to issue; to emit	VERB 100
 SIDA	NOUN:(form of: abbreviation of, síndrome de inmunodeficiencia adquirida: ???) (AIDS)	NOUN 95
 excesivo	ADJ:excessive	ADJ 100
-Humanidades	???	NOUN 99
+Humanidades	NOUN:(plural of: humanidad: humanity)</text>	NOUN 99
 reconstruir	VERB:to reconstruct	VERB 100
 ocupados	ADJ:(masculine plural of: ocupado: busy); VERB:(verb form of: ocupar: to occupy)	ADJ 92
 Je	???	NOUN/ADJ 71/20
@@ -6843,7 +6843,7 @@ piloto	NOUN:pilot; driver (racing); VERB:(verb form of: pilotar: ???)	NOUN/ADJ 7
 señalada	???	ADJ 91
 rebelde	ADJ:rebellious; rebel; NOUN:rebel	ADJ/NOUN 62/36
 dispuesta	ADJ:(feminine of: dispuesto: willing, ready)	ADJ 99
-Robles	???	NOUN 99
+Robles	NOUN:(plural of: roble: oak)	NOUN 99
 previos	ADJ:(masculine plural of: previo: previous)	ADJ 98
 alcances	VERB:(verb form of: alcanzar: (transitive) to reach)	NOUN 100
 autoriza	VERB:(verb form of: autorizar: to authorize)	VERB 98
@@ -6878,7 +6878,7 @@ consecuentemente	ADV:consequently	ADV/ADJ 76/14
 deseado	ADJ:wanted, wished, desired; VERB:(verb form of: desear: to wish)	ADJ/VERB 62/29
 grabado	ADJ:recorded; NOUN:An engraving; VERB:(past participle of: grabar)	NOUN/ADJ 47/44
 crucial	ADJ:crucial	ADJ 99
-Chaco	???	NOUN 99
+Chaco	NOUN:(Paraguay) farm	NOUN 99
 colectividad	???	NOUN 100
 linda	ADJ:pretty, (feminine of: lindo: pretty); VERB:(verb form of: lindar: ???)	ADJ/NOUN 67/31
 descripciones	NOUN:(plural of: descripción: description)</text>	NOUN 100
@@ -6886,7 +6886,7 @@ ideológicos	ADJ:(masculine plural of: ideológico: ideological)	ADJ 98
 planteó	VERB:(verb form of: plantear: to suggest)	VERB 100
 griega	ADJ:(feminine of: griego: Greek, Grecian (from or native to Greece)); NOUN:(feminine of: griego: a Greek)	ADJ 90
 atacar	VERB:to attack	VERB 100
-Canarias	???	NOUN 100
+Canarias	ADJ:(feminine plural of: canario: of, from or related to the Canary Islands); NOUN:(feminine plural of: canario: person from the Canary Islands)	NOUN 100
 tribus	NOUN:(plural of: tribu: tribe)	NOUN 100
 llamas	NOUN:(plural of: llama: flame); VERB:(verb form of: llamar: to summon)	NOUN 89
 habitaciones	NOUN:(plural of: habitación: room)	NOUN 99
@@ -6917,7 +6917,7 @@ perteneciente	ADJ:belonging to	ADJ 99
 ronda	NOUN:round; VERB:(verb form of: rondar: to patrol)	NOUN 90
 dominar	VERB:to dominate	VERB 100
 Sao	???	NOUN 96
-Escobar	???	NOUN 100
+Escobar	VERB:sweep (clean by sweeping)	NOUN 100
 agrarias	ADJ:(feminine plural of: agrario: agricultural)	ADJ/NOUN 82/18
 contestar	VERB:to rejoin or reply; to answer, reply; to answer back	VERB 100
 more	VERB:(verb form of: morar: to reside)	NOUN/ADJ 73/26
@@ -6958,8 +6958,8 @@ solicitado	VERB:(verb form of: solicitar: to request)	VERB/ADJ 57/42
 basados	VERB:(verb form of: basar: to base)	ADJ 98
 mágico	ADJ:magic, magical; wonderful	ADJ 97
 formaban	VERB:(verb form of: formar: to form); (uds.) (verb form of: formar: to form)	VERB 100
-Semanario	???	NOUN 98
-Calvo	???	NOUN 96
+Semanario	ADJ:(rare) weekly; NOUN:weekly (newspaper or periodical issued every week); (Nicaragua) allowance (money given to a child)	NOUN 98
+Calvo	ADJ:bald; NOUN:a bald man.	NOUN 96
 conservadora	ADJ:(feminine of: conservador: conservative); NOUN:(feminine of: conservador: conserver)	ADJ 94
 invitados	ADJ:(masculine plural of: invitado: invited.); NOUN:(plural of: invitado: guest.)	NOUN/ADJ 87/10
 sanitaria	ADJ:(feminine of: sanitario: sanitary); NOUN:(feminine of: sanitario: sanitary worker)	ADJ/NOUN 81/19
@@ -6975,7 +6975,7 @@ solas	ADJ:(feminine plural of: sola: (feminine of: solo: sole, only, unique, sin
 creadora	NOUN:(feminine of: creador: creator)	ADJ/NOUN 89/11
 cortar	VERB:to cut; to carve, to engrave; to hang up, to terminate a telephone call; (Chile, informal) to stop an action; (Chile) to shut off; to haircut; to finish a relationship	VERB 99
 obtenida	VERB:(verb form of: obtener: to obtain)	ADJ/VERB 83/15
-Véanse	???	VERB/NOUN 73/27
+Véanse	VERB:Plural pasive reflexive imperative form of ver. (impersonal imperative)	VERB/NOUN 73/27
 legisladores	???	NOUN 94
 novedades	NOUN:(plural of: novedad: novelty); new events	NOUN 100
 patriotismo	NOUN:patriotism	NOUN 100
@@ -6997,10 +6997,10 @@ latino	ADJ:of or related to Lazio, Italy; of or related to the Latin language; o
 pareciera	VERB:(verb form of: parecer: to seem)	VERB 96
 refiriéndose	???	VERB 98
 sometida	ADJ:(feminine of: sometido: submissive, subordinate)	ADJ/VERB 74/26
-TV	???	NOUN 99
+TV	NOUN:television TV	NOUN 99
 neoliberal	???	ADJ 95
 habituales	ADJ:(form of: plural, habitual: ???)	ADJ 99
-Corea	???	NOUN 99
+Corea	VERB:(verb form of: corear: ???)	NOUN 99
 donación	NOUN:donation	NOUN 100
 insuficiencia	NOUN:deficiency	NOUN 100
 facilidades	NOUN:(plural of: facilidad: ease)</text>	NOUN 100
@@ -7041,7 +7041,7 @@ conducto	NOUN:duct; pipeline	NOUN 99
 barba	NOUN:beard; chin	NOUN 99
 suscripción	subscription	NOUN 100
 inocente	ADJ:innocent; NOUN:innocent person	ADJ/NOUN 87/12
-Concha	???	NOUN 97
+Concha	NOUN:seashell; shell (mollusk); (vulgar, Latin American Spanish) cunt	NOUN 97
 contestación	NOUN:An answer, reply; A dispute; A legal plea	NOUN 100
 aprueba	VERB:(verb form of: aprobar: to approve)	VERB 99
 atento	ADJ:attentive; polite, courteous; thoughtful; VERB:(verb form of: atentar: to commit a violent or criminal attack, to strike)	ADJ 91
@@ -7100,7 +7100,7 @@ ofrecido	ADJ:easy (A person who readily consents to sexual activity); VERB:(verb
 cláusulas	NOUN:(plural of: cláusula: clause)</text>	NOUN 99
 insistencia	NOUN:insistence	NOUN 100
 subrayar	VERB:to underline, underscore; to emphasize, stress	VERB 100
-Mercurio	???	NOUN 100
+Mercurio	NOUN:mercury	NOUN 100
 ocurría	VERB:(verb form of: ocurrir: to happen, to occur)	VERB 100
 romanticismo	???	NOUN 100
 certificados	ADJ:(masculine plural of: certificado: certified.); NOUN:(plural of: certificado: document of certification.)	NOUN 95
@@ -7108,7 +7108,7 @@ sano	ADJ:healthy, sound; earnest; pure; whole, unbroken, sound; VERB:(verb form 
 anos	NOUN:(plural of: ano: anus)	NOUN 88
 huir	VERB:to escape; to avoid; to flee, to run away	VERB 99
 transparente	ADJ:transparent; VERB:(verb form of: transparentar: to make transparent)	ADJ 98
-Correa	???	NOUN 99
+Correa	NOUN:belt	NOUN 99
 credibilidad	NOUN:credibility	NOUN 100
 cumplió	VERB:(verb form of: cumplir: to fulfil / fulfill)	VERB 100
 psicológica	ADJ:(feminine of: psicológico: psychological)	ADJ 96
@@ -7119,14 +7119,14 @@ músculos	NOUN:(plural of: músculo: (uncountable) muscle tissue)	NOUN 100
 pierden	VERB:(verb form of: perder: to lose)	VERB 100
 neta	???	ADJ/NOUN 89/11
 ecológico	ADJ:ecological	ADJ 93
-Demócrata	???	NOUN/ADJ 64/35
+Demócrata	NOUN:democrat	NOUN/ADJ 64/35
 repercusiones	NOUN:(plural of: repercusión: repercussion)</text>	NOUN 100
 prescripción	NOUN:prescription	NOUN 100
 Claudio	???	NOUN 100
 esperado	ADJ:expected; VERB:(verb form of: esperar: to hope to (with subjunctive verb form))	ADJ/VERB/NOUN 63/26/11
-Garza	???	NOUN 99
+Garza	NOUN:heron	NOUN 99
 diligencias	NOUN:(plural of: diligencia: diligence)</text>	NOUN 99
-Parra	???	NOUN 99
+Parra	NOUN:grapevine (the plant on which grapes grow)	NOUN 99
 retraso	NOUN:delay; VERB:(verb form of: retrasar: to delay)	NOUN 99
 maravilloso	ADJ:wonderful, marvelous	ADJ 99
 pp.	???	ADV/NUM 78/14
@@ -7153,7 +7153,7 @@ desnudo	ADJ:naked, nude, undressed; bare; dispossessed, destitute; plain, clear,
 inc	???	NOUN/ADJ 56/42
 marinos	ADJ:(masculine plural of: marino: marine, nautical)	ADJ/NOUN 55/45
 crudo	ADJ:raw (uncooked); undercooked, rare, underdone; NOUN:crude oil; dish made of raw meat or fish	NOUN/ADJ 73/25
-EDICTO	???	NOUN 100
+EDICTO	NOUN:edict	NOUN 100
 industrializados	???	ADJ 99
 imperativo	ADJ:imperative; NOUN:(grammar) imperative	NOUN/ADJ 55/45
 vertiente	NOUN:slope	NOUN 97
@@ -7187,7 +7187,7 @@ materna	???	ADJ 93
 llenos	ADJ:(masculine plural of: lleno: full)	ADJ 98
 centroamericana	???	ADJ/NOUN 55/45
 especialista	NOUN:specialist; stuntman; ADJ:specialist	NOUN 92
-Aurora	???	NOUN 99
+Aurora	NOUN:aurora	NOUN 99
 complementarias	ADJ:(feminine plural of: complementario: complementary)	ADJ 92
 racial	ADJ:racial	ADJ 94
 voluntarios	ADJ:(masculine plural of: voluntario: voluntary); NOUN:(plural of: voluntario: volunteer)	NOUN/ADJ 75/25
@@ -7213,7 +7213,7 @@ basura	NOUN:trash, waste, garbage, rubbish, nonsense; something trashy or undesi
 alimentaria	ADJ:(feminine of: alimentario: alimentary)	ADJ/NOUN 89/11
 eternidad	NOUN:eternity	NOUN 100
 rompe	VERB:(verb form of: romper: to break)	VERB 99
-Filipinas	???	NOUN 99
+Filipinas	ADJ:(feminine plural of: filipino: Filipino); NOUN:(feminine plural of: filipino: Filipino (person) )</text>	NOUN 99
 aranceles	NOUN:(plural of: arancel: tariff)	NOUN 99
 im	???	NOUN/ADJ 52/43
 demográfico	ADJ:demographic	ADJ 96
@@ -7226,14 +7226,14 @@ trazado	VERB:(verb form of: trazar: (transitive) to trace)	NOUN/VERB/ADJ 61/23/1
 encomienda	NOUN:parcel; order; VERB:(verb form of: encomendar:  to entrust.)	NOUN/VERB 71/26
 gallo	NOUN:rooster; John Dory (Zeus faber, a kind of fish); (boxing) bantamweight (boxing class); NOUN:(Chile, colloquial) guy, dude	NOUN 99
 inversa	ADJ:(feminine of: inverso: inverted, reverse)	NOUN/ADJ 63/36
-Pino	???	NOUN 100
+Pino	NOUN:pine	NOUN 100
 azules	ADJ:(form of: plural, azul: ???)	ADJ/NOUN 78/22
 dedicadas	VERB:(verb form of: dedicar: To dedicate)	ADJ 99
 firmó	VERB:(verb form of: firmar: to sign)	VERB 100
 sana	ADJ:(feminine of: sano: healthy, sound); VERB:(verb form of: sanar: to cure)	ADJ 97
 magisterio	???	NOUN 100
 dieciocho	eighteen	DET/NOUN 61/21
-Cuevas	???	NOUN 99
+Cuevas	NOUN:(plural of: cueva: cave)	NOUN 99
 terminación	NOUN:termination	NOUN 100
 predominante	???	ADJ 95
 cronología	NOUN:chronology	NOUN 95
@@ -7244,7 +7244,7 @@ vende	VERB:(verb form of: vender: (transitive) to sell); VERB:(verb form of: ven
 contienda	NOUN:fight, dispute; VERB:(verb form of: contender: to contend)	NOUN 97
 matemática	NOUN:(feminine of: matemático: A male mathematician.); a female mathematician; mathematics; ADJ:(feminine of: matemático: mathematical (relating to mathematics).)	NOUN/ADJ 51/49
 Uribe	???	NOUN 100
-Pampa	???	NOUN 97
+Pampa	NOUN:pampa	NOUN 97
 cumpliendo	VERB:(verb form of: cumplir: to fulfil / fulfill)	VERB 99
 beso	NOUN:kiss; VERB:(verb form of: besar: to kiss)	NOUN 96
 silvestre	ADJ:wild; uncultivated; rustic	ADJ/NOUN 52/48
@@ -7278,9 +7278,9 @@ adopta	VERB:(verb form of: adoptar: (transitive) to adopt)	VERB 100
 participado	VERB:(verb form of: participar: to take part, to participate)	VERB 95
 difundir	VERB:to spread, to disseminate (ideas, etc.)	VERB 100
 orgánico	ADJ:organic	ADJ 100
-Editora	???	NOUN 99
+Editora	NOUN:(female) editor; publisher (company)	NOUN 99
 aislado	ADJ:isolated; VERB:(verb form of: aislar: to isolate, to separate, to quarantine)	ADJ 94
-Benjamín	???	NOUN 100
+Benjamín	NOUN:baby (lastborn of a family)	NOUN 100
 regalo	NOUN:present, gift; VERB:(verb form of: regalar: To give, to hand over)	NOUN 95
 plato	NOUN:plate, dish	NOUN 99
 imitación	NOUN:imitation	NOUN 100
@@ -7313,7 +7313,7 @@ permitiría	VERB:(verb form of: permitir: to allow, to permit)	VERB 100
 sendero	NOUN:trail; path	NOUN 100
 burgués	ADJ:bourgeois; NOUN:bourgeois	ADJ/NOUN 81/19
 comentó	VERB:(verb form of: comentar: to comment (make a comment))	VERB 100
-Cordero	???	NOUN 97
+Cordero	NOUN:lamb	NOUN 97
 atraviesa	VERB:(verb form of: atravesar: to cross, to traverse)	VERB 99
 Patricia	???	NOUN 97
 consejeros	NOUN:(plural of: consejero: adviser)</text>	NOUN 95
@@ -7387,11 +7387,11 @@ podremos	VERB:(verb form of: poder: to be able, can)	VERB 100
 violento	ADJ:violent; VERB:(verb form of: violentar: to break open)	ADJ 96
 extraer	VERB:to extract; to take out 	VERB 100
 miércoles	NOUN:Wednesday	NUM 89
-Librería	???	NOUN 98
+Librería	NOUN:bookshop, bookstore	NOUN 98
 catolicismo	NOUN:Catholicism	NOUN 100
 nicaragüense	ADJ:Nicaraguan; NOUN:Nicaraguan	ADJ/NOUN 67/29
 únicas	ADJ:(feminine plural of: único: unique)	ADJ/NOUN 86/14
-Llanos	???	NOUN 92
+Llanos	ADJ:(masculine plural of: llano: even); NOUN:(plural of: llano: a plain (an open, grassy, mostly treeless land))	NOUN 92
 cinta	NOUN:ribbon, worn by girls in the hair; tape	NOUN 97
 eventualmente	ADV:possibly, potentially	ADV 99
 elevadas	VERB:(verb form of: elevar: to elevate)	ADJ 100
@@ -7414,7 +7414,7 @@ mística	ADJ:(feminine of: místico: mystical); NOUN:(female) mystic	ADJ 91
 élites	???	NOUN 98
 Rúbrica	???	NOUN 98
 exámenes	NOUN:(plural of: examen: exam, examination)	NOUN 100
-Infante	???	NOUN 93
+Infante	NOUN:infant; foot soldier, infantryman	NOUN 93
 romántico	ADJ:romantic	ADJ 95
 parezca	VERB:(verb form of: parecer: to seem)	VERB 99
 corregidor	ADJ:correcting, correctional; NOUN:magistrate, reeve (judicial officer with limited authority to administer and enforce the law)	NOUN 95
@@ -7424,7 +7424,7 @@ excesos	NOUN:(plural of: exceso: excess)	NOUN 98
 cónsul	NOUN:consul	NOUN 98
 concebido	VERB:(verb form of: concebir: (transitive) to conceive, imagine)	ADJ/VERB 54/45
 tiranía	NOUN:tyranny	NOUN 99
-Ponente	???	NOUN/ADV 71/19
+Ponente	NOUN:A speaker at a meeting, or congress; A proposer of a motion.	NOUN/ADV 71/19
 combustibles	NOUN:(plural of: combustible: fuel)	NOUN 96
 rodillas	NOUN:(plural of: rodilla: knee)	NOUN 100
 reposo	NOUN:rest; VERB:(verb form of: reposar: to repose)	NOUN/ADJ 81/19
@@ -7533,10 +7533,10 @@ Norteamérica	North America	NOUN 100
 distante	ADJ:distant (space or time)	ADJ 100
 pasaban	VERB:(verb form of: pasar: to pass); (uds.) (verb form of: pasar: to pass)	VERB 100
 vasto	ADJ:vast	ADJ/NOUN 61/38
-Gallegos	???	NOUN/ADJ 84/16
+Gallegos	ADJ:(masculine plural of: gallego: Galician); NOUN:(plural of: gallego: Galician)	NOUN/ADJ 84/16
 comprendidos	???	ADJ 92
 agradecimiento	NOUN:gratitude; thanksgiving	NOUN 99
-sutiL	???	ADJ 99
+sutiL	ADJ:subtle	ADJ 99
 variados	ADJ:(masculine plural of: variado: diverse)	ADJ 100
 origina	VERB:(verb form of: originar: to originate)	VERB 96
 xvm	???	ADJ/NOUN 75/23
@@ -7653,7 +7653,7 @@ anónimo	ADJ:anonymous; NOUN:An anonymous document or letter.	ADJ/NOUN 76/24
 transacción	NOUN:transaction	NOUN 100
 estatua	NOUN:statue	NOUN 100
 caen	VERB:(verb form of: caer: to fall)	VERB 96
-Lozano	???	NOUN 99
+Lozano	ADJ:fresh or lush.	NOUN 99
 someter	VERB:to subdue, to quell, to conquer; to subject to; to subordinate, to put under the control of; to submit, to put forward (an opinion)	VERB 100
 atribución	NOUN:attribution	NOUN 100
 constituían	VERB:(verb form of: constituir: to constitute)	VERB 100
@@ -7678,12 +7678,12 @@ estancamiento	NOUN:stagnation; blockage; deadlock	NOUN 100
 pour	???	NOUN/VERB/ADJ 56/31/13
 existan	VERB:(verb form of: existir: to exist); (uds.) (verb form of: existir: to exist)	VERB 100
 dedican	VERB:(verb form of: dedicar: To dedicate)	VERB 100
-Palmas	???	NOUN 100
+Palmas	VERB:(verb form of: palmar: ???)	NOUN 100
 actuando	VERB:(verb form of: actuar: to act, to perform)	VERB 100
 visibles	ADJ:(form of: plural, visible: ???)	ADJ 99
 Orozco	???	NOUN 100
 asesinado	ADJ:murdered; VERB:(verb form of: asesinar: to murder)	VERB/ADJ 68/29
-Adicionalmente	???	ADV 99
+Adicionalmente	ADV:additionally; in addition, further	ADV 99
 batallas	VERB:(verb form of: batallar: to battle)	NOUN 100
 ayudas	VERB:(verb form of: ayudar: to help)	NOUN 100
 nucleares	ADJ:(plural of: nuclear: nuclear)	ADJ/NOUN 89/11
@@ -7693,7 +7693,7 @@ intentan	VERB:(verb form of: intentar: to try)	VERB 100
 Bustamante	???	NOUN 98
 militante	???	NOUN/ADJ 54/45
 aquéllas	PRON:(feminine plural of: aquél: (demonstrative) that one (far from speaker and listener)); those ones (far from speaker and listener)	NOUN/VERB 71/21
-PUBLICO	???	NOUN/ADJ 51/48
+PUBLICO	VERB:(verb form of: publicar: to publish)	NOUN/ADJ 51/48
 impresiones	VERB:(verb form of: impresionar: to impress)	NOUN 98
 elegante	ADJ:elegant	ADJ 96
 trescientos	???	NOUN/ADJ/DET 46/28/26
@@ -7751,7 +7751,7 @@ Maracaibo	???	NOUN 100
 recibía	VERB:(verb form of: recibir: to receive, get)	VERB 99
 calcula	VERB:(verb form of: calcular: to calculate)	VERB 99
 instinto	NOUN:instinct	NOUN 99
-Hurtado	???	NOUN 97
+Hurtado	VERB:(verb form of: hurtar: to steal, purloin)	NOUN 97
 brillantes	ADJ:(form of: plural, brillante: ???)	ADJ 99
 dictó	VERB:(verb form of: dictar: to dictate)	VERB 100
 PC	???	NOUN 99
@@ -7773,7 +7773,7 @@ nes	???	NOUN 98
 intentando	VERB:(verb form of: intentar: to try)	VERB 100
 criminales	ADJ:(form of: plural, criminal: ???); NOUN:(plural of: criminal: A criminal)	ADJ/NOUN 63/37
 asignado	ADJ:assigned; allocated; VERB:(verb form of: asignar: to assign)	ADJ/VERB 59/39
-Times	???	NOUN/ADJ 89/11
+Times	VERB:(verb form of: timar: ???)	NOUN/ADJ 89/11
 rebeldía	NOUN:rebelliousness	NOUN 100
 tocado	NOUN:headdress; VERB:(verb form of: tocar: to touch)	VERB/ADJ/NOUN 69/19/12
 haberlo	VERB:<?<es-compound of|hab|er|haber|lo|mood=inf>?>	VERB 100
@@ -7815,7 +7815,7 @@ adelantado	ADJ:rash, precipitate (hasty, not careful or considered); NOUN:A gove
 legislativas	???	ADJ/NOUN 82/18
 reproducir	VERB:to reproduce.	VERB 100
 viabilidad	NOUN:viability	NOUN 100
-Ribera	???	NOUN 99
+Ribera	NOUN:bank	NOUN 99
 sabios	ADJ:(masculine plural of: sabio: learned); NOUN:(plural of: sabio: learned person)	NOUN 92
 deportes	NOUN:(plural of: deporte: sport), sports; VERB:(verb form of: deportar: to deport)	NOUN 99
 two	???	NOUN/ADJ 68/32
@@ -7823,7 +7823,7 @@ peores	ADJ:(form of: plural, peor: ???)	ADJ/NOUN 53/46
 ONG	???	NOUN 100
 contados	???	ADJ 99
 reclamar	VERB:to re-claim, to recover possession of; to claim, to ask for, to demand; to lure (with a decoy or whistle while hunting); to look for (a criminal), to summon (a witness); to protest, to complain, to object, to clamor, to reclaim; (poetic) to resound; (nautical) to hoist taut	VERB 100
-Tesorería	???	NOUN 100
+Tesorería	NOUN:treasury; treasurership	NOUN 100
 suicidio	NOUN:suicide (the act of killing oneself)	NOUN 100
 quo	???	ADJ/NOUN 82/15
 comparado	VERB:(verb form of: comparar: to compare)	ADJ/VERB/NOUN 72/16/12
@@ -7835,7 +7835,7 @@ serpiente	NOUN:snake, serpent	NOUN 95
 integrados	VERB:(verb form of: integrar: to make up)</text>	ADJ 99
 consistencia	NOUN:consistency	NOUN 100
 primarias	ADJ:(feminine plural of: primario: first)	ADJ/NOUN 76/24
-Bárbara	???	NOUN/ADJ 82/17
+Bárbara	ADJ:(feminine of: bárbaro: barbaric.); NOUN:(feminine of: bárbaro: barbarian)	NOUN/ADJ 82/17
 nombró	VERB:(verb form of: nombrar: to name)	VERB 100
 designa	VERB:(verb form of: designar: to designate)	VERB 100
 articular	ADJ:articular; VERB:to articulate	VERB 99
@@ -7878,12 +7878,12 @@ anónima	ADJ:(feminine of: anónimo: anonymous)	ADJ/NOUN 69/31
 socialización	???	NOUN 100
 impresionante	ADJ:impressive	ADJ 100
 gallego	ADJ:Galician; NOUN:Galician; (Argentina, Uruguay, pejorative, ethnic slur) A Spanish person.	NOUN/ADJ 71/29
-Coordinadora	???	NOUN 94
+Coordinadora	ADJ:(feminine of: coordinador: ???); NOUN:(female) coordinator	NOUN 94
 estuvieran	VERB:(verb form of: estar: To be (have a (transient) location in space). Compare ser, quedar.)	VERB 100
-Diana	???	NOUN 93
+Diana	NOUN:bullseye (of an archery target); archery target; first call (military wakening call)	NOUN 93
 matrimonios	NOUN:(plural of: matrimonio: married couple.)	NOUN 99
 recreación	NOUN:recreation	NOUN 100
-Cano	???	NOUN 97
+Cano	ADJ:hoary, white-haired, grey-haired; ancient, old (for a person); (rare) white, snow-white, milky white	NOUN 97
 viable	ADJ:viable	ADJ 100
 mayorías	NOUN:(plural of: mayoría: majority)	NOUN 100
 comparte	VERB:(verb form of: compartir: to share)	VERB 100
@@ -7923,7 +7923,7 @@ Brown	???	NOUN 98
 Villegas	???	NOUN 100
 habiéndose	???	VERB 99
 iluminación	NOUN:lighting	NOUN 100
-Jacinto	???	NOUN 99
+Jacinto	NOUN:hyacinth	NOUN 99
 sistemáticamente	ADV:systematically	ADV 100
 relacionan	VERB:(verb form of: relacionar: to relate); (uds.) (verb form of: relacionar: to relate)	VERB 100
 campesinado	???	NOUN 98
@@ -8009,11 +8009,11 @@ insectos	NOUN:(plural of: insecto: insect)	NOUN 98
 sanitario	ADJ:sanitary; NOUN:sanitary worker; NOUN:toilet	ADJ 100
 unir	VERB:to unite; to merge, to conflate	VERB 98
 espectáculos	NOUN:(plural of: espectáculo: spectacle)	NOUN 100
-Fierro	???	NOUN 99
+Fierro	NOUN:(Latin America) branding iron; (colloquial, Colombia, Uruguay) firearm; (countable, Costa Rica) tool (implement); (Mexico) penny, cent; (colloquial, Uruguay) coin (money in the form of coins); (archaic, dialectal) iron (metal); (colloquial, Mexico) money (currency)	NOUN 99
 llevarse	VERB:to wear	VERB 100
-Brigada	???	NOUN 98
+Brigada	NOUN:brigade	NOUN 98
 hacerla	VERB:<?<es-compound of|hac|er|hacer|la|mood=inf>?>	VERB 100
-Amazonas	???	NOUN 99
+Amazonas	NOUN:(plural of: amazona: amazon)	NOUN 99
 pasadas	ADJ:(feminine plural of: pasado: past)	ADJ/NOUN 76/20
 adoptadas	ADJ:(feminine plural of: adoptado: adoptive); NOUN:(feminine plural of: adoptado: adoptee); VERB:(verb form of: adoptar: (transitive) to adopt)	ADJ 98
 Frank	???	NOUN 100
@@ -8039,7 +8039,7 @@ ayudan	VERB:(verb form of: ayudar: to help); (uds.) (verb form of: ayudar: to he
 vasta	ADJ:(feminine of: vasto: vast)	ADJ/NOUN 79/21
 Virginia	???	NOUN 100
 devolución	NOUN:return; refund; devolution	NOUN 100
-Mariscal	???	NOUN 97
+Mariscal	NOUN:marshal; quarterback; NOUN:seafood dish	NOUN 97
 filiación	NOUN:filiation, lineage, ancestry; personal details; affiliation	NOUN 100
 nombrados	VERB:(verb form of: nombrar: to name)	ADJ/VERB 63/34
 Porfirio	???	NOUN 99
@@ -8096,7 +8096,7 @@ proceden	VERB:(verb form of: proceder: to proceed); (uds.) (verb form of: proced
 cubiertas	ADJ:(feminine plural of: cubierto: covered.); NOUN:(plural of: cubierta: cover.)	ADJ/NOUN/VERB 60/26/14
 infantiles	ADJ:(form of: plural, infantil: ???)	ADJ 90
 Ley.	???	NOUN 99
-Procuraduría	???	NOUN 100
+Procuraduría	NOUN:procuratorship	NOUN 100
 fallecimiento	NOUN:decease	NOUN 99
 PSOE	???	NOUN 100
 acompañar	VERB:to accompany	VERB 100
@@ -8118,7 +8118,7 @@ unen	VERB:(verb form of: unir: to unite); (uds.) (verb form of: unir: to unite)	
 asilo	NOUN:shelter, refuge; asylum (political); asylum (home)	NOUN 99
 micro	NOUN:(Chile, Argentina) public bus; (Mexico) minibus	NOUN/ADJ 76/22
 comisionado	VERB:(verb form of: comisionar: to commission)	NOUN 85
-Vicario	???	NOUN 96
+Vicario	NOUN:vicar	NOUN 96
 propiciar	VERB:to propitiate	VERB 100
 practica	VERB:(verb form of: practicar: (transitive) to practice)	VERB/NOUN 62/30
 vigilar	VERB:to watch over	VERB 99
@@ -8134,7 +8134,7 @@ concedió	VERB:(verb form of: conceder: to grant, to concede, to admit, to besto
 tomamos	VERB:(verb form of: tomar: To take)	VERB 100
 continuaba	VERB:(verb form of: continuar: to continue)	VERB 100
 varas	VERB:(verb form of: varar: ???)	NOUN/ADJ 90/10
-Istmo	???	NOUN 99
+Istmo	NOUN:isthmus	NOUN 99
 arqueológico	ADJ:archeological.	ADJ/NOUN 68/32
 presunción	NOUN:presumption; conceit, presumptuousness, vanity; suspicion	NOUN 100
 delimitación	???	NOUN 100
@@ -8304,7 +8304,7 @@ registran	VERB:(verb form of: registrar: to register, to record.); (uds.) (verb 
 eds	???	NOUN 100
 humanista	???	ADJ/NOUN 75/25
 EE	???	NOUN 91
-Pío	???	NOUN 97
+Pío	ADJ:pious; VERB:(verb form of: piar: ???)	NOUN 97
 dinámicas	ADJ:(feminine plural of: dinámico: dynamic)	ADJ 90
 cantón	NOUN:canton, district; (heraldry) division of a flag or a coat of arms	NOUN 100
 barbarie	NOUN:barbarity	NOUN 100
@@ -8314,7 +8314,7 @@ supongo	VERB:(verb form of: suponer: to suppose, assume, or guess)	VERB/NOUN 73/
 magnífico	ADJ:magnificent	ADJ 91
 Susana	???	NOUN 100
 embarcaciones	???	NOUN 100
-Weber	???	NOUN 100
+Weber	NOUN:weber	NOUN 100
 fragmentación	???	NOUN 100
 aplicadas	ADJ:(feminine plural of: aplicado: applied)	ADJ 90
 encarnación	NOUN:incarnation; embodiment	NOUN 100
@@ -8338,11 +8338,11 @@ Life	???	NOUN/ADJ 86/13
 recogen	VERB:(verb form of: recoger: to collect)	VERB 100
 venden	VERB:(verb form of: vender: (transitive) to sell); VERB:(verb form of: vendar: ???); (uds.) (verb form of: vendar: ???)	VERB 100
 incapaces	ADJ:(form of: plural, incapaz: ???)</text>	ADJ/VERB 60/36
-Patricio	???	NOUN 98
+Patricio	NOUN:patrician	NOUN 98
 saldos	NOUN:(plural of: saldo: balance)	NOUN 96
 meditación	NOUN:meditation	NOUN 100
 Patronato	???	NOUN 99
-Ibérica	???	NOUN/ADJ 63/37
+Ibérica	ADJ:(feminine of: ibérico: Iberian (of Iberia).); NOUN:(feminine of: ibérico: Iberian (native of Iberia).)</text>	NOUN/ADJ 63/37
 parecida	ADJ:(feminine of: parecido: similar)	ADJ 99
 realizará	VERB:(verb form of: realizar: to carry out)	VERB 100
 René	???	NOUN 100
@@ -8366,14 +8366,14 @@ influyen	VERB:(verb form of: influir: to influence)	VERB 100
 temperaturas	NOUN:(plural of: temperatura: temperature)	NOUN 99
 entendía	VERB:(verb form of: entender: to understand)	VERB 100
 orientadas	???	ADJ 100
-Ordenanza	???	NOUN 99
+Ordenanza	NOUN:orderly; messenger; (feminine only) ordinance	NOUN 99
 cultos	ADJ:(masculine plural of: culto: educated); NOUN:(plural of: culto: cult)	NOUN 91
-Culture	???	NOUN/ADJ 86/14
+Culture	VERB:(verb form of: culturar: ???)	NOUN/ADJ 86/14
 policiales	ADJ:(form of: plural, policial: ???); NOUN:(plural of: policial: police officer)</text>	ADJ/NOUN 88/12
 obispado	NOUN:bishopric	NOUN 99
 Heidegger	???	NOUN 100
 paréntesis	NOUN:parenthesis	NOUN 99
-Lie	???	NOUN 94
+Lie	VERB:(verb form of: liar: to bind, to tie)	NOUN 94
 ofertas	VERB:(verb form of: ofertar: to offer)	NOUN 100
 creadas	VERB:(verb form of: crear: to create)	ADJ 95
 comunitarias	ADJ:(feminine plural of: comunitario: (attributive) community)	ADJ 94
@@ -8439,7 +8439,7 @@ destacó	VERB:(verb form of: destacar: to emphasize)	VERB 100
 redonda	NOUN:neighbourhood, region; pasture; ADJ:(feminine of: redondo: round.)	ADJ/NOUN 61/36
 concordancia	???	NOUN 90
 parecería	VERB:(verb form of: parecer: to seem)	VERB 98
-Ventura	???	NOUN 93
+Ventura	NOUN:fortune, chance, luck	NOUN 93
 tesorero	NOUN:treasurer	NOUN 97
 hablo	VERB:(verb form of: hablar: (intransitive) to talk)	VERB 95
 calzado	ADJ:(of religions) calced; NOUN:footgear; VERB:(verb form of: calzar: to wear/put on shoes)	NOUN 94
@@ -8521,7 +8521,7 @@ veinticuatro	???	DET/ADJ/NOUN 69/11/11
 ubicadas	ADJ:(plural of: ubicado: located, situated); VERB:(verb form of: ubicar: (transitive) to position)</text>	ADJ 99
 incluyó	VERB:(verb form of: incluir: to include, to enclose, to contain)	VERB 100
 ms	???	NOUN 91
-Jamaica	???	NOUN 99
+Jamaica	NOUN:roselle	NOUN 99
 recuerdan	VERB:(verb form of: recordar: to remember)	VERB 100
 apoyan	VERB:(verb form of: apoyar: to support); (uds.) (verb form of: apoyar: to support)	VERB 100
 comparativo	ADJ:comparative; NOUN:comparative	ADJ 92
@@ -8559,7 +8559,7 @@ parcela	VERB:(verb form of: parcelar: to parcel)	NOUN 99
 desechos	NOUN:(plural of: desecho: debris); jetsam	NOUN 98
 interviene	VERB:(verb form of: intervenir: to intervene)	VERB 100
 bordes	NOUN:(plural of: borde: border, boundary, rim); VERB:(verb form of: bordar: to embroider)	NOUN 100
-Congregación	???	NOUN 100
+Congregación	NOUN:congregation	NOUN 100
 sujeción	NOUN:subjection	NOUN 100
 envidia	NOUN:envy; VERB:(verb form of: envidiar: to envy.)	NOUN 99
 m2	???	NOUN/NUM 86/11
@@ -8600,7 +8600,7 @@ operadores	NOUN:(plural of: operador: operator)</text>	NOUN 95
 casada	NOUN:a married woman; ADJ:married (female)	ADJ 93
 titulada	ADJ:(feminine of: titulado: titled)	ADJ 98
 desenlace	NOUN:outcome	NOUN 99
-Frías	???	NOUN/ADJ 83/17
+Frías	ADJ:(feminine plural of: frío: cold); VERB:(verb form of: freír: to fry)	NOUN/ADJ 83/17
 Malvinas	???	NOUN 100
 descrita	VERB:(verb form of: describir: to describe)	ADJ/VERB 74/20
 prolongada	ADJ:(feminine of: prolongado: prolonged); VERB:(verb form of: prolongar: to prolong, drag out.)	ADJ 99
@@ -8731,7 +8731,7 @@ violentos	ADJ:(masculine plural of: violento: violent)	ADJ/NOUN 86/14
 sugerir	VERB:to suggest	VERB 100
 situar	VERB:to situate, to place, to put; to invest money	VERB 100
 sencillez	NOUN:simplicity	NOUN 100
-Consulado	???	NOUN 99
+Consulado	NOUN:consulate	NOUN 99
 verla	VERB:<?<es-compound of|v|er|ver|la|mood=inf>?></text>	VERB 99
 interpreta	VERB:(verb form of: interpretar: to interpret, to explain, to decipher)	VERB 95
 sinceridad	NOUN:honesty, sincerity	NOUN 100
@@ -8741,7 +8741,7 @@ pelota	NOUN:ball; teacher's pet; brown noser	NOUN 100
 cañones	NOUN:(plural of: cañón: canyon)	NOUN 100
 intermedia	???	ADJ/NOUN 87/12
 éramos	VERB:(verb form of: ser: to be (essentially or identified as).)	VERB 91
-Roque	???	NOUN 99
+Roque	NOUN:(chess) rook	NOUN 99
 corría	VERB:(verb form of: correr: to run.)	VERB 99
 analítica	ADJ:(feminine of: analítico: analytic); NOUN:analytics	ADJ/NOUN 85/15
 tigre	NOUN:tiger	NOUN 96
@@ -8763,7 +8763,7 @@ carencias	NOUN:(plural of: carencia: lack, shortage)</text>	NOUN 100
 ocio	NOUN:leisure, recreation, spare time; diversion	NOUN 98
 chicas	NOUN:(plural of: chica: (feminine of: chico: boy), girl)	NOUN/ADJ 90/10
 asigna	VERB:(verb form of: asignar: to assign)	VERB 99
-Arce	???	NOUN 100
+Arce	NOUN:A maple tree.; NOUN:(dated) shoulder (of a road)	NOUN 100
 desequilibrios	NOUN:(plural of: desequilibrio: imbalance)</text>	NOUN 100
 dieciséis	???	DET/NOUN 59/29
 extrañas	VERB:(verb form of: extrañar: to miss (someone))	ADJ 100
@@ -8790,7 +8790,7 @@ moralidad	NOUN:morality	NOUN 100
 olvida	VERB:(verb form of: olvidar: to forget)	VERB 100
 manto	NOUN:shroud, cloak; layer, surface, blanket, carpet	NOUN 99
 implícito	ADJ:implicit; tacit	ADJ 98
-Colegiado	???	NOUN/ADJ 64/36
+Colegiado	ADJ:qualified; professional, having gone on a professional course</text>	NOUN/ADJ 64/36
 regulaciones	NOUN:(plural of: regulación: adjustment)</text>	NOUN 100
 escalas	VERB:(verb form of: escalar: to scale)	NOUN 100
 X.	???	NOUN/ADV 69/22
@@ -8807,10 +8807,10 @@ bebida	NOUN:drink; (Chile) soda (soft drink); VERB:(past participle of: beber)	N
 tango	NOUN:tango (ballroom dance); a style of music associated with the tango dance (used to accompany and set the beat for the dance)	NOUN 97
 Ford	???	NOUN 100
 mencionan	VERB:(verb form of: mencionar: to mention); (uds.) (verb form of: mencionar: to mention)	VERB 100
-Abad	???	NOUN 99
+Abad	NOUN:abbot	NOUN 99
 Mts	???	NOUN 100
 anécdota	NOUN:anecdote	NOUN 99
-Afortunadamente	???	ADV 99
+Afortunadamente	ADV:fortunately; luckily	ADV 99
 ilustraciones	NOUN:(plural of: ilustración: ???)	NOUN 100
 Bruselas	Brussels	NOUN 98
 cuchillo	NOUN:knife; blade of knife	NOUN 99
@@ -8928,7 +8928,7 @@ criolla	???	ADJ/NOUN 86/13
 sinónimo	ADJ:synonymous; NOUN:synonym	ADJ/NOUN 87/13
 arqueológicos	ADJ:(masculine plural of: arqueológico: archeological.)	ADJ 95
 conservado	VERB:(verb form of: conservar: to conserve)	VERB/ADJ 66/34
-Ojalá	???	X/NOUN 67/23
+Ojalá	ADV:hopefully (I hope that)	X/NOUN 67/23
 nosotras	PRON:we (feminine plural)	NOUN 86
 cómputo	NOUN:calculation	NOUN 100
 foros	NOUN:(plural of: foro: ???) -- forums	NOUN 99
@@ -8950,7 +8950,7 @@ sustituido	VERB:(verb form of: sustituir: to replace)	VERB/ADJ 76/22
 cargado	ADJ:loaded.; charged.; VERB:(verb form of: cargar: (transitive) to charge.)	ADJ/VERB 86/12
 separada	ADJ:(feminine of: separado: separated)	ADJ 94
 recuento	NOUN:recount; looking back, or taking stock; VERB:(verb form of: recontar: ???)	NOUN 99
-Posada	???	NOUN 92
+Posada	NOUN:(antiquated) hotel.	NOUN 92
 vacía	ADJ:empty, (feminine of: vacío: vacant); VERB:(verb form of: vaciar: to empty.)	ADJ/VERB 72/25
 GARCÍA	???	NOUN 100
 guías	VERB:(verb form of: guiar: to guide.)	NOUN 97
@@ -9006,11 +9006,11 @@ hicieran	VERB:(verb form of: hacer: do, make)	VERB 100
 comentado	VERB:(verb form of: comentar: to comment (make a comment))	VERB/ADJ 59/38
 cívico	ADJ:civil; patriotic; domestic (of or relating to the home)	ADJ/NOUN 75/25
 dormido	ADJ:sleeping; VERB:(verb form of: dormir: to sleep)	ADJ/VERB 74/24
-Leo	???	NOUN/VERB 75/18
+Leo	VERB:(verb form of: leer: to read)	NOUN/VERB 75/18
 franja	NOUN:strip	NOUN 100
 sometidas	ADJ:(feminine plural of: sometido: submissive, subordinate)	ADJ/VERB 75/24
 incorporó	VERB:(verb form of: incorporar: to incorporate)	VERB 100
-Episcopal	???	NOUN/ADJ 52/47
+Episcopal	ADJ:episcopal	NOUN/ADJ 52/47
 proceda	VERB:(verb form of: proceder: to proceed)	VERB 100
 bancarios	ADJ:(masculine plural of: bancario: related to banks (financial institution))	ADJ/NOUN 83/17
 impidió	VERB:(verb form of: impedir: to impede, hinder)	VERB 100
@@ -9183,7 +9183,7 @@ misterios	???	NOUN 99
 parroquias	NOUN:(plural of: parroquia: parish)</text>	NOUN 100
 linea	NOUN:(misspelling of: línea); VERB:(verb form of: linear: to line)	NOUN 99
 confección	NOUN:confection; tailoring	NOUN 100
-Otero	???	NOUN 100
+Otero	NOUN:knoll	NOUN 100
 pensador	NOUN:thinker	NOUN 98
 defenderse	VERB:<?<es-compound of|defend|er|defender|se|mood=inf>?>	VERB 100
 gobiemo	???	NOUN 100
@@ -9257,7 +9257,7 @@ casilla	NOUN:pigeonhole; text box; cabin; square (of e.g. a board game)	NOUN 100
 delicada	ADJ:(feminine of: delicado: delicate)	ADJ 100
 agotado	ADJ:tired, exhausted, worn out ; out of stock, sold out; VERB:(verb form of: agotar: to exhaust, deplete, use up)	VERB/ADJ 55/36
 provocan	VERB:(verb form of: provocar: to cause or provoke)	VERB 100
-Cía	???	NOUN 95
+Cía	VERB:(verb form of: ciar: to back water)	NOUN 95
 As.	???	NOUN 96
 adorno	NOUN:adornment, ornament; VERB:(verb form of: adornar: to adorn)	NOUN 95
 Sra.	???	NOUN 98
@@ -9267,7 +9267,7 @@ departamentales	???	ADJ/NOUN 63/37
 encarga	VERB:(verb form of: encargar: (transitive) to entrust)	VERB 100
 cronistas	???	NOUN 100
 FCE	???	NOUN 100
-ETA	???	NOUN 100
+ETA	NOUN:eta; the Greek letter Η, η	NOUN 100
 only	???	NOUN/ADJ 59/39
 apoyada	VERB:(verb form of: apoyar: to support)	ADJ/VERB 84/16
 Magna	???	NOUN/ADJ 59/41
@@ -9300,7 +9300,7 @@ trasladó	VERB:(verb form of: trasladar: to move)	VERB 100
 empezando	VERB:(verb form of: empezar: to start, to begin)	VERB 100
 fueren	VERB:(verb form of: ir: to go); (verb form of: ser: to be (essentially or identified as).)	VERB 100
 constituyentes	ADJ:(form of: plural, constituyente: ???); NOUN:(plural of: constituyente: ???)</text>	NOUN/ADJ 67/33
-Sosa	???	NOUN 96
+Sosa	ADJ:(feminine of: soso: dull (nor exciting)); NOUN:sodium hydroxide, soda ash; (plant) glasswort	NOUN 96
 apuntan	VERB:(verb form of: apuntar: to point, to aim)	VERB 100
 campana	NOUN:bell; a bell-shaped (or roughly) object or component (vg, the canopy of a parachute); hood (device to suck away smokes and fumes)	NOUN 98
 mítico	ADJ:mythic, mythical	ADJ 93
@@ -9388,7 +9388,7 @@ incrementó	VERB:(verb form of: incrementar: to increment)	VERB 100
 soberana	ADJ:(feminine of: soberano: sovereign); NOUN:(feminine of: soberano: sovereign)	ADJ 90
 preguntaba	VERB:(verb form of: preguntar: to ask)	VERB 100
 ópera	NOUN:(music) opera	NOUN 99
-Estela	???	NOUN 98
+Estela	NOUN:wake; slipstream; trail; stela (monument)	NOUN 98
 protegidas	ADJ:(feminine plural of: protegido: protected); VERB:(verb form of: proteger: to protect, to defend)	ADJ 90
 accesorios	ADJ:(masculine plural of: accesorio: accessory, secondary, additional, supplementary); NOUN:(plural of: accesorio: accessory equipment, appurtenance.)	NOUN 91
 Menem	???	NOUN 100
@@ -9405,7 +9405,7 @@ pretendido	VERB:(verb form of: pretender: to pretend)	VERB/ADJ 67/29
 brevedad	NOUN:brevity, shortness	NOUN 100
 gozo	NOUN:joy; pleasure, enjoyment; VERB:(verb form of: gozar: to enjoy oneself)	NOUN 98
 rigurosa	ADJ:(feminine of: riguroso: rigorous)	ADJ 99
-Coloquio	???	NOUN 100
+Coloquio	NOUN:colloquy, discussion	NOUN 100
 representativas	ADJ:(feminine plural of: representativo: representative)</text>	ADJ 98
 estrés	NOUN:stress	NOUN 100
 ovejas	NOUN:(plural of: oveja: sheep)	NOUN 99
@@ -9480,7 +9480,7 @@ Duarte	???	NOUN/VERB 89/11
 desconoce	VERB:(verb form of: desconocer: to not be familiar with)	VERB 99
 caracterizada	ADJ:(feminine of: caracterizado: characterized)	ADJ 98
 ejerció	VERB:(verb form of: ejercer: to exercise (enforce))	VERB 100
-Enciclopedia	???	NOUN 98
+Enciclopedia	NOUN:encyclopedia	NOUN 98
 elige	VERB:(verb form of: elegir: (transitive) to choose)	VERB 99
 trataron	VERB:(verb form of: tratar: to treat); (uds.) (verb form of: tratar: to treat)	VERB 100
 placas	NOUN:(plural of: placa: plate.)	NOUN 99
@@ -9514,7 +9514,7 @@ sales	VERB:(verb form of: salir: to go out); NOUN:(plural of: sal: salt)	NOUN/AD
 feudal	ADJ:feudal	ADJ 95
 pH	???	NOUN 99
 pasará	VERB:(verb form of: pasar: to pass)	VERB 100
-Duran	???	NOUN/VERB 61/39
+Duran	VERB:(verb form of: durar: to last); (uds.) (verb form of: durar: to last)	NOUN/VERB 61/39
 ausentes	VERB:(verb form of: ausentar: ???)	ADJ/NOUN 86/14
 celos	NOUN:jealousy; rut	NOUN 99
 asegurarse	VERB:to make sure	VERB 100
@@ -9645,7 +9645,7 @@ Martha	???	NOUN 100
 Edit	???	NOUN 100
 Alfaro	???	NOUN 100
 eléctricos	ADJ:(masculine plural of: eléctrico: electric, electrical)	ADJ 95
-Moro	???	NOUN 98
+Moro	NOUN:A Moor (North African Muslim).; (colloquial) a Muslim or Arab, particularly Muslims in the southern Philippines.; VERB:(verb form of: morar: to reside)	NOUN 98
 corredores	ADJ:(masculine plural of: corredor: running); NOUN:(plural of: corredor: corridor. hall)</text>	NOUN 100
 indirectos	ADJ:(masculine plural of: indirecta: (feminine of: indirecto: indirect))	ADJ 93
 ilustrada	???	ADJ 91
@@ -9668,7 +9668,7 @@ mantenían	VERB:(verb form of: mantener: To maintain)	VERB 100
 ocupaban	VERB:(verb form of: ocupar: to occupy)	VERB 100
 envergadura	NOUN:wingspan (of a bird, airplane); armspan; magnitude, importance	NOUN 100
 Alicante	NOUN:Alicante (city)	NOUN/ADV 88/12
-Pinto	???	NOUN 95
+Pinto	ADJ:(Latin America) spotted, pinto, mottled, blotchy; (Caribbean) clever, cunning; (Caribbean) drunk; (Costa Rica) A meal served for lunch or dinner based on gallo pinto but also with a type of meat and possibly some extras.; VERB:(verb form of: pintar: to paint)	NOUN 95
 comprendió	VERB:(verb form of: comprender: to understand, to comprehend)	VERB 100
 sandinista	???	ADJ/NOUN 58/42
 BID	???	NOUN 99
@@ -9737,7 +9737,7 @@ asumiendo	VERB:(verb form of: asumir: (said of a duty or position) to assume, ta
 gestación	NOUN:gestation; pregnancy.	NOUN 100
 danzas	VERB:(verb form of: danzar: to dance.)	NOUN 98
 excluir	VERB:to exclude	VERB 100
-Islam	???	NOUN 100
+Islam	NOUN:Islam	NOUN 100
 about	???	ADJ/NOUN 53/45
 Paper	???	NOUN/VERB/ADJ 76/13/11
 consolidado	VERB:(verb form of: consolidar: to consolidate)	ADJ/VERB/NOUN 54/36/11
@@ -9763,7 +9763,7 @@ monetarias	ADJ:(feminine plural of: monetario: Related to the currency)	ADJ 90
 sorprendió	VERB:(verb form of: sorprender: To surprise.)	VERB 100
 bilingüe	ADJ:bilingual	ADJ/NOUN 76/23
 sincero	ADJ:sincere, honest	ADJ 99
-Orlando	???	NOUN 99
+Orlando	VERB:(verb form of: orlar: ???)	NOUN 99
 irregularidades	NOUN:(plural of: irregularidad: irregularity)</text>	NOUN 99
 espiritualidad	NOUN:spirituality	NOUN 100
 metáforas	NOUN:(plural of: metáfora: metaphor (figure of speech))	NOUN 100
@@ -9786,7 +9786,7 @@ creyendo	VERB:(verb form of: creer: (transitive) To believe)	VERB 100
 colaborador	NOUN:collaborator	NOUN 92
 culpables	ADJ:(form of: plural, culpable: ???); NOUN:(plural of: culpable: The people responsible)	NOUN/ADJ 88/12
 intensamente	ADV:intensely; acutely	ADV 100
-Rosales	???	NOUN 99
+Rosales	NOUN:(plural of: rosal: ???)</text>	NOUN 99
 Adán	Adam	NOUN 99
 concursos	NOUN:(plural of: concurso: concourse)	NOUN 99
 enseñó	VERB:(verb form of: enseñar: to teach)	VERB 100
@@ -9817,7 +9817,7 @@ reduciendo	VERB:(verb form of: reducir: to reduce)	VERB 100
 medievales	ADJ:(form of: plural, medieval: ???)	ADJ/NOUN 89/11
 hostilidad	NOUN:hostility	NOUN 100
 preferible	ADJ:preferable	ADJ 100
-Tapia	???	NOUN 99
+Tapia	NOUN:adobe; adobe brick; wall made of adobe bricks; enclosing wall; VERB:(verb form of: tapiar: ???)	NOUN 99
 numerosa	???	ADJ 100
 realizaciones	NOUN:(plural of: realización: Completion, process of making something real.)</text>	NOUN 100
 luchando	VERB:(verb form of: luchar: to fight)	VERB 100
@@ -9969,8 +9969,8 @@ deciden	VERB:(verb form of: decidir: to decide)	VERB 100
 homicidio	NOUN:homicide; manslaughter	NOUN 100
 apego	NOUN:attachment, fondness	NOUN 99
 intermediación	???	NOUN 100
-Cancillería	???	NOUN 100
-Josefina	???	NOUN 99
+Cancillería	NOUN:chancery	NOUN 100
+Josefina	ADJ:(feminine of: josefino: of or from San José)</text>	NOUN 99
 Clarín	???	NOUN 100
 pliego	NOUN:sheet (of paper); document, folder; VERB:(verb form of: plegar: to fold)	NOUN 100
 Tijuana	???	NOUN 100
