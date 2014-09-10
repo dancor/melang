@@ -1,6 +1,7 @@
 -- lookup scrabble words
 
 import Data.Char
+import Data.List
 import System.Console.GetOpt
 import System.Environment
 import System.IO
@@ -45,8 +46,9 @@ lkR depth line = do
 
 dictGrep :: Int -> String -> String -> [String] -> IO ()
 dictGrep depth ptn dictF grepArgs = do
-    (_pIn, pOut, pErr, pId) <-
+    (pIn, pOut, pErr, pId) <-
         runInteractiveProcess "grep" (ptn:dictF:grepArgs) Nothing Nothing
+    hClose pIn
     cOut <- hGetContents pOut
     mapM_ (lkR depth) $ lines cOut
     cErr <- hGetContents pErr
@@ -54,11 +56,25 @@ dictGrep depth ptn dictF grepArgs = do
     _ <- waitForProcess pId
     return ()
 
+wiktGrep :: Opts -> String -> String -> [String] -> IO ()
+wiktGrep (Opts wdsOnly _) word dictF extraArgs = do
+    let ptn = "^^" ++ word ++ "$"
+        args = if wdsOnly
+          then [ptn, dictF]
+          else [ptn, "-m", "1", "-A", "10000", dictF]
+    (_pIn, pOut, pErr, _pId) <-
+        runInteractiveProcess "grep" (args ++ extraArgs) Nothing Nothing
+    cOut <- hGetContents pOut
+    let ls@(l0:lRest) = lines cOut
+    mapM_ putStrLn $ if wdsOnly
+      then map tail ls
+      else tail l0 : map ("  " ++) (takeWhile (not . ("^" `isPrefixOf`)) lRest)
+
 lk :: Opts -> [String] -> String -> IO ()
-lk (Opts wdsOnly dictType) grepArgs word =
+lk opts@(Opts wdsOnly dictType) grepArgs word =
     if dictType == WiktGer
       then
-        error "todo"
+        wiktGrep opts word gerDictF grepArgs
       else
         dictGrep 0 scrPtn scrDictF $
         if wdsOnly then "-o":grepArgs else grepArgs
@@ -67,11 +83,12 @@ lk (Opts wdsOnly dictType) grepArgs word =
     scrPtn = "^" ++
         (if dictType == NaScr then " " else ".") ++
         doReplacements [('.', "[^ ]")] (map toUpper word) ++ "\\b"
+    gerDictF = "/home/danl/data/wikt/ger"
 
 main :: IO ()
 main = do
     args <- getArgs
-    let usage = "usage: ./lk.hs [options] word-pattern"
+    let usage = "usage: lk [options] word-pattern"
         doErrs errs = error $ concat errs ++ usageInfo usage optList
     (opts, wordL) <- case getOpt Permute optList args of
         (o, n, []) -> return (foldl (flip id) defOpts o, n)
