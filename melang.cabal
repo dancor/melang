@@ -1,11 +1,22 @@
 name:          melang
 version:       0.1
-license:       BSD3
+license:       MIT
 license-file:  LICENSE
 author:        dan corson <danl@alum.mit.edu>
 synopsis:      lang study
 build-type:    Simple
 cabal-version: >= 1.2
+
+flag lk
+    default: False
+
+executable lk
+    if !flag(lk)
+        buildable: False
+    main-is:         Main/lk.hs
+    hs-source-dirs:  src
+    ghc-options:     -Wall -O3
+    build-depends:   base >= 4
 
 flag wlk
     default: False
@@ -166,7 +177,7 @@ flag zz
 executable zz
     if !flag(zz)
         buildable: False
-    main-is:         MainZSentToWds.hs
+    main-is:         Main/zz.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
     build-depends:
@@ -268,7 +279,10 @@ executable proc-raw-gb-data
     main-is:         Main/proc-raw-gb-data.hs
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
-    build-depends:   conduit, process
+    build-depends:   
+        conduit ==1.0.9.3
+      , process
+      , unordered-containers ==0.2.3.0
 
 flag cmn-text-wds
     default: False

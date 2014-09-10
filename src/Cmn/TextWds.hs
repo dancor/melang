@@ -14,10 +14,11 @@ import qualified Data.HashMap.Strict as HMS
 import qualified Data.Text as DT
 
 import Cmn.Dict
+import Lang
 import Util.SciSigFig
 
-textWds :: WdDict -> Int -> DT.Text -> [Either DT.Text DictEntry]
-textWds dict maxWdLen = improvePass . textWds2 dict maxWdLen
+textWds :: Lang -> WdDict -> Int -> DT.Text -> [Either DT.Text DictEntry]
+textWds Cmn dict maxWdLen = improvePass . textWds2 dict maxWdLen
   where
     -- Look for improvements of the form (A B) C -> A (B C).
     improvePass [] = []
@@ -36,6 +37,7 @@ textWds dict maxWdLen = improvePass . textWds2 dict maxWdLen
         Right entry1' : Right entry2' : improvePass rest2
       | otherwise = x1 : improvePass rest1
     improvePass (x : rest) = x : improvePass rest
+textWds _ dict _ = map textWd . DT.words
 
 textWds2 :: WdDict -> Int -> DT.Text -> [Either DT.Text DictEntry]
 textWds2 dict maxWdLen text

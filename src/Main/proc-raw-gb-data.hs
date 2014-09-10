@@ -111,11 +111,12 @@ rawLineCols (RawLine word spPart occurs) =
 rawFiles :: String -> [(String, FilePath)]
 rawFiles dataSetName =
     [ ( x
-      , "/home/danl/data/goog-ngrams/20120701/1grams" </> dataSetName </>
-        "googlebooks-" ++ dataSetName ++ "-all-1gram-20120701-" ++ x ++ ".gz"
+      , "/home/danl/data/goog-ngrams/20120701" </> dataSetName </>
+        "1grams/googlebooks-" ++ dataSetName ++ "-all-1gram-20120701-" ++ x ++
+        ".gz"
       )
-    -- | x <- map (:[]) ['a'..'z']
-    | x <- map (:[]) ['r']
+    | x <- map (:[]) ['a'..'z']
+    -- | x <- map (:[]) ['r']
     ]
 
 sumSameWordSpPart :: Monad m => Conduit RawLine m RawLine
@@ -178,8 +179,8 @@ doErr = forkIO . go
 
 doFile :: Lang -> Handle -> (String, FilePath) -> IO Integer
 doFile lang bigSortIn (_name, fp) = do
-    --(_, zOut, _, _) <- runInteractiveProcess "zcat" [fp] Nothing (Just [])
-    (zIn, zOut, zErr, _) <- runInteractiveProcess "zgrep" ["-i", "^r", fp] Nothing (Just [])
+    (zIn, zOut, zErr, _) <- runInteractiveProcess "zcat" [fp] Nothing (Just [])
+    --(zIn, zOut, zErr, _) <- runInteractiveProcess "zgrep" ["-i", "^r", fp] Nothing (Just [])
     hClose zIn
     (sortIn, sortOut, sortErr, _) <- runInteractiveProcess "sort"
         ["-f", "-t", "\t", "-k", "1,1"] Nothing (Just [])
@@ -207,11 +208,12 @@ main = do
     args <- getArgs
     let dataSetName = case args of
           [x] -> x
-          _ -> error "usage"
+          _ -> error "usage, e.g. (creates ./word-list): proc-raw-gb-data spa"
         lang = case dataSetName of
           "chi-sim" -> Chi
           "eng" -> Eng
           "spa" -> Eng
+          "ger" -> Eng
           _ -> error "unknown data-set"
         myFiles = rawFiles dataSetName
     (bigSortIn, bigSortOut, bigSortErr, bigSortProc) <-

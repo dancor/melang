@@ -52,3 +52,18 @@
   - Generally: Word .. is number .. in .. files, but .. in .., ..
 - Look for a Chinese wordnet (may only exist for Taiwan traditional?)
 - Consider Scrabble dictionary as English word source?
+
+# Spanish
+- Spanish sentences plan:
+  - Functional categories?
+  - Using top words?
+  - From stories?
+- Spanish:
+  - Speaking scenarios.
+  - Work toward reading Don Quijote?
+  - Song lyrics.
+- Spanish app, challenge-response dynamic sentence translation w/ stats:
+  - spa dict wtf: rosa, 12928:Éstos
+  - Add feminines and plurals.
+  - Add verb declensions.
+  - Relatives and the most common Spanish-language names?

@@ -1,2 +1,0 @@
-#!/bin/bash
-grep -n $'^[^\t]*\t[^\t]*5[^\t:]*\t' ~/p/l/melang/data/cmn/dict | less

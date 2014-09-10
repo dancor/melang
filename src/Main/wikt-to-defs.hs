@@ -46,6 +46,7 @@ goodPartsOfSpeech _ = map (BSC.pack . filter isLetter)
     , "Cardinal numeral"
     , "Conjunction"
     , "Contraction"
+    , "Determiner"
     -- , "Idiom"
     -- , "Interjection"
     -- , "Measure word" -- this actually gives the MW for a noun def
@@ -69,6 +70,7 @@ spPartAbbr "Article" = "DET"
 spPartAbbr "Cardinal numeral" = "NUM"
 spPartAbbr "Conjunction" = "CONJ"
 spPartAbbr "Contraction" = "ABBR"
+spPartAbbr "Determiner" = "DET"
 spPartAbbr "Noun" = "NOUN"
 spPartAbbr "Preposition" = "ADP"
 spPartAbbr "Postposition" = "ADP"
@@ -81,7 +83,8 @@ processBlock subSubHeadingPrefix =
     BS.intercalate "; " .
     map head . group .
     map (BSC.pack . processLine . BSC.unpack) .
-    map (BS.drop 2) . filter ("# " `BSC.isPrefixOf`) .
+    map (\x -> if "# " `BSC.isPrefixOf` x then BS.drop 2 x else x) .
+    filter (\x -> "# " `BSC.isPrefixOf` x || "{{de-noun|" `BSC.isPrefixOf` x) .
     -- The detail of all the sub-sub-headings is too much detail for us.
     takeWhile (not . (subSubHeadingPrefix `BSC.isPrefixOf`))
   where
@@ -113,6 +116,7 @@ processBlock subSubHeadingPrefix =
         "context" -> argsParen
         "conjugation of" -> mainParen
         "cx" -> argsParen
+        "de-noun" -> intercalate "|" restParts
         "es-compond of" -> customParen "compound of"
         "es-demonstrative-accent-usage" -> "(The unaccented form can " ++
             "function as a pronoun if there is no ambiguity as to it " ++
@@ -250,15 +254,18 @@ doDeref :: Dict -> SpPart -> Str -> Str -> Str
 doDeref dict spPart needle s =
   case breakSubstr needle s of
     Nothing -> s
-    Just (pre, post) ->
-        pre <> needle <> ref <> ": " <> refDef <> derefVerb dict spPart rest
+    Just (pre, post) -> pre <> needle <> refRepl <> derefVerb dict spPart rest
       where
         (refWithPossibleOldDef, rest) = BSC.break (== ')') post
-        ref = BSC.takeWhile (/= ':') refWithPossibleOldDef
+        (ref, possibleOldDef) = BSC.break (== ':') refWithPossibleOldDef
         refDef =
             maybe "???" (modDef . eDef) (HMS.lookup (BSC.map toLower ref) dict)
         modDef (Left x) = x
         modDef (Right x) = maybe "???" head $ lookup spPart x
+        refRepl = if ")" `BS.isPrefixOf`
+            BSC.dropWhile (== '?') (BSC.dropWhile (== ' ') possibleOldDef)
+          then ref <> ": " <> refDef
+          else refWithPossibleOldDef
 
 derefVerb :: Dict -> SpPart -> Str -> Str
 derefVerb dict spPart =
@@ -305,10 +312,16 @@ main = do
         , "/usr/bin/time < ~/data/wikt/spa ./wikt-to-defs spa > out"
         ]
     dict <- HMS.fromList .
+        {-
         zipWith (\n [word, def, stats] ->
             (BSC.map toLower word, Entry word (readDef def) stats n)) [1..] .
+        -}
+        zipWith (\n (word:_freq:spPart:stats:_)  ->
+            ( BSC.map toLower word
+            , Entry word (Left "???") (spPart <> " " <> stats) n
+            )) [1..] .
         map (BS.split 9) . BSC.lines <$>
-        BS.readFile ("/home/danl/p/l/melang/data" </> lang </> "dict")
+        BS.readFile ("/home/danl/p/l/melang/data" </> lang </> "wds-100k")
     bsInteractLErr $ map Right .
         map (\e -> BS.intercalate "\t" [eWd e,
             showDef . onEachDefLine (derefVerb dict) $ eDef e, eStats e]) .
