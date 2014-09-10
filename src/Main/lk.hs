@@ -62,13 +62,15 @@ wiktGrep (Opts wdsOnly _) word dictF extraArgs = do
         args = if wdsOnly
           then [ptn, dictF]
           else [ptn, "-m", "1", "-A", "10000", dictF]
-    (_pIn, pOut, pErr, _pId) <-
+    (_pIn, pOut, _pErr, _pId) <-
         runInteractiveProcess "grep" (args ++ extraArgs) Nothing Nothing
     cOut <- hGetContents pOut
-    let ls@(l0:lRest) = lines cOut
-    mapM_ putStrLn $ if wdsOnly
-      then map tail ls
-      else tail l0 : map ("  " ++) (takeWhile (not . ("^" `isPrefixOf`)) lRest)
+    case lines cOut of
+      ls@(l0:lRest) -> mapM_ putStrLn $ if wdsOnly
+        then map tail ls
+        else
+          tail l0 : map ("  " ++) (takeWhile (not . ("^" `isPrefixOf`)) lRest)
+      _ -> return ()
 
 lk :: Opts -> [String] -> String -> IO ()
 lk opts@(Opts wdsOnly dictType) grepArgs word =

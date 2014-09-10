@@ -16,7 +16,9 @@ executable lk
     main-is:         Main/lk.hs
     hs-source-dirs:  src
     ghc-options:     -Wall -O3
-    build-depends:   base >= 4
+    build-depends:
+        base
+      , process
 
 flag wlk
     default: False
@@ -27,10 +29,7 @@ executable wlk
     main-is:         WLk.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
-    build-depends:   base >= 4
-                   , containers
-                   , filepath
-                   , haskeline
+    build-depends:
 
 flag text-ch-freq
     default: False
@@ -41,11 +40,7 @@ executable text-ch-freq
     main-is:         TextChFreq.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
-    build-depends:   base >= 4
-                   , containers
-                   , filepath
-                   -- , haskeline
-                   , mtl
+    build-depends:
 
 flag goog-recent
     default: False
@@ -56,8 +51,7 @@ executable goog-recent
     main-is:         GoogRecent.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
-    build-depends:   base >= 4
-                   , bytestring
+    build-depends:
 
 flag utf8-check
     default: False
@@ -68,8 +62,7 @@ executable utf8-check
     main-is:         Utf8Check.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
-    build-depends:   base >= 4
-                   , bytestring
+    build-depends:
 
 flag goog-results-to-ppm
     default: False
@@ -80,8 +73,7 @@ executable goog-results-to-ppm
     main-is:         GoogResultsToPpm.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
-    build-depends:   base >= 4
-                   , bytestring
+    build-depends:
 
 flag goog-clean
     default: False
@@ -92,9 +84,7 @@ executable goog-clean
     main-is:         GoogClean.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
-    build-depends:   base >= 4
-                   , bytestring
-                   , text
+    build-depends:
 
 flag goog-merge
     default: False
@@ -105,8 +95,7 @@ executable goog-merge
     main-is:         GoogMerge.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
-    build-depends:   base >= 4
-                   , bytestring
+    build-depends:
 
 flag wikt-pull-lang
     default: False
@@ -117,9 +106,7 @@ executable wikt-pull-lang
     main-is:         Main/wikt-pull-lang.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
-    build-depends:   base >= 4
-                   , bytestring
-                   , tagsoup
+    build-depends:
 
 flag wikt-to-defs
     default: False
@@ -130,10 +117,7 @@ executable wikt-to-defs
     main-is:         Main/wikt-to-defs.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
-    build-depends:   base >= 4
-                   , bytestring
-                   , tagsoup
-                   , text
+    build-depends:
 
 flag goog-defs
     default: False
@@ -144,8 +128,7 @@ executable goog-defs
     main-is:         GoogDefs.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
-    build-depends:   base >= 4
-                   , bytestring
+    build-depends:
 
 flag pinyin-syllable-freq
     default: False
@@ -156,8 +139,7 @@ executable pinyin-syllable-freq
     main-is:         PinyinSyllableFreq.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
-    build-depends:   base >= 4
-                   , bytestring
+    build-depends:
 
 flag book-hard-words
     default: False
@@ -168,8 +150,7 @@ executable book-hard-words
     main-is:         book-hard-words.hs
     hs-source-dirs:  src
     ghc-options:     -Wall
-    build-depends:   base >= 4
-                   , bytestring
+    build-depends:
 
 flag zz
     default: False
@@ -181,8 +162,6 @@ executable zz
     hs-source-dirs:  src
     ghc-options:     -Wall
     build-depends:
-        base
-      , deepseq
 
 flag proc-zh-en-json
     default: False
@@ -194,10 +173,6 @@ executable proc-zh-en-json
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
     build-depends:
-        aeson
-      , attoparsec
-      , unordered-containers
-      , vector
 
 flag proc-hanzi-json
     default: False
@@ -209,10 +184,6 @@ executable proc-hanzi-json
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
     build-depends:
-        aeson
-      , attoparsec
-      , unordered-containers
-      , vector
 
 flag kilo-prep
     default: False
@@ -223,7 +194,7 @@ executable kilo-prep
     main-is:         Main/kilo-prep.hs
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
-    build-depends:   transformers
+    build-depends:
 
 flag proc-lcmc
     default: False
@@ -246,7 +217,6 @@ executable goog-vs-lcmc
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
     build-depends:
-        split
 
 flag score-tatoeba
     default: False
@@ -280,9 +250,6 @@ executable proc-raw-gb-data
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
     build-depends:   
-        conduit ==1.0.9.3
-      , process
-      , unordered-containers ==0.2.3.0
 
 flag cmn-text-wds
     default: False
