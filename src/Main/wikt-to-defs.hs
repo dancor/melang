@@ -32,7 +32,7 @@ main = do
             , Entry word (Left "???") (spPart <> " " <> stats) n
             )) [1..] .
         map (BS.split 9) . BSC.lines <$>
-        BS.readFile ("/home/danl/p/l/melang/data" </> lang </> "wds-100k")
+        BS.readFile ("/home/danl/p/l/melang/lang" </> lang </> "wds-100k")
     bsInteractLErr $ map Right .
         map (\e -> BS.intercalate "\t" [eWd e,
             showDef . onEachDefLine (derefVerb dict) $ eDef e, eStats e]) .

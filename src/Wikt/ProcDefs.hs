@@ -71,8 +71,8 @@ spPartAbbr "Pronoun" = "PRON"
 spPartAbbr "Verb" = "VERB"
 spPartAbbr x = x
 
-processBlock :: Str -> [Str] -> Str
-processBlock subSubHeadingPrefix =
+processBlock :: Int -> [Str] -> Str
+processBlock blockDepth =
     BS.intercalate "; " .
     map head . group .
     map (BSC.pack . processLine . BSC.unpack) .
@@ -81,6 +81,8 @@ processBlock subSubHeadingPrefix =
     -- The detail of all the sub-sub-headings is too much detail for us.
     takeWhile (not . (subSubHeadingPrefix `BSC.isPrefixOf`))
   where
+    subSubHeadingPrefix = BSC.replicate (blockDepth + 1) '='
+
     processLine ('[':'[':rest) = toBracketEnd "" rest
     processLine ('{':'{':rest) = toBraceEnd "" rest
     processLine ('\'':'\'':rest) = processLine $ dropWhile (== '\'') rest
@@ -165,14 +167,12 @@ testStr =
     ]
 
 processContent :: [Str] -> Str
-processContent content = newDef
+processContent = procGoodSects . langSectToGoodSects
+
+langSectToGoodSects :: [Str] -> [(Str, (Int, [Str]))]
+langSectToGoodSects =
+    filterGoodBlocks . procHeadings . dropWhile (not . isHeading)
   where
-    newDef =
-        BS.intercalate "; " .
-        map (\(subHead, block) ->
-            spPartAbbr subHead <> ":" <> block) .
-        filterGoodBlocks . procHeadings $ dropWhile (not . isHeading)
-        content
     filterGoodBlocks = filter ((`elem` goodPartsOfSpeech) . fst)
     isHeading x = "===" `BSC.isPrefixOf` x
     isHeading4Plus x = "====" `BSC.isPrefixOf` x
@@ -187,7 +187,7 @@ processContent content = newDef
             if isHeading4Plus heading
               then procHeadings rest'
               else
-                (extractHeading 3 heading, processBlock "====" block) :
+                (extractHeading 3 heading, (3, block)) :
                 procHeadings rest'
       where
         (block, rest') = break isHeading rest
@@ -199,12 +199,18 @@ processContent content = newDef
           else
             if isHeading4Plus heading
               then
-                (extractHeading 4 heading, processBlock "=====" block) :
+                (extractHeading 4 heading, (4, block)) :
                 proc4Headings rest'
               -- else: It's a === heading, so leave proc4Headings.
               else procHeadings x
       where
         (block, rest') = break isHeading rest
+
+procGoodSects :: [(Str, (Int, [Str]))] -> Str
+procGoodSects =
+    BS.intercalate "; " .
+    map (\(subHead, (depth, block)) ->
+        spPartAbbr subHead <> ":" <> processBlock depth block)
 
 -- If a wiktionary entry is a case-sensitive match for a dictionary word,
 -- always add the wiktionary definition to the dictionary.
