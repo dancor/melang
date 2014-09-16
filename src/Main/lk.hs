@@ -1,11 +1,18 @@
--- lookup scrabble words
+-- Look up words and possibly definitions
+-- (in witionary, game word lists, etc.).
 
+{-# LANGUAGE OverloadedStrings #-}
+
+import qualified Data.ByteString as BS
+import qualified Data.ByteString.Char8 as BSC
 import Data.Char
-import Data.List
+import Data.Monoid
 import System.Console.GetOpt
 import System.Environment
 import System.IO
 import System.Process
+
+import Wikt.ProcDefs
 
 data DictType = Scr | NaScr | WiktGer deriving Eq
 
@@ -64,17 +71,23 @@ wiktGrep (Opts wdsOnly _) word dictF extraArgs = do
           else [ptn, "-m", "1", "-A", "10000", dictF]
     (_pIn, pOut, _pErr, _pId) <-
         runInteractiveProcess "grep" (args ++ extraArgs) Nothing Nothing
-    cOut <- hGetContents pOut
-    case lines cOut of
-      ls@(l0:lRest) -> mapM_ putStrLn $ if wdsOnly
-        then map tail ls
+    cOut <- BS.hGetContents pOut
+    case BSC.lines cOut of
+      ls@(l0:lRest) -> mapM_ BSC.putStrLn $ if wdsOnly
+        then map BS.tail ls
         else
-          tail l0 : map ("  " ++)
-          (wiktEntryExtract $ takeWhile (not . ("^" `isPrefixOf`)) lRest)
+          BS.tail l0 : map ("  " <>)
+          (wiktEntryExtract $ takeWhile (not . ("^" `BS.isPrefixOf`)) lRest)
       _ -> return ()
 
-wiktEntryExtract :: [String] -> [String]
+wiktEntryExtract :: [Str] -> [Str]
 wiktEntryExtract =
+    concatMap (\(subHead, (_depth, block)) ->
+        [spPartAbbr subHead <> ":"] ++
+        block ++
+        [""]
+        ) .
+    langSectToGoodSects
 
 lk :: Opts -> [String] -> String -> IO ()
 lk opts@(Opts wdsOnly dictType) grepArgs word =
