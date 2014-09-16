@@ -69,8 +69,12 @@ wiktGrep (Opts wdsOnly _) word dictF extraArgs = do
       ls@(l0:lRest) -> mapM_ putStrLn $ if wdsOnly
         then map tail ls
         else
-          tail l0 : map ("  " ++) (takeWhile (not . ("^" `isPrefixOf`)) lRest)
+          tail l0 : map ("  " ++)
+          (wiktEntryExtract $ takeWhile (not . ("^" `isPrefixOf`)) lRest)
       _ -> return ()
+
+wiktEntryExtract :: [String] -> [String]
+wiktEntryExtract =
 
 lk :: Opts -> [String] -> String -> IO ()
 lk opts@(Opts wdsOnly dictType) grepArgs word =

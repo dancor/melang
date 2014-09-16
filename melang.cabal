@@ -118,6 +118,11 @@ executable wikt-to-defs
     hs-source-dirs:  src
     ghc-options:     -Wall
     build-depends:
+        bytestring
+      , filepath
+      , split
+      , tagsoup
+      , unordered-containers
 
 flag goog-defs
     default: False
