@@ -19,6 +19,7 @@ executable lk
     build-depends:
         base
       , process
+      , utf8-string
 
 flag wlk
     default: False

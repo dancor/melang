@@ -15,7 +15,6 @@ import qualified Data.Text as DT
 
 import Cmn.Dict
 import Lang
-import Util.SciSigFig
 
 textWds :: Lang -> WdDict -> Int -> DT.Text -> [Either DT.Text DictEntry]
 textWds Cmn dict maxWdLen = improvePass . textWds2 dict maxWdLen

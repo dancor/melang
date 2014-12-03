@@ -64,6 +64,6 @@ main = do
       _ -> error $ concat
         [ "usage e.g.: /usr/bin/time bzcat "
         , "~/data/wikt/enwiktionary-pages-articles.xml.bz2 | "
-        , "./wikt-pull-lang spa > ~/data/wikt/spa"
+        , "./wikt-pull-lang ==Spanish== > ~/data/wikt/spa"
         ]
     bsInteractLErr $ map Right . processLines targetLanguageTag

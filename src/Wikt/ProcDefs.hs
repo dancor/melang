@@ -3,9 +3,12 @@
 
 module Wikt.ProcDefs where
 
+import Control.Applicative
+import Control.Arrow
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Char8 as BSC
 import Data.Char
+import Data.Either
 import qualified Data.HashMap.Strict as HMS
 import Data.List
 import Data.List.Split
@@ -24,6 +27,7 @@ type SpPart = Str
 data DictEntry
     = Entry
     { eWd :: Str
+    , ePronunciation :: Maybe Str
     , eDef :: Def
     , eStats :: Str
     , eN :: Int
@@ -51,6 +55,7 @@ goodPartsOfSpeech = map BSC.pack
     -- , "Prefix"
     , "Postposition"
     , "Pronoun"
+    , "Pronunciation"
     -- , "Proverb"
     -- , "Suffix"
     , "Verb"
@@ -166,8 +171,9 @@ testStr =
     , "# Masculine singular definite article; [[the]]."
     ]
 
-processContent :: [Str] -> Str
-processContent = procGoodSects . langSectToGoodSects
+processContent :: [Str] -> (Maybe Str, Str)
+processContent =
+    second procGoodSects . goodSectsPullPronunciation . langSectToGoodSects
 
 langSectToGoodSects :: [Str] -> [(Str, (Int, [Str]))]
 langSectToGoodSects =
@@ -206,11 +212,27 @@ langSectToGoodSects =
       where
         (block, rest') = break isHeading rest
 
+goodSectsPullPronunciation
+    :: [(Str, (Int, [Str]))]
+    -> (Maybe Str, [(Str, (Int, [Str]))])
+goodSectsPullPronunciation sects = (listToMaybe prons, others)
+  where
+    (prons, others) = partitionEithers . catMaybes $
+        map (\a@(subHead, (_depth, block)) ->
+            if subHead == "Pronunciation"
+              then Left <$> procPronunciation block
+              else Just $ Right a
+        ) sects
+
 procGoodSects :: [(Str, (Int, [Str]))] -> Str
-procGoodSects =
-    BS.intercalate "; " .
+procGoodSects = BS.intercalate "; " .
     map (\(subHead, (depth, block)) ->
         spPartAbbr subHead <> ":" <> processBlock depth block)
+
+procPronunciation :: [Str] -> Maybe Str
+procPronunciation = listToMaybe .
+    map (BSC.takeWhile (\c -> c /= '|' && c /= '}') . BS.drop 8) .
+    filter ("* {{IPA|" `BS.isPrefixOf`)
 
 -- If a wiktionary entry is a case-sensitive match for a dictionary word,
 -- always add the wiktionary definition to the dictionary.
@@ -222,12 +244,16 @@ processPage !dict (magicTitle:ls) =
     case HMS.lookup key dict of
       Nothing -> dict
       Just e -> if eDef e == Left "???" || eWd e == title
-        then HMS.insert key (e {eDef = readDef content}) dict
+        then
+          case pronunciationMb of
+            Nothing -> HMS.insert key (e {eDef = readDef content}) dict
+            Just p -> HMS.insert key (e {
+              ePronunciation = Just p, eDef = readDef content}) dict
         else dict
   where
     title = BSC.drop 1 magicTitle
     key = BSC.map toLower title
-    content = processContent ls
+    (pronunciationMb, content) = processContent ls
 
 procLines :: Dict -> [Str] -> Dict
 procLines dict =

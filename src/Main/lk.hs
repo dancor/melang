@@ -3,9 +3,14 @@
 
 {-# LANGUAGE OverloadedStrings #-}
 
+import Control.Applicative
+import Control.Arrow
+import Control.Monad
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Char8 as BSC
+import qualified Data.ByteString.UTF8 as BU
 import Data.Char
+import Data.Maybe
 import Data.Monoid
 import System.Console.GetOpt
 import System.Environment
@@ -63,37 +68,60 @@ dictGrep depth ptn dictF grepArgs = do
     _ <- waitForProcess pId
     return ()
 
-wiktGrep :: Opts -> String -> String -> [String] -> IO ()
-wiktGrep (Opts wdsOnly _) word dictF extraArgs = do
-    let ptn = "^^" ++ word ++ "$"
-        args = if wdsOnly
-          then [ptn, dictF]
-          else [ptn, "-m", "1", "-A", "10000", dictF]
+wiktGrepWds :: String -> [String] -> String -> IO [BS.ByteString]
+wiktGrepWds dictF extraArgs term = do
     (_pIn, pOut, _pErr, _pId) <-
-        runInteractiveProcess "grep" (args ++ extraArgs) Nothing Nothing
+        runInteractiveProcess "grep"
+        (["^^" ++ term ++ "$", dictF] ++ extraArgs)
+        Nothing Nothing
     cOut <- BS.hGetContents pOut
-    case BSC.lines cOut of
-      ls@(l0:lRest) -> mapM_ BSC.putStrLn $ if wdsOnly
-        then map BS.tail ls
-        else
-          BS.tail l0 : map ("  " <>)
-          (wiktEntryExtract $ takeWhile (not . ("^" `BS.isPrefixOf`)) lRest)
-      _ -> return ()
+    return $ case BSC.lines cOut of
+      ls@(l0:lRest) -> map BS.tail ls
+      _ -> []
 
-wiktEntryExtract :: [Str] -> [Str]
+wiktGrepOneDef :: String -> [String] -> String -> IO [BS.ByteString]
+wiktGrepOneDef dictF extraArgs word = do
+    (_pIn, pOut, _pErr, _pId) <-
+        runInteractiveProcess "grep"
+        (["^^" ++ word ++ "$", "-m", "1", "-A", "10000", dictF] ++
+            extraArgs)
+        Nothing Nothing
+    cOut <- BS.hGetContents pOut
+    return $ case BSC.lines cOut of
+      ls@(l0:lRest) ->
+          let entryLs = takeWhile (not . ("^" `BS.isPrefixOf`)) lRest
+              (pronunciation, wiktLs) = wiktEntryExtract entryLs
+              wiktLs2 = takeWhile (not . ("</text>" `BS.isInfixOf`)) wiktLs
+              wiktLs3 = map ("  " <>) wiktLs2
+          in
+          (BS.tail l0 <> ": " <> pronunciation) : wiktLs3 ++ [""]
+      _ -> []
+
+wiktGrep :: Opts -> String -> [String] -> String -> IO [BS.ByteString]
+wiktGrep (Opts wdsOnly _) dictF extraArgs term = do
+    wds <- wiktGrepWds dictF extraArgs term
+    if wdsOnly
+      then return wds
+      else
+        concat <$> mapM (wiktGrepOneDef dictF extraArgs) (map BU.toString wds)
+
+
+wiktEntryExtract :: [Str] -> (Str, [Str])
 wiktEntryExtract =
-    concatMap (\(subHead, (_depth, block)) ->
-        [spPartAbbr subHead <> ":"] ++
-        block ++
-        [""]
-        ) .
+    second lkProcGoodSects .
+    first (fromMaybe "/?/") .
+    goodSectsPullPronunciation .
     langSectToGoodSects
+  where
+    lkProcGoodSects = concatMap (\(subHead, (_depth, block)) ->
+        [subHead <> ":"] ++ block
+        )
 
 lk :: Opts -> [String] -> String -> IO ()
 lk opts@(Opts wdsOnly dictType) grepArgs word =
     if dictType == WiktGer
       then
-        wiktGrep opts word gerDictF grepArgs
+        wiktGrep opts gerDictF grepArgs word >>= mapM_ BSC.putStrLn
       else
         dictGrep 0 scrPtn scrDictF $
         if wdsOnly then "-o":grepArgs else grepArgs

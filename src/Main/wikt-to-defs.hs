@@ -10,6 +10,7 @@ import Data.Char
 import Data.Function
 import qualified Data.HashMap.Strict as HMS
 import Data.List
+import Data.Maybe
 import Data.Monoid
 import System.Environment
 import System.FilePath
@@ -24,17 +25,18 @@ main = do
       [arg] -> return arg
       _ -> error $ concat
         [ "usage e.g.: "
-        , "/usr/bin/time < ~/data/wikt/spa ./wikt-to-defs spa > out"
+        , "/usr/bin/time < ~/data/wikt/spa ./wikt-to-defs spa > lang/spa/wikt"
         ]
     dict <- HMS.fromList .
         zipWith (\n (word:_freq:spPart:stats:_)  ->
             ( BSC.map toLower word
-            , Entry word (Left "???") (spPart <> " " <> stats) n
+            , Entry word Nothing (Left "???") (spPart <> " " <> stats) n
             )) [1..] .
         map (BS.split 9) . BSC.lines <$>
-        BS.readFile ("/home/danl/p/l/melang/lang" </> lang </> "wds-100k")
+        BS.readFile ("/home/danl/p/l/melang/lang" </> lang </> "wds-100k.txt")
     bsInteractLErr $ map Right .
         map (\e -> BS.intercalate "\t" [eWd e,
+            fromMaybe "/?/" (ePronunciation e),
             showDef . onEachDefLine (derefVerb dict) $ eDef e, eStats e]) .
         sortBy (compare `on` eN) . HMS.elems .
         procLines dict
