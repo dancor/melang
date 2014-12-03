@@ -72,7 +72,7 @@ wiktGrepWds :: String -> [String] -> String -> IO [BS.ByteString]
 wiktGrepWds dictF extraArgs term = do
     (_pIn, pOut, _pErr, _pId) <-
         runInteractiveProcess "grep"
-        (["^^" ++ term ++ "$", dictF] ++ extraArgs)
+        (["^^" ++ term ++ "$", dictF, "-i"] ++ extraArgs)
         Nothing Nothing
     cOut <- BS.hGetContents pOut
     return $ case BSC.lines cOut of
@@ -92,9 +92,12 @@ wiktGrepOneDef dictF extraArgs word = do
           let entryLs = takeWhile (not . ("^" `BS.isPrefixOf`)) lRest
               (pronunciation, wiktLs) = wiktEntryExtract entryLs
               wiktLs2 = takeWhile (not . ("</text>" `BS.isInfixOf`)) wiktLs
-              wiktLs3 = map ("  " <>) wiktLs2
+              -- Exclude translations but include category markers:
+              wiktLs3 = takeWhile (\x -> not ("[[" `BS.isPrefixOf` x) ||
+                  BSC.all isUpper (BS.take 1 $ BS.drop 2 x)) wiktLs2
+              wiktLs4 = map ("  " <>) wiktLs3
           in
-          (BS.tail l0 <> ": " <> pronunciation) : wiktLs3 ++ [""]
+          (BS.tail l0 <> ": " <> pronunciation) : wiktLs4 ++ [""]
       _ -> []
 
 wiktGrep :: Opts -> String -> [String] -> String -> IO [BS.ByteString]
