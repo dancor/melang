@@ -278,3 +278,27 @@ executable make-dict
     hs-source-dirs:  src
     ghc-options:     -O2 -Wall
     build-depends:
+
+flag extract-wiki-pages
+    default: False
+
+executable extract-wiki-pages
+    if !flag(extract-wiki-pages)
+        buildable: False
+    main-is:         Main/extract-wiki-pages.hs
+    hs-source-dirs:  src
+    ghc-options:     -O3 -Wall
+    build-depends:
+
+flag wiki-word-index
+    default: False
+
+executable wiki-word-index
+    if !flag(wiki-word-index)
+        buildable: False
+    main-is:         Main/wiki-word-index.hs
+    hs-source-dirs:  src
+    ghc-options:     -O3 -Wall
+    build-depends:
+        bytestring-trie
+      , deepseq

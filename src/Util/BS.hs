@@ -20,21 +20,31 @@ bsReadPosInt =
     foldl1 ((+) . (10 *)) . map ((subtract $ ord '0') . fromIntegral) .
     BS.unpack
 
-bslToBs :: BSL.ByteString -> BS.ByteString
-bslToBs = BS.concat . BSL.toChunks
+{-
+-- This uses hReadLines which is probably faster than BSL.toStrict.
+bsInteractL :: ([BS.ByteString] -> [BS.ByteString]) -> IO ()
+bsInteractL f = (f <$> hReadLines stdin) >>= mapM_ BSC.putStrLn
+-}
+
+bsInteractL ::
+    ([BS.ByteString] -> [BS.ByteString]) ->
+    IO ()
+bsInteractL f = do
+    ls <- f . map BSL.toStrict . BSLC.lines <$> BSL.getContents
+    mapM_ BSC.putStrLn ls
 
 bsInteractLErr ::
     ([BS.ByteString] -> [Either BS.ByteString BS.ByteString]) ->
     IO ()
 bsInteractLErr f = do
-    ls <- f . map bslToBs . BSLC.lines <$> BSL.getContents
+    ls <- f . map BSL.toStrict . BSLC.lines <$> BSL.getContents
     mapM_ (either (BSC.hPutStrLn stderr) BSC.putStrLn) ls
 
 bsInteractLErrIO ::
     ([BS.ByteString] -> IO [Either BS.ByteString BS.ByteString]) ->
     IO ()
 bsInteractLErrIO f = do
-    ls <- f =<< map bslToBs . BSLC.lines <$> BSL.getContents
+    ls <- f =<< map BSL.toStrict . BSLC.lines <$> BSL.getContents
     mapM_ (either (BSC.hPutStrLn stderr) BSC.putStrLn) ls
 
 readLines :: FilePath -> IO [BS.ByteString]
@@ -45,3 +55,13 @@ hReadLines h =
     liftM2 (:) (BS.hGetLine h) (hReadLines h)
     `catch`
     (\e -> if isEOFError e then return [] else ioError e)
+
+hLinesFold :: (a -> BS.ByteString -> IO a) -> a -> Handle -> IO a
+hLinesFold f a h = do
+    lMb <- (Just <$> BS.hGetLine h) `catch`
+        (\e -> if isEOFError e then return Nothing else ioError e)
+    case lMb of
+      Just l -> do
+        a2 <- f a l
+        hLinesFold f a2 h
+      _ -> return a

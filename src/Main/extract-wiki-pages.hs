@@ -1,72 +1,70 @@
+{-# LANGUAGE BangPatterns #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-import Control.Applicative
-import Control.Arrow
 import qualified Data.ByteString as BS
-import qualified Data.ByteString.Char8 as BSC
-import qualified Data.ByteString.Lazy as BSL
-import Data.Char
-import Data.Maybe
-import qualified Data.Text as DT
-import qualified Data.Text.IO as DTI
+-- import qualified Data.ByteString.Char8 as BSC
+import Data.Monoid
 
-import ExtractWikiPages
-import GB1
+import Util.BS
 
-sectionBy :: (a -> Maybe b) -> [a] -> [(b, [a])]
-sectionBy _ [] = []
-sectionBy f (x:xs) =
-    case f x of
-      Just y -> growSection y [] f xs
-      _ -> sectionBy f xs
+type Str = BS.ByteString
 
-growSection :: b -> [a] -> (a -> Maybe b) -> [a] -> [(b, [a])]
-growSection sectionName sectionSoFar _ [] = [(sectionName, sectionSoFar)]
-growSection sectionName sectionSoFar f (x:xs) =
-    case f x of
-      Just y -> (sectionName, sectionSoFar) : growSection y [] f xs
-      _ -> growSection sectionName (sectionSoFar ++ [x]) f xs
+inTitlePrefix :: Str
+inTitlePrefix = "    <title>"
 
-mandarinSection :: BS.ByteString
-mandarinSection = "Mandarin"
+inTitlePrefixLen :: Int
+inTitlePrefixLen = BS.length inTitlePrefix
 
-translingualSection :: BS.ByteString
-translingualSection = "Translingual"
+textPrefix :: Str
+textPrefix = "      <text xml:space=\"preserve\">"
 
-wiktSections :: BS.ByteString -> [(BS.ByteString, [BS.ByteString])]
-wiktSections = sectionBy f . BSC.lines
+textPrefixLen :: Int
+textPrefixLen = BS.length textPrefix
+
+textOverPrefix :: Str
+textOverPrefix = "      <sha1>"
+
+-- Chosen randomly with odd characters.
+outTitlePrefix :: Str
+outTitlePrefix = "^$#`"
+
+chopN :: Int -> Str -> Str
+chopN !n !s = BS.take (BS.length s - n) s
+
+{-
+breakAndSepLast :: (a -> Bool) -> [a] -> (([a], a), [a])
+-}
+
+wikiPullTitleTexts :: [Str] -> [Str]
+wikiPullTitleTexts ls =
+    case ls2 of
+      [] -> []
+      _ -> 
+        (outTitlePrefix <> chopN 8 (BS.drop inTitlePrefixLen titleLine)) :
+        BS.drop textPrefixLen textLine :
+        ls6 ++
+        wikiPullTitleTexts (drop 1 rest)
   where
-    f x = case BSC.unpack $ BS.take 3 x of
-       '=':'=':[c] ->
-         if isAlpha c
-           then Just . BSC.takeWhile (/= '=') $ BSC.drop 2 x
-           else Nothing
-       _ -> Nothing
+    ls2 = dropWhile (not . (inTitlePrefix `BS.isPrefixOf`)) ls
+    titleLine:ls3 = ls2
+    ls4 = dropWhile (not . (textPrefix `BS.isPrefixOf`)) ls3
+    textLine:ls5 = ls4
+    (ls6, rest) = break (textOverPrefix `BS.isPrefixOf`) ls5
 
-procBody :: BS.ByteString -> Maybe BS.ByteString
-procBody body =
-    if any (== mandarinSection) $ map fst res
-      then Just $ collect res
-      else Nothing
-  where
-    res = filter ((`elem` [translingualSection, mandarinSection]) . fst) $
-        wiktSections body
-    collect = BSC.unlines . map (BSC.unlines . snd)
-
-seqSnd :: (a, Maybe b) -> Maybe (a, b)
-seqSnd (a, Just b) = Just (a, b)
-seqSnd _ = Nothing
+{-
+killEndText :: [Str] -> [Str]
+killEndText (a:b:rest) =
+    if "</text>" `BS.isSuffixOf` a &&
+        outTitlePrefix `BS.isPrefixOf` b
+      then chopN 7 a : killEndText (b:rest)
+      else a : killEndText (b:rest)
+killEndText [a] =
+    if "</text>" `BS.isSuffixOf` a
+      then [chopN 7 a]
+      else [a]
+killEndText [] = []
+-}
 
 main :: IO ()
-main = do
-    dictWds <- take 10000 . map dlWord .
-        zipWith readDictline [1..] . DT.lines <$> DTI.readFile
-        "/home/danl/p/l/melang/data/cmn/dict"
-
-    xmlStr <- BSL.getContents
-    mapM_ (\(title, text) -> BS.writeFile (DT.unpack title) text) .
-        -- take 10000 .
-        catMaybes .
-        map (seqSnd . second procBody) .
-        filter ((`elem` dictWds) . fst) $
-        extractPages xmlStr
+main = bsInteractL wikiPullTitleTexts
+--main = bsInteractL killEndText
