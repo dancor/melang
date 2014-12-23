@@ -22,8 +22,8 @@ main()
         ign_next_word = 0;
         for (i = 0; inp_line[i] != 0; i++) {
             int b = inp_line[i];
-            if ((b >= ord('a') && b <= ord('z')) ||
-                    (b >= ord('A') && b <= ord('Z')) ||
+            if (    (b >= 'a' && b <= 'z') ||
+                    (b >= 'A' && b <= 'Z') ||
                     b >= 128) {
                 // On a good character, add it to the Index.
                 Index[j] = b;
@@ -39,8 +39,8 @@ main()
                     // unless we should ignore the current word.
                     if (ign_next_word == 0 &&
                             // Disqualifying suffixes.
-                            b != ord('/') && b != ord('=') &&
-                            b != ord('|')) {
+                            b != '/' && b != '=' &&
+                            b != '|') {
                         // null-terminate Index string and add to judy-array
                         Index[j] = 0;
                         JSLI(PValue, PJArray, Index);
@@ -53,10 +53,10 @@ main()
                     j = 0;
                 }
                 // Disqualifying prefixes.
-                if (    b == ord('&') || b == ord('[') ||
-                        b == ord('|') || b == ord('#') ||
-                        b == ord('?') || b == ord(':') ||
-                        b == ord(';') || b == ord('/')) {
+                if (    b == '&' || b == '[' ||
+                        b == '|' || b == '#' ||
+                        b == '?' || b == ':' ||
+                        b == ';' || b == '/') {
                     ign_next_word = 1;
                 } else {
                     ign_next_word = 0;

@@ -302,3 +302,17 @@ executable wiki-word-index
     build-depends:
         bytestring-trie
       , deepseq
+
+flag german-adj-infl
+    default: False
+
+executable german-adj-infl
+    if !flag(german-adj-infl)
+        buildable: False
+    main-is:         Main/german-adj-infl.hs
+    hs-source-dirs:  src
+    ghc-options:     -O3 -Wall
+    build-depends:
+        containers
+      , random
+      , text
