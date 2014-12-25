@@ -56,6 +56,16 @@ prepsDat =
     , T "zwischen" "between"
     ]
 
+-- ich mich mir     mein
+-- du  dich dir     dein
+-- er  ihn  ihm     sein
+-- sie sie  ihr
+-- es  es   ihm
+
+-- wir uns  uns     unser
+-- ihr euch euch    euer
+-- sie sie  ihnen   ihr
+
 persPron :: [T]
 persPron =
     [ T "mein"  "my"
@@ -73,16 +83,6 @@ persPron =
     ]
 
 pronOf :: Case -> Person -> Gender -> Number -> Formality -> T
-
--- ich mich mir
--- du  dich dir
--- er  ihn  ihm
--- sie sie  ihr
--- es  es   ihm
-
--- wir uns  uns
--- ihr euch euch
--- sie sie  ihnen
 
 pronOf Nom P1 _ Sing _ = T "ich" "I"
 pronOf Nom P1 _ Plur _ = T "wir" "we"
