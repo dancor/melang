@@ -1,8 +1,13 @@
-
 #include <h>
 
+{-
 decSort :: (a -> b) -> (b -> b -> Ordering) -> [a] -> [a]
 decSort f c = map fst . sortBy (c `on` snd) . map (\x -> (x, f x))
+-}
+
+decFiltSort :: (a -> b) -> (b -> Bool) -> (b -> b -> Ordering) -> [a] -> [a]
+decFiltSort f req c = map fst . sortBy (c `on` snd) . filter (req . snd) .
+    map (\x -> (x, f x))
 
 main :: IO ()
 main = do
@@ -13,8 +18,9 @@ main = do
     let eNToSent = IntMap.fromList . map snd $ filter ((== "eng") . fst) ls
         fNToSent = IntMap.fromList . map snd $ filter ((== "deu") . fst) ls
     conns <-
-        decSort
+        decFiltSort
             (length . BSC.words . fromJust . flip IntMap.lookup fNToSent . fst)
+            (\l -> l >= 6 && l <= 20)
             compare .
         map (\asbs -> (fst $ head asbs, map snd asbs)) .
         groupBy ((==) `on` fst) .

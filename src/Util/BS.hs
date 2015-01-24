@@ -9,8 +9,18 @@ import qualified Data.ByteString.Char8 as BSC
 import qualified Data.ByteString.Lazy as BSL
 import qualified Data.ByteString.Lazy.Char8 as BSLC
 import Data.Char
+import Data.Monoid
 import System.IO
 import System.IO.Error
+
+bsReplace :: BS.ByteString -> BS.ByteString -> BS.ByteString -> BS.ByteString
+bsReplace needle repl x =
+    if BS.null needleAndRest
+      then x
+      else pre <> repl <> bsReplace needle repl rest
+  where
+    (pre, needleAndRest) = BS.breakSubstring needle x
+    rest = BS.drop (BS.length needle) needleAndRest
 
 breakTab :: BS.ByteString -> (BS.ByteString, BS.ByteString)
 breakTab = second BS.tail . BS.break (== 9)
