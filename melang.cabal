@@ -256,7 +256,7 @@ executable proc-raw-gb-data
         buildable: False
     main-is:         Main/proc-raw-gb-data.hs
     hs-source-dirs:  src
-    ghc-options:     -O2 -Wall
+    ghc-options:     -O3 -Wall
     build-depends:   
 
 flag cmn-text-wds

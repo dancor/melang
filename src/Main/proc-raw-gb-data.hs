@@ -33,16 +33,14 @@
 -- For English:
 -- - Combine words case-insensitively.
 
-import Control.Applicative
 import Control.Arrow
 import Control.Concurrent
 import Control.Monad
+import Control.Monad.Trans.Resource
 import Data.Char
 import Data.Conduit
-import qualified Data.Conduit.Binary as CB
+import qualified Data.Conduit.Combinators as CC
 import qualified Data.Conduit.List as CL
-import qualified Data.Conduit.Text as CT
-import qualified Data.Conduit.Util as CU
 import Data.Function
 import Data.List
 import qualified Data.Map as Map
@@ -77,7 +75,10 @@ tagSet = Set.fromList
     [ "ADJ", "ADP", "ADV", "CONJ", "DET", "NOUN", "NUM"
     , "PRON", "PRT", "VERB", "X"]
 
-data Lang = Eng | Chi
+data Lang = Eng | Chi | Ger | Spa
+
+showInt :: Int -> String
+showInt = show
 
 readCols :: DT.Text -> [DT.Text]
 readCols = DT.split (== '\t')
@@ -96,8 +97,8 @@ readRawLine lang l = case readCols l of
         else Just $ RawLine word spPart occurs
     where
       langBadWord = case lang of
-        Eng -> DT.all (not . isAlpha)
         Chi -> DT.all (not . isCjk)
+        _   -> DT.all (not . isAlpha)
       (wordUnd, spPart) = DT.breakOnEnd "_" wordSpPart
       word = DT.init wordUnd
       year = read $ DT.unpack yearStr
@@ -108,17 +109,6 @@ rawLineCols :: RawLine -> [DT.Text]
 rawLineCols (RawLine word spPart occurs) =
     [word, spPart, DT.pack $ show occurs]
 
-rawFiles :: String -> [(String, FilePath)]
-rawFiles dataSetName =
-    [ ( x
-      , "/home/danl/data/goog-ngrams/20120701" </> dataSetName </>
-        "1grams/googlebooks-" ++ dataSetName ++ "-all-1gram-20120701-" ++ x ++
-        ".gz"
-      )
-    | x <- map (:[]) ['a'..'z']
-    -- | x <- map (:[]) ['r']
-    ]
-
 sumSameWordSpPart :: Monad m => Conduit RawLine m RawLine
 sumSameWordSpPart =
     CL.groupBy (\x y ->
@@ -127,30 +117,24 @@ sumSameWordSpPart =
     =$= CL.map (\xs@(x:_) ->
         RawLine (rWord x) (rSpPart x) (sum $ map rOccurs xs))
 
-showInt :: Int -> String
-showInt = show
-
-combineSameWord :: Monad m => Conduit RawLine m (Integer, [DT.Text])
+combineSameWord :: Monad m => Conduit RawLine m [DT.Text]
 combineSameWord =
-    CL.groupBy ((==) `on` DT.toLower . rWord)
-    =$= CL.map spPartProc
+    CL.groupBy ((==) `on` DT.toLower . rWord) =$= CL.map spPartProc
   where
-    -- Take the capitalization which is most common, over all
-    -- possibilites.
-    takeMostCommon :: [(DT.Text, Int)] -> DT.Text
-    takeMostCommon = fst . maximumBy (compare `on` snd) .
+    useMostCommonCapitalization :: [(DT.Text, Int)] -> DT.Text
+    useMostCommonCapitalization = fst . maximumBy (compare `on` snd) .
         Map.toList . Map.fromListWith (+)
 
-    -- Consider spPart occurs as a percentage of the total occurs for the
-    -- word, and only show those with >= 10%.
-    takeCommon :: Int -> [(DT.Text, Int)] -> ([DT.Text], [Ratio Int])
-    takeCommon totPoss = unzip . sortBy (flip compare `on` snd) .
+    spPartTenPercentCutoff
+        :: Int -> [(DT.Text, Int)] -> ([DT.Text], [Ratio Int])
+    spPartTenPercentCutoff totPoss =
+        unzip . sortBy (flip compare `on` snd) .
         filter ((>= 1 % 10) . snd) . map (second (% totPoss)) .
         Map.toList . Map.fromListWith (+)
 
-    spPartProc :: [RawLine] -> (Integer, [DT.Text])
-    spPartProc rs = (,) (fromIntegral rsOccursSum)
-        [ takeMostCommon $ map (\r -> (rWord r, rOccurs r)) rs
+    spPartProc :: [RawLine] -> [DT.Text]
+    spPartProc rs =
+        [ useMostCommonCapitalization $ map (\r -> (rWord r, rOccurs r)) rs
         , DT.pack $ show rsOccursSum
         , DT.intercalate "/" commonSpParts
         , DT.intercalate "/" $
@@ -158,8 +142,8 @@ combineSameWord =
         ]
       where
         rsOccursSum = sum $ map rOccurs rs
-        (commonSpParts, commonSpPartFreqs) =
-            takeCommon rsOccursSum $ map (\r -> (rSpPart r, rOccurs r)) rs
+        (commonSpParts, commonSpPartFreqs) = spPartTenPercentCutoff
+            rsOccursSum $ map (\r -> (rSpPart r, rOccurs r)) rs
 
 colsToRawLine :: [DT.Text] -> RawLine
 colsToRawLine [word, spPart, occurs] =
@@ -176,52 +160,48 @@ doErr = forkIO . go
             hPutStrLn stderr l
             go h
     
-
-doFile :: Lang -> Handle -> (String, FilePath) -> IO Integer
-doFile lang bigSortIn (_name, fp) = do
+doFile :: Lang -> Handle -> FilePath -> IO ()
+doFile lang bigSortIn fp = do
     (zIn, zOut, zErr, _) <- runInteractiveProcess "zcat" [fp] Nothing (Just [])
-    --(zIn, zOut, zErr, _) <- runInteractiveProcess "zgrep" ["-i", "^r", fp] Nothing (Just [])
     hClose zIn
     (sortIn, sortOut, sortErr, _) <- runInteractiveProcess "sort"
         ["-f", "-t", "\t", "-k", "1,1"] Nothing (Just [])
     _ <- doErr zErr
     _ <- doErr sortErr
-    _ <- forkIO $ do
-        runResourceT $ CB.sourceHandle zOut $$ CT.decode CT.utf8 =$ CT.lines
-            =$ CL.mapMaybe (readRawLine lang)
-            =$ sumSameWordSpPart
-            =$ CL.map ((<> "\n") . showCols . rawLineCols)
-            =$ CT.encode CT.utf8 =$ CB.sinkHandle sortIn
-        hClose sortIn
-    (totOccurs, ()) <- runResourceT $ CB.sourceHandle sortOut
-        $$ CT.decode CT.utf8 =$ CT.lines
+    _ <- forkIO $ runResourceT (CC.sourceHandle zOut
+        $$ CC.linesUnbounded
+        =$ CL.mapMaybe (readRawLine lang)
+        =$ sumSameWordSpPart
+        =$ CL.map ((<> "\n") . showCols . rawLineCols)
+        =$ CC.sinkHandle sortIn) >> hClose sortIn
+    runResourceT $ CC.sourceHandle sortOut
+        $$ CC.linesUnbounded
         =$ CL.map (colsToRawLine . readCols)
         =$ combineSameWord
-        =$ CU.zipSinks
-           (CL.map fst =$ CL.fold (+) 0)
-           (CL.map ((<> "\n") . showCols . snd) =$ CT.encode CT.utf8
-               =$ CB.sinkHandle bigSortIn)
-    return totOccurs
+        =$ CL.map ((<> "\n") . showCols)
+        =$ CC.sinkHandle bigSortIn
 
 main :: IO ()
 main = do
     args <- getArgs
     let dataSetName = case args of
           [x] -> x
-          _ -> error "usage, e.g. (creates ./word-list): proc-raw-gb-data spa"
+          _ -> error "usage, e.g.: proc-raw-gb-data spa"
+        dataDir = "/home/danl/data/goog-ngrams/cur" </> dataSetName
         lang = case dataSetName of
           "chi-sim" -> Chi
+          "ger" -> Ger
           "eng" -> Eng
-          "spa" -> Eng
-          "ger" -> Eng
+          "spa" -> Spa
           _ -> error "unknown data-set"
-        myFiles = rawFiles dataSetName
-    (bigSortIn, bigSortOut, bigSortErr, bigSortProc) <-
-        runInteractiveProcess "sort"
-        ["-t", "\t", "-k", "2,2nr", "-o", "word-list"] Nothing (Just [])
+        inFiles = map (\x -> dataDir </> "1grams/" ++ x ++ ".gz")
+            -- ["a".."z"]
+            ["d"]
+        outFile = dataDir </> "wds.txt"
+    (bigSortIn, bigSortOut, bigSortErr, bigSortProc) <- runInteractiveProcess
+        "sort" ["-t", "\t", "-k", "2,2nr", "-o", outFile] Nothing (Just [])
     _ <- doErr bigSortOut
     _ <- doErr bigSortErr
-    totOccurs <- sum <$> mapM (doFile lang bigSortIn) myFiles
+    mapM_ (doFile lang bigSortIn) inFiles
     hClose bigSortIn
-    _ <- waitForProcess bigSortProc
-    print totOccurs
+    void $ waitForProcess bigSortProc
