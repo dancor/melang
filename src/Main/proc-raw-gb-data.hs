@@ -155,10 +155,7 @@ doErr = forkIO . go
   where
     go h = do
         eof <- hIsEOF h
-        unless eof $ do
-            l <- hGetLine h
-            hPutStrLn stderr l
-            go h
+        unless eof $ hGetLine h >>= hPutStrLn stderr >> go h
     
 doFile :: Lang -> Handle -> FilePath -> IO ()
 doFile lang bigSortIn fp = do
