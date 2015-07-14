@@ -31,6 +31,8 @@ executable wlk
     hs-source-dirs:  src
     ghc-options:     -Wall
     build-depends:
+        haskeline
+      , mtl
 
 flag text-ch-freq
     default: False
@@ -316,3 +318,59 @@ executable german-adj-infl
         containers
       , random
       , text
+
+flag wikt-pull-all
+    default: False
+
+executable wikt-pull-all
+    if !flag(wikt-pull-all)
+        buildable: False
+    main-is:         Main/wikt-pull-all.hs
+    hs-source-dirs:  src
+    ghc-options:     -O3 -Wall
+    build-depends:
+
+flag pull-words
+    default: False
+
+executable pull-words
+    if !flag(pull-words)
+        buildable: False
+    main-is:         Main/pull-words.hs
+    hs-source-dirs:  src
+    ghc-options:     -O3 -Wall
+    build-depends:
+        conduit
+      , conduit-combinators
+      , conduit-extra
+      , resourcet
+
+flag gww-word-count
+    default: False
+
+executable gww-word-count
+    if !flag(gww-word-count)
+        buildable: False
+    main-is:         Main/gww-word-count.hs
+    hs-source-dirs:  src
+    ghc-options:     -O3 -Wall
+    build-depends:
+        conduit
+      , conduit-combinators
+      , conduit-extra
+      , resourcet
+      , transformers
+      , void
+
+flag wiktde-noun-forms
+    default: False
+
+executable wiktde-noun-forms
+    if !flag(wiktde-noun-forms)
+        buildable: False
+    main-is:         Main/wiktde-noun-forms.hs
+    hs-source-dirs:  src
+    ghc-options:     -O3 -Wall
+    build-depends:
+        bytestring
+      , tagsoup

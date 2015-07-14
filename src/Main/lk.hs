@@ -50,10 +50,10 @@ doReplacements reps = concatMap $ \x -> case lookup x reps of
   Just y -> y
   Nothing -> [x]
 
-lkR :: Int -> String -> IO ()
+lkR :: Int -> BS.ByteString -> IO ()
 lkR depth line = do
-    putStrLn $ replicate (3 * (depth - 1)) ' ' ++
-        (if depth > 0 then "=> " else "") ++ line
+    BSC.putStrLn $ BSC.replicate (3 * (depth - 1)) ' ' <>
+        (if depth > 0 then "=> " else "") <> line
     return ()
 
 dictGrep :: Int -> String -> String -> [String] -> IO ()
@@ -61,10 +61,10 @@ dictGrep depth ptn dictF grepArgs = do
     (pIn, pOut, pErr, pId) <-
         runInteractiveProcess "grep" (ptn:dictF:grepArgs) Nothing Nothing
     hClose pIn
-    cOut <- hGetContents pOut
-    mapM_ (lkR depth) $ lines cOut
-    cErr <- hGetContents pErr
-    hPutStr stderr cErr
+    cOut <- BS.hGetContents pOut
+    mapM_ (lkR depth) $ BSC.lines cOut
+    cErr <- BS.hGetContents pErr
+    BS.hPutStr stderr cErr
     _ <- waitForProcess pId
     return ()
 
