@@ -89,16 +89,16 @@ showCols = DT.intercalate "\t"
 readRawLine :: Lang -> DT.Text -> Maybe RawLine
 readRawLine lang l = case readCols l of
   [wordSpPart, yearStr, occursStr, _bkOccursStr] ->
-      if year < (1980 :: Int) ||
-          spPart `Set.notMember` tagSet ||
-          DT.null wordUnd ||
-          langBadWord word
-        then Nothing
-        else Just $ RawLine word spPart occurs
+      if year >= (1980 :: Int) &&
+          spPart `Set.member` tagSet &&
+          not (DT.null wordUnd) &&
+          langGoodWord word
+        then Just $ RawLine word spPart occurs
+        else Nothing
     where
-      langBadWord = case lang of
-        Chi -> DT.all (not . isCjk)
-        _   -> DT.all (not . isAlpha)
+      langGoodWord = case lang of
+        Chi -> DT.any isCjk
+        _   -> DT.any isAlpha
       (wordUnd, spPart) = DT.breakOnEnd "_" wordSpPart
       word = DT.init wordUnd
       year = read $ DT.unpack yearStr
