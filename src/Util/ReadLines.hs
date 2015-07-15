@@ -1,3 +1,5 @@
+-- Switch to conduit instead?
+
 module Util.ReadLines where
 
 import qualified Data.ByteString as BS
