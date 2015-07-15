@@ -194,7 +194,9 @@ main = do
         inFiles = map (\x -> dataDir </> "1grams/" ++ x ++ ".gz")
             -- ["a".."z"]
             ["d"]
-        outFile = dataDir </> "wds.txt"
+        outFile = case lang of
+          Ger -> dataDir </> "wds-alts.txt"
+          _   -> dataDir </> "wds.txt"
     (bigSortIn, bigSortOut, bigSortErr, bigSortProc) <- runInteractiveProcess
         "sort" ["-t", "\t", "-k", "2,2nr", "-o", outFile] Nothing (Just [])
     _ <- doErr bigSortOut
