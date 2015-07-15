@@ -44,7 +44,6 @@ import qualified Data.Conduit.List as CL
 import Data.Function
 import Data.List
 import qualified Data.Map as Map
-import Data.Monoid
 import Data.Ratio
 import qualified Data.Set as Set
 import qualified Data.Text as DT
@@ -53,8 +52,12 @@ import System.FilePath
 import System.IO
 import System.Process
 
-data RawLine
-    = RawLine
+import Util.DT
+import Util.Process
+
+data Lang = Eng | Chi | Ger | Spa
+
+data RawLine = RawLine
     { rWord   :: !DT.Text
     , rSpPart :: !DT.Text
     , rOccurs :: !Int
@@ -75,16 +78,8 @@ tagSet = Set.fromList
     [ "ADJ", "ADP", "ADV", "CONJ", "DET", "NOUN", "NUM"
     , "PRON", "PRT", "VERB", "X"]
 
-data Lang = Eng | Chi | Ger | Spa
-
 showInt :: Int -> String
 showInt = show
-
-readCols :: DT.Text -> [DT.Text]
-readCols = DT.split (== '\t')
-
-showCols :: [DT.Text] -> DT.Text
-showCols = DT.intercalate "\t"
 
 readRawLine :: Lang -> DT.Text -> Maybe RawLine
 readRawLine lang l = case readCols l of
@@ -150,33 +145,19 @@ colsToRawLine [word, spPart, occurs] =
     RawLine word spPart (read $ DT.unpack occurs)
 colsToRawLine x = error $ "Bad raw line: " ++ show x
 
-doErr :: Handle -> IO ThreadId
-doErr = forkIO . go
-  where
-    go h = do
-        eof <- hIsEOF h
-        unless eof $ hGetLine h >>= hPutStrLn stderr >> go h
-    
 doFile :: Lang -> Handle -> FilePath -> IO ()
 doFile lang bigSortIn fp = do
-    (zIn, zOut, zErr, _) <- runInteractiveProcess "zcat" [fp] Nothing (Just [])
+    (zIn, zOut, _) <- procPassErr "zcat" [fp]
     hClose zIn
-    (sortIn, sortOut, sortErr, _) <- runInteractiveProcess "sort"
-        ["-f", "-t", "\t", "-k", "1,1"] Nothing (Just [])
-    _ <- doErr zErr
-    _ <- doErr sortErr
-    _ <- forkIO $ runResourceT (CC.sourceHandle zOut
-        $$ CC.linesUnbounded
-        =$ CL.mapMaybe (readRawLine lang)
-        =$ sumSameWordSpPart
-        =$ CL.map ((<> "\n") . showCols . rawLineCols)
-        =$ CC.sinkHandle sortIn) >> hClose sortIn
-    runResourceT $ CC.sourceHandle sortOut
-        $$ CC.linesUnbounded
-        =$ CL.map (colsToRawLine . readCols)
-        =$ combineSameWord
-        =$ CL.map ((<> "\n") . showCols)
-        =$ CC.sinkHandle bigSortIn
+    (sortIn, sortOut, _) <- procPassErr "sort" ["-f", "-t", "\t", "-k", "1,1"]
+    _ <- forkIO $ do
+        runResourceT $ CC.sourceHandle zOut $$ conduitLines (
+            CL.mapMaybe (readRawLine lang) =$ sumSameWordSpPart =$
+            CL.map (showCols . rawLineCols)) =$ CC.sinkHandle sortIn
+        hClose sortIn
+    runResourceT $ CC.sourceHandle sortOut $$ conduitLines (
+        CL.map (colsToRawLine . readCols) =$ combineSameWord =$
+        CL.map showCols) =$ CC.sinkHandle bigSortIn
 
 main :: IO ()
 main = do
@@ -191,16 +172,15 @@ main = do
           "eng" -> Eng
           "spa" -> Spa
           _ -> error "unknown data-set"
-        inFiles = map (\x -> dataDir </> "1grams/" ++ x ++ ".gz")
-            -- ["a".."z"]
-            ["d"]
+        inFiles = map (\x -> dataDir </> "1grams/" ++ [x] ++ ".gz")
+            ['a'..'z']
+            -- ['d']
         outFile = case lang of
           Ger -> dataDir </> "wds-alts.txt"
           _   -> dataDir </> "wds.txt"
-    (bigSortIn, bigSortOut, bigSortErr, bigSortProc) <- runInteractiveProcess
-        "sort" ["-t", "\t", "-k", "2,2nr", "-o", outFile] Nothing (Just [])
-    _ <- doErr bigSortOut
-    _ <- doErr bigSortErr
+    (bigSortIn, bigSortOut, bigSortProc) <-
+        procPassErr "sort" ["-t", "\t", "-k", "2,2nr", "-o", outFile]
+    hPassErr bigSortOut
     mapM_ (doFile lang bigSortIn) inFiles
     hClose bigSortIn
     void $ waitForProcess bigSortProc
