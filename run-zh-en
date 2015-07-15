@@ -1,8 +1,0 @@
-#!/bin/bash
-set -e
-
-cabal configure -f proc-zh-en-json
-cabal build
-
-#time < ~/p/l/melang/data/json/zh-en.json ./proc-zh-en-json > ~/p/l/melang/data/proc-zh-en-json.out
-time grep 同时 ~/p/l/melang/data/json/zh-en.json | ./proc-zh-en-json
