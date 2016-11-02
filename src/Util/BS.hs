@@ -1,6 +1,5 @@
 module Util.BS where
 
-import Control.Applicative
 import Control.Arrow
 import Control.Exception
 import Control.Monad

@@ -13,7 +13,7 @@ import Util.BS
 type Str = BS.ByteString
 
 titleMagic :: Str
-titleMagic = "^@# "
+titleMagic = "^"
 
 titleLinePrefix :: Str
 titleLinePrefix = "    <title"
@@ -49,6 +49,7 @@ procPage ls =
     title = titleMagic <>
         BSC.takeWhile (/= '<') (dropTag titleLinePrefix $ head ls)
     content =
+        map (\s -> if BSC.take 1 s /= "^" then s else BSC.cons ' ' s) .
         onLast (dropLastN 7) .
         takeWhile (not . ("      <sha1" `BS.isPrefixOf`)) .
         onHead (dropTag bodyLinePrefix) $

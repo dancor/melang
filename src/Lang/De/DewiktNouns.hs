@@ -75,3 +75,14 @@ readStoryWds :: IO (Set.Set DT.Text)
 readStoryWds =
     Set.fromList . pullWds <$> DT.readFile
     "/home/danl/l/l/de/audio/book/Herrn-Arnes-Schatz/Kapitel-01.txt"
+
+{-
+wdsToNounForms :: DT.Text -> [DT.Text] -> [Maybe NounForm]
+wdsToNounForms wikt wds =
+
+wdsToNounFormsUnord :: DT.Text -> Set.Set DT.Text -> Map DT.Text NounForm
+wdsToNounFormsUnord wikt wds =
+    filter (Set.member wds) .
+    partitions (== "{{Deutsch Substantiv Übersicht") $
+    DT.lines wikt
+    -}

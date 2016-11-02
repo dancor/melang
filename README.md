@@ -1,3 +1,9 @@
+# Current project
+- Pull Spanish verb forms from en.wikt or es.wikt
+- https://es.wiktionary.org/wiki/Plantilla:es.v.conj.-ie-ue-.ar
+- https://es.wiktionary.org/wiki/Plantilla:es.v.conj.ar
+- https://es.wiktionary.org/w/index.php?title=pensar&action=edit&section=6
+
 # Data Sources
 - CEDICT (for Mandarin)
   - Source of: Definitions, Pronunciations, Words
@@ -8,6 +14,7 @@
   - Examples: Pride and Prejudice
 - Google Ngrams (e.g. 30 billion word Chinese corpus of books since 1980)
   - Source of: Frequencies, Parts-of-speech, Words
+  - gz files looked for in: ~/data/goog-ngrams/cur/{3-letten-lang-code}/1grams
   - Note:
     - Some non-words (yi2tiao4 "a strip" is not one word).
     - Many parts-of-speech are quite wrong and need hand-correction.
@@ -19,11 +26,13 @@
       most common (e.g. they have only di4 for 地).
 - Wikipedia
   - Source of: Sentences
+  - Looked for in: ~/data/wiki/{2-letter-lang-code}/articles.xml.bz2
   - Note:
     - Wiki Markup might be tricky to process? Maybe not if just stripping
       things out to find sentences.
 - Wiktionary
   - Source of: Definitions, Parts-of-speech, Pronunciations, Senteces, Words
+  - Looked for in: ~/data/wikt/{2-letter-lang-code}/articles.xml.bz2
   - Note:
     - Unconstrained format less consistent than it could be;
       entries somewhat hard to machine-process.
