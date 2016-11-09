@@ -67,6 +67,20 @@ executable optimize-wubi
     , text
     , unordered-containers
 
+flag wikt-inflections
+  default: False
+
+executable wikt-inflections
+  if !flag(wikt-inflections)
+    buildable: False
+  main-is:         Main/wikt-inflections.hs
+  hs-source-dirs:  src
+  ghc-options:     -O2 -Wall
+  build-depends:
+      base
+    , text
+    , parsec
+
 flag lol
   default: False
 
