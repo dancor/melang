@@ -103,6 +103,19 @@ executable wlk
     , haskeline
     , mtl
 
+executable zh-char-parts
+  main-is:         Main/zh-char-parts.hs
+  hs-source-dirs:  src
+  ghc-options:     -O2 -Wall
+  build-depends:
+      base
+    , bytestring
+    , HSH
+    , split
+    , stringsearch
+    , text
+    , zim-parser
+
 executable lol
   main-is:         Main/lol.hs
   hs-source-dirs:  src
