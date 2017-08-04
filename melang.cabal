@@ -7,12 +7,7 @@ synopsis:      lang study
 build-type:    Simple
 cabal-version: >= 1.7.1
 
-flag extract-wiki-pages
-  default: False
-
 executable extract-wiki-pages
-  if !flag(extract-wiki-pages)
-    buildable: False
   main-is:         Main/extract-wiki-pages.hs
   hs-source-dirs:  src
   ghc-options:     -O2 -Wall
@@ -20,15 +15,25 @@ executable extract-wiki-pages
       base
     , bytestring
 
-flag wiki-word-index
-    default: False
+executable wiki-word-index
+  main-is:         Main/wiki-word-index.hs
+  hs-source-dirs:  src
+  ghc-options:     -O2 -Wall
+  build-depends:
+      base
+    , bytestring
+    , conduit
+    , conduit-combinators
+    , hashtables
+    , mtl
+    , process
+    , resourcet
+    , strict
 
 flag hilite-wds
   default: False
 
 executable hilite-wds
-  if !flag(hilite-wds)
-    buildable: False
   main-is:         Main/hilite-wds.hs
   hs-source-dirs:  src
   ghc-options:     -O2 -Wall
@@ -38,12 +43,19 @@ executable hilite-wds
     , text
     , unordered-containers
 
-flag wikt-pull-all
-  default: False
+executable wikt-to-defs
+  main-is:         Main/wikt-to-defs.hs
+  hs-source-dirs:  src
+  ghc-options:     -O2 -Wall
+  build-depends:
+      base
+    , bytestring
+    , filepath
+    , split
+    , tagsoup
+    , unordered-containers
 
 executable wikt-pull-all
-  if !flag(wikt-pull-all)
-    buildable: False
   main-is:         Main/wikt-pull-all.hs
   hs-source-dirs:  src
   ghc-options:     -O2 -Wall
@@ -52,12 +64,16 @@ executable wikt-pull-all
     , bytestring
     , tagsoup
 
-flag optimize-wubi
-  default: False
+executable wikt-pull-lang
+  main-is:         Main/wikt-pull-lang.hs
+  hs-source-dirs:  src
+  ghc-options:     -O2 -Wall
+  build-depends:
+      base
+    , bytestring
+    , tagsoup
 
 executable optimize-wubi
-  if !flag(optimize-wubi)
-    buildable: False
   main-is:         Main/optimize-wubi.hs
   hs-source-dirs:  src
   ghc-options:     -O2 -Wall
@@ -67,12 +83,7 @@ executable optimize-wubi
     , text
     , unordered-containers
 
-flag wikt-inflections
-  default: False
-
 executable wikt-inflections
-  if !flag(wikt-inflections)
-    buildable: False
   main-is:         Main/wikt-inflections.hs
   hs-source-dirs:  src
   ghc-options:     -O2 -Wall
@@ -81,12 +92,18 @@ executable wikt-inflections
     , text
     , parsec
 
-flag lol
-  default: False
+executable wlk
+  main-is:         Main/wlk.hs
+  hs-source-dirs:  src
+  ghc-options:     -O2 -Wall
+  build-depends:
+      base
+    , containers
+    , filepath
+    , haskeline
+    , mtl
 
 executable lol
-  if !flag(lol)
-    buildable: False
   main-is:         Main/lol.hs
   hs-source-dirs:  src
   ghc-options:     -O2 -Wall

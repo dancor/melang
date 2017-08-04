@@ -1,43 +1,40 @@
+-- We don't correctly parse XML. We just do fast and easy processing
+-- that works for the mediawikis. We can always change later.
+
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE Rank2Types #-}
 
 module MediaWiki
-  ( bzxmlTitleTexts
+  ( Str
+  , Article
+  , bzxmlArticles
   ) where
 
-import Control.Applicative
 import Control.Monad
-import Control.Monad.ST
+import Control.Monad.IO.Class
 import Control.Monad.Trans.Resource
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Char8 as BSC
 import Data.Conduit
-import qualified Data.Conduit.Binary as CB
 import qualified Data.Conduit.Combinators as CC
 import qualified Data.Conduit.List as CL
-import qualified Data.Conduit.Process as CP
-import qualified Data.Conduit.Text as CT
-import Data.Maybe
+import Data.HashTable.IO as H
 import Data.Monoid
 import Data.Strict.Tuple
-import GHC.IO.Handle
-import System.Environment
 import System.Process
-import Text.HTML.TagSoup
-
-import Util.BS
 
 type Str = BS.ByteString
 
 type Article = Pair Str [Str]
 
-titlePrefix :: Str
-titlePrefix = "    <title>"
+type HashTable k v = H.BasicHashTable k v
 
-titleSuffix :: Str
-titleSuffix = "</title>"
-
-bodyPrefix :: Str
-bodyPrefix = "      <text xml:space=\"preserve\">"
+titlePrefix, titleSuffix, bodyPrefix, bodySuffix, postBodyPrefix :: Str
+titlePrefix     = "    <title>"
+titleSuffix     = "</title>"
+bodyPrefix      = "      <text xml:space=\"preserve\">"
+bodySuffix      = "</text>"
+postBodyPrefix  = "      <sha1>"
 
 bsLines :: Monad m => Conduit Str m Str
 bsLines =
@@ -58,12 +55,24 @@ bsLines =
       where
         (first', second) = BSC.break (== '\n') more
 
-bsKillLastN n s = BS.take (BS.length s - n) s
+bsDropEnd :: Int -> Str -> Str
+bsDropEnd n s = BS.take (BS.length s - n) s
 
-cOnHeadCont f c = do
+cOnHead :: Monad m => (a -> a) -> Conduit a m a
+cOnHead f = do
     m <- await
     case m of
-      Just a -> leftover (f a) >> c
+      Just a -> yield (f a) >> awaitForever yield
+      _ -> return ()
+
+cOnLast :: Monad m => (a -> a) -> Conduit a m a
+cOnLast f = do
+    m <- await
+    case m of
+      Just a -> do
+        weAreLast <- CC.null
+        yield $ if weAreLast then f a else a
+        cOnLast f
       _ -> return ()
 
 pullArticles :: Monad m => Conduit Str m Article
@@ -72,40 +81,45 @@ pullArticles = do
     mTitle <- await
     case mTitle of
       Just title -> do
-        body <- (CC.dropWhile (not . BS.isPrefixOf bodyPrefix) >>
-            cOnHeadCont (BS.drop (BS.length bodyPrefix)) (CC.take 2)) =$=
-            CC.sinkList
+        body <- (CC.dropWhile (not . BS.isPrefixOf bodyPrefix)
+            >> cOnHead (BS.drop (BS.length bodyPrefix)))
+            =$= CC.takeWhile (not . BS.isPrefixOf postBodyPrefix)
+            =$= cOnLast (bsDropEnd (BS.length bodySuffix))
+            =$= CC.sinkList
         yield $
-            bsKillLastN (BS.length titleSuffix)
+            bsDropEnd (BS.length titleSuffix)
             ((BS.drop (BS.length titlePrefix)) title) :!: body
         pullArticles
       _ -> return ()
 
+bsTakeEnd :: Int -> Str -> Str
 bsTakeEnd n s = BS.drop (BS.length s - n) s
 
 summarizeArticle :: Article -> Str
 summarizeArticle (title :!: []) = title <> ": " <> "EMPTY"
 summarizeArticle (title :!: body) = title <> ": " <> 
-    if bodyLen <= summaryLen
-      then bodyCat
-      else
+    if bodyLen <= summaryLen then bodyCat else
         BS.take (summaryLen - 105) bodyCat <> " ... " <> bsTakeEnd 100 bodyCat
   where
     summaryLen = 200
     bodyCat = BS.concat body
     bodyLen = BS.length bodyCat
 
--- bzxmlTitleTexts :: FilePath -> IO [Pair Str [Str]]
-bzxmlTitleTexts :: FilePath -> IO ()
-bzxmlTitleTexts fp = do
+-- articleTitle :: Article -> Str
+-- articleTitle (
+
+bzxmlArticles :: (MonadIO m, MonadResource m)
+  => FilePath -> Consumer Article m r -> m r
+--bzxmlArticles :: FilePath -> IO ()
+bzxmlArticles fp c = do
     let getBzHandle = do
-            (_, Just hOut, _, _) <-
-                createProcess (proc "bzcat" [fp]) {std_out = CreatePipe}
+            -- (_, Just hOut, _, _) <- createProcess (proc "pbzip2" ["-cd", fp])
+            (_, Just hOut, _, _) <- createProcess (proc "bzcat" [fp])
+                {std_out = CreatePipe}
             return hOut
-    res <- runResourceT $ CC.sourceIOHandle getBzHandle
-        $= bsLines
-        $= pullArticles
-        $= CC.map summarizeArticle
-        $= CC.take 80
-        $$ CC.sinkList
-    mapM_ BSC.putStrLn res
+    runConduit $ CC.sourceIOHandle getBzHandle
+        =$= bsLines
+        =$= pullArticles
+        =$= c
+        -- CC.map (\(title :!: _) -> title)
+        -- $$ awaitForever (liftIO . BSC.putStrLn)

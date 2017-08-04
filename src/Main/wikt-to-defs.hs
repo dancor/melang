@@ -25,7 +25,8 @@ main = do
       [arg] -> return arg
       _ -> error $ concat
         [ "usage e.g.: "
-        , "/usr/bin/time < ~/data/wikt/spa ./wikt-to-defs spa > lang/spa/wikt"
+        , "/usr/bin/time < ~/data/wikt/en-es.txt " ++
+          "./wikt-to-defs es > lang/es/wikt-defs.txt"
         ]
     dict <- HMS.fromList .
         zipWith (\n (word:_freq:spPart:stats:_)  ->
@@ -33,7 +34,7 @@ main = do
             , Entry word Nothing (Left "???") (spPart <> " " <> stats) n
             )) [1..] .
         map (BS.split 9) . BSC.lines <$>
-        BS.readFile ("/home/danl/p/l/melang/lang" </> lang </> "wds-100k.txt")
+        BS.readFile ("/home/danl/p/l/melang/lang" </> lang </> "top-wds")
     bsInteractLErr $ map Right .
         map (\e -> BS.intercalate "\t" [eWd e,
             fromMaybe "/?/" (ePronunciation e),

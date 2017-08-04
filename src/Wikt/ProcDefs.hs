@@ -153,6 +153,7 @@ processBlock blockDepth =
         _ -> "<?<" ++ x ++ ">?>"
       where
         (mainPart:restParts) = splitWhen (== '|') x
+        isBadPart :: String -> Bool
         isBadPart part =
             part `elem` ["", "en", "es", "su", "f", "s"] ||
             "=" `isInfixOf` part

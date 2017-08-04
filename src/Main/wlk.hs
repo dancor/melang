@@ -74,9 +74,9 @@ main = runInputT defaultSettings $ do
   wubiToCh <- io $ map (listToPair . take 2 . words) .
     init .
     drop 1 .
-    dropWhile (/= "BEGIN_TABLE") .
+    dropWhile (/= "[Data]") .
     lines <$>
-    readFile (home </> "p/one-off/ibus-table-translate/src/wubi2008.txt")
+    readFile (home </> "p/one-off/fcitx-table-translate/original/wubi2008.txt")
   let
     w2c = M.fromListWith (++) $ map (second (:[])) wubiToCh
     c2w = M.fromListWith (++) $ map (swap . first (:[])) wubiToCh
