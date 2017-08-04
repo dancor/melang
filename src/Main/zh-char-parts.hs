@@ -1,13 +1,10 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 
-import Codec.Archive.Zim.Parser (getMainPageUrl, getContent, Url(..)) 
-import Control.Monad
+import Codec.Archive.Zim.Parser (getContent, Url(..)) 
 import Data.Char
 import Data.List.Split
 import Data.Monoid
-import qualified Data.ByteString as BS
-import qualified Data.ByteString.Char8 as BSC
 import qualified Data.ByteString.Lazy as BSL
 import qualified Data.ByteString.Lazy.Char8 as BSLC
 import qualified Data.ByteString.Lazy.Search as BSLS
@@ -32,7 +29,7 @@ doChar indent c = do
         (Url $ "A/" <> DTE.encodeUtf8 (DT.pack [c]) <> ".html")
     let (_, compositionHtml) = BSLS.breakAfter "composition" zimHtml
         parts =
-            filter (`notElem` ("⿱⿰" :: String)) $
+            filter (`notElem` ("⿱⿰⿸⿻" :: String)) $
             filter (not . isSpace) $
             killBraced $
             DTL.unpack $
