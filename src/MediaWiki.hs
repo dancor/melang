@@ -110,7 +110,6 @@ summarizeArticle (title :!: body) = title <> ": " <>
 
 bzxmlArticles :: (MonadIO m, MonadResource m)
   => FilePath -> Consumer Article m r -> m r
---bzxmlArticles :: FilePath -> IO ()
 bzxmlArticles fp c = do
     let getBzHandle = do
             -- (_, Just hOut, _, _) <- createProcess (proc "pbzip2" ["-cd", fp])

@@ -24,30 +24,33 @@ killBraced (x:xs) = x : killBraced xs
 
 doChar :: Int -> Char -> IO [[String]]
 doChar indent c = do
-    Just (_, zimHtml :: BSL.ByteString) <-
+    getContentResult <-
         getContent ("/home/danl/data/wikt/en.zim" :: String)
         (Url $ "A/" <> DTE.encodeUtf8 (DT.pack [c]) <> ".html")
-    let (_, compositionHtml) = BSLS.breakAfter "composition" zimHtml
-        parts =
-            filter (`notElem` ("⿱⿰⿸⿻" :: String)) $
-            filter (not . isSpace) $
-            killBraced $
-            DTL.unpack $
-            DTLE.decodeUtf8 $
-            BSLC.takeWhile (/= ')') $
-            compositionHtml
-    grepResult <- flip HSH.catchEC (\_ -> return "\t\t\t\t\t") $ HSH.runSL 
-        ( "grep" :: String
-        , [ "^" ++ [c] ++ "\t"
-          , "/home/danl/p/l/melang/lang/zh/dict"
-          ]
-        )
-    doCharResults <- mapM (doChar (indent + 1)) parts
-    return $ 
-        [ [ replicate (2 * indent) ' ' ++ "- " ++ [c] ] ++
-          map (' ':) (tail $ splitWhen (== '\t') grepResult)
-        ] ++
-        concat doCharResults
+    case getContentResult of
+      Just (_, zimHtml :: BSL.ByteString) -> do
+        let (_, compositionHtml) = BSLS.breakAfter "composition" zimHtml
+            parts =
+                filter (`notElem` ("⿱⿰⿳⿴⿸⿹⿺⿵⿻" :: String)) $
+                filter (not . isAscii) $
+                killBraced $
+                DTL.unpack $
+                DTLE.decodeUtf8 $
+                BSLC.takeWhile (/= ')') $
+                compositionHtml
+        grepResult <- flip HSH.catchEC (\_ -> return "\t\t\t\t\t") $ HSH.runSL 
+            ( "grep" :: String
+            , [ "^" ++ [c] ++ "\t"
+              , "/home/danl/p/l/melang/lang/zh/dict"
+              ]
+            )
+        doCharResults <- mapM (doChar (indent + 1)) parts
+        return $ 
+            [ [ replicate (2 * indent) ' ' ++ "- " ++ [c] ] ++
+              map (' ':) (tail $ splitWhen (== '\t') grepResult)
+            ] ++
+            concat doCharResults
+      _ -> return []
 
 main :: IO ()
 main = do

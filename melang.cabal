@@ -24,11 +24,14 @@ executable wiki-word-index
     , bytestring
     , conduit
     , conduit-combinators
+    , conduit-extra
     , hashtables
     , mtl
     , process
     , resourcet
     , strict
+    , text
+    , vector
 
 flag hilite-wds
   default: False
