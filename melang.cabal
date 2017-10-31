@@ -95,6 +95,19 @@ executable wikt-inflections
     , text
     , parsec
 
+executable ruff-words
+  main-is:         Main/ruff-words.hs
+  hs-source-dirs:  src
+  ghc-options:     -O2 -Wall
+  build-depends:
+      base
+    , bytestring
+    , process
+    , split
+    , tagsoup
+    , utf8-string
+    , unordered-containers
+
 executable wlk
   main-is:         Main/wlk.hs
   hs-source-dirs:  src
@@ -104,6 +117,7 @@ executable wlk
     , containers
     , filepath
     , haskeline
+    , HSH
     , mtl
 
 executable zh-char-parts

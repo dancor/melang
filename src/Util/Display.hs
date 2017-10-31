@@ -11,7 +11,8 @@ colSpace :: [[String]] -> [[String]]
 spaceTable :: [[String]] -> [String]
 spaceTable [] = []
 spaceTable ([]:_) = []
-spaceTable t@([_]:_) = map head t  -- one col
+-- One column, but deal gracefully with some being empty.
+spaceTable t@([_]:_) = map (\xs -> if null xs then "" else head xs) t
 spaceTable t = zipWith (++) (spaceBlock col) $ spaceTable rest where
   (col, rest) = unzip $ map (\ (x:xs) -> (x, xs)) t
 

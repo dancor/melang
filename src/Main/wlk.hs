@@ -11,22 +11,19 @@ import System.Console.Haskeline
 import System.Environment
 import System.FilePath
 import qualified Data.Map as M
+import HSH
 
 import Util.Pair
 import Wubi
 
-io :: IO a -> InputT IO a
-io = liftIO
-
 wLk :: Ord k => M.Map k [[Char]] -> M.Map k [[Char]] -> k -> String
 wLk w2c c2w l =
-  unlines . sortBy (comparing length `mappend` compare) $ map showRes r
+    unlines . sortBy (comparing length `mappend` compare) $ map showRes r
   where
-  r = fromMaybe [] (M.lookup l w2c) ++
-    concat (maybeToList $ M.lookup l c2w)
-  showRes x = case sequence $ map qToWK x of
-    Just y -> concatMap showWK y
-    _ -> x
+    r = fromMaybe [] (M.lookup l w2c) ++ concat (maybeToList $ M.lookup l c2w)
+    showRes x = case sequence $ map qToWK x of
+      Just y -> concatMap showWK y
+      _ -> x
 
 descToQwerty [] = ""
 descToQwerty (area:num:rest) = q : descToQwerty rest
@@ -70,19 +67,19 @@ convArg a
 
 main :: IO ()
 main = runInputT defaultSettings $ do
-  home <- io $ getEnv "HOME"
-  wubiToCh <- io $ map (listToPair . take 2 . words) .
-    init .
-    drop 1 .
-    dropWhile (/= "[Data]") .
-    lines <$>
-    readFile (home </> "p/one-off/fcitx-table-translate/original/wubi2008.txt")
-  let
-    w2c = M.fromListWith (++) $ map (second (:[])) wubiToCh
-    c2w = M.fromListWith (++) $ map (swap . first (:[])) wubiToCh
-  args <- io getArgs
-  case args of
-    [] -> forever $ do
-      l <- fromMaybe "" <$> getInputLine "> "
-      io . putStrLn $ if l == "" then "" else wLk w2c c2w l
-    _ -> mapM_ (io . putStrLn . wLk w2c c2w . convArg) args
+    home <- liftIO $ getEnv "HOME"
+    wubiToCh <- liftIO $ map (listToPair . take 2 . words) .
+      init . drop 1 . dropWhile (/= "[Data]") . lines <$> readFile
+      (home </> "p/one-off/fcitx-table-translate/original/wubi2008.txt")
+    let w2c = M.fromListWith (++) $ map (second (:[])) wubiToCh
+        c2w = M.fromListWith (++) $ map (swap . first (:[])) wubiToCh
+        doL l = liftIO $ do
+            putStr $ wLk w2c c2w l
+            runIO ("/home/danl/bin/zh-char-parts", [l])
+            putStrLn ""
+    args <- liftIO getArgs
+    case args of
+      [] -> forever $ do
+        l <- fromMaybe "" <$> getInputLine "> "
+        unless (null l) $ doL l
+      _ -> mapM_ (doL . convArg) args

@@ -3,6 +3,7 @@
 
 import Codec.Archive.Zim.Parser (getContent, Url(..)) 
 import Data.Char
+import Data.List
 import Data.List.Split
 import Data.Monoid
 import qualified Data.ByteString.Lazy as BSL
@@ -23,6 +24,7 @@ killBraced ('<':xs) = killBraced $ tail $ dropWhile (/= '>') xs
 killBraced (x:xs) = x : killBraced xs
 
 doChar :: Int -> Char -> IO [[String]]
+doChar 10 _ = return []
 doChar indent c = do
     getContentResult <-
         getContent ("/home/danl/data/wikt/en.zim" :: String)
@@ -31,6 +33,7 @@ doChar indent c = do
       Just (_, zimHtml :: BSL.ByteString) -> do
         let (_, compositionHtml) = BSLS.breakAfter "composition" zimHtml
             parts =
+                filter (/= c) $
                 filter (`notElem` ("⿱⿰⿳⿴⿸⿹⿺⿵⿻" :: String)) $
                 filter (not . isAscii) $
                 killBraced $
@@ -44,7 +47,7 @@ doChar indent c = do
               , "/home/danl/p/l/melang/lang/zh/dict"
               ]
             )
-        doCharResults <- mapM (doChar (indent + 1)) parts
+        doCharResults <- mapM (doChar (indent + 1)) $ nub parts
         return $ 
             [ [ replicate (2 * indent) ' ' ++ "- " ++ [c] ] ++
               map (' ':) (tail $ splitWhen (== '\t') grepResult)
@@ -56,4 +59,5 @@ main :: IO ()
 main = do
     args <- getArgs
     doCharResults <- mapM (doChar 0) $ concat args
+    --mapM_ print doCharResults
     mapM_ putStrLn $ spaceTable $ concat doCharResults
