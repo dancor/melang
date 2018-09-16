@@ -15,6 +15,8 @@ data ZNote = ZNote
   , zMem      :: !DT.Text
   } deriving (Eq, Show)
 
+type ZiMap = HMS.HashMap (S.Pair Char DT.Text) DT.Text
+
 bsSplit :: DT.Text -> [DT.Text]
 bsSplit =
     concatMap (DT.splitOn "&nbsp;\\&nbsp;") .
@@ -24,11 +26,12 @@ bsSplit =
 
 procPartsT :: DT.Text -> [DT.Text]
 procPartsT = filter (not . DT.null) . DT.splitOn "<br>" .
-    DT.replace "<br />" "<br>" . DT.replace "</div>" "<br>" .
-    DT.replace "<div>" ""
+    DT.replace "<br />" "<br>" .
+    DT.replace "</div>" "<br>" .
+    DT.replace "<div>" "<br>"
 
-preQSpIfNotQ :: DT.Text -> DT.Text
-preQSpIfNotQ t = if "?" `DT.isPrefixOf` t then t else "? " <> t
+preQSpIfB :: DT.Text -> DT.Text
+preQSpIfB t = if "[" `DT.isPrefixOf` t then "? " <> t else t
 
 textToNote :: DT.Text -> Either DT.Text ZNote
 textToNote t =
@@ -51,7 +54,7 @@ textToNote t =
     parts = procPartsT partsT
     syllNum = length (head syllses)
     parts2 = take syllNum $ parts ++ repeat "?"
-    parts3 = if syllNum == 1 then map preQSpIfNotQ parts2 else parts2
+    parts3 = if syllNum == 1 then map preQSpIfB parts2 else parts2
 
 pronDefToTexts :: PronDef -> (DT.Text, DT.Text)
 pronDefToTexts (PronDef sylls def) = (DT.concat sylls, def)
@@ -86,7 +89,7 @@ dbCmd q = ("sqlite3",
 hshRunText :: (String, [String]) -> IO [DT.Text]
 hshRunText p = DT.lines . DTE.decodeUtf8 <$> HSH.run p
 
-noteToMap :: ZNote -> HMS.HashMap (S.Pair Char DT.Text) DT.Text
+noteToMap :: ZNote -> ZiMap
 noteToMap (ZNote word pronDefs parts _) = HMS.fromList $ zip
     (S.zip (DT.unpack word) (map DT.toLower $ concatMap pSylls pronDefs))
     parts
@@ -105,8 +108,9 @@ updateNote z = do
     return ()
 
 fromRight (Right a) = a
+fromRight (Left e) = error $ DT.unpack e
 
-improveParts :: HMS.HashMap (S.Pair Char DT.Text) DT.Text -> ZNote -> ZNote
+improveParts :: ZiMap -> ZNote -> ZNote
 improveParts ziMap z@(ZNote word pronDefs _ _) = z {zParts = newParts}
   where
     zis = DT.unpack word
@@ -121,14 +125,25 @@ compareShowPart p1 p2 = when (p1 /= p2 && "&lt;" `DT.isInfixOf` p2) $
     -- DTI.putStrLn $ "Repl " <> p1 <> " ---> " <> p2
     DTI.putStrLn p2
 
+tryImprove :: ZiMap -> ZNote -> IO ()
+tryImprove ziMap note = do
+    let note2 = improveParts ziMap note
+    -- when (note /= note2) $ do
+    when True $ do
+        --DTI.putStrLn $ noteToText note
+        --DTI.putStrLn " ---> "
+        DTI.putStrLn $ noteToText note2
+        --DTI.putStrLn ""
+        updateNote note2
+
 main :: IO ()
 main = do
-    notes <- map (fromRight . textToNote) <$>
-        hshRunText (dbCmd "select flds from notes")
+    ls <- hshRunText (dbCmd "select flds from notes")
+    let notes = map (fromRight . textToNote) ls
     --mapM_ (\(Left e) -> DTI.putStrLn e) $ filter isLeft notes
     let ziMap = foldl' (HMS.unionWith bestCharGloss) HMS.empty $
             map noteToMap notes
-        notes2 = map (improveParts ziMap) notes
-    print $ length ziMap
-    --zipWithM_ compareShow notes notes2
-    mapM_ updateNote notes2
+    --print $ HMS.lookup ('一' S.:!: "yi2") ziMap
+    --print $ filter ((== "一切") . zWord) notes
+    --print $ filter ("一切" `DT.isInfixOf`) ls
+    mapM_ (tryImprove ziMap) notes
