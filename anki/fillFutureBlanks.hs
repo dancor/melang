@@ -22,13 +22,21 @@ bsSplit =
     concatMap (DT.splitOn "&nbsp;\\ ") .
     DT.splitOn " \\ "
 
+procPartsT :: DT.Text -> [DT.Text]
+procPartsT = filter (not . DT.null) . DT.splitOn "<br>" .
+    DT.replace "<br />" "<br>" . DT.replace "</div>" "<br>" .
+    DT.replace "<div>" ""
+
+preQSpIfNotQ :: DT.Text -> DT.Text
+preQSpIfNotQ t = if "?" `DT.isPrefixOf` t then t else "? " <> t
+
 textToNote :: DT.Text -> Either DT.Text ZNote
 textToNote t =
     if length syllses == length defs && 
        length syllses >= 1 &&
-       length (head syllses) >= length parts
+       syllNum >= length parts
       then
-        Right $ ZNote word (zipWith PronDef syllses defs) parts' mem
+        Right $ ZNote word (zipWith PronDef syllses defs) parts3 mem
       else
         Left $ "WTF["
             <> DT.pack (show $ length syllses) <> ","
@@ -41,7 +49,24 @@ textToNote t =
     syllses = map pinyinToSylls $ bsSplit pinyinsT
     defs = bsSplit defsT
     parts = procPartsT partsT
-    parts' = take (length (head syllses)) $ parts ++ repeat "?"
+    syllNum = length (head syllses)
+    parts2 = take syllNum $ parts ++ repeat "?"
+    parts3 = if syllNum == 1 then map preQSpIfNotQ parts2 else parts2
+
+pronDefToTexts :: PronDef -> (DT.Text, DT.Text)
+pronDefToTexts (PronDef sylls def) = (DT.concat sylls, def)
+
+noteToText :: ZNote -> DT.Text
+noteToText (ZNote word pronDefs parts mem) = DT.intercalate "\US"
+    [word, pinyinsT, defsT, partsT, mem]
+  where
+    (pinyins, defs) = unzip $ map pronDefToTexts pronDefs
+    pinyinsT = DT.intercalate " \\ " pinyins
+    defsT = DT.intercalate " \\ " defs
+    parts2 = if length parts == 1 && "? " `DT.isInfixOf` head parts
+      then map (DT.drop 2) parts
+      else parts
+    partsT = DT.intercalate "<br>" parts2
 
 -- Normalizes but doesn't do toLower since we might want caps sometimes.
 pinyinToSylls :: DT.Text -> [DT.Text]
@@ -55,11 +80,6 @@ pinyinToSylls s
       (py1, s2) = DT.span isAlpha $ DT.replace " " "" $ DT.replace "'" "" s
       (py2, sRest) = DT.span isDigit s2
 
-procPartsT :: DT.Text -> [DT.Text]
-procPartsT = filter (not . DT.null) . DT.splitOn "<br>" .
-    DT.replace "<br />" "<br>" . DT.replace "</div>" "<br>" .
-    DT.replace "<div>" ""
-
 dbCmd q = ("sqlite3",
     ["/home/danl/.local/share/Anki2/Usuario 1/collection.anki2", q])
 
@@ -67,35 +87,22 @@ hshRunText :: (String, [String]) -> IO [DT.Text]
 hshRunText p = DT.lines . DTE.decodeUtf8 <$> HSH.run p
 
 noteToMap :: ZNote -> HMS.HashMap (S.Pair Char DT.Text) DT.Text
-noteToMap (ZNote word pronDefs parts _) =
-    HMS.fromList $
-    zip (S.zip (DT.unpack word) (concatMap pSylls pronDefs)) parts
+noteToMap (ZNote word pronDefs parts _) = HMS.fromList $ zip
+    (S.zip (DT.unpack word) (map DT.toLower $ concatMap pSylls pronDefs))
+    parts
 
 bestCharGloss g1 g2 = if DT.length g1 > DT.length g2 then g1 else g2
 
-{-
-wdSetCharGlosses
-    :: DT.Text -> HMS.HashMap (S.Pair Char DT.Text) (DT.Text) -> IO ()
-wdSetCharGlosses wd charGlossMap = do
-    let whereStr = "where flds like '" ++ DT.unpack wd ++ "\US%'"
-    [sqlLine] <- hshRunText $ dbCmd $
-        "select flds from notes " ++ whereStr
-    DTI.putStrLn sqlLine
-    let fields = DT.split (== '\US') sqlLine
-        _ : pyStr : def : oldCharGlossStrPlus = fields
-    DTI.putStrLn $ "New str: " <> wd
-    let Just ziPys = collateZiPy wd $
-            DT.replace "'" "" $ DT.replace " " "" pyStr
-        charGlosses = map (fromMaybe "?" . flip HMS.lookup charGlossMap) ziPys
-        fldsStr = DT.intercalate "\US" $
-            [wd, pyStr, def, DT.intercalate "<br>" charGlosses]
-    when (oldCharGlossStrPlus == [""]) $ do
-        DTI.putStrLn $ "Replacing " <> DT.pack (show oldCharGlossStrPlus) <>
-            " with " <> fldsStr
-        hshRun $ dbCmd $ "update notes set flds = \"" ++ DT.unpack fldsStr ++
-            "\" " ++ whereStr ++ " limit 1"
-        return ()
--}
+dubSingQuote = DT.replace "'" "''"
+
+updateNote :: ZNote -> IO ()
+updateNote z = do
+    DTI.putStrLn $ zWord z
+    hshRun $ dbCmd $ "update notes set flds = '" <>
+        DT.unpack (dubSingQuote (noteToText z)) <>
+        "' where flds like '" <> DT.unpack (dubSingQuote (zWord z)) <>
+        "\US%' limit 1"
+    return ()
 
 fromRight (Right a) = a
 
@@ -105,7 +112,7 @@ improveParts ziMap z@(ZNote word pronDefs _ _) = z {zParts = newParts}
     zis = DT.unpack word
     PronDef sylls _ = head pronDefs
     newParts = zipWith
-        (\zi syll -> fromJust $ HMS.lookup (zi S.:!: syll) ziMap)
+        (\zi syll -> fromJust $ HMS.lookup (zi S.:!: DT.toLower syll) ziMap)
         zis sylls
 
 compareShow z1 z2 = zipWithM_ compareShowPart (zParts z1) (zParts z2)
@@ -123,4 +130,5 @@ main = do
             map noteToMap notes
         notes2 = map (improveParts ziMap) notes
     print $ length ziMap
-    zipWithM_ compareShow notes notes2
+    --zipWithM_ compareShow notes notes2
+    mapM_ updateNote notes2
