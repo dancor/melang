@@ -59,6 +59,12 @@ textToNote t =
 pronDefToTexts :: PronDef -> (DT.Text, DT.Text)
 pronDefToTexts (PronDef sylls def) = (DT.concat sylls, def)
 
+bracketOnly :: DT.Text -> DT.Text
+bracketOnly t = t3
+  where
+    t2 = DT.dropWhile (/= '[') t
+    t3 = if DT.null t2 then "?" else t2
+
 noteToText :: ZNote -> DT.Text
 noteToText (ZNote word pronDefs parts mem) = DT.intercalate "\US"
     [word, pinyinsT, defsT, partsT, mem]
@@ -66,8 +72,8 @@ noteToText (ZNote word pronDefs parts mem) = DT.intercalate "\US"
     (pinyins, defs) = unzip $ map pronDefToTexts pronDefs
     pinyinsT = DT.intercalate " \\ " pinyins
     defsT = DT.intercalate " \\ " defs
-    parts2 = if length parts == 1 && "? " `DT.isInfixOf` head parts
-      then map (DT.drop 2) parts
+    parts2 = if length parts == 1
+      then map bracketOnly parts
       else parts
     partsT = DT.intercalate "<br>" parts2
 
