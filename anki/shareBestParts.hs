@@ -106,7 +106,7 @@ dubSingQuote = DT.replace "'" "''"
 
 updateNote :: ZNote -> IO ()
 updateNote z = do
-    DTI.putStrLn $ zWord z
+    --DTI.putStrLn $ zWord z
     hshRun $ dbCmd $ "update notes set flds = '" <>
         DT.unpack (dubSingQuote (noteToText z)) <>
         "' where flds like '" <> DT.unpack (dubSingQuote (zWord z)) <>
@@ -136,7 +136,9 @@ compareShowPart p1 p2 = when (p1 /= p2 && "&lt;" `DT.isInfixOf` p2) $
 tryImprove :: ZiMap -> ZNote -> IO ()
 tryImprove ziMap note = do
     let note2 = improveParts ziMap note
-    when (note /= note2) $ do
+        text = noteToText note
+        text2 = noteToText note2
+    when (note /= note2 && text /= text2) $ do
         DTI.putStrLn $ noteToText note
         DTI.putStrLn " ---> "
         DTI.putStrLn $ noteToText note2
