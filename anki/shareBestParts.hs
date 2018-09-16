@@ -125,21 +125,22 @@ improveParts ziMap z@(ZNote word pronDefs _ _) = z {zParts = newParts}
         (\zi syll -> fromJust $ HMS.lookup (zi S.:!: DT.toLower syll) ziMap)
         zis sylls
 
+{-
 compareShow z1 z2 = zipWithM_ compareShowPart (zParts z1) (zParts z2)
 
 compareShowPart p1 p2 = when (p1 /= p2 && "&lt;" `DT.isInfixOf` p2) $
     -- DTI.putStrLn $ "Repl " <> p1 <> " ---> " <> p2
     DTI.putStrLn p2
+-}
 
 tryImprove :: ZiMap -> ZNote -> IO ()
 tryImprove ziMap note = do
     let note2 = improveParts ziMap note
-    -- when (note /= note2) $ do
-    when True $ do
-        --DTI.putStrLn $ noteToText note
-        --DTI.putStrLn " ---> "
+    when (note /= note2) $ do
+        DTI.putStrLn $ noteToText note
+        DTI.putStrLn " ---> "
         DTI.putStrLn $ noteToText note2
-        --DTI.putStrLn ""
+        DTI.putStrLn ""
         updateNote note2
 
 main :: IO ()
