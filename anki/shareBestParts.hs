@@ -1,3 +1,5 @@
+-- Should we kill repeats from pron defs? Or too complicated?
+
 {-# LANGUAGE OverloadedStrings #-}
 import qualified Data.Tuple.Strict as S
 
@@ -133,8 +135,8 @@ compareShowPart p1 p2 = when (p1 /= p2 && "&lt;" `DT.isInfixOf` p2) $
     DTI.putStrLn p2
 -}
 
-tryImprove :: ZiMap -> ZNote -> IO ()
-tryImprove ziMap note = do
+tryImprove :: Bool -> ZiMap -> ZNote -> IO ()
+tryImprove saveChanges ziMap note = do
     let note2 = improveParts ziMap note
         text = noteToText note
         text2 = noteToText note2
@@ -143,10 +145,16 @@ tryImprove ziMap note = do
         DTI.putStrLn " ---> "
         DTI.putStrLn $ noteToText note2
         DTI.putStrLn ""
-        updateNote note2
+        when saveChanges $ updateNote note2
 
 main :: IO ()
 main = do
+    args <- getArgs
+    saveChanges <- case args of
+        [] -> return False
+        ["--dry-run"] -> return False
+        ["--save-changes"] -> return True
+        _ -> fail "Usage"
     ls <- hshRunText (dbCmd "select flds from notes")
     let notes = map (fromRight . textToNote) ls
     --mapM_ (\(Left e) -> DTI.putStrLn e) $ filter isLeft notes
@@ -155,4 +163,4 @@ main = do
     --print $ HMS.lookup ('一' S.:!: "yi2") ziMap
     --print $ filter ((== "一切") . zWord) notes
     --print $ filter ("一切" `DT.isInfixOf`) ls
-    mapM_ (tryImprove ziMap) notes
+    mapM_ (tryImprove saveChanges ziMap) notes
