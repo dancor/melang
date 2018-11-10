@@ -29,12 +29,12 @@ loadGlossMap = do
         filter (not . ("#" `T.isPrefixOf`)) . T.lines <$> T.readFile
         "/home/danl/p/l/melang/lang/zh/cedict/cedict_1_0_ts_utf-8_mdbg.txt"
     return $ HM.fromList $ glossPairs ++
-    	[ ("了", "le")
-    	, ("的", "de")
-    	, ("个", "ge")
-    	, ("是", "is")
-    	, ("好", "good")
-    	, ("。", ".")
-    	, ("，", ",")
-    	, ("！", "!")
-    	]
+        [ ("了", "le")
+        , ("的", "de")
+        , ("个", "ge")
+        , ("是", "is")
+        , ("好", "good")
+        , ("。", ".")
+        , ("，", ",")
+        , ("！", "!")
+        ]

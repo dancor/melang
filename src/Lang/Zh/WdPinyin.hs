@@ -8,19 +8,19 @@ import Codec.Serialise
 
 import Lang.Zh.Gloss
 
-data WdPinyin = WdPinyin !DT.Text !DT.Text deriving (Generic)
+data WdPinyin = WdPinyin !Text !Text deriving (Generic)
 
 instance Serialise WdPinyin
 
 wdPinyinGlossToAeson (WdPinyinGloss wd pinyin gloss) =
-    Ae.Array $ Vec.fromList $ map Ae.String [wd, pinyin, gloss]
+    Ae.Array $ V.fromList $ map Ae.String [wd, pinyin, gloss]
 
-wdPinyinGlossesToAeson = Ae.Array . Vec.fromList . map wdPinyinGlossToAeson
+wdPinyinGlossesToAeson = Ae.Array . V.fromList . map wdPinyinGlossToAeson
 
-data WdPinyinGloss = WdPinyinGloss !DT.Text !DT.Text !DT.Text
+data WdPinyinGloss = WdPinyinGloss !Text !Text !Text
 
 wdPinyinAddGloss glossMap (WdPinyin wd py) = WdPinyinGloss wd py
-    (fromMaybe wd $ HMS.lookup wd glossMap)
+    (fromMaybe wd $ HM.lookup wd glossMap)
 
 pyPullNum acc [] n = (acc, n)
 pyPullNum acc ('ā':xs) _ = pyPullNum (acc ++ ['a']) xs 1
@@ -54,13 +54,13 @@ pyToNum syllable = if any isAlpha syllable
   then let (syllable', n) = pyPullNum "" syllable 5 in syllable' ++ show n
   else syllable
 
-procSentJsLine l = WdPinyin (DT.pack wd)
-    (DT.pack $ intercalate "" $ map pyToNum pinyins)
+procSentJsLine l = WdPinyin (T.pack wd)
+    (T.pack $ intercalate "" $ map pyToNum pinyins)
   where
     wd:pinyins = words l
 
-js :: [DT.Text] -> BSL.ByteString
-js zhSentences = BSL.concat [
+js :: [Text] -> BL.ByteString
+js zhSentences = BL.concat [
     "var pinyinify = require('pinyinify');",
     "var sentences = " <> Ae.encode zhSentences <> ";",
     "for (var i = 0; i < sentences.length; i++) {",
@@ -74,10 +74,10 @@ js zhSentences = BSL.concat [
     "  console.log('');",
     "}"]
 
-getWdPinyins :: [DT.Text] -> IO [[WdPinyin]]
-getWdPinyins zSents = do
+getWdPinyins :: [Text] -> IO [[WdPinyin]]
+getWdPinyins zhSentences = do
     setCurrentDirectory "/home/danl/p/one-off/www/hanyu/node_modules/pinyinify"
     (_, out, _err) <- readProcessWithExitCode "nodejs" []
-        (BSLU.toString $ js zhSentences)
+        (BL.toString $ js zhSentences)
     return $ map (map procSentJsLine) $ Spl.splitWhen null $ lines out
 
