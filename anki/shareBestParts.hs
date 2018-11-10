@@ -91,7 +91,7 @@ pinyinToSylls s
       (py1, s2) = DT.span isAlpha $ DT.replace " " "" $ DT.replace "'" "" s
       (py2, sRest) = DT.span isDigit s2
 
-dbCmd q = ("sqlite3",
+dbCmd q = ("sqlite3" :: String,
     ["/home/danl/.local/share/Anki2/Usuario 1/collection.anki2", q])
 
 hshRunText :: (String, [String]) -> IO [DT.Text]
@@ -109,7 +109,7 @@ dubSingQuote = DT.replace "'" "''"
 updateNote :: ZNote -> IO ()
 updateNote z = do
     --DTI.putStrLn $ zWord z
-    hshRun $ dbCmd $ "update notes set flds = '" <>
+    HSH.runIO $ dbCmd $ "update notes set flds = '" <>
         DT.unpack (dubSingQuote (noteToText z)) <>
         "' where flds like '" <> DT.unpack (dubSingQuote (zWord z)) <>
         "\US%' limit 1"
