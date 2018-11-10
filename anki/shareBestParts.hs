@@ -6,36 +6,36 @@ import qualified Data.Tuple.Strict as S
 #include <h>
 
 data PronDef = PronDef
-  { pSylls :: ![DT.Text]
-  , pDef   :: !DT.Text
+  { pSylls :: ![Text]
+  , pDef   :: !Text
   } deriving (Eq, Show)
 
 data ZNote = ZNote
-  { zWord     :: !DT.Text
+  { zWord     :: !Text
   , zPronDefs :: ![PronDef]
-  , zParts    :: ![DT.Text]
-  , zMem      :: !DT.Text
+  , zParts    :: ![Text]
+  , zMem      :: !Text
   } deriving (Eq, Show)
 
-type ZiMap = HMS.HashMap (S.Pair Char DT.Text) DT.Text
+type ZiMap = HMS.HashMap (S.Pair Char Text) Text
 
-bsSplit :: DT.Text -> [DT.Text]
+bsSplit :: Text -> [Text]
 bsSplit =
-    concatMap (DT.splitOn "&nbsp;\\&nbsp;") .
-    concatMap (DT.splitOn " \\&nbsp;") .
-    concatMap (DT.splitOn "&nbsp;\\ ") .
-    DT.splitOn " \\ "
+    concatMap (T.splitOn "&nbsp;\\&nbsp;") .
+    concatMap (T.splitOn " \\&nbsp;") .
+    concatMap (T.splitOn "&nbsp;\\ ") .
+    T.splitOn " \\ "
 
-procPartsT :: DT.Text -> [DT.Text]
-procPartsT = filter (not . DT.null) . DT.splitOn "<br>" .
-    DT.replace "<br />" "<br>" .
-    DT.replace "</div>" "<br>" .
-    DT.replace "<div>" "<br>"
+procPartsT :: Text -> [Text]
+procPartsT = filter (not . T.null) . T.splitOn "<br>" .
+    T.replace "<br />" "<br>" .
+    T.replace "</div>" "<br>" .
+    T.replace "<div>" "<br>"
 
-preQSpIfB :: DT.Text -> DT.Text
-preQSpIfB t = if "[" `DT.isPrefixOf` t then "? " <> t else t
+preQSpIfB :: Text -> Text
+preQSpIfB t = if "[" `T.isPrefixOf` t then "? " <> t else t
 
-textToNote :: DT.Text -> Either DT.Text ZNote
+textToNote :: Text -> Either Text ZNote
 textToNote t =
     if length syllses == length defs && 
        length syllses >= 1 &&
@@ -44,13 +44,13 @@ textToNote t =
         Right $ ZNote word (zipWith PronDef syllses defs) parts3 mem
       else
         Left $ "WTF["
-            <> DT.pack (show $ length syllses) <> ","
-            <> DT.pack (show $ length defs) <> ","
-            <> DT.pack (show $ map length (take 1 syllses)) <> ",{"
-            <> DT.intercalate ";" (map (DT.intercalate ",") syllses) <> "},"
-            <> DT.pack (show $ length parts) <> "]: " <> t
+            <> T.pack (show $ length syllses) <> ","
+            <> T.pack (show $ length defs) <> ","
+            <> T.pack (show $ map length (take 1 syllses)) <> ",{"
+            <> T.intercalate ";" (map (T.intercalate ",") syllses) <> "},"
+            <> T.pack (show $ length parts) <> "]: " <> t
   where
-    [word, pinyinsT, defsT, partsT, mem] = DT.split (== '\US') t
+    [word, pinyinsT, defsT, partsT, mem] = T.split (== '\US') t
     syllses = map pinyinToSylls $ bsSplit pinyinsT
     defs = bsSplit defsT
     parts = procPartsT partsT
@@ -58,82 +58,73 @@ textToNote t =
     parts2 = take syllNum $ parts ++ repeat "?"
     parts3 = if syllNum == 1 then map preQSpIfB parts2 else parts2
 
-pronDefToTexts :: PronDef -> (DT.Text, DT.Text)
-pronDefToTexts (PronDef sylls def) = (DT.concat sylls, def)
+pronDefToTexts :: PronDef -> (Text, Text)
+pronDefToTexts (PronDef sylls def) = (T.concat sylls, def)
 
-bracketOnly :: DT.Text -> DT.Text
+bracketOnly :: Text -> Text
 bracketOnly t = t3
   where
-    t2 = DT.dropWhile (/= '[') t
-    t3 = if DT.null t2 then "?" else t2
+    t2 = T.dropWhile (/= '[') t
+    t3 = if T.null t2 then "?" else t2
 
-noteToText :: ZNote -> DT.Text
-noteToText (ZNote word pronDefs parts mem) = DT.intercalate "\US"
+noteToText :: ZNote -> Text
+noteToText (ZNote word pronDefs parts mem) = T.intercalate "\US"
     [word, pinyinsT, defsT, partsT, mem]
   where
     (pinyins, defs) = unzip $ map pronDefToTexts pronDefs
-    pinyinsT = DT.intercalate " \\ " pinyins
-    defsT = DT.intercalate " \\ " defs
+    pinyinsT = T.intercalate " \\ " pinyins
+    defsT = T.intercalate " \\ " defs
     parts2 = if length parts == 1
       then map bracketOnly parts
       else parts
-    partsT = DT.intercalate "<br>" parts2
+    partsT = T.intercalate "<br>" parts2
 
 -- Normalizes but doesn't do toLower since we might want caps sometimes.
-pinyinToSylls :: DT.Text -> [DT.Text]
+pinyinToSylls :: Text -> [Text]
 pinyinToSylls s
-  | DT.null s = []
+  | T.null s = []
   | otherwise =
-    if DT.null py1
+    if T.null py1
       then []
       else (py1 <> py2) : pinyinToSylls sRest
     where
-      (py1, s2) = DT.span isAlpha $ DT.replace " " "" $ DT.replace "'" "" s
-      (py2, sRest) = DT.span isDigit s2
+      (py1, s2) = T.span isAlpha $ T.replace " " "" $ T.replace "'" "" s
+      (py2, sRest) = T.span isDigit s2
 
 dbCmd q = ("sqlite3" :: String,
     ["/home/danl/.local/share/Anki2/Usuario 1/collection.anki2", q])
 
-hshRunText :: (String, [String]) -> IO [DT.Text]
-hshRunText p = DT.lines . DTE.decodeUtf8 <$> HSH.run p
+hshRunText :: (String, [String]) -> IO [Text]
+hshRunText p = T.lines . T.decodeUtf8 <$> run p
 
 noteToMap :: ZNote -> ZiMap
 noteToMap (ZNote word pronDefs parts _) = HMS.fromList $ zip
-    (S.zip (DT.unpack word) (map DT.toLower $ concatMap pSylls pronDefs))
+    (S.zip (T.unpack word) (map T.toLower $ concatMap pSylls pronDefs))
     parts
 
-bestCharGloss g1 g2 = if DT.length g1 > DT.length g2 then g1 else g2
+bestCharGloss g1 g2 = if T.length g1 > T.length g2 then g1 else g2
 
-dubSingQuote = DT.replace "'" "''"
+dubSingQuote = T.replace "'" "''"
 
 updateNote :: ZNote -> IO ()
 updateNote z = do
-    --DTI.putStrLn $ zWord z
-    HSH.runIO $ dbCmd $ "update notes set flds = '" <>
-        DT.unpack (dubSingQuote (noteToText z)) <>
-        "' where flds like '" <> DT.unpack (dubSingQuote (zWord z)) <>
+    runIO $ dbCmd $ "update notes set flds = '" <>
+        T.unpack (dubSingQuote (noteToText z)) <>
+        "' where flds like '" <> T.unpack (dubSingQuote (zWord z)) <>
         "\US%' limit 1"
     return ()
 
 fromRight (Right a) = a
-fromRight (Left e) = error $ DT.unpack e
+fromRight (Left e) = error $ T.unpack e
 
 improveParts :: ZiMap -> ZNote -> ZNote
 improveParts ziMap z@(ZNote word pronDefs _ _) = z {zParts = newParts}
   where
-    zis = DT.unpack word
+    zis = T.unpack word
     PronDef sylls _ = head pronDefs
     newParts = zipWith
-        (\zi syll -> fromJust $ HMS.lookup (zi S.:!: DT.toLower syll) ziMap)
+        (\zi syll -> fromJust $ HMS.lookup (zi S.:!: T.toLower syll) ziMap)
         zis sylls
-
-{-
-compareShow z1 z2 = zipWithM_ compareShowPart (zParts z1) (zParts z2)
-
-compareShowPart p1 p2 = when (p1 /= p2 && "&lt;" `DT.isInfixOf` p2) $
-    -- DTI.putStrLn $ "Repl " <> p1 <> " ---> " <> p2
-    DTI.putStrLn p2
--}
 
 tryImprove :: Bool -> ZiMap -> ZNote -> IO ()
 tryImprove saveChanges ziMap note = do
@@ -141,10 +132,10 @@ tryImprove saveChanges ziMap note = do
         text = noteToText note
         text2 = noteToText note2
     when (note /= note2 && text /= text2) $ do
-        DTI.putStrLn $ noteToText note
-        DTI.putStrLn " ---> "
-        DTI.putStrLn $ noteToText note2
-        DTI.putStrLn ""
+        T.putStrLn $ noteToText note
+        T.putStrLn " ---> "
+        T.putStrLn $ noteToText note2
+        T.putStrLn ""
         when saveChanges $ updateNote note2
 
 main :: IO ()
@@ -157,10 +148,6 @@ main = do
         _ -> fail "Usage"
     ls <- hshRunText (dbCmd "select flds from notes")
     let notes = map (fromRight . textToNote) ls
-    --mapM_ (\(Left e) -> DTI.putStrLn e) $ filter isLeft notes
     let ziMap = foldl' (HMS.unionWith bestCharGloss) HMS.empty $
             map noteToMap notes
-    --print $ HMS.lookup ('一' S.:!: "yi2") ziMap
-    --print $ filter ((== "一切") . zWord) notes
-    --print $ filter ("一切" `DT.isInfixOf`) ls
     mapM_ (tryImprove saveChanges ziMap) notes
