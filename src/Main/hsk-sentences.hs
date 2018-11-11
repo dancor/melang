@@ -1,5 +1,6 @@
 #include <h>
 
+import Lang.Zh.Anki
 import Lang.Zh.Gloss
 import Lang.Zh.WdPinyin
 
