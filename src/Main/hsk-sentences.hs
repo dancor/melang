@@ -29,6 +29,57 @@ hskSentGoodness hskZiSet zhNumToEnNumsMap (n, sent) =
     hasEn = isJust $ HM.lookup n zhNumToEnNumsMap
     enGoodness = if hasEn then 100 else 0
 
+wdAddBestSentMb hskZiSet zhNumToEnNumsMap zhNumSents enMap wd =
+    if null contSents then Nothing else Just (wd, bestSent, enSent)
+  where
+    contSents = filter ((wd `T.isInfixOf`) . snd) zhNumSents
+    (n, bestSent) = maximumBy
+        (compare `on` hskSentGoodness hskZiSet zhNumToEnNumsMap)
+        contSents
+    enSentNs = fromMaybe [] $ HM.lookup n zhNumToEnNumsMap
+    enSent = if null enSentNs then "?" else
+        maximumBy (compare `on` T.length)
+        [ fromJustNote "enSent" (HM.lookup enSentN enMap)
+        | enSentN <- enSentNs]
+
+{-
+colorMap '1' = "#055"
+colorMap '2' = "#505"
+colorMap '3' = "#530"
+colorMap '4' = "#050"
+colorMap _   = "#007"
+-}
+
+colorMap '1' = "#faa"
+colorMap '2' = "#afa"
+colorMap '3' = "#acf"
+colorMap '4' = "#faf"
+colorMap _   = "#ff8"
+
+colorPy _ [] = ""
+colorPy acc (x:xs) = if isAlpha x then colorPy (acc <> T.singleton x) xs
+  else "<span style='color:" <> colorMap x <> "'>" <> acc <> T.singleton x <>
+       "</span>" <> colorPy "" xs
+
+ziHtml (WdPinyinGloss zi py gloss) =
+    {-
+    "<span style=\"float:left;margin-left:10px;font-size:200%\">" <>
+        zi <>
+        "<div style=\"font-size:50%\">" <> colorPy "" (T.unpack py) <>
+            "</div>" <>
+        "<div style=\"font-size:40%;color:#aaa\">" <> gloss <> "</div>" <>
+    "</span>"
+    -}
+    "<span style=\"float:left;margin-left:10px\">" <>
+        "<div style=\"font-size:200%\">" <> zi <> "</div>" <>
+        colorPy "" (T.unpack py) <>
+        "<div style=\"font-size:80%;color:#007\">" <> gloss <> "</div>" <>
+    "</span>"
+
+sentHtml enSent wdPinyinGlosses =
+    "<div style=\"color:#007\">" <> enSent <> "</div>" <>
+    T.concat (map ziHtml wdPinyinGlosses)
+
 main :: IO ()
 main = do
     args <- getArgs
@@ -38,7 +89,8 @@ main = do
         ["--save-changes"] -> return True
         _ -> fail "Usage"
     notes <- loadZhAnkiNotes
-    let hskZiSet = HS.fromList $ T.unpack $ T.concat $ map zWord notes
+    let hskWds = map zWord notes
+        hskZiSet = HS.fromList $ T.unpack $ T.concat hskWds
     glossMap <- loadGlossMap
     tatDir <- (</> ("data" </> "tatoeba")) <$> getHomeDirectory
     zhNumSents <- readNumToSents $ tatDir </> "simp-cmn.csv.xz"
@@ -51,18 +103,14 @@ main = do
             splitCols) .
         T.lines . T.decodeUtf8 <$>
         run ("xzcat" :: String, [tatDir </> "links.csv.xz" :: String])
-    forM_ notes $ \note -> do
-        let wd = zWord note
-            contSents = filter ((wd `T.isInfixOf`) . snd) zhNumSents
-        unless (null contSents) $ do
-            let (n, bestSent) = maximumBy
-                    (compare `on` hskSentGoodness hskZiSet zhNumToEnNumsMap)
-                    contSents
-                enSentNs = fromMaybe [] $ HM.lookup n zhNumToEnNumsMap
-                enSent = if null enSentNs then "?" else
-                    maximumBy (compare `on` T.length)
-                    [ fromJustNote "enSent" (HM.lookup enSentN enMap)
-                    | enSentN <- enSentNs]
-                html = enSent <> "<br>" <> bestSent
+    let (wdsToChange, bestSents, enSents) = unzip3 $ catMaybes $ map
+            (wdAddBestSentMb hskZiSet zhNumToEnNumsMap zhNumSents enMap) hskWds
+    wdPinyins <- getWdPinyins bestSents
+    let wdPinyinEnMap = HM.fromList $ zip wdsToChange $ zip wdPinyins enSents
+    forM_ notes $ \note -> case HM.lookup (zWord note) wdPinyinEnMap of
+        Nothing -> return ()
+        Just (wdPinyins, enSent) -> do
+            let html = sentHtml enSent $
+                    map (wdPinyinAddGloss glossMap) wdPinyins
             updateNote $ note {zHtml = html}
-            T.putStrLn wd
+            T.putStrLn $ zWord note
