@@ -31,9 +31,14 @@ hskSentGoodness hskZiSet zhNumToEnNumsMap (n, sent) =
 
 main :: IO ()
 main = do
-    hskWds <- map (T.takeWhile (/= '\t')) . T.lines <$>
-        T.readFile "/home/danl/all.csv.txt"
-    let hskZiSet = HS.fromList $ T.unpack $ T.concat hskWds
+    args <- getArgs
+    saveChanges <- case args of
+        [] -> return False
+        ["--dry-run"] -> return False
+        ["--save-changes"] -> return True
+        _ -> fail "Usage"
+    notes <- loadZhAnkiNotes
+    let hskZiSet = HS.fromList $ T.unpack $ T.concat $ map zWord notes
     glossMap <- loadGlossMap
     tatDir <- (</> ("data" </> "tatoeba")) <$> getHomeDirectory
     zhNumSents <- readNumToSents $ tatDir </> "simp-cmn.csv.xz"
@@ -46,9 +51,10 @@ main = do
             splitCols) .
         T.lines . T.decodeUtf8 <$>
         run ("xzcat" :: String, [tatDir </> "links.csv.xz" :: String])
-    lens <- forM hskWds $ \hskWd -> do
-        let contSents = filter ((hskWd `T.isInfixOf`) . snd) zhNumSents
-        if null contSents then return Nothing else do
+    forM_ notes $ \note -> do
+        let wd = zWord note
+            contSents = filter ((wd `T.isInfixOf`) . snd) zhNumSents
+        unless (null contSents) $ do
             let (n, bestSent) = maximumBy
                     (compare `on` hskSentGoodness hskZiSet zhNumToEnNumsMap)
                     contSents
@@ -57,34 +63,6 @@ main = do
                     maximumBy (compare `on` T.length)
                     [ fromJustNote "enSent" (HM.lookup enSentN enMap)
                     | enSentN <- enSentNs]
-                html = enSent ++ "<br>" ++ bestSent
-            T.putStrLn hskWd
-            T.putStrLn bestSent
-            T.putStrLn enSent
-            T.putStrLn ""
-            return $ Just $ T.length bestSent
-    print $ maximum $ catMaybes lens
-        
-    {-
-    let n1s = map fst nums
-        zhSents = [fromJust (HM.lookup n1 zhMap) | n1 <- n1s]
-        enSents =
-            [ maximumBy (compare `on` T.length)
-              [fromJust (HMS.lookup n2 enMap) | n2 <- n2s]
-            | (_, n2s) <- nums
-            ]
-    wdPinyinSents <- getPinyins mandarinSentences
-    BSLC.writeFile "/home/danl/p/one-off/www/hanyu/tatoeba/sentence.info" $
-        serialise $ (n1s, wdPinyinSents, englishSentences)
-
-    -- ?
-    let wdPinyinGlossSents =
-            map (map (wdPinyinAddGloss glossMap)) wdPinyinSents
-        prepEntry count n1 wdPinyinGlosses eSent =
-            [ Ae.String n1
-            , wdPinyinGlossesToAeson wdPinyinGlosses
-            , Ae.String eSent
-            ]
-        entries = zipWith4 prepEntry [1..] n1s wdPinyinGlossSents eSents
-    -}
-        
+                html = enSent <> "<br>" <> bestSent
+            updateNote $ note {zHtml = html}
+            T.putStrLn wd

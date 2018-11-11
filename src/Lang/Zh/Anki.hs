@@ -17,6 +17,46 @@ data ZNote = ZNote
   , zHtml     :: !Text
   } deriving (Eq, Show)
         
+procPartsT :: Text -> [Text]
+procPartsT = filter (not . T.null) . T.splitOn "<br>" .
+    T.replace "<br />" "<br>" .
+    T.replace "</div>" "<br>" .
+    T.replace "<div>" "<br>"
+
+preQSpIfB :: Text -> Text
+preQSpIfB t = if "[" `T.isPrefixOf` t then "? " <> t else t
+
+pronDefToTexts :: PronDef -> (Text, Text)
+pronDefToTexts (PronDef sylls def) = (T.concat sylls, def)
+
+bracketOnly :: Text -> Text
+bracketOnly t = t3
+  where
+    t2 = T.dropWhile (/= '[') t
+    t3 = if T.null t2 then "?" else t2
+
+dbCmd q = ("sqlite3" :: String,
+    ["/home/danl/.local/share/Anki2/Usuario 1/collection.anki2", q])
+
+bsSplit :: Text -> [Text]
+bsSplit =
+    concatMap (T.splitOn "&nbsp;\\&nbsp;") .
+    concatMap (T.splitOn " \\&nbsp;") .
+    concatMap (T.splitOn "&nbsp;\\ ") .
+    T.splitOn " \\ "
+
+-- Normalizes but doesn't do toLower since we might want caps sometimes.
+pinyinToSylls :: Text -> [Text]
+pinyinToSylls s
+  | T.null s = []
+  | otherwise =
+    if T.null py1
+      then []
+      else (py1 <> py2) : pinyinToSylls sRest
+    where
+      (py1, s2) = T.span isAlpha $ T.replace " " "" $ T.replace "'" "" s
+      (py2, sRest) = T.span isDigit s2
+
 textToNote :: Text -> Either Text ZNote
 textToNote t = if length cols /= 6 then error (show cols) else
     if length syllses == length defs &&
@@ -62,3 +102,13 @@ updateNote z = do
         "' where flds like '" <> T.unpack (dubSingQuote (zWord z)) <>
         "\US%' limit 1"
     return ()
+
+hshRunText :: (String, [String]) -> IO [Text]
+hshRunText p = T.lines . T.decodeUtf8 <$> run p
+
+myFromRight (Right a) = a
+myFromRight (Left e) = error $ T.unpack e
+
+loadZhAnkiNotes :: IO [ZNote]
+loadZhAnkiNotes = map (myFromRight . textToNote) <$>
+    hshRunText (dbCmd "select flds from notes")
