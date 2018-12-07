@@ -7,144 +7,21 @@ synopsis:      lang study
 build-type:    Simple
 cabal-version: >= 1.7.1
 
-executable hsk-sentences
-  main-is:         Main/hsk-sentences.hs
+library 
+  exposed-modules:
+      Lang.Zh.WdPinyin
   hs-source-dirs:  src
-  ghc-options:     -O2 -Wall
+  ghc-options:     -O2 -Wall -Wcompat -Wincomplete-record-updates
+      -Wincomplete-uni-patterns -Wredundant-constraints
   build-depends:
       base
-    , containers
-    , text
-
-executable extract-wiki-pages
-  main-is:         Main/extract-wiki-pages.hs
-  hs-source-dirs:  src
-  ghc-options:     -O2 -Wall
-  build-depends:
-      base
+    , aeson
     , bytestring
-
-executable wiki-word-index
-  main-is:         Main/wiki-word-index.hs
-  hs-source-dirs:  src
-  ghc-options:     -O2 -Wall
-  build-depends:
-      base
-    , bytestring
-    , conduit
-    , conduit-combinators
-    , conduit-extra
-    , hashtables
-    , mtl
+    , directory
     , process
-    , resourcet
-    , strict
-    , text
-    , vector
-
-flag hilite-wds
-  default: False
-
-executable hilite-wds
-  main-is:         Main/hilite-wds.hs
-  hs-source-dirs:  src
-  ghc-options:     -O2 -Wall
-  build-depends:
-      base
-    , deepseq
-    , text
-    , unordered-containers
-
-executable wikt-to-defs
-  main-is:         Main/wikt-to-defs.hs
-  hs-source-dirs:  src
-  ghc-options:     -O2 -Wall
-  build-depends:
-      base
-    , bytestring
-    , filepath
+    , serialise
     , split
-    , tagsoup
-    , unordered-containers
-
-executable wikt-pull-all
-  main-is:         Main/wikt-pull-all.hs
-  hs-source-dirs:  src
-  ghc-options:     -O2 -Wall
-  build-depends:
-      base
-    , bytestring
-    , tagsoup
-
-executable wikt-pull-lang
-  main-is:         Main/wikt-pull-lang.hs
-  hs-source-dirs:  src
-  ghc-options:     -O2 -Wall
-  build-depends:
-      base
-    , bytestring
-    , tagsoup
-
-executable optimize-wubi
-  main-is:         Main/optimize-wubi.hs
-  hs-source-dirs:  src
-  ghc-options:     -O2 -Wall
-  build-depends:
-      base
-    , deepseq
     , text
     , unordered-containers
-
-executable wikt-inflections
-  main-is:         Main/wikt-inflections.hs
-  hs-source-dirs:  src
-  ghc-options:     -O2 -Wall
-  build-depends:
-      base
-    , text
-    , parsec
-
-executable ruff-words
-  main-is:         Main/ruff-words.hs
-  hs-source-dirs:  src
-  ghc-options:     -O2 -Wall
-  build-depends:
-      base
-    , bytestring
-    , process
-    , split
-    , tagsoup
     , utf8-string
-    , unordered-containers
-
-executable wlk
-  main-is:         Main/wlk.hs
-  hs-source-dirs:  src
-  ghc-options:     -O2 -Wall
-  build-depends:
-      base
-    , containers
-    , filepath
-    , haskeline
-    , HSH
-    , mtl
-
-executable zh-char-parts
-  main-is:         Main/zh-char-parts.hs
-  hs-source-dirs:  src
-  ghc-options:     -O2 -Wall
-  build-depends:
-      base
-    , bytestring
-    , HSH
-    , split
-    , stringsearch
-    , text
-    , zim-parser
-
-executable lol
-  main-is:         Main/lol.hs
-  hs-source-dirs:  src
-  ghc-options:     -O2 -Wall
-  build-depends:
-      base
+    , vector

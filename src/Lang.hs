@@ -7,6 +7,5 @@ strToLang "cmn" = Cmn
 strToLang "spa" = Spa
 strToLang s = error $ "strToLang: unknown language string: " ++ s
 
-langToStr :: Lang -> String
 langToStr Cmn = "cmn"
 langToStr Spa = "spa"

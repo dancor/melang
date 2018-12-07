@@ -1,27 +1,43 @@
-#include <hl>
+{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE OverloadedStrings #-}
 
 module Lang.Zh.WdPinyin where
 
-#include <hi>
-
 import Codec.Serialise
-
-import Lang.Zh.Gloss
+import qualified Data.Aeson as Ae
+import qualified Data.ByteString.Lazy as BL
+import qualified Data.ByteString.Lazy.UTF8 as BL
+import GHC.Generics
+import Data.Char
+import qualified Data.HashMap.Strict as HM
+import Data.List
+import qualified Data.List.Split as Spl
+import Data.Maybe
+import Data.Monoid
+import Data.Text (Text)
+import qualified Data.Text as T
+import qualified Data.Vector as V
+import System.Directory
+import System.Process
 
 data WdPinyin = WdPinyin !Text !Text deriving (Generic)
 
 instance Serialise WdPinyin
 
+wdPinyinGlossToAeson :: WdPinyinGloss -> Ae.Value
 wdPinyinGlossToAeson (WdPinyinGloss wd pinyin gloss) =
     Ae.Array $ V.fromList $ map Ae.String [wd, pinyin, gloss]
 
+wdPinyinGlossesToAeson :: [WdPinyinGloss] -> Ae.Value
 wdPinyinGlossesToAeson = Ae.Array . V.fromList . map wdPinyinGlossToAeson
 
 data WdPinyinGloss = WdPinyinGloss !Text !Text !Text
 
+wdPinyinAddGloss :: HM.HashMap Text Text -> WdPinyin -> WdPinyinGloss 
 wdPinyinAddGloss glossMap (WdPinyin wd py) = WdPinyinGloss wd py
     (fromMaybe wd $ HM.lookup wd glossMap)
 
+pyPullNum :: String -> String -> Int -> (String, Int)
 pyPullNum acc [] n = (acc, n)
 pyPullNum acc ('ā':xs) _ = pyPullNum (acc ++ ['a']) xs 1
 pyPullNum acc ('á':xs) _ = pyPullNum (acc ++ ['a']) xs 2
@@ -50,10 +66,14 @@ pyPullNum acc ('ǜ':xs) _ = pyPullNum (acc ++ ['v']) xs 4
 pyPullNum acc ('ü':xs) n = pyPullNum (acc ++ ['v']) xs n
 pyPullNum acc (x:xs) n = pyPullNum (acc ++ [x]) xs n
 
+pyToNum :: String -> String
 pyToNum syllable = if any isAlpha syllable
-  then let (syllable', n) = pyPullNum "" syllable 5 in syllable' ++ show n
+  then
+    let (syllable', n) = pyPullNum "" syllable 5
+    in  syllable' ++ show n
   else syllable
 
+procSentJsLine :: String -> WdPinyin
 procSentJsLine l = WdPinyin (T.pack wd)
     (T.pack $ intercalate "" $ map pyToNum pinyins)
   where

@@ -1,8 +1,14 @@
-#include <hl>
+{-# LANGUAGE OverloadedStrings #-}
 
 module Lang.Zh.Gloss where
 
-#include <hi>
+import Data.Text (Text)
+import qualified Data.Text as T
+import qualified Data.Text.IO as T
+import Data.Function
+import Data.HashMap.Strict (HashMap)
+import qualified Data.HashMap.Strict as HM
+import Data.List
 
 type GlossMap = HashMap Text Text
 

@@ -2,28 +2,28 @@
 
 module Freedict where
 
-import qualified Data.HashMap.Strict as HMS
+import qualified Data.HashMap.Strict as HM
 import Data.List.Split
-import qualified Data.Text as DT
+import qualified Data.Text as T
 
 data FreedictEntry
     = FreedictEntry
-    { fWord :: DT.Text
-    , fDef  :: DT.Text
+    { fWord :: T.Text
+    , fDef  :: T.Text
     }
 
 type Freedict = [FreedictEntry]
 
-type FreedictMap = HMS.HashMap DT.Text FreedictEntry
+type FreedictMap = HM.HashMap DT.Text FreedictEntry
 
-readFreedict :: DT.Text -> Freedict
+readFreedict :: T.Text -> Freedict
 readFreedict c =
     map (\(x:xs) ->
-        FreedictEntry x (DT.intercalate "; " $ map (DT.drop 3) xs)) parts
+        FreedictEntry x (T.intercalate "; " $ map (T.drop 3) xs)) parts
   where
-    parts = filter (not . null) $ splitWhen DT.null ls
-    ls = dropWhile (\l -> DT.null l || " " `DT.isPrefixOf` l ||
-        "0" `DT.isPrefixOf` l) $ DT.lines c
+    parts = filter (not . null) $ splitWhen T.null ls
+    ls = dropWhile (\l -> DT.null l || " " `T.isPrefixOf` l ||
+        "0" `T.isPrefixOf` l) $ T.lines c
 
 makeFreedictMap :: Freedict -> FreedictMap
-makeFreedictMap = HMS.fromList . map (\entry -> (fWord entry, entry))
+makeFreedictMap = HM.fromList . map (\entry -> (fWord entry, entry))
