@@ -36,7 +36,10 @@ type Cedict = HashMap Text CedictEntry
 dotDotAfterWord :: Int -> Text -> Text
 dotDotAfterWord n t =
     case go Nothing 0 0 of
-      Nothing -> error "dotDotAfterWord did not find a solution"
+      Nothing -> case T.words t of
+        [w] -> w
+        w:_ -> w <> ".."
+        [] -> error "dotDotAfterWord: empty"
       Just i -> if i + 1 < len then T.take (i + 1) t <> ".." else t
   where
     maxWidth = n
@@ -68,7 +71,9 @@ parseCedictEntry l = (simp, CedictEntry pinyin gloss)
     simp = T.takeWhile (/= ' ') $ T.tail $ T.dropWhile (/= ' ') tradSimpPinyin
     pinyin = T.init $ T.init $ T.tail $ T.dropWhile (/= '[') tradSimpPinyin
     defs = init defsAndEmpty
-    gloss = dotDotAfterWord 40 $ minimumBy (compare `on` T.length) defs
+    gloss = dotDotAfterWord (11 * T.length simp) $
+        minimumBy (compare `on` T.length) $
+        filter (not . ("CL:" `T.isPrefixOf`)) defs
 
 takeShorter :: CedictEntry -> CedictEntry -> CedictEntry
 takeShorter a@(CedictEntry _ aG) b@(CedictEntry _ bG) =
