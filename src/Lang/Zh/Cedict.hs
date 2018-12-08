@@ -12,19 +12,13 @@ import Data.Function
 import Data.HashMap.Strict (HashMap)
 import qualified Data.HashMap.Strict as HM
 import Data.List
-import qualified Data.List.Split as Spl
 import Data.Monoid
 import Data.Text (Text)
 import qualified Data.Text as T
 import qualified Data.Text.Encoding as T
 import HSH
-import Safe
 import System.Directory
 import System.FilePath
-import Data.StrictVector (Vector)
-import qualified Data.StrictVector as V
-
-import Debug.Trace
 
 data CedictEntry = CedictEntry
   { cPinyin :: Text
@@ -61,8 +55,16 @@ dotDotAfterWord n t =
                 else lastGood
         in  go lastGood' widthSoFar' (i + 1)
 
+{-
+-- Might want to look into doing this later
 condenseMandarin :: Text -> Text
 condenseMandarin = id
+-}
+
+whenMany :: ([a] -> [a]) -> [a] -> [a]
+whenMany _ [] = []
+whenMany _ [x] = [x]
+whenMany f xs = f xs
 
 parseCedictEntry :: Text -> (Text, CedictEntry)
 parseCedictEntry l = (simp, CedictEntry pinyin gloss)
@@ -72,7 +74,8 @@ parseCedictEntry l = (simp, CedictEntry pinyin gloss)
     pinyin = T.init $ T.init $ T.tail $ T.dropWhile (/= '[') tradSimpPinyin
     defs = init defsAndEmpty
     gloss = dotDotAfterWord (11 * T.length simp) $
-        minimumBy (compare `on` T.length) $
+        minimumBy (compare `on` T.length) glosses
+    glosses = whenMany (filter (not . ("see " `T.isPrefixOf`))) $
         filter (not . ("CL:" `T.isPrefixOf`)) defs
 
 takeShorter :: CedictEntry -> CedictEntry -> CedictEntry
