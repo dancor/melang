@@ -18,6 +18,7 @@ import Data.Text (Text)
 import qualified Data.Text as T
 import qualified Data.Text.Encoding as T
 import HSH
+import Safe
 import System.Directory
 import System.FilePath
 
@@ -27,9 +28,6 @@ data CedictEntry = CedictEntry
   } deriving Show
 
 type Cedict = HashMap Text CedictEntry
-
-textWidth :: Text -> Int
-textWidth = 
 
 -- If the text t has length greater than n, truncate and append ".." with
 -- result length n or less, truncating at a word boundary if possible.
@@ -46,9 +44,12 @@ dotDotAfterWord n t =
     | otherwise ->
       T.dropWhileEnd isSpace $ T.dropWhileEnd (not . isSpace) tTrunc <> ".."
   where
-    tWithWidths = widths $ T.unpack t
+    tWithWidths = map (\c -> (c, wcwidth c)r $ T.unpack t
+    cumulativeTWithWidths =
+        scanl (\(t1,w1) (t2,w2) -> (t1 ++ [t2], w1 + w2)) ("", 0) tWithWidths
+    tTrunc = T.pack . fst . lastNote "dotDotAfterWord tTrunc last failed" $
+        filter ((<= n - 2) . snd) cumulativeTWithWidths
     tWidth = sum $ map snd tWithWidths
-    tTrunc = T.take (n - 2) t
 
 condenseMandarin :: Text -> Text
 condenseMandarin = id
