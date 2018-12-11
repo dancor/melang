@@ -9,7 +9,7 @@ cabal-version: >= 1.7.1
 
 library 
   exposed-modules:
-      Lang.Zh.WdPinyin
+      Lang.Zh.Cedict
   hs-source-dirs:  src
   ghc-options:     -O2 -Wall -Wcompat -Wincomplete-record-updates
       -Wincomplete-uni-patterns -Wredundant-constraints
@@ -18,6 +18,7 @@ library
     , aeson
     , bytestring
     , directory
+    , filepath
     , process
     , serialise
     , split
@@ -25,3 +26,4 @@ library
     , unordered-containers
     , utf8-string
     , vector
+    , wcwidth

@@ -12,17 +12,19 @@ import Data.Function
 import Data.HashMap.Strict (HashMap)
 import qualified Data.HashMap.Strict as HM
 import Data.List
+import Data.Maybe
 import Data.Monoid
 import Data.Text (Text)
 import qualified Data.Text as T
 import qualified Data.Text.Encoding as T
-import HSH
+import qualified Data.Text.IO as T
 import System.Directory
 import System.FilePath
+import System.Process
 
 data CedictEntry = CedictEntry
-  { cPinyin :: Text
-  , cGloss :: Text
+  { cPinyin :: !Text
+  , cGloss :: !Text
   } deriving Show
 
 type Cedict = HashMap Text CedictEntry
@@ -66,26 +68,53 @@ whenMany _ [] = []
 whenMany _ [x] = [x]
 whenMany f xs = f xs
 
-parseCedictEntry :: Text -> (Text, CedictEntry)
-parseCedictEntry l = (simp, CedictEntry pinyin gloss)
+{-
+, ("好", "good")
+-}
+parseCedictEntry :: Text -> Maybe (Text, CedictEntry)
+parseCedictEntry l = case (simp, pinyin) of
+    ("了", "liao3") -> Nothing
+    ("个", "ge4") -> Nothing
+    ("好", _) -> Just (simp, CedictEntry pinyin "good")
+    ("帮", _) -> Just (simp, CedictEntry pinyin "help")
+    ("你", _) -> Just (simp, CedictEntry pinyin "you")
+    ("没", _) -> Just (simp, CedictEntry "mei2" "not")
+    ("小", _) -> Just (simp, CedictEntry pinyin "small")
+    _ -> Just (simp, CedictEntry pinyin gloss)
   where
     tradSimpPinyin:defsAndEmpty = T.splitOn "/" l
     simp = T.takeWhile (/= ' ') $ T.tail $ T.dropWhile (/= ' ') tradSimpPinyin
-    pinyin = T.init $ T.init $ T.tail $ T.dropWhile (/= '[') tradSimpPinyin
-    defs = init defsAndEmpty
-    gloss = dotDotAfterWord (11 * T.length simp) $
-        minimumBy (compare `on` T.length) glosses
+    pinyin = T.filter (/= ' ') . T.dropEnd 2 . T.drop 1 $
+        T.dropWhile (/= '[') tradSimpPinyin
+    defs = case defsAndEmpty of
+      [] -> error "parseCedictEntry: null defsAndEmpty"
+      x -> init x
     glosses = whenMany (filter (not . ("see " `T.isPrefixOf`))) $
         filter (not . ("CL:" `T.isPrefixOf`)) defs
+    gloss1 = if null glosses then "?" else
+        dotDotAfterWord (11 * T.length simp) $
+        minimumBy (compare `on` T.length) glosses
+    gloss = T.replace " " "-" . fromMaybe gloss1 $ T.stripPrefix "to " gloss1
 
+-- Later change this to use most common pinyin option from corpus or more
+-- advanced analysis.
 takeShorter :: CedictEntry -> CedictEntry -> CedictEntry
 takeShorter a@(CedictEntry _ aG) b@(CedictEntry _ bG) =
     if T.length aG <= T.length bG then a else b
 
+loadCedictGlosses :: IO [Text]
+loadCedictGlosses = do
+    homeDir <- getHomeDirectory
+    (_, Just hOut, _, _) <- createProcess (proc "xzcat"
+        [homeDir </> "data" </> "cedict" </> "cedict.txt.xz"])
+        {std_out = CreatePipe}          
+    filter ((/= "#") . T.take 1) . T.lines <$> T.hGetContents hOut
+
 loadCedictGlossMap :: IO Cedict
 loadCedictGlossMap = do
     homeDir <- getHomeDirectory
-    ls <- filter ((/= "#") . T.take 1) . T.lines . T.decodeUtf8 <$>
-        run ("xzcat" :: String,
+    (_, Just hOut, _, _) <- createProcess (proc "xzcat"
         [homeDir </> "data" </> "cedict" </> "cedict.txt.xz"])
-    return $ HM.fromListWith takeShorter $ map parseCedictEntry ls
+        {std_out = CreatePipe}          
+    ls <- filter ((/= "#") . T.take 1) . T.lines <$> T.hGetContents hOut
+    return . HM.fromListWith takeShorter . catMaybes $ map parseCedictEntry ls
