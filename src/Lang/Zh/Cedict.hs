@@ -57,20 +57,28 @@ dotDotAfterWord n t =
                 else lastGood
         in  go lastGood' widthSoFar' (i + 1)
 
-{-
--- Might want to look into doing this later
-condenseMandarin :: Text -> Text
-condenseMandarin = id
--}
+-- Convert things like:
+-- "一點|一点" to "一点"
+-- "一点[yi1 dian3]" to "一点 yi1dian3"
+condenseZh :: Text -> Text
+condenseZh = id
 
 whenMany :: ([a] -> [a]) -> [a] -> [a]
 whenMany _ [] = []
 whenMany _ [x] = [x]
 whenMany f xs = f xs
 
-{-
-, ("好", "good")
--}
+-- Could perform the lookup when "see " is the only definition?
+isBadDef d = any (`T.isPrefixOf` d)
+  [ "CL:"
+  , "see "
+  , "also written"
+  , "also pr"
+  , "also transliterated"
+  , "also known as "
+  ]
+
+-- Could use width instead of length? Incorporate with condenseZh?
 parseCedictEntry :: Text -> Maybe (Text, CedictEntry)
 parseCedictEntry l = case (simp, pinyin) of
     ("了", "liao3") -> Nothing
@@ -89,12 +97,12 @@ parseCedictEntry l = case (simp, pinyin) of
     defs = case defsAndEmpty of
       [] -> error "parseCedictEntry: null defsAndEmpty"
       x -> init x
-    glosses = whenMany (filter (not . ("see " `T.isPrefixOf`))) $
-        filter (not . ("CL:" `T.isPrefixOf`)) defs
-    gloss1 = if null glosses then "?" else
-        dotDotAfterWord (11 * T.length simp) $
+    glosses = map (\x -> fromMaybe x $ T.stripPrefix "to "x) $
+        filter (not . isBadDef) defs
+    gloss = if null glosses then "?" else
+        T.replace " " "-" . condenseZh .
+        dotDotAfterWord (11 * T.length simp) $ 
         minimumBy (compare `on` T.length) glosses
-    gloss = T.replace " " "-" . fromMaybe gloss1 $ T.stripPrefix "to " gloss1
 
 -- Later change this to use most common pinyin option from corpus or more
 -- advanced analysis.
