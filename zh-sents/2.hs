@@ -24,8 +24,12 @@ showEntry en wdPinyinGlosses = do
 
 type SentenceInfo = (Char, Int, [Text], Text)
 
+isGoodEntry ('U', 7216814, _, _) = False -- Super long translation "sentence"..
+isGoodEntry ('U', 4080416, _, _) = False -- Super long translation "sentence"..
+isGoodEntry (_, _, zhWds, _) = null $ drop 50 zhWds
+
 loadSentenceInfos :: FilePath -> IO [SentenceInfo]
-loadSentenceInfos = fmap deserialise . BL.readFile
+loadSentenceInfos = fmap (filter isGoodEntry . deserialise) . BL.readFile
 
 {-
 dictLookup :: Text -> Cedict -> Maybe WdPinyinGloss
@@ -86,14 +90,19 @@ joinExtras (WdPinyinGloss wd1 "" "" : WdPinyinGloss wd2 "" "" : xs) =
     inter = if T.all isDigit (T.takeEnd 1 wd1 <> T.take 1 wd2) then " " else ""
 joinExtras (x:xs) = x : joinExtras xs
 
-procEntry dict (_setLtr, _numInSet, zhWds, enSent) =
-    showEntry enSent $ joinExtras $ map (wdGloss dict) zhWds
+procEntry dict (setLtr, numInSet, zhWds, enSent) =
+    showEntry (T.pack (setLtr : show numInSet) <> ": " <> enSent) $
+    joinExtras $ map (wdGloss dict) zhWds
+
+entryHasWord c (_, _, zhWds, _) = any (c `T.isInfixOf`) zhWds
 
 main :: IO ()
 main = do
     dict <- loadCedictGlossMap
-    infos <- loadSentenceInfos "MultiUN/1"
     putStrLn "<html><head><link rel=\"stylesheet\" href=\"a.css\"></head>"
     putStrLn "<body>"
-    mapM_ (procEntry dict) $ take 1000 infos
+    files <- drop 2 <$> getDirectoryContents "MultiUN"
+    forM_ files $ \file -> do
+        entries <- loadSentenceInfos $ "MultiUN" </> file
+        mapM_ (procEntry dict) $ filter (entryHasWord "活跃") entries
     putStrLn "</body></html>"
