@@ -14,7 +14,7 @@ data ZNote = ZNote
   , zPronDefs :: ![PronDef]
   , zParts    :: ![Text] 
   , zMem      :: !Text
-  , zHtml     :: !Text
+  , zHtml     :: !Text  -- extra html part (example sentences)
   } deriving (Eq, Show)
         
 procPartsT :: Text -> [Text]
@@ -81,8 +81,11 @@ textToNote t = if length cols /= 6 then error (show cols) else
     parts2 = take syllNum $ parts ++ repeat "?"
     parts3 = if syllNum == 1 then map preQSpIfB parts2 else parts2
 
-noteToText :: Text -> ZNote -> Text
-noteToText sep (ZNote word pronDefs parts mem html) = T.intercalate sep
+noteToText :: ZNote -> Text
+noteToText = noteToTextSep "\US"
+
+noteToTextSep :: Text -> ZNote -> Text
+noteToTextSep sep (ZNote word pronDefs parts mem html) = T.intercalate sep
     [word, pinyinsT, defsT, partsT, mem, html]
   where
     (pinyins, defs) = unzip $ map pronDefToTexts pronDefs
@@ -98,7 +101,7 @@ dubSingQuote = T.replace "'" "''"
 updateNote :: ZNote -> IO ()
 updateNote z = do
     HSH.runIO $ dbCmd $ "update notes set flds = '" <>
-        T.unpack (dubSingQuote (noteToText "\US" z)) <>
+        T.unpack (dubSingQuote (noteToText z)) <>
         "' where flds like '" <> T.unpack (dubSingQuote (zWord z)) <>
         "\US%' limit 1"
     return ()

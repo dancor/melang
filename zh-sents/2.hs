@@ -6,8 +6,32 @@
 
 import Codec.Serialise
 import Lang.Zh.Cedict
+--import Lang.Zh.Anki
 
 import WdPinyinGloss
+
+colorMap '1' = "#faa"
+colorMap '2' = "#afa"
+colorMap '3' = "#acf"
+colorMap '4' = "#faf"
+colorMap _   = "#ff8"
+
+colorPy _ [] = ""
+colorPy acc (x:xs) = if isAlpha x then colorPy (acc <> T.singleton x) xs
+  else "<span style='color:" <> colorMap x <> "'>" <> acc <> T.singleton x <>
+       "</span>" <> colorPy "" xs
+
+ziHtml (WdPinyinGloss zi py gloss) =
+    "<span style=\"float:left;margin-left:10px;height:80px\">" <>                          
+        "<div style=\"font-size:200%\">" <> zi <> "</div>" <>                  
+        colorPy "" (T.unpack py) <>                                            
+        "<div style=\"font-size:80%;color:#ff8\">" <> gloss <> "</div>" <>     
+    "</span>"                                                                  
+                                                                               
+sentHtml enSent wdPinyinGlosses = "<div style=\"overflow:hidden\">"
+    <> "<div style=\"color:#ff8\">" <> enSent <> "</div>"
+    <> T.concat (map ziHtml wdPinyinGlosses)      
+    <> "</div>"
 
 wdPinyinGlossHtml :: WdPinyinGloss -> Text
 wdPinyinGlossHtml (WdPinyinGloss w p g) = "<span class=w>" <> w <>
@@ -16,17 +40,20 @@ wdPinyinGlossHtml (WdPinyinGloss w p g) = "<span class=w>" <> w <>
 
 showEntry :: Text -> [WdPinyinGloss] -> IO ()
 showEntry en wdPinyinGlosses = do
-    --when (any (\(WdPinyinGloss w _ _) -> w == "哪怕") wdPinyinGlosses) $ do
-        T.putStrLn $ "<div class=e>" <> en <> "<br>" <>
-            T.concat (map wdPinyinGlossHtml wdPinyinGlosses) <>
-            "</div><br><br>"
-        --hFlush stdout
+    T.putStrLn $ sentHtml en wdPinyinGlosses
+    {-
+	T.putStrLn $ "<div class=e>" <> en <> "<br>" <>
+		T.concat (map wdPinyinGlossHtml wdPinyinGlosses) <>
+		"</div><br><br>"
+    -}
 
 type SentenceInfo = (Char, Int, [Text], Text)
 
+{-
 isGoodEntry ('U', 7216814, _, _) = False -- Super long translation "sentence"..
 isGoodEntry ('U', 4080416, _, _) = False -- Super long translation "sentence"..
-isGoodEntry (_, _, zhWds, _) = null $ drop 50 zhWds
+-}
+isGoodEntry (_, _, zhWds, _) = null $ drop 20 zhWds
 
 loadSentenceInfos :: FilePath -> IO [SentenceInfo]
 loadSentenceInfos = fmap (filter isGoodEntry . deserialise) . BL.readFile
@@ -96,13 +123,31 @@ procEntry dict (setLtr, numInSet, zhWds, enSent) =
 
 entryHasWord c (_, _, zhWds, _) = any (c `T.isInfixOf`) zhWds
 
+type Entry = (Char, Int, [Text], Text)
+
+type EntryGatherer = HashMap Text (HashSet Entry)
+
 main :: IO ()
 main = do
+    home <- getHomeDirectory
+    hskWords <- map (T.takeWhile (not . isSpace)) . T.lines <$>
+        T.readFile (home </> "hsk.txt")
+    hPrint stderr $ length hskWords
+    --let gatherer = HM.fromList [(w, HS.empty) | w <- hskWords]
     dict <- loadCedictGlossMap
     putStrLn "<html><head><link rel=\"stylesheet\" href=\"a.css\"></head>"
     putStrLn "<body>"
-    files <- drop 2 <$> getDirectoryContents "MultiUN"
-    forM_ files $ \file -> do
+    files <- take 1 . drop 2 <$> getDirectoryContents "MultiUN"
+    res <- HM.fromListWith (flip (++)) . concat <$> forM files (\file -> do
         entries <- loadSentenceInfos $ "MultiUN" </> file
-        mapM_ (procEntry dict) $ filter (entryHasWord "活跃") entries
+        return [(wd, [entry])
+            | entry@(_,_,zhWds,_) <- entries, let s = HS.fromList zhWds
+            , wd <- hskWords,  wd `HS.member` s]
+        --mapM_ (procEntry dict) $ filter (entryHasWord "活跃") entries
+        )
+    hPrint stderr $ length $ HM.keys res
+    forM_ (HM.toList res) $ \(wd, entries) -> do
+        T.putStrLn wd
+        mapM_ (procEntry dict) $ take 5 entries
+        --mapM_ (\(_,_,_,en) -> T.putStrLn en) $ take 2 entries
     putStrLn "</body></html>"

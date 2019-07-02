@@ -1,7 +1,15 @@
 {-# LANGUAGE OverloadedStrings #-}
-import qualified Data.Tuple.Strict as S
 
-#include <h>
+import Control.Monad
+import Data.HashMap.Strict (HashMap)
+import qualified Data.HashMap.Strict as HM
+import Data.List
+import Data.Maybe
+import Data.Text (Text)
+import qualified Data.Tuple.Strict as S
+import qualified Data.Text as T
+import qualified Data.Text.IO as T
+import System.Environment
 
 import Lang.Zh.Anki
 
@@ -9,7 +17,8 @@ type ZiMap = HashMap (S.Pair Char Text) Text
 
 noteToMap :: ZNote -> ZiMap
 noteToMap (ZNote word pronDefs parts _ _) = HM.fromList $ zip
-    (S.zip (T.unpack word) (map T.toLower $ concatMap pSylls pronDefs))
+    (zipWith (S.:!:) (T.unpack word) 
+        (map T.toLower $ concatMap pSylls pronDefs))
     parts
 
 bestCharGloss g1 g2 = if T.length g1 > T.length g2 then g1 else g2

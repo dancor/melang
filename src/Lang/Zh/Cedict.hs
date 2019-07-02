@@ -1,11 +1,11 @@
 -- Create a map from simplified versions of Mandarin words to their pinyin
 -- and a hopefully short gloss for them, derived from Cedict.
 
-{-# LANGUAGE MultiWayIf #-}
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE DeriveGeneric, DeriveAnyClass, MultiWayIf, OverloadedStrings #-}
 
 module Lang.Zh.Cedict where
 
+import Control.DeepSeq
 import Data.Char
 import Data.Char.WCWidth
 import Data.Function
@@ -18,6 +18,7 @@ import Data.Text (Text)
 import qualified Data.Text as T
 import qualified Data.Text.Encoding as T
 import qualified Data.Text.IO as T
+import GHC.Generics
 import System.Directory
 import System.FilePath
 import System.Process
@@ -25,9 +26,10 @@ import System.Process
 data CedictEntry = CedictEntry
   { cPinyin :: !Text
   , cGloss :: !CedictGloss
-  } deriving Show
+  } deriving (Generic, NFData, Show)
 
-data CedictGloss = CedictGloss !Text | CedictRef !Text deriving Show
+data CedictGloss = CedictGloss !Text | CedictRef !Text
+  deriving (Generic, NFData, Show)
 
 type Cedict = HashMap Text CedictEntry
 
