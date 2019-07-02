@@ -7,6 +7,27 @@ synopsis:      lang study
 build-type:    Simple
 cabal-version: >= 1.7.1
 
+executable zh-anki-hsk-multiun
+  hs-source-dirs: src
+  main-is: Main/zh-anki-hsk-multiun.hs
+  ghc-options: -cpp -O2 -Wall
+  build-depends:
+      base
+    , aeson
+    , bytestring
+    , deepseq
+    , directory
+    , filepath
+    , HSH
+    , process
+    , serialise
+    , split
+    , text
+    , unordered-containers
+    , utf8-string
+    , vector
+    , wcwidth
+
 library 
   exposed-modules:
       Lang.Zh.Anki

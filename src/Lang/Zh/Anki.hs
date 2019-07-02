@@ -1,8 +1,12 @@
-#include <hl>
+{-# LANGUAGE OverloadedStrings #-}
 
 module Lang.Zh.Anki where
 
-#include <hi>
+import Data.Char
+import Data.Text (Text)
+import qualified Data.Text as T
+import qualified Data.Text.Encoding as T
+import HSH
 
 data PronDef = PronDef
   { pSylls :: ![Text]
@@ -11,6 +15,7 @@ data PronDef = PronDef
 
 data ZNote = ZNote
   { zWord     :: !Text
+  , zTrad     :: !Text
   , zPronDefs :: ![PronDef]
   , zParts    :: ![Text] 
   , zMem      :: !Text
@@ -58,12 +63,12 @@ pinyinToSylls s
       (py2, sRest) = T.span isDigit s2
 
 textToNote :: Text -> Either Text ZNote
-textToNote t = if length cols /= 6 then error (show cols) else
+textToNote t = if length cols /= 7 then error (show cols) else
     if length syllses == length defs &&
        length syllses >= 1 &&
        syllNum >= length parts
       then
-        Right $ ZNote word (zipWith PronDef syllses defs) parts3 mem html
+        Right $ ZNote word trad (zipWith PronDef syllses defs) parts3 mem html
       else
         Left $ "WTF["
             <> T.pack (show $ length syllses) <> ","
@@ -73,7 +78,7 @@ textToNote t = if length cols /= 6 then error (show cols) else
             <> T.pack (show $ length parts) <> "]: " <> t
   where
     cols = T.split (== '\US') t
-    [word, pinyinsT, defsT, partsT, mem, html] = cols
+    [word, trad, pinyinsT, defsT, partsT, mem, html] = cols
     syllses = map pinyinToSylls $ bsSplit pinyinsT
     defs = bsSplit defsT
     parts = procPartsT partsT
@@ -85,8 +90,8 @@ noteToText :: ZNote -> Text
 noteToText = noteToTextSep "\US"
 
 noteToTextSep :: Text -> ZNote -> Text
-noteToTextSep sep (ZNote word pronDefs parts mem html) = T.intercalate sep
-    [word, pinyinsT, defsT, partsT, mem, html]
+noteToTextSep sep (ZNote word trad pronDefs parts mem html) = T.intercalate sep
+    [word, trad, pinyinsT, defsT, partsT, mem, html]
   where
     (pinyins, defs) = unzip $ map pronDefToTexts pronDefs
     pinyinsT = T.intercalate " \\ " pinyins
