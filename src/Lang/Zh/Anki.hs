@@ -40,6 +40,7 @@ bracketOnly t = t3
     t2 = T.dropWhile (/= '[') t
     t3 = if T.null t2 then "?" else t2
 
+dbCmd :: String -> (String, [String])
 dbCmd q = ("sqlite3" :: String,
     ["/home/danl/.local/share/Anki2/Usuario 1/collection.anki2", q])
 
@@ -101,6 +102,7 @@ noteToTextSep sep (ZNote word trad pronDefs parts mem html) = T.intercalate sep
       else parts
     partsT = T.intercalate "<br>" parts2
 
+dubSingQuote :: Text -> Text
 dubSingQuote = T.replace "'" "''"
 
 updateNote :: ZNote -> IO ()
@@ -114,6 +116,7 @@ updateNote z = do
 hshRunText :: (String, [String]) -> IO [Text]
 hshRunText p = T.lines . T.decodeUtf8 <$> run p
 
+myFromRight :: Either Text a -> a
 myFromRight (Right a) = a
 myFromRight (Left e) = error $ T.unpack e
 
