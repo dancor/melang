@@ -51,6 +51,7 @@ executable zh-anki-hsk-multiun
     , utf8-string
     , vector
     , wcwidth
+    , safe
 
 library 
   exposed-modules:
