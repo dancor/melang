@@ -7,9 +7,9 @@ synopsis:      lang study
 build-type:    Simple
 cabal-version: >= 1.7.1
 
-executable zh-anki-hsk-tatoeba
+executable anki-hsk-sentences
   hs-source-dirs: src
-  main-is: Main/zh-anki-hsk-tatoeba.hs
+  main-is: Main/anki-hsk-sentences.hs
   other-modules: Lang.Zh.Anki, Lang.Zh.Cedict, Lang.Zh.WdPinyinGloss
   ghc-options: -cpp -O2 -Wall
   build-depends:
@@ -18,6 +18,7 @@ executable zh-anki-hsk-tatoeba
     , bytestring
     , deepseq
     , directory
+    , extra
     , filepath
     , HSH
     , process
@@ -28,10 +29,11 @@ executable zh-anki-hsk-tatoeba
     , utf8-string
     , vector
     , wcwidth
+    , safe
 
-executable zh-anki-hsk-multiun
+executable anki-hsk-share-best-parts
   hs-source-dirs: src
-  main-is: Main/zh-anki-hsk-multiun.hs
+  main-is: Main/anki-hsk-share-best-parts.hs
   other-modules: Lang.Zh.Anki, Lang.Zh.Cedict, Lang.Zh.WdPinyinGloss
   ghc-options: -cpp -O2 -Wall
   build-depends:
