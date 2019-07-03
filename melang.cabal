@@ -10,6 +10,7 @@ cabal-version: >= 1.7.1
 executable zh-anki-hsk-tatoeba
   hs-source-dirs: src
   main-is: Main/zh-anki-hsk-tatoeba.hs
+  other-modules: Lang.Zh.Anki, Lang.Zh.Cedict, Lang.Zh.WdPinyinGloss
   ghc-options: -cpp -O2 -Wall
   build-depends:
       base
@@ -31,6 +32,7 @@ executable zh-anki-hsk-tatoeba
 executable zh-anki-hsk-multiun
   hs-source-dirs: src
   main-is: Main/zh-anki-hsk-multiun.hs
+  other-modules: Lang.Zh.Anki, Lang.Zh.Cedict, Lang.Zh.WdPinyinGloss
   ghc-options: -cpp -O2 -Wall
   build-depends:
       base
@@ -38,6 +40,7 @@ executable zh-anki-hsk-multiun
     , bytestring
     , deepseq
     , directory
+    , extra
     , filepath
     , HSH
     , process

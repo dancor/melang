@@ -13,10 +13,8 @@ import Data.HashMap.Strict (HashMap)
 import qualified Data.HashMap.Strict as HM
 import Data.List
 import Data.Maybe
-import Data.Monoid
 import Data.Text (Text)
 import qualified Data.Text as T
-import qualified Data.Text.Encoding as T
 import qualified Data.Text.IO as T
 import GHC.Generics
 import System.Directory
@@ -83,6 +81,7 @@ whenMany f xs = f xs
 
 -- Could perform the lookup when "see " is the only definition?
 -- Same for "erhua variant of"
+isBadDef :: Text -> Bool
 isBadDef d = any (`T.isPrefixOf` d)
   [ "CL:"
   , "also written"
