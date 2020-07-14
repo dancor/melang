@@ -1,0 +1,19 @@
+#https://github.com/explosion/spaCy/issues/2483
+#points to:
+#https://github.com/howl-anderson/Chinese_models_for_SpaCy
+
+#On 2018-11-02 I installed latest release by downloading file
+#zh_core_web_sm-2.0.5.tar.gz
+#and then running pip3 install zh_core_web_sm-2.0.5.tar.gz
+
+from spacy import displacy
+import zh_core_web_sm
+nlp = zh_core_web_sm.load()
+zh_sent = "马来西亚代表团在不扩散核武器条约缔约国2005年审议大会全体会议上以不扩散核武器条约不结盟缔约国集团的名义就通过议程发表的声明"
+doc = nlp(zh_sent) 
+#sents = list(doc.sents)
+#s = sents[0]
+for tok in doc:
+    print(str(tok.i) + '\t' + str(tok.head.i) + '\t' + tok.tag_ + '\t' +
+        str(tok) + '\t' + tok.dep_)
+displacy.serve(doc)
