@@ -126,7 +126,7 @@ parseCedictEntry l = case (simp, pinyin) of
   where
     tradSimpPinyin:defsAndEmpty = T.splitOn "/" l
     simp = T.takeWhile (/= ' ') $ T.tail $ T.dropWhile (/= ' ') tradSimpPinyin
-    pinyin = T.filter (/= ' ') . T.dropEnd 2 . T.drop 1 $
+    pinyin = T.replace "u:" "v" . T.filter (/= ' ') . T.dropEnd 2 . T.drop 1 $
         T.dropWhile (/= '[') tradSimpPinyin
     defs = case defsAndEmpty of
       [] -> error "parseCedictEntry: null defsAndEmpty"
