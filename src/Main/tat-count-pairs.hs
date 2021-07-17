@@ -32,7 +32,7 @@ instance Hashable a => Hashable (P2 a) where
 type Count = I
 
 {-# INLINE test #-}
-test = take 1
+test = take 1000
 --test = id
 
 tInt :: T -> Int
