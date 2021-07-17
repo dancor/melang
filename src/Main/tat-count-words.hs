@@ -6,10 +6,7 @@
 
 import Control.Exception (bracket)
 import Control.Monad (liftM2)
---import qualified Data.Text as T
-import qualified Data.Text.Lazy as T
---import qualified Data.Text.IO as T
-import qualified Data.Text.Lazy.IO as T
+import Data.Char (isAlpha)
 import Data.Hashable (Hashable, hashWithSalt)
 import Data.HashMap.Strict (HashMap)
 import qualified Data.HashMap.Strict as HM
@@ -18,6 +15,10 @@ import qualified Data.IntMap.Strict as IM
 import Data.List (foldl', sortBy)
 import Data.Maybe (fromMaybe)
 import Data.Ord (comparing)
+--import qualified Data.Text as T
+import qualified Data.Text.Lazy as T
+--import qualified Data.Text.IO as T
+import qualified Data.Text.Lazy.IO as T
 import System.Directory (getHomeDirectory)
 import System.FilePath ((</>))
 import System.IO (hClose, hGetLine, hIsEOF, openFile, readFile, stdin, Handle, IOMode(ReadMode))
@@ -33,8 +34,8 @@ type Count = HashMap (P2 L) I
 --type Count = I
 
 {-# INLINE test #-}
-test = take 1000
---test = id
+--test = take 1000
+test = id
 
 sentToWords :: T -> [T]
 sentToWords = filter (not . T.null) .
@@ -42,9 +43,9 @@ sentToWords = filter (not . T.null) .
 
 main :: IO ()
 main = do
-    wordCounts <- HM.fromListWith (+) .
-        concatMap ((\(_id:_lang:sent:_) -> (sentToWords sent, 1)) . T.split (== '\t')) . 
+    wordCounts <- HM.fromListWith (+) . map (\w -> (w, 1)) .  
+        concatMap ((\(_id:_lang:sent:_) -> sentToWords sent) . T.split (== '\t')) . 
         test . T.lines <$> T.getContents
     mapM_ (\(w, c) ->
-        T.putStrLn $ T.pack (show c) <> " " <> 
-        ) $ sortBy (comparing snd) wordCounts
+        T.putStrLn $ T.pack (show c) <> "\t" <> w
+        ) . sortBy (comparing snd) $ HM.toList wordCounts

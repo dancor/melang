@@ -1,3 +1,6 @@
+bin/tat-gen-cloze: src/Main/tat-gen-cloze.hs
+	ghc --make $< -o $@ -odir build -hidir build
+
 bin/tat-count-pairs: src/Main/tat-count-pairs.hs
 	ghc --make $< -o $@ -odir build -hidir build
 
