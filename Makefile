@@ -1,5 +1,8 @@
 bin/tat-count-pairs: src/Main/tat-count-pairs.hs
-	ghc --make src/Main/tat-count-pairs.hs -o bin/tat-count-pairs -odir build -hidir build
+	ghc --make $< -o $@ -odir build -hidir build
+
+bin/tat-count-words: src/Main/tat-count-words.hs
+	ghc --make $< -o $@ -odir build -hidir build
 
 all:
 	cabal build

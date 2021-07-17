@@ -28,12 +28,12 @@ data P2 a = P2 {i1 :: !a, i2 :: !a} deriving (Eq, Ord, Show)
 instance Hashable a => Hashable (P2 a) where
     hashWithSalt s (P2 a b) = hashWithSalt s (a, b)
 --type Count = HashMap (P2 L) [P2 I]
---type Count = HashMap (P2 L) I
-type Count = I
+type Count = HashMap (P2 L) I
+--type Count = I
 
 {-# INLINE test #-}
-test = take 1000
---test = id
+--test = take 10000000
+test = id
 
 tInt :: T -> Int
 tInt = read . T.unpack
@@ -41,8 +41,8 @@ tInt = read . T.unpack
 accumCount :: IntMap L -> Count -> P2 I -> Count
 accumCount idToLang !c (P2 id1 id2) =
     --HM.insertWith (++) (P2 l1 l2) [P2 id1 id2] c
-    --HM.insertWith (+) (P2 l1 l2) 1 c
-    c + 1
+    HM.insertWith (+) (P2 l1 l2) 1 c
+    --c + 1
   where
     l1 = fromMaybe "err" $ IM.lookup id1 idToLang
     l2 = fromMaybe "err" $ IM.lookup id2 idToLang
@@ -67,15 +67,14 @@ main = do
         -- test <$> fReadLs "cur/sentences.tsv"
         -- test <$> hReadLs stdin
     putStrLn $ "Number of sentences: " ++ show (IM.size idToLang)
-    -- c <- foldl' (accumCount idToLang) HM.empty .
-    c <- foldl' (accumCount idToLang) 0 .
+    --putStrLn $ "Number of links: " ++ show c
+    putStrLn "Number of sentences from lang1 to lang2: "
+    c <- foldl' (accumCount idToLang) HM.empty .
+    --c <- foldl' (accumCount idToLang) 0 .
         map ((\(id1:id2:_) -> P2 (tInt id1) (tInt id2)) . T.split (== '\t')) . 
         -- test <$> fReadLs "cur/links.tsv"
         -- test <$> hReadLs stdin
         test . T.lines <$> T.getContents
-    putStrLn $ "Number of links: " ++ show c
-    {-
     mapM_ (\(P2 l1 l2, i) ->
         T.putStrLn $ l1 <> " " <> l2 <> " " <> T.pack (show i)
         ) . sortBy (comparing snd) $ HM.toList c
-    -}
