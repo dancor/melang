@@ -5,10 +5,10 @@
 
 import Control.Exception (bracket)
 import Control.Monad (liftM2)
-import qualified Data.Text as T
-import qualified Data.Text.Lazy as TL
-import qualified Data.Text.IO as T
-import qualified Data.Text.Lazy.IO as TL
+--import qualified Data.Text as T
+import qualified Data.Text.Lazy as T
+--import qualified Data.Text.IO as T
+import qualified Data.Text.Lazy.IO as T
 import Data.Hashable (Hashable, hashWithSalt)
 import Data.HashMap.Strict (HashMap)
 import qualified Data.HashMap.Strict as HM
@@ -17,6 +17,8 @@ import qualified Data.IntMap.Strict as IM
 import Data.List (foldl', sortBy)
 import Data.Maybe (fromMaybe)
 import Data.Ord (comparing)
+import System.Directory (getHomeDirectory)
+import System.FilePath ((</>))
 import System.IO (hClose, hGetLine, hIsEOF, openFile, readFile, stdin, Handle, IOMode(ReadMode))
 
 type I = Int
@@ -58,19 +60,20 @@ fReadLs f = bracket (openFile f ReadMode) hClose hReadLs
 main :: IO ()
 main = do
     home <- getHomeDirectory
+    let curTatDir = home </> "data" </> "tatoeba" </> "cur"
     idToLang <- IM.fromList .
         map ((\(id:lang:_) -> (tInt id, lang)) . T.split (== '\t')) . 
-        test <$> fReadLs "cur/sentences.tsv"
+        test . T.lines <$> T.readFile (curTatDir </> "sentences.tsv")
+        -- test <$> fReadLs "cur/sentences.tsv"
         -- test <$> hReadLs stdin
-    print $ IM.size idToLang
-    {-
+    putStrLn $ "Number of sentences: " ++ show (IM.size idToLang)
     -- c <- foldl' (accumCount idToLang) HM.empty .
-    c <- foldl' (accumCount idToLang) 1 .
+    c <- foldl' (accumCount idToLang) 0 .
         map ((\(id1:id2:_) -> P2 (tInt id1) (tInt id2)) . T.split (== '\t')) . 
         -- test <$> fReadLs "cur/links.tsv"
-        test <$> hReadLs stdin
-    print c
-    -}
+        -- test <$> hReadLs stdin
+        test . T.lines <$> T.getContents
+    putStrLn $ "Number of links: " ++ show c
     {-
     mapM_ (\(P2 l1 l2, i) ->
         T.putStrLn $ l1 <> " " <> l2 <> " " <> T.pack (show i)
