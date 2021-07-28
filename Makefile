@@ -1,3 +1,6 @@
+bin/tat-gen-mem: src/Main/tat-gen-mem.hs
+	ghc --make $< -o $@ -odir build -hidir build
+
 bin/tat-gen-cloze: src/Main/tat-gen-cloze.hs
 	ghc --make $< -o $@ -odir build -hidir build
 

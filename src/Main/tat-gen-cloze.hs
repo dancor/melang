@@ -20,7 +20,8 @@ import Data.Maybe (catMaybes, fromMaybe)
 import Data.Ord (comparing)
 import System.Directory (getHomeDirectory)
 import System.FilePath ((</>))
-import System.IO (hClose, hGetLine, hIsEOF, openFile, readFile, stdin, Handle, IOMode(ReadMode))
+import System.IO (hClose, hGetLine, hIsEOF, hPutStrLn, openFile, readFile,
+  stderr, stdin, Handle, IOMode(ReadMode))
 
 type I = Int
 type L = T -- Lang abbrs are just used directly.
@@ -44,7 +45,7 @@ untab = T.split (== '\t')
 
 procTat :: T -> Maybe (I, Tat)
 procTat l = let [id, lang, sent] = untab l in
-  if lang == "spa" || lang == "por"
+  if lang == "deu" || lang == "por"
   then Just (read $ T.unpack id, Tat lang sent) else Nothing
 
 tInt :: T -> I
@@ -53,7 +54,7 @@ tInt = read . T.unpack
 genCloze :: IntMap Tat -> HashMap T I -> T -> Maybe (I,T,T)
 genCloze idToTat wordCount l = let [id1, id2] = T.split (== '\t') l in
   case (IM.lookup (tInt id1) idToTat, IM.lookup (tInt id2) idToTat) of
-    (Just (Tat "por" s1), Just (Tat "spa" s2)) -> let
+    (Just (Tat "por" s1), Just (Tat "deu" s2)) -> let
       (n,freq_) = minimumBy (comparing snd) . catMaybes .
         map (\(i,mb) -> maybe Nothing (Just.(,)i) mb) . zip [0..] . 
         map (flip HM.lookup wordCount . T.toLower . T.filter isAlpha) $

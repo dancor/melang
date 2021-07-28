@@ -10,15 +10,16 @@
 --   dar estar haver ir querer saber ser
 --   Only dar and ir have finer irregularities.
 -- - For Fut and Cond, only 3 irregs: dizer->dir fazer->far trazer->trar
--- - SImperf from Pret3p except ir&ser->fosse. SFut always!
+-- - SImperf from Pret3p except ir&ser and pôs. SFut always!
 -- - For SImperf: Vsse Vsses Vsse  Wssemos Wsseis Vssem
---   where V->W is: a->á e->é i->í o->ô
+--   where V->W is: a->á e->ê(but-é-for-pôr) i->í o->ô
 -- - The Plup is always formed from Pret3p, with same accent changes.
 -- - Imperf (same accents) 4: pôr:punha, ser:era, ter:tinha, vir:vinha
+-- - I believe all Gerunds are regular.
+-- - There are some irregular Participles. Only for vir does it equal the gerund
 
 data Tense = Pres | SPres | Imperf | Pret | Plup | SImperf | SFut | Fut |
-  Cond | Participle
-  deriving (Eq, Ord, Show)
+  Cond | Participle deriving (Eq, Ord, Show)
 
 data Person = S1 | S2 | S3 | P1 | P2 | P3
   deriving (Eq, Ord, Show)
@@ -34,6 +35,9 @@ conj, cnj :: VerbInfo -> Tense -> Person -> Text
 conj v t p =  case Map.lookup t $ vExceptions v of
   Just m -> case Map.lookup p m of Just r -> r; _ -> cnj v t p
   _ -> cnj v t p
+
+-- Pres: S3->S12P13 P1->P2
+-- Pret: P1->S2P23
 
 cnj v Pres S1 = let x = conj v Pres S3 in case T.takeEnd 1 x of
   "r" -> x <> "o"
@@ -234,9 +238,9 @@ vInfos = [
   , mkV "repetir"  [pres [s1"repito"]]
   , mkV "seguir"   [pres [s1"sigo"]]
   , mkV "sentir"   [pres [s1"sinto"]]
-  , mkV "servir"   [pres [s1"sivro"]]
+  , mkV "servir"   [pres [s1"sirvo"]]
   , mkV "vestir"   [pres [s1"visto"]]
-  , mkV "cobrir"   [pres [s1"cubro"]]
+  , mkV "cobrir"   [pres [s1"cubro"],partic"coberto"]
   , mkV "descobrir"[pres [s1"descubro"]]
   , mkV "dormir"   [pres [s1"durmo"]]
   , mkV "subir"    [pres [s1"subo",s3"sobe",p1"subimos"]]
@@ -249,11 +253,13 @@ vInfos = [
   -- 2nd irreg participles:
   , mkV "aceitar"  [partic"aceite"]
   , mkV "acender"  [partic"aceso"]
+  , mkV "atender"  [partic"atento"]
   , mkV "entregar" [partic"entregue"]
   , mkV "enxugar"  [partic"enxugado"]
   , mkV "expulsar" [partic"expulso"]
   , mkV "limpar"   [partic"limpo"]
   , mkV "matar"    [partic"morto"]
+  , mkV "nascer"   [partic"nato"]
   , mkV "omitir"   [partic"omisso"]
   , mkV "prender"  [partic"preso"]
   , mkV "romper"   [partic"roto"]
