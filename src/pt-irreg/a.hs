@@ -255,7 +255,7 @@ vInfos = [
   , mkV "acender"  [partic"aceso"]
   , mkV "atender"  [partic"atento"]
   , mkV "entregar" [partic"entregue"]
-  , mkV "enxugar"  [partic"enxugado"]
+  , mkV "enxugar"  [partic"enxuto"]
   , mkV "expulsar" [partic"expulso"]
   , mkV "limpar"   [partic"limpo"]
   , mkV "matar"    [partic"morto"]
