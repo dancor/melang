@@ -7,5 +7,5 @@
 #make bin/tat-gen-cloze && pv ~/data/t/cur/links.tsv | /usr/bin/time bin/tat-gen-cloze | tee ~/data/t/cur/por-from-spa-cloze.txt
 #make bin/tat-gen-cloze && pv ~/data/t/cur/links.tsv | /usr/bin/time bin/tat-gen-cloze | tee ~/data/t/cur/por-from-deu-cloze.txt
 
-make bin/tat-gen-mem && pv ~/data/t/cur/por-from-deu-cloze.txt | /usr/bin/time bin/tat-gen-mem
+make bin/tat-gen-mem && pv ~/data/t/cur/por-from-deu-cloze.txt | /usr/bin/time bin/tat-gen-mem | tee out
 

@@ -220,7 +220,7 @@ vInfos = [
   , mkV "ver"     [pres  [s1"vejo" ,s3"vê",p2"vedes"]
                   ,pret  [s3"viu"  ,p1"vimos"]
                   ,partic"visto"]
-  , mkV "vir"     [pres  [s1"venho",s3"vem" ,p1"vimos",p2"vindes",p3"vêm"]
+  , mkV "vir"     [pres  [s3"vem" ,p1"vimos",p2"vindes",p3"vêm"]
                   ,pret  [s1"vim"  ,s3"veio",p1"viemos"]
                   ,imperf[p1"vínhamos"]
                   ,partic"vindo"]
