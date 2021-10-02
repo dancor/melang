@@ -18,6 +18,9 @@
 -- - I believe all Gerunds are regular.
 -- - There are some irregular Participles. Only for vir does it equal the gerund
 
+-- Pres: S3->S12P13 P1->P2
+-- Pret: P1->S2P23
+
 data Tense = Pres | SPres | Imperf | Pret | Plup | SImperf | SFut | Fut |
   Cond | Participle deriving (Eq, Ord, Show)
 
@@ -35,9 +38,6 @@ conj, cnj :: VerbInfo -> Tense -> Person -> Text
 conj v t p =  case Map.lookup t $ vExceptions v of
   Just m -> case Map.lookup p m of Just r -> r; _ -> cnj v t p
   _ -> cnj v t p
-
--- Pres: S3->S12P13 P1->P2
--- Pret: P1->S2P23
 
 cnj v Pres S1 = let x = conj v Pres S3 in case T.takeEnd 1 x of
   "r" -> x <> "o"
@@ -165,8 +165,13 @@ partic x = (Participle, [(S1, x)])
 vInfos :: [VerbInfo]
 vInfos = [
     mkV "falar"   []
+  -- convir not fully filled in yet but easier to see as related to vir:
+  --, mkV "convir"  [pres[s1"convenho",s3"convém",p1"convimos",p2"convindes",p3"convêm"],imperf[p1"convínhamos"]]
+  {-
+  , mkV "entupir" [pres[s1"entupo",s3"entope",p1"entupimos"]]
   , mkV "comer"   []
   , mkV "partir"  []
+  , mkV "fugir"   [pres  [s1"fujo",s3"foge",p1"fugimos"]]
   , mkV "crer"    [pres  [s1"creio" ,s3"crê"   ,p2"credes"  ]]
   , mkV "dar"     [pres  [s1"dou"   ,s3"dá"    ,p3"dão"     ]
                   ,sPres [s1"dê"               ,p2"deis"    ]
@@ -267,6 +272,7 @@ vInfos = [
   , mkV "secar"    [partic"seco"]
   , mkV "soltar"   [partic"solto"]
   , mkV "suspender"[partic"suspenso"]
+  -}
   ]
 
 main :: IO ()

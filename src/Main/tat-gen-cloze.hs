@@ -6,6 +6,7 @@
 import Control.Exception (bracket)
 import Control.Monad (liftM2)
 import Data.Char (isAlpha)
+import Data.Either (partitionEithers)
 --import qualified Data.Text as T
 import qualified Data.Text.Lazy as T
 --import qualified Data.Text.IO as T
@@ -51,15 +52,28 @@ procTat l = let [id, lang, sent] = untab l in
 tInt :: T -> I
 tInt = read . T.unpack
 
+-- Prefer to cloze words that are not capitalized in Portuguese.
+-- This is a simple way to exclude proper nouns, such as names (eg. John),
+-- which tend to be too easy to translate (eg. they may not even change).
+-- This also means we try to avoid using the first word in the sentence too
+-- (since it is usually, or always?, capitalized), but that's ok.
 genCloze :: IntMap Tat -> HashMap T I -> T -> Maybe (I,T,T)
 genCloze idToTat wordCount l = let [id1, id2] = T.split (== '\t') l in
   case (IM.lookup (tInt id1) idToTat, IM.lookup (tInt id2) idToTat) of
     (Just (Tat "por" s1), Just (Tat "deu" s2)) -> let
-      (n,freq_) = minimumBy (comparing snd) . catMaybes .
-        map (\(i,mb) -> maybe Nothing (Just.(,)i) mb) . zip [0..] . 
-        map (flip HM.lookup wordCount . T.toLower . T.filter isAlpha) $
-        T.words s1
-      in Just (n,s1,s2)
+      procWd wdNum wd1 wd2 = let
+        wd1Alpha = T.filter isAlpha wd1; wd1Clean = T.toLower wd1Alpha
+        wd2Alpha = T.filter isAlpha wd2; wd2Clean = T.toLower wd1Alpha
+        in case (T.null wd1Clean, wd1Clean == wd2Clean, HM.lookup wd1Clean wordCount) of
+        (False, False, Just wd1Count) -> Just $ if wd1Alpha == wd1Clean
+          then Left  (wd1Count, wdNum)
+          else Right (wd1Count, wdNum)
+        _ -> Nothing
+      in case partitionEithers $ catMaybes $
+      zipWith3 procWd [0..] (T.words s1) (cycle $ T.words s2) of
+      ([],[]) -> Nothing
+      ([], l) -> Just (snd $ minimum l, s1, s2)
+      ( l, _) -> Just (snd $ minimum l, s1, s2)
     _ -> Nothing
 
 main :: IO ()
