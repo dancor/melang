@@ -94,7 +94,7 @@ readSentences = do
 
 genMem :: Cloze -> (T,[T])
 genMem (Cloze p s t) =
-  ( t <> "\\n" <> T.replace "|" "\\|"
+  ( t <> "<br><br>" <> T.replace "|" "\\|"
     (T.replace "\\" "\\\\" . T.unwords $
     take p wds ++ "______" : drop (p + 1) wds)
   , [wds !! p]
