@@ -1,11 +1,17 @@
 #include <h>
-
--- Only imperative irreg I know is for dizer, the irreg "tu diz!" is okay,
--- as well as the regular "tu dize!" Same for fazer, querer, trazer.
--- Also for ser it's the irreg "tu sê!" Note Pres2s ending "ns" -> "m"
-
--- Tenses that are always regular: Plup SFut
-
+{-
+- For the imperative, only ser is irregular and only in the tu form and only in the affirmative: "Tu, sê!" Also, for dizer/fazer/querer/trazer in addition to the regular e.g. "Tu, dize!" you can also drop -e: "Tu, diz!"
+- I think all gerunds are regular. I know 27 irregular participles. Only for vir (vindo) does it equal the gerund.
+- Now let's talk about the 9 verb tenses. Each has 6 forms, for person & number: 1S 2S 3S 1P 2P 3P.
+- The future and conditional are always regular except 3 verbs lose "ze" dizer:dir- fazer:far- trazer:trar-, and pôr:por-.
+- The imperfect is regular except for 4 verbs. For each the 6 forms are regular (and, matching regular, accents only on 1P & 2P): pôr:púnhamos ser:éramos ter:tínhamos vir:vínhamos.
+- The subjunctivePresent is always just pres1S (pres for present) with the "wrong" vowel (-ar:e other:a) except 5+2 verbs: estar:esteja haver:haja querer:queira saber:saiba ser:seja and only these 2 have irregular plurals too: dar:dê(1P:demos 2P:deis 3P:deem) ir:vá(1P:vamos 3P:vão oddlyMatchPres 2P:vades doesNotPresIs:ides).
+- The plupertfect & subjunctiveImperfect & subjunctiveFuture are always from pret3P (pret for preterite).
+- The subjunctiveImperfect adds accents for 2P & 3P: Vsse Vsses Vsse Wssemos Wsseis Vssem where V->W is a->á e->ê(but-é-for-pôr) i->í o->ô.
+- The pluperfect does too: Vra Vras Vra Wramos Wreis Vram (so pluperfect3P always equals pret3P).
+- I know 15 irregular pret tense verbs; you can often still derive a lot from 1P: 1P->2S,2P,3P.
+- I know 42 irregular pres tense verbs (for 20 of them just 1S) but often 3S->1S,2S,1P,3P and 1P->2P.
+-}
 -- - The only verbs where SPres doesn't match Pres1s are 7:
 --   dar estar haver ir querer saber ser
 --   Only dar and ir have finer irregularities.
@@ -17,7 +23,6 @@
 -- - Imperf (same accents) 4: pôr:punha, ser:era, ter:tinha, vir:vinha
 -- - I believe all Gerunds are regular.
 -- - There are some irregular Participles. Only for vir does it equal the gerund
-
 -- Pres: S3->S12P13 P1->P2
 -- Pret: P1->S2P23
 
